@@ -11,7 +11,7 @@ win_multiline_date_rex = re.compile("^\d+/\d+/\d+ \d+:\d+:\d+ (AM|PM)$")
 
 def inject_win_multiline(args):
     computer_name_rex = re.compile("^ComputerName=(.*)$")
-    record_number_rex = re.compile("^RecordNumber=(\d+)$")
+    record_number_rex = re.compile("RecordNumber=\d+\n", re.MULTILINE)
     record_number = 0
     inject = args.inject
     input = args.input
@@ -48,6 +48,11 @@ def inject_win_multiline(args):
             cur_pos = fh.tell()
         return evt_time, evt_buff, ended
 
+    def write_evt(evt, record_number):
+        evt = re.sub("RecordNumber=\d+", "RecordNumber=%d" % record_number, evt, 1)
+        args.output.write(evt)
+        return record_number + 1
+
     read_input = True
     read_inject = True
     ended_input = False
@@ -61,25 +66,13 @@ def inject_win_multiline(args):
             read_inject = False
 
         if cur_input_t < cur_inject_t:
-            args.output.write(cur_input_evt)
+            record_number = write_evt(cur_input_evt, record_number)
             cur_input_t = sys.maxsize
             read_input = not ended_input
         else:
-            args.output.write(cur_inject_evt)
+            record_number = write_evt(cur_inject_evt, record_number)
             cur_inject_t = sys.maxsize
             read_inject = not ended_inject
-
-        #
-        # for l in fh:
-        #     if date_rex.match(l):
-        #         t = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
-        #         new_time = datetime.fromtimestamp((t - first_time) + args.timestamp).strftime("%m/%d/%Y %H:%M:%S %p")
-        #         args.output.write("%s\n" % new_time)
-        #     elif record_number_rex.match(l):
-        #         args.output.write("RecordNumber=%d\n" % record_number)
-        #         record_number += 1
-        #     else:
-        #         args.output.write(l)
 
 
 def read_win_multiline_event(fh):
