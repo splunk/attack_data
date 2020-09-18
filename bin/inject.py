@@ -4,33 +4,104 @@ import sys
 import argparse
 import re
 import time
+import os
 from datetime import datetime
 
+win_multiline_date_rex = re.compile("^\d+/\d+/\d+ \d+:\d+:\d+ (AM|PM)$")
 
 def inject_win_multiline(args):
-    date_rex = re.compile("^\d+/\d+/\d+ \d+:\d+:\d+ (AM|PM)$")
-    first_time = 0
-    with args.input as fh:
-        first_time = sys.maxsize
-        for l in filter(lambda x: date_rex.match(x) is not None, iter(lambda: fh.readline(), '')):
-            tt = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
-            first_time = min(tt, first_time)
-        fh.seek(0, 0)
+    computer_name_rex = re.compile("^ComputerName=(.*)$")
+    record_number_rex = re.compile("^RecordNumber=(\d+)$")
+    record_number = 0
+    inject = args.inject
+    input = args.input
+    first_time = sys.maxsize
 
-        for l in fh:
-            if date_rex.match(l):
-                t = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
-                new_time = datetime.fromtimestamp((t - first_time) + args.timestamp).strftime("%m/%d/%Y %H:%M:%S %p")
-                args.output.write("%s\n" % new_time)
-            else:
-                args.output.write(l)
+    for l in filter(lambda x: win_multiline_date_rex.match(x) is not None, iter(lambda: inject.readline(), '')):
+        tt = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
+        first_time = min(tt, first_time)
+    inject.seek(0, 0)
 
+    def read_win_multiline_event(fh, _map=False):
+        evt_buff = ""
+        evt_time = 0
+        rec = False
+        cur_pos = fh.tell()
+        ended = False
+        while True:
+            l = fh.readline()
+            if not l:
+                ended = True
+                break
+            if win_multiline_date_rex.match(l) and not rec:
+                rec = True
+                evt_time = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
+            elif win_multiline_date_rex.match(l):
+                fh.seek(cur_pos)
+                break
+            if rec:
+                if _map:
+                    if win_multiline_date_rex.match(l):
+                        evt_time = (evt_time - first_time) + args.timestamp
+                        l = "%s\n" % datetime.fromtimestamp(evt_time).strftime("%m/%d/%Y %H:%M:%S %p")
+                evt_buff += l
+            cur_pos = fh.tell()
+        return evt_time, evt_buff, ended
+
+    read_input = True
+    read_inject = True
+    ended_input = False
+    ended_inject = False
+    while not ended_input or not ended_inject:
+        if read_input:
+            cur_input_t, cur_input_evt, ended_input = read_win_multiline_event(input)
+            read_input = False
+        if read_inject:
+            cur_inject_t, cur_inject_evt, ended_inject = read_win_multiline_event(inject, True)
+            read_inject = False
+
+        if cur_input_t < cur_inject_t:
+            args.output.write(cur_input_evt)
+            cur_input_t = sys.maxsize
+            read_input = not ended_input
+        else:
+            args.output.write(cur_inject_evt)
+            cur_inject_t = sys.maxsize
+            read_inject = not ended_inject
+
+        #
+        # for l in fh:
+        #     if date_rex.match(l):
+        #         t = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
+        #         new_time = datetime.fromtimestamp((t - first_time) + args.timestamp).strftime("%m/%d/%Y %H:%M:%S %p")
+        #         args.output.write("%s\n" % new_time)
+        #     elif record_number_rex.match(l):
+        #         args.output.write("RecordNumber=%d\n" % record_number)
+        #         record_number += 1
+        #     else:
+        #         args.output.write(l)
+
+
+def read_win_multiline_event(fh):
+    evt_buff = ""
+    evt_time = 0
+    rec = False
+    for l in fh:
+        if win_multiline_date_rex.match(l) and not rec:
+            rec = True
+            evt_time = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
+        elif win_multiline_date_rex.match(l):
+            break
+        if rec:
+            evt_buff += "\n%s" % l
+        return evt_time, evt_buff
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--format", help="input file format", choices=["win-multiline"], default="win-multiline")
 parser.add_argument("-t", "--timestamp", help="base timestamp", required=True, type=int)
 parser.add_argument("-d", "--domain-map", help="json dictionary with domains to map", type=json.loads)
 parser.add_argument("-m", "--machine-map", help="json dictionary with machines to map", type=json.loads)
+parser.add_argument("inject", type=argparse.FileType('r'))
 parser.add_argument("input", type=argparse.FileType('r'))
 parser.add_argument("-o", "--output", type=argparse.FileType('w'), default=sys.stdout)
 
