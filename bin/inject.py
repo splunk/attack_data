@@ -4,18 +4,33 @@ import sys
 import argparse
 import re
 import time
-import os
 from datetime import datetime
 
-win_multiline_date_rex = re.compile("^\d+/\d+/\d+ \d+:\d+:\d+ (AM|PM)$")
+win_multiline_date_rex = re.compile(r"^\d+/\d+/\d+ \d+:\d+:\d+ (AM|PM)$")
+machine_parse_rex = re.compile(r"(.*)\.([^\.]+)\.[^\.]+$")
+
 
 def inject_win_multiline(args):
-    computer_name_rex = re.compile("^ComputerName=(.*)$")
-    record_number_rex = re.compile("RecordNumber=\d+\n", re.MULTILINE)
+    log_field = re.compile(r"^[\t\s]+([^:]+):[\t\s]+(.*)")
     record_number = 0
     inject = args.inject
     input = args.input
     first_time = sys.maxsize
+
+    replace_func = []
+    for m in args.machine_map.keys():
+        old_machine = machine_parse_rex.match(m)
+        new_machine = machine_parse_rex.match(args.machine_map[m])
+        if old_machine and new_machine:
+            maps = list(zip(old_machine.groups(), new_machine.groups()))
+            replace_func.append(lambda l: re.sub(old_machine.group(0), new_machine.group(0), l))
+            simple_sub = list(map(lambda t: lambda l: re.sub(t[0], t[1], l), maps))
+            upper_sub = list(map(lambda t: lambda l: re.sub(t[0].upper(), t[1].upper(), l), maps))
+            lower_sub = list(map(lambda t: lambda l: re.sub(t[0].lower(), t[1].lower(), l), maps))
+
+            replace_func.extend(simple_sub)
+            replace_func.extend(upper_sub)
+            replace_func.extend(lower_sub)
 
     for l in filter(lambda x: win_multiline_date_rex.match(x) is not None, iter(lambda: inject.readline(), '')):
         tt = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
@@ -44,14 +59,18 @@ def inject_win_multiline(args):
                     if win_multiline_date_rex.match(l):
                         evt_time = (evt_time - first_time) + args.timestamp
                         l = "%s\n" % datetime.fromtimestamp(evt_time).strftime("%m/%d/%Y %H:%M:%S %p")
+                    else:
+                        if log_field.match(l):
+                            for r in replace_func:
+                                l = r(l)
                 evt_buff += l
             cur_pos = fh.tell()
         return evt_time, evt_buff, ended
 
-    def write_evt(evt, record_number):
-        evt = re.sub("RecordNumber=\d+", "RecordNumber=%d" % record_number, evt, 1)
+    def write_evt(evt, rn):
+        evt = re.sub(r"RecordNumber=\d+", "RecordNumber=%d" % rn, evt, 1)
         args.output.write(evt)
-        return record_number + 1
+        return rn + 1
 
     read_input = True
     read_inject = True
@@ -74,20 +93,6 @@ def inject_win_multiline(args):
             cur_inject_t = sys.maxsize
             read_inject = not ended_inject
 
-
-def read_win_multiline_event(fh):
-    evt_buff = ""
-    evt_time = 0
-    rec = False
-    for l in fh:
-        if win_multiline_date_rex.match(l) and not rec:
-            rec = True
-            evt_time = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
-        elif win_multiline_date_rex.match(l):
-            break
-        if rec:
-            evt_buff += "\n%s" % l
-        return evt_time, evt_buff
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--format", help="input file format", choices=["win-multiline"], default="win-multiline")
