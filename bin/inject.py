@@ -12,6 +12,8 @@ machine_parse_rex = re.compile(r"(.*)\.([^\.]+)\.[^\.]+$")
 
 def inject_win_multiline(args):
     log_field = re.compile(r"^[\t\s]+([^:]+):[\t\s]+(.*)")
+    computer_name_rex = re.compile("^ComputerName=.*")
+    map_fields = ["Account Name", "Account Domain", "Security ID", "Workstation Name"]
     record_number = 0
     inject = args.inject
     input = args.input
@@ -59,10 +61,16 @@ def inject_win_multiline(args):
                     if win_multiline_date_rex.match(l):
                         evt_time = (evt_time - first_time) + args.timestamp
                         l = "%s\n" % datetime.fromtimestamp(evt_time).strftime("%m/%d/%Y %H:%M:%S %p")
+                    elif computer_name_rex.match(l):
+                        for r in replace_func:
+                            l = r(l)
                     else:
-                        if log_field.match(l):
-                            for r in replace_func:
-                                l = r(l)
+                        m = log_field.match(l)
+                        if m:
+                            field = m.group(1)
+                            if field in map_fields:
+                                for r in replace_func:
+                                    l = r(l)
                 evt_buff += l
             cur_pos = fh.tell()
         return evt_time, evt_buff, ended
@@ -97,7 +105,6 @@ def inject_win_multiline(args):
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--format", help="input file format", choices=["win-multiline"], default="win-multiline")
 parser.add_argument("-t", "--timestamp", help="base timestamp", required=True, type=int)
-parser.add_argument("-d", "--domain-map", help="json dictionary with domains to map", type=json.loads)
 parser.add_argument("-m", "--machine-map", help="json dictionary with machines to map", type=json.loads)
 parser.add_argument("inject", type=argparse.FileType('r'))
 parser.add_argument("input", type=argparse.FileType('r'))
