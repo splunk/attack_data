@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import json
 import sys
 import argparse
@@ -58,7 +58,7 @@ def inject_win_multiline(args):
                 break
             if rec:
                 if _map:
-                    if win_multiline_date_rex.match(l):
+                    if win_multiline_date_rex.match(l) and args.timestamp is not None:
                         evt_time = (evt_time - first_time) + args.timestamp
                         l = "%s\n" % datetime.fromtimestamp(evt_time).strftime("%m/%d/%Y %H:%M:%S %p")
                     elif computer_name_rex.match(l):
@@ -104,7 +104,7 @@ def inject_win_multiline(args):
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--format", help="input file format", choices=["win-multiline"], default="win-multiline")
-parser.add_argument("-t", "--timestamp", help="base timestamp", required=True, type=int)
+parser.add_argument("-t", "--timestamp", help="base timestamp", required=False, type=int)
 parser.add_argument("-m", "--machine-map", help="json dictionary with machines to map", type=json.loads)
 parser.add_argument("inject", type=argparse.FileType('r'))
 parser.add_argument("input", type=argparse.FileType('r'))
