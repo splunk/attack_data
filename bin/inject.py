@@ -11,6 +11,12 @@ machine_parse_rex = re.compile(r"(.*)\.([^\.]+)\.[^\.]+$")
 
 
 def inject_win_multiline(args):
+    """
+    Handling injection of windows multi-line logs as exported from Splunk.
+    This script assumes that logs are sorted by time at the time they were exported.
+    :param args:
+    :return: injects into input dataset the events and writes them to a single log
+    """
     log_field = re.compile(r"^[\t\s]+([^:]+):[\t\s]+(.*)")
     computer_name_rex = re.compile("^ComputerName=.*")
     map_fields = ["Account Name", "Account Domain", "Security ID", "Workstation Name"]
@@ -19,6 +25,7 @@ def inject_win_multiline(args):
     input = args.input
     first_time = sys.maxsize
 
+    # Populate replacement functions based on machine mappings
     replace_func = []
     for m in args.machine_map.keys():
         old_machine = machine_parse_rex.match(m)
@@ -34,12 +41,21 @@ def inject_win_multiline(args):
             replace_func.extend(upper_sub)
             replace_func.extend(lower_sub)
 
-    for l in filter(lambda x: win_multiline_date_rex.match(x) is not None, iter(lambda: inject.readline(), '')):
-        tt = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
-        first_time = min(tt, first_time)
-    inject.seek(0, 0)
+    # Find the earliest time in the inject logs to perform time mapping
+    if args.timestamp is not None:
+        for l in filter(lambda x: win_multiline_date_rex.match(x) is not None, iter(lambda: inject.readline(), '')):
+            tt = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
+            first_time = min(tt, first_time)
+        inject.seek(0, 0)
 
     def read_win_multiline_event(fh, _map=False):
+        """
+        Reads next window event in the file handler.
+        Performs the mapping for inject's logs
+        :param fh: log filehandler
+        :param _map: True if we want to apply field mapping
+        :return: a windows security event, time of the event, and whether this was the last event in the log
+        """
         evt_buff = ""
         evt_time = 0
         rec = False
@@ -48,16 +64,20 @@ def inject_win_multiline(args):
         while True:
             l = fh.readline()
             if not l:
+                # Last event
                 ended = True
                 break
             if win_multiline_date_rex.match(l) and not rec:
                 rec = True
                 evt_time = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
             elif win_multiline_date_rex.match(l):
+                # This timestamp belongs to next event.
+                # Move the file handler cursor to its head.
                 fh.seek(cur_pos)
                 break
             if rec:
                 if _map:
+                    # Perform field mapping
                     if win_multiline_date_rex.match(l) and args.timestamp is not None:
                         evt_time = (evt_time - first_time) + args.timestamp
                         l = "%s\n" % datetime.fromtimestamp(evt_time).strftime("%m/%d/%Y %H:%M:%S %p")
@@ -76,6 +96,7 @@ def inject_win_multiline(args):
         return evt_time, evt_buff, ended
 
     def write_evt(evt, rn):
+        # Write event updating RecordNumber
         evt = re.sub(r"RecordNumber=\d+", "RecordNumber=%d" % rn, evt, 1)
         args.output.write(evt)
         return rn + 1
@@ -85,6 +106,7 @@ def inject_win_multiline(args):
     ended_input = False
     ended_inject = False
     while not ended_input or not ended_inject:
+        # Read at most one event from each log (input, inject)
         if read_input:
             cur_input_t, cur_input_evt, ended_input = read_win_multiline_event(input)
             read_input = False
@@ -92,6 +114,7 @@ def inject_win_multiline(args):
             cur_inject_t, cur_inject_evt, ended_inject = read_win_multiline_event(inject, True)
             read_inject = False
 
+        # Write events out keeping them ordered.
         if cur_input_t < cur_inject_t:
             record_number = write_evt(cur_input_evt, record_number)
             cur_input_t = sys.maxsize
