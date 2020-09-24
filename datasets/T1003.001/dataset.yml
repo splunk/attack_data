@@ -1,5 +1,5 @@
-author: Patrick Bareiss
-date: '2020-07-22'
+author: Jose Hernandez
+date: '2020-09-22'
 description: Credential Dumping attempt via LSASS, specifically those launched
   by Atomic Red Team using Windows Credential Editor, ProcDump, comsvcs.dll,
   direct system calls and API unhooking, Windows Task Manager, Mimikatz and finally pypykatz.
@@ -7,8 +7,12 @@ environment: attack_range
 technique:
   - T1003.001
 dataset:
-  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1003.001/attack_data.json
-  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1003.001/attack_data.tar.gz
+  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1003.001/windows-powershell.log
+  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1003.001/windows-security.log
+  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1003.001/windows-sysmon.log
+  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1003.001/windows-system.log
+  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1003.001/windows-system.log
+  - https://smle-experiments.s3-us-west-2.amazonaws.com/datasets/attack-range/T1003.001/windows-security-events_ssa.log
 references:
   - https://attack.mitre.org/techniques/T1003/001/
   - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.001/T1003.001.md
@@ -16,5 +20,5 @@ references:
 sourcetypes:
   - WinEventLog:Sysmon
   - WinEventLog:Security
-  - WinEventLog:Application
+  - WinEventLog:Powershell
   - WinEventLog:System
