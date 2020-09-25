@@ -1,0 +1,5 @@
+file_read_backwards~=2.0.0
+pip~=20.0.2
+wheel~=0.34.2
+cryptography~=3.0
+setuptools~=46.0.0
