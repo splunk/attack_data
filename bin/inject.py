@@ -8,7 +8,7 @@ from file_read_backwards import FileReadBackwards
 from datetime import datetime
 
 win_multiline_date_rex = re.compile(r"^\d+/\d+/\d+ \d+:\d+:\d+ (AM|PM)$")
-machine_parse_rex = re.compile(r"(.*)\.([^\.]+)\.[^\.]+$")
+machine_parse_rex = re.compile(r"^([^\.]+)\.([^\.]+)\..*$")
 
 
 class LogReader:
