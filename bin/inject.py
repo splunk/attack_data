@@ -104,7 +104,7 @@ def inject_win_multiline(args):
             if win_multiline_date_rex.match(l) and args.timestamp is not None:
                 evt_time = time.mktime(time.strptime(l.strip(), "%m/%d/%Y %H:%M:%S %p"))
                 evt_time = (evt_time - first_time) + args.timestamp
-                l = "%s\n" % datetime.fromtimestamp(evt_time).strftime("%m/%d/%Y %H:%M:%S %p")
+                l = datetime.fromtimestamp(evt_time).strftime("%m/%d/%Y %H:%M:%S %p")
             elif computer_name_rex.match(l):
                 for r in replace_func:
                     l = r(l)
