@@ -42,6 +42,8 @@ def main(args):
                         help="specify the github token for the PR")
     parser.add_argument("-smk", "--secrets_manager_key", required=False, default="github_token",
                         help="specify the key in AWS secrets manager for your github token")
+    parser.add_argument("-sbu", "--s3_bucket_url", required=False, default="https://attack-range-attack-data.s3-us-west-2.amazonaws.com",
+                        help="specify the S3 bucket to store the Attack Data")
 
 
     args = parser.parse_args()
@@ -55,6 +57,7 @@ def main(args):
     atomic_red_team_branch = args.atomic_red_team_branch
     github_token = args.github_token
     secrets_manager_key = args.secrets_manager_key
+    s3_bucket_url = args.s3_bucket_url
 
     # get github token
     if github_token:
@@ -177,7 +180,7 @@ def main(args):
                 MaxKeys=100 )
         dataset_urls = []
         for dataset in response['Contents']:
-            dataset_urls.append('https://attack-range-attack-data.s3-us-west-2.amazonaws.com/' + dataset['Key'])
+            dataset_urls.append(s3_bucket_url + '/' + dataset['Key'])
 
         dataset_obj['dataset'] = dataset_urls
         dataset_obj['references'] = ''
