@@ -25,6 +25,8 @@ The attack_data_service.py has one mandatory parameter, which is --simulation_te
 
 Let's have a look how to use the attack data service after you deployed it:
 
+### Using AWS CLI
+
 Example 1:
 ```
 aws batch submit-job --job-name attack_data_T1003_001 --job-definition attack_data_service_job --job-queue attack_data_service_queue --container-overrides '{"command": ["-st", "T1003.002"]}'
@@ -35,5 +37,40 @@ Example 2:
 aws batch submit-job --job-name attack_data_T1003_001 --job-definition attack_data_service_job --job-queue attack_data_service_queue --container-overrides '{"command": ["-st", "T1003.001", "-sa", "Dump LSASS.exe Memory using comsvcs.dll", "-adr", "P4T12ICK/attack-data", "-adb", "develop", "-smk", "github_token"]}'
 ```
 
+### Using AWS Web Portal
+The Attack Data Generation Service can be also triggered over the AWS Web Portal. You will first click on the service "Batch" and then click on the left side "Jobs". Then, you click on "submit new job". You will fill the variables according to the following screenshot and click on "Submit".
+![AWS Batch Job](attack_data_service/static/aws_batch_submit_job.png)
+
 ## Deployment
+In order to deploy the Attack Data Generation Service to AWS Batch, please follow this guideline. This description assumes that you will deploy the Attack Data Generation Service to the region eu-central-1.
+
+### Prerequisites
+- AWS account
+- IAM user with administrative permissions
+- AWS CLI
+- Docker
+- Attack Data Project Fork
+
+### Create GitHub Token
+
+
+### Upload GitHub Token to AWS Secrets Manager
+
+
+### Build and Upload Docker File
+- Navgigate to the attack_data_service folder:
+```
+cd attack_data_service
+```
+- Build the docker container
+```
+docker build --tag awsbatch/attack-data-service .
+```
+
+
+### Create AWS ECR Repository
+
+
+### Configure AWS Batch
+
 - Configure AWS Batch based on the following tutorial https://stackify.com/aws-batch-guide/ and the docker file.
