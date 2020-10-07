@@ -15,7 +15,7 @@ import base64
 from botocore.exceptions import ClientError
 import json
 from datetime import datetime
-
+import time
 
 
 
@@ -129,6 +129,9 @@ def main(args):
         module.sys.argv = ['attack_range', '--config', 'attack_range/attack_range.conf', 'destroy']
         module.main(module.sys.argv)
         execution_error = True
+
+    # wait
+    time.sleep(200)
 
     # dump attack data
     module.sys.argv = ['attack_range', '--config', 'attack_range/attack_range.conf', 'dump', '--dump_name', simulation_technique]
