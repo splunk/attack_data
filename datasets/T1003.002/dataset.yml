@@ -1,8 +1,7 @@
-author: ''
+author: Patrick Bareiss
 date: '2020-10-08'
 description: 'Atomic Test Results: Successful Execution of test T1003.002-1 Registry
-  dump of SAM, creds, and secrets Return value unclear for test T1003.002-2 Registry
-  parse with pypykatz Successful Execution of test T1003.002-3 esentutl.exe SAM copy '
+  dump of SAM, creds, and secrets, Execution of test T1003.002-3 esentutl.exe SAM copy '
 environment: attack_range
 technique:
 - T1003.002
