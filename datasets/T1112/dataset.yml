@@ -1,0 +1,19 @@
+author: ''
+date: '2020-10-09'
+description: 'Atomic Test Results: Successful Execution of test T1112-1 Modify Registry
+  of Current User Profile - cmd Successful Execution of test T1112-2 Modify Registry
+  of Local Machine - cmd Successful Execution of test T1112-3 Modify registry to store
+  logon credentials Successful Execution of test T1112-4 Add domain to Trusted sites
+  Zone Successful Execution of test T1112-5 Javascript in registry '
+environment: attack_range
+technique:
+- T1112
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/attack_data.json
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/attack_data.tar.gz
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-system.log
+references: ''
+sourcetypes: ''
