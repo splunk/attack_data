@@ -1,4 +1,4 @@
-author: ''
+author: Patrick Bareiss
 date: '2020-10-08'
 description: 'Atomic Test Results: Successful Execution of test T1047-1 WMI Reconnaissance
   Users Successful Execution of test T1047-2 WMI Reconnaissance Processes Successful
@@ -16,5 +16,12 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1047/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1047/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1047/windows-system.log
-references: ''
-sourcetypes: ''
+references: 
+  - https://attack.mitre.org/techniques/T1047
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1047/T1047.md
+  - https://github.com/splunk/security-content/blob/develop/tests/T1047.yml
+sourcetypes: 
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
