@@ -131,7 +131,8 @@ def main(args):
         execution_error = True
 
     # wait
-    time.sleep(200)
+    print('Wait for 400 seconds')
+    time.sleep(400)
 
     # dump attack data
     module.sys.argv = ['attack_range', '--config', 'attack_range/attack_range.conf', 'dump', '--dump_name', simulation_technique]
