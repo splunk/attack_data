@@ -1,4 +1,4 @@
-author: ''
+author: Patrick Bareiss
 date: '2020-10-09'
 description: 'Atomic Test Results: Successful Execution of test T1574.009-1 Execution
   of program.exe as service with unquoted service path '
@@ -18,5 +18,12 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1574.009/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1574.009/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1574.009/windows-system.log
-references: ''
-sourcetypes: ''
+references:
+  - https://attack.mitre.org/techniques/T1574/009/
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1574.009/T1574.009.md
+  - https://github.com/splunk/security-content/blob/develop/tests/T1574_009.yml
+sourcetypes: 
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
