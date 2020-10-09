@@ -1,4 +1,4 @@
-author: ''
+author: Patrick Bareiss
 date: '2020-10-09'
 description: 'Atomic Test Results: Successful Execution of test T1112-1 Modify Registry
   of Current User Profile - cmd Successful Execution of test T1112-2 Modify Registry
@@ -15,5 +15,12 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-system.log
-references: ''
-sourcetypes: ''
+references:
+  - https://attack.mitre.org/techniques/T1112
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1112/T1112.md
+  - https://github.com/splunk/security-content/blob/develop/tests/T1112.yml
+sourcetypes: 
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
