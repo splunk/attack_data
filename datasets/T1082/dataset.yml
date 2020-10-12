@@ -1,0 +1,17 @@
+author: ''
+date: '2020-10-12'
+description: 'Atomic Test Results: Successful Execution of test T1082-1 System Information
+  Discovery Successful Execution of test T1082-6 Hostname Discovery (Windows) Successful
+  Execution of test T1082-8 Windows MachineGUID Discovery Successful Execution of
+  test T1082-9 Windows Patch Level Discovery Successful Execution of test T1082-10
+  Windows Scheduled Task Discovery '
+environment: attack_range
+technique:
+- T1082
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1082/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1082/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1082/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1082/windows-system.log
+references: ''
+sourcetypes: ''
