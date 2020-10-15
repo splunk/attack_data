@@ -7,6 +7,7 @@ technique:
 dataset:
   - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1566_Phishing_Email/splunk_train.json
   - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1566_Phishing_Email/splunk_test.json
+  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1566_Phishing_Email/unit_test.json
 references:
   - https://attack.mitre.org/techniques/T1566/
 sourcetypes:
