@@ -1,0 +1,31 @@
+author: Bhavin Patel
+date: '2020-10-28'
+description: 'This dataset is synthetically generated using a custom app for testing AWS detections that are behaviour based'
+environment: NA
+technique:
+- T1078.004
+- T1535
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/cloudtrail_behavioural_detections/cloudtrail_behavioural_detections.json
+references: 
+- https://attack.mitre.org/techniques/T1078/004/
+- https://attack.mitre.org/techniques/T1535/
+sourcetypes: 
+- aws:cloudtrail
+#Introducing a new key with ESCU detection search names which can be tested using this dataset
+detection_searches:
+- ESCU - AWS Cross Account Activity From Previously Unseen Account - Rule
+- ESCU - Detect AWS Console Login by User from New City - Rule
+- ESCU - Detect AWS Console Login by User from New Country - Rule
+- ESCU - Detect AWS Console Login by User from New Region - Rule
+- ESCU - Detect AWS Console Login by New User - Rule
+- ESCU - Cloud Compute Instance Created In Previously Unused Region - Rule
+- ESCU - Cloud Compute Instance Created With Previously Unseen Image - Rule
+- ESCU - Cloud Compute Instance Created With Previously Unseen Instance Type - Rule
+- ESCU - Cloud Compute Instance Created By Previously Unseen User - Rule
+- ESCU - Cloud Provisioning Activity From Previously Unseen City - Rule
+- ESCU - Cloud Provisioning Activity From Previously Unseen Country - Rule
+- ESCU - Cloud Provisioning Activity From Previously Unseen IP Address - Rule
+- ESCU - Cloud Provisioning Activity From Previously Unseen Region - Rule
+- ESCU - Abnormally High Number of Cloud Instances Launched - Rule
+- ESCU - Abnormally High Number Of Cloud Instances Destroyed - Rule
