@@ -1,10 +1,11 @@
-author: Patrick Bareiss
-date: '2020-10-09'
+author: ''
+date: '2020-11-06'
 description: 'Atomic Test Results: Successful Execution of test T1112-1 Modify Registry
   of Current User Profile - cmd Successful Execution of test T1112-2 Modify Registry
   of Local Machine - cmd Successful Execution of test T1112-3 Modify registry to store
   logon credentials Successful Execution of test T1112-4 Add domain to Trusted sites
-  Zone Successful Execution of test T1112-5 Javascript in registry '
+  Zone Successful Execution of test T1112-5 Javascript in registry Return value unclear
+  for test T1112-6 Change Powershell Execution Policy to Bypass '
 environment: attack_range
 technique:
 - T1112
@@ -15,12 +16,5 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1112/windows-system.log
-references:
-  - https://attack.mitre.org/techniques/T1112
-  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1112/T1112.md
-  - https://github.com/splunk/security-content/blob/develop/tests/T1112.yml
-sourcetypes: 
-  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-  - WinEventLog:Microsoft-Windows-PowerShell/Operational
-  - WinEventLog:System
-  - WinEventLog:Security
+references: ''
+sourcetypes: ''
