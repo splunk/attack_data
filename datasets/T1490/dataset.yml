@@ -1,4 +1,4 @@
-author: ''
+author: Patrick Bareiss
 date: '2020-11-09'
 description: 'Atomic Test Results: Successful Execution of test T1490-1 Windows -
   Delete Volume Shadow Copies Successful Execution of test T1490-2 Windows - Delete
@@ -15,5 +15,11 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1490/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1490/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1490/windows-system.log
-references: ''
-sourcetypes: ''
+references: 
+  - https://attack.mitre.org/techniques/T1490/
+  - https://github.com/redcanaryco/atomic-red-team/blob/7e4580a1e80310ca5e6652a3e54a633143290526/atomics/T1490/T1490.md
+sourcetypes: 
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
