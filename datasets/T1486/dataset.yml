@@ -1,0 +1,11 @@
+author: Rod Soto
+description: 'The search looks for files that contain the key word *Ryuk* under any folder in the C drive, which is consistent with Samsam propagation. how_to_implement: You must be ingesting data that records the file-system activity'
+environment: attack_range
+technique: T1486
+dataset:
+  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1486.all/Ryuk_Test_Files_Detected_57d44d70-28d9-4ed1-acf5-1c80ae2bbce3.json
+references:
+  - https://attack.mitre.org/techniques/T1486/
+  - https://us-cert.cisa.gov/ncas/alerts/aa20-302a
+sourcetypes: 'Microsoft-Windows-Sysmon/Operational'
+date: '2020-11-09'
