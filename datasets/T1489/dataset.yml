@@ -1,0 +1,12 @@
+author: Rod Soto
+description: The search looks for a Windows Security Account Manager (SAM) was stopped via command-line.
+  This is consistent with Ryuk infections across a fleet of endpoints.
+environment: attack_range
+technique: T11489
+dataset:
+  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1489.all/windows_security_account_manager_stopped_69c12d59-d951-431e-ab77-ec426b8d65e6.json
+references:
+  - https://attack.mitre.org/techniques/T1489/
+  - https://us-cert.cisa.gov/ncas/alerts/aa20-302a
+sourcetypes: 'Microsoft-Windows-Sysmon/Operational'
+date: '2020-07-21'
