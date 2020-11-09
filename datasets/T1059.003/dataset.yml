@@ -1,0 +1,11 @@
+author: Rod Soto
+description: The search looks for the Console Window Host process (connhost.exe) executed using the force flag -ForceV1. This is not regular behavior in the Windows OS and is often seen executed by the Ryuk Ransomware.
+environment: attack_range
+technique: T1059.003
+dataset:
+  - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1059.all/Windows_connhost_exe_started_forcefully_c114aaca-68ee-41c2-ad8c-32bf21db8769.json
+references:
+  - https://attack.mitre.org/techniques/T1059/003/
+  - https://us-cert.cisa.gov/ncas/alerts/aa20-302a
+sourcetypes: 'Microsoft-Windows-Sysmon/Operational'
+date: '2020-11-09'

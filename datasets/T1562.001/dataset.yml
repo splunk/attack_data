@@ -1,4 +1,4 @@
-author: Patrick Bareiss
+author: Patrick Bareiss, Rod Soto
 date: '2020-10-09'
 description: 'Atomic Test Results: Return value unclear for test T1562.001-9 Unload
   Sysmon Filter Driver Successful Execution of test T1562.001-10 Uninstall Sysmon
@@ -26,10 +26,12 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1562.001/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1562.001/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1562.001/windows-system.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1562.001/Windows_DisableAntiSpyware_Registry_23150a40-9301-4195-b802-5bb4f43067fb.json
 references:
   - https://attack.mitre.org/techniques/T1562/001
   - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.001/T1562.001.md
   - https://github.com/splunk/security-content/blob/develop/tests/T1562_001.yml
+  - https://us-cert.cisa.gov/ncas/alerts/aa20-302a
 sourcetypes: 
   - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
   - WinEventLog:Microsoft-Windows-PowerShell/Operational
