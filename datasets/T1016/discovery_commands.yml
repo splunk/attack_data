@@ -1,0 +1,18 @@
+author: Patrick Bareiss
+date: '2020-11-10'
+description: 'Manual execution of multiple discovery commands.'
+environment: attack_range
+technique:
+- T1016
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1016_custom_10e3118d-3785-4197-8152-1bf68a4c617e/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1016_custom_10e3118d-3785-4197-8152-1bf68a4c617e/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1016_custom_10e3118d-3785-4197-8152-1bf68a4c617e/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1016_custom_10e3118d-3785-4197-8152-1bf68a4c617e/windows-system.log
+references:
+  - https://attack.mitre.org/techniques/T1016
+sourcetypes:
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
