@@ -1,0 +1,16 @@
+author: ''
+date: '2020-11-10'
+description: 'Atomic Test Results: Return value unclear for test T1021.002-1 Map admin
+  share Successful Execution of test T1021.002-2 Map Admin Share PowerShell Return
+  value unclear for test T1021.002-3 Copy and Execute File with PsExec Return value
+  unclear for test T1021.002-4 Execute command writing output to local Admin Share '
+environment: attack_range
+technique:
+- T1021.002
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1021.002/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1021.002/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1021.002/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1021.002/windows-system.log
+references: ''
+sourcetypes: ''
