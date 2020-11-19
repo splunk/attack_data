@@ -18,8 +18,8 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-system.log
 references: 
-  - https://attack.mitre.org/techniques/T1136/003/
-  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1136.003/T1136.003.md
+  - https://attack.mitre.org/techniques/T1036/003/
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1036.003/T1036.003.md
 sourcetypes: 
   - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
   - WinEventLog:Microsoft-Windows-PowerShell/Operational
