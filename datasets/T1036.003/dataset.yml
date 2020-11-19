@@ -1,0 +1,27 @@
+author: Patrick Bareiss
+date: '2020-11-19'
+description: 'Atomic Test Results: Successful Execution of test T1036.003-1 Masquerading
+  as Windows LSASS process Successful Execution of test T1036.003-3 Masquerading -
+  cscript.exe running as notepad.exe Successful Execution of test T1036.003-4 Masquerading
+  - wscript.exe running as svchost.exe Successful Execution of test T1036.003-5 Masquerading
+  - powershell.exe running as taskhostw.exe Return value unclear for test T1036.003-6
+  Masquerading - non-windows exe running as windows exe Return value unclear for test
+  T1036.003-7 Masquerading - windows exe running as different windows exe Successful
+  Execution of test T1036.003-8 Malicious process Masquerading as LSM.exe Successful
+  Execution of test T1036.003-9 File Extension Masquerading '
+environment: attack_range
+technique:
+- T1036.003
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-system.log
+references: 
+  - https://attack.mitre.org/techniques/T1036/003/
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1036.003/T1036.003.md
+sourcetypes: 
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
