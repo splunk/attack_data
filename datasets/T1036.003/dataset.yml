@@ -13,10 +13,15 @@ environment: attack_range
 technique:
 - T1036.003
 dataset:
-- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/aws_cloudtrail_events.json
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-powershell.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1036.003/windows-system.log
-references: ''
-sourcetypes: ''
+references: 
+  - https://attack.mitre.org/techniques/T1136/003/
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1136.003/T1136.003.md
+sourcetypes: 
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
