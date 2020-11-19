@@ -1,0 +1,18 @@
+author: ''
+date: '2020-11-19'
+description: 'Atomic Test Results: Successful Execution of test T1222.001-1 Take ownership
+  using takeown utility Successful Execution of test T1222.001-2 cacls - Grant permission
+  to specified user or group recursively Return value unclear for test T1222.001-3
+  attrib - Remove read-only attribute Return value unclear for test T1222.001-4 attrib
+  - hide file Successful Execution of test T1222.001-5 Grant Full Access to Entire
+  C:\ Drive for Everyone - Ryuk Ransomware Style '
+environment: attack_range
+technique:
+- T1222.001
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1222.001/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1222.001/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1222.001/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1222.001/windows-system.log
+references: ''
+sourcetypes: ''
