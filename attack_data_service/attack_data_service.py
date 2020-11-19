@@ -118,9 +118,9 @@ def main(args):
 
     # simulate Technique
     if simulation_atomics == 'none':
-        module.sys.argv = ['attack_range', '--config', 'attack_range/attack_range.conf', 'simulate', '-st', simulation_technique, '-t', 'default-attack-range-windows-domain-controller']
+        module.sys.argv = ['attack_range', '--config', 'attack_range/attack_range.conf', 'simulate', '-st', simulation_technique, '-t', str('ar-win-dc-default-' + ssh_key_name)]
     else:
-        module.sys.argv = ['attack_range', '--config', 'attack_range/attack_range.conf', 'simulate', '-st', simulation_technique, '-t', 'default-attack-range-windows-domain-controller', '--simulation_atomics', simulation_atomics]
+        module.sys.argv = ['attack_range', '--config', 'attack_range/attack_range.conf', 'simulate', '-st', simulation_technique, '-t', str('ar-win-dc-default-' + ssh_key_name), '--simulation_atomics', simulation_atomics]
 
     try:
         results_simulate = module.main(module.sys.argv)
@@ -131,8 +131,8 @@ def main(args):
         execution_error = True
 
     # wait
-    print('Wait for 400 seconds')
-    time.sleep(400)
+    print('Wait for 200 seconds')
+    time.sleep(200)
 
     # dump attack data
     module.sys.argv = ['attack_range', '--config', 'attack_range/attack_range.conf', 'dump', '--dump_name', simulation_technique]
