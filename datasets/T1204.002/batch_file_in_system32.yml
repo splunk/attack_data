@@ -1,0 +1,18 @@
+author: Patrick Bareiss
+date: '2020-11-06'
+description: 'Manual generation of attack data by playing a bat file in system32 folder of Windows.'
+environment: attack_range
+technique:
+- T1204.002
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1204.002_custom_b0162b8c-686d-4d97-83fe-7e80ac679cf4/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1204.002_custom_b0162b8c-686d-4d97-83fe-7e80ac679cf4/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1204.002_custom_b0162b8c-686d-4d97-83fe-7e80ac679cf4/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1204.002_custom_b0162b8c-686d-4d97-83fe-7e80ac679cf4/windows-system.log
+references:
+  - https://attack.mitre.org/techniques/T1204/002/
+sourcetypes:
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
