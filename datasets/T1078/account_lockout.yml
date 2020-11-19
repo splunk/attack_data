@@ -1,0 +1,18 @@
+author: Patrick Bareiss
+date: '2020-11-09'
+description: 'Manual generation of attack data by locking out an account'
+environment: attack_range
+technique:
+- T1078.002
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1078.002_custom_49a0e495-4ecd-41e4-a9c7-4c0a1e841ba6/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1078.002_custom_49a0e495-4ecd-41e4-a9c7-4c0a1e841ba6/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1078.002_custom_49a0e495-4ecd-41e4-a9c7-4c0a1e841ba6/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1078.002_custom_49a0e495-4ecd-41e4-a9c7-4c0a1e841ba6/windows-system.log
+references:
+  - https://attack.mitre.org/techniques/T1078/002/
+sourcetypes:
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
