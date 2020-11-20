@@ -1,5 +1,5 @@
-author: Patrick Bareiss
-date: '2020-10-08'
+author: ''
+date: '2020-11-20'
 description: 'Atomic Test Results: Successful Execution of test T1027-2 Execute base64-encoded
   PowerShell Successful Execution of test T1027-3 Execute base64-encoded PowerShell
   from Windows Registry Return value unclear for test T1027-4 Execution from Compressed
@@ -14,12 +14,5 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1027/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1027/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1027/windows-system.log
-references:
-  - https://attack.mitre.org/techniques/T1027
-  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1027/T1027.md
-  - https://github.com/splunk/security-content/blob/develop/tests/T1027.yml
-sourcetypes: 
-  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-  - WinEventLog:Microsoft-Windows-PowerShell/Operational
-  - WinEventLog:System
-  - WinEventLog:Security
+references: ''
+sourcetypes: ''
