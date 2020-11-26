@@ -1,0 +1,16 @@
+author: ''
+date: '2020-11-26'
+description: 'Atomic Test Results: Successful Execution of test T1546.011-1 Application
+  Shim Installation Return value unclear for test T1546.011-2 New shim database files
+  created in the default shim database directory Successful Execution of test T1546.011-3
+  Registry key creation and/or modification events for SDB '
+environment: attack_range
+technique:
+- T1546.011
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1546.011/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1546.011/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1546.011/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1546.011/windows-system.log
+references: ''
+sourcetypes: ''
