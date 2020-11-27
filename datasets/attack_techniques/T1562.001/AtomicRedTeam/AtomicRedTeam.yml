@@ -1,0 +1,30 @@
+author: Patrick Bareiss
+date: '2020-10-09'
+description: 'Atomic Test Results: Return value unclear for test T1562.001-9 Unload
+  Sysmon Filter Driver Successful Execution of test T1562.001-10 Uninstall Sysmon
+  Return value unclear for test T1562.001-11 AMSI Bypass - AMSI InitFailed Return
+  value unclear for test T1562.001-12 AMSI Bypass - Remove AMSI Provider Reg Key Successful
+  Execution of test T1562.001-13 Disable Arbitrary Security Windows Service Return
+  value unclear for test T1562.001-14 Tamper with Windows Defender ATP PowerShell
+  Successful Execution of test T1562.001-15 Tamper with Windows Defender Command Prompt
+  Return value unclear for test T1562.001-16 Tamper with Windows Defender Registry
+  Return value unclear for test T1562.001-17 Disable Microsoft Office Security Features
+  Return value unclear for test T1562.001-18 Remove Windows Defender Definition Files
+  Return value unclear for test T1562.001-19 Stop and Remove Arbitrary Security Windows
+  Service Return value unclear for test T1562.001-20 Uninstall Crowdstrike Falcon
+  on Windows Return value unclear for test T1562.001-21 Tamper with Windows Defender
+  Evade Scanning -Folder Return value unclear for test T1562.001-22 Tamper with Windows
+  Defender Evade Scanning -Extension Return value unclear for test T1562.001-23 Tamper
+  with Windows Defender Evade Scanning -Process '
+environment: attack_range
+technique:
+- T1562.001
+references:
+  - https://attack.mitre.org/techniques/T1562/001
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.001/T1562.001.md
+  - https://github.com/splunk/security-content/blob/develop/tests/T1562_001.yml
+sourcetypes:
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
