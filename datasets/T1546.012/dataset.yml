@@ -1,0 +1,14 @@
+author: ''
+date: '2020-11-27'
+description: 'Atomic Test Results: Successful Execution of test T1546.012-1 IFEO Add
+  Debugger Successful Execution of test T1546.012-2 IFEO Global Flags '
+environment: attack_range
+technique:
+- T1546.012
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1546.012/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1546.012/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1546.012/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1546.012/windows-system.log
+references: ''
+sourcetypes: ''
