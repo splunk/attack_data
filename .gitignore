@@ -1,5 +1,5 @@
 # usual mac files
-.DS_Store
+*.DS_Store
 #vim files
 *.swp
 # Byte-compiled / optimized / DLL files
