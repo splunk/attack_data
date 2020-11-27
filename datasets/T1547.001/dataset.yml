@@ -1,4 +1,4 @@
-author: ''
+author: Patrick Bareiss
 date: '2020-11-27'
 description: 'Atomic Test Results: Successful Execution of test T1547.001-1 Reg Key
   Run Successful Execution of test T1547.001-2 Reg Key RunOnce Return value unclear
@@ -14,5 +14,11 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1547.001/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1547.001/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1547.001/windows-system.log
-references: ''
-sourcetypes: ''
+references: 
+  - https://attack.mitre.org/techniques/T1547/001/
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.001/T1547.001.md
+sourcetypes: 
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
