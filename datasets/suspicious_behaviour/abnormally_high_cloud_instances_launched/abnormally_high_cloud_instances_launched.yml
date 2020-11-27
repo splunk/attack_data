@@ -1,0 +1,12 @@
+author: Bhavin Patel
+date: '2020-10-28'
+description: 'This dataset is synthetically generated using a custom app for testing AWS detections that are behaviour based'
+environment: NA
+technique:
+- T1078.004
+- T1535
+references:
+- https://attack.mitre.org/techniques/T1078/004/
+- https://attack.mitre.org/techniques/T1535/
+sourcetypes:
+- aws:cloudtrail
