@@ -1,0 +1,24 @@
+author: Patrick Bareiss
+date: '2020-11-27'
+description: 'Atomic Test Results: Successful Execution of test T1547.001-1 Reg Key
+  Run Successful Execution of test T1547.001-2 Reg Key RunOnce Return value unclear
+  for test T1547.001-3 PowerShell Registry RunOnce Successful Execution of test T1547.001-4
+  Suspicious vbs file run from startup Folder Successful Execution of test T1547.001-5
+  Suspicious jse file run from startup Folder Return value unclear for test T1547.001-6
+  Suspicious bat file run from startup Folder '
+environment: attack_range
+technique:
+- T1547.001
+dataset:
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1547.001/windows-powershell.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1547.001/windows-security.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1547.001/windows-sysmon.log
+- https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1547.001/windows-system.log
+references: 
+  - https://attack.mitre.org/techniques/T1547/001/
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.001/T1547.001.md
+sourcetypes: 
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
