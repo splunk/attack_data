@@ -1,11 +1,11 @@
-author: Patrick Bareiss
-date: '2020-10-08'
-description: 'Atomic Test Results: Successful Execution of test T1047-1 WMI Reconnaissance
-  Users Successful Execution of test T1047-2 WMI Reconnaissance Processes Successful
-  Execution of test T1047-3 WMI Reconnaissance Software Successful Execution of test
-  T1047-4 WMI Reconnaissance List Remote Services Successful Execution of test T1047-5
-  WMI Execute Local Process Successful Execution of test T1047-6 WMI Execute Remote
-  Process '
+author: ''
+date: '2020-11-30'
+description: 'Atomic Test Results: Return value unclear for test T1047-1 WMI Reconnaissance
+  Users Return value unclear for test T1047-2 WMI Reconnaissance Processes Return
+  value unclear for test T1047-3 WMI Reconnaissance Software Return value unclear
+  for test T1047-4 WMI Reconnaissance List Remote Services Return value unclear for
+  test T1047-5 WMI Execute Local Process Return value unclear for test T1047-6 WMI
+  Execute Remote Process '
 environment: attack_range
 technique:
 - T1047
@@ -16,12 +16,5 @@ dataset:
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1047/windows-security.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1047/windows-sysmon.log
 - https://attack-range-attack-data.s3-us-west-2.amazonaws.com/T1047/windows-system.log
-references: 
-  - https://attack.mitre.org/techniques/T1047
-  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1047/T1047.md
-  - https://github.com/splunk/security-content/blob/develop/tests/T1047.yml
-sourcetypes: 
-  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-  - WinEventLog:Microsoft-Windows-PowerShell/Operational
-  - WinEventLog:System
-  - WinEventLog:Security
+references: ''
+sourcetypes: ''
