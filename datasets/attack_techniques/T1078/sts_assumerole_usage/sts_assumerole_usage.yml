@@ -1,0 +1,13 @@
+author: Rod Soto
+date: '2020-08-19'
+description: This search provides detection of suspicious use of sts:AssumeRole. These tokens can be created on the go and used by attackers to move laterally and escalate privileges.
+environment: custom
+technique:
+  - T1078
+dataset:
+  - https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1078/sts_assumerole_usage/sts_assumerole_usage.json
+references:
+  - https://attack.mitre.org/techniques/T1078/
+  - https://www.splunk.com/en_us/blog/security/using-splunk-to-detect-abuse-of-aws-permanent-and-temporary-credentials.html
+sourcetypes:
+  - aws:cloudtrail

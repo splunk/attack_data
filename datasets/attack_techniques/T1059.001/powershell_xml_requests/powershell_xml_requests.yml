@@ -1,0 +1,19 @@
+author: Patrick Bareiss
+date: '2020-11-20'
+description: 'Atomic Test Results: Successful Execution of test T1059.001-8 Powershell
+  XML requests '
+environment: attack_range
+technique:
+- T1059.001
+dataset:
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1059.001/powershell_xml_requests/windows-powershell.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1059.001/powershell_xml_requests/windows-security.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1059.001/powershell_xml_requests/windows-sysmon.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1059.001/powershell_xml_requests/windows-system.log
+references:
+- https://attack.mitre.org/techniques/T1059/001/
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security

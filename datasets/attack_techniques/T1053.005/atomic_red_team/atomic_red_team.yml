@@ -1,0 +1,25 @@
+author: Patrick Bareiss
+date: '2020-10-08'
+description: 'Atomic Test Results: Successful Execution of test T1053.005-1 Scheduled
+  Task Startup Script Successful Execution of test T1053.005-2 Scheduled task Local
+  Return value unclear for test T1053.005-3 Scheduled task Remote Successful Execution
+  of test T1053.005-4 Powershell Cmdlet Scheduled Task '
+environment: attack_range
+technique:
+- T1053.005
+dataset:
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1053.005/atomic_red_team/attack_data.json
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1053.005/atomic_red_team/attack_data.tar.gz
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-powershell.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-security.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-sysmon.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-system.log
+references:
+- https://attack.mitre.org/techniques/T1053/005/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053/T1053.005.md
+- https://github.com/splunk/security-content/blob/develop/tests/T1053_005.yml
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security

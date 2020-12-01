@@ -1,0 +1,15 @@
+author: Xiao Lin
+date: '2020-10-14'
+description: Combination of Enron/CLAIR email dataset and phishing-pond@splunk.com
+  positive emails to contruct machine learning model training and testing data.
+environment: public domain dataset and Splunk data
+technique:
+- T1566
+dataset:
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1566/phishing_emails/splunk_train.json
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1566/phishing_emails/splunk_test.json
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1566/phishing_emails/unit_test.json
+references:
+- https://attack.mitre.org/techniques/T1566/
+sourcetypes:
+- email

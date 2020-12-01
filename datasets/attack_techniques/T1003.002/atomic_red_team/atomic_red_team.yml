@@ -1,0 +1,24 @@
+author: Patrick Bareiss
+date: '2020-10-08'
+description: 'Atomic Test Results: Successful Execution of test T1003.002-1 Registry
+  dump of SAM, creds, and secrets Return value unclear for test T1003.002-2 Registry
+  parse with pypykatz Successful Execution of test T1003.002-3 esentutl.exe SAM copy '
+environment: attack_range
+technique:
+- T1003.002
+dataset:
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/attack-range-windows-domain-controller.json
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-powershell.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-security.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-security_ssa.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-sysmon.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-system.log
+references:
+- https://attack.mitre.org/techniques/T1003/002/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.002/T1003.002.md
+- https://github.com/splunk/security-content/blob/develop/tests/T1003_002.yml
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security

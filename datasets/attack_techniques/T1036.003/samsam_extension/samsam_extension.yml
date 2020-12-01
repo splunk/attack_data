@@ -1,0 +1,19 @@
+author: Patrick Bareiss
+date: '2020-11-19'
+description: Manual generation of samsam ransomware file extension
+environment: attack_range
+technique:
+- T1036.003
+dataset:
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1036.003/samsam_extension/windows-powershell.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1036.003/samsam_extension/windows-security.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1036.003/samsam_extension/windows-sysmon.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1036.003/samsam_extension/windows-system.log
+references:
+- https://attack.mitre.org/techniques/T1036/003/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1036.003/T1036.003.md
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security

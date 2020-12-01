@@ -1,0 +1,15 @@
+author: Peter Gael
+date: '2020-08-13'
+description: Evilginx2 DNS activity captured by Stream. Custom attack_range config
+  using DC to delegate DNS to evilginx2; web traffic proxied through the Splunk server
+  which was running Stream and resolving DNS via DC.
+environment: attack_range_evilginx2
+technique:
+- T1566.002
+dataset:
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_stream:dns.json
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_network_resolution_dm.json
+references:
+- https://attack.mitre.org/techniques/T1566/002/
+sourcetypes:
+- stream:dns
