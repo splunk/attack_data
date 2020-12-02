@@ -5,6 +5,8 @@ environment: NA
 technique:
 - T1078.004
 - T1535
+dataset:
+- https://github.com/splunk/attack_data/blob/master/datasets/suspicious_behaviour/abnormally_high_cloud_instances_launched/cloudtrail_behavioural_detections.json
 references:
 - https://attack.mitre.org/techniques/T1078/004/
 - https://attack.mitre.org/techniques/T1535/
