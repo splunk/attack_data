@@ -11,12 +11,6 @@ environment: attack_range
 technique:
 - T1003.003
 dataset:
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.003/atomic_red_team/default-attack-range-windows-domain-controller.json
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.003/atomic_red_team/default-attack-range-windows-domain-controller_sysmon.evtx
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.003/atomic_red_team/default-attack-range-windows-domain-controller_windows_event_logs_application.evtx
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.003/atomic_red_team/default-attack-range-windows-domain-controller_windows_event_logs_powershell.evtx
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.003/atomic_red_team/default-attack-range-windows-domain-controller_windows_event_logs_security.evtx
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.003/atomic_red_team/default-attack-range-windows-domain-controller_windows_event_logs_system.evtx
 - https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.003/atomic_red_team/windows-powershell.log
 - https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.003/atomic_red_team/windows-sec-events.out
 - https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.003/atomic_red_team/windows-security.log
