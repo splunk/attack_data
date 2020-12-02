@@ -19,6 +19,11 @@ description: 'Atomic Test Results: Return value unclear for test T1562.001-9 Unl
 environment: attack_range
 technique:
 - T1562.001
+dataset:
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-powershell.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-security.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-system.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon.log
 references:
   - https://attack.mitre.org/techniques/T1562/001
   - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.001/T1562.001.md

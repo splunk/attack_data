@@ -1,0 +1,18 @@
+author: Patrick Bareiss
+date: '2020-11-09'
+description: 'Manual generation of attack data by locking out an account'
+environment: attack_range
+technique:
+- T1078.002
+dataset:
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1078.002/account_lockout/windows-powershell.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1078.002/account_lockout/windows-security.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1078.002/account_lockout/windows-sysmon.log
+- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1078.002/account_lockout/windows-system.log
+references:
+  - https://attack.mitre.org/techniques/T1078/002/
+sourcetypes:
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security

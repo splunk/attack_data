@@ -8,8 +8,6 @@ environment: attack_range
 technique:
 - T1136.001
 dataset:
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1136.001/atomic_red_team/attack_data.json
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1136.001/atomic_red_team/attack_data.tar.gz
 - https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-powershell.log
 - https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-security.log
 - https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-sysmon.log
