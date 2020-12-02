@@ -1,12 +1,13 @@
 author: Bhavin Patel
 date: '2020-10-28'
-description: 'This dataset is synthetically generated using a custom app for testing AWS detections that are behaviour based'
+description: This dataset is synthetically generated using a custom app for testing
+  AWS detections that are behaviour based
 environment: NA
 technique:
 - T1078.004
 - T1535
 dataset:
-- https://github.com/splunk/attack_data/blob/master/datasets/suspicious_behaviour/abnormally_high_cloud_instances_launched/cloudtrail_behavioural_detections.json
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/suspicious_behaviour/abnormally_high_cloud_instances_launched/cloudtrail_behavioural_detections.json
 references:
 - https://attack.mitre.org/techniques/T1078/004/
 - https://attack.mitre.org/techniques/T1535/

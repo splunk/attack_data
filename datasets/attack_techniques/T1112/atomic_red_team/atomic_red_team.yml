@@ -9,16 +9,16 @@ environment: attack_range
 technique:
 - T1112
 dataset:
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1112/atomic_red_team/windows-powershell.log
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1112/atomic_red_team/windows-security.log
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1112/atomic_red_team/windows-sysmon.log
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1112/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1112/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1112/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1112/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1112/atomic_red_team/windows-system.log
 references:
-  - https://attack.mitre.org/techniques/T1112
-  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1112/T1112.md
-  - https://github.com/splunk/security-content/blob/develop/tests/T1112.yml
+- https://attack.mitre.org/techniques/T1112
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1112/T1112.md
+- https://github.com/splunk/security-content/blob/develop/tests/T1112.yml
 sourcetypes:
-  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-  - WinEventLog:Microsoft-Windows-PowerShell/Operational
-  - WinEventLog:System
-  - WinEventLog:Security
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security

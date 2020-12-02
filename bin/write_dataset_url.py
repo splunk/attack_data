@@ -21,7 +21,7 @@ def load_file(file_path):
 
 
 def write_file(obj, file_path):
-    with open(os.path.join(os.path.dirname(__file__), '../', relative_path), 'w+' ) as outfile:
+    with open(os.path.join(os.path.dirname(__file__), '../datasets/', file_path), 'w+' ) as outfile:
        yaml.dump(obj, outfile , default_flow_style=False, sort_keys=False)
 
 
@@ -55,6 +55,7 @@ def convert_attack_data_objects(relative_path, branch):
     for attack_data_obj in attack_data_objs:
         write_new_object(attack_data_obj, attack_data_files[counter], branch)
         counter += 1
+
 
 def main(args):
     parser = argparse.ArgumentParser(description="changes url links to datasets")

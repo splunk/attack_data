@@ -7,12 +7,12 @@ environment: attack_range
 technique:
 - T1003.002
 dataset:
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/attack-range-windows-domain-controller.json
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-powershell.log
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-security.log
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-security_ssa.log
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-sysmon.log
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1003.002/atomic_red_team/attack-range-windows-domain-controller.json
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1003.002/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1003.002/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1003.002/atomic_red_team/windows-security_ssa.log
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1003.002/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1003.002/atomic_red_team/windows-system.log
 references:
 - https://attack.mitre.org/techniques/T1003/002/
 - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.002/T1003.002.md

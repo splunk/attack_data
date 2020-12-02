@@ -7,8 +7,8 @@ environment: attack_range_evilginx2
 technique:
 - T1566.002
 dataset:
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_stream:dns.json
-- https://github.com/splunk/attack_data/blob/master/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_network_resolution_dm.json
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_stream:dns.json
+- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_network_resolution_dm.json
 references:
 - https://attack.mitre.org/techniques/T1566/002/
 sourcetypes:
