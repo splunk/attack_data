@@ -1,0 +1,14 @@
+author: Patrick Bareiss
+date: '2020-11-06'
+description: 'Stopped windefend service with sc.exe stop windefend'
+environment: attack_range
+technique:
+- T1562.001
+references:
+  - https://attack.mitre.org/techniques/T1562/001
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.001/T1562.001.md
+sourcetypes:
+  - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  - WinEventLog:Microsoft-Windows-PowerShell/Operational
+  - WinEventLog:System
+  - WinEventLog:Security
