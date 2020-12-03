@@ -72,7 +72,8 @@ def main(args):
     sys.path.append(os.path.join(os.getcwd(),'attack_range'))
     copyfile('attack_range/attack_range.conf.template', 'attack_range/attack_range.conf')
 
-    ssh_key_name = 'ads-key-pair-' + str(randrange(10000))
+    epoch_time = str(int(time.time()))
+    ssh_key_name = 'ads-key-pair-' + epoch_time
     # create ssh keys
     ec2 = boto3.client('ec2')
     response = ec2.create_key_pair(KeyName=ssh_key_name)
@@ -160,7 +161,7 @@ def main(args):
     # check if was succesful
     if not execution_error:
 
-        random_number = str(randrange(10000))
+        random_number = epoch_time
 
         # Create GitHub PR attack data
         branch_name = "attack_data_service_" + random_number
