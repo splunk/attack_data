@@ -6,10 +6,10 @@ environment: attack_range
 technique:
 - T1485
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1485/ransomware_extensions/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1485/ransomware_extensions/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1485/ransomware_extensions/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1485/ransomware_extensions/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/ransomware_extensions/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/ransomware_extensions/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/ransomware_extensions/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/ransomware_extensions/windows-system.log
 references:
 - https://attack.mitre.org/techniques/T1485/
 sourcetypes:

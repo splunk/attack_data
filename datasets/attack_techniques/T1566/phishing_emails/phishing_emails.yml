@@ -6,9 +6,9 @@ environment: public domain dataset and Splunk data
 technique:
 - T1566
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1566/phishing_emails/splunk_train.json
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1566/phishing_emails/splunk_test.json
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1566/phishing_emails/unit_test.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/phishing_emails/splunk_train.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/phishing_emails/splunk_test.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/phishing_emails/unit_test.json
 references:
 - https://attack.mitre.org/techniques/T1566/
 sourcetypes:

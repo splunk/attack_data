@@ -5,10 +5,10 @@ environment: attack_range
 technique:
 - T1059.003
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-system.log
 references:
 - https://attack.mitre.org/techniques/T1059/003/
 sourcetypes:

@@ -5,10 +5,10 @@ environment: attack_range
 technique:
 - T1016
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1016/discovery_commands/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1016/discovery_commands/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1016/discovery_commands/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1016/discovery_commands/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1016/discovery_commands/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1016/discovery_commands/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1016/discovery_commands/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1016/discovery_commands/windows-system.log
 references:
 - https://attack.mitre.org/techniques/T1016
 sourcetypes:

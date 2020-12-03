@@ -6,10 +6,10 @@ environment: attack_range
 technique:
 - T1070.001
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1070.001/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1070.001/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1070.001/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1070.001/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.001/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.001/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.001/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.001/atomic_red_team/windows-system.log
 references:
 - https://attack.mitre.org/techniques/T1070/001/
 - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1070.001/T1070.001.md

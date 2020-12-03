@@ -6,7 +6,7 @@ environment: custom
 technique:
 - T1078
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1078/attach_user_to_role/attach_user_to_role.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/attach_user_to_role/attach_user_to_role.json
 references:
 - https://attack.mitre.org/techniques/T1078/
 - https://www.splunk.com/en_us/blog/security/using-splunk-to-detect-abuse-of-aws-permanent-and-temporary-credentials.html

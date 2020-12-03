@@ -7,7 +7,7 @@ environment: custom
 technique:
 - T1078
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1078/high_risk_role_by_project/high_risk_role_by_project.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/high_risk_role_by_project/high_risk_role_by_project.json
 references:
 - https://attack.mitre.org/techniques/T1078/
 - https://www.youtube.com/watch?v=Ml09R38jpok

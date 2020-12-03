@@ -11,8 +11,8 @@ environment: custom
 technique:
 - T1525
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1525/container_implant/container_implant_1.json
-- https://media.githubusercontent.com/media/splunk/attack_data/new_structure_attack_data_project/datasets/attack_techniques/T1525/container_implant/container_implant_2.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1525/container_implant/container_implant_1.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1525/container_implant/container_implant_2.json
 references:
 - https://attack.mitre.org/techniques/T1525/
 - https://www.splunk.com/en_us/blog/security/use-cloud-infrastructure-data-model-to-detect-container-implantation-mitre-t1525.html
