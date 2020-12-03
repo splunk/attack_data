@@ -6,7 +6,7 @@ A Repository of curated datasets from various attacks to:
 * Replay/inject into streaming pipelines for validating your detections in your production SIEM
 
 # Installation
-GitHub LFS is ued for this project. Here is a [tutorial](https://git-lfs.github.com/) how to install and use it.
+GitHub LFS is used in this project. Here is a [tutorial](https://git-lfs.github.com/) how to install and use it.
 
 # Anatomy of a Dataset 🧬
 ### Datasets
