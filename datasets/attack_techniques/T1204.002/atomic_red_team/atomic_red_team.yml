@@ -1,0 +1,19 @@
+author: Patrick Bareiss
+date: '2020-11-06'
+description: Manual generation of attack data by playing a bat file in system32 folder
+  of Windows.
+environment: attack_range
+technique:
+- T1204.002
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204.002/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204.002/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204.002/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204.002/atomic_red_team/windows-system.log
+references:
+- https://attack.mitre.org/techniques/T1204/002/
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security

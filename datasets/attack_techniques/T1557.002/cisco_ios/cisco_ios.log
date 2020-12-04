@@ -1,0 +1,5 @@
+Jan 16 03:48:22 hostname1 61: Jan 16 03:48:22.200 CET: %SISF-4-IP_THEFT: IP Theft A=2001::DB8::1 V=100 I=Et0/0 M=0000.0000.0000 New=Et1/0
+Jan 16 03:48:22 hostname1 62: Jan 16 03:48:22.200 CET: %SISF-4-MAC_THEFT: MAC Theft A=2001::DB8::1 V=100 I=Et1/0 M=0000.0000.0000 New=Et1/0
+Jan 16 03:48:22 hostname1 63: Jan 16 03:48:22.200 CET: %SISF-4-MAC_AND_IP_THEFT: MAC_AND_IP Theft A=2001::DB8::1 V=100 I=Et0/0 M=0000.0000.0000 New=Et1/0
+Jan 16 03:48:22 hostname1 64: Jan 16 03:48:22.200 CET: %SISF-4-PAK_DROP: Message dropped A=2001::DB8::1 G=2001:2DB::2 V=2 I=Gi3/0/24 P=DHCPv6::REP Reason=Packet not authorized on port
+Jan 16 03:48:22 hostname1 65: Jan 16 03:48:22.200 CET: %SISF-4-PAK_DROP: Message dropped A=2001::DB8:2 G=- V=1 I=Gi3/2 P=NDP::RA Reason=Message unauthorized on port

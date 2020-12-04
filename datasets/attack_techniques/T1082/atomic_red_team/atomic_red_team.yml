@@ -1,0 +1,19 @@
+author: Patrick Bareiss
+date: '2020-10-09'
+description: Atomic Red Team Execution of T1082
+environment: attack_range
+technique:
+- T1082
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1082/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1082/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1082/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1082/atomic_red_team/windows-system.log
+references:
+- https://attack.mitre.org/techniques/T1082
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1082/T1082.md
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security

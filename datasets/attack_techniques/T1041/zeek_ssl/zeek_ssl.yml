@@ -1,0 +1,12 @@
+author: Patrick Bareiss
+date: '2020-11-26'
+description: cisco ios logs
+environment: attack_range
+technique:
+- T1557.002
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1041/zeek_ssl/zeek_ssl.log
+references:
+- https://attack.mitre.org/techniques/T1041
+sourcetypes:
+- bro:ssl:json
