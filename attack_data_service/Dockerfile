@@ -5,7 +5,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 RUN apt-get install -y python3-dev git python-dev unzip python3-pip awscli
 RUN apt-get install -y python-gitdb
-RUN apt-get install -y wget unzip
+RUN apt-get install -y wget unzip curl
 
 RUN wget --quiet https://releases.hashicorp.com/terraform/0.13.1/terraform_0.13.1_linux_amd64.zip \
   && unzip terraform_0.13.1_linux_amd64.zip \

@@ -68,9 +68,14 @@ def main(args):
     else:
         O_AUTH_TOKEN_GITHUB = get_secret(secrets_manager_key)
 
+    os.system('curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash')
+    os.system('apt-get install git-lfs')
+    os.system('git lfs install --skip-smudge')
+
     # clone repositories
     git.Repo.clone_from('https://github.com/' + attack_range_repo, "attack_range", branch=attack_range_branch)
     attack_data_repo_obj = git.Repo.clone_from('https://' + O_AUTH_TOKEN_GITHUB + ':x-oauth-basic@github.com/' + attack_data_repo, "attack_data", branch=attack_data_branch)
+
 
     sys.path.append(os.path.join(os.getcwd(),'attack_range'))
     copyfile('attack_range/attack_range.conf.template', 'attack_range/attack_range.conf')

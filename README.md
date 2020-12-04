@@ -6,7 +6,11 @@ A Repository of curated datasets from various attacks to:
 * Replay/inject into streaming pipelines for validating your detections in your production SIEM
 
 # Installation
-GitHub LFS is used in this project. I would recommend to use the --skip-smudge parameter, which will avoid that all Git LFS files are downloaded during git clone. You can install it with the following command:
+GitHub LFS is used in this project. For Mac user git-lfs can be derived with homebrew (for other OS click [here](https://github.com/git-lfs/git-lfs/wiki/Installation)):
+````
+brew install git-lfs
+````
+Then you need to install it. I would recommend to use the --skip-smudge parameter, which will avoid that all Git LFS files are downloaded during git clone. You can install it with the following command:
 ````
 git lfs install --skip-smudge
 ````
@@ -99,7 +103,7 @@ To send datasets into DSP the simplest way is to use the [scloud](https://docs.s
 
 1. Generate a dataset
 2. Upload dataset into same folder
-3. Make PR with dataset <name>.yml file under the corresponding MITRE ATT&CK technique folder.
+3. Make PR with name.yml file under the corresponding MITRE ATT&CK technique folder.
 
 Note the simplest way to generate a dataset to contribute is to launch your simulations in the attack_range, or manually attack the machines and when done dump the data using the [dump function](https://github.com/splunk/attack_range#dump-log-data-from-attack-range).
 
