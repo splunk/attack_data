@@ -6,11 +6,15 @@ A Repository of curated datasets from various attacks to:
 * Replay/inject into streaming pipelines for validating your detections in your production SIEM
 
 # Installation
-GitHub LFS is used in this project. Here is a [tutorial](https://git-lfs.github.com/) how to install and use it. The default installation will download all attack data when you run git clone. In case you want to download the attack data on demand, you can use:
+GitHub LFS is used in this project. You can install it with the following command:
 ````
-git lfs install --skip-smudge
+git lfs install
 ````
-and get the attack data files (*.log, *.json, ...) on demand with:
+This repository is configured that by default not all attack data files (*.json, *.log) are downloaded. You can fetch all of them with this command:
+````
+git lfs pull
+````
+or a single attack data file with:
 ````
 git lfs pull --include=filename
 ````
