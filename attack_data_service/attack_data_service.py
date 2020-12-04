@@ -16,6 +16,9 @@ from botocore.exceptions import ClientError
 import json
 from datetime import datetime
 import time
+import shutil
+from os import listdir
+from os.path import isfile, join
 
 
 
@@ -89,7 +92,6 @@ def main(args):
     filedata = filedata.replace('region = us-west-2', 'region = eu-central-1')
     filedata = filedata.replace('art_repository = splunk', 'art_repository = ' + atomic_red_team_repo)
     filedata = filedata.replace('art_branch =  local-master', 'art_branch = ' + atomic_red_team_branch)
-    filedata = filedata.replace('sync_to_s3_bucket = 0', 'sync_to_s3_bucket = 1')
     filedata = filedata.replace('key_name = attack-range-key-pair', 'key_name = ' + ssh_key_name)
     filedata = filedata.replace('private_key_path = ~/.ssh/id_rsa', 'private_key_path = /app/' + ssh_key_name)
 
@@ -168,7 +170,7 @@ def main(args):
         attack_data_repo_obj.git.checkout(attack_data_branch, b=branch_name)
 
         dataset_obj = {}
-        dataset_obj['author'] = ''
+        dataset_obj['author'] = 'Automated Attack Data Service'
         dataset_obj['date'] = str(datetime.today().strftime('%Y-%m-%d'))
         descr_str = 'Atomic Test Results: '
         for output in results_simulate:
@@ -178,32 +180,41 @@ def main(args):
         dataset_obj['environment'] = 'attack_range'
         dataset_obj['technique'] = [simulation_technique]
 
-        s3_client = boto3.client('s3')
-        response = s3_client.list_objects_v2(
-                Bucket='attack-range-attack-data',
-                Prefix =simulation_technique,
-                MaxKeys=100 )
+        #list files
+        mypath = 'attack_range/attack_data/' + simulation_technique
+        onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+
+        #copy files from dump
+        parent_folder = 'attack_data/datasets/attack_techniques/' + simulation_technique
+        if not path.exists(parent_folder):
+            os.mkdir(parent_folder)
+
+        folder = 'attack_data/datasets/attack_techniques/' + simulation_technique + '/atomic_red_team'
+        if not path.exists(folder):
+            os.mkdir(folder)
+
+        for f in onlyfiles:
+            shutil.copy(mypath + '/' + f, folder + '/' + f)
+            attack_data_repo_obj.index.add(['datasets/attack_techniques/' + simulation_technique + '/atomic_red_team/' + f])
+
         dataset_urls = []
-        for dataset in response['Contents']:
-            dataset_urls.append(s3_bucket_url + '/' + dataset['Key'])
+        for file in onlyfiles:
+            dataset_urls.append('https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/' + simulation_technique +  '/atomic_red_team/' + file)
 
         dataset_obj['dataset'] = dataset_urls
-        dataset_obj['references'] = ''
-        dataset_obj['sourcetypes'] = ''
+        dataset_obj['references'] = ['https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/' + simulation_technique + '/' + simulation_technique + '.md']
+        dataset_obj['sourcetypes'] = ['XmlWinEventLog:Microsoft-Windows-Sysmon/Operational', 'WinEventLog:Microsoft-Windows-PowerShell/Operational', 'WinEventLog:System', 'WinEventLog:Security']
 
-        folder_path = "attack_data/datasets/" + simulation_technique
-        if not path.exists(folder_path):
-            os.makedirs(folder_path)
 
         if simulation_atomics == 'none':
-            with open(folder_path + '/dataset.yml', 'w+' ) as outfile:
+            with open(folder + '/atomic_red_team.yml', 'w+' ) as outfile:
     	           yaml.dump(dataset_obj, outfile , default_flow_style=False, sort_keys=False)
-            attack_data_repo_obj.index.add(['datasets/' + simulation_technique + '/dataset.yml'])
+            attack_data_repo_obj.index.add(['datasets/attack_techniques/' + simulation_technique + '/atomic_red_team/atomic_red_team.yml'])
         else:
             filename = simulation_atomics.replace(' ', '_').replace('-','_').replace('.','_').replace('/','_').lower() + '.yml'
-            with open(folder_path + '/' + filename, 'w+' ) as outfile:
+            with open(folder + '/' + filename, 'w+' ) as outfile:
     	           yaml.dump(dataset_obj, outfile , default_flow_style=False, sort_keys=False)
-            attack_data_repo_obj.index.add(['datasets/' + simulation_technique + '/' + filename])
+            attack_data_repo_obj.index.add(['datasets/attack_techniques/' + simulation_technique + '/atomic_red_team/' + filename])
 
         attack_data_repo_obj.index.commit('Added attack data')
 
