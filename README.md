@@ -14,7 +14,7 @@ This repository is configured that by default not all attack data files (*.json,
 ````
 git lfs pull
 ````
-or a single attack data file with:
+or a single attack data file with this command:
 ````
 git lfs pull --include=filename
 ````
