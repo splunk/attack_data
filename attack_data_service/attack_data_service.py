@@ -74,7 +74,8 @@ def main(args):
 
     # clone repositories
     git.Repo.clone_from('https://github.com/' + attack_range_repo, "attack_range", branch=attack_range_branch)
-    attack_data_repo_obj = git.Repo.clone_from('https://' + O_AUTH_TOKEN_GITHUB + ':x-oauth-basic@github.com/' + attack_data_repo, "attack_data", branch=attack_data_branch)
+    os.system('git clone --single-branch --branch ' + attack_data_branch +' https://' + O_AUTH_TOKEN_GITHUB + ':x-oauth-basic@github.com/' + attack_data_repo + '.git')
+    #attack_data_repo_obj = git.Repo.clone_from('https://' + O_AUTH_TOKEN_GITHUB + ':x-oauth-basic@github.com/' + attack_data_repo, "attack_data", branch=attack_data_branch)
 
 
     sys.path.append(os.path.join(os.getcwd(),'attack_range'))
@@ -172,7 +173,8 @@ def main(args):
 
         # Create GitHub PR attack data
         branch_name = "attack_data_service_" + random_number
-        attack_data_repo_obj.git.checkout(attack_data_branch, b=branch_name)
+        os.system('cd attack_data && git checkout -b ' + branch_name + ' && cd ..')
+        #attack_data_repo_obj.git.checkout(attack_data_branch, b=branch_name)
 
         dataset_obj = {}
         dataset_obj['author'] = 'Automated Attack Data Service'
@@ -200,7 +202,7 @@ def main(args):
 
         for f in onlyfiles:
             shutil.copy(mypath + '/' + f, folder + '/' + f)
-            attack_data_repo_obj.index.add(['datasets/attack_techniques/' + simulation_technique + '/atomic_red_team/' + f])
+            #attack_data_repo_obj.index.add(['datasets/attack_techniques/' + simulation_technique + '/atomic_red_team/' + f])
 
         dataset_urls = []
         for file in onlyfiles:
@@ -214,20 +216,25 @@ def main(args):
         if simulation_atomics == 'none':
             with open(folder + '/atomic_red_team.yml', 'w+' ) as outfile:
     	           yaml.dump(dataset_obj, outfile , default_flow_style=False, sort_keys=False)
-            attack_data_repo_obj.index.add(['datasets/attack_techniques/' + simulation_technique + '/atomic_red_team/atomic_red_team.yml'])
+            #attack_data_repo_obj.index.add(['datasets/attack_techniques/' + simulation_technique + '/atomic_red_team/atomic_red_team.yml'])
         else:
             filename = simulation_atomics.replace(' ', '_').replace('-','_').replace('.','_').replace('/','_').lower() + '.yml'
             with open(folder + '/' + filename, 'w+' ) as outfile:
     	           yaml.dump(dataset_obj, outfile , default_flow_style=False, sort_keys=False)
-            attack_data_repo_obj.index.add(['datasets/attack_techniques/' + simulation_technique + '/atomic_red_team/' + filename])
+            #attack_data_repo_obj.index.add(['datasets/attack_techniques/' + simulation_technique + '/atomic_red_team/' + filename])
 
-        attack_data_repo_obj.index.commit('Added attack data')
+        #attack_data_repo_obj.index.commit('Added attack data')
 
         j2_env = Environment(loader=FileSystemLoader('templates'),trim_blocks=True)
         template = j2_env.get_template('PR_template_attack_data.j2')
         body = template.render()
 
-        attack_data_repo_obj.git.push('--set-upstream', 'origin', branch_name)
+        #attack_data_repo_obj.git.push('--set-upstream', 'origin', branch_name)
+        os.system('git config --global user.email "research@splunk.com"')
+        os.system('git config --global user.name "Attack Service"')
+        os.system('cd attack_data && git add --all && cd ..')
+        os.system('cd attack_data && git commit -m "Automated Attack Data Service" && cd ..')
+        os.system('cd attack_data && git push origin ' + branch_name + ' && cd ..')
         g = Github(O_AUTH_TOKEN_GITHUB)
         repo = g.get_repo("splunk/attack_data")
         pr = repo.create_pull(title="Attack Data Service PR " + random_number, body=body, head=branch_name, base="master")
