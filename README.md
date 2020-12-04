@@ -6,17 +6,21 @@ A Repository of curated datasets from various attacks to:
 * Replay/inject into streaming pipelines for validating your detections in your production SIEM
 
 # Installation
-GitHub LFS is used in this project. You can install it with the following command:
+GitHub LFS is used in this project. I would recommend to use the --skip-smudge parameter, which will avoid that all Git LFS files are downloaded during git clone. You can install it with the following command:
 ````
-git lfs install
+git lfs install --skip-smudge
 ````
-This repository is configured that by default not all attack data files (*.json, *.log) are downloaded. You can fetch all of them with this command:
+Donwload the repository with this command:
+````
+git clone git@github.com:splunk/attack_data.git
+````
+You can fetch all attack data files (*.json, *.log) with this command:
 ````
 git lfs pull
 ````
 or a single attack data file with this command:
 ````
-git lfs pull --include=filename
+git lfs pull --include=datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon.log
 ````
 
 # Anatomy of a Dataset 🧬
