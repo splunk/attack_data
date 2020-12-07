@@ -1,0 +1,21 @@
+author: Automated Attack Data Service
+date: '2020-12-07'
+description: 'Atomic Test Results: Return value unclear for test T1543.003-1 Modify
+  Fax service to run PowerShell Return value unclear for test T1543.003-2 Service
+  Installation CMD Return value unclear for test T1543.003-3 Service Installation
+  PowerShell '
+environment: attack_range
+technique:
+- T1543.003
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/atomic_red_team/windows-security.log
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1543.003/T1543.003.md
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security
