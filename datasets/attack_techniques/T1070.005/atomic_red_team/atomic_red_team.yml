@@ -1,0 +1,20 @@
+author: Automated Attack Data Service
+date: '2020-12-09'
+description: 'Atomic Test Results: Return value unclear for test T1070.005-1 Add Network
+  Share Return value unclear for test T1070.005-2 Remove Network Share Return value
+  unclear for test T1070.005-3 Remove Network Share PowerShell '
+environment: attack_range
+technique:
+- T1070.005
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.005/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.005/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.005/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.005/atomic_red_team/windows-security.log
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1070.005/T1070.005.md
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security
