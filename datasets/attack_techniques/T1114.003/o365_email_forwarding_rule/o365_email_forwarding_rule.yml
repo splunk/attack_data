@@ -1,0 +1,13 @@
+author: Patrick Bareiss
+date: '2020-12-16'
+description: 'Configured forwarding rules for mailboxes in Office 365.'
+environment: attack_range
+technique:
+- T1114.003
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114.003/o365_email_forwarding_rule/o365_email_forwarding_rule.json
+references:
+- https://attack.mitre.org/techniques/T1114/003
+- https://i.blackhat.com/USA-20/Thursday/us-20-Bienstock-My-Cloud-Is-APTs-Cloud-Investigating-And-Defending-Office-365.pdf
+sourcetypes:
+- o365:management:activity
