@@ -1,13 +1,13 @@
 author: Patrick Bareiss
-date: '2020-12-17'
-description: Brute Force Attack O365
+date: '2021-01-11'
+description: 'Dataset which contains cloudtrail logs and the creation of a kms key with a policy that all people can use the key for encryption, which is common for S3 ransomware attacks.'
 environment: attack_range
 technique:
-- T1110
+- T1486
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110/o365_brute_force_login/o365_brute_force_login.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/aws_kms_key/aws_cloudtrail_events.json
 references:
-- https://attack.mitre.org/techniques/T1110
-- https://i.blackhat.com/USA-20/Thursday/us-20-Bienstock-My-Cloud-Is-APTs-Cloud-Investigating-And-Defending-Office-365.pdf
+- https://attack.mitre.org/techniques/T1486
+- https://rhinosecuritylabs.com/aws/s3-ransomware-part-1-attack-vector/
 sourcetypes:
-- o365:management:activity
+- aws:cloudtrail
