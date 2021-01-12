@@ -1,0 +1,12 @@
+author: Patrick Bareiss
+date: '2021-01-12'
+description: 'Dataset which contains cloudtrail logs and the creation of a acl with all ports open.'
+environment: attack_range
+technique:
+- T1562.007
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.007/aws_create_acl/aws_cloudtrail_events.json
+references:
+- https://attack.mitre.org/techniques/T1562/007/
+sourcetypes:
+- aws:cloudtrail
