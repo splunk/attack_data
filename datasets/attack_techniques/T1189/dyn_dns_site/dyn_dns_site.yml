@@ -1,0 +1,13 @@
+author: Patrick Bareiss
+date: '2021-01-14'
+description: Manual generation of attack data by browsing to dyndns site
+  of Windows.
+environment: attack_range
+technique:
+- T1189
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1189/dyn_dns_site/windows-sysmon.log
+references:
+- https://attack.mitre.org/techniques/T1189
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
