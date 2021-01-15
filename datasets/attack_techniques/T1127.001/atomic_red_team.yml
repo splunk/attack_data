@@ -1,0 +1,14 @@
+author: Michael Haag
+date: '2021-01-15'
+description: MSBuild.exe execution simulating renamed, moved and performing a network connection. 
+environment: attack_range
+technique:
+- T1127.001
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1127.001/atomic_red_team/windows-sysmon.log
+references:
+- https://attack.mitre.org/techniques/T1127/001/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1127.001/T1127.001.md
+- https://lolbas-project.github.io/lolbas/Binaries/Msbuild/
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
