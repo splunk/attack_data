@@ -1,0 +1,13 @@
+author: Patrick Bareiss
+date: '2021-01-19'
+description: Manual generation of obfuscated powershell commands using Invoke-Obfuscation
+environment: attack_range
+technique:
+- T1059.001
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/obfuscated_powershell/windows-sysmon.log
+references:
+- https://attack.mitre.org/techniques/T1059/001/
+- https://github.com/danielbohannon/Invoke-Obfuscation
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
