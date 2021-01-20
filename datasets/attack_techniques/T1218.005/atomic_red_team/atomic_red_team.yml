@@ -1,6 +1,8 @@
 author: Patrick Bareiss
 date: '2020-11-09'
-description: 'Atomic Test Results: Successful Execution of test T1218.005-1 Mshta
+description: ' Invoked AtomicTestHarnesses executing T1218.005 manually and 
+  via pester tests. 
+  Atomic Test Results: Successful Execution of test T1218.005-1 Mshta
   executes JavaScript Scheme Fetch Remote Payload With GetObject Return value unclear
   for test T1218.005-2 Mshta executes VBScript to execute malicious command Return
   value unclear for test T1218.005-3 Mshta Executes Remote HTML Application (HTA)
