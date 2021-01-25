@@ -9,7 +9,7 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1482/atomic_red_team/windows-sysmon.log
 references:
 - https://attack.mitre.org/techniques/T1482/
-https://thedfirreport.com/2020/10/08/ryuks-return/
+- https://thedfirreport.com/2020/10/08/ryuks-return/
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
