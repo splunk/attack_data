@@ -1,0 +1,9 @@
+author: Bhavin Patel
+date: '2021-01-26'
+description: This dataset is from a test instance with Security Hub Alerts 
+environment: NA
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/security_hub_ec2_spike/security_hub_ec2_spike.json
+references:  NA
+sourcetypes:
+- aws:securityhub:finding
