@@ -11,4 +11,4 @@ references:
 - https://attack.mitre.org/techniques/T1078
 - https://stealthbits.com/blog/bypassing-mfa-with-pass-the-cookie/
 sourcetypes:
-- aws:cloudtrail
+- o365:management:activity
