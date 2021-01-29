@@ -13,7 +13,7 @@ azure-mgmt-network==16.0.0
 azure-mgmt-resource==15.0.0
 bcrypt==3.2.0
 boto3==1.11.0
-botocore==1.19.28
+botocore==1.19.62
 certifi==2020.6.20
 cffi==1.14.4
 cfgv==3.2.0
@@ -44,7 +44,7 @@ packer.py==0.3.0
 paramiko==2.7.2
 path==15.0.0
 path.py==12.5.0
-pexpect==4.7.0
+pexpect==4.8.0
 pluggy==0.13.1
 pre-commit==2.8.2
 protobuf==3.14.0
