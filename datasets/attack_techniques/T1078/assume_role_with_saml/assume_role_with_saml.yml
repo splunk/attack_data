@@ -1,0 +1,12 @@
+author: Patrick Bareiss
+date: '2021-02-01'
+description: Usage of assumerolewithsaml function in aws cli.
+environment: custom
+technique:
+- T1078
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/assume_role_with_saml/assume_role_with_saml.json
+references:
+- https://attack.mitre.org/techniques/T1078/
+sourcetypes:
+- aws:cloudtrail

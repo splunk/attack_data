@@ -1,0 +1,12 @@
+author: Patrick Bareiss
+date: '2021-02-01'
+description: Update saml provider in aws
+environment: custom
+technique:
+- T1078
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/update_saml_provider/update_saml_provider.json
+references:
+- https://attack.mitre.org/techniques/T1078/
+sourcetypes:
+- aws:cloudtrail
