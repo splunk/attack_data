@@ -1,0 +1,16 @@
+author: Michael Haag
+date: '2021-02-11'
+description: ' Invoked AtomicTestHarnesses and executed T1218.001 manually.'
+environment: attack_range
+technique:
+- T1218.001
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.001/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.001/atomic_red_team/windows-powershell.log
+references:
+- https://attack.mitre.org/techniques/T1218/001
+- https://github.com/redcanaryco/atomic-red-team/blob/c8f43265c78d826080f62d8a8dfc4d6874f563e8/atomics/T1218.001/T1218.001.md
+- https://github.com/redcanaryco/AtomicTestHarnesses/tree/master/TestHarnesses/T1218.001_CompiledHTMLFile
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
