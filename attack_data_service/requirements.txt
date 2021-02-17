@@ -21,7 +21,7 @@ chardet==3.0.4
 configparser==5.0.1
 contextlib2==0.6.0.post1
 cryptography==3.3.2
-Deprecated==1.2.10
+Deprecated==1.2.11
 dnspython==2.0.0
 docutils==0.16
 execnet==1.8.0
