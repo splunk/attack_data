@@ -1,0 +1,13 @@
+author: Bhavin Patel
+date: '2021-02-22'
+description: This search looks for CloudTrail events where a user created a policy version that allows them to access any resource in their account
+environment: Cloud Attack Range 
+technique:
+- T1078
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/aws_create_policy_version/aws_cloudtrail_events.json
+references:
+- https://labs.bishopfox.com/tech-blog/privilege-escalation-in-aws
+- https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/
+sourcetypes:
+- aws:cloudtrail
