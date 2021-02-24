@@ -1,0 +1,13 @@
+author: Stanislav Miskovic
+date: '2021-02-23'
+description: 'Illegal service or process control.'
+environment: custom
+technique:
+- T1569
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569/logAllMimikatzModules.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569/logAllPowerSploitModulesWithOldNames.log
+references:
+- https://attack.mitre.org/techniques/T1569/
+sourcetypes:
+- WinEventLog:Security

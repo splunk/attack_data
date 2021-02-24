@@ -1,0 +1,12 @@
+author: Stanislav Miskovic
+date: '2021-02-23'
+description: 'Illegal account creation via PowerSploit modules.'
+environment: custom
+technique:
+- T1585
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1585/illegal_account_creation/logAllPowerSploitModulesWithOldNames.log
+references:
+- https://attack.mitre.org/techniques/T1585/
+sourcetypes:
+- WinEventLog:Security

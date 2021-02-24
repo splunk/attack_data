@@ -1,0 +1,13 @@
+author: Stanislav Miskovic
+date: '2021-02-23'
+description: 'Modification of Active Directory and Windows domain policies and elements.'
+environment: custom
+technique:
+- T1484
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484/logAllPowerSploitModulesWithOldNames.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484/logAllDSInternalsModules.log 
+references:
+- https://attack.mitre.org/techniques/T1484/
+sourcetypes:
+- WinEventLog:Security

@@ -1,0 +1,13 @@
+author: Stanislav Miskovic
+date: '2021-02-23'
+description: 'Privilege elevation abuse.'
+environment: custom
+technique:
+- T1548
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/logAllPowerSploitModulesWithOldNames.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/logAllMimikatzModules.log 
+references:
+- https://attack.mitre.org/techniques/T1548/
+sourcetypes:
+- WinEventLog:Security
