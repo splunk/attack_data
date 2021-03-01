@@ -1,0 +1,14 @@
+author: Patrick Bareiss
+date: '2020-12-07'
+description: 'Manual generation of schtask registering a binary to run from non-standard paths.'
+environment: attack_range
+technique:
+- T1053.005
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/schtasks/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/schtasks/windows-security.log
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
