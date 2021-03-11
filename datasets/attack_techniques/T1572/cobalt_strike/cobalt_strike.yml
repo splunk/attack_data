@@ -1,6 +1,6 @@
 author: Michael Haag
 date: '2021-02-22'
-description: DNS Beaconing using Cobalt Strike.
+description: DNS Beaconing using Cobalt Strike 4.2. Activity was generated using Attack Range and Kali Linux. DNS Beaconing was performed using TXT and A records using the domain - getbobspizza.com.
 environment: attack_range
 technique:
 - T1572
@@ -9,6 +9,7 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/streams_dns.log
 references:
 - https://attack.mitre.org/techniques/T1572
+- https://cobaltstrike.com/help-dns-beacon
 sourcetypes:
 - bro:dns:json
 - stream:dns
