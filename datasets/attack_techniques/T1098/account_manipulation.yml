@@ -1,0 +1,16 @@
+author: Stanislav Miskovic
+date: '2021-02-23'
+description: 'Account manipulation with likely malicious intent or tools.'
+environment: custom
+technique:
+- T1098
+- T1068
+- T1078
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllDSInternalsModules.log 
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllMimikatzModules.log 
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllPowerSploitModulesWithOldNames.log
+references:
+- https://attack.mitre.org/techniques/T1098/
+sourcetypes:
+- WinEventLog:Security
