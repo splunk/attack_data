@@ -7,9 +7,11 @@ technique:
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/stream_events_zeek.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/streams_dns.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/suricata_events.log
 references:
 - https://attack.mitre.org/techniques/T1572
 - https://cobaltstrike.com/help-dns-beacon
 sourcetypes:
 - bro:dns:json
 - stream:dns
+- suricata
