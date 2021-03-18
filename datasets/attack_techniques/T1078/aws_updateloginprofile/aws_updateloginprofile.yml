@@ -1,0 +1,14 @@
+author: Bhavin Patel
+date: '2021-02-22'
+description: This dataset has CloudTrail events where a user A who has already
+  permission to update login profile, makes an API call to update login profile for another user B . Attackers have been know to use this technique for Privilege Escalation in case new victim(user B) has more permissions than old victim(user B)
+environment: Cloud Attack Range 
+technique:
+- T1078
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/aws_updateloginprofile/aws_cloudtrail_events.json
+references:
+- https://labs.bishopfox.com/tech-blog/privilege-escalation-in-aws
+- https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/
+sourcetypes:
+- aws:cloudtrail
