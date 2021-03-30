@@ -1,0 +1,17 @@
+author: Michael Haag, Splunk
+date: '2021-03-30'
+description: 'Execution of Atomic Red Team T1197 - BITS Jobs.'
+environment: attack_range
+technique:
+- T1197
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/windows-powershell.log
+references:
+- https://attack.mitre.org/techniques/T1197
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1197/T1197.md
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:Security
