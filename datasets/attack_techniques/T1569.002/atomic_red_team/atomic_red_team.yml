@@ -1,15 +1,13 @@
-author: Peter Gael
-date: '2020-08-13'
-description: Evilginx2 DNS activity captured by Stream. Custom attack_range config
-  using DC to delegate DNS to evilginx2; web traffic proxied through the Splunk server
-  which was running Stream and resolving DNS via DC.
+author: Ryan Becwar
+date: '2021-04-05'
+description: Adversaries may abuse the Windows SC.exe to execute malicious commands or payloads which is captured by Windows System logs. 
 environment: attack_range_evilginx2
 technique:
-- T1566.002
+- T1569.002
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_stream:dns.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_network_resolution_dm.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/attack_data_stream:dns.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/attack_data_network_resolution_dm.json
 references:
-- https://attack.mitre.org/techniques/T1566/002/
+- https://attack.mitre.org/techniques/T1569/002/
 sourcetypes:
-- stream:dns
+- WinEventLog:System
