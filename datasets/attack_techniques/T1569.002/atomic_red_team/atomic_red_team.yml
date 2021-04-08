@@ -5,9 +5,14 @@ environment: attack_range_evilginx2
 technique:
 - T1569.002
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/attack_data_stream:dns.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/attack_data_network_resolution_dm.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/windows-system.log
 references:
 - https://attack.mitre.org/techniques/T1569/002/
 sourcetypes:
 - WinEventLog:System
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:Security
