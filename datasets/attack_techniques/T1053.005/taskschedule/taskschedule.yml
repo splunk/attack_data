@@ -1,0 +1,15 @@
+author: Michael Haag, Splunk
+date: '2021-04-08'
+description: 'Manual generation of schtask registering a binary to run from non-standard path.'
+environment: attack_range
+technique:
+- T1053.005
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/taskschedule/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/taskschedule/windows-sysmon.log
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md
+- https://research.checkpoint.com/2021/irans-apt34-returns-with-an-updated-arsenal/
+sourcetypes:
+- WinEventLog:Security
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
