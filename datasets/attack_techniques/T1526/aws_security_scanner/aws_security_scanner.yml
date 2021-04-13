@@ -1,0 +1,13 @@
+author: Patrick Bareiss
+date: '2021-04-13'
+description: 'Dataset which contains cloudtrail logs from cloudsploit.'
+environment: attack_range
+technique:
+- T1526
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1526/aws_security_scanner/aws_security_scanner.json
+references:
+- https://attack.mitre.org/techniques/T1526
+- https://github.com/aquasecurity/cloudsploit
+sourcetypes:
+- aws:cloudtrail
