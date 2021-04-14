@@ -10,7 +10,9 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllDSInternalsModules.log 
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllMimikatzModules.log 
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllPowerSploitModulesWithOldNames.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/aws_iam_delete_policy/aws_iam_delete_policy.json
 references:
 - https://attack.mitre.org/techniques/T1098/
 sourcetypes:
 - WinEventLog:Security
+- aws:cloudtrail
