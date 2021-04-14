@@ -1,0 +1,13 @@
+author: Michael Haag
+date: '2021-04-14'
+description: 'Dataset which contains cloudtrail logs showcasing different behavior detections related to AWS IAM.'
+environment: attack_range
+technique:
+- T1580
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1580/aws_iam_excessive_list_command_usage/aws_iam_excessive_list_command_usage.json
+references:
+- https://attack.mitre.org/techniques/T1580
+- https://github.com/aquasecurity/cloudsploit
+sourcetypes:
+- aws:cloudtrail
