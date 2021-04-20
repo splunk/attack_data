@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+date: '2021-04-20'
+description: "Automated generation of attack data using PurpleSharp: NTLM Password Spraying with randomly picked domain users"
+environment: attack_range
+technique:
+- T1110.003
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.002/account_lockout/windows-powershell.log
+references:
+- https://attack.mitre.org/techniques/T1110/003/
+- https://github.com/mvelazc0/PurpleSharp 
+sourcetypes:
+- WinEventLog:Security
