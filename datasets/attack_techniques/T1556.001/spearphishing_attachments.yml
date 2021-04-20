@@ -1,0 +1,12 @@
+author: Michael Haag
+date: '2021-04-20'
+description: Simulated attacks using Unicorn, Cobalt Strike, and Metasploit. These tests all include macros and a Office Product spawning a process.
+environment: attack_range
+technique:
+- T1556.001
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556.001/macro/windows-sysmon.log
+references:
+- https://attack.mitre.org/techniques/T1556/001
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
