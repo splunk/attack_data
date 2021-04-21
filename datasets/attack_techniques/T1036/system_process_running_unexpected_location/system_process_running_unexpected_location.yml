@@ -1,0 +1,12 @@
+author: Jose Hernandez
+date: '2021-04-21'
+description: 'Running sensative processes outside \windows\system32' 
+environment: attack_range
+technique:
+- T1036
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036/system_process_running_unexpected_location/windows-security.log
+references:
+- https://attack.mitre.org/techniques/T1036
+sourcetypes:
+- WinEventLog:Security
