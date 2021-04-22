@@ -7,7 +7,8 @@ technique:
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.001/macro/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.001/macro/windows-sysmon_icedid.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.001/macro/windows-sysmon_wsh.log
 references:
-- https://attack.mitre.org/techniques/T1556/001
+- https://attack.mitre.org/techniques/T1566/001
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
