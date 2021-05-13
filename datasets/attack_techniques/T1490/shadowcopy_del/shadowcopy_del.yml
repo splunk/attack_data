@@ -1,0 +1,13 @@
+author: Bhavin Patel
+date: '2020-11-09'
+description: 'This technique was seen in darkside ransomware where it will execute a child process powershell to execute an hex encoded command to delete shadow copy. This hex encoded command was able to decrypt by powershell log.'
+environment: attack_range
+technique:
+- T1490
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1490/shadowcopy_del/windows-powershell.log
+references:
+- https://attack.mitre.org/techniques/T1490/
+sourcetypes:
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- wineventlog
