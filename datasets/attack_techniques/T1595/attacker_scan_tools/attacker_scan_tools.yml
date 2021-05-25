@@ -1,0 +1,12 @@
+author: Bhavin Patel
+date: '2021-06-25'
+description: This dataset contains execution of commonly used attacker tool found in HoneyPot for XMRig, specifically- MassScan_GUI.exe and masscan.exe
+environment: attack_range_honeypot
+technique:
+- T1595
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1595/attacker_scan_tools/windows-sysmon.log
+references:
+- https://attack.mitre.org/techniques/T1595
+sourcetypes:
+- xmlwineventlog
