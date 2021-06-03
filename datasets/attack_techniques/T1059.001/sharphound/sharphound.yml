@@ -1,0 +1,14 @@
+author: Michael Haag
+date: '2021-06-03'
+description: 'Manual SharpHound testing to simulate all the behavior seen in the wild.'
+environment: attack_range
+technique:
+- T1059.001
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/sharphound/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/sharphound/windows-sysmon.log
+references:
+- https://attack.mitre.org/techniques/T1059/001/
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
