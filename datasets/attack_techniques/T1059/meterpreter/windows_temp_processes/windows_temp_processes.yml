@@ -4,12 +4,8 @@ description: Unusual number of processes created from the Windows Temp folder
 environment: custom
 technique:
   - T1059
-  - T1005
-  - T1003
-  - T1033
-  - T1016
 dataset:
-  - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_tools/meterpreter/windows_temp_processes/windows_temp_processes.yml
+  - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/meterpreter/windows_temp_processes/logExcessiveWindowsTemp.log
 references:
   - https://www.offensive-security.com/metasploit-unleashed/about-meterpreter/
 sourcetypes:
