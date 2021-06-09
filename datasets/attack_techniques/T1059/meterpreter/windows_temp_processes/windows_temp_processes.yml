@@ -1,0 +1,13 @@
+author: Rod Soto, Michael Hart
+date: 2021-04-01
+description: Unusual number of processes created from the Windows Temp folder
+environment: custom
+technique:
+  - T1059
+dataset:
+  - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/meterpreter/windows_temp_processes/logExcessiveWindowsTemp.log
+references:
+  - https://www.offensive-security.com/metasploit-unleashed/about-meterpreter/
+  - https://attack.mitre.org/techniques/T1059/
+sourcetypes:
+  - WinEventLog:Security

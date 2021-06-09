@@ -1,0 +1,13 @@
+author: Rod Soto, Michael Hart
+date: 2021-04-01
+description: Unusual number of taskhost and taskhostex processes created concurrently while using meterpreter
+environment: custom
+technique:
+  - T1059
+dataset:
+  - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/meterpreter/taskhost_processes/logExcessiveTaskHost.log
+references:
+  - https://www.offensive-security.com/metasploit-unleashed/about-meterpreter/
+  - https://attack.mitre.org/techniques/T1059/
+sourcetypes:
+  - WinEventLog:Security
