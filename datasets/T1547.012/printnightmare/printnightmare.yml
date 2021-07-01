@@ -1,0 +1,20 @@
+author: Michael Haag, Teoderick Contreras, Mauricio Velazco
+date: '2021-07-01'
+description: "Automated generation of attack data by exploiting CVE-2021-1675"
+environment: attack_range
+technique:
+- T1547.012
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/printnightmware/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/printnightmware/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/printnightmware/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/printnightmware/windows-printservice_operational.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/printnightmware/windows-printservice_admin.log
+references:
+- https://attack.mitre.org/techniques/T1547/012/
+sourcetypes:
+- WinEventLog:Security
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:System
+- WinEventLog:Microsoft-Windows-PrintService/Admin
+- WinEventLog:Microsoft-Windows-PrintService/Operational
