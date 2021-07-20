@@ -1,0 +1,12 @@
+author: Bhavin Patel
+date: '2021-07-20'
+description: Adversaries may exfiltrate data by transferring the data, including backups of cloud environments, to another cloud account they control on the same service to avoid typical file transfers/downloads and network-based exfiltration detection.
+environment: attack_range
+technique:
+- T1537
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1537/aws_snapshot_exfil/aws_cloudtrail_events.json
+references:
+- https://attack.mitre.org/techniques/T1537/
+sourcetypes:
+- aws:cloudtrail
