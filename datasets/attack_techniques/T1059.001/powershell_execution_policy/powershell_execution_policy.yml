@@ -1,7 +1,6 @@
 author: Patrick Bareiss
 date: '2020-12-09'
 description: 'Change execution policy to bypass with regedit. registry key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell'
-  window
 environment: attack_range
 technique:
 - T1059.001
