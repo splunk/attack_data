@@ -1,13 +1,12 @@
 author: Stanislav Miskovic
+id: cc9b2661-efc9-11eb-926b-550bf0943fbb
 date: '2021-02-23'
-description: 'Privilege elevation abuse.'
+description: Privilege elevation abuse.
 environment: custom
-technique:
-- T1548
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/logAllPowerSploitModulesWithOldNames.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/logAllMimikatzModules.log 
-references:
-- https://attack.mitre.org/techniques/T1548/
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/logAllMimikatzModules.log
 sourcetypes:
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1548/

@@ -1,15 +1,15 @@
 author: Michael Haag
+id: cc9b2618-efc9-11eb-926b-550bf0943fbb
 date: '2021-01-25'
-description: Simulated execution of T1482 from Atomic Red Team, mimicking Ryuk Ransomware actor tradecraft.
+description: Simulated execution of T1482 from Atomic Red Team, mimicking Ryuk Ransomware
+  actor tradecraft.
 environment: attack_range
-technique:
-- T1482
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1482/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1482/atomic_red_team/windows-sysmon.log
-references:
-- https://attack.mitre.org/techniques/T1482/
-- https://thedfirreport.com/2020/10/08/ryuks-return/
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
+references:
+- https://attack.mitre.org/techniques/T1482/
+- https://thedfirreport.com/2020/10/08/ryuks-return/

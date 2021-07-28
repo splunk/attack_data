@@ -1,12 +1,12 @@
 author: Michael Haag, Splunk
+id: cc9b2600-efc9-11eb-926b-550bf0943fbb
 date: '2021-03-25'
-description: 'Successful execution of Atomic Red Team T1105 - Ingress Tool Transfer. Also included Invoke-CertUtil using different command switches.'
+description: Successful execution of Atomic Red Team T1105 - Ingress Tool Transfer.
+  Also included Invoke-CertUtil using different command switches.
 environment: attack_range
-technique:
-- T1105
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1105/atomic_red_team/windows-sysmon.log
-references:
-- https://attack.mitre.org/techniques/T1105
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1105

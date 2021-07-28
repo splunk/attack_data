@@ -1,15 +1,14 @@
 author: Automated Attack Data Service
+id: cc9b262d-efc9-11eb-926b-550bf0943fbb
 date: '2020-12-08'
-description: 'Manual WMI persistence via WMI Event Subscription'
+description: Manual WMI persistence via WMI Event Subscription
 environment: attack_range
-technique:
-- T1546.003
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.003/wmi_event_subscription/windows-sysmon.log
-references:
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1546.003/T1546.003.md
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1546.003/T1546.003.md

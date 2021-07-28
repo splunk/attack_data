@@ -1,4 +1,5 @@
 author: Patrick Bareiss
+id: cc9b260e-efc9-11eb-926b-550bf0943fbb
 date: '2020-11-19'
 description: 'Atomic Test Results: Successful Execution of test T1222.001-1 Take ownership
   using takeown utility Successful Execution of test T1222.001-2 cacls - Grant permission
@@ -7,18 +8,16 @@ description: 'Atomic Test Results: Successful Execution of test T1222.001-1 Take
   - hide file Successful Execution of test T1222.001-5 Grant Full Access to Entire
   C:\ Drive for Everyone - Ryuk Ransomware Style '
 environment: attack_range
-technique:
-- T1222.001
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/atomic_red_team/windows-system.log
-references:
-- https://attack.mitre.org/techniques/T1222/001/
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1222.001/T1222.001.md
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1222/001/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1222.001/T1222.001.md
