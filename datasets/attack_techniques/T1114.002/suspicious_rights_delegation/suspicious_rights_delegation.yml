@@ -1,13 +1,12 @@
 author: Patrick Bareiss
+id: cc9b265c-efc9-11eb-926b-550bf0943fbb
 date: '2020-12-15'
-description: 'Performed full access rights delegation on mailbox in O365.'
+description: Performed full access rights delegation on mailbox in O365.
 environment: attack_range
-technique:
-- T1114.002
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114.002/suspicious_rights_delegation/suspicious_rights_delegation.json
+sourcetypes:
+- o365:management:activity
 references:
 - https://attack.mitre.org/techniques/T1114/002
 - https://i.blackhat.com/USA-20/Thursday/us-20-Bienstock-My-Cloud-Is-APTs-Cloud-Investigating-And-Defending-Office-365.pdf
-sourcetypes:
-- o365:management:activity

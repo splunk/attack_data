@@ -1,18 +1,18 @@
 author: Ryan Becwar
+id: cc9b260a-efc9-11eb-926b-550bf0943fbb
 date: '2021-04-05'
-description: Adversaries may abuse the Windows SC.exe to execute malicious commands or payloads which is captured by Windows System logs. 
+description: Adversaries may abuse the Windows SC.exe to execute malicious commands
+  or payloads which is captured by Windows System logs.
 environment: attack_range_evilginx2
-technique:
-- T1569.002
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/atomic_red_team/windows-system.log
-references:
-- https://attack.mitre.org/techniques/T1569/002/
 sourcetypes:
 - WinEventLog:System
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1569/002/

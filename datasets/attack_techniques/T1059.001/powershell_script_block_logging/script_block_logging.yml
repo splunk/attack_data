@@ -1,14 +1,13 @@
 author: Michael Haag
+id: cc9b264c-efc9-11eb-926b-550bf0943fbb
 date: '2021-06-09'
-description: 'Manual and Atomic Red Team testing to generate script block logging data.'
+description: Manual and Atomic Red Team testing to generate script block logging data.
 environment: attack_range
-technique:
-- T1059.001
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/powershell_script_block_logging/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/powershell_script_block_logging/windows-sysmon.log
-references:
-- https://attack.mitre.org/techniques/T1059/001/
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
+references:
+- https://attack.mitre.org/techniques/T1059/001/

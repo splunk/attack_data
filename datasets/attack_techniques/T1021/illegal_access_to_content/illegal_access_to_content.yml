@@ -1,15 +1,12 @@
 author: Stanislav Miskovic
+id: cc9b25f2-efc9-11eb-926b-550bf0943fbb
 date: '2021-02-23'
-description: 'Illegal access to user content via PowerSploit modules, such as access to keyborad logging, audio recording, status of http communications, etc.'
+description: Illegal access to user content via PowerSploit modules, such as access
+  to keyborad logging, audio recording, status of http communications, etc.
 environment: custom
-technique:
-- T1021
-- T1113
-- T1123
-- T1563
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021/illegal_access_to_content/logAllPowerSploitModulesWithOldNames.log
-references:
-- https://attack.mitre.org/techniques/T1021/
 sourcetypes:
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1021/

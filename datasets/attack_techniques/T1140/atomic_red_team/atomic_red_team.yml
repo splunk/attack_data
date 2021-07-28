@@ -1,13 +1,13 @@
 author: Michael Haag, Splunk
+id: cc9b25e4-efc9-11eb-926b-550bf0943fbb
 date: '2021-03-25'
-description: 'Atomic Red Team test results of T1140, certutil.exe decode. Also included Invoke-CertUtil decoding files. '
+description: 'Atomic Red Team test results of T1140, certutil.exe decode. Also included
+  Invoke-CertUtil decoding files. '
 environment: attack_range
-technique:
-- T1140
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1140/atomic_red_team/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 references:
 - https://attack.mitre.org/techniques/T1140
 - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1140/T1140.md
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

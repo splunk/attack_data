@@ -1,4 +1,5 @@
 author: Patrick Bareiss
+id: cc9b261d-efc9-11eb-926b-550bf0943fbb
 date: '2020-11-27'
 description: 'Atomic Test Results: Successful Execution of test T1547.001-1 Reg Key
   Run Successful Execution of test T1547.001-2 Reg Key RunOnce Return value unclear
@@ -7,18 +8,16 @@ description: 'Atomic Test Results: Successful Execution of test T1547.001-1 Reg 
   Suspicious jse file run from startup Folder Return value unclear for test T1547.001-6
   Suspicious bat file run from startup Folder '
 environment: attack_range
-technique:
-- T1547.001
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.001/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.001/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.001/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.001/atomic_red_team/windows-system.log
-references:
-- https://attack.mitre.org/techniques/T1547/001/
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.001/T1547.001.md
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1547/001/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.001/T1547.001.md

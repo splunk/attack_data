@@ -1,13 +1,13 @@
 author: Bhavin Patel
+id: cc9b2604-efc9-11eb-926b-550bf0943fbb
 date: '2021-01-12'
-description: Dataset containing activity from O365 when IP addresses are added to Trusted IP list such that the attackers can bypass MFA 
+description: Dataset containing activity from O365 when IP addresses are added to
+  Trusted IP list such that the attackers can bypass MFA
 environment: attack_range
-technique:
-- T1562.007
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.007/o365_bypass_mfa_via_trusted_ip/o365_bypass_mfa_via_trusted_ip.json
+sourcetypes:
+- o365:management:activity
 references:
 - https://i.blackhat.com/USA-20/Thursday/us-20-Bienstock-My-Cloud-Is-APTs-Cloud-Investigating-And-Defending-Office-365.pdf
 - https://attack.mitre.org/techniques/T1562/007/
-sourcetypes:
-- o365:management:activity

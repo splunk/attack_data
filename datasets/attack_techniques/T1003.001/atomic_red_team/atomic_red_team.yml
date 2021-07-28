@@ -1,4 +1,5 @@
 author: Patrick Bareiss
+id: cc9b25d6-efc9-11eb-926b-550bf0943fbb
 date: '2020-10-08'
 description: 'Atomic Test Results: Successful Execution of test T1003.001-1 Windows
   Credential Editor Successful Execution of test T1003.001-2 Dump LSASS.exe Memory
@@ -8,19 +9,17 @@ description: 'Atomic Test Results: Successful Execution of test T1003.001-1 Wind
   Offline Credential Theft With Mimikatz Return value unclear for test T1003.001-7
   LSASS read with pypykatz '
 environment: attack_range
-technique:
-- T1003.001
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-system.log
-references:
-- https://attack.mitre.org/techniques/T1003/001/
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.001/T1003.001.md
-- https://github.com/splunk/security-content/blob/develop/tests/T1003_001.yml
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1003/001/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.001/T1003.001.md
+- https://github.com/splunk/security-content/blob/develop/tests/T1003_001.yml

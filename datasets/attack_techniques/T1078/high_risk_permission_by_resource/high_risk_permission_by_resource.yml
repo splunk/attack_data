@@ -1,15 +1,14 @@
 author: Rod Soto
+id: cc9b2644-efc9-11eb-926b-550bf0943fbb
 date: '2020-10-09'
 description: This search provides detection of high risk permissions by resource and
   accounts. These are permissions that can allow attackers with compromised accounts
   to move laterally and escalate privileges
 environment: custom
-technique:
-- T1078
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/high_risk_permission_by_resource/high_risk_permission_by_resource.json
+sourcetypes:
+- google:gcp:pubsub:message
 references:
 - https://attack.mitre.org/techniques/T1078/
 - https://www.youtube.com/watch?v=Ml09R38jpok
-sourcetypes:
-- google:gcp:pubsub:message

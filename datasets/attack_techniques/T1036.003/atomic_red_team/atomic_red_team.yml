@@ -1,4 +1,5 @@
 author: Patrick Bareiss
+id: cc9b2655-efc9-11eb-926b-550bf0943fbb
 date: '2020-11-19'
 description: 'Atomic Test Results: Successful Execution of test T1036.003-1 Masquerading
   as Windows LSASS process Successful Execution of test T1036.003-3 Masquerading -
@@ -10,18 +11,16 @@ description: 'Atomic Test Results: Successful Execution of test T1036.003-1 Masq
   Execution of test T1036.003-8 Malicious process Masquerading as LSM.exe Successful
   Execution of test T1036.003-9 File Extension Masquerading '
 environment: attack_range
-technique:
-- T1036.003
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036.003/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036.003/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036.003/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036.003/atomic_red_team/windows-system.log
-references:
-- https://attack.mitre.org/techniques/T1036/003/
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1036.003/T1036.003.md
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1036/003/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1036.003/T1036.003.md

@@ -1,12 +1,11 @@
 author: Patrick Bareiss
+id: cc9b25f9-efc9-11eb-926b-550bf0943fbb
 date: '2020-03-29'
 description: Manual generation of attack data with a command line arguments.
 environment: attack_range
-technique:
-- T1059.003
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/cmd_arguments/windows-security.log
-references:
-- https://attack.mitre.org/techniques/T1059/003/
 sourcetypes:
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1059/003/

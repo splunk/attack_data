@@ -1,19 +1,18 @@
 author: Patrick Bareiss
+id: cc9b25d2-efc9-11eb-926b-550bf0943fbb
 date: '2020-11-23'
 description: Generation of Atomic Red Team technique T1546.008
 environment: attack_range
-technique:
-- T1546.008
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.008/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.008/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.008/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.008/atomic_red_team/windows-system.log
-references:
-- https://attack.mitre.org/techniques/T1546/008/
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1546.008/T1546.008.md
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1546/008/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1546.008/T1546.008.md

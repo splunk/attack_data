@@ -1,13 +1,13 @@
 author: Michael Haag
+id: cc9b25d5-efc9-11eb-926b-550bf0943fbb
 date: '2021-02-12'
-description: ' Invoked T1218.009 via AtomicRedTeam and manual execution of regasm and regsvcs.'
+description: ' Invoked T1218.009 via AtomicRedTeam and manual execution of regasm
+  and regsvcs.'
 environment: attack_range
-technique:
-- T1218.009
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.009/atomic_red_team/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 references:
 - https://attack.mitre.org/techniques/T1218/009
 - https://github.com/redcanaryco/atomic-red-team/blob/c8f43265c78d826080f62d8a8dfc4d6874f563e8/atomics/T1218.009/T1218.009.md
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
