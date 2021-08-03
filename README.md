@@ -3,49 +3,60 @@ A Repository of curated datasets from various attacks to:
 
 * Easily develop detections without having to build an environment from scratch or simulate an attack.
 * Test detections, specifically [Splunks Security Content](https://github.com/splunk/security-content)
-* Replay/inject into streaming pipelines for validating your detections in your production SIEM
+* [Replay](#replay-datasets) into streaming pipelines for validating your detections in your production SIEM
 
 # Installation
-GitHub LFS is used in this project. For Mac user git-lfs can be derived with homebrew (for other OS click [here](https://github.com/git-lfs/git-lfs/wiki/Installation)):
+GitHub LFS is used in this project. For Mac users git-lfs can be derived with homebrew (for another OS click [here](https://github.com/git-lfs/git-lfs/wiki/Installation)):
+
 ````
 brew install git-lfs
 ````
-Then you need to install it. I would recommend to use the --skip-smudge parameter, which will avoid that all Git LFS files are downloaded during git clone. You can install it with the following command:
+
+Then you need to install it. I would recommend using the --skip-smudge parameter, which will avoid that all Git LFS files are downloaded during git clone. You can install it with the following command:
+
 ````
 git lfs install --skip-smudge
 ````
-Donwload the repository with this command:
+
+Download the repository with this command:
+
 ````
 git clone git@github.com:splunk/attack_data.git
 ````
+
 You can fetch all attack data files (*.json, *.log) with this command:
+
 ````
 git lfs pull
 ````
+
 or a single attack data file with this command:
+
 ````
 git lfs pull --include=datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon.log
 ````
 
 # Anatomy of a Dataset 🧬
 ### Datasets
-Datasets are defined by a common yml structure. The structure has the following fields:
+Datasets are defined by a common YML structure. The structure has the following fields:
 
 |field| description|
 |---|---|
+| id | UUID of dataset |
 |name  | name of author  |
 | date  | last modified date  |
-| dataset  | array of urls where the hosted version of the dataset is located  |
+| dataset  | array of URLs where the hosted version of the dataset is located  |
 | description | describes the dataset as detailed as possible |
 | environment |  markdown filename of the environment description see below |
 | technique | array of MITRE ATT&CK techniques associated with dataset |
-| references | array of urls that reference the dataset |
+| references | array of URLs that reference the dataset |
 | sourcetypes | array of sourcetypes that are contained in the dataset |
 
 
 For example
 
 ```
+id: 405d5889-16c7-42e3-8865-1485d7a5b2b6
 author: Patrick Bareiss
 date: '2020-10-08'
 description: 'Atomic Test Results: Successful Execution of test T1003.001-1 Windows
@@ -79,31 +90,42 @@ sourcetypes:
 
 Environments are a description of where the dataset was collected. At this moment there are no specific restrictions, although we do have a simple [template](https://github.com/splunk/attack_data/blob/master/environments/TEMPLATE.md) a user can start with here. The most common environment for most datasets will be the [attack_range](https://github.com/splunk/attack_data/blob/master/environments/attack_range.md) since this is the tool that used to generate attack data sets automatically.
 
-# Ingest Datasets 🍽
+# Replay Datasets 📼
 Most datasets generated will be raw log files. There are two main simple ways to ingest it.
 
 ### Into Splunk
 
+##### using UI
+
 0. Download dataset
-1. In splunk enterprise , add data -> Files & Directories -> select dataset
-2. Set the sourcetype as specified in the yml file
+1. In Splunk enterprise , add data -> Files & Directories -> select dataset
+2. Set the sourcetype as specified in the YML file
 3. Explore your data
 
 See a quick demo 📺 of this process [here](https://www.youtube.com/watch?v=41NAG0zGg40).
+
+##### using replay.py
+
+0. Download dataset 
+1. configure [`bin/replay.yml`](/bin/replay.yml) 
+2. run `python replay.py`
+
 
 ### Into DSP
 
 To send datasets into DSP the simplest way is to use the [scloud](https://docs.splunk.com/Documentation/DSP/1.1.0/Admin/AuthenticatewithSCloud) command-line-tool as a requirement.
 
 1. Download the dataset
-2. Ingest the dataset into DSP via scloud command `cat attack_data.json | scloud ingest post-events --format json`
-3. Build a pipeline that reads from firehose and you should see the events.
+2. Ingest the dataset into DSP via scloud command `cat attack_data.json | scloud ingest post-events --format JSON
+3. Build a pipeline that reads from the firehose and you should see the events.
 
 # Contribute Datasets 🥰
 
 1. Generate a dataset
-2. Upload dataset into same folder
-3. Make PR with name.yml file under the corresponding MITRE ATT&CK technique folder.
+2. Under the corresponding MITRE Technique ID folder create a folder named after the tool the dataset comes from, for example: `atomic_red_Team`
+3. Make PR with <tool_name_yaml>.yml file under the corresponding created folder, upload dataset into the same folder.
+
+See [T1003.002](datasets/attack_techniques/T1003.003/atomic_red_team/) for a complete example.
 
 Note the simplest way to generate a dataset to contribute is to launch your simulations in the attack_range, or manually attack the machines and when done dump the data using the [dump function](https://github.com/splunk/attack_range#dump-log-data-from-attack-range).
 
