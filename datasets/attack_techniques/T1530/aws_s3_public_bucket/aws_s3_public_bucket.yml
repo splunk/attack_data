@@ -1,12 +1,12 @@
 author: Patrick Bareiss
+id: cc9b25e3-efc9-11eb-926b-550bf0943fbb
 date: '2021-01-12'
-description: 'Dataset which contains cloudtrail logs and the creation of a public S3 bucket.'
+description: Dataset which contains cloudtrail logs and the creation of a public S3
+  bucket.
 environment: attack_range
-technique:
-- T1530
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1530/aws_s3_public_bucket/aws_cloudtrail_events.json
-references:
-- https://attack.mitre.org/techniques/T1530
 sourcetypes:
 - aws:cloudtrail
+references:
+- https://attack.mitre.org/techniques/T1530

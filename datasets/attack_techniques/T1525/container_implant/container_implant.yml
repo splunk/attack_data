@@ -1,4 +1,5 @@
 author: Rod Soto
+id: cc9b25f5-efc9-11eb-926b-550bf0943fbb
 date: '2020-08-18'
 description: Use the searches in this story to monitor your Kubernetes registry repositories
   for upload, and deployment of potentially vulnerable, backdoor, or implanted containers.
@@ -8,13 +9,11 @@ description: Use the searches in this story to monitor your Kubernetes registry 
   Amazon Elastic Container Registry, Google Container Registry and Azure Container
   Registry.
 environment: custom
-technique:
-- T1525
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1525/container_implant/container_implant_1.json
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1525/container_implant/container_implant_2.json
+sourcetypes:
+- aws:cloudtrail
 references:
 - https://attack.mitre.org/techniques/T1525/
 - https://www.splunk.com/en_us/blog/security/use-cloud-infrastructure-data-model-to-detect-container-implantation-mitre-t1525.html
-sourcetypes:
-- aws:cloudtrail

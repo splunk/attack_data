@@ -1,22 +1,21 @@
 author: Patrick Bareiss
+id: cc9b25df-efc9-11eb-926b-550bf0943fbb
 date: '2020-11-26'
 description: 'Atomic Test Results: Successful Execution of test T1546.011-1 Application
   Shim Installation Return value unclear for test T1546.011-2 New shim database files
   created in the default shim database directory Successful Execution of test T1546.011-3
   Registry key creation and/or modification events for SDB '
 environment: attack_range
-technique:
-- T1546.011
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.011/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.011/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.011/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.011/atomic_red_team/windows-system.log
-references:
-- https://attack.mitre.org/techniques/T1546/011/
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1546.011/T1546.011.md
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1546/011/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1546.011/T1546.011.md

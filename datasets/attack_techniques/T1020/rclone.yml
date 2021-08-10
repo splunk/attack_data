@@ -1,15 +1,14 @@
 author: Michael Haag, Splunk
+id: cc9b2621-efc9-11eb-926b-550bf0943fbb
 date: '2021-05-13'
 description: Generation of rclone activity related to ransomware.
 environment: attack_range
-technique:
-- T1020
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1020/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 references:
 - https://attack.mitre.org/techniques/T1020
 - https://redcanary.com/blog/rclone-mega-extortion/
 - https://www.fireeye.com/blog/threat-research/2021/05/shining-a-light-on-darkside-ransomware-operations.html
 - https://thedfirreport.com/2021/03/29/sodinokibi-aka-revil-ransomware/
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

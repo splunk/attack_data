@@ -1,13 +1,12 @@
 author: Bhavin Patel
+id: cc9b25f1-efc9-11eb-926b-550bf0943fbb
 date: '2020-12-16'
 description: High Number of Login Failures from a single source O365
 environment: attack_range
-technique:
-- T1110.001
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.001/high_number_of_login_failures_from_a_single_source/high_number_of_login_failures_from_a_single_source.json
+sourcetypes:
+- o365:management:activity
 references:
 - https://attack.mitre.org/techniques/T1110/001/
 - https://i.blackhat.com/USA-20/Thursday/us-20-Bienstock-My-Cloud-Is-APTs-Cloud-Investigating-And-Defending-Office-365.pdf
-sourcetypes:
-- o365:management:activity

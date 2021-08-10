@@ -1,13 +1,12 @@
 author: Patrick Bareiss
+id: cc9b2650-efc9-11eb-926b-550bf0943fbb
 date: '2020-12-17'
 description: Brute Force Attack O365
 environment: attack_range
-technique:
-- T1110
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110/o365_brute_force_login/o365_brute_force_login.json
+sourcetypes:
+- o365:management:activity
 references:
 - https://attack.mitre.org/techniques/T1110
 - https://i.blackhat.com/USA-20/Thursday/us-20-Bienstock-My-Cloud-Is-APTs-Cloud-Investigating-And-Defending-Office-365.pdf
-sourcetypes:
-- o365:management:activity

@@ -1,16 +1,16 @@
 author: 'Command and Scripting Interpreter: PowerShell'
+id: cc9b2647-efc9-11eb-926b-550bf0943fbb
 date: '2021-03-01'
-description: 'Invoke-atomictest T1059.001 of all Atomic Red Team T1059.001 PowerShell tests.'
+description: Invoke-atomictest T1059.001 of all Atomic Red Team T1059.001 PowerShell
+  tests.
 environment: attack_range
-technique:
-- T1059.001
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/windows-security.log
-references:
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1059.001/T1059.001.md
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:Security
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1059.001/T1059.001.md

@@ -1,13 +1,12 @@
 author: Patrick Bareiss
+id: cc9b2651-efc9-11eb-926b-550bf0943fbb
 date: '2020-12-17'
 description: Export PST file in O365
 environment: attack_range
-technique:
-- T1114
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114/o365_export_pst_file/o365_export_pst_file.json
+sourcetypes:
+- o365:management:activity
 references:
 - https://attack.mitre.org/techniques/T1114
 - https://i.blackhat.com/USA-20/Thursday/us-20-Bienstock-My-Cloud-Is-APTs-Cloud-Investigating-And-Defending-Office-365.pdf
-sourcetypes:
-- o365:management:activity

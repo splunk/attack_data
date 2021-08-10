@@ -1,4 +1,5 @@
 author: Patrick Bareiss
+id: cc9b261e-efc9-11eb-926b-550bf0943fbb
 date: '2020-11-09'
 description: 'Atomic Test Results: Successful Execution of test T1490-1 Windows -
   Delete Volume Shadow Copies Successful Execution of test T1490-2 Windows - Delete
@@ -8,18 +9,16 @@ description: 'Atomic Test Results: Successful Execution of test T1490-1 Windows 
   Shadow Copies via WMI with PowerShell Successful Execution of test T1490-6 Windows
   - Delete Backup Files '
 environment: attack_range
-technique:
-- T1490
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1490/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1490/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1490/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1490/atomic_red_team/windows-system.log
-references:
-- https://attack.mitre.org/techniques/T1490/
-- https://github.com/redcanaryco/atomic-red-team/blob/7e4580a1e80310ca5e6652a3e54a633143290526/atomics/T1490/T1490.md
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1490/
+- https://github.com/redcanaryco/atomic-red-team/blob/7e4580a1e80310ca5e6652a3e54a633143290526/atomics/T1490/T1490.md

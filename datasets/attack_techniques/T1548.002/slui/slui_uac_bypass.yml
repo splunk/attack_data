@@ -1,11 +1,12 @@
 author: Michael Haag, Splunk
+id: cc9b25ff-efc9-11eb-926b-550bf0943fbb
 date: '2021-05-13'
 description: Generation of slui.exe UAC Bypass behaviors.
 environment: attack_range
-technique:
-- T1548.002
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.002/slui/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 references:
 - https://attack.mitre.org/techniques/T1548/002/
 - https://www.exploit-db.com/exploits/46998
@@ -13,6 +14,3 @@ references:
 - https://gist.github.com/r00t-3xp10it/0c92cd554d3156fd74f6c25660ccc466
 - https://www.rapid7.com/db/modules/exploit/windows/local/bypassuac_sluihijack/
 - https://www.fireeye.com/blog/threat-research/2021/05/shining-a-light-on-darkside-ransomware-operations.html
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-

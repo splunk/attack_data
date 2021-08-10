@@ -1,12 +1,11 @@
 author: Stanislav Miskovic
+id: cc9b2612-efc9-11eb-926b-550bf0943fbb
 date: '2021-02-23'
-description: 'Log deletion with likely malicious intent or tools.'
+description: Log deletion with likely malicious intent or tools.
 environment: custom
-technique:
-- T1070
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070/illegal_log_deletion/logAllMimikatzModules.log 
-references:
-- https://attack.mitre.org/techniques/T1070/
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070/illegal_log_deletion/logAllMimikatzModules.log
 sourcetypes:
 - WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1070/
