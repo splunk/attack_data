@@ -95,6 +95,24 @@ Most datasets generated will be raw log files. There are two main simple ways to
 
 ### Into Splunk
 
+
+##### using replay.py
+pre-requisite, clone, create virtual env and install python deps:
+
+```
+git clone git@github.com:splunk/attack_data.git
+cd attack_data
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+pip install -r bin/requirements.txt
+```
+
+0. Download dataset 
+1. configure [`bin/replay.yml`](/bin/replay.yml) 
+2. run `python bin/replay.py -c bin/replay.yml`
+
+
 ##### using UI
 
 0. Download dataset
@@ -103,13 +121,6 @@ Most datasets generated will be raw log files. There are two main simple ways to
 3. Explore your data
 
 See a quick demo 📺 of this process [here](https://www.youtube.com/watch?v=41NAG0zGg40).
-
-##### using replay.py
-
-0. Download dataset 
-1. configure [`bin/replay.yml`](/bin/replay.yml) 
-2. run `python replay.py`
-
 
 ### Into DSP
 
