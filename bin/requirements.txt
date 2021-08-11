@@ -4,4 +4,5 @@ idna==2.10
 pathlib==1.0.1
 PyYAML==5.4.1
 requests==2.25.1
+splunk-sdk==1.6.16
 urllib3==1.26.5
