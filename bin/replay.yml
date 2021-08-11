@@ -6,10 +6,20 @@ splunk:
 
 datasets:
 #name of data set to replay
-- name: T1003.002_sysmon
+- name: T1003.002_windows_security
 # relative path of raw file
-  path: ../datasets/attack_techniques/T1003.002/atomic_red_team/windows-sysmon.log
+  path: datasets/attack_techniques/T1003.002/atomic_red_team/windows-security.log
 # splunk parameters to pass
+  replay_parameters:
+    source: WinEventLog:Security
+    sourcetype: WinEventLog
+    index: main
+    # updates timestamp of the dataset to current time.
+    update_timestamp: True
+  enabled: True
+
+- name: T1003.002_sysmon
+  path: datasets/attack_techniques/T1003.002/atomic_red_team/windows-sysmon.log
   replay_parameters:
     source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
     sourcetype: xmlwineventlog
