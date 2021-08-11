@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: 5e746ff0-b464-44f8-b4ec-38ede346e371
+date: '2021-08-11'
+description: simulated Execution of lockbit ransomware malware in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070/fsutil_file_zero/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://app.any.run/tasks/e0ac072d-58c9-4f53-8a3b-3e491c7ac5db/
