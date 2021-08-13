@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: 2970b9f5-37cf-42ab-8ebe-7b90f63d69ec
+date: '2021-13-08'
+description: simulate colorui uac bypass technique.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.015/uac_colorui/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://www.mcafee.com/blogs/other-blogs/mcafee-labs/tales-from-the-trenches-a-lockbit-ransomware-story/#_ftn2
