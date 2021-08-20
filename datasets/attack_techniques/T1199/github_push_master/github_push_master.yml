@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: 33fc2847-f7b8-4fd5-814e-a2cd49ceaffd
+date: '2021-08-20'
+description: 'Simulated test github Datasets for push or commit in master branch'
+environment: attack_range
+dataset: 
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1199/github_push_master/github_push_master.log
+sourcetypes:
+- aws:firehose:json
