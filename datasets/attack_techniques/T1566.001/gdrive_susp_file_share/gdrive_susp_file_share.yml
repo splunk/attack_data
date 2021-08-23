@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: 63da59d2-0b42-438b-b083-68999e758b3c
+date: '2021-08-23'
+description: 'Simulated test Gsuite Datasets for shared file with suspicious file name from external email'
+environment: attack_range
+dataset: 
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/t1566.001/gdrive_susp_file_share/gdrive_susp_attach.log
+sourcetypes:
+- gsuite:drive:json 
