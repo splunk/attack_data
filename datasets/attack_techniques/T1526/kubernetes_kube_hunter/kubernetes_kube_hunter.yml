@@ -1,0 +1,12 @@
+author: Patrick Bareiss
+id: dee3b6f3-e0fe-4aab-b85b-76d5957e8518
+date: '2021-08-24'
+description: Dataset which contains kube-hunter scanning
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1526/kubernetes_kube_hunter/kubernetes_kube_hunter.json
+sourcetypes:
+- kube:objects:events
+references:
+- https://attack.mitre.org/techniques/T1526
+- https://github.com/aquasecurity/kube-hunter
