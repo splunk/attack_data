@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: e8029cfc-ce81-48c4-ba74-598afa1ddbba
+date: '2021-09-01'
+description: Manual generation of attack data by creating a pull request in GitHub.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.001/github_pull_request/github_pull_request.json
+sourcetypes:
+- aws:firehose:json
+references:
+- https://attack.mitre.org/techniques/T1195/001
