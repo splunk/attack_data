@@ -5,5 +5,7 @@ description: 'Simulated test github Datasets for push or commit in master branch
 environment: attack_range
 dataset: 
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1199/github_push_master/github_push_master.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1199/github_push_master/github_push_develop.json
+
 sourcetypes:
 - aws:firehose:json
