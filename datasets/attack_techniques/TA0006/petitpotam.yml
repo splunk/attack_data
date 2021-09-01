@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: 5b562df1-7eca-4b70-bbbc-d2e870739abc
+date: '2021-09-01'
+description: Running Petitpotam, ntlmrealy, Rubeus and mimikatz to obtains a TGT as a domain controller and execute DcSync attack.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/TA0006/petitpotam/windows-security.log
+sourcetypes:
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/TA0006
+- https://github.com/topotam/PetitPotam
+- https://support.microsoft.com/en-gb/topic/kb5005413-mitigating-ntlm-relay-attacks-on-active-directory-certificate-services-ad-cs-3612b773-4043-4aa9-b23d-b87910cd3429
