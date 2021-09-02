@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 0a180381-2108-425a-930d-722af16da2e1
+date: '2021-09-02'
+description: Manual generation of attack data by disabling a security job in Circle CI.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1554/circle_ci_disable_security_job/circle_ci_disable_security_job.json
+sourcetypes:
+- circleci
+references:
+- https://attack.mitre.org/techniques/T1554
