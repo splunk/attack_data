@@ -1,0 +1,3996 @@
+01/09/2019 03:56:10 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987739682
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa9805cb9
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4532
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:56:10 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987739679
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa9805ca3
+	Logon GUID:		{203B0B3F-78E0-E79C-4E36-8E4FDC4B8D06}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4531
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:56:08 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987739675
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa98058ed
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4530
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:56:06 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987739668
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa98056e1
+	Logon GUID:		{203B0B3F-78E0-E79C-4E36-8E4FDC4B8D06}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4529
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:55:58 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987739648
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa98044da
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4526
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:55:58 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987739647
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa98044ca
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4525
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:55:58 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987739646
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa98044ba
+	Logon GUID:		{203B0B3F-78E0-E79C-4E36-8E4FDC4B8D06}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4524
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:55:58 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987739645
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa98044a6
+	Logon GUID:		{3DB6550A-AB08-928C-F273-18867A604EA3}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4523
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736231
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba2b6
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55756
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736228
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba212
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55755
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736226
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba1f8
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55754
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736224
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba1e2
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55753
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736222
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba1b3
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55752
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736220
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba175
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55751
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736218
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba15d
+	Logon GUID:		{83E84E6B-BDB1-7A6B-5D87-413883A99D1F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55750
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736216
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba083
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55748
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736214
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba06f
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55747
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736213
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba05e
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55746
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 03:39:22 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987736212
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa96ba04c
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		55665
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:39:38 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987723785
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa91f9def
+	Logon GUID:		{B525C5A3-AFD8-1C8A-57F6-540CDAFC20A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1339
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:39:27 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987723406
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa91f2575
+	Logon GUID:		{8DE9E7A6-B6E6-A866-6BC3-BC01F7E4A041}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1327
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:39:27 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987723394
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa91f22a6
+	Logon GUID:		{5B6DBFB5-0A77-C6EF-E71B-CA2C1D101F0A}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1324
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:44 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718570
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8ff9615
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1147
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:44 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718568
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8ff95d9
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1146
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:40 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718558
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8ff8788
+	Logon GUID:		{931B07A5-4028-DF21-718E-BC956E3B8B37}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1145
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:40 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718556
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8ff8772
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1144
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:38 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718544
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8ff826b
+	Logon GUID:		{931B07A5-4028-DF21-718E-BC956E3B8B37}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1141
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:36 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718535
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8ff7bab
+	Logon GUID:		{931B07A5-4028-DF21-718E-BC956E3B8B37}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1140
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:28 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718304
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8fedd96
+	Logon GUID:		{931B07A5-4028-DF21-718E-BC956E3B8B37}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1135
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:28 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718301
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8feda33
+	Logon GUID:		{203B0B3F-78E0-E79C-4E36-8E4FDC4B8D06}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1133
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:28 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718300
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8fed858
+	Logon GUID:		{203B0B3F-78E0-E79C-4E36-8E4FDC4B8D06}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1132
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 02:14:28 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987718296
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8fed080
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		1129
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:21 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714713
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e51878
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49318
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:20 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714710
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e51860
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49313
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:20 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714708
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e51846
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49312
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:20 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714706
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e51830
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49311
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:20 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714704
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e51818
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49310
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:20 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714702
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e51714
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49309
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:20 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714699
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e516da
+	Logon GUID:		{83E84E6B-BDB1-7A6B-5D87-413883A99D1F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49308
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:20 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714696
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e516c7
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49305
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:20 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714695
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e516b7
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49303
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:20 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714694
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e516a7
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49301
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:56:19 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987714692
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8e515ee
+	Logon GUID:		{99937416-8D12-39FF-DF9F-B4656E9724E1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		49284
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 01:14:55 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987706530
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa8adce5b
+	Logon GUID:		{5E094CEB-8C32-BCF0-45E7-DA36C15DB49B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		62920
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:18:12 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987695255
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85f8716
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4365
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:18:12 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987695253
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85f8700
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4364
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:18:06 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987695240
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85f7be7
+	Logon GUID:		{931B07A5-4028-DF21-718E-BC956E3B8B37}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4358
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:18:06 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987695238
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85f7bd1
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4357
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:17:14 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987695004
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85f053d
+	Logon GUID:		{931B07A5-4028-DF21-718E-BC956E3B8B37}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4354
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:17:12 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694998
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85f01a3
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4350
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:17:04 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694975
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85edb97
+	Logon GUID:		{931B07A5-4028-DF21-718E-BC956E3B8B37}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4340
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:17:04 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694971
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85edb83
+	Logon GUID:		{931B07A5-4028-DF21-718E-BC956E3B8B37}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4339
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:17:04 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694970
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85edb73
+	Logon GUID:		{3CC9925A-88FB-BEEB-9D24-0D291B44E6A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4338
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:17:04 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694969
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85edb53
+	Logon GUID:		{3DB6550A-AB08-928C-F273-18867A604EA3}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4336
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:18 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694836
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6b66
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57435
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:18 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694834
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6b4e
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57434
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:18 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694832
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6b32
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57433
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:18 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694830
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6af5
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57429
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:18 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694828
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6add
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57428
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:18 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694826
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6ac5
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57427
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:18 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694824
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6aad
+	Logon GUID:		{83E84E6B-BDB1-7A6B-5D87-413883A99D1F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57426
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:17 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694821
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6a94
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57421
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:17 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694820
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6a5d
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57417
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:17 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694818
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e6980
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57414
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:16:17 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987694817
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa85e696d
+	Logon GUID:		{99937416-8D12-39FF-DF9F-B4656E9724E1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		57413
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:00:02 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987691611
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa84514a0
+	Logon GUID:		{9FA2054A-A7F8-40C0-2DFA-3B6446D871CF}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4222
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 12:00:02 PM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987691608
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa845148a
+	Logon GUID:		{9FA2054A-A7F8-40C0-2DFA-3B6446D871CF}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		4220
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:51 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675442
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dcf8e3
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3665
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:51 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675440
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dcf84f
+	Logon GUID:		{473AC2C9-B7E6-6277-DF1F-F90B0D06FA6F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3664
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:47 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675430
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dcf0e4
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3663
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:47 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675428
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dcf0ce
+	Logon GUID:		{473AC2C9-B7E6-6277-DF1F-F90B0D06FA6F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3662
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:45 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675421
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dcee90
+	Logon GUID:		{473AC2C9-B7E6-6277-DF1F-F90B0D06FA6F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3660
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:43 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675415
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dcec92
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3659
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:35 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675392
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dce267
+	Logon GUID:		{473AC2C9-B7E6-6277-DF1F-F90B0D06FA6F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3652
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:35 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675391
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dce257
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3651
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:35 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675390
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dce247
+	Logon GUID:		{473AC2C9-B7E6-6277-DF1F-F90B0D06FA6F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3650
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:38:35 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987675389
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7dce230
+	Logon GUID:		{0CD7F933-CB4F-118C-12B7-5D365252DFCF}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3647
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:17 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673079
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7cd0326
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53891
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:16 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673070
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfcb4
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53886
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:16 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673067
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfc9c
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53885
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:15 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673065
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfc82
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53884
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:15 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673063
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfbb6
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53883
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:15 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673061
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfb9e
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53882
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:15 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673059
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfb86
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53881
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:15 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673055
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfb55
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53880
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:15 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673054
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfb45
+	Logon GUID:		{0EF01AB8-AC9A-8D01-CADB-BCB30672AA9B}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53879
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:15 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673052
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfb0f
+	Logon GUID:		{44C50DCC-BCCA-1860-51EB-D7D505B781AE}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53877
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:15 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673051
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccfaf8
+	Logon GUID:		{C008E59A-9700-154F-9035-D6B7117ACEF1}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53871
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:14 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673045
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccf9d7
+	Logon GUID:		{5ECCFB38-EBE7-4399-6477-A2F4BD6AB5A0}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		-
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 10:27:14 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987673043
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa7ccf99c
+	Logon GUID:		{83E84E6B-BDB1-7A6B-5D87-413883A99D1F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		53872
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:20:30 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987659925
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa626ad89
+	Logon GUID:		{00000000-0000-0000-0000-000000000000}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	SZUFS
+	Source Network Address:	-
+	Source Port:		-
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	NTLM V2
+	Key Length:		128
+01/09/2019 09:20:30 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987659922
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa626ad46
+	Logon GUID:		{B4B5DFAA-BDD5-C736-313A-5878F8F76E87}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3123
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:23 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657076
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa6103427
+	Logon GUID:		{0CD7F933-CB4F-118C-12B7-5D365252DFCF}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3027
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:23 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657075
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa610340b
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3026
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:19 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657060
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa61027e1
+	Logon GUID:		{0CD7F933-CB4F-118C-12B7-5D365252DFCF}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3025
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:19 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657058
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa61027cb
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3024
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:17 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657048
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa6102248
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3023
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:15 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657041
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa6101e0c
+	Logon GUID:		{0CD7F933-CB4F-118C-12B7-5D365252DFCF}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3022
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:07 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657019
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa60fed81
+	Logon GUID:		{0CD7F933-CB4F-118C-12B7-5D365252DFCF}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3017
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:07 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657018
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa60fed3d
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3016
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:07 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657017
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa60fed2d
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3015
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 09:05:07 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987657016
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa60fed09
+	Logon GUID:		{0CD7F933-CB4F-118C-12B7-5D365252DFCF}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		3013
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 07:16:54 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987635818
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa583f146
+	Logon GUID:		{473AC2C9-B7E6-6277-DF1F-F90B0D06FA6F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		2332
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 07:16:53 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987635816
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa583f130
+	Logon GUID:		{473AC2C9-B7E6-6277-DF1F-F90B0D06FA6F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		2331
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 07:16:50 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987635806
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa583eb42
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		2330
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 07:16:50 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987635804
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa583eb2c
+	Logon GUID:		{473AC2C9-B7E6-6277-DF1F-F90B0D06FA6F}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		2329
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 07:16:48 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987635797
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa583e61e
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		2328
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+01/09/2019 07:16:46 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4624
+EventType=0
+Type=Information
+ComputerName=destDeviceA.domainX.com
+TaskCategory=Logon
+OpCode=Info
+RecordNumber=987635793
+Keywords=Audit Success
+Message=An account was successfully logged on.
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+Logon Type:			3
+New Logon:
+	Security ID:		DOMAINX\userA
+	Account Name:		userA
+	Account Domain:		DOMAINX
+	Logon ID:		0xa583e307
+	Logon GUID:		{F1A52340-37AB-6733-450A-C7B3D9F3E035}
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+Network Information:
+	Workstation Name:	
+	Source Network Address:	-
+	Source Port:		2327
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
