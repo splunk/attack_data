@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: 6458a36b-ed61-4a99-8e75-1da62434adac
+date: '2021-09-06'
+description: Simulated datasets for creation of autoadminlogon entry in registry
+  name.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/datasets/attack_techniques/T1552.002/autoadminlogon/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+
