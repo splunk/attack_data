@@ -5,7 +5,7 @@ description: Simulated datasets for creation of autoadminlogon entry in registry
   name.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/datasets/attack_techniques/T1552.002/autoadminlogon/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.002/autoadminlogon/windows-sysmon.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
