@@ -5,7 +5,7 @@ description: 'Automated generation of attack data using PurpleSharp: Kerberos Pa
   Spraying with disabled domain users'
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/purplesharp_disabled_users_kerberos/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/purplesharp_remote_spray/windows-security.log
 sourcetypes:
 - WinEventLog:Security
 references:
