@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: d6a30644-63bf-464b-8a2a-4df5de49aa3f
+date: '2021-09-07'
+description: 'Simulated test Attack range dataset for AD discovery techniques using PoschC2 and a PowerShell implant'
+environment: attack_range
+dataset: 
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1069.002/AD_discovery/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1069.002/AD_discovery/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1069.002/AD_discovery/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:Security

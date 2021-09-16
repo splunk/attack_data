@@ -1,0 +1,11 @@
+author: Michael Haag
+id: d6a30644-63bf-464b-8a2a-4df5de49aa43
+date: '2021-09-14'
+description: 'Simulated events with Atomic Red Team and manual.'
+environment: attack_range
+dataset: 
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1069.001/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1069.001/atomic_red_team/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational

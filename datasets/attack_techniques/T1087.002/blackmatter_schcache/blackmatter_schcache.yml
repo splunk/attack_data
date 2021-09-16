@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: 3392c05e-dc43-4688-b695-d8265af0d6e8
+date: '2021-09-07'
+description: blackmailer ransomware accessing schcache due to creation of adsi object for its ldap query.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.002/blackmatter_schcache/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
