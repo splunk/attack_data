@@ -1,0 +1,10 @@
+author: Teoderick Contreras
+id: 4226e60c-f258-4d8b-b91a-8a4d425074d2
+date: '2021-09-28'
+description: Manual generation of attack data for logonscript registry entry for persistence and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1037.001/logonscript_reg/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+
