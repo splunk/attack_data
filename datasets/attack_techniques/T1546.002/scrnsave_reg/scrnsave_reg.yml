@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: 2d6fba98-4e8d-4818-82d6-dbc0191c4ef7
+date: '2021-09-28'
+description: Manual generation of attack data for SCRNSAVE.EXE registry entry for persistence and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.002/scrnsave_reg/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1546/002
