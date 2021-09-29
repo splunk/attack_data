@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: f4f24c8e-3019-42c7-8a7e-093c5f657711
+date: '2021-09-29'
+description: manual activesetup stubpath registry modification datasets for persistence and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/t1547.014/active_setup_stubpath/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
