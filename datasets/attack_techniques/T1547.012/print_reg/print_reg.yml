@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: 787d019a-8348-4840-8802-e0080ab1deb6
+date: '2021-09-29'
+description: manual printer processor registry modification datasets for persistence and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/print_reg/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
