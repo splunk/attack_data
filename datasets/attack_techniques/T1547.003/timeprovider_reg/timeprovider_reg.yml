@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: ad1f89a2-47be-4c29-a7a0-9930921aa38d
+date: '2021-09-30'
+description: manual timeprovider registry modification datasets for persistence and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.003/timeprovider_reg/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: a996c867-70b4-4ac4-bfbc-fae63b60f169
+date: '2021-09-30'
+description: manual disable uac remote restriction registry modification datasets for persistence and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.002/LocalAccountTokenFilterPolicy/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
