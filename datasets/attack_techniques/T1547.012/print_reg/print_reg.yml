@@ -5,5 +5,6 @@ description: manual printer processor registry modification datasets for persist
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/print_reg/sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/print_reg/sysmon_print.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
