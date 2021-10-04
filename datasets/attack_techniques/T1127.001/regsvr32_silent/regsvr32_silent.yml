@@ -4,8 +4,8 @@ date: '2021-10-03'
 description: data sets for njrat vbs malware..
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/malware/T1127.001/regsvr32_silent/sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/malware/T1127.001/regsvr32_silent/powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1127.001/regsvr32_silent/sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1127.001/regsvr32_silent/powershell.log
 source:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
