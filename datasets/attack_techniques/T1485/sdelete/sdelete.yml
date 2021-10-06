@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: 94fef1a8-8975-4afa-947d-24826e76f337
+date: '2021-10-06'
+description: sdelte execution data sets.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/sdelete/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
