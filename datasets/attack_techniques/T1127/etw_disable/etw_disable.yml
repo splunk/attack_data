@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: c528749d-6fb9-43e1-814f-dc39bfece3cd
+date: '2021-10-07'
+description: etw disable registry datasets.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1127/etw_disable/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
