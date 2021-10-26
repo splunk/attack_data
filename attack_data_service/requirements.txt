@@ -18,7 +18,7 @@ certifi==2021.5.30
 cffi==1.14.6
 cfgv==3.2.0
 chardet==4.0.0
-configparser==5.0.1
+configparser==5.0.2
 contextlib2==0.6.0.post1
 cryptography==3.4.7
 Deprecated==1.2.11
