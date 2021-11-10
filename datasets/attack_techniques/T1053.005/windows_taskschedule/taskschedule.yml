@@ -5,6 +5,7 @@ description: Scheduled Tasks logs captured from Microsoft-Windows-TaskScheduler/
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/windows_taskschedule/windows-taskschedule.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/windows_taskschedule/windows-taskschedule_xml.log
 sourcetypes:
 - WinEventLog:Microsoft-Windows-TaskScheduler/Operational
 references:
