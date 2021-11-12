@@ -1,4 +1,4 @@
-author: Patrick Bareiss
+author: Michael Haag
 id: cc9b260e-efc9-11eb-926b-660bf0943fcc
 date: '2021-11-12'
 description: 'Atomic Red Team tests simulating XSL execution with msxsl and wmic.'
