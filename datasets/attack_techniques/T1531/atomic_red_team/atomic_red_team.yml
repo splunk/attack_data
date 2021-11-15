@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: 1514bd3e-20a3-4d53-a740-8e952f5e7afb
+date: '2021-11-15'
+description: 'Atomic Red Team tests simulating delete net user.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1531/atomic_red_team/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
