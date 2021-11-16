@@ -1,0 +1,15 @@
+author: Mauricio Velazco
+id: 97992f40-9110-40cb-b3c0-f9f615db6833
+date: '2021-11-16'
+description: Manually using the command line and powershell.exe to start a process on a remote endpoint leveraging the WinRM protocol for lateral movement and remote code execution.
+environment: attack_range
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement_psh/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement_psh/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement_psh/windows-security.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+references:
+- https://attack.mitre.org/techniques/T1021/006/
+- https://pentestlab.blog/2018/05/15/lateral-movement-winrm/
