@@ -1,0 +1,9 @@
+author: Teoderick Contreras
+id: f59e009b-af2e-4f98-9232-938df5f6a10e
+date: '2021-11-17'
+description: 'simulated data sets of high frequency copy of files or documents in network share'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1537/high_copy_files_in_net_share/security.log
+sourcetypes:
+- WinEventLog:Security
