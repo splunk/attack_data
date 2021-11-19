@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: d4dcde41-3544-46b9-a59d-fd5b8a4ad675
+date: '2021-11-19'
+description: Manually using the impacket tools to start a process on a remote endpoint leveraging the DCOM protocol for lateral movement and remote code execution.
+environment: attack_range
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.003/impacket/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.003/impacket/windows-security.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1021/003/
+- https://vk9-sec.com/impacket-remote-code-execution-rce-on-windows-from-linux/
