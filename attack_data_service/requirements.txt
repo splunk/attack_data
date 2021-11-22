@@ -31,7 +31,7 @@ identify==2.2.13
 idna==2.10
 importlib-metadata==4.6.3
 Jinja2==3.0.2
-jmespath==0.9.4
+jmespath==0.10.0
 lockfile==0.12.2
 MarkupSafe==1.1.1
 mock==4.0.3
