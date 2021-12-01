@@ -50,7 +50,7 @@ pre-commit==2.13.0
 protobuf==3.17.3
 psutil==5.8.0
 ptyprocess==0.7.0
-py==1.10.0
+py==1.11.0
 pycparser==2.20
 PyGithub==1.54.1
 PyJWT==1.7.1
