@@ -20,7 +20,7 @@ cfgv==3.3.1
 chardet==4.0.0
 configparser==5.1.0
 contextlib2==0.6.0.post1
-cryptography==3.4.7
+cryptography==36.0.0
 Deprecated==1.2.13
 dnspython==2.1.0
 docutils==0.16
