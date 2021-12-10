@@ -6,9 +6,12 @@ description: Successful execution of Atomic Red Team T1105 - Ingress Tool Transf
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1105/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1105/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1105/atomic_red_team/windows-sysmon_curl.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1105/atomic_red_team/windows-sysmon_curl_upload.log
+- 
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
 references:
 - https://attack.mitre.org/techniques/T1105
