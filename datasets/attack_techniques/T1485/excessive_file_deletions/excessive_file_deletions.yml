@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 0356c805-ac3f-47a6-9f49-7303c72a50c4
+date: '2021-12-08'
+description: High amount of file deletions
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/excessive_file_deletions/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1485/
