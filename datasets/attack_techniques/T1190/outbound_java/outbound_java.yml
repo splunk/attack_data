@@ -1,0 +1,11 @@
+author: Mauricio Velazco
+id: 118e4169-7caa-43f7-9560-322949db7ae9
+date: '2021-12-13'
+description: Manual exploitation of CVE-2021-44228-Log4j on a Linux endpoint.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/outbound_java/linux-sysmon.log
+sourcetypes:
+- sysmon_linux
+references:
+- https://attack.mitre.org/techniques/T1190
