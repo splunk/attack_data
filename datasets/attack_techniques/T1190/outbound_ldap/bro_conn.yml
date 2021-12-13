@@ -1,0 +1,11 @@
+author: Bhavin Patel 
+id: cc9b266c-efc9-11eb-926b-550bf0113fbb
+date: '2021-12-13'
+description: Manual generation of attack data by creating outbound ldap connections
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/outbound_ldap/bro_conn.json
+sourcetypes:
+- bro:conn:json
+references:
+- https://attack.mitre.org/techniques/T1190
