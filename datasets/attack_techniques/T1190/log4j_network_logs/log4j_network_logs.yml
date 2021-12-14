@@ -6,6 +6,6 @@ environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/log4j_network_logs/log4j_network_logs.log
 sourcetypes:
-- bro:conn:json
+- stream:ip
 references:
 - https://attack.mitre.org/techniques/T1190
