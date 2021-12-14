@@ -5,8 +5,10 @@ description: Generation of rclone activity related to ransomware.
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1020/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1020/windows-security.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
 references:
 - https://attack.mitre.org/techniques/T1020
 - https://redcanary.com/blog/rclone-mega-extortion/

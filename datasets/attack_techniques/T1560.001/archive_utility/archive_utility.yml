@@ -1,0 +1,14 @@
+author: Michael Haag
+id: cc9b2619-efc9-11eb-926b-550bf0943fbb
+date: '2021-04-22'
+description: The following data was generated with Cobalt Strike spawning 7z.exe to
+  archive files on disk.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1560.001/archive_utility/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1560/001/
+- https://www.microsoft.com/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+- https://thedfirreport.com/2021/01/31/bazar-no-ryuk/
