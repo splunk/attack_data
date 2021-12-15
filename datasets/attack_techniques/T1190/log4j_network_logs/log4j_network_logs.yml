@@ -1,0 +1,11 @@
+author: Patrick Bareiss, Splunk
+id: cedfb08c-b322-4f9a-b84c-da905af05837
+date: '2021-12-14'
+description: Manual generation of attack data related to Log4j with network logs
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/log4j_network_logs/log4j_network_logs.log
+sourcetypes:
+- stream:ip
+references:
+- https://attack.mitre.org/techniques/T1190
