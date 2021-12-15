@@ -5,7 +5,9 @@ description: Attack data related to Log4Shell CVE-2021-44228
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/java/java.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/java/log4shell-nginx.log
 sourcetypes:
 - stream:http
+- nginx:plus:kv
 references:
   - https://attack.mitre.org/techniques/T1190
