@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: 10f89048-6183-11ec-813b-acde48001122
+date: '2021-12-20'
+description: Generated datasets for cipher in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.004/cipher/security.log
+sourcetypes:
+- WinEventLog:Security
+references:
+- https://www.sophos.com/en-us/medialibrary/PDFs/technical-papers/sophoslabs-ransomware-behavior-report.pdf
