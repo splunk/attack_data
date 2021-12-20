@@ -1,0 +1,15 @@
+author: Mauricio Velazco
+id: 32cfde86-f8b2-4151-bb7a-5d2f4090d0de
+date: '2021-12-20'
+description: Manual exploitation of CVE-2021-42287 and CVE-2021-42278 using a public exploit.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.002/samaccountname_spoofing/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.002/samaccountname_spoofing/windows-system.log
+sourcetypes:
+- WinEventLog:System
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1078/002/
+- https://exploit.ph/cve-2021-42287-cve-2021-42278-weaponisation.html 
+- https://github.com/WazeHell/sam-the-admin
