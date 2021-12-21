@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: ca07fc9e-6260-11ec-b8ae-acde48001122
+date: '2021-12-21'
+description: Generated datasets for linux adduser in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.003/linux_adduser/sysmon_linux.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/
