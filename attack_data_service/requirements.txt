@@ -29,7 +29,7 @@ gitdb==4.0.5
 GitPython==3.1.13
 identify==2.2.13
 idna==2.10
-importlib-metadata==4.6.3
+importlib-metadata==4.10.0
 Jinja2==3.0.2
 jmespath==0.10.0
 lockfile==0.12.2
@@ -67,7 +67,7 @@ requests-ntlm==1.1.0
 s3transfer==0.5.0
 smmap==4.0.0
 six==1.16.0
-splunk-sdk==1.6.14
+splunk-sdk==1.6.18
 tabulate==0.8.9
 termcolor==1.1.0
 toml==0.10.2
@@ -75,6 +75,6 @@ urllib3==1.26.7
 virtualenv==16.7.9
 wcwidth==0.2.5
 wget==3.2
-wrapt==1.12.1
+wrapt==1.13.3
 xmltodict==0.12.0
 zipp==3.6.0

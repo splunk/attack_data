@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: 0d7e7bb4-6262-11ec-9ed4-acde48001122
+date: '2021-12-21'
+description: Generated datasets for linux setcap in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.001/linux_setcap/sysmon_linux.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/
