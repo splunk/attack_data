@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: d0a6ab5b-6ff2-4e12-b854-296fdd8d0c9b
+date: '2022-01-24'
+description: Pass the ticket attack using mimikatz. 
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.003/mimikatz/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.003/mimikatz/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+references:
+- https://www.tarlogic.com/blog/how-to-attack-kerberos/
