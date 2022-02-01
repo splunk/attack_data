@@ -4,8 +4,8 @@ date: '2022-02-01'
 description: Manual generation of pkexec local privilege escalation.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/zoom_child_process/linux-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/pkexec/linux-sysmon.log
 sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- sysmon_linux
 references:
 - https://attack.mitre.org/techniques/T1068/
