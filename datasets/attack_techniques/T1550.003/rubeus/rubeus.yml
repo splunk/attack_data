@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: e742e10c-835e-45e2-b3ef-ca9034ca60d5
+date: '2022-02-01'
+description: Pass the ticket attack using rubeus. 
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.003/rubeus/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.003/rubeus/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+references:
+- https://www.tarlogic.com/blog/how-to-attack-kerberos/
