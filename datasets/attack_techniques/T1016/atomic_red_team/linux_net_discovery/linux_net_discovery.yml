@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: 93252b82-8d73-11ec-bb43-acde48001122
+date: '2022-02-14'
+description: Generated datasets for linux net discovery in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1016/atomic_red_team/linux_net_discovery/sysmon_linux.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1016/T1016.md
