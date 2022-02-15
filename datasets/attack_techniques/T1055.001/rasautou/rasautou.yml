@@ -1,0 +1,14 @@
+author: Michael Haag
+id: cc9b25f4-efc9-11eb-926b-660bf0943faa
+date: '2022-02-15'
+description: Testing using DueDLLigence.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1055.001/rasautou/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1055.001/rasautou/windows-security.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1055.001
+- https://github.com/MHaggis/notes/blob/master/utilities/Invoke-SPLDLLigence.ps1
