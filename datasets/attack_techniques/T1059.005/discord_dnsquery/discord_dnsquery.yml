@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: 1dea83b6-792e-11ec-95bc-acde48001122
+date: '2022-01-19'
+description: Generated datasets for discord dnsquery in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.005/discord_dnsquery/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://www.microsoft.com/security/blog/2022/01/15/destructive-malware-targeting-ukrainian-organizations/

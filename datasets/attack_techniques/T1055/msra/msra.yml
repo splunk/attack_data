@@ -1,0 +1,15 @@
+author: Michael Haag
+id: cc9b25f4-efc9-11eb-926b-550bf0943fbb
+date: '2021-02-22'
+description: Manual generation of attack data using Cobalt Strike to generate default
+  named pipes.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1055/msra/msra-windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1055/msra/raw-msra-windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1055/msra/windows-security.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1055

@@ -1,0 +1,13 @@
+author: Michael Haag
+id: cc9b2664-efc9-11eb-834c-550bf094334b
+date: '2021-01-24'
+description: 'This behavior is related to the advancedrun.exe.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1588.002/atomic_red_team/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1588/002
+- http://www.nirsoft.net/utils/advanced_run.html
+- https://www.microsoft.com/security/blog/2022/01/15/destructive-malware-targeting-ukrainian-organizations/

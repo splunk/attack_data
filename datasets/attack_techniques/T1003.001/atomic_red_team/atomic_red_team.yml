@@ -1,6 +1,6 @@
-author: Patrick Bareiss
+author: Patrick Bareiss, Michael Haag
 id: cc9b25d6-efc9-11eb-926b-550bf0943fbb
-date: '2020-10-08'
+date: '2022-01-12'
 description: 'Atomic Test Results: Successful Execution of test T1003.001-1 Windows
   Credential Editor Successful Execution of test T1003.001-2 Dump LSASS.exe Memory
   using ProcDump Return value unclear for test T1003.001-3 Dump LSASS.exe Memory using
@@ -13,6 +13,7 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon_creddump.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-system.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

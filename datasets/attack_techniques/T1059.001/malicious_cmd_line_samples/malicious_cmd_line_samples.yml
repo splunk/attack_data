@@ -1,0 +1,11 @@
+author: Michael Hart
+id: c503c2fe-7936-11ec-a7f6-acde48001122
+date: '2022-01-19'
+description: Observed example of adversaries abusing powershell commands for execution.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/malicious_cmd_line_samples/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1059/001/
