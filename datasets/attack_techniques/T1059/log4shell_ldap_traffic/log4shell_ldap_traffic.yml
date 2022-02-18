@@ -6,6 +6,6 @@ environment: custom
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/log4shell_ldap_traffic/pantraffic.txt
 sourcetypes:
-- WinEventLog:Security
+  - pan:traffic
 references:
 - https://research.splunk.com/network/detect_outbound_ldap_traffic/
