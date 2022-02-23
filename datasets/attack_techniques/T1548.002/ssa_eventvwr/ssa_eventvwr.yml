@@ -1,0 +1,11 @@
+author: Lou Stella
+id: cc9b25fe-efc5-13eb-9d6b-550bf0943fbb
+date: '2022-02-23'
+description: SSA Slimmed logs for T1548.002
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.002/ssa_eventvwr/windows-sysmon-registry.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1548/002/
