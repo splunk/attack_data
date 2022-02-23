@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: 1f409a75-25d7-4ac6-99d1-27ae0bca0f4a
+date: '2022-02-22'
+description: Using PowerShell to manually update the Kerberos Pre Authentication flag on a domain account using Set-ADAccountControl.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/powershell/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/powershell/windows-security.log
+sourcetypes:
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1558/004
+- https://stealthbits.com/blog/cracking-active-directory-passwords-with-as-rep-roasting/
