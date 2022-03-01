@@ -5,9 +5,11 @@ description: Manually enumerating domain accounts with Kerberos Pre-Authenticati
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/getaduser/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/getaduser/get-aduser-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/getaduser/windows-security.log
 sourcetypes:
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
+- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:Security
 references:
 - https://attack.mitre.org/techniques/T1558/004
