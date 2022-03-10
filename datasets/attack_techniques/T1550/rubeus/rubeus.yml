@@ -1,0 +1,15 @@
+author: Mauricio Velazco
+id: a26a4ec9-0d36-4e60-8775-c9d7bed4f71d
+date: '2022-03-09'
+description: Over pass the hash attack using Rubeus.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550/rubeus/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550/rubeus/windows-sysmon.log
+sourcetypes:
+- WinEventLog:Security
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://github.com/GhostPack/Rubeus
+- https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
+- https://stealthbits.com/blog/how-to-detect-overpass-the-hash-attacks/
