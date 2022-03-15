@@ -1,0 +1,12 @@
+author: Mauricio Velazco
+id: 2b46cc5a-e277-4ac4-b549-92a5555e4a40
+date: '2022-02-10'
+description: Kerberos user enumeration using kerbrute.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1589.002/kerbrute/windows-security.log
+sourcetypes:
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1589/002/
+- https://github.com/ropnop/kerbrute
