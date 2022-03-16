@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: f5c643c8-5b47-4ae3-bc15-bc52733e2f39
+date: '2022-03-16'
+description: Manual silver ticket attack with Impacket using ticketer.py to create the silver ticket  
+  and wmiexec.py to leverage the ticket and obtain a code execution on host.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.002/impacket/windows-security.log
+sourcetypes:
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1558/002
+- https://en.hackndo.com/kerberos-silver-golden-tickets/
+- https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
