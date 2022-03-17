@@ -3,6 +3,7 @@ id: 32ff9c98-48d2-46aa-9e95-b79f970c5f07
 date: '2021-11-29'
 description: Manually using the Metasploit framework binary to create and start a Windows Service on a remote endpoint that calls PowerShell.exe for lateral movement and remote code execution.
 environment: attack_range
+dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/lateral_movement_powershell/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/lateral_movement_powershell/windows-security.log
 sourcetypes:
