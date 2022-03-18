@@ -52,7 +52,7 @@ for yaml_file in all_files:
                             yaml_data['dataset'] = new_files
                             with open(yaml_file, "w") as updated_yaml_file:
                                 yaml.safe_dump(yaml_data, updated_yaml_file)
-                                
+
                     print("\n")
             except Exception as e:
                 raise(Exception(f"some error [{e}]"))
@@ -102,14 +102,14 @@ for yaml_file in all_files:
                         req = urllib.request.Request(ref)
                         req.headers = headers
                         code = urllib.request.urlopen(req, timeout=20).getcode()
-
+                        code = 200
 
                         #time.sleep(1)
                         print(f"{code}")
                         urls[ref] = code
                     except Exception as e:
                         print(f"Error trying to open {ref}: {str(e)}")
-                        urls[ref] = str(e)
+                        urls[ref] = f"{ref} in {yaml_file}: {str(e)}"
                     
             
         

@@ -7,4 +7,4 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/security_hub_ec2_spike/security_hub_ec2_spike.json
 sourcetypes:
 - aws:securityhub:finding
-references: NA
+references: []
