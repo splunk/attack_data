@@ -28,7 +28,7 @@ for yaml_file in all_files:
         with open(yaml_file, "r") as yf:
             yaml_data = yaml.safe_load(yf)
         
-        if len(sys.argv) > 1 and sys.argv[1] == "update":
+        if len(sys.argv) > 1 and sys.argv[1] == "update_yamls":
             try:
                 directory = os.path.dirname(yaml_file)
                 all_files = glob.glob(os.path.join(directory, "*.*"))
@@ -40,6 +40,10 @@ for yaml_file in all_files:
                     #print(set(new_files))
                     #print(set(yaml_data['dataset']))
                     for dataset in diff_set:
+                        if len(sys.argv) > 2 and sys.argv[1] == "rewrite":
+                            yaml_data['dataset'] = new_files
+                            with open(yaml_file) as updated_yaml_file:
+                                yaml.safe_dump(yaml_data, updated_yaml_file)
                         if dataset in new_files:
                             print(f"\t{dataset} in DIRECTORY[{directory}], but not in FILE[{yaml_file}]")
                         elif dataset in yaml_data['dataset']:
@@ -48,7 +52,7 @@ for yaml_file in all_files:
                             raise(Exception("\tError printing out difference!"))
                     print("\n")
             except Exception as e:
-                raise(Exception(f"some error {e}"))
+                raise(Exception(f"some error [{e}]"))
         
 
         elif False:
@@ -65,7 +69,7 @@ for yaml_file in all_files:
                     print(f"Error for {yaml_file}, {dirpath} does not exist!")
                     
         
-        if 'references' in yaml_data:
+        if 'references' in yaml_data and len(sys.argv) > 1 and sys.argv[1] == "check_urls" :
             for ref in yaml_data['references']:
                 total_refs += 1
                 if ref in urls:
