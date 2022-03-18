@@ -42,7 +42,7 @@ for yaml_file in all_files:
                     for dataset in diff_set:
                         if len(sys.argv) > 2 and sys.argv[2] == "rewrite":
                             yaml_data['dataset'] = new_files
-                            with open(yaml_file) as updated_yaml_file:
+                            with open(yaml_file, "w") as updated_yaml_file:
                                 yaml.safe_dump(yaml_data, updated_yaml_file)
                         if dataset in new_files:
                             print(f"\t{dataset} in DIRECTORY[{directory}], but not in FILE[{yaml_file}]")
