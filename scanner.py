@@ -40,7 +40,7 @@ for yaml_file in all_files:
                     #print(set(new_files))
                     #print(set(yaml_data['dataset']))
                     for dataset in diff_set:
-                        if len(sys.argv) > 2 and sys.argv[1] == "rewrite":
+                        if len(sys.argv) > 2 and sys.argv[2] == "rewrite":
                             yaml_data['dataset'] = new_files
                             with open(yaml_file) as updated_yaml_file:
                                 yaml.safe_dump(yaml_data, updated_yaml_file)
