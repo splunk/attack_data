@@ -1,0 +1,12 @@
+author: Bhavin Patel
+id: 0f63eedd-c3e4-42af-af33-c0959919c114
+date: '2022-02-28'
+description: Manual generation of attack data by updating a lambda function
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204/aws_updatelambdafunctioncode/aws_cloudtrail_events.json
+sourcetypes:
+- aws:cloudtrail
+references:
+- http://detectioninthe.cloud/execution/modify_lambda_function_code/
+- https://attack.mitre.org/techniques/T1204/

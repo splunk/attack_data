@@ -1,0 +1,16 @@
+author: Mauricio Velazco
+id: 4370b1df-d017-42fb-bbae-f96217d33ece
+date: '2022-02-22'
+description: Manually enumerating domain accounts with Kerberos Pre-Authentication disabled using Get-ADUser.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/getaduser/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/getaduser/get-aduser-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/getaduser/windows-security.log
+sourcetypes:
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1558/004
+- https://stealthbits.com/blog/cracking-active-directory-passwords-with-as-rep-roasting/

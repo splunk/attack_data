@@ -1,0 +1,11 @@
+author: Michael Haag
+id: cc9b2627-efc9-12tr-926b-550bf0943fbb
+date: '2022-02-01'
+description: Manual generation of pkexec local privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/pkexec/linux-sysmon.log
+sourcetypes:
+- sysmon_linux
+references:
+- https://attack.mitre.org/techniques/T1068/

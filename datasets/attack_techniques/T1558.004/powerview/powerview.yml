@@ -1,0 +1,15 @@
+author: Mauricio Velazco
+id: 4fd51f53-ba91-4891-96f3-f9c7c56abb1f
+date: '2022-02-18'
+description: Manually enumerating domain accounts with Kerberos Pre-Authentication disabled using PowerView.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/powerview/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/powerview/getdomainuser-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.004/powervew/windows-security.log
+sourcetypes:
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1558/004
+- https://stealthbits.com/blog/cracking-active-directory-passwords-with-as-rep-roasting/

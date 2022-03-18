@@ -1,0 +1,13 @@
+author: Lou Stella
+id: cc9b2623-abd5-11eb-926b-550bf0943fbb
+date: '2022-02-17'
+description: Execution of T1218 test 9 in atomic red team
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218/atomic_red_team/windows-sysmon.log
+sourcetypes:
+- xmlwineventlog
+- WinEventLog
+references:
+- https://attack.mitre.org/techniques/T1218
