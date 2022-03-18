@@ -1,5 +1,12 @@
 author: Patrick Bareiss
-id: cc9b2664-efc9-11eb-926b-550bf0943fbb
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/attack_data.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_raccine.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_dism.log
 date: '2020-10-09'
 description: 'Atomic Test Results: Return value unclear for test T1562.001-9 Unload
   Sysmon Filter Driver Successful Execution of test T1562.001-10 Uninstall Sysmon
@@ -18,19 +25,13 @@ description: 'Atomic Test Results: Return value unclear for test T1562.001-9 Unl
   Defender Evade Scanning -Extension Return value unclear for test T1562.001-23 Tamper
   with Windows Defender Evade Scanning -Process '
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-system.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_dism.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_raccine.log
+id: cc9b2664-efc9-11eb-926b-550bf0943fbb
+references:
+- https://attack.mitre.org/techniques/T1562/001
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.001/T1562.001.md
+- https://github.com/splunk/security-content/blob/develop/tests/T1562_001.yml
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1562/001
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.001/T1562.001.md
-- https://github.com/splunk/security-content/blob/develop/tests/T1562_001.yml

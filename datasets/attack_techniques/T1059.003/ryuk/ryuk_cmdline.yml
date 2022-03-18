@@ -1,12 +1,12 @@
 author: Michael Haag
-id: cc9b25fb-efc9-11eb-926b-550bf0943fbb
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/ryuk/windows-sysmon.log
 date: '2021-03-01'
 description: Manual generation of attack data related to Ryuk with command line argument
   of 8 LAN, related to wake on lan.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+id: cc9b25fb-efc9-11eb-926b-550bf0943fbb
 references:
 - https://attack.mitre.org/techniques/T1059/003/
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,17 +1,14 @@
 author: Stanislav Miskovic
-id: cc9b25ec-efc9-11eb-926b-550bf0943fbb
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/account_manipulation/logAllPowerSploitModulesWithOldNames.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/account_manipulation/logAllMimikatzModules.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/account_manipulation/logAllDSInternalsModules.log
 date: '2021-02-23'
 description: Account manipulation with likely malicious intent or tools.
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllDSInternalsModules.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllMimikatzModules.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllPowerSploitModulesWithOldNames.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/aws_iam_delete_policy/aws_iam_delete_policy.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/aws_iam_failure_group_deletion/aws_iam_failure_group_deletion.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/aws_iam_successful_group_deletion/aws_iam_successful_group_deletion.json
+id: cc9b25ec-efc9-11eb-926b-550bf0943fbb
+references:
+- https://attack.mitre.org/techniques/T1098/
 sourcetypes:
 - WinEventLog:Security
 - aws:cloudtrail
-references:
-- https://attack.mitre.org/techniques/T1098/

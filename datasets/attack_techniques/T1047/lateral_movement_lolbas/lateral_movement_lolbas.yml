@@ -1,15 +1,15 @@
 author: Mauricio Velazco
-id: 0febf3ef-8284-4422-ba5f-08dd37f5ef25
-date: '2021-11-23'
-description: Manually using PowerShell to start a process on a remote endpoint abusing WMI and the Invoke-WmiMethod commandlet for 
-  lateral movement and remote code execution.
-environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/lateral_movement_lolbas/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/lateral_movement_lolbas/windows-securitylog
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Security
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/lateral_movement_lolbas/windows-security.log
+date: '2021-11-23'
+description: Manually using PowerShell to start a process on a remote endpoint abusing
+  WMI and the Invoke-WmiMethod commandlet for lateral movement and remote code execution.
+environment: attack_range
+id: 0febf3ef-8284-4422-ba5f-08dd37f5ef25
 references:
 - https://attack.mitre.org/techniques/T1047/
 - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/invoke-wmimethod?view=powershell-5.1
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security

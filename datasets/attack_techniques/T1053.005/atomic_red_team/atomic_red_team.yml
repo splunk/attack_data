@@ -1,20 +1,22 @@
 author: Automated Attack Data Service
-id: cc9b265d-efc9-11eb-926b-550bf0943fbb
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/attack_data.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/attack_data.tar.gz
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-powershell.log
 date: '2020-12-07'
 description: 'Atomic Test Results: Return value unclear for test T1053.005-1 Scheduled
   Task Startup Script Return value unclear for test T1053.005-2 Scheduled task Local
   Return value unclear for test T1053.005-3 Scheduled task Remote Return value unclear
   for test T1053.005-4 Powershell Cmdlet Scheduled Task '
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-system.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/atomic_red_team/windows-security.log
+id: cc9b265d-efc9-11eb-926b-550bf0943fbb
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 - WinEventLog:System
 - WinEventLog:Security
-references:
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md

@@ -1,11 +1,11 @@
 author: Patrick Bareiss
-id: cc9b25de-efc9-11eb-926b-550bf0943fbb
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.003/o365_new_federated_domain/o365_new_federated_domain.json
 date: '2021-02-01'
 description: Performed operation Add-FederatedDomain
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.003/o365_new_federated_domain/oo365_new_federated_domain.json
-sourcetypes:
-- o365:management:activity
+id: cc9b25de-efc9-11eb-926b-550bf0943fbb
 references:
 - https://attack.mitre.org/techniques/T1136/003/
+sourcetypes:
+- o365:management:activity

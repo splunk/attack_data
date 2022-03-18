@@ -1,12 +1,15 @@
 author: Bhavin Patel
-id: cc9b2676-efc9-11eb-926b-550bf0943fbb
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/certutil_exe_certificate_extraction/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/certutil_exe_certificate_extraction/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/certutil_exe_certificate_extraction/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/certutil_exe_certificate_extraction/windows-powershell.log
 date: '2020-12-09'
 description: This dataset has arguments to certutil.exe indicating the manipulation
   or extraction of Certificate
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/certutil_exe_certificate_extraction/windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+id: cc9b2676-efc9-11eb-926b-550bf0943fbb
 references:
 - https://www.sygnia.co/golden-saml-advisory
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

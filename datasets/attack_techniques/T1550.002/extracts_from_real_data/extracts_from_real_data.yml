@@ -1,13 +1,14 @@
 author: Stanislav Miskovic
-id: bf7bc533-dac6-47cb-9d77-2274a02b0f6d 
-date: '2021-09-01'
-description: Anonymized datasets on Pass the Hash and Pass the Token exploits extracted from real datasets.
-environment: real_data
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.002/ptt_pth_kerb_ntlm_anon_DC_dataset.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.002/ptt_pth_kerb_ntlm_anon_dest_dataset.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.002/extracts_from_real_data/ptt_pth_kerb_ntlm_anon_dest_dataset.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.002/extracts_from_real_data/ptt_pth_kerb_ntlm_anon_DC_dataset.log
+date: '2021-09-01'
+description: Anonymized datasets on Pass the Hash and Pass the Token exploits extracted
+  from real datasets.
+environment: real_data
+id: bf7bc533-dac6-47cb-9d77-2274a02b0f6d
+references:
+- https://attack.mitre.org/techniques/T1550/002/
 sourcetypes:
 - WinEventLog:Security
 - WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1550/002/

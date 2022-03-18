@@ -1,12 +1,10 @@
 author: Stanislav Miskovic
-id: cc9b2663-efc9-11eb-926b-550bf0943fbb
+dataset: []
 date: '2021-02-23'
 description: Illegal service or process control.
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569/logAllMimikatzModules.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569/logAllPowerSploitModulesWithOldNames.log
-sourcetypes:
-- WinEventLog:Security
+id: cc9b2663-efc9-11eb-926b-550bf0943fbb
 references:
 - https://attack.mitre.org/techniques/T1569/
+sourcetypes:
+- WinEventLog:Security

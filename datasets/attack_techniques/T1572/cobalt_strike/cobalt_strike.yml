@@ -1,18 +1,18 @@
 author: Michael Haag
-id: cc9b2667-efc9-11eb-926b-550bf0943fbb
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/stream_dns.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/suricata_events.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/stream_events_zeek.log
 date: '2021-02-22'
 description: DNS Beaconing using Cobalt Strike 4.2. Activity was generated using Attack
   Range and Kali Linux. DNS Beaconing was performed using TXT and A records using
   the domain - getbobspizza.com.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/stream_events_zeek.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/streams_dns.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/cobalt_strike/suricata_events.log
+id: cc9b2667-efc9-11eb-926b-550bf0943fbb
+references:
+- https://attack.mitre.org/techniques/T1572
+- https://cobaltstrike.com/help-dns-beacon
 sourcetypes:
 - bro:dns:json
 - stream:dns
 - suricata
-references:
-- https://attack.mitre.org/techniques/T1572
-- https://cobaltstrike.com/help-dns-beacon

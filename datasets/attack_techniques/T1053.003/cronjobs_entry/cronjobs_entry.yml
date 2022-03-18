@@ -1,11 +1,12 @@
 author: Teoderick Contreras
-id: e5ff2d94-5f51-11ec-ba52-acde48001122
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.003/cronjobs_entry/sysmon_linux_cron_append.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.003/cronjobs_entry/sysmon_linux.log
 date: '2021-12-17'
 description: Generated datasets for cronjobs entry in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.003/cronjobs_entry/sysmon_linux.log
+id: e5ff2d94-5f51-11ec-ba52-acde48001122
+references:
+- https://attack.mitre.org/techniques/T1053/003/
 sourcetypes:
 - Syslog:Linux-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1053/003/ 
