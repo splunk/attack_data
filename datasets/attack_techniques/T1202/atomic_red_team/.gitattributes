@@ -1,0 +1,2 @@
+windows-system.log filter=lfs diff=lfs merge=lfs -text
+windows-sysmon.log filter=lfs diff=lfs merge=lfs -text
