@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 97f37a7b-12cd-4137-b77c-effd225b8d48
+date: '2022-03-29'
+description: Generation of Atomic Red Team technique T1547.011 with plutil and osquery
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.011/atomic_red_team/osquery.log
+sourcetypes:
+- osquery:results
+references:
+- https://attack.mitre.org/techniques/T1547/011/

@@ -1,6 +1,6 @@
 author: Patrick Bareiss
 id: cc9b25d8-efc9-11eb-926b-550bf0943fbb
-date: '2020-10-09'
+date: '2022-03-30'
 description: 'Atomic Test Results: Successful Execution of test T1112-1 Modify Registry
   of Current User Profile - cmd Successful Execution of test T1112-2 Modify Registry
   of Local Machine - cmd Successful Execution of test T1112-3 Modify registry to store
@@ -11,6 +11,7 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/atomic_red_team/windows-powershell.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/atomic_red_team/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/atomic_red_team/safemode_windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/atomic_red_team/windows-system.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
