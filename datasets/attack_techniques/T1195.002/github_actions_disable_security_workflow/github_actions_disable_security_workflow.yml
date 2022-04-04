@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: b9ff1880-0f48-414b-bd12-ae616de1a9bc
+date: '2022-04-04'
+description: Manual generation of attack data by disable a workflow in GitHub actions.
+environment: manual
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.002/github_actions_disable_security_workflow/github_actions_disable_security_workflow.json
+sourcetypes:
+- aws:firehose:json
+references:
+- https://attack.mitre.org/techniques/T1195/002
