@@ -4,7 +4,7 @@ date: '2022-04-04'
 description: Manual generation of attack data by disable a workflow in GitHub actions.
 environment: manual
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.002/github_actions_disable_security_workflow/github_actions_disable_security_workflow.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.002/github_actions_disable_security_workflow/github_actions_disable_security_workflow.log
 sourcetypes:
 - aws:firehose:json
 references:
