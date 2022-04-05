@@ -1,0 +1,16 @@
+author: Eric McGinnis
+id: ebc26bd3-d793-4075-8b65-9b85cb1765a3
+date: '2022-04-05'
+description: 'Atomic Test Results: Successful Execution of test T1202 Indirect Command
+  Execution using forfiles.exe and pcalua.exe for evading restructions on process
+  execution.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1202/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1202/atomic_red_team/windows-security.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1202
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1202/T1202.md
