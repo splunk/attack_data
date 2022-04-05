@@ -5,6 +5,7 @@ description: Manual generation of attack data related to Spring4Shell with Nginx
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/spring4shell/spring4shell_nginx.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/spring4shell/java_write_jsp-linux-sysmon.log
 sourcetypes:
 - nginx:plus:kv
 references:
