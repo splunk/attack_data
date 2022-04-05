@@ -8,5 +8,6 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/spring4shell/java_write_jsp-linux-sysmon.log
 sourcetypes:
 - nginx:plus:kv
+- sysmon_linux
 references:
 - https://attack.mitre.org/techniques/T1190
