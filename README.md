@@ -3,7 +3,7 @@ A Repository of curated datasets from various attacks to:
 
 * Easily develop detections without having to build an environment from scratch or simulate an attack.
 * Test detections, specifically [Splunks Security Content](https://github.com/splunk/security-content)
-* [Replay](#replay-datasets) into streaming pipelines for validating your detections in your production SIEM
+* [Replay](#replay-datasets-) into streaming pipelines for validating your detections in your production SIEM
 
 # Installation
 GitHub LFS is used in this project. For Mac users git-lfs can be derived with homebrew (for another OS click [here](https://github.com/git-lfs/git-lfs/wiki/Installation)):
@@ -24,17 +24,20 @@ Download the repository with this command:
 git clone git@github.com:splunk/attack_data.git
 ````
 
-You can fetch all attack data files (*.json, *.log) with this command:
+Fetch all or select attack data sets
 
 ````
+# This pulls all data - Warning >9Gb of data
 git lfs pull
-````
 
-or a single attack data file with this command:
+# This pulls one data set directory
+git lfs pull --include=datasets/attack_techniques/T1003.001/atomic_red_team/
 
-````
+# Or pull just one log like this
 git lfs pull --include=datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon.log
+
 ````
+
 
 # Anatomy of a Dataset 🧬
 ### Datasets
