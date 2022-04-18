@@ -1,12 +1,13 @@
 author: Michael Haag, Splunk
 id: cc9b2660-efc9-11eb-926b-550bf0943fbb
-date: '2021-04-08'
+date: '2022-04-18'
 description: Manual generation of schtask registering a binary to run from non-standard
   path.
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/taskschedule/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/taskschedule/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/taskschedule/sd_delete_windows-sysmon.log
 sourcetypes:
 - WinEventLog:Security
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
