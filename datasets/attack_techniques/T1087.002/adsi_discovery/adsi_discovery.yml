@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: acd06afa-c6d6-11ec-9d0f-acde48001122
+date: '2022-04-28'
+description: Generated datasets for adsi discovery in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.002/adsi_discovery/windows-powershell-xml.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+references:
+- https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/
