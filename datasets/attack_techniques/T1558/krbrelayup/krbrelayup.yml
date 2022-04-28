@@ -1,0 +1,11 @@
+author: Michael Haag
+id: d1e7e6cf-5ff1-41af-9453-eaca4cb91c9p
+date: '2022-04-28'
+description: Manual simulation of krbrelayup.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558/krbrelayup/krbrelayup.log
+sourcetypes:
+- WinEventLog:Security
+references:
+- https://github.com/Dec0ne/KrbRelayUp
