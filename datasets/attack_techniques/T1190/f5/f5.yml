@@ -1,7 +1,7 @@
 author: Michael Haag, Splunk
 id: cc9b266c-19c9-11eb-926b-220bf0943fas
 date: '2022-05-10'
-description: Attack data related to Log4Shell CVE-2021-44228
+description: Attack data related to CVE-2022-1388
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/f5/f5.log
