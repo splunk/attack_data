@@ -1,0 +1,15 @@
+author: Michael haag
+id: cc9b25d8-efc9-22eb-126b-350bf0943fbb
+date: '2022-05-16'
+description: 'Simulation of drivers loading up.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/drivers/sysmon_sys_filemod.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/drivers/7045_kerneldrivers.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/drivers/sc_kernel.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:System
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1068
