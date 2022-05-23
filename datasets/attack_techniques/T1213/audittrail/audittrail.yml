@@ -1,0 +1,11 @@
+author: Mike Haag, Splunk
+id: jk9b2623-abd5-22eb-926b-550bf1243fbb
+date: '2022-05-23'
+description: Splunk Audit Logs.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1213/audittrail/audittrail.log
+sourcetypes:
+- audittrail
+references:
+- https://attack.mitre.org/techniques/T1213
