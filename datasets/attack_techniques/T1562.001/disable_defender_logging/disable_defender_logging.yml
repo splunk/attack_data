@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: 6833fabc-e646-11ec-995a-acde48001122
+date: '2022-06-07'
+description: Generated datasets for disable defender logging in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/disable_defender_logging/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://app.any.run/tasks/45f5d114-91ea-486c-ab01-41c4093d2861/
