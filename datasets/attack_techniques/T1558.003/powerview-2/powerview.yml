@@ -1,0 +1,12 @@
+author: Gowthamaraj rajendran
+id: 53fefaf9-134b-4b74-be5e-041ca28ec967
+date: '2022-06-23'
+description: 'Using PowerView manually to get SPN accounts using Get-DomainUser or Get-NetUser'
+environment: attack_range
+dataset: 
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.003/powerview-2/windows-powershell.log
+sourcetypes:
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+references:
+- https://attack.mitre.org/techniques/T1558/003
+- https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
