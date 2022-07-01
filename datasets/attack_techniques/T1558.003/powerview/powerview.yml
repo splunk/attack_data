@@ -4,7 +4,7 @@ date: '2022-06-22'
 description: 'Using PowerView manually to obtain a Kerberos service ticket using Get-DomainSPNTicket'
 environment: attack_range
 dataset: 
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.003/powerview/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.003/powerview/windows-powershell-xml.log
 sourcetypes:
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
 references:
