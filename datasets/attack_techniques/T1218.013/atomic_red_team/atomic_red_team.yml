@@ -1,0 +1,12 @@
+author: Michael Haah
+id: cc9b2652-efc9-19eb-126b-850bf0943fbb
+date: '2020-11-30'
+description: 'Atomic Test T1218 simulated for MavInject.exe'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.013/atomic_red_team/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1218/013
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1218/T1218.md
