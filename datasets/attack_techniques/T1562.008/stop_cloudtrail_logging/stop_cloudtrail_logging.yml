@@ -1,0 +1,11 @@
+author: Bhavin Patel
+id: cc9b2603-efc9-11eb-926b-55ddf0dd3fbb
+date: '2022-07-12'
+description: Dataset which contains cloudtrail events when a cloudtrail is stopped from logging. This attack was simulated using status red team. 
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/stop_cloudtrail_logging/aws_cloudtrail_events.json
+sourcetypes:
+- aws:cloudtrail
+references:
+- https://attack.mitre.org/techniques/T1562/008/
