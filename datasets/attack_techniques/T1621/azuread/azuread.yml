@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: b0db79c9-1e82-4a32-9f69-998dc33508a9
+date: '2022-07-14'
+description: 'Manually authenticated to the Azure AD Portal failed to pass MFA challenge by denying it or letting it timeout.
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Azure AD tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/azuread/azure-audit.log
+sourcetypes:
+- mscs:azure:eventhub
+references:
+- https://attack.mitre.org/techniques/T1621/ 
+- https://attack.mitre.org/techniques/T1078/004/
+- https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks
