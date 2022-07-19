@@ -1,0 +1,11 @@
+author: Gowthamaraj Rajendran, Splunk
+id: 31c58bb8-66d9-4dfb-a614-3843d071e1c8
+date: '2022-07-19'
+description: Dataset which contains cloudtrail events when a cloudwatch log group is deleted.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/delete_cloudwatch_log_group/aws_cloudtrail_events.json
+sourcetypes:
+- aws:cloudtrail
+references:
+- https://attack.mitre.org/techniques/T1562/008/

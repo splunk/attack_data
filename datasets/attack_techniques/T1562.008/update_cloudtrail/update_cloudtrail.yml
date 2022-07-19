@@ -1,0 +1,11 @@
+author: Gowthamaraj Rajendran, Splunk
+id: e95c46cb-7bd8-4824-a1da-3a559058dced
+date: '2022-07-19'
+description: Dataset which contains cloudtrail events when a cloudwatch log group is updated.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/update_cloudtrail/aws_cloudtrail_events.json
+sourcetypes:
+- aws:cloudtrail
+references:
+- https://attack.mitre.org/techniques/T1562/008/
