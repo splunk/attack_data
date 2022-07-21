@@ -6,6 +6,6 @@ environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/linux_risk/linuxrisk.log
 sourcetypes:
-- Syslog:Linux-Sysmon/Operational
+- stash
 references:
 - https://attack.mitre.org/tactics/TA0004/
