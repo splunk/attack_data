@@ -1,0 +1,11 @@
+author: Michael Haag
+id: va01fc9e-6260-11ec-b8ae-acde48201112
+date: '2022-07-21'
+description: Generated risk events for Linux persistence and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/linux_risk/linuxrisk.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://attack.mitre.org/tactics/TA0004/
