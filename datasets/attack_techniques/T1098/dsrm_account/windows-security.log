@@ -1,0 +1,23 @@
+07/20/2022 07:01:34 AM
+LogName=Security
+EventCode=4794
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1342132
+Keywords=Audit Success
+TaskCategory=User Account Management
+OpCode=Info
+Message=An attempt was made to set the Directory Services Restore Mode
+administrator password.
+
+Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x24CEAE
+
+Additional Information:
+	Caller Workstation:	[fe80::41d0:242d:f869:a33d]
+	Status Code:	0x0

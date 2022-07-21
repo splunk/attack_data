@@ -1,0 +1,549 @@
+07/21/2022 05:59:06 AM
+LogName=Security
+EventCode=5136
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345970
+Keywords=Audit Success
+TaskCategory=Directory Service Changes
+OpCode=Info
+Message=A directory service object was modified.
+	
+Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Directory Service:
+	Name:	attackrange.local
+	Type:	Active Directory Domain Services
+	
+Object:
+	DN:	CN=WIN-HOST-ROOT-4,CN=Computers,DC=attackrange,DC=local
+	GUID:	{DDC44D0E-0265-4DF5-9B05-5B7E1F2629F1}
+	Class:	computer
+	
+Attribute:
+	LDAP Display Name:	servicePrincipalName
+	Syntax (OID):	2.5.5.12
+	Value:	GC/win-host-root-42062-712.attackrange.local/attackrange.local
+	
+Operation:
+	Type:	Value Deleted
+	Correlation ID:	{9D6BE3B4-1BB6-44FA-BA88-AF0647D14E57}
+	Application Correlation ID:	-
+07/21/2022 05:59:06 AM
+LogName=Security
+EventCode=5141
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345969
+Keywords=Audit Success
+TaskCategory=Directory Service Changes
+OpCode=Info
+Message=A directory service object was deleted.
+	
+Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+	
+Directory Service:
+	Name:	attackrange.local
+	Type:	Active Directory Domain Services
+	
+Object:
+	DN:	CN=NTDS Settings,CN=WIN-HOST-ROOT-4,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=attackrange,DC=local
+	GUID:	{3FC48F1B-26B5-4780-9780-E2FC8A87A3B4}
+	Class:	nTDSDSA
+	
+Operation:
+	Tree Delete:	No
+	Correlation ID:	{25629CFC-2358-48D1-ABDC-77EC9F873B46}
+	Application Correlation ID:	-
+07/21/2022 05:59:06 AM
+LogName=Security
+EventCode=5137
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345968
+Keywords=Audit Success
+TaskCategory=Directory Service Changes
+OpCode=Info
+Message=A directory service object was created.
+	
+Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+	
+Directory Service:
+	Name:	attackrange.local
+	Type:	Active Directory Domain Services
+	
+Object:
+	DN:	CN=WIN-HOST-ROOT-4,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=attackrange,DC=local
+	GUID:	{F15CE3E1-EFA1-4E58-939E-EBC80EA95394}
+	Class:	server
+	
+Operation:
+	Correlation ID:	{96BB1625-537C-4FCF-A380-36D483F9EDF5}
+	Application Correlation ID:	-
+07/21/2022 05:59:06 AM
+LogName=Security
+EventCode=5141
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345967
+Keywords=Audit Success
+TaskCategory=Directory Service Changes
+OpCode=Info
+Message=A directory service object was deleted.
+	
+Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+	
+Directory Service:
+	Name:	attackrange.local
+	Type:	Active Directory Domain Services
+	
+Object:
+	DN:	CN=WIN-HOST-ROOT-4,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=attackrange,DC=local
+	GUID:	{F15CE3E1-EFA1-4E58-939E-EBC80EA95394}
+	Class:	server
+	
+Operation:
+	Tree Delete:	No
+	Correlation ID:	{C17E3237-6D3C-4535-9ABD-EE9202849C21}
+	Application Correlation ID:	-
+07/21/2022 05:59:06 AM
+LogName=Security
+EventCode=5136
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345966
+Keywords=Audit Success
+TaskCategory=Directory Service Changes
+OpCode=Info
+Message=A directory service object was modified.
+	
+Subject:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Directory Service:
+	Name:	attackrange.local
+	Type:	Active Directory Domain Services
+	
+Object:
+	DN:	CN=WIN-HOST-ROOT-4,CN=Computers,DC=attackrange,DC=local
+	GUID:	{DDC44D0E-0265-4DF5-9B05-5B7E1F2629F1}
+	Class:	computer
+	
+Attribute:
+	LDAP Display Name:	servicePrincipalName
+	Syntax (OID):	2.5.5.12
+	Value:	GC/win-host-root-42062-712.attackrange.local/attackrange.local
+	
+Operation:
+	Type:	Value Added
+	Correlation ID:	{20927CD4-6FC6-4C0A-AA35-27BDBEE3A766}
+	Application Correlation ID:	-
+07/21/2022 05:59:00 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345965
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		S-1-5-21-650387240-2497352073-901413305-500
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Object:
+	Object Server:		DS
+	Object Type:		%{bf967a86-0de6-11d0-a285-00aa003049e2}
+	Object Name:		%{ddc44d0e-0265-4df5-9b05-5b7e1f2629f1}
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		Write Property
+				
+	Access Mask:		0x20
+	Properties:		Write Property
+		{e48d0154-bcf8-11d1-8702-00c04fb96050}
+			{f3a64788-5306-11d1-a9c5-0000f80367c1}
+	{bf967a86-0de6-11d0-a285-00aa003049e2}
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/21/2022 05:59:00 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345964
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		S-1-5-21-650387240-2497352073-901413305-500
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Object:
+	Object Server:		DS
+	Object Type:		%{bf967a92-0de6-11d0-a285-00aa003049e2}
+	Object Name:		%{f15ce3e1-efa1-4e58-939e-ebc80ea95394}
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		DELETE
+				
+	Access Mask:		0x10000
+	Properties:		DELETE
+	{bf967a92-0de6-11d0-a285-00aa003049e2}
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/21/2022 05:59:00 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345963
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		S-1-5-21-650387240-2497352073-901413305-500
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Object:
+	Object Server:		DS
+	Object Type:		%{f0f8ffab-1191-11d0-a060-00aa006c33ed}
+	Object Name:		%{3fc48f1b-26b5-4780-9780-e2fc8a87a3b4}
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		DELETE
+				
+	Access Mask:		0x10000
+	Properties:		DELETE
+	{f0f8ffab-1191-11d0-a060-00aa006c33ed}
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/21/2022 05:59:00 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345958
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		S-1-5-21-650387240-2497352073-901413305-500
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Object:
+	Object Server:		DS
+	Object Type:		%{bf967a86-0de6-11d0-a285-00aa003049e2}
+	Object Name:		%{ddc44d0e-0265-4df5-9b05-5b7e1f2629f1}
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		Write Property
+				
+	Access Mask:		0x20
+	Properties:		Write Property
+		{e48d0154-bcf8-11d1-8702-00c04fb96050}
+			{f3a64788-5306-11d1-a9c5-0000f80367c1}
+	{bf967a86-0de6-11d0-a285-00aa003049e2}
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/21/2022 05:59:00 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345957
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		S-1-5-21-650387240-2497352073-901413305-500
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Object:
+	Object Server:		DS
+	Object Type:		%{f780acc0-56f0-11d1-a9c6-0000f80367c1}
+	Object Name:		%{82b92c46-c78d-4352-8cd1-41e28ad899ad}
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		Create Child
+				
+	Access Mask:		0x1
+	Properties:		Create Child
+	{bf967a92-0de6-11d0-a285-00aa003049e2}
+
+
+Additional Information:
+	Parameter 1:		CN=WIN-HOST-ROOT-4,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=attackrange,DC=local
+	Parameter 2:		%{f15ce3e1-efa1-4e58-939e-ebc80ea95394}
+07/21/2022 05:59:00 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345956
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		S-1-5-21-650387240-2497352073-901413305-500
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Object:
+	Object Server:		DS
+	Object Type:		%{bf967a86-0de6-11d0-a285-00aa003049e2}
+	Object Name:		%{ddc44d0e-0265-4df5-9b05-5b7e1f2629f1}
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		Read Property
+				
+	Access Mask:		0x10
+	Properties:		Read Property
+		{e48d0154-bcf8-11d1-8702-00c04fb96050}
+			{bf9679e4-0de6-11d0-a285-00aa003049e2}
+		{4c164200-20c0-11d0-a768-00aa006e0529}
+			{bf967a68-0de6-11d0-a285-00aa003049e2}
+		{72e39547-7b18-11d1-adef-00c04fd8d5cd}
+			{72e39547-7b18-11d1-adef-00c04fd8d5cd}
+	{bf967a86-0de6-11d0-a285-00aa003049e2}
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/21/2022 05:59:00 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345955
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		S-1-5-21-650387240-2497352073-901413305-500
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Object:
+	Object Server:		DS
+	Object Type:		%{bf967a8b-0de6-11d0-a285-00aa003049e2}
+	Object Name:		%{ec49e9c1-5a16-4f43-b23b-153adeb9da76}
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		List Contents
+				
+	Access Mask:		0x4
+	Properties:		List Contents
+	{bf967a8b-0de6-11d0-a285-00aa003049e2}
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/21/2022 05:59:00 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345954
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		S-1-5-21-650387240-2497352073-901413305-500
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x1E3D77
+
+Object:
+	Object Server:		DS
+	Object Type:		%{bf967a86-0de6-11d0-a285-00aa003049e2}
+	Object Name:		%{ddc44d0e-0265-4df5-9b05-5b7e1f2629f1}
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		Read Property
+				
+	Access Mask:		0x10
+	Properties:		Read Property
+		{e48d0154-bcf8-11d1-8702-00c04fb96050}
+			{bf9679e5-0de6-11d0-a285-00aa003049e2}
+		{59ba2f42-79a2-11d0-9020-00c04fc2d3cf}
+			{3e0abfd0-126a-11d0-a060-00aa006c33ed}
+	{bf967a86-0de6-11d0-a285-00aa003049e2}
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/21/2022 05:59:00 AM
+LogName=Security
+EventCode=4624
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1345953
+Keywords=Audit Success
+TaskCategory=Logon
+OpCode=Info
+Message=An account was successfully logged on.
+
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Logon Information:
+	Logon Type:		3
+	Restricted Admin Mode:	-
+	Virtual Account:		No
+	Elevated Token:		Yes
+
+Impersonation Level:		Impersonation
+
+New Logon:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE.LOCAL
+	Logon ID:		0x1E3D77
+	Linked Logon ID:		0x0
+	Network Account Name:	-
+	Network Account Domain:	-
+	Logon GUID:		{94FF581C-366E-F5A4-5F5E-735F58E38308}
+
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	10.0.1.15
+	Source Port:		64265
+
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon session is created. It is generated on the computer that was accessed.
+
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+
+The logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).
+
+The New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.
+
+The network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.
+
+The impersonation level field indicates the extent to which a process in the logon session can impersonate.
+
+The authentication information fields provide detailed information about this specific logon request.
+	- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.
+	- Transited services indicate which intermediate services have participated in this logon request.
+	- Package name indicates which sub-protocol was used among the NTLM protocols.
+	- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.
