@@ -1,0 +1,64 @@
+07/20/2022 06:51:37 AM
+LogName=Directory Service
+EventCode=1072
+EventType=4
+ComputerName=win-dc-root-42062-811.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-650387240-2497352073-901413305-500
+SidType=0
+SourceName=Microsoft-Windows-ActiveDirectory_DomainService
+Type=Information
+RecordNumber=94
+Keywords=Classic
+TaskCategory=Replication
+OpCode=The operation completed successfully.
+Message=Internal event: This directory service was prompted by the directory service at the following network address with a request for retrieval of changes for the following directory partition with these options. 
+ 
+Directory partition:
+CN=krbtgt,CN=Users,DC=attackrange,DC=local 
+Network address:
+5672b9a5-150b-4069-91b5-6b1390943122 (win-dc-root-42062-811.attackrange.local) 
+Update sequence number:
+0 
+Flags:
+0x80000030 
+Sensitivity:
+0 
+Operation:
+6 
+DirSync Control Flags:
+0x0 
+Active GetNC sessions:
+1
+07/20/2022 06:51:30 AM
+LogName=Directory Service
+EventCode=1072
+EventType=4
+ComputerName=win-dc-root-42062-811.attackrange.local
+User=NOT_TRANSLATED
+Sid=S-1-5-21-650387240-2497352073-901413305-1008
+SidType=0
+SourceName=Microsoft-Windows-ActiveDirectory_DomainService
+Type=Information
+RecordNumber=92
+Keywords=Classic
+TaskCategory=Replication
+OpCode=The operation completed successfully.
+Message=Internal event: This directory service was prompted by the directory service at the following network address with a request for retrieval of changes for the following directory partition with these options. 
+ 
+Directory partition:
+CN=krbtgt,CN=Users,DC=attackrange,DC=local 
+Network address:
+5672b9a5-150b-4069-91b5-6b1390943122 (win-dc-root-42062-811.attackrange.local) 
+Update sequence number:
+0 
+Flags:
+0x80000030 
+Sensitivity:
+0 
+Operation:
+6 
+DirSync Control Flags:
+0x0 
+Active GetNC sessions:
+1
