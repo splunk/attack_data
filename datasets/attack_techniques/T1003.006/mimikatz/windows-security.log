@@ -1,0 +1,184 @@
+07/20/2022 06:33:56 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1342047
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x16184E8
+
+Object:
+	Object Server:		DS
+	Object Type:		domainDNS
+	Object Name:		DC=attackrange,DC=local
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		Control Access
+				
+	Access Mask:		0x100
+	Properties:		Control Access
+		Replicating Directory Changes All
+	domainDNS
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/20/2022 06:33:56 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1342046
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x16184E8
+
+Object:
+	Object Server:		DS
+	Object Type:		domainDNS
+	Object Name:		DC=attackrange,DC=local
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		Control Access
+				
+	Access Mask:		0x100
+	Properties:		Control Access
+		Replicating Directory Changes
+	domainDNS
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/20/2022 06:33:56 AM
+LogName=Security
+EventCode=4662
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1342045
+Keywords=Audit Success
+TaskCategory=Directory Service Access
+OpCode=Info
+Message=An operation was performed on an object.
+
+Subject :
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE
+	Logon ID:		0x16184E8
+
+Object:
+	Object Server:		DS
+	Object Type:		domainDNS
+	Object Name:		DC=attackrange,DC=local
+	Handle ID:		0x0
+
+Operation:
+	Operation Type:		Object Access
+	Accesses:		Control Access
+				
+	Access Mask:		0x100
+	Properties:		Control Access
+		Replicating Directory Changes
+	domainDNS
+
+
+Additional Information:
+	Parameter 1:		-
+	Parameter 2:
+07/20/2022 06:33:56 AM
+LogName=Security
+EventCode=4624
+EventType=0
+ComputerName=win-dc-root-42062-811.attackrange.local
+SourceName=Microsoft Windows security auditing.
+Type=Information
+RecordNumber=1342044
+Keywords=Audit Success
+TaskCategory=Logon
+OpCode=Info
+Message=An account was successfully logged on.
+
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Logon Information:
+	Logon Type:		3
+	Restricted Admin Mode:	-
+	Virtual Account:		No
+	Elevated Token:		Yes
+
+Impersonation Level:		Identification
+
+New Logon:
+	Security ID:		ATTACKRANGE\Administrator
+	Account Name:		Administrator
+	Account Domain:		ATTACKRANGE.LOCAL
+	Logon ID:		0x16184E8
+	Linked Logon ID:		0x0
+	Network Account Name:	-
+	Network Account Domain:	-
+	Logon GUID:		{67850C97-51A0-960B-EB93-23AB770C8DB1}
+
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	10.0.1.15
+	Source Port:		63562
+
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon session is created. It is generated on the computer that was accessed.
+
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+
+The logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).
+
+The New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.
+
+The network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.
+
+The impersonation level field indicates the extent to which a process in the logon session can impersonate.
+
+The authentication information fields provide detailed information about this specific logon request.
+	- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.
+	- Transited services indicate which intermediate services have participated in this logon request.
+	- Package name indicates which sub-protocol was used among the NTLM protocols.
+	- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.

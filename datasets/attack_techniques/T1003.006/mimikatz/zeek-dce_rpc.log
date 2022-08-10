@@ -1,0 +1,1 @@
+{"ts":"2022-07-20T06:33:56.414850Z","uid":"CJ8HNb1ZvL5QWLlNTh","id.orig_h":"10.0.1.15","id.orig_p":63562,"id.resp_h":"10.0.1.14","id.resp_p":49666,"rtt":0.0008380413055419922,"named_pipe":"49666","endpoint":"drsuapi","operation":"DRSGetNCChanges"}

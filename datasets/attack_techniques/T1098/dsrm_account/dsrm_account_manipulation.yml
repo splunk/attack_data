@@ -1,0 +1,14 @@
+author: Dean Luxton
+id: c34cf284-c478-4a27-8c98-f4a76b76b2fb
+date: '2022-07-21'
+description: Account manipulation - converting DSRM account to an AD Backdoor
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/dsrm_account/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/dsrm_account/windows-sysmon.log
+sourcetypes:
+- WinEventLog
+- xmlwineventlog
+references:
+- https://adsecurity.org/?p=1714
+- https://attack.mitre.org/techniques/T1098/
