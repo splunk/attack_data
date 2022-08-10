@@ -1,0 +1,11 @@
+author: Gowthamaraj Rajendran, Splunk
+id: ca038e78-021e-4f4f-ae04-68e58b911625
+date: '2022-08-10'
+description: EMACS linux living off the land and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/emacs/sysmon_linux.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://attack.mitre.org/tactics/TA0004/

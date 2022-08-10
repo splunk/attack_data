@@ -1,0 +1,11 @@
+author: Gowthamaraj Rajendran, Splunk
+id: e08064be-ad33-4dd7-9cc9-2f7e9ed81302
+date: '2022-08-10'
+description: GEM linux living off the land and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/gem/sysmon_linux.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://attack.mitre.org/tactics/TA0004/
