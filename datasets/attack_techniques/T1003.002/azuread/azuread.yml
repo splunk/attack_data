@@ -1,7 +1,7 @@
 author: Mauricio Velazco
 id: b0db79c9-1e82-4a32-9f69-998dc33508a8
 date: '2022-08-15'
-description: Logs on dsiabling the MFA for a user
+description: Logs on disabling the MFA for a user
 environment: Azure AD tenant
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/azuread/azure-audit.log
