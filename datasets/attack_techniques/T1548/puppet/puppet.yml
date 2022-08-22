@@ -1,0 +1,11 @@
+author: Gowthamaraj Rajendran, Splunk
+id: 81e7003c-1b44-467f-84da-05a3d38d1d8f
+date: '2022-08-12'
+description: Puppet linux living off the land and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/puppet/sysmon_linux.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://attack.mitre.org/tactics/TA0004/

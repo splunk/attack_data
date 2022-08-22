@@ -1,0 +1,11 @@
+author: Gowthamaraj Rajendran, Splunk
+id: 6a0e3130-6fdf-4b82-9c1d-a914d1ab63b0
+date: '2022-08-10'
+description: MySQL linux living off the land and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/mysql/sysmon_linux.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://attack.mitre.org/tactics/TA0004/

@@ -1,0 +1,11 @@
+author: Gowthamaraj Rajendran, Splunk
+id: ab0285b6-cbed-4163-b18a-76e572b0ad34
+date: '2022-08-12'
+description: Csvtool linux living off the land and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/csvtool/sysmon_linux.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://attack.mitre.org/tactics/TA0004/
