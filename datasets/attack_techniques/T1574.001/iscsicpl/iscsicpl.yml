@@ -1,0 +1,13 @@
+author: Michael Haag
+id: aa9b2664-efc9-11eb-926b-550bfe94334b
+date: '2020-12-08'
+description: 'This behavior is related to the POC for iscsicpl.exe.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.001/iscsicpl/iscsi-windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1574/001
+- https://github.com/hackerhouse-opensource/iscsicpl_bypassUAC
+- https://github.com/422926799/csplugin/tree/master/bypassUAC

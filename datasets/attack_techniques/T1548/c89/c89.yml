@@ -1,0 +1,11 @@
+author: Gowthamaraj Rajendran, Splunk
+id: b02cf07e-9e11-4c06-a4b3-db7945e9d5d0
+date: '2022-08-12'
+description: C89 linux living off the land and privilege escalation.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/c89/sysmon_linux.log
+sourcetypes:
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://attack.mitre.org/tactics/TA0004/
