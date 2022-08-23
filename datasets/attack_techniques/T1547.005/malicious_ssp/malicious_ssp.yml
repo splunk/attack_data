@@ -1,0 +1,16 @@
+author: Dean Luxton
+id: 23ec953f-b6b4-41ec-a81d-8c08fb3706ab
+date: '2022-08-23'
+description: Malicious Security Support Provider (SSP)
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.005/malicious_ssp/windows-security-xml.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.005/malicious_ssp/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog
+- xmlwineventlog
+references:
+- https://adsecurity.org/?p=1760
+- https://blog.xpnsec.com/exploring-mimikatz-part-2/
+- https://www.ired.team/offensive-security/credential-access-and-credential-dumping/intercepting-logon-credentials-via-custom-security-support-provider-and-authentication-package
+- https://attack.mitre.org/techniques/T1547/005
