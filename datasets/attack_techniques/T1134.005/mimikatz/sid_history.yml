@@ -1,7 +1,7 @@
 author: Dean Luxton
 id: fbedf606-d7c8-4fe5-96ae-ad0526b90ec0
 date: '2022-08-23'
-description: Access Token Manipulation: SID-History Injection
+description: Utilising the sid::patch & sid::add commands from a mimikatz shell running debug privilegs. Successfully patched ntds & added a SID history ad attribute to a user object. Note, also works with computer accounts ;)
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1134.005/mimikatz/windows-security-xml.log

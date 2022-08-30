@@ -1,7 +1,7 @@
 author: Dean Luxton
 id: 23ec953f-b6b4-41ec-a81d-8c08fb3706ab
 date: '2022-08-23'
-description: Malicious Security Support Provider (SSP)
+description: Manually copying mimilib.dll over to system32 & registering the dll as a new SSP via registry. Attack was ran successfully against a non-domain joined windows device, and a domain joined windows sever. (Also applicable against DCs)
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.005/malicious_ssp/windows-security-xml.log
