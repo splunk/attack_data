@@ -1,0 +1,13 @@
+author: Dean Luxton
+id: 3c82c945-1a1f-47c7-86ed-f74ba444767f
+date: '2022-08-23'
+description: Deleteing the credential guard reg keys to disable credential guard on a windows host.  
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/disable_credential_guard/windows-sysmon.log
+sourcetypes:
+- xmlwineventlog
+references:
+- https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage
+- https://teamhydra.blog/2020/08/25/bypassing-credential-guard
+
