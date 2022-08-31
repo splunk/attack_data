@@ -1,0 +1,11 @@
+author: Jose Hernandez
+id: 47494001-2bec-404c-9e79-e4c269a6722c
+date: '2022-08-31'
+description: These datasets correspond to different risk_events for an Enterprise Security server that are generated from the Living Off The Land analytic story detections. The dataset have been adjusted to reflect risk events from user `fyodor@splunktshirtcompany.com` and machine `fyodor-l.splunktshirtcompany.com`. Since these are risk events the sourcetype is stash and the source is the name of each detection on the datasets.  
+environment: attack_range
+dataset:
+- https://github.com/splunk/attack_data/raw/master/datasets/suspicious_behaviour/linux_post_exploitation/mimipenguin.txt
+sourcetypes:
+- stash 
+references:
+- https://research.splunk.com/stories/living_off_the_land/
