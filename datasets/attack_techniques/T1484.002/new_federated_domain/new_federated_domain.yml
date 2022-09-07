@@ -1,0 +1,16 @@
+author: Mauricio Velazco
+id: 7c272679-8cb2-4e0c-8d0a-608239dc6520
+date: '2022-09-02'
+description: 'Manually added a new trusted domain using the Azure Portal and updated federation settings using AADInternals.
+  Tenant specific details like tenant id, user names, etc. have been modified.'
+environment: Azure AD tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.002/new_federated_domain/azure-audit.log
+sourcetypes:
+- mscs:azure:eventhub
+references:
+- https://www.mandiant.com/resources/blog/remediation-and-hardening-strategies-for-microsoft-365-to-defend-against-unc2452
+- https://o365blog.com/post/federation-vulnerability/
+- https://www.inversecos.com/2021/11/how-to-detect-azure-active-directory.html
+- https://www.mandiant.com/resources/blog/detecting-microsoft-365-azure-active-directory-backdoors
+- https://github.com/Gerenios/AADInternals
