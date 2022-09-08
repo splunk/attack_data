@@ -11,3 +11,4 @@ sourcetypes:
 references:
 - https://attack.mitre.org/techniques/T1110/003/
 - https://github.com/mvelazc0/PurpleSharp
+- https://github.com/mvelazc0/PurpleAD/tree/main/Credential%20Access
