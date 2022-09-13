@@ -1,0 +1,13 @@
+author: Dean Luxton
+id: 8de764d7-2723-4ed0-bd65-1990c2cd9347
+date: '2022-08-23'
+description: Disabling LSA Protection by deleting registry keys.  
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/disable_lsa_protection/windows-sysmon.log
+sourcetypes:
+- xmlwineventlog
+references:
+- https://docs.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection
+- https://itm4n.github.io/lsass-runasppl/
+- https://attack.mitre.org/techniques/T1556

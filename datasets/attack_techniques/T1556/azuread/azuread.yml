@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: b0db79c9-1e82-4a32-9f69-998dc33508a8
+date: '2022-08-15'
+description: Logs on disabling the MFA for a user
+environment: Azure AD tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/azuread/azure-audit.log
+sourcetypes:
+- mscs:azure:eventhub
+references:
+- https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks
+- https://attack.mitre.org/techniques/T1556/
+- https://attack.mitre.org/tactics/TA0005/

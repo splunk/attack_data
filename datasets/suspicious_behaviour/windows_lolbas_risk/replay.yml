@@ -1,0 +1,118 @@
+splunk:
+  # connects to host on port 8089 make sure you have access to <host>:8089
+  host: localhost
+  username: admin
+  password: changeme
+
+datasets:
+#name of data set to replay
+- name: CMD Carry Out String Command Parameter
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_cmdcarry.log
+  replay_parameters:
+    source: BA - CMD Carry Out String Command Parameter - Rule
+    sourcetype: stash
+    index: risk
+    # updates timestamp of the dataset to current time.
+    # update_timestamp: True
+  enabled: True
+
+- name: Detect HTML Help URL in Command Line
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_html_help.log
+  replay_parameters:
+    source: BA - Detect HTML Help URL in Command Line - Rule
+    sourcetype: stash
+    index: risk
+    # updates timestamp of the dataset to current time.
+    # update_timestamp: True
+  enabled: True
+
+- name: Detect HTML Help Using InfoTech Storage Handlers
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_html_infotech.log
+  replay_parameters:
+    source: BA - Detect HTML Help Using InfoTech Storage Handlers - Rule
+    sourcetype: stash
+    index: risk
+    # updates timestamp of the dataset to current time.
+    # update_timestamp: True
+  enabled: True
+
+- name: Suspicious mshta child process
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_mshta_child.log
+  replay_parameters:
+    source: BA - Suspicious mshta child process - Rule
+    sourcetype: stash
+    index: risk
+    # updates timestamp of the dataset to current time.
+    # update_timestamp: True
+  enabled: True
+
+- name: Detect mshta inline hta execution
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_mshta_inline_hta.log
+  replay_parameters:
+    source: BA - Detect mshta inline hta execution - Rule
+    sourcetype: stash
+    index: risk
+    # updates timestamp of the dataset to current time.
+    # update_timestamp: True
+  enabled: True
+
+- name: Suspicious mshta spawn
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_mshta_spawn.log
+  replay_parameters:
+    source: BA - Suspicious mshta spawn - Rule
+    sourcetype: stash
+    index: risk
+    # updates timestamp of the dataset to current time.
+    # update_timestamp: True
+  enabled: True
+
+- name: Detect MSHTA Url in Command Line
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_mshta_url_in_cmd.log 
+  replay_parameters:
+    source: BA - Detect MSHTA Url in Command Line - Rule
+    sourcetype: stash
+    index: risk
+    # updates timestamp of the dataset to current time.
+    # update_timestamp: True
+  enabled: True
+
+
+- name: Detect Rundll32 Inline HTA Execution
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_rundll32.log
+  replay_parameters:
+    source: BA - Detect Rundll32 Inline HTA Execution - Rule
+    sourcetype: stash
+    index: risk
+    # updates timestamp of the dataset to current time.
+    # update_timestamp: True
+  enabled: True
+
+- name: Svchost LOLBAS Execution Process Spawn
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_svchost.log
+  replay_parameters:
+    source: BA - Svchost LOLBAS Execution Process Spawn - Rule
+    sourcetype: stash
+    index: risk
+    # updates timestamp of the dataset to current time.
+    # update_timestamp: True
+  enabled: True
+
+
+- name: Svchost LOLBAS Execution Process Spawn
+# relative path of raw file
+  path: /home/jhernandez/splunk/attack_data/datasets/suspicious_behaviour/windows_lolbas_risk/lolbin_svchost_lolbas_spawn.log
+  replay_parameters:
+    source: BA - Svchost LOLBAS Execution Process Spawn - Rule
+    sourcetype: stash
+    index: risk
+    # update_timestamp: True
+  enabled: True

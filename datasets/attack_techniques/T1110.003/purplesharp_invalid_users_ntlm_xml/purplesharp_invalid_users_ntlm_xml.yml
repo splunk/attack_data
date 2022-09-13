@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: e44d2275-8b33-4244-9123-73e28eff4d77
+date: '2022-09-08'
+description: 'Automated generation of attack data using PurpleSharp: NTLM Password
+  Spraying with randomly 50 generated usernames'
+environment: attack_range + badblood
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/purplesharp_invalid_users_ntlm_xml/windows-security.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://attack.mitre.org/techniques/T1110/003/
+- https://github.com/mvelazc0/PurpleSharp
+- https://github.com/mvelazc0/PurpleAD/tree/main/Credential%20Access
