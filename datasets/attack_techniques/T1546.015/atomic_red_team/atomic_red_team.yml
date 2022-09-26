@@ -1,0 +1,16 @@
+author: Michael Haag, Splunk
+id: 48489030-45fb-4945-a761-9aef99cd5978
+date: '2022-09-26'
+description: 'Atomic Test Results: Successful Execution of test T1546.015 related to inprocserver32 '
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.015/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.015/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.015/atomic_red_team/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1546/015/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1546.012/T1546.015.md
