@@ -8,7 +8,9 @@ environment: attack_range_evilginx2
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_stream:dns.json
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.002/atomic_red_team/attack_data_network_resolution_dm.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.002/atomic_red_team/windows-security.log
 sourcetypes:
 - stream:dns
+- WinEventLog:Security
 references:
 - https://attack.mitre.org/techniques/T1566/002/
