@@ -1,0 +1,11 @@
+author: Bhavin Patel
+id: 1c9b1174-efc9-11eb-111b-550bf3933fbb
+date: '2022-10-03'
+description: This dataset contains an cloudtrail events of successful Console login without MFA  
+environment: NA
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/aws_login_sfa/cloudtrail.json
+sourcetypes:
+- aws:cloudtrail
+references:
+- https://attack.mitre.org/techniques/T1078/004/
