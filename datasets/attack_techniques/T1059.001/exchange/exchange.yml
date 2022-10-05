@@ -1,0 +1,11 @@
+author: Michael Haag, Splunk
+id: 16c9ac54-d483-4ca6-9bea-662531eec469
+date: '2022-10-05'
+description: Manual generation suspicious PowerShell Exchange modules used in ProxyShell or ProxyNotShell based attacks.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/exchange/windows-powershell.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+references:
+- https://attack.mitre.org/techniques/T1059/001
