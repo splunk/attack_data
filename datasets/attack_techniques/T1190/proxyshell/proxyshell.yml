@@ -5,9 +5,11 @@ description: Manual generation of attack data related to ProxyShell.
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/proxyshell/proxyshell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/proxyshell/proxyshell-risk.log
 sourcetypes:
 - MSWindows:IIS
 - ms:iis:splunk
+- stash
 references:
   - https://attack.mitre.org/techniques/T1190
   - https://github.com/GossiTheDog/ThreatHunting/blob/master/AzureSentinel/Exchange-Powershell-via-SSRF
