@@ -1,0 +1,12 @@
+author: Mauricio Velazco
+id: 09261f80-30d7-4482-92e1-a9e3ecb6abfe
+date: '2022-10-13'
+description: 'Manually authenticateed to a GCP tenant with an account that does not have Multi Factor authenttication enabled.
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Google Cloud Platform tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/gcp_single_factor_auth/gws_login.log
+sourcetypes:
+- gws:reports:login
+references:
+- https://attack.mitre.org/techniques/T1078/004/
