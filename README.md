@@ -1,4 +1,5 @@
-# Attack Data Repository 🧱
+![](environments/static/attack-data-logo.png)
+
 A Repository of curated datasets from various attacks to:
 
 * Easily develop detections without having to build an environment from scratch or simulate an attack.
