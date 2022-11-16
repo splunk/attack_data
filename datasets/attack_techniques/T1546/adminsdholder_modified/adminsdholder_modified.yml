@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: a9ed69d2-b5a2-4eba-8906-e5e407e79e16
+date: '2022-11-15'
+description: Used powershell to modify the ACL of the AdminSDHolder active directory object.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546/adminsdholder_modified/windows-security.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory
+- https://social.technet.microsoft.com/wiki/contents/articles/22331.adminsdholder-protected-groups-and-security-descriptor-propagator.aspx
+- https://adsecurity.org/?p=1906
+- https://pentestlab.blog/2022/01/04/domain-persistence-adminsdholder/
