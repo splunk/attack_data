@@ -5,8 +5,10 @@ description: Execution of payloads from MetaSploit.
 environment: Attack Range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/metasploit/apachebench_windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/metasploit/msf.powershell.powershell.log
 sourcetypes:
 - WinEventLog:Security
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
 references:
 - https://attack.mitre.org/techniques/T1059/
