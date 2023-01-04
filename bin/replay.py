@@ -14,8 +14,12 @@ import splunklib.client as client
 class DataManipulation:
 
     def manipulate_timestamp(self, file_path, sourcetype, source):
+        source = source.lower()
+        sourcetype = sourcetype.lower()
+
         # check that we support the source or sourcetype sent for manipulation
-        SUPPORTED = ['WinEventLog:System', 'WinEventLog:Security', 'exchange', 'aws:cloudtrail']
+        SUPPORTED = ['XmlWinEventLog:Microsoft-Windows-Sysmon/Operational', 'WinEventLog:System', 'WinEventLog:Security', 'exchange', 'aws:cloudtrail']
+        SUPPORTED = list(map(lambda x: x.lower(), SUPPORTED))
         if (sourcetype in SUPPORTED) or (source in SUPPORTED):
             print("updating timestamps before replaying for file: {0}".format(file_path))
         else:
@@ -25,8 +29,11 @@ class DataManipulation:
         if sourcetype == 'aws:cloudtrail':
             self.manipulate_timestamp_cloudtrail(file_path)
 
-        if source == 'WinEventLog:System' or source == 'WinEventLog:Security':
+        if source == 'WinEventLog:System'.lower() or source == 'WinEventLog:Security'.lower():
             self.manipulate_timestamp_windows_event_log_raw(file_path)
+        
+        if source == 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'.lower():
+            self.manipulate_timestamp_windows_sysmon_log_raw(file_path)
 
         if source == 'exchange':
             self.manipulate_timestamp_exchange_logs(file_path)
@@ -78,6 +85,52 @@ class DataManipulation:
             f.close()
             return
 
+    def manipulate_timestamp_windows_sysmon_log_raw(self, file_path):
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            
+            regex4systemTime = r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}' # <TimeCreated SystemTime="2021-04-05T14:11:22.091374000Z"/>
+            regex4utcTime = r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3}' # <Data Name="UtcTime">2021-04-05 14:11:22.089</Data>  
+
+            format4systemTime = "%Y-%m-%dT%H:%M:%S"
+            format4utcTime = "%Y-%m-%d %H:%M:%S.%f"
+
+            systemTimes = re.findall(regex4systemTime, content)
+            utcTimes = re.findall(regex4utcTime, content)
+
+            systemTimes.sort()
+            utcTimes.sort()
+
+            # Difference for systemTime
+            now = datetime.now().strftime(format4systemTime)
+            now = datetime.strptime(now, format4systemTime)
+            last_event_time  = datetime.strptime(systemTimes[-1],format4systemTime)
+            time_difference_4_systemTime = now - last_event_time
+
+            # Difference for utcTime
+            now = datetime.now().strftime(format4utcTime)
+            now = datetime.strptime(now, format4utcTime)
+            last_event_time  = datetime.strptime(utcTimes[-1],format4utcTime)
+            time_difference_4_utcTime = now - last_event_time
+
+            # re.sub replacement function for systemTimes
+            def replacement_func_4_systemTime(m):
+                updated_systemTime = datetime.strptime(m.group(), format4systemTime) + time_difference_4_systemTime
+                updated_systemTime = updated_systemTime.strftime(format4systemTime)
+                return updated_systemTime
+            
+            # re.sub replacement function for utcTimes
+            def replacement_func_4_utcTime(m):
+                updated_utcTime = datetime.strptime(m.group(), format4utcTime) + time_difference_4_utcTime
+                updated_utcTime = updated_utcTime.strftime(format4utcTime)
+                return updated_utcTime
+
+
+            content = re.sub(regex4systemTime, replacement_func_4_systemTime, content)
+            content = re.sub(regex4utcTime, replacement_func_4_utcTime, content)
+            with open('regex.log', 'w+', encoding='utf8') as write_file:
+                write_file.write(file_path)
+                print("Timestamps successfully updated.")
 
     def replacement_function(self, match):
         try:
@@ -88,8 +141,6 @@ class DataManipulation:
             print("ERROR - in timestamp replacement occured: " + str(e))
             return match.group()
 
-
-    def manipulate_timestamp_cloudtrail(self, file_path):
         f = io.open(file_path, "r", encoding="utf-8")
 
         try:
