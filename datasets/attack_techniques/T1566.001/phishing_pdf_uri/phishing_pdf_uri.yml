@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 2145b2b6-3130-4f64-8781-c74973c87ce9
+date: '2023-01-18'
+description: Generated datasets for phishing pdf uri in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.001/phishing_pdf_uri/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://twitter.com/pr0xylife/status/1615382907446767616?s=20
