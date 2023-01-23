@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: 65340060-37c2-40fb-a969-45596e7c5e8b
+date: '2023-01-23'
+description: 'Used Invoke-MSOLSpray to perform a brute force attack attack against a unique n Azure AD account with 25 passwords. 
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Azure AD tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.001/azure_ad_high_number_of_failed_authentications_for_user/azure_ad_high_number_of_failed_authentications_for_user.log
+sourcetypes:
+- mscs:azure:eventhub
+references:
+- https://attack.mitre.org/techniques/T1110/001/
+- https://github.com/dafthack/MSOLSpray
