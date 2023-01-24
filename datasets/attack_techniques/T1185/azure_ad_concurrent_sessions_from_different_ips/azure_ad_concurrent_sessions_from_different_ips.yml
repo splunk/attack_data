@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: c56d67f4-95de-46ae-8fbe-7b41e49bf95e
+date: '2023-01-24'
+description: 'Used Evilnginx2 to phish an Azure AD user and steal session cookies. Then, imported the stolen session cookies into a different browser to access Azure AD resources from a different location and source ip. 
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Azure AD tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1185/azure_ad_concurrent_sessions_from_different_ips/azuread.log
+sourcetypes:
+- mscs:azure:eventhub
+references:
+- https://attack.mitre.org/techniques/T1110/001/
+- https://github.com/kgretzky/evilginx2
+- https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens/
