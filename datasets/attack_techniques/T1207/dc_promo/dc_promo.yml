@@ -1,6 +1,6 @@
 author: Dean Luxton
 id: a4305843-6f93-45a9-b811-01380861e45b
-date: '2022-07-20'
+date: '2023-01-26'
 description: Manually promoting a server to a Domain Controller.  
 environment: attack_range
 dataset:
