@@ -1,0 +1,11 @@
+author: Dean Luxton
+id: a4305843-6f93-45a9-b811-01380861e45b
+date: '2022-07-20'
+description: Manually promoting a server to a Domain Controller.  
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1207/dc_promo/windows-security-xml.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://attack.mitre.org/techniques/T1207
