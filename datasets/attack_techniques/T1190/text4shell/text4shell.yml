@@ -1,0 +1,11 @@
+author: Michael Haag, Splunk
+id: 9535ef60-d482-214c-bxbb-6d1bd61e83be
+date: '2022-04-05'
+description: Manual generation of attack data related to Text4Shell with Zeek HTTP logs.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/text4shell/text4shell.log
+sourcetypes:
+- bro:http:json
+references:
+- https://attack.mitre.org/techniques/T1190

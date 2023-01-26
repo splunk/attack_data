@@ -3,6 +3,7 @@ id: 9aa6af3d-608e-4a69-8a89-c49b9b3cd3fa
 date: '2021-11-23'
 description: Manually using the sc.exe binary to create and start a Windows Service on a remote endpoint for lateral movement and remote code execution.
 environment: attack_range
+dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/lateral_movement_lolbas/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/lateral_movement_lolbas/windows-security.log
 sourcetypes:

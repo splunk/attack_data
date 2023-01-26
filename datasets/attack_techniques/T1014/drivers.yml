@@ -10,4 +10,4 @@ sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Security
 references:
-- https://attack.mitre.org/techniques/T1036
+- https://attack.mitre.org/techniques/T1014

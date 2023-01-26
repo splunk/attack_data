@@ -1,0 +1,14 @@
+author: Michael Haag, Splunk
+id: 8a6cdffd-77bc-41cd-9ba2-b5f7a178bacf
+date: '2022-09-26'
+description: 'Atomic Test Results: Successful Execution of test T1216 related to SyncAppvPublishingServer Signed Script PowerShell Command Execution '
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1216/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1216/atomic_red_team/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1216
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1216/T1216.md

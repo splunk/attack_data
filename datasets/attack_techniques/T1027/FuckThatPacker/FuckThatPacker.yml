@@ -2,7 +2,7 @@ author: Michael Haag, Jose Hernandez, Splunk
 id: 3192b298-3dfb-4d5c-b231-83edabd0d83f
 date: '2022-03-18'
 description: 'Ran an obfuscated [payload](https://gist.github.com/MHaggis/ccd9848a52dc76e6aa0eb1da14bb7752?permalink_comment_id=4102502#gistcomment-4102502) using FuckThatPacker. These are the raw logs from both Aurora EDR Lite running default logging in json. 
-  Also Splunk Windows Universal Forwarder with Windows TA and powershell EventCode 4101 script logging enabled.''
+  Also Splunk Windows Universal Forwarder with Windows TA and powershell EventCode 4101 script logging enabled.'
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/FuckThatPacker/windows-powershell.log

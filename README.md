@@ -1,4 +1,5 @@
-# Attack Data Repository 🧱
+![](environments/static/attack-data-logo.png)
+
 A Repository of curated datasets from various attacks to:
 
 * Easily develop detections without having to build an environment from scratch or simulate an attack.
@@ -158,7 +159,7 @@ This project takes advantage of automation to generate datasets using the attack
 
 ## License
 
-Copyright 2020 Splunk Inc.
+Copyright 2023 Splunk Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

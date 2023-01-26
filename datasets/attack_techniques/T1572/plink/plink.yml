@@ -5,7 +5,10 @@ description: Simulation of plink activity.
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/plink/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/plink/plink-windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/plink/4688-windows-sysmon.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- XmlWinEventLog:Security
 references:
 - https://attack.mitre.org/techniques/T1572
