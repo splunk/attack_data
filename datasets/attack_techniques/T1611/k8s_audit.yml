@@ -1,0 +1,14 @@
+author: Travis Lowe
+id: 
+date: '2023-01-28'
+description: 'Successful execution of a container escape command will allow an attacker to access host level resouces. In kubernetes this could lead to the entire cluster being compromised. This data set shows possible escapes.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1611/nsenter.json
+sourcetypes:
+- kube:apiserver-audit
+references:
+- https://attack.mitre.org/techniques/T1611
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1611/T1611.md
+- https://securekubernetes.com/scenario_2_attack/
+- https://twitter.com/mauilion/status/1129468485480751104
