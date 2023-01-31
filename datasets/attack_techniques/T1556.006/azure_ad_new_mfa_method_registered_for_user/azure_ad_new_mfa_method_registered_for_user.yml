@@ -1,6 +1,6 @@
 author: Mauricio Velazco
 id: ff860c21-881f-4d35-a9a9-83b3f38bf171
-date: '2022-01-30'
+date: '2023-01-30'
 description: Registed new MFA methods for an Azure AD account
 environment: Azure AD tenant
 dataset:
