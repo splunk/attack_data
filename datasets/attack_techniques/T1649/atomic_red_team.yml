@@ -1,0 +1,12 @@
+author: Michael Haag
+id: 43136df7-63f7-46d5-97af-a18d2a5f9e74
+date: '2023-02-01'
+description: Generation of Atomic Red Team techniques that create and export a certificate on Windows, simulating an adversary stealing certificates.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/certificateservices-lifecycle.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- XmlWinEventLog
+references:
+- https://attack.mitre.org/techniques/T1649
