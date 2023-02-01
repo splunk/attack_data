@@ -1,0 +1,12 @@
+author: Dean Luxton
+id: e47f3373-8794-4def-8b58-b26a8971a059
+date: '2022-11-18'
+description: Manually applying the necessary privileges to perform the DCSync attack via adsiedit. 
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484/aclmodification/windows-security-xml.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/1522b774-6464-41a3-87a5-1e5633c3fbbb
+- https://github.com/SigmaHQ/sigma/blob/29a5c62784faf986dc03952ae3e90e3df3294284/rules/windows/builtin/security/win_security_account_backdoor_dcsync_rights.yml
