@@ -5,7 +5,7 @@ description: 'Used a browser to authenticate to the same Azure AD account from t
   Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
 environment: Azure AD tenant
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.001/azure_ad_succesful_authentication_from_different_ips/azuread.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.001/azure_ad_successful_authentication_from_different_ips/azuread.log
 sourcetypes:
 - mscs:azure:eventhub
 references:
