@@ -1,0 +1,12 @@
+author: Mauricio Velazco
+id: c5017f8c-178d-4c06-ad70-556a2c499448
+date: '2023-03-22'
+description: Manually executed Crackmapexec to spray several endpoints with one combination of username and password using the Administrator account. This dataset contains the failed authentication events for 50+ endpoints.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.004/local_administrator_cred_stuffing/windows-security.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://attack.mitre.org/techniques/T1110.004
+- https://wiki.porchetta.industries/smb-protocol/password-spraying
