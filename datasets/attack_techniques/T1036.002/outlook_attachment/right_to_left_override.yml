@@ -1,0 +1,9 @@
+author: Steven Dick
+id: b678bc3c-daf4-42d9-bb5d-6cfa8becca9b
+date: '2023-04-04'
+description: Manual generation of attack data for right to left override abuse. Simulate outlook attachment and user interaction.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036.002/outlook_attachment/rtlo_events.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
