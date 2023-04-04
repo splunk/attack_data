@@ -6,6 +6,7 @@ environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.002/3CX/3cx_4688_windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.002/3CX/3cx_windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.002/3CX/3cx_network-windows-sysmon.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Security
