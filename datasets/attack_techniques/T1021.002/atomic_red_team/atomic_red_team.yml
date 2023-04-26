@@ -12,6 +12,10 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/windows-security-xml.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/smbexec_windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/4688_smbexec_windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/wmiexec_windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/4688_wmiexec_windows-security.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - WinEventLog:Microsoft-Windows-PowerShell/Operational
