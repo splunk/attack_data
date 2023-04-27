@@ -1,0 +1,11 @@
+author: Dean Luxton
+id: 112a2ded-6924-4a3a-a30c-e527b9c9d75d 
+date: '2023-04-21'
+description: Manually executed Net Share to discover network file shares in an Active Directory network.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1135/net_share/windows-sysmon.log
+sourcetypes:
+- xmlwineventlog
+references:
+- https://attack.mitre.org/techniques/T1135
