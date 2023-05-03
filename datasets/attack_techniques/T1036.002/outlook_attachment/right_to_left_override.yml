@@ -1,5 +1,5 @@
 author: Steven Dick
-id: b678bc3c-daf4-42d9-bb5d-6cfa8becca9b
+id: b678bc3c-daf4-42d9-bb5d-6cfa8becca1b
 date: '2023-04-04'
 description: Manual generation of attack data for right to left override abuse. Simulate outlook attachment and user interaction.
 environment: attack_range
