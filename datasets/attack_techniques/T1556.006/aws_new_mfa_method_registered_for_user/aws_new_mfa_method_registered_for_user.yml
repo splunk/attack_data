@@ -1,12 +1,14 @@
 author: Bhavin Patel
 id: ff860c11-881f-4d35-a9a9-83b3f311f171
-date: '2023-01-30'
+date: '2023-05-22'
 description: Registed new MFA methods for an AWS Account
 environment: AWS Tenant
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556.006/aws_new_mfa_method_registered_for_user/cloudtrail.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556.006/aws_new_mfa_method_registered_for_user/amazon_security_lake.json
 sourcetypes:
 - aws:cloudtrail
+- aws:asl
 references:
 - https://attack.mitre.org/techniques/T1078/004/
 - https://attack.mitre.org/techniques/T1535/

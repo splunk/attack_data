@@ -5,6 +5,7 @@ description: Manually modified the Default Domain Policy Group Policy Object on 
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.001/default_domain_policy_modified/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.001/default_domain_policy_modified/security-4688.log
 sourcetypes:
 - XmlWinEventLog
 references:
