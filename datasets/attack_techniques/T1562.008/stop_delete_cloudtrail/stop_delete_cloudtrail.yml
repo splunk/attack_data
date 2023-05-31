@@ -5,7 +5,9 @@ description: Dataset which contains cloudtrail events when a cloudtrail is stopp
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/aws_cloudtrail_events.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/amazon_security_lake.json
 sourcetypes:
 - aws:cloudtrail
+- aws:asl
 references:
 - https://attack.mitre.org/techniques/T1562/008/
