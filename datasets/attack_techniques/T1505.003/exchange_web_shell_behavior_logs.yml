@@ -12,6 +12,7 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.003/windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.003/windows-sysmon_umservices.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.003/windows-sysmon_proxylogon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.003/moveit_windows-sysmon.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 references:
