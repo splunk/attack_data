@@ -5,7 +5,9 @@ description: This dataset contains an cloudtrail events of disabling and deactiv
 environment: NA
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/aws_mfa_disabled/cloudtrail.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/aws_mfa_disabled/amazon_security_lake.json
 sourcetypes:
 - aws:cloudtrail
+- aws:asl
 references:
 - https://attack.mitre.org/techniques/T1621
