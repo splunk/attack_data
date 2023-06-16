@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: a92e1082-ce62-4cdd-88e2-96707c6b0a39
+date: '2023-06-16'
+description: Generated datasets for powershell remotesigned in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/powershell_remotesigned/windows-powershell-xml.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+references:
+- https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3
