@@ -5,6 +5,7 @@ description: Attack data related to CVE-2022-1388
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/vmware/vmware_scanning_pan_threat.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/vmware/vmware_aria.log
 sourcetypes:
 - pan:threat
 references:
