@@ -5,6 +5,7 @@ description: Generated datasets for powershell remotesigned in attack range.
 environment: attackrange
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/powershell_remotesigned/windows-powershell-xml.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/powershell_remotesigned/windows-powershell-remote-xml.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
 references:
