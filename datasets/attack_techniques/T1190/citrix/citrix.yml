@@ -5,8 +5,10 @@ description: Attack data related to CVE-2023-3519
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/citrix/citrix-cve20233519.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/citrix/citrix-cve202324489.log
 sourcetypes:
 - pan:threat
+- suricata
 references:
   - https://attack.mitre.org/techniques/T1190
   - https://blog.assetnote.io/2023/07/21/citrix-CVE-2023-3519-analysis/
