@@ -4,7 +4,9 @@ date: '2023-06-30'
 description: 'Detection of common behaviors when certify/certipy tools are used to exploit  AD CS for the ESC1 vulnerablity. Manual testing using standard compiled versions of both tools'
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/certipy_abuse/certipy_esc1_abuse.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/certipy_abuse/certipy_esc1_abuse_winsecurity.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/certipy_abuse/certipy_esc1_abuse_sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/certipy_abuse/certipy_esc1_abuse_powershell.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
