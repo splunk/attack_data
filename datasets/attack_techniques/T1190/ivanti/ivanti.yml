@@ -1,0 +1,12 @@
+author: Michael Haag, Splunk
+id: 193d25ad-5fe7-4ade-8d61-33350cb453f0
+date: '2023-07-31'
+description: Attack data related to CVE-2023-35081
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/ivanti/suricata_ivanti_CVE202335078.log
+sourcetypes:
+- suricata
+references:
+  - https://attack.mitre.org/techniques/T1190
+  - https://www.cisa.gov/news-events/alerts/2023/07/28/ivanti-releases-security-updates-epmm-address-cve-2023-35081
