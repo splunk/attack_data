@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 01b4633b-481e-43e7-b911-3a99a320fe23
+date: '2023-08-14'
+description: Generated datasets for mark of the web bypass in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.005/mark_of_the_web_bypass/possible-motw-deletion.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1553/005/
