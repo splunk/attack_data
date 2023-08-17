@@ -1,0 +1,17 @@
+author: Steven Dick
+id: a6e1c749-e7b0-401e-9ce7-de9f38e7113f
+date: '2023-06-30'
+description: 'Detection of common behaviors when certify/certipy tools are used to exploit  AD CS for the ESC1 vulnerablity. Manual testing using standard compiled versions of both tools'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/certify_abuse/certify_esc1_abuse_winsecurity.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/certify_abuse/certify_esc1_abuse_sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/certify_abuse/certify_esc1_abuse_powershell.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:Security
+references:
+- https://specterops.io/wp-content/uploads/sites/3/2022/06/Certified_Pre-Owned.pdf
+- https://github.com/ly4k/Certipy#esc1
+- https://pentestlaboratories.com/2021/11/08/threat-hunting-certificate-account-persistence/
