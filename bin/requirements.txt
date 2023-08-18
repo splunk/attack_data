@@ -2,7 +2,7 @@ certifi==2021.5.30
 chardet==4.0.0
 idna==2.10
 pathlib==1.0.1; python_version < '3.4'
-PyYAML==5.4.1
+PyYAML==6.0
 requests==2.25.1
 splunk-sdk==1.6.18
 urllib3==1.26.7
