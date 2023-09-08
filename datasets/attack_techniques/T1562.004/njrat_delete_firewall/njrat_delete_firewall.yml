@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: dc0fb123-86a8-4fbc-a4aa-81ffc6346852
+date: '2023-09-08'
+description: Generated datasets for njrat delete firewall in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.004/njrat_delete_firewall/njrat_delete_firewall.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://malpedia.caad.fkie.fraunhofer.de/details/win.njrat
