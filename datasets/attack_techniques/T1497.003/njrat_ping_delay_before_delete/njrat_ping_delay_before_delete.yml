@@ -1,0 +1,11 @@
+author: 'Teoderick Contreras, Splunk '
+id: e2d55397-05fd-411f-8c35-13f7e2938b0a
+date: '2023-09-08'
+description: Generated datasets for njrat ping delay before delete in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1497.003/njrat_ping_delay_before_delete/ping_0.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://malpedia.caad.fkie.fraunhofer.de/details/win.njrat
