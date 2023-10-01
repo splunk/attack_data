@@ -1,0 +1,16 @@
+author: Michael Haag, Splunk
+id: 1e1c1f1c-0b0b-4b0b-8b0b-0b0b0b0b0b2b
+date: '2023-10-01'
+description: Manual generation of attack data related to cve-2023-42793.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/jetbrains/teamcity.log
+sourcetypes:
+- suricata
+references:
+  - https://attack.mitre.org/techniques/T1190
+  - https://blog.jetbrains.com/teamcity/2023/09/critical-security-issue-affecting-teamcity-on-premises-update-to-2023-05-4-now/
+  - https://www.sonarsource.com/blog/teamcity-vulnerability/
+  - https://github.com/rapid7/metasploit-framework/pull/18408
+  - https://attackerkb.com/topics/1XEEEkGHzt/cve-2023-42793/rapid7-analysis
+
