@@ -1,0 +1,17 @@
+author: Michael Haag, Splunk
+id: 579f138c-67a8-11ee-8c99-0242ac120002
+date: '2023-10-10'
+description: 'Manual testing of adding a SIP provider to the registry'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.003/sip/sip_inventory.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.003/sip/sip_windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.003/sip/capi2-operational.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- XmlWinEventLog
+- PwSh:SubjectInterfacePackage
+references:
+- https://attack.mitre.org/techniques/T1553/003/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1553.003/T1553.003.md
