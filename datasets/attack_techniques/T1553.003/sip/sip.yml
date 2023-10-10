@@ -5,7 +5,7 @@ description: 'Manual testing of adding a SIP provider to the registry'
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.003/sip/sip_inventory.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.003/sip/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.003/sip/sip_windows-sysmon.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.003/sip/capi2-operational.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
