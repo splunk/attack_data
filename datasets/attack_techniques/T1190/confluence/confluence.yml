@@ -5,6 +5,7 @@ description: Attack data related to CVE-2023-22515
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/confluence_cve-2023-22515.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/confluence_vuln_trigger_cve-2023-22515.log
 sourcetypes:
 - suricata
 references:
