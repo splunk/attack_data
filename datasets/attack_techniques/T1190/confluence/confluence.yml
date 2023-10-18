@@ -6,8 +6,10 @@ environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/confluence_cve-2023-22515.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/confluence_vuln_trigger_cve-2023-22515.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/nginx_plus_kv_confluence.log
 sourcetypes:
 - suricata
+- nginx:plus:kv
 references:
   - https://attack.mitre.org/techniques/T1190
   - https://confluence.atlassian.com/security/cve-2023-22515-privilege-escalation-vulnerability-in-confluence-data-center-and-server-1295682276.html
