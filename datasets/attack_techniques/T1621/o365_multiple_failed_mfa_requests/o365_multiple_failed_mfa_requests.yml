@@ -1,0 +1,16 @@
+author: Mauricio Velazco
+id: f76a30f9-7ac3-4e4d-95d7-c55e65012040
+date: '2023-10-19'
+description: 'Manually generated multple MFA requests for a user leveraing the Outlook portal.
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Office 365 enant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/o365_multiple_failed_mfa_requests/o365_multiple_failed_mfa_requests.log
+sourcetypes:
+- o365:graph:api
+references:
+- https://attack.mitre.org/techniques/T1621/ 
+- https://attack.mitre.org/techniques/T1078/004/
+- https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks
+- https://www.mandiant.com/resources/blog/russian-targeting-gov-business
+- https://arstechnica.com/information-technology/2022/03/lapsus-and-solar-winds-hackers-both-use-the-same-old-trick-to-bypass-mfa/
