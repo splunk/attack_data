@@ -7,7 +7,7 @@ environment: Office 365 enant
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/o365_multiple_failed_mfa_requests/o365_multiple_failed_mfa_requests.log
 sourcetypes:
-- o365:graph:api
+- o365:management:activity
 references:
 - https://attack.mitre.org/techniques/T1621/ 
 - https://attack.mitre.org/techniques/T1078/004/
