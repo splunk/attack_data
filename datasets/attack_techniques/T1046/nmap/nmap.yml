@@ -1,0 +1,10 @@
+author: Dean Luxton
+id: 62c7bcd1-3eea-4ca7-9e73-d286b375d543 
+date: '2023-10-20'
+description: Manual generation of nmap portscanning activity within attack range. 
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1046/nmap/portscan.log
+sourcetypes:
+- aws:cloudwatchlogs:vpcflow
+
