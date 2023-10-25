@@ -1,0 +1,9 @@
+author: Mauricio Velazco
+id: c1b7f147-4a2d-4405-83bb-ff9259b2de3a
+date: '2023-10-24'
+description: 'Used Invoke-MfaSweep with a valid account against an O365 tenant'
+environment:  O365 tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/o365_multiple_appids_and_useragents_auth/o365_multiple_appids_and_useragents_auth.log
+sourcetypes:
+- o365:management:activity
