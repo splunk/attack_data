@@ -1,0 +1,16 @@
+author: Steven Dick
+id: 050d14b8-455d-43a8-9d99-9c38f8afd73c
+date: '2023-09-26'
+description: 'Detection of a few common MFA abuse scenarios with datasets from pindID'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/pingid/pingid.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/pingid/windows_pw_reset.log
+sourcetypes:
+- _json
+- WinEventLog:Security
+references:
+- https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/defend-your-users-from-mfa-fatigue-attacks/ba-p/2365677
+- https://www.bleepingcomputer.com/news/security/mfa-fatigue-hackers-new-favorite-tactic-in-high-profile-breaches/
+- https://twitter.com/jhencinski/status/1618660062352007174
+- https://docs.pingidentity.com/r/en-us/pingoneforenterprise/p14e_subscriptions?tocId=3xhnxjX3VzKNs3SXigWnQA
