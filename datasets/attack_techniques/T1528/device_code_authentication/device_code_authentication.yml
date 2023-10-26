@@ -6,7 +6,7 @@ environment: Azure AD tenant
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1528/device_code_authentication/azure-audit.log
 sourcetypes:
-- mscs:azure:eventhub
+- azure:monitor:aad
 references:
 - https://attack.mitre.org/techniques/T1528
 - https://github.com/rvrsh3ll/TokenTactics

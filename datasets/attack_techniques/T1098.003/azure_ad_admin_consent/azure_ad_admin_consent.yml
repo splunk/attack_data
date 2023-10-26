@@ -7,7 +7,7 @@ environment: Azure AD tenant
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.003/azure_ad_admin_consent/azure_ad_admin_consent.log
 sourcetypes:
-- mscs:azure:eventhub
+- azure:monitor:aad
 references:
 - https://attack.mitre.org/techniques/T1098/003/
 - https://www.mandiant.com/resources/blog/remediation-and-hardening-strategies-for-microsoft-365-to-defend-against-unc2452
