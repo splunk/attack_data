@@ -1,0 +1,11 @@
+author: Lou Stella
+id: cc9b25fa-efa8-41eb-926b-550bf0943fbb
+date: '2023-10-26'
+description: Manual manipulation of attack data by spawn cmd.exe from powershell.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/ssa_validation/browsers/windows-security.log
+sourcetypes:
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1059/003/
