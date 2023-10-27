@@ -1,0 +1,11 @@
+author: Bhavin Patel
+id: b6751b2a-ba1e-4d23-9585-384fc5f166f1
+date: '2021-08-18'
+description: Risk events created on Attack range by enabling AWS ECR detections in Dev Sec Ops 
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204.003/risk_dataset/aws_ecr_risk_dataset.log
+sourcetypes:
+- stash
+references:
+- https://attack.mitre.org/techniques/T1204/003/
