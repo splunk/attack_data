@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: 1080fb28-9a11-40c8-907d-70daf17415e4
+date: '2023-10-31'
+description: 'Added a new MFA method for a user within an Azure AD tenant.
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Azure AD tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.005/azure_ad_register_new_mfa_method/azure_ad_register_new_mfa_method.log
+sourcetypes:
+- azure:monitor:aad
+references:
+- https://attack.mitre.org/techniques/T1098/005/
+- https://www.microsoft.com/en-us/security/blog/2023/06/08/detecting-and-mitigating-a-multi-stage-aitm-phishing-and-bec-campaign/

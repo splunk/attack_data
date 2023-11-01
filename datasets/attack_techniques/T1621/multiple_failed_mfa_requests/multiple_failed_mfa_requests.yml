@@ -7,7 +7,7 @@ environment: Azure AD tenant
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/multiple_failed_mfa_requests/azure-audit.log
 sourcetypes:
-- mscs:azure:eventhub
+- azure:monitor:aad
 references:
 - https://attack.mitre.org/techniques/T1621/ 
 - https://attack.mitre.org/techniques/T1078/004/
