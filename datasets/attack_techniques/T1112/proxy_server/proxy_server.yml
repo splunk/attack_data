@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 451d2d7d-c1a6-4c0b-a21f-7ddcad6a94a6
+date: '2023-11-23'
+description: Generated datasets for proxy server in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/proxy_server/ProxyServer_sys.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://malpedia.caad.fkie.fraunhofer.de/details/win.darkgate
