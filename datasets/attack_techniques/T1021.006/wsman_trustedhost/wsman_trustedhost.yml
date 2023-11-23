@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: a7e8ecfc-4ee6-4869-bd77-0d9fe5bcdc85
+date: '2023-11-23'
+description: Generated datasets for wsman trustedhost in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/wsman_trustedhost/wsman_pwh.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+references:
+- https://malpedia.caad.fkie.fraunhofer.de/details/win.darkgate
