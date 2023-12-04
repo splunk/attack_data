@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 70ab291a-0372-4d70-b256-1b0ec12076a5
+date: '2023-11-21'
+description: Generated datasets for msdtc process param in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036/msdtc_process_param/msdtc_a_sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://malpedia.caad.fkie.fraunhofer.de/details/win.plugx

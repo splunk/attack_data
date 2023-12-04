@@ -7,6 +7,7 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/confluence_cve-2023-22515.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/confluence_vuln_trigger_cve-2023-22515.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/nginx_plus_kv_confluence.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/shellservlet.log
 sourcetypes:
 - suricata
 - nginx:plus:kv
