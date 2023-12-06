@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: bb9ae7e1-db85-4c98-b73d-8711eda19bfb
+date: '2023-11-21'
+description: Generated datasets for explorer root proc cmdline in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1134/explorer_root_proc_cmdline/explorer_root.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://x.com/CyberRaiju/status/1273597319322058752?s=20
