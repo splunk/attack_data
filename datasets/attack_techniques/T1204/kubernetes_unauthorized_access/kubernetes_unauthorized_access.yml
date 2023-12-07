@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 4db6594e-9e8c-4223-8681-262d06b4b4d3
+date: '2023-12-07'
+description: Kubernetes audit logs which contains a forbidden access to a namespace.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204/kubernetes_unauthorized_access/kubernetes_unauthorized_access.json
+sourcetypes:
+- aws:cloudwatchlogs
+references:
+- https://attack.mitre.org/techniques/T1204
