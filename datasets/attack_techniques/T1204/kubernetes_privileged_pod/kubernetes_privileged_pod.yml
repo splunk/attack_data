@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 462dfa0b-7aa4-4498-927b-8d9743141e3a
+date: '2023-12-14'
+description: Kubernetes audit logs which contains a creation of a privilged pod.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204/kubernetes_privileged_pod/kubernetes_privileged_pod.json
+sourcetypes:
+- aws:cloudwatchlogs
+references:
+- https://attack.mitre.org/techniques/T1204
