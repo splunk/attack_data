@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: da189cbc-c959-4681-a173-e409949470d4
+date: '2023-12-14'
+description: Kubernetes audit logs which contains a creation of a DaemonSet.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204/kubernetes_audit_daemonset_created/kubernetes_audit_daemonset_created.json
+sourcetypes:
+- aws:cloudwatchlogs
+references:
+- https://attack.mitre.org/techniques/T1204
