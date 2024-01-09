@@ -1,0 +1,1 @@
+2023-12-22 18:40:38,841+0000 ERROR pid=25598 tid=MainThread file=investigation_rest_handler.py:handle_object:303 | method="put" object="investigation" status="error" user="admin" msg="(class investigation, version 2) not registered" id="6585d5fa719ba56c770ff810"
