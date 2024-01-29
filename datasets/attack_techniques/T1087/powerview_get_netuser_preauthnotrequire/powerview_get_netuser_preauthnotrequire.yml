@@ -1,0 +1,12 @@
+author: Teoderick Contreras, Splunk
+id: d6b8075a-9611-4d37-93b7-19dab2fe9105
+date: '2023-12-15'
+description: Generated datasets for powerview get netuser preauthnotrequire in attack
+  range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087/powerview_get_netuser_preauthnotrequire/get-netuser-not-require-pwh.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+references:
+- https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a

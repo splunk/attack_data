@@ -7,9 +7,11 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.006/mimikatz/zeek-dce_rpc.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.006/mimikatz/windows-security.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.006/mimikatz/windows-directory_service.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.006/mimikatz/xml-windows-security.log
 sourcetypes:
 - bro:dce_rpc:json
 - WinEventLog
+- XmlWinEventLog
 references:
 - https://adsecurity.org/?p=1729
 - https://attack.mitre.org/techniques/T1003/006

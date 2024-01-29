@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 38e470fb-3c73-42c5-a5e6-47838df5e62e
+date: '2023-12-07'
+description: Kubernetes audit logs which contains pulling a image.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1526/kubernetes_audit_pull_image/kubernetes_audit_pull_image.json
+sourcetypes:
+- aws:cloudwatchlogs
+references:
+- https://attack.mitre.org/techniques/T1526

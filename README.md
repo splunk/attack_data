@@ -22,7 +22,7 @@ git lfs install --skip-smudge
 Download the repository with this command:
 
 ````
-git clone git@github.com:splunk/attack_data.git
+git clone https://github.com/splunk/attack_data
 ````
 
 Fetch all or select attack data sets
