@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: 7ffc2d34-d6c4-4987-bbfa-b1195a93affc
+date: '2024-02-01'
+description: 'Manually accessed O365 emails via Exchange Web Services and an OAuth application registration using a PowerShell script'
+environment: Office 365 tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114.002/o365_oauth_app_ews_mailbox_access/o365_oauth_app_ews_mailbox_access.log
+sourcetypes:
+- o365:management:activity
+references:
+- https://attack.mitre.org/techniques/T1114/002/
+- https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/
+- https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/ews-applications-and-the-exchange-architecture
