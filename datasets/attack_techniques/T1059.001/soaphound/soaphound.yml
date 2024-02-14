@@ -1,0 +1,11 @@
+author: Michael Haag
+id: adfb4776-87af-4521-a9a1-dda25b01a69f
+date: '2024-02-13'
+description: Manual soaphound testing to simulate all the behavior seen in the wild.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/soaphound/sysmon-soaphound.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1059/001/
