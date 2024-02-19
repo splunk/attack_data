@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 854a68e4-cbf4-11ee-abb1-acde48001122
+date: '2024-02-15'
+description: Generated datasets for snakey keylogger outlook reg access in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552/snakey_keylogger_outlook_reg_access/snakekeylogger_4663.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://malpedia.caad.fkie.fraunhofer.de/details/win.404keylogger
