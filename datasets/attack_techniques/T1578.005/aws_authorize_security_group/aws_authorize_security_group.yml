@@ -4,7 +4,7 @@ date: '2024-02-21'
 description: Contains dataset for AWS security group changes
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1578.003/aws_authorize_security_group/aws_authorize_security_group.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1578.005/aws_authorize_security_group/aws_authorize_security_group.json
 sourcetypes:
 - aws:cloudtrail
 references:
