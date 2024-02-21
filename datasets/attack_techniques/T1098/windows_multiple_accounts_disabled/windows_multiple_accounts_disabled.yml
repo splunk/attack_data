@@ -1,0 +1,11 @@
+author: Mauricio Velazco
+id: f206d1da-d4f1-4e2c-ab5f-41d8f96aa388
+date: '2024-02-21'
+description: Disabled multiple users using a PowerShell script.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/windows_multiple_accounts_disabled/windows_multiple_accounts_disabled.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://attack.mitre.org/techniques/T1098/
