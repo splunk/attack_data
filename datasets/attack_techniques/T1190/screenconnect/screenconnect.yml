@@ -7,6 +7,7 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/screenconnect/4663_connectwise_aspx_app_extensions.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/screenconnect/connectwise_auth_suricata.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/screenconnect/sysmon_app_extensions.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/screenconnect/nginx_screenconnect.log
 sourcetypes:
 - suricata
 - XmlWinEventLog:Security
