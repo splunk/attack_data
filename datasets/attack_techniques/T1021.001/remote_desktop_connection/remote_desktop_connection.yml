@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: b57a97b8-bf1c-48fd-990a-e82fc13dd7ed
+date: '2024-02-27'
+description: 'Remote Desktop Connection'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.001/remote_desktop_connection/zeek_conn.log
+sourcetypes:
+- bro:conn:json
+references:
+- https://attack.mitre.org/techniques/T1021/001/
