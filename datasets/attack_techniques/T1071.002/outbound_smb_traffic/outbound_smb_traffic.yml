@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 219c898a-39d5-4d63-ad1d-07bec9cabc5c
+date: '2024-02-27'
+description: Outbound smb traffic to another server
+environment: Attack range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1071.002/outbound_smb_traffic/zeek_conn.log
+sourcetypes:
+- bro:conn:json
+references:
+- https://attack.mitre.org/techniques/T1071/002/
