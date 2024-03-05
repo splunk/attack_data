@@ -7,7 +7,7 @@ environment: Okta enant
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/okta_multiple_failed_mfa_requests/okta_multiple_failed_mfa_requests.log
 sourcetypes:
-- azure:monitor:aad
+- OktaIM2:log
 references:
 - https://attack.mitre.org/techniques/T1621/ 
 - https://attack.mitre.org/techniques/T1078/004/
