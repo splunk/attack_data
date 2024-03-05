@@ -1,6 +1,6 @@
-author: Teoderick Contreras
+author: Teoderick Contreras, Steven Dick
 id: e1638db8-7a07-11ec-8b68-acde48001122
-date: '2022-01-20'
+date: '2024-03-05'
 description: Generated datasets for excessive file del in windefender dir in attack range.
 environment: attack_range
 dataset:
