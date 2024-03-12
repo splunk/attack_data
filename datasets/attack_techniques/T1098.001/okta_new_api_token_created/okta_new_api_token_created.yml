@@ -1,0 +1,12 @@
+author: Mauricio Velazco
+id: 3d1583ce-a8bd-48e0-a098-f602c0ebdb28
+date: '2024-03-06'
+description: 'Manually created a new API token using the Okta portal.
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Okta tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.001/okta_new_api_token_created/okta_new_api_token_created.log
+sourcetypes:
+- OktaIM2:log
+references:
+- https://attack.mitre.org/techniques/T1098/001/

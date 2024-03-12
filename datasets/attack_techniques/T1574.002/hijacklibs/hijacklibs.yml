@@ -1,0 +1,14 @@
+author: Steven Dick
+id: 9c084d2d-ab99-4bda-875f-cf565afee2fe
+date: '2024-2-19'
+description: 'Detection of suspicious usage of DLLs commonly used in sideloading and search order hijacking.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.002/hijacklibs/hijacklibs_sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1574/002/
+- https://hijacklibs.net/api/
+- https://wietze.github.io/blog/hijacking-dlls-in-windows
+- https://github.com/olafhartong/sysmon-modular/pull/195/files

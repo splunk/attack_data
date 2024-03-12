@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: 6a21e46e-d759-4be0-bbd6-932601ee01ad
+date: '2024-03-05'
+description: 'Manually generated multple MFA requests for a user in Okta.
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Okta enant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/okta_multiple_failed_mfa_requests/okta_multiple_failed_mfa_requests.log
+sourcetypes:
+- OktaIM2:log
+references:
+- https://attack.mitre.org/techniques/T1621/ 
+- https://attack.mitre.org/techniques/T1078/004/
+- https://arstechnica.com/information-technology/2022/03/lapsus-and-solar-winds-hackers-both-use-the-same-old-trick-to-bypass-mfa/
