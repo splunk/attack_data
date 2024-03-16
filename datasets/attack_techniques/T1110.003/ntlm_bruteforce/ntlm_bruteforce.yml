@@ -1,0 +1,16 @@
+author: Steven Dick
+id: 7d0802bd-b870-4a93-96f0-6e8323af425e
+date: '2024-2-19'
+description: 'Detection of suspicious NTLM authentication behavior.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/ntlm_bruteforce/ntlm_bruteforce.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-NTLM/Operational
+references:
+- https://attack.mitre.org/techniques/T1110/003/
+- https://www.varonis.com/blog/investigate-ntlm-brute-force
+- https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/ntlm-blocking-and-you-application-analysis-and-auditing/ba-p/397191
+- https://techcommunity.microsoft.com/t5/microsoft-defender-for-identity/enriched-ntlm-authentication-data-using-windows-event-8004/m-p/871827
+- https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10)?redirectedfrom=MSDN
+- https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nrpc/4d1235e3-2c96-4e9f-a147-3cb338a0d09f
