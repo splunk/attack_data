@@ -4,7 +4,7 @@ date: '2024-03-07'
 description: This dataset is synthetically generated using by simulating events in a lab 
 environment: NA
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.004/okta_unauth_access/okta_unauth_access.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.004/okta_unauth_access/okta_unauth_access.log
 sourcetypes:
 - OktaIM2:log
 references:
