@@ -1,0 +1,11 @@
+author: Bhavin patel, Gowtham
+id: e18714c0-ab84-44f6-9117-5531e3eb3a0c
+date: '2024-03-12'
+description: 'Synthentic Dataset generated for Zscaler detections for Blocked activities'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/zscalar_web_proxy/zscalar_web_proxy.json
+sourcetypes:
+- zscalernss-web
+references:
+- https://help.zscaler.com/zia/nss-feed-output-format-web-logs
