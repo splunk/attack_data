@@ -6,6 +6,7 @@ description: This dataset contains execution of commonly used attacker tool foun
 environment: attack_range_honeypot
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1595/attacker_scan_tools/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1595/attacker_scan_tools/windows-security.log
 sourcetypes:
 - xmlwineventlog
 references:
