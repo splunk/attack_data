@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: fe78ccb0-e6d9-11ee-9b23-acde48001122
+date: '2024-03-20'
+description: Generated datasets for outlook dropped dll in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/outlook_dropped_dll/outlook_file_created_cve.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://www.netspi.com/blog/technical/red-team-operations/microsoft-outlook-remote-code-execution-cve-2024-21378/
