@@ -10,3 +10,4 @@ sourcetypes:
 references:
 - https://attack.mitre.org/techniques/T1078/004/
 - https://learn.microsoft.com/en-us/purview/alert-policies?view=o365-worldwide
+- https://github.com/mvelazc0/msInvader
