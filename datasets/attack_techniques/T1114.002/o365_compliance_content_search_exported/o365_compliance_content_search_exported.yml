@@ -1,0 +1,11 @@
+author: Mauricio Velazco
+id: 2ee0daa3-784e-4113-8c3b-63f5a597501d
+date: '2024-04-01'
+description: 'Manually exported a content search on M365 compliance portal'
+environment: Office 365 tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114.002/o365_compliance_content_search_exported/o365_compliance_content_search_exported.log
+sourcetypes:
+- o365:management:activity
+references:
+- https://learn.microsoft.com/en-us/exchange/recipients/user-mailboxes/email-forwarding?view=exchserver-2019
