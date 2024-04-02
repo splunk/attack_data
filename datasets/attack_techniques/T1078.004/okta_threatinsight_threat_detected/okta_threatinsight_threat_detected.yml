@@ -1,0 +1,11 @@
+author: Mauricio Velazco
+id: b63a92e5-412f-415f-abf9-bb29be4bbfc3
+date: '2024-04-02'
+description: 'Attempted to authenticate multiple times across different users with from the same Ip'
+environment: Okta tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/okta_threatinsight_threat_detected/okta_threatinsight_threat_detected.log
+sourcetypes:
+- OktaIM2:log
+references:
+- https://attack.mitre.org/techniques/T1078/004/
