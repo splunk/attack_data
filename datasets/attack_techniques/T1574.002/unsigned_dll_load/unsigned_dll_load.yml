@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: fc67cdb6-f351-11ee-b637-acde48001122
+date: '2024-04-05'
+description: Generated datasets for unsigned dll load in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.002/unsigned_dll_load//wineloader_dll_sideload.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.zscaler.com/blogs/security-research/european-diplomats-targeted-spikedwine-wineloader
