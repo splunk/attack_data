@@ -1,10 +1,10 @@
 author: Steven Dick
 id: 35cffd75-1e1c-4837-a886-94c4ebf79f62
 date: '2024-4-6'
-description: 'Various Office 365 premium and built-in security feature alerts.'
+description: 'Various Office 365 built-in and premium security feature alerts.'
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/0365_premium_alerts/o365_premium_alerts.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/o365_various_alerts/o365_various_alerts.log
 sourcetypes:
 - o365:management:activity
 references:
