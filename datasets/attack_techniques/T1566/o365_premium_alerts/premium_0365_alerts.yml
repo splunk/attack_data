@@ -1,0 +1,18 @@
+author: Steven Dick
+id: 35cffd75-1e1c-4837-a886-94c4ebf79f62
+date: '2024-4-6'
+description: 'Various Office 365 premium and built-in security feature alerts.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/0365_premium_alerts/o365_premium_alerts.log
+sourcetypes:
+- o365:management:activity
+references:
+- https://attack.mitre.org/techniques/T1566
+- https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults
+- https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp
+- https://learn.microsoft.com/en-us/purview/alert-policies
+- https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/submissions-outlook-report-messages?view=o365-worldwide
+- https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-investigate-delivered-malicious-email?view=o365-worldwide
+- https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-malware-protection-for-spo-odfb-teams-about?view=o365-worldwide 
+- https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/office-365-ti?view=o365-worldwide
