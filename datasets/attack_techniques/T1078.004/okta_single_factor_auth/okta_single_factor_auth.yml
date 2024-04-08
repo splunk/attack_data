@@ -1,0 +1,11 @@
+author: Bhavin Patel
+id: 71ad47d1-w6bd-4e0a-b35c-020ad9a6959q
+date: '2024-03-18'
+description: 'Manually generated dataset for a single factor authentication attempt'
+environment: Okta Tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/okta_single_factor_auth/okta_single_factor_auth.log
+sourcetypes:
+- OktaIM2:log
+references:
+- https://attack.mitre.org/techniques/T1078.004
