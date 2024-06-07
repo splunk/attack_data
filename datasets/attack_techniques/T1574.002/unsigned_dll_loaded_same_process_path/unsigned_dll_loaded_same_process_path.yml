@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 898ea7e8-24bf-11ef-984e-acde48001122
+date: '2024-06-07'
+description: Generated datasets for unsigned dll loaded same process path in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.002/unsigned_dll_loaded_same_process_path/unsigned_dll_process_path.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.splunk.com/en_us/blog/security/enter-the-gates-an-analysis-of-the-darkgate-autoit-loader.html
