@@ -7,7 +7,7 @@ splunk:
 datasets:
 #name of data set to replay
 - name: T1003.002_windows_security
-# relative path of raw file
+# relative path of raw file ... NOTE: this path/file has to exist locally on the Splunk server 
   path: datasets/attack_techniques/T1003.002/atomic_red_team/windows-security.log
 # splunk parameters to pass
   replay_parameters:
