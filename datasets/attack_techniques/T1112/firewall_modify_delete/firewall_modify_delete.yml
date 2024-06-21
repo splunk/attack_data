@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 803d6b50-2fbb-11ef-9f66-acde48001122
+date: '2024-06-21'
+description: Generated datasets for firewall modify delete in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/firewall_modify_delete/firewall-mod-delete.log.txt
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.bleepingcomputer.com/news/security/new-shrinklocker-ransomware-uses-bitlocker-to-encrypt-your-files/
