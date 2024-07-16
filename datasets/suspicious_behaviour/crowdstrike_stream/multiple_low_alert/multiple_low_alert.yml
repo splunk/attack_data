@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 6cf65862-4367-11ef-b064-acde48001122
+date: '2024-07-16'
+description: Generated datasets for multiple low alert in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/crowdstrike_stream/multiple_low_alert/crowdstrike_multiple_low_cleaned.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.crowdstrike.com/cybersecurity-101/observability/log-streaming/
