@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: cf18b840-4381-11ef-b064-acde48001122
+date: '2024-07-16'
+description: Generated datasets for riskscore in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/crowdstrike_stream/riskscore/crowdstrike_riskscore_cleaned.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.crowdstrike.com/cybersecurity-101/observability/log-streaming/
