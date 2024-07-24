@@ -7,6 +7,9 @@ A Repository of curated datasets from various attacks to:
 * [Replay](#replay-datasets-) into streaming pipelines for validating your detections in your production SIEM
 
 # Installation
+Notes:
+* These steps are inteded to be ran on your actual Splunk host/server (not remotely)
+
 GitHub LFS is used in this project. For Mac users git-lfs can be derived with homebrew (for another OS click [here](https://github.com/git-lfs/git-lfs/wiki/Installation)):
 
 ````
