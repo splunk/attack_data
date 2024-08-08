@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 4b557dfa-4367-11ef-b064-acde48001122
+date: '2024-07-16'
+description: Generated datasets for medium alert in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/crowdstrike_stream/medium_alert/crowdstrike_medium_clean.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.crowdstrike.com/cybersecurity-101/observability/log-streaming/

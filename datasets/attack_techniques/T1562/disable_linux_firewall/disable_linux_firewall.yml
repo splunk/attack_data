@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: cdf41566-483d-11ef-8840-acde48001122
+date: '2024-07-22'
+description: Generated datasets for disable linux firewall in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562/disable_linux_firewall/Linux_service_inactive.log
+sourcetypes:
+- 'Unix:Service'
+references:
+- https://askubuntu.com/questions/260085/how-to-stop-firewall
