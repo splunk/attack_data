@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 377989c2-5657-11ef-b567-acde48001122
+date: '2024-08-09'
+description: Generated datasets for linux auditd setuid in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.001/linux_auditd_setuid/linux_auditd_setuid.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/

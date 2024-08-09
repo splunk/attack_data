@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: b316dba2-5643-11ef-b567-acde48001122
+date: '2024-08-09'
+description: Generated datasets for linux auditd dd overwrite in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/linux_auditd_dd_overwrite/linux_auditd_dd_overwrite.log
+sourcetypes:
+- 'linux:audit'
+references:
+- https://gtfobins.github.io/gtfobins/dd/

@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 0a6dfea0-5647-11ef-b567-acde48001122
+date: '2024-08-09'
+description: Generated datasets for linux auditd crontab edit in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.003/linux_auditd_crontab_edit/linux_auditd_crontab_edit.log
+sourcetypes:
+- 'linux:audit'
+references:
+- https://attack.mitre.org/techniques/T1053/003/
