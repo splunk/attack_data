@@ -1,0 +1,13 @@
+author: Dean Luxton
+id: b750cea1-b7eb-4ec3-9f6c-7bfec1b7701c
+date: '2024-08-07'
+description: Manually disabling an active directory GPO using the Group Policy Management Console. 
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.001/group_policy_disabled/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.001/group_policy_disabled/windows-admon.log
+sourcetypes:
+- XmlWinEventLog
+- ActiveDirectory
+references:
+- https://lantern.splunk.com/Security/Product_Tips/Enterprise_Security/Enabling_an_audit_trail_from_Active_Directory

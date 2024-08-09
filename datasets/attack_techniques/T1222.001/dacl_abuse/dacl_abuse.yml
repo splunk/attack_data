@@ -11,6 +11,7 @@ dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/dacl_abuse/domain_root_acl_deletion_windows-security-xml.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/dacl_abuse/domain_root_acl_mod_windows-security-xml.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/dacl_abuse/owner_updated_windows-security-xml.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/dacl_abuse/suspicious_acl_modification-windows-security-xml.log
 sourcetypes:
 - XmlWinEventLog
 references:
