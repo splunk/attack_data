@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 154a3b82-5a24-11ef-927e-acde48001122
+date: '2024-08-14'
+description: Generated datasets for linux auditd unix shell mod config in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.004/linux_auditd_unix_shell_mod_config/linux_auditd_unix_shell_mod_config.log
+sourcetypes:
+- 'linux:audit'
+references:
+- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html

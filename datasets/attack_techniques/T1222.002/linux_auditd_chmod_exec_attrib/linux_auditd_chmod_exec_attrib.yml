@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 30b3f0d2-5a21-11ef-927e-acde48001122
+date: '2024-08-14'
+description: Generated datasets for linux auditd chmod exec attrib in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.002/linux_auditd_chmod_exec_attrib/linux_auditd_chmod_exec_attrib.log
+sourcetypes:
+- 'linux:audit'
+references:
+- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html

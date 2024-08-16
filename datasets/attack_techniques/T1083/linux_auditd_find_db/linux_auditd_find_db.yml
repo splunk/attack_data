@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: deda69c6-5a20-11ef-927e-acde48001122
+date: '2024-08-14'
+description: Generated datasets for linux auditd find db in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1083/linux_auditd_find_db/linux_auditd_find_db.log
+sourcetypes:
+- 'linux:audit'
+references:
+- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html
