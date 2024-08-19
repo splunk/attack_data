@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: bccfdb06-5e06-11ef-b158-acde48001122
+date: '2024-08-19'
+description: Generated datasets for linux auditd hidden file in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1083/linux_auditd_hidden_file/linux_auditd_hidden_file.log
+sourcetypes:
+- 'linux:audit'
+references:
+- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS

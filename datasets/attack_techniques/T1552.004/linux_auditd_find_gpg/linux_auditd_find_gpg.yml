@@ -1,6 +1,6 @@
 author: Teoderick Contreras, Splunk
-id: 3d1eba04-5a22-11ef-927e-acde48001122
-date: '2024-08-14'
+id: 76260a8c-5e05-11ef-b158-acde48001122
+date: '2024-08-19'
 description: Generated datasets for linux auditd find gpg in attack range.
 environment: attack_range
 dataset:
@@ -8,4 +8,4 @@ dataset:
 sourcetypes:
 - 'linux:audit'
 references:
-- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html
+- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS

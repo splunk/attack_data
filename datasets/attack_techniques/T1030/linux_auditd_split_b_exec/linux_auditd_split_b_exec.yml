@@ -1,6 +1,6 @@
 author: Teoderick Contreras, Splunk
-id: be89c0f4-5a20-11ef-927e-acde48001122
-date: '2024-08-14'
+id: ffc87f80-5e01-11ef-b158-acde48001122
+date: '2024-08-19'
 description: Generated datasets for linux auditd split b exec in attack range.
 environment: attack_range
 dataset:
