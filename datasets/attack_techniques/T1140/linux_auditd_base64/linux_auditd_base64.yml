@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: dd92a78c-5ecf-11ef-8b94-acde48001122
+date: '2024-08-20'
+description: Generated datasets for linux auditd base64 in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1140/linux_auditd_base64/linux_auditd_base64.log
+sourcetypes:
+- 'linux:audit'
+references:
+- https://attack.mitre.org/techniques/T1140/
