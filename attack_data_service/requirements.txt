@@ -65,7 +65,7 @@ PyYAML==6.0
 requests==2.25.1
 requests-ntlm==1.1.0
 s3transfer==0.5.0
-smmap==4.0.0
+smmap==5.0.1
 six==1.16.0
 splunk-sdk==1.6.18
 tabulate==0.8.9
