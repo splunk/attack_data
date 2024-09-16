@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: f3753f3c-7401-11ef-80cc-acde48001122
+date: '2024-09-16'
+description: Generated datasets for taskschd dll in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053/taskschd_dll/taskschd_dll.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.fortinet.com/blog/threat-research/valleyrat-campaign-targeting-chinese-speakers
