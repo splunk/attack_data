@@ -1,0 +1,17 @@
+{
+    "author": "Zaki Zarkasih Al Mustafa",
+    "id": "e08aa2f6-7d90-4ab8-af11-da4df38bb7ff",
+    "date": "2024-10-28",
+    "description": "This dataset is synthetically generated for testing detections related to inactive account activity based on network logs.",
+    "environment": "attack_range",
+    "dataset": [
+        "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/network_traffic/inactive_account_activity_detection/network_traffic_inactive_account_activity.json"
+    ],
+    "sourcetypes": [
+        "net_traffic"
+    ],
+    "references": [
+        "https://attack.mitre.org/techniques/T1078/004/",
+        "https://attack.mitre.org/techniques/T1535/"
+    ]	
+}
