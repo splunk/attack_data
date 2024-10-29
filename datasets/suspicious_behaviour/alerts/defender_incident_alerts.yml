@@ -4,7 +4,7 @@ date: '2024-10-24'
 description: This dataset is from a demo environment for ms365:defender:incident:alerts
 environment: NA
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/alerts/defender_incident_alerts.txt
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/alerts/defender_incident_alerts.log
 sourcetypes:
 - ms365:defender:incident:alerts
 references:
