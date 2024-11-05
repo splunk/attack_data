@@ -5,7 +5,9 @@ description: This dataset is from a demo environment for ms365:defender:incident
 environment: NA
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/alerts/defender_incident_alerts.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/alerts/defender_atp_alerts.log
 sourcetypes:
 - ms365:defender:incident:alerts
+- ms:defender:atp:alerts
 references:
 - https://docs.splunk.com/Documentation/AddOns/released/MSSecurity/Sourcetypes
