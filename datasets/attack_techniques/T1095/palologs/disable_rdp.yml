@@ -1,0 +1,11 @@
+author: Dean Luxton
+id: b296a81a-b550-46c2-9a15-3c6157d8bb7a
+date: '2024-11-07'
+description: Generated datasets for large outbound ICMP using Palo Alto Firewall.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1095/palologs/large_icmp.log
+sourcetypes:
+- 'pan:traffic'
+references:
+- https://research.splunk.com/network/e9c102de-4d43-42a7-b1c8-8062ea297419/
