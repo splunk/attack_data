@@ -1,1 +1,0 @@
-127.0.0.1 - admin [05/Oct/2022:19:24:16.304 +0000] "GET /servicesNS/nobody/splunk_secure_gateway/storage/collections/data/mobile_alerts?query=%7B%22$or%22:+%5B%7B%22_key%22:+%22633dd9d6bb5614515260b665%22%7D%5D%7D&sort=notification.created_at:-1 HTTP/1.1" 200 3347 "-" "Python/3.7 aiohttp/3.7.4.post0" - 4ms
