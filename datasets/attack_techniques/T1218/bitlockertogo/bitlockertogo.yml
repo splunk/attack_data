@@ -1,0 +1,12 @@
+author: Michael Haag
+id: kk922623-2bd5-42eb-926b-120zf0943f11
+date: '2024-11-13'
+description: BitLockerToGo.exe execution with Lumma Stealer.
+environment: attack_range
+dataset:
+- https://raw.githubusercontent.com/splunk/attack_data/master/datasets/attack_techniques/T1218/bitlockertogo/bitlockertogo_windows-sysmon.log
+sourcetypes:
+- WinEventLog:Microsoft-Windows-Sysmon/Operational
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1218
