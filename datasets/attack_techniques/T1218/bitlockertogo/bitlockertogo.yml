@@ -4,8 +4,8 @@ date: '2024-11-13'
 description: BitLockerToGo.exe execution with Lumma Stealer.
 environment: attack_range
 dataset:
-- https://raw.githubusercontent.com/splunk/attack_data/master/datasets/attack_techniques/T1218/bitlockertogo/bitlockertogo_windows-sysmon.log
-- https://raw.githubusercontent.com/splunk/attack_data/master/datasets/attack_techniques/T1218/bitlockertogo/4688_bitlockertogo_windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218/bitlockertogo/bitlockertogo_windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218/bitlockertogo/4688_bitlockertogo_windows-security.log
 sourcetypes:
 - WinEventLog:Microsoft-Windows-Sysmon/Operational
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
