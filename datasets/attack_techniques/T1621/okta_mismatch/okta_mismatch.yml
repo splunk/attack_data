@@ -11,4 +11,4 @@ sourcetypes:
 references:
 - https://attack.mitre.org/techniques/T1621/ 
 - https://attack.mitre.org/techniques/T1078/004/
-- https://arstechnica.com/information-technology/2022/03/lapsus-and-solar-winds-hackers-both-use-the-same-old-trick-to-bypass-mfa/
+- https://research.splunk.com/application/8085b79b-9b85-4e67-ad63-351c9e9a5e9a/
