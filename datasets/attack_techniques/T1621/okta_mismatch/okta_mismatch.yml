@@ -1,0 +1,14 @@
+author: Bhavin Patel
+id: 6ab28666-327b-4c39-8b30-b717b04763ec
+date: '2024-11-19'
+description: 'Manually generated multple MFA requests for a user in Okta.
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Okta Tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/okta_mismatch/okta_mismatch.log
+sourcetypes:
+- OktaIM2:log
+references:
+- https://attack.mitre.org/techniques/T1621/ 
+- https://attack.mitre.org/techniques/T1078/004/
+- https://arstechnica.com/information-technology/2022/03/lapsus-and-solar-winds-hackers-both-use-the-same-old-trick-to-bypass-mfa/
