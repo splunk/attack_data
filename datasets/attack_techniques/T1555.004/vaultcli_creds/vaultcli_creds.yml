@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 98d1bf40-ae32-11ef-a6ba-acde48001122
+date: '2024-11-29'
+description: Generated datasets for vaultcli creds in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1555.004/vaultcli_creds/vaultcli.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://cert.gov.ua/article/6281018
