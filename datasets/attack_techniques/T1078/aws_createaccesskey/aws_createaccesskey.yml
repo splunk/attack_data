@@ -9,6 +9,7 @@ environment: Cloud Attack Range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/aws_createaccesskey/aws_cloudtrail_events.json
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/amazon_security_lake.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/asl_ocsf_cloudtrail.json
 sourcetypes:
 - aws:cloudtrail
 - aws:asl
