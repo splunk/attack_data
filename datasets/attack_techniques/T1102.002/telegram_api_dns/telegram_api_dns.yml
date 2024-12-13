@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: bf9b1abe-b962-11ef-8789-acde48001122
+date: '2024-12-13'
+description: Generated datasets for telegram api dns in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1102.002/telegram_api_dns/telegram_dns.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.splunk.com/en_us/blog/security/threat-advisory-telegram-crypto-botnet-strt-ta01.html
