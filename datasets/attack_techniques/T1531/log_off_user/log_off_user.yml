@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: e2361596-b945-11ef-8789-acde48001122
+date: '2024-12-13'
+description: Generated datasets for log off user in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1531/log_off_user/pwh_quser_logoff.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://devblogs.microsoft.com/scripting/automating-quser-through-powershell/
