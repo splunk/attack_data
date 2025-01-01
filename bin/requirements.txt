@@ -5,4 +5,4 @@ pathlib==1.0.1; python_version < '3.4'
 PyYAML==6.0
 requests==2.25.1
 splunk-sdk==2.0.2
-urllib3==1.26.7
+urllib3==2.3.0
