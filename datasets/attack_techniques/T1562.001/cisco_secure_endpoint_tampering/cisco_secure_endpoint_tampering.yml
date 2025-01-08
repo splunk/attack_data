@@ -1,0 +1,11 @@
+author: Nasreddine Bencherchali, Splunk
+id: 98e9387e-4aab-4e59-8e17-2a33b74a8d69
+date: '2025-01-08'
+description: Generated dataset for abusing the sfc.exe binary in order to tamper with Cisco Secure Endpoint.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/cisco_secure_endpoint_tampering/sfc_tampering.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://www.cisco.com/c/en/us/support/docs/security/amp-endpoints/213690-amp-for-endpoint-command-line-switches.html#toc-hId-204215493
