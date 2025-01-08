@@ -1,0 +1,15 @@
+author: Dean Luxton
+id: bc8c2a9d-8e22-4354-90b8-fcb66c6f9b2e
+date: '2025-01-08'
+description: Generated datasets for defender exclusion in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/disable_defender_operational_wineventlog/disable_defender_component.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/disable_defender_operational_wineventlog/disable_defender_rtm.log
+sourcetype:
+- xmlwineventlog
+source:
+- WinEventLog:Microsoft-Windows-Windows Defender/Operational
+references:
+- https://m365internals.com/2021/07/05/why-are-windows-defender-av-logs-so-important-and-how-to-monitor-them-with-azure-sentinel/
+- https://bhabeshraj.com/post/tampering-with-microsoft-defenders-tamper-protection
