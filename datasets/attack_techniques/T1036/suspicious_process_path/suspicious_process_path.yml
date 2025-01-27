@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 2fa5d1b2-dc97-11ef-8b8c-acde48001122
+date: '2025-01-27'
+description: Generated datasets for suspicious process path in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036/suspicious_process_path/susp_path_sysmon1.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://malpedia.caad.fkie.fraunhofer.de/details/win.asyncrat
