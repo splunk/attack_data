@@ -1,0 +1,11 @@
+author: Rod Soto
+id: cc99276c-bac9-24eb-726b-551bf0903fbb
+date: '2024-12-27'
+description: Manual generation of attack data 
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1189/splunk/svd-2024-1011.log
+sourcetypes:
+- splunkd_ui_access
+references:
+- https://attack.mitre.org/techniques/T1189

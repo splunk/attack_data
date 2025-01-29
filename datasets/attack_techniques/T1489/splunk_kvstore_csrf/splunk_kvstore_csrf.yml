@@ -1,0 +1,11 @@
+author: Rod Soto, Splunk
+id: da081f1e-5648-11ef-b567-acd318091a22
+date: '2024-12-16'
+description: Generated datasets for splunk in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1489/splunk_kvstore_csrf/splunk_kvstore_csrf.log
+sourcetypes:
+- 'splunkd_access'
+references:
+- https://advisory.splunk.com/advisories/SVD-2024-1007
