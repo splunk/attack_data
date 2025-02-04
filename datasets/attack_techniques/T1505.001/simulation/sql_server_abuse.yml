@@ -1,0 +1,17 @@
+author: Michael Haag
+id: cc9b2609-efc9-11eb-926b-550bf0943fbb
+date: '2021-03-11'
+description: The following data was produced to emulate IIS, w3wp.exe, spawning shells,
+  simulating web shell activity. In addition, behavior related to Microsoft Exchange
+  Server's Unified Messaging services, umworkerprocess.exe and umservice.exe, spawning
+  a child process. Behaviors are related to vulnerabilities exploited by HAFNIUM Group.
+  The vulnerabilities recently being exploited were CVE-2021-26855, CVE-2021-26857,
+  CVE-2021-26858, and CVE-2021-27065.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.001/simulation/sqlservr-windows_sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1505/001/
+- https://github.com/MHaggis/notes/tree/master/utilities/SQLSSTT
