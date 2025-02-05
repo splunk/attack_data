@@ -1,0 +1,15 @@
+author: Steven Dick
+id: 986d1ac2-f76a-48d8-b3af-bf76dc4e80a4
+date: '2025-01-20'
+description: 'Sample of events when an actor compromises a mailbox and conducts certain suspect activities such as email hard deletes, exfiltration, or password/banking information changes.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114/o365_suspect_email_actions/o365_exchange_suspect_events.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114/o365_suspect_email_actions/o365_messagetrace_suspect_events.log
+sourcetypes:
+- o365:management:activity
+- o365:reporting:messagetrace	
+references:
+- https://attack.mitre.org/techniques/T1114/
+- https://www.hhs.gov/sites/default/files/help-desk-social-engineering-sector-alert-tlpclear.pdf
+- https://intelligence.abnormalsecurity.com/attack-library/threat-actor-convincingly-impersonates-employee-requesting-direct-deposit-update-in-likely-ai-generated-attack
