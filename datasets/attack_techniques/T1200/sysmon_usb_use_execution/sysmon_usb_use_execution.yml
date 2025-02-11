@@ -1,0 +1,13 @@
+author: Steven Dick
+id: 8d818c50-7925-4664-82c6-f8eb626d4c2f
+date: '2025-01-17'
+description: 'Sample of events from executing suspicious files from a recently attached USB drive.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1200/sysmon_usb_use_execution/sysmon_usb_use_execution.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://attack.mitre.org/techniques/T1200/
+- https://www.cisa.gov/news-events/news/using-caution-usb-drives
+- https://www.bleepingcomputer.com/news/security/fbi-hackers-use-badusb-to-target-defense-firms-with-ransomware/
