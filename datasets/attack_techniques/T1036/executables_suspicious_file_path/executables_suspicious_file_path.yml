@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: ecd2eb7a-e864-11ef-9080-acde48001122
+date: '2025-02-11'
+description: Generated datasets for executables suspicious file path in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036/executables_suspicious_file_path/exec_susp_path.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://thedfirreport.com/2020/04/20/sqlserver-or-the-miner-in-the-basement/
