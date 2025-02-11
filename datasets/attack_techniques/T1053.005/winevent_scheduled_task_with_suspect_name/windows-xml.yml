@@ -1,0 +1,14 @@
+author: Steven Dick
+id: ea908665-bc39-4493-a20a-041543ba4f3b
+date: '2025-01-28'
+description: 'A sample event with a known malicous Task Name.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/winevent_scheduled_task_with_suspect_name/windows-xml.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://attack.mitre.org/techniques/T1053/005/
+- https://www.ic3.gov/CSA/2023/231213.pdf
+- https://news.sophos.com/en-us/2024/11/06/bengal-cat-lovers-in-australia-get-psspsspssd-in-google-driven-gootloader-campaign/
+- https://github.com/mthcht/awesome-lists/blob/main/Lists/suspicious_windows_tasks_list.csv
