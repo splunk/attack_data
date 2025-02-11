@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: b7a9e60c-e895-11ef-9080-acde48001122
+date: '2025-02-11'
+description: Generated datasets for 32bit process execute 64bit in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036.009/32bit_process_execute_64bit/32bit_spawn_64bit.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.trendmicro.com/en_nl/research/24/k/earth-estries.html
