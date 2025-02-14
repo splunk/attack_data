@@ -6,11 +6,11 @@ environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/T1485/decommissioned_buckets/cloudtrail.json
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/T1485/decommissioned_buckets/dns.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/T1485/decommissioned_buckets/web.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/T1485/decommissioned_buckets/web_cloudfront_access.log
 sourcetypes:
 - aws:cloudtrail
-- dns
-- web
+- aws:cloudfront:accesslogs
+- XmlWinEventLog
 references:
 - https://attack.mitre.org/techniques/T1485/
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
