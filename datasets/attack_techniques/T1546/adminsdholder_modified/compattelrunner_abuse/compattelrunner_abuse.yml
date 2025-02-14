@@ -1,0 +1,13 @@
+author: Steven Dick
+id: fcb9a608-5ccd-4106-a277-089d03277b0d
+date: '2025-02-10'
+description: 'Sample events for CompatTelRunner abuse.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546/compattelrunner_abuse/compattelrunner_abuse.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://attack.mitre.org/techniques/T1546/
+- https://scythe.io/threat-thursday/windows-telemetry-persistence
+- https://www.trustedsec.com/blog/abusing-windows-telemetry-for-persistence
