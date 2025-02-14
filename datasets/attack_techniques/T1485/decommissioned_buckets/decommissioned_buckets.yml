@@ -1,4 +1,4 @@
-author: Jose Hernandez  
+author: Jose Hernandez, Bhavin Patel
 id: 984e9022-b87b-499a-a260-8d0282c46ea2
 date: '2025-02-14'
 description: Dataset generated from AWS CloudTrail logs capturing the lifecycle of an intentionally exposed S3 bucket, including its creation, public access configuration (via bucket policy and website hosting), and subsequent deletion. This simulates the detection of potentially risky S3 bucket configurations and their decommissioning process.
