@@ -4,9 +4,13 @@ date: '2025-02-14'
 description: Dataset generated from AWS CloudTrail logs capturing the lifecycle of an intentionally exposed S3 bucket, including its creation, public access configuration (via bucket policy and website hosting), and subsequent deletion. This simulates the detection of potentially risky S3 bucket configurations and their decommissioning process.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/s3_bucket_deletion/s3_bucket_deletion.csv
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/T1485/decommissioned_buckets/cloudtrail.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/T1485/decommissioned_buckets/dns.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/T1485/decommissioned_buckets/web.log
 sourcetypes:
 - aws:cloudtrail
+- dns
+- web
 references:
 - https://attack.mitre.org/techniques/T1485/
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
