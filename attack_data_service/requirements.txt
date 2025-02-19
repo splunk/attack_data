@@ -71,7 +71,7 @@ splunk-sdk==2.0.2
 tabulate==0.8.9
 termcolor==1.1.0
 toml==0.10.2
-urllib3==1.26.7
+urllib3==2.3.0
 virtualenv==16.7.9
 wcwidth==0.2.5
 wget==3.2
