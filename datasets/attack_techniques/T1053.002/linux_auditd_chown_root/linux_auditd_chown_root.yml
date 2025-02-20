@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: 11c0723a-562b-11ef-b567-acde48001122
-date: '2024-08-09'
+id: f27b4edc-ef80-11ef-b72e-629be3538068
+date: '2025-02-20'
 description: Generated datasets for linux auditd chown root in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.002/linux_auditd_chown_root/linux_auditd_chown_root.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.002/linux_auditd_chown_root/auditd_proctitle_chown_root.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
-- https://unix.stackexchange.com/questions/101073/how-to-change-permissions-from-root-user-to-all-users
+- https://askubuntu.com/questions/617850/changing-from-user-to-superuser
