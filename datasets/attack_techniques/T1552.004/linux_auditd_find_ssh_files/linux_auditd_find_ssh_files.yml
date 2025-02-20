@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: 8f5f5b38-5e06-11ef-b158-acde48001122
-date: '2024-08-19'
+id: 90026cbe-ef98-11ef-b72e-629be3538068
+date: '2025-02-20'
 description: Generated datasets for linux auditd find ssh files in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.004/linux_auditd_find_ssh_files/linux_auditd_find_ssh_files.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.004/linux_auditd_find_ssh_files/auditd_execve_find_ssh.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
 - https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS

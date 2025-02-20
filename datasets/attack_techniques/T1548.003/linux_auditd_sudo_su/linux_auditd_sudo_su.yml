@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: fff44b26-5648-11ef-b567-acde48001122
-date: '2024-08-09'
+id: 7add3492-efa5-11ef-b72e-629be3538068
+date: '2025-02-20'
 description: Generated datasets for linux auditd sudo su in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.003/linux_auditd_sudo_su/linux_auditd_sudo_su.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.003/linux_auditd_sudo_su/auditd_proctitle_sudo.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
 - https://attack.mitre.org/techniques/T1548/003/

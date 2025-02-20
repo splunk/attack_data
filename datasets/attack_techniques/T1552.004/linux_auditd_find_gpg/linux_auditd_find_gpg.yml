@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: 76260a8c-5e05-11ef-b158-acde48001122
-date: '2024-08-19'
+id: c188ccb2-efa0-11ef-b72e-629be3538068
+date: '2025-02-20'
 description: Generated datasets for linux auditd find gpg in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.004/linux_auditd_find_gpg/linux_auditd_find_gpg.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.004/linux_auditd_find_gpg/auditd_execve_find_gpg.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
-- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html

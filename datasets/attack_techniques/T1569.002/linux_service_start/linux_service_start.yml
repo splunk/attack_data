@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: c3041618-5a23-11ef-927e-acde48001122
-date: '2024-08-14'
+id: 4057fbfc-efa2-11ef-b72e-629be3538068
+date: '2025-02-20'
 description: Generated datasets for linux service start in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/linux_service_start/linux_service_start.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1569.002/linux_service_start/auditd_proctitle_service_start.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
 - https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html

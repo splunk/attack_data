@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: 3b1f3c76-5647-11ef-b567-acde48001122
-date: '2024-08-09'
+id: 1bcc82b0-ef9f-11ef-b72e-629be3538068
+date: '2025-02-20'
 description: Generated datasets for linux auditd ldpreload in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.006/linux_auditd_ldpreload/linux_auditd_ldpreload.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.006/linux_auditd_ldpreload/auditd_execve_ldpreload.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
-- - https://compilepeace.medium.com/memory-malware-part-0x2-writing-userland-rootkits-via-ld-preload-30121c8343d5
+- https://compilepeace.medium.com/memory-malware-part-0x2-writing-userland-rootkits-via-ld-preload-30121c8343d5

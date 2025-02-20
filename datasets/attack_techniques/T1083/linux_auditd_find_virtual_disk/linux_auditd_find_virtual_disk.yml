@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: 421c6130-5e07-11ef-b158-acde48001122
-date: '2024-08-19'
+id: 2a0d7642-efa7-11ef-b72e-629be3538068
+date: '2025-02-20'
 description: Generated datasets for linux auditd find virtual disk in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1083/linux_auditd_find_virtual_disk/linux_auditd_find_virtual_disk.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1083/linux_auditd_find_virtual_disk/auditd_execve_find_vhd.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
 - https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS

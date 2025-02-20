@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: bccfdb06-5e06-11ef-b158-acde48001122
-date: '2024-08-19'
+id: 3747f0f4-ef9c-11ef-b72e-629be3538068
+date: '2025-02-20'
 description: Generated datasets for linux auditd hidden file in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1083/linux_auditd_hidden_file/linux_auditd_hidden_file.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1083/linux_auditd_hidden_file/auditd_execve_hidden_file.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
-- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html
