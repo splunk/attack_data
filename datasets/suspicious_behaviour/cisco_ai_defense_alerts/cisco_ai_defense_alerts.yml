@@ -1,0 +1,11 @@
+author: Bhavin Patel
+id: cf60356c-61a4-452f-96f6-c48a6d19b20a
+date: '2025-02-15'
+description: This dataset is from a demo environment for cisco:ai:defense
+environment: NA
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/cisco_ai_defense_alerts/cisco_ai_defense.log
+sourcetypes:
+- cisco:ai:defense
+references:
+- https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m01/cisco-unveils-ai-defense-to-secure-the-ai-transformation-of-enterprises.html
