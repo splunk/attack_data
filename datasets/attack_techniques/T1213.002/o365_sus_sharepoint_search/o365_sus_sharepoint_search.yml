@@ -8,5 +8,8 @@ dataset:
 sourcetypes:
 - o365:management:activity
 references:
+- https://learn.microsoft.com/en-us/purview/audit-get-started#step-3-enable-searchqueryinitiated-events
+- https://www.cisa.gov/sites/default/files/2025-01/microsoft-expanded-cloud-logs-implementation-playbook-508c.pdf
 - https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a
 - https://attack.mitre.org/techniques/T1213/002/
+- https://attack.mitre.org/techniques/T1114/002/
