@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: c5ebef14-ffea-11ef-bd3a-629be353806a
+date: '2025-03-13'
+description: Generated datasets for process in programdata in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036.005/process_in_programdata/exec_programdata.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/
