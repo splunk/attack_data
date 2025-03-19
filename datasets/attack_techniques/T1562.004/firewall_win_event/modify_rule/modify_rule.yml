@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 70213818-04d7-11f0-9c6d-629be353806a
+date: '2025-03-19'
+description: Generated datasets for modify rule in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.004/firewall_win_event/modify_rule/MPSSVC_Rule-Level_Policy_Change-4947.log.txt
+sourcetypes:
+- 'XmlWinEventLog:Security'
+references:
+- https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4947
