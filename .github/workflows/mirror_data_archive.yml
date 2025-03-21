@@ -1,0 +1,42 @@
+name: mirror-archive-on-merge-to-default-branch
+
+on:
+  push:
+  #  branches:
+  #      - master
+
+jobs:
+  mirror-archive:
+    runs-on: ubuntu-latest
+    env:
+        BUCKET: attack-range-data
+        ATTACK_DATA_ARCHIVE_FILE: attack_data.tar.zstd
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+    
+    # - name: Setup AWS CLI and Credentials
+    #   uses: aws-actions/configure-aws-credentials@v4
+    #   with:
+    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     aws-region: us-west-2
+
+    - name: Create archive of ONLY the datasets folder
+      run: | 
+        # The structure of the tar + zstd archive should mirror that of checking out the repo directly
+        mkdir attack_data
+        mv datasets/ attack_data/.
+        
+        # Compress with number of threads equal to number of CPU cores.
+        # Compression level 10 is a great compromise of speed and file size.
+        # File size reductions are diminishing returns after this - determined experimentally.
+        time tar -c attack_data | zstd --compress -T0 -10 -o $ATTACK_DATA_ARCHIVE_FILE
+        ls -lah attack_data.tar.zstd
+
+
+    # - name: Upload Attack data archive file to S3 Bucket
+    #   run: |
+    #     aws s3 cp $ATTACK_DATA_ARCHIVE_FILE  s3://$BUCKET/
+    #     aws s3api put-object-acl --bucket $BUCKET --key $ATTACK_DATA_ARCHIVE_FILE --acl public-read
+    
