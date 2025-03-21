@@ -34,9 +34,7 @@ jobs:
         # Compress with number of threads equal to number of CPU cores.
         # Compression level 10 is a great compromise of speed and file size.
         # File size reductions are diminishing returns after this - determined experimentally.
-        time tar -c attack_data | zstd --compress -T0 -10 -o $ATTACK_DATA_ARCHIVE_FILE
-        ls -lah attack_data.tar.zstd
-
+        tar -c attack_data | zstd --compress -T0 -10 -o $ATTACK_DATA_ARCHIVE_FILE
 
     # - name: Upload Attack data archive file to S3 Bucket
     #   run: |
