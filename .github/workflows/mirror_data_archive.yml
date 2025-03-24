@@ -2,8 +2,8 @@ name: mirror-archive-on-merge-to-default-branch
 
 on:
   push:
-  #  branches:
-  #      - master
+   branches:
+       - master
 
 jobs:
   mirror-archive:
