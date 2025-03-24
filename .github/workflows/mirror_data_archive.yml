@@ -38,6 +38,4 @@ jobs:
 
     - name: Upload Attack data archive file to S3 Bucket
       run: |
-        aws s3 cp $ATTACK_DATA_ARCHIVE_FILE  s3://$BUCKET/
-        aws s3api put-object-acl --bucket $BUCKET --key $ATTACK_DATA_ARCHIVE_FILE --acl public-read
-    
+        aws s3 cp $ATTACK_DATA_ARCHIVE_FILE  s3://$BUCKET/    
