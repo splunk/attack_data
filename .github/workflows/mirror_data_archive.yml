@@ -18,12 +18,12 @@ jobs:
       with:
         lfs: true
     
-    # - name: Setup AWS CLI and Credentials
-    #   uses: aws-actions/configure-aws-credentials@v4
-    #   with:
-    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    #     aws-region: us-west-2
+    - name: Setup AWS CLI and Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.ACCESS_KEY}}
+        aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
 
     - name: Create archive of ONLY the datasets folder
       run: | 
@@ -36,8 +36,8 @@ jobs:
         # File size reductions are diminishing returns after this - determined experimentally.
         tar -c attack_data | zstd --compress -T0 -10 -o $ATTACK_DATA_ARCHIVE_FILE
 
-    # - name: Upload Attack data archive file to S3 Bucket
-    #   run: |
-    #     aws s3 cp $ATTACK_DATA_ARCHIVE_FILE  s3://$BUCKET/
-    #     aws s3api put-object-acl --bucket $BUCKET --key $ATTACK_DATA_ARCHIVE_FILE --acl public-read
+    - name: Upload Attack data archive file to S3 Bucket
+      run: |
+        aws s3 cp $ATTACK_DATA_ARCHIVE_FILE  s3://$BUCKET/
+        aws s3api put-object-acl --bucket $BUCKET --key $ATTACK_DATA_ARCHIVE_FILE --acl public-read
     
