@@ -9,7 +9,7 @@ jobs:
   mirror-archive:
     runs-on: ubuntu-latest
     env:
-        BUCKET: attack-range-data
+        BUCKET: attack-range-attack-data
         ATTACK_DATA_ARCHIVE_FILE: attack_data.tar.zstd
     steps:
     - name: Checkout Repo
