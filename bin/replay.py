@@ -45,7 +45,7 @@ class DataManipulation:
         difference = now - latest_event
         f.close()
 
-        for line in fileinput.input(path, inplace=True):
+        for line in fileinput.input(file_path, inplace=True):
             d = json.loads(line)
             original_time = datetime.strptime(d["CreationTime"],"%Y-%m-%dT%H:%M:%S")
             new_time = (difference + original_time)
@@ -136,7 +136,7 @@ def send_to_splunk(settings):
     try:
         service = client.connect(host=settings['splunk']['host'], port=8089, username=settings['splunk']['username'], password=settings['splunk']['password'])
     except ConnectionRefusedError as e:
-        print("ERROR - could not connect to the splunk server {}:8089".format(settings['splunk']['host']))
+        print("ERROR - could not connect to the splunk server {}:8089 - {}".format(settings['splunk']['host'], e))
         sys.exit(1)
 
     # go through all datasets
@@ -153,15 +153,16 @@ def send_to_splunk(settings):
 
             # update timestamps before replay
             if 'update_timestamp' in dataset['replay_parameters']:
-                    if dataset['replay_parameters']['update_timestamp'] == True:
-                        data_manipulation = DataManipulation()
-                        data_manipulation.manipulate_timestamp(fullpath, dataset['replay_parameters']['sourcetype'], dataset['replay_parameters']['source'])
+                if dataset['replay_parameters']['update_timestamp'] == True:
+                    data_manipulation = DataManipulation()
+                    data_manipulation.manipulate_timestamp(fullpath, dataset['replay_parameters']['sourcetype'], dataset['replay_parameters']['source'])
 
             # upload file
             kwargs_submit = dict()
             kwargs_submit['sourcetype'] = dataset['replay_parameters']['sourcetype']
             kwargs_submit['rename-source'] = dataset['replay_parameters']['source']
             results = index.upload(fullpath, **kwargs_submit)
+            print(results)
     return True
 
 def parse_config(CONFIG_PATH, VERBOSE):
