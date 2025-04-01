@@ -4,7 +4,7 @@ date: '2025-03-19'
 description: Generated datasets for added rule in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.004/firewall_win_event/added_rule/MPSSVC_Rule-Level_Policy_Change-4946.log.txt
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.004/firewall_win_event/added_rule/MPSSVC_Rule-Level_Policy_Change-4946.log
 sourcetypes:
 - 'XmlWinEventLog:Security'
 references:
