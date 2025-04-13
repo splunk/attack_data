@@ -1,3 +1,4 @@
 *.json filter=lfs diff=lfs merge=lfs -text
 *.log filter=lfs diff=lfs merge=lfs -text
 *.log   text encoding=utf-8
+datasets/attack_techniques/T1059.003/cmd_spawns_cscript/windows-powershell.log filter=lfs diff=lfs merge=lfs -text

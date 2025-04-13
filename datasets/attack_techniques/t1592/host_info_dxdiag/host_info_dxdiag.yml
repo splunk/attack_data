@@ -1,9 +1,0 @@
-author: Teoderick Contreras
-id: ee6ee414-4666-42fd-be3a-81da24e174ed
-date: '2021-11-19'
-description: 'simulated remcos dxdiag execution for host information gathering'
-environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/t1592/host_info_dxdiag/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
