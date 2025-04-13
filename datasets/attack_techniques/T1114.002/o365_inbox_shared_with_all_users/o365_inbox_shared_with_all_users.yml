@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: 2751009e-d929-4f65-aee4-c1222b414305
+date: '2023-09-06'
+description: 'Manually provided inbox folder access to Anonymous.
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Offic3 365 tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114.002/o365_inbox_shared_with_all_users/o365_inbox_shared_with_all_users.log
+sourcetypes:
+- o365:management:activity
+references:
+- https://attack.mitre.org/techniques/T1114/002/
+- https://www.mandiant.com/sites/default/files/2022-08/remediation-hardening-strategies-for-m365-defend-against-apt29-white-paper.pdf

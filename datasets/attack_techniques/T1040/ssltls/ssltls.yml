@@ -1,0 +1,11 @@
+author: Michael Haag, Splunk
+id: cc9b266b-efc9-11eb-926b-125bf5943fbb
+date: '2022-05-26'
+description: Splunk TLS/SSL certificate logs
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1040/ssltls/ssl_splunk.log
+sourcetypes:
+- stream:tcp
+references:
+- https://attack.mitre.org/techniques/T1040

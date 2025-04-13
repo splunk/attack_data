@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 10faee44-7402-11ef-80cc-acde48001122
+date: '2024-09-16'
+description: Generated datasets for valleyrat schedtask in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053/valleyrat_schedtask/valleyrat_schedtask.log
+sourcetypes:
+- 'XmlWinEventLog:Security'
+references:
+- https://www.fortinet.com/blog/threat-research/valleyrat-campaign-targeting-chinese-speakers

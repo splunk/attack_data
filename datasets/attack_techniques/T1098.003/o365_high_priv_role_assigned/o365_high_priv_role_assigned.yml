@@ -1,0 +1,15 @@
+author: Mauricio Velazco
+id: 10c9c0de-2051-468e-8c86-6a5fc6678e94
+date: '2023-10-20'
+description: 'Manually added granted high privilege roles to a user in an Office 365 tenant.
+  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
+environment: Office 365 tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.003/o365_high_priv_role_assigned/o365_high_priv_role_assigned.log
+sourcetypes:
+- o365:management:activity
+references:
+- https://attack.mitre.org/techniques/T1098/003/
+- https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference
+- https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-exchange-online-admin-role?view=o365-worldwide
+- https://learn.microsoft.com/en-us/sharepoint/sharepoint-admin-role

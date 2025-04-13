@@ -1,0 +1,11 @@
+author: Michael Haag, Splunk
+id: aa9b2658-efc9-11eb-926b-550bf0943fc3
+date: '2022-05-02'
+description: 'Simulated attack using KrbRelayUp'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/krbrelayup/windows-system.log
+sourcetypes:
+- WinEventLog:System
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1543.003/T1543.003.md

@@ -1,0 +1,11 @@
+author: Teoderick Contreras
+id: bd48efd0-c611-11ec-a219-acde48001122
+date: '2022-04-27'
+description: Generated datasets for hidden schedule task in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053/hidden_schedule_task/security.log
+sourcetypes:
+- WinEventLog:Security
+references:
+- https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/

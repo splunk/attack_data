@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 92f98534-ef83-11ef-b72e-629be3538068
+date: '2025-02-20'
+description: Generated datasets for linux auditd xclip in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1115/linux_auditd_xclip/linux_auditd_xclip2.log
+sourcetypes:
+- 'auditd'
+references:
+- https://linux.die.net/man/1/xclip

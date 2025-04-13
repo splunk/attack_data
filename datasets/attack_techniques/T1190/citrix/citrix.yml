@@ -1,0 +1,17 @@
+author: Michael Haag, Splunk
+id: cc9b266c-19c9-11eb-926b-220bf0943fas
+date: '2023-07-21'
+description: Attack data related to CVE-2023-3519
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/citrix/citrix-cve20233519.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/citrix/citrix-cve_2023_24489.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/citrix/cve-2023-4966-citrix.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/citrix/nginx_kv_cve_2023-4966-citrix.log
+sourcetypes:
+- pan:threat
+- suricata
+references:
+  - https://attack.mitre.org/techniques/T1190
+  - https://blog.assetnote.io/2023/07/21/citrix-CVE-2023-3519-analysis/
+  - https://www.cisa.gov/sites/default/files/2023-07/aa23-201a_csa_threat_actors_exploiting_citrix-cve-2023-3519_to_implant_webshells.pdf

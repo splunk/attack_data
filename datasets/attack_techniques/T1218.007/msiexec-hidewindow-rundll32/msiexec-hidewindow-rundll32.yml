@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 22df8983-a8f3-4717-9f93-780fec467b11
+date: '2024-01-03'
+description: Generated datasets for msiexec-hidewindow-rundll32 in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.007/msiexec-hidewindow-rundll32/hidewndw-rundll32.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://twitter.com/Max_Mal_/status/1736392741758611607

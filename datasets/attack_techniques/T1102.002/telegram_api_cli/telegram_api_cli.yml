@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: abc6d9ab-ef8a-4e24-9eaa-1588c1bccfea
+date: '2025-02-19'
+description: Generated datasets for telegram api requests via command line  in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1102.002/telegram_api_cli/telegram_cli.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.virustotal.com/gui/file/0b3ef5e04329cefb5bb4bf30b3edcb32d1ec6bbcb29d22695a079bfb5b56e8ac/behavior
+- https://www.virustotal.com/gui/file/72c59eeb15b5ec1d95e72e4b06a030bc058822bc10e5cb807e78a4624d329666/behavior
+- https://www.virustotal.com/gui/file/72c59eeb15b5ec1d95e72e4b06a030bc058822bc10e5cb807e78a4624d329666/content
+- https://www.virustotal.com/gui/file/1c4541bf70b6e251ef024ec4dde8dce400539c2368461c0d90e15a81b11ace44/content

@@ -1,0 +1,13 @@
+author: Michael Haag
+id: 75c8fefc-fdc7-4b8c-814f-7b6cd323dace
+date: '2023-11-08'
+description: Generated datasets for autoit3.exe in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/autoit/sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/autoit/windbg_autoit.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/autoit/cab_files.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1059

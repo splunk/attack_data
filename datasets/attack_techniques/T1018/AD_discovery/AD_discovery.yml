@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: 82e395f1-71d8-4cfc-8757-2dd3ab527e77
+date: '2021-09-07'
+description: 'Simulated test Attack range dataset for AD discovery techniques'
+environment: attack_range
+dataset: 
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1018/AD_discovery/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1018/AD_discovery/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1018/AD_discovery/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:Security

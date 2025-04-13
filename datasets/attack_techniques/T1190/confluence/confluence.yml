@@ -1,0 +1,20 @@
+author: Michael Haag, Splunk
+id: 15c6f2a9-a960-4f60-b1c2-bd2ae129ef7d
+date: '2023-07-21'
+description: Attack data related to CVE-2023-22515
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/confluence_cve-2023-22515.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/confluence_vuln_trigger_cve-2023-22515.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/nginx_plus_kv_confluence.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/shellservlet.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/suricata_confluence_cve-2023-22527.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/nginx_shellservlet.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/confluence/nginx_kv_confluence_CVE-2024-21683.log
+sourcetypes:
+- suricata
+- nginx:plus:kv
+references:
+  - https://attack.mitre.org/techniques/T1190
+  - https://confluence.atlassian.com/security/cve-2023-22515-privilege-escalation-vulnerability-in-confluence-data-center-and-server-1295682276.html
+  - https://www.rapid7.com/blog/post/2023/10/04/etr-cve-2023-22515-zero-day-privilege-escalation-in-confluence-server-and-data-center/

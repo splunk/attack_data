@@ -1,0 +1,12 @@
+author: Michael Haag, Splunk
+id: 7f2ab400-d86f-4c78-8d62-6ce1a2f037a0
+date: '2023-08-23'
+description: Attack data related to CVE-2023-26460 and CVE-2023-29298.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/adobe/cve_2023_29360_coldfusion.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/adobe/cve_2023_29298_coldfusion.log
+sourcetypes:
+- suricata
+references:
+  - https://attack.mitre.org/techniques/T1190

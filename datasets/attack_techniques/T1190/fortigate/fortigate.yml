@@ -1,0 +1,12 @@
+author: Michael Haag, Splunk
+id: 6488cb0f-595d-4cdb-a2f7-d75885b96089
+date: '2022-10-15'
+description: Attack data related to Fortinet CVE-2022-40684
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/fortigate/fortinetcve202240684.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/fortigate/web_fortinetnac.log
+sourcetypes:
+- pan:threat
+references:
+  - https://attack.mitre.org/techniques/T1190

@@ -1,0 +1,13 @@
+author: Rod Soto
+id: cc9b25da-efc9-11eb-926b-550bf0943fbb
+date: '2021-01-26'
+description: This search detects the creation of a new Federation setting by alerting
+  about an specific event related to its creation.
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.003/o365_add_app_role_assignment_grant_user/o365_add_app_role_assignment_grant_user.json
+sourcetypes:
+- o365:management:activity
+references:
+- https://attack.mitre.org/techniques/T1136/003/
+- https://www.fireeye.com/content/dam/fireeye-www/blog/pdfs/wp-m-unc2452-2021-000343-01.pdf

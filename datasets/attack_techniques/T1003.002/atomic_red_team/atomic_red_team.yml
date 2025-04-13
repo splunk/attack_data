@@ -1,0 +1,26 @@
+author: Patrick Bareiss
+id: cc9b25e7-efc9-11eb-926b-550bf0943fbb
+date: '2020-10-08'
+description: 'Atomic Test Results: Successful Execution of test T1003.002-1 Registry
+  dump of SAM, creds, and secrets Return value unclear for test T1003.002-2 Registry
+  parse with pypykatz Successful Execution of test T1003.002-3 esentutl.exe SAM copy '
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/atomic_red_team/attack-range-windows-domain-controller.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/atomic_red_team/copy-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-security_ssa.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/atomic_red_team/crowdstrike_falcon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security
+- crowdstrike:events:sensor
+references:
+- https://attack.mitre.org/techniques/T1003/002/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.002/T1003.002.md
+- https://github.com/splunk/security-content/blob/develop/tests/T1003_002.yml

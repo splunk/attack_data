@@ -1,0 +1,17 @@
+author: Patrick Bareiss
+id: cc9b25fa-efc9-11eb-926b-550bf0943fbb
+date: '2020-11-10'
+description: Manual generation of attack data by spawn cmd.exe from powershell.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/powershell_spawn_cmd/windows-system.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1059/003/

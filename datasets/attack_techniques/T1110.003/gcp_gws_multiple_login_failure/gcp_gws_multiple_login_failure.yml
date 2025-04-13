@@ -1,0 +1,14 @@
+author: Bhavin Patel
+id: a962263f-581b-411f-a237-da45248b4fb7
+date: '2022-10-11'
+description: This is a synthetic dataset based on a real login failure event
+environment: Google Workspace tenant configured to send data to Splunk. Data parsed by Splunk_TA_Google_Workspace 2.3.0
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/gcp_gws_multiple_login_failure/gws_login.json
+sourcetypes:
+- gws:reports:login
+references:
+- https://attack.mitre.org/techniques/T1110/003/
+- https://github.com/dafthack/MSOLSpray
+- https://docs.microsoft.com/en-us/security/compass/incident-response-playbook-password-spray
+- https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection

@@ -1,0 +1,17 @@
+author: Patrick Bareiss
+id: cc9b265e-efc9-11eb-926b-550bf0943fbb
+date: '2020-12-07'
+description: Manual generation of schtask which will do a shutdown.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/schtask_shutdown/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/schtask_shutdown/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/schtask_shutdown/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/schtask_shutdown/windows-security.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security
+references:
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md

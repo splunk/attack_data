@@ -1,0 +1,16 @@
+author: Michael Haag, Splunk
+id: b0d3cc46-f74d-462b-b5db-71eba68d6912
+date: '2024-02-21'
+description: Manual generation of attack data related to ConnectWise Screenconnect CVE-2024-1708 CVE-2024-1709.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/screenconnect/4663_connectwise_aspx_app_extensions.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/screenconnect/connectwise_auth_suricata.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/screenconnect/sysmon_app_extensions.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/screenconnect/nginx_screenconnect.log
+sourcetypes:
+- suricata
+- XmlWinEventLog:Security
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+  - https://attack.mitre.org/techniques/T1190

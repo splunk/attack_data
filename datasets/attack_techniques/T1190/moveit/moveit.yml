@@ -1,0 +1,11 @@
+author: Michael Haag, Splunk
+id: 9535ef60-d482-434c-b3bb-6d1bd61e83be
+date: '2024-07-23'
+description: AttackData from WatchTowr blog related to CVE-2024-5806.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/moveit/SftpServer.log
+sourcetypes:
+- sftp_server_logs
+references:
+- https://attack.mitre.org/techniques/T1190

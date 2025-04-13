@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Steven Dick
+id: e1638db8-7a07-11ec-8b68-acde48001122
+date: '2024-03-05'
+description: Generated datasets for excessive file del in windefender dir in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/excessive_file_del_in_windefender_dir/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://www.microsoft.com/security/blog/2022/01/15/destructive-malware-targeting-ukrainian-organizations/

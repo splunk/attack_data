@@ -1,0 +1,16 @@
+author: Michael Haag, Splunk
+id: 9535ef60-d482-214c-bxbb-6d1bd61e83be
+date: '2022-04-05'
+description: Manual generation of attack data related to Spring4Shell with Nginx proxy logs
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/spring4shell/spring4shell_nginx.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/spring4shell/java_write_jsp-linux-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/spring4shell/all_functionrouter_http_streams.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/spring4shell/http_request_body_streams.log
+sourcetypes:
+- nginx:plus:kv
+- sysmon_linux
+- stream:http
+references:
+- https://attack.mitre.org/techniques/T1190

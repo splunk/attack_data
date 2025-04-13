@@ -1,0 +1,9 @@
+author: Lou Stella
+id: 94fef1a8-8965-4bfb-937a-24f26e76f337
+date: '2022-03-28'
+description: CVE-2021-3422 Attempted Exploitation
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1498/splunk_indexer_dos/splunkd.log
+sourcetypes:
+- splunkd

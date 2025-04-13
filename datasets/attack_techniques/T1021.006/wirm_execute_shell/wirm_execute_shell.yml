@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 805b344a-b946-11ef-8789-acde48001122
+date: '2024-12-13'
+description: Generated datasets for wirm execute shell in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/wirm_execute_shell/winrshost_pwh.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://strontic.github.io/xcyclopedia/library/winrshost.exe-6790044CEB4BA5BE6AA8161460D990FD.html

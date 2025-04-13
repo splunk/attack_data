@@ -1,0 +1,13 @@
+author: Rod Soto
+id: cc9b2642-efc9-11eb-926b-550bf0943fbb
+date: '2020-08-19'
+description: This search provides detection of an user attaching itself to a different
+  role trust policy. This can be used for lateral movement and escalation of privileges.
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/attach_role_trust_policy/attach_role_trust_policy.yml
+sourcetypes:
+- aws:cloudtrail
+references:
+- https://attack.mitre.org/techniques/T1078/
+- https://www.splunk.com/en_us/blog/security/using-splunk-to-detect-abuse-of-aws-permanent-and-temporary-credentials.html

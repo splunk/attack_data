@@ -1,0 +1,8 @@
+certifi==2021.5.30
+chardet==5.2.0
+idna==2.10
+pathlib==1.0.1; python_version < '3.4'
+PyYAML==6.0
+requests==2.25.1
+splunk-sdk==2.0.2
+urllib3==2.3.0

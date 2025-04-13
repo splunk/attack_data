@@ -1,0 +1,18 @@
+author: Steven Dick
+id: 9db6223a-3c53-4cbe-9fe1-3723c8246d84
+date: '2023-01-20'
+description: 'The following analytic identifies LOLBAS with network traffic. 
+When adversaries abuse LOLBAS they are often used to download malicious code or executables. 
+
+The LOLBAS project documents Windows native binaries that can be abused by threat actors to 
+perform tasks like downloading malicious code. Looking for these process can help defenders 
+identify lateral movement, command-and-control, or exfiltration activies.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218/lolbas_with_network_traffic/lolbas_with_network_traffic.log
+sourcetypes:
+- WinEventLog:Microsoft-Windows-Sysmon/Operational
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://lolbas-project.github.io/#
+- https://www.sans.org/presentations/lolbin-detection-methods-seven-common-attacks-revealed/

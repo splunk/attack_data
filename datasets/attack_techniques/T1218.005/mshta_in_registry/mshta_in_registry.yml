@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 3454c0fb-4318-465c-9315-61cd64fa2751
+date: '2022-10-14'
+description: Generated datasets for mshta in registry in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/t1218.005/mshta_in_registry/sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://redcanary.com/threat-detection-report/techniques/mshta/

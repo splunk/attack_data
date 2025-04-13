@@ -1,0 +1,10 @@
+author: Rod Soto
+id: 52f51ccc-c819-435e-ad59-11f71522add0
+date: '2024-01-09'
+description: 
+environment: Contentctl
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1499/splunk/splunk_cve_2024_22164_investigation_rest_handler.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1499/splunk/splunk_cve_2024_22165_investigation_rest_handler.log
+sourcetypes:
+- investigation_rest_handler

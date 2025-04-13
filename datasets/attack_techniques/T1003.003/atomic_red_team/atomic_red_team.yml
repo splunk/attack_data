@@ -1,0 +1,29 @@
+author: Patrick Bareiss
+id: cc9b25e1-efc9-11eb-926b-550bf0943fbb
+date: '2020-10-08'
+description: 'Atomic Test Results: Successful Execution of test T1003.003-1 Create
+  Volume Shadow Copy with NTDS.dit Successful Execution of test T1003.003-2 Copy NTDS.dit
+  from Volume Shadow Copy Successful Execution of test T1003.003-3 Dump Active Directory
+  Database with NTDSUtil Successful Execution of test T1003.003-4 Create Volume Shadow
+  Copy with WMI Return value unclear for test T1003.003-5 Create Volume Shadow Copy
+  with Powershell Successful Execution of test T1003.003-6 Create Symlink to Volume
+  Shadow Copy '
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.003/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.003/atomic_red_team/windows-sec-events.out
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.003/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.003/atomic_red_team/4688_windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.003/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.003/atomic_red_team/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.003/atomic_red_team/crowdstrike_falcon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security
+- crowdstrike:events:sensor
+references:
+- https://attack.mitre.org/techniques/T1003/003/
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.003/T1003.003.md
+- https://github.com/splunk/security-content/blob/develop/tests/T1003_003.yml

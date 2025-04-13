@@ -1,0 +1,13 @@
+author: Patrick Bareiss
+id: cc9b2610-efc9-11eb-926b-550bf0943fbb
+date: '2021-01-11'
+description: Cloudtrail dataset with an s3 copy and encrypt operation. This is often
+  used in S3 ransomware attacks.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/s3_file_encryption/aws_cloudtrail_events.json
+sourcetypes:
+- aws:cloudtrail
+references:
+- https://attack.mitre.org/techniques/T1486
+- https://rhinosecuritylabs.com/aws/s3-ransomware-part-1-attack-vector/

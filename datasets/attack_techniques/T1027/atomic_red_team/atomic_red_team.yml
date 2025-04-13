@@ -1,0 +1,26 @@
+author: Patrick Bareiss
+id: cc9b25f3-efc9-11eb-926b-550bf0943fbb
+date: '2020-10-08'
+description: 'Atomic Test Results: Successful Execution of test T1027-2 Execute base64-encoded
+  PowerShell Successful Execution of test T1027-3 Execute base64-encoded PowerShell
+  from Windows Registry Return value unclear for test T1027-4 Execution from Compressed
+  File '
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/atomic_red_team/attack_data.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/atomic_red_team/attack_data.tar.gz
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/atomic_red_team/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/atomic_red_team/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/atomic_red_team/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/atomic_red_team/linux-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/atomic_red_team/windows-system.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security
+- sysmon_linux
+references:
+- https://attack.mitre.org/techniques/T1027
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1027/T1027.md
+- https://github.com/splunk/security-content/blob/develop/tests/T1027.yml

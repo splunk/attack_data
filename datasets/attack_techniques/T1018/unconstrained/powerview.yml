@@ -1,0 +1,9 @@
+author: Mauricio Velazco
+id: 4736dc8b-c4bc-44b1-bc73-c99b324a553a
+date: '2022-03-28'
+description: 'Using PowerView manually to discover systems with unconstrained delegation'
+environment: attack_range
+dataset: 
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1018/unconstrained/windows-powershell.log
+sourcetypes:
+- WinEventLog:Microsoft-Windows-PowerShell/Operational

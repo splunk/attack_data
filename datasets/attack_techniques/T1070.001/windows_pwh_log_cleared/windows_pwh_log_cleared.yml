@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 5a054002-2e30-11ef-8f53-acde48001122
+date: '2024-06-19'
+description: Generated datasets for windows pwh log cleared in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.001/windows_pwh_log_cleared//wevtutil_clear_log.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.bleepingcomputer.com/news/security/new-shrinklocker-ransomware-uses-bitlocker-to-encrypt-your-files/

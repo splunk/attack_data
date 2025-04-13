@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: cc9b2633-efc9-11eb-926b-550bf0943fbb
+date: '2021-04-20'
+description: 'Automated generation of attack data using PurpleSharp: Kerberos Password
+  Spraying with 20 randomly picked domain users'
+environment: attack_range + badblood
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/purplesharp_valid_users_kerberos/windows-security.log
+sourcetypes:
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1110/003/
+- https://github.com/mvelazc0/PurpleSharp

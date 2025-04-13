@@ -1,0 +1,11 @@
+author: Michael Haag, Splunk
+id: bb9347e1-1b85-4c98-b73d-8711eda19bfb
+date: '2024-11-21'
+description: Generated datasets for explorer root proc cmdline in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1133/rdp/terminalservices-rdpclient.log
+sourcetypes:
+- WinEventLog
+references:
+- https://gist.github.com/MHaggis/acd5dcbf1d4fb705b77f0a48e772eefc

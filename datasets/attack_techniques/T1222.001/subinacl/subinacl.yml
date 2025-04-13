@@ -1,0 +1,12 @@
+author: Nasreddine Bencherchali, Splunk
+id: 4df3550d-09e9-4a9a-9846-51972ea73916
+date: '2024-12-06'
+description: This dataset contains process execution logs of subinacl.exe from Windows Sysmon logs.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/subinacl/subinacl_sysmon.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/cyber-year-in-retrospect/yir-cyber-threats-report-download.pdf
+- https://ss64.com/nt/subinacl.html

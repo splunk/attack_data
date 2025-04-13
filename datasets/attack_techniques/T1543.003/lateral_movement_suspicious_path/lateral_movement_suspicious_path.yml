@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: 46c25ed3-92ca-430a-8753-e9f3b313a6fd
+date: '2021-11-23'
+description: Manually using the sc.exe binary to create and start a Windows Service on a remote endpoint for lateral movement and remote code execution.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/lateral_movement_suspicious_path/windows-system.log
+sourcetypes:
+- WinEventLog:System
+references:
+- https://attack.mitre.org/techniques/T1543/003/
+- https://docs.microsoft.com/en-us/windows/win32/services/controlling-a-service-using-sc
+- https://pentestlab.blog/2020/07/21/lateral-movement-services/ 

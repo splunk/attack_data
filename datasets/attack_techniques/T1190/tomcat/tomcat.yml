@@ -1,0 +1,11 @@
+author: Michael Haag, Splunk
+id: 9535ef60-d182-212c-bxbb-6d1bd61e83be
+date: '2025-03-26'
+description: Manual generation of attack data related to Tomcat with nginx proxypass. 
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/tomcat/tomcat_nginx_access.log
+sourcetypes:
+- nginx:plus:kv
+references:
+- https://attack.mitre.org/techniques/T1190

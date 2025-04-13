@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 47c96cf6-483e-11ef-8840-acde48001122
+date: '2024-07-22'
+description: Generated datasets for linux unix new user in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136/linux_unix_new_user/linux_new_user.log
+sourcetypes:
+- 'syslog'
+references:
+- https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/

@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: 39baeeae-8bf1-4ebc-8a0c-0d5613454288
+date: '2021-11-12'
+description: Manually using the winrs.exe binary to start a process on a remote endpoint leveraging the WinRM protocol for lateral movement and remote code execution.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement/windows-security.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1021/006/
+- https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/winrs

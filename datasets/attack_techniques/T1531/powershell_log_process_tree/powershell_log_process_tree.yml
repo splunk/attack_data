@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 844d92ee-bc81-11ef-82f7-acde48001122
+date: '2024-12-17'
+description: Generated datasets for powershell log process tree in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1531/powershell_log_process_tree/powershell_logoff.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://devblogs.microsoft.com/scripting/automating-quser-through-powershell/

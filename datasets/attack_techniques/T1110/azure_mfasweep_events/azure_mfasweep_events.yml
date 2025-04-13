@@ -1,0 +1,14 @@
+author: Steven Dick
+id: 27ba7e07-280e-4890-9b31-f2060d86f4c6
+date: '2024-12-19'
+description: 'Sample of MFA Sweep events used to enumerate Azure/Entra/o365 MFA weaknesses.'
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110/azure_mfasweep_events/azure_mfasweep_events.log
+sourcetypes:
+- o365:management:activity
+references:
+- https://attack.mitre.org/techniques/T1110
+- https://www.blackhillsinfosec.com/exploiting-mfa-inconsistencies-on-microsoft-services/
+- https://sra.io/blog/msspray-wait-how-many-endpoints-dont-have-mfa/
+- https://github.com/dafthack/MFASweep/tree/master

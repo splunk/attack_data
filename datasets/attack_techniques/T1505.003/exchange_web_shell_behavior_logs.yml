@@ -1,0 +1,22 @@
+author: Michael Haag
+id: cc9b2609-efc9-11eb-926b-550bf0943fbb
+date: '2021-03-11'
+description: The following data was produced to emulate IIS, w3wp.exe, spawning shells,
+  simulating web shell activity. In addition, behavior related to Microsoft Exchange
+  Server's Unified Messaging services, umworkerprocess.exe and umservice.exe, spawning
+  a child process. Behaviors are related to vulnerabilities exploited by HAFNIUM Group.
+  The vulnerabilities recently being exploited were CVE-2021-26855, CVE-2021-26857,
+  CVE-2021-26858, and CVE-2021-27065.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.003/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.003/windows-sysmon_umservices.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.003/windows-sysmon_proxylogon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.003/moveit_windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1505/003
+- https://www.splunk.com/en_us/blog/security/detecting-hafnium-exchange-server-zero-day-activity-in-splunk.html
+- https://my.netsurion.com/hafnium-detection-and-monitoring-solution
+- https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/

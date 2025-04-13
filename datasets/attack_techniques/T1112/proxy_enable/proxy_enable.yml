@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 4bbe373a-c0b7-4ae7-8554-3708829195b9
+date: '2023-11-23'
+description: Generated datasets for proxy enable in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/proxy_enable/proxyenable.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://malpedia.caad.fkie.fraunhofer.de/details/win.darkgate

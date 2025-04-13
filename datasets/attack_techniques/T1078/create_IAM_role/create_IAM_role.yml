@@ -1,0 +1,15 @@
+author: Rod Soto
+id: cc9b263c-efc9-11eb-926b-550bf0943fbb
+date: '2020-08-19'
+description: This search provides detection of role creation by IAM users. Role creation
+  is an event by itself if user is creating a new role with trust policies different
+  than the available in AWS and it can be used for lateral movement and escalation
+  of privileges.
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/create_IAM_role/create_IAM_role.json
+sourcetypes:
+- aws:cloudtrail
+references:
+- https://attack.mitre.org/techniques/T1078/
+- https://www.splunk.com/en_us/blog/security/using-splunk-to-detect-abuse-of-aws-permanent-and-temporary-credentials.html

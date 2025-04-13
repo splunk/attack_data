@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 8ebfee56-cbfb-11ee-a62b-acde48001122
+date: '2024-02-15'
+description: Generated datasets for time delay using choice exe in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1497.003/time_delay_using_choice_exe/snakekeylogger_choice.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://malpedia.caad.fkie.fraunhofer.de/details/win.404keylogger

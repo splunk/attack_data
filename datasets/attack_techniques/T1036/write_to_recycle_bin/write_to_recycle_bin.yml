@@ -1,0 +1,17 @@
+author: Patrick Bareiss
+id: cc9b25f7-efc9-11eb-926b-550bf0943fbb
+date: '2020-12-08'
+description: Manual create file C:\$Recycle.Bin\test.ps1
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036/write_to_recycle_bin/windows-powershell.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036/write_to_recycle_bin/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036/write_to_recycle_bin/windows-system.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036/write_to_recycle_bin/windows-sysmon.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Microsoft-Windows-PowerShell/Operational
+- WinEventLog:System
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1036

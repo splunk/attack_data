@@ -1,0 +1,13 @@
+author: Patrick Bareiss
+id: 0f63eedd-c3e4-42af-af33-c0959919c494
+date: '2021-08-18'
+description: Manual generation of attack data by uploading container to AWS ECR.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204.003/aws_ecr_container_upload/aws_ecr_container_upload.json
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204.003/aws_ecr_container_upload/asl_ocsf_cloudtrail.json
+sourcetypes:
+- aws:cloudtrail
+- aws:asl
+references:
+- https://attack.mitre.org/techniques/T1204/003/

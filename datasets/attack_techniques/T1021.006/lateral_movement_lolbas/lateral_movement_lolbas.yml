@@ -1,0 +1,15 @@
+author: Mauricio Velazco
+id: cd2e9c68-828b-4d5d-bbd5-a69dcb1cb69a
+date: '2021-11-23'
+description: Manually using PowerShell and the Invoke-Command commandlet to start a process on a remote endpoint leveraging the WinRM protocol for lateral movement and remote code execution.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement_lolbas/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement_lolbas/windows-security.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1021/006/
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.2
+

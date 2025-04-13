@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: 5ddc2e5f-b6b0-43c8-8e8b-637e96d562c6
+date: '2023-10-12'
+description: 'Used 365-stealer and a multi-tenant application registration to simulate a consent grant attack and declined the consent when presented'
+environment: O365 tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1528/o365_user_consent_declined/o365_user_consent_declined.log
+sourcetypes:
+- o365:graph:api
+references:
+- https://attack.mitre.org/techniques/T1528
+- https://github.com/AlteredSecurity/365-Stealer
+- https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide
+- https://www.alteredsecurity.com/post/introduction-to-365-stealer

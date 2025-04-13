@@ -1,0 +1,14 @@
+author: Rod Soto
+id: cc9b263d-efc9-11eb-926b-550bf0943fbb
+date: '2021-01-26'
+description: This search detects accounts with high number of Single Sign ON (SSO)
+  logon errors. Excessive logon errors may indicate attempts to bruteforce of password
+  or single sign on token hijack or reuse.
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/o365_excessive_sso_logon_errors/o365_excessive_sso_logon_errors.json
+sourcetypes:
+- o365:management:activity
+references:
+- https://attack.mitre.org/techniques/T1078
+- https://stealthbits.com/blog/bypassing-mfa-with-pass-the-cookie/

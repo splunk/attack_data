@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: ef5c74ad-aa86-43ce-836c-58d29a9da1f9
+date: '2023-06-14'
+description: Generated datasets for abused commandline in attack range.
+environment: attackrange
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/risk_behavior/abused_commandline/risk_recon.log
+sourcetypes:
+- stash
+references:
+- https://attack.mitre.org/techniques/T1059/003/

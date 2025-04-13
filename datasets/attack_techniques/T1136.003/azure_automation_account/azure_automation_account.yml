@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: ea2f4a6a-424f-4c5a-9974-ac61a9d96122
+date: '2022-08-19'
+description: Manually create an Azure Automation account using the Azure Portal. Tenant specific details like tenant id, user names, etc. have been modified.
+environment: Azure tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.003/azure_automation_account/azure-activity.log
+sourcetypes:
+- mscs:azure:audit
+references:
+- https://www.netspi.com/blog/technical/cloud-penetration-testing/maintaining-azure-persistence-via-automation-accounts/
+- https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT503/AZT503-3/
+- https://www.inversecos.com/2021/12/how-to-detect-malicious-azure.html
+- https://attack.mitre.org/techniques/T1136/003/

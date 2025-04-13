@@ -1,0 +1,9 @@
+author: Mauricio Velazco
+id: 05a138d2-ba8f-40bc-9b26-ea01e06b6b72
+date: '2023-10-25'
+description: 'Used Invoke-MfaSweep with a valid account against an Azure AD tenant'
+environment:  Azure AD tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/azure_ad_multiple_appids_and_useragents_auth/azure_ad_multiple_appids_and_useragents_auth.log
+sourcetypes:
+- azure:monitor:aad

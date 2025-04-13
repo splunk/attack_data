@@ -1,0 +1,27 @@
+splunk:
+  # connects to host on port 8089 make sure you have access to <host>:8089
+  host: localhost
+  username: admin
+  password: changeme
+
+datasets:
+#name of data set to replay
+- name: T1003.002_windows_security
+# relative path of raw file ... NOTE: this path/file has to exist locally on the Splunk server 
+  path: datasets/attack_techniques/T1003.002/atomic_red_team/windows-security.log
+# splunk parameters to pass
+  replay_parameters:
+    source: WinEventLog:Security
+    sourcetype: WinEventLog
+    index: main
+    # updates timestamp of the dataset to current time.
+    update_timestamp: True
+  enabled: True
+
+- name: T1003.002_sysmon
+  path: datasets/attack_techniques/T1003.002/atomic_red_team/windows-sysmon.log
+  replay_parameters:
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    sourcetype: xmlwineventlog
+    index: main
+  enabled: True

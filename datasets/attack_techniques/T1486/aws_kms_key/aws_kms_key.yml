@@ -1,0 +1,14 @@
+author: Patrick Bareiss
+id: cc9b2611-efc9-11eb-926b-550bf0943fbb
+date: '2021-01-11'
+description: Dataset which contains cloudtrail logs and the creation of a kms key
+  with a policy that all people can use the key for encryption, which is common for
+  S3 ransomware attacks.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/aws_kms_key/aws_cloudtrail_events.json
+sourcetypes:
+- aws:cloudtrail
+references:
+- https://attack.mitre.org/techniques/T1486
+- https://rhinosecuritylabs.com/aws/s3-ransomware-part-1-attack-vector/

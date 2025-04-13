@@ -1,0 +1,15 @@
+author: Michael Haag
+id: cc9b25f1-efc1-12eb-926b-550bf0943fbb
+date: '2022-04-04'
+description: Interesting drivers loading on Windows.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1014/windows-security.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1014/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1014/windows-system.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- WinEventLog:Security
+- XmlWinEventLog:System
+references:
+- https://attack.mitre.org/techniques/T1014

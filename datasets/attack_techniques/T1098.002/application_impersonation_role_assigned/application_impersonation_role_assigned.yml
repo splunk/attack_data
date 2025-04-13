@@ -1,0 +1,9 @@
+author: Mauricio Velazco
+id: 23b4ed76-e773-4de5-a71a-645b0980ade9
+date: '2023-10-17'
+description: 'Used Exchange Online PowerShell module to grant the ApplicationImpersonation role to a user'
+environment:  O365 tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.002/application_impersonation_role_assigned/application_impersonation_role_assigned.log
+sourcetypes:
+- o365:management:activity

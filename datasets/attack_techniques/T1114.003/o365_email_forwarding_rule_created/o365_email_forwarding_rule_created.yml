@@ -1,0 +1,13 @@
+author: Mauricio Velazco
+id: 3e913102-26d8-4c05-aa42-7adb788db03d
+date: '2024-03-28'
+description: 'Created a forwarding rule programatically using msInvader'
+environment: O365 tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/o365_email_forwarding_rule_created/o365_email_forwarding_rule_created.log
+sourcetypes:
+- o365:management:activity
+references:
+- https://attack.mitre.org/techniques/T1078/004/
+- https://learn.microsoft.com/en-us/purview/alert-policies?view=o365-worldwide
+- https://github.com/mvelazc0/msInvader
