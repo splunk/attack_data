@@ -1,9 +1,0 @@
-author: Mauricio Velazco
-id: f8cef2ec-3a8c-432f-97e7-2e98acf3020a
-date: '2022-03-28'
-description: 'Using Get-ADComputer manually to discover systems with unconstrained delegation'
-environment: attack_range
-dataset: 
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1018/unconstrained2/windows-powershell.log
-sourcetypes:
-- WinEventLog:Microsoft-Windows-PowerShell/Operational

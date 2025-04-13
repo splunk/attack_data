@@ -1,9 +1,0 @@
-author: Bhavin Patel
-id: 22c3ece3-6513-4dbd-a8bb-3afd24eb354a
-date: '2025-01-10'
-description: data sets for rdp brute force attacks from attack range
-environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.001/rdp_brute_sysmon/sysmon.log
-source:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

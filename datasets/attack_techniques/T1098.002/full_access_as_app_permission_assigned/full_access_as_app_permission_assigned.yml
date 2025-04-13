@@ -1,9 +1,0 @@
-author: Mauricio Velazco
-id: 6cd62088-3b97-40d2-9469-769e09fbf085
-date: '2024-01-29'
-description: 'Manually assigned the full_access_as_app API permission to an application registration'
-environment: Azure AD
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.002/full_access_as_app_permission_assigned/full_access_as_app_permission_assigned.log
-sourcetypes:
-- azure:monitor:aad

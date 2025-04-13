@@ -1,9 +1,0 @@
-author: Teoderick Contreras
-id: 112d5721-f697-4bec-b42c-a227d4109898
-date: '2021-10-05'
-description: shimcache flush datasets.
-environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/shimcache_flush/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

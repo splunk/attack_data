@@ -1,9 +1,0 @@
-author: Mauricio Velazco
-id: 31e03eb3-69a9-4072-990c-7e9e62866c20
-date: '2023-10-26'
-description: 'Used the PowerShell AzureAD Module to disable risk-based step-up consent within an O365 tenant'
-environment:  Office 365 tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562/o365_disable_blockconsent_for_riskapps/o365_disable_blockconsent_for_riskapps.log
-sourcetypes:
-- o365:management:activity

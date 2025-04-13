@@ -1,9 +1,0 @@
-author: Teoderick Contreras
-id: 63aa35fd-7ada-4d23-8cf1-070b8c5abd3f
-date: '2021-10-05'
-description: wdigest regsitry enable datasets.
-environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003/wdigest_enable/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

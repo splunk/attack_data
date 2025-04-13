@@ -1,9 +1,0 @@
-author: Teoderick Contreras
-id: 9599719e-792d-4ee5-8519-b4901263c0fb
-date: '2021-08-18'
-description: 'Simulated test Gsuite Datasets for sharing drive outside organizational email'
-environment: attack_range
-dataset: 
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1567.002/gsuite_share_drive/gdrive_share_external.log
-sourcetypes:
-- gsuite:drive:json 

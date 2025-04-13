@@ -1,9 +1,0 @@
-author: Mauricio Velazco
-id: 284e870f-82f4-4d60-8903-d84a52644407
-date: '2024-01-29'
-description: 'Manually assigned the full_access_as_app API permission to an application registration'
-environment: Office 365
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.002/o365_full_access_as_app_permission_assigned/o365_full_access_as_app_permission_assigned.log
-sourcetypes:
-- o365:management:activity

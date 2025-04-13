@@ -1,9 +1,0 @@
-author: Teoderick Contreras
-id: 732edf10-2522-47de-be21-710ac8dcde73
-date: '2021-10-05'
-description: minint registry datasets.
-environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/minint_reg/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

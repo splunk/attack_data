@@ -1,9 +1,0 @@
-author: Mauricio Velazco
-id: cfc6c00b-b21d-47c3-b93d-61480b0f9931 
-date: '2022-03-31'
-description: 'Using PowerView manually to discover systems with constrained delegation'
-environment: attack_range
-dataset: 
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1018/constrained/windows-powershell.log
-sourcetypes:
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
