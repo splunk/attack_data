@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 4cb6c050-1ab2-11f0-a1c6-629be3538069
+date: '2025-04-16'
+description: Generated datasets for linux auditd whoami new in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1033/linux_auditd_whoami_new/linux_auditd_new_whoami.log
+sourcetypes:
+- 'auditd'
+references:
+- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
