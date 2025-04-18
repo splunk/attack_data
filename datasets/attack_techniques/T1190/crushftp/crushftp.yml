@@ -6,8 +6,10 @@ environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/crushftp/crushftp.log
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/crushftp/crushftp11_session.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/crushftp/windows-sysmon.log
 sourcetypes:
 - crushftp:sessionlogs
+
 references:
   - https://attack.mitre.org/techniques/T1190
   - https://github.com/airbus-cert/CVE-2024-4040
