@@ -4,7 +4,7 @@ date: '2024-04-17'
 description: Events related to Evil Twin msc.
 environment: attack_range
 dataset:
-- https://raw.githubusercontent.com/splunk/attack_data/master/datasets/attack_techniques/T1218/eviltwin/windows-sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218/eviltwin/windows-sysmon.log
 sourcetypes:
 - WinEventLog:Microsoft-Windows-Sysmon/Operational
 references:
