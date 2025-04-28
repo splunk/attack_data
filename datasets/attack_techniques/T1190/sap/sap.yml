@@ -5,7 +5,9 @@ description: Attack data related to NetWeaver CVE-2025-31324
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/sap/suricata_sapnetweaver.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/sap/windows-sysmon.log
 sourcetypes:
 - suricata
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 references:
   - https://attack.mitre.org/techniques/T1190
