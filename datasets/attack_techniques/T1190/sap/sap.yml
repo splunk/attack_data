@@ -1,0 +1,11 @@
+author: Michael Haag, Splunk
+id: ca1b266c-23c9-11eb-926b-220bf0943fbb
+date: '2025-04-28'
+description: Attack data related to NetWeaver CVE-2025-31324
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/sap/suricata_sapnetweaver.log
+sourcetypes:
+- suricata
+references:
+  - https://attack.mitre.org/techniques/T1190
