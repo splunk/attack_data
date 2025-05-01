@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: efcf229a-1aae-11f0-a1c6-629be3538069
+date: '2025-04-16'
+description: Generated datasets for linux new auditd at in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.002/linux_new_auditd_at/linux_auditd_new_at.log
+sourcetypes:
+- 'auditd'
+references:
+- https://www.linkedin.com/pulse/getting-attacker-ip-address-from-malicious-linux-job-craig-rowland/

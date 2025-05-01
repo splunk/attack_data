@@ -1,0 +1,11 @@
+author: Nasreddine Bencherchali
+id: 0d34f1fc-b4f4-463c-8512-e0cb9e027cd6
+date: '2025-04-24'
+description: This dataset contains multiple events that simulate event log enumeration on a windows machine, using built-in utilities.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/eventlog_enumeration/eventlog_enumeration.yml
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1654

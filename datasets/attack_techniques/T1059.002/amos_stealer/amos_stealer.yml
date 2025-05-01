@@ -1,0 +1,12 @@
+author: Nasreddine Bencherchali
+id: f389cba7-e9bd-4452-b933-46a4b6915806
+date: '2025-04-25'
+description: Generated dataset for amos stealer execution with osquery and endpoint security
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.002/amos_stealer/amos_stealer.log
+sourcetypes:
+- osquery:results
+references:
+- https://osquery.readthedocs.io/en/stable/deployment/process-auditing/
+- https://attack.mitre.org/techniques/T1059/002/

@@ -1,0 +1,10 @@
+author: Nasreddine Bencherchali, Splunk
+id: 555e8fcf-0d87-4249-ae8a-4ae050ee5f07
+date: '2025-04-16'
+description: Generated datasets for Cisco Secure Firewall Threat Defense Intrusion Event EventType.
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/cisco_secure_firewall_threat_defense/intrusion_event/intrusion_events.log
+sourcetypes:
+- cisco:sfw:estreamer
+references:
+- https://www.cisco.com/c/en/us/td/docs/security/firepower/741/api/FQE/secure_firewall_estreamer_fqe_guide_740.pdf

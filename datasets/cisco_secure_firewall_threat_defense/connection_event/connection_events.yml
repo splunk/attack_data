@@ -1,0 +1,10 @@
+author: Nasreddine Bencherchali, Splunk
+id: 23d68f64-426a-4774-9282-e2d01f4ad5f3
+date: '2025-04-03'
+description: Generated datasets for Cisco Secure Firewall Threat Defense Connection Event EventType.
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/cisco_secure_firewall_threat_defense/connection_event/connection_events.log
+sourcetypes:
+- cisco:sfw:estreamer
+references:
+- https://www.cisco.com/c/en/us/td/docs/security/firepower/741/api/FQE/secure_firewall_estreamer_fqe_guide_740.pdf
