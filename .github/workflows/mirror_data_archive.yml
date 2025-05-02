@@ -33,7 +33,7 @@ jobs:
         
         #Build some metadata about the archive for documentation purposes
         git rev-parse HEAD > attack_data/git_hash.txt
-        date -u > attack_data/build_date.txt
+        date -u > attack_data/cache_build_date.txt
 
         # Compress with number of threads equal to number of CPU cores.
         # Compression level 10 is a great compromise of speed and file size.
