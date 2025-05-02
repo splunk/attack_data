@@ -46,7 +46,7 @@ path==15.0.0
 path.py==12.5.0
 pexpect==4.8.0
 pluggy==0.13.1
-pre-commit==2.13.0
+pre-commit==4.2.0
 protobuf==3.17.3
 psutil==5.8.0
 ptyprocess==0.7.0
