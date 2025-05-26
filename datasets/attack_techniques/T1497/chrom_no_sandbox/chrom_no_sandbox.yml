@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 842a3076-3a15-11f0-9e8a-629be3538068
+date: '2025-05-26'
+description: Generated datasets for chrom no sandbox in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1497/chrom_no_sandbox/chrome-no_sandbox.log
+sourcetypes:
+- 'XmlWinEventLog:Security'
+references:
+- https://unix.stackexchange.com/questions/68832/what-does-the-chromium-option-no-sandbox-mean
