@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: eb5f2daa-3a24-11f0-9e8a-629be3538068
+date: '2025-05-26'
+description: Generated datasets for disable extension in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1176.001/disable_extension/iexplore-extoff.log
+sourcetypes:
+- 'XmlWinEventLog:Security'
+references:
+- https://www.hybrid-analysis.com/sample/e285feeca968b3ca22017a64363eea5e69ccd519696671df523291b089597875/588175f1aac2edf92bbed32f
