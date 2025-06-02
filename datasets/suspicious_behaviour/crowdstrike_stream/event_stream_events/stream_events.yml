@@ -1,0 +1,11 @@
+author: Bryan Pluta, Splunk
+id: ddc1277f-7cfb-47cd-80d2-a84dd4b873ac
+date: '2025-06-02'
+description: Generated datasets from a demo environment for Crowdstrike Event Stream Events.
+environment: NA
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/crowdstrike_stream/event_stream_events/stream_events.log
+sourcetypes:
+- 'CrowdStrike:Event:Streams:JSON'
+references:
+- https://www.crowdstrike.com/en-us/resources/guides/crowdstrike-falcon-event-streams-add-on-for-splunk-guide-v3/
