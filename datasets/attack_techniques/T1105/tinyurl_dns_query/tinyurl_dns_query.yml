@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 9036adea-3f9c-11f0-9942-629be3538068
+date: '2025-06-02'
+description: Generated datasets for tinyurl dns query in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1105/tinyurl_dns_query/tinyurl.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://x.com/Unit42_Intel/status/1919418143476199869
