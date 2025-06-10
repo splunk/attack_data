@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: cb20a2e8-45d3-11f0-9bec-629be3538068
+date: '2025-06-10'
+description: Generated datasets for auditd daemon type in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.012/auditd_daemon_type/linux_auditd_daemon.log
+sourcetypes:
+- 'auditd'
+references:
+- https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/security_guide/sec-audit_record_types

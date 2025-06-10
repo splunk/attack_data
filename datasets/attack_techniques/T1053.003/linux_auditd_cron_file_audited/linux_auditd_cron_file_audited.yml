@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: 45519f06-5645-11ef-b567-acde48001122
-date: '2024-08-09'
+id: 6f8a621e-45d5-11f0-9bec-629be3538068
+date: '2025-06-10'
 description: Generated datasets for linux auditd cron file audited in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.003/linux_auditd_cron_file_audited/linux_auditd_cron_file_audited2.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.003/linux_auditd_cron_file_audited/linux_path_cron.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
-- https://attack.mitre.org/techniques/T1053/003/
+- https://www.intezer.com/blog/research/kaiji-new-chinese-linux-malware-turning-to-golang/

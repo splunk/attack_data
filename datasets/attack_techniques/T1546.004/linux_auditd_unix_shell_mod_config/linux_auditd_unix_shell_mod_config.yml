@@ -1,11 +1,11 @@
 author: Teoderick Contreras, Splunk
-id: 04925540-5e07-11ef-b158-acde48001122
-date: '2024-08-19'
+id: 6a85a94e-45d6-11f0-9bec-629be3538068
+date: '2025-06-10'
 description: Generated datasets for linux auditd unix shell mod config in attack range.
 environment: attack_range
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.004/linux_auditd_unix_shell_mod_config/linux_auditd_unix_shell_mod_config.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.004/linux_auditd_unix_shell_mod_config//linux_path_profile_d.log
 sourcetypes:
-- 'linux:audit'
+- 'auditd'
 references:
 - https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
