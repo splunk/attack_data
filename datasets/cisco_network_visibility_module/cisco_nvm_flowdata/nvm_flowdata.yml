@@ -1,0 +1,11 @@
+author: Nasreddine Bencherchali, Splunk
+id: a0b50980-bad7-4f55-be33-3210f3902bdc
+date: '2025-06-23'
+description: Generated datasets for Cisco Network Visibility Module Flow Data EventType.
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/cisco_network_visibility_module/cisco_nvm_flowdata/nvm_flowdata.log
+sourcetypes:
+- cisco:nvm:flowdata
+references:
+- https://www.cisco.com/c/en/us/td/docs/security/vpn_client/anyconnect/Cisco-Secure-Client-5/admin/guide/nvm-collector-5-1-1-admin-guide.html
+- https://community.cisco.com/t5/security-knowledge-base/cisco-network-visibility-nvm-collector/ta-p/4309825
