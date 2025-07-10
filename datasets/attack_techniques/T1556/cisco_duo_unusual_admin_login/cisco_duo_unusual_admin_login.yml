@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 8bb65e4d-656a-40a8-a8be-0f3735f4a9e5
+date: '2025-07-10'
+description: 'Logged in as an admin from an unusual location.'
+environment: Cisco Duo Tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/cisco_duo_unusual_admin_login/cisco_duo_activity.json
+sourcetypes:
+- cisco:duo:activity
+references:
+- https://attack.mitre.org/techniques/T1556/ 

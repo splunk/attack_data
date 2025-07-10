@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: b8be207e-3693-4653-aecf-a26dba43c5cc
+date: '2025-07-10'
+description: 'Created a policy which allows tampered devices in Duo.'
+environment: Cisco Duo Tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/cisco_duo_policy_allow_tampered_devices/cisco_duo_administrator.json
+sourcetypes:
+- cisco:duo:administrator
+references:
+- https://attack.mitre.org/techniques/T1556/ 

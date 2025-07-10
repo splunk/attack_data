@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 61a63676-89fe-4c8a-aa62-f0cf0e917837
+date: '2025-07-10'
+description: 'Created a policy which allows devices without screen lock in Duo.'
+environment: Cisco Duo Tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/cisco_duo_policy_allow_devices_without_screen_lock/cisco_duo_administrator.json
+sourcetypes:
+- cisco:duo:administrator
+references:
+- https://attack.mitre.org/techniques/T1556/ 

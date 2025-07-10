@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: 6aa8cb0c-fde5-4c1f-abc6-45aba2142277
+date: '2025-07-08'
+description: 'Created a policy which allows bypass 2FA in Duo.'
+environment: Cisco Duo Tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/cisco_duo_policy_bypass_2FA/cisco_duo_administrator.json
+sourcetypes:
+- cisco:duo:administrator
+references:
+- https://attack.mitre.org/techniques/T1556/ 

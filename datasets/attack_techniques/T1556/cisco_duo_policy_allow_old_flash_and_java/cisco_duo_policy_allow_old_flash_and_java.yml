@@ -1,0 +1,11 @@
+author: Patrick Bareiss
+id: ed19ab1d-7610-4e8c-89a9-8c82ff450bb0
+date: '2025-07-09'
+description: 'Created a policy which allow old Flash and Java versions in Duo.'
+environment: Cisco Duo Tenant
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/cisco_duo_policy_allow_old_flash_and_java/cisco_duo_administrator.json
+sourcetypes:
+- cisco:duo:administrator
+references:
+- https://attack.mitre.org/techniques/T1556/ 
