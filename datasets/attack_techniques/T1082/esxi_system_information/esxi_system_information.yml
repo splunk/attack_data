@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: 632f631d-6d62-4bc6-8b6b-c51a9134a016
+date: '2025-07-09'
+description: 'Sample of ESXi syslog events showing attempts to enumerate system information.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1082/esxi_system_information/esxi_system_information.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1082

@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: 2bbe8c66-7262-4e13-b9a0-9d521e5d6305
+date: '2025-07-08'
+description: 'Sample of ESXi syslog events showing commands used for bulk termination of VMs.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1529/esxi_bulk_vm_termination/esxi_bulk_vm_termination.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1529

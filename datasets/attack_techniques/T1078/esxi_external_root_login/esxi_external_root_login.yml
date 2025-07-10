@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: ebd8a8a8-e517-43d1-b744-a8260f18ef6e
+date: '2025-07-08'
+description: 'Sample of ESXi syslog events showing root logins from an external system.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/esxi_external_root_login/esxi_external_root_login.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1078

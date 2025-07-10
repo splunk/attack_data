@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: d3f26d3a-3ae5-4e3d-a9b3-567622b6fb1d
+date: '2025-07-09'
+description: 'Sample of ESXi syslog events VM discovery commands."
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1673/esxi_vm_discovery/esxi_vm_discovery.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1673

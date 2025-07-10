@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: 125f03ca-3a22-4bf7-bb02-4abd338b326e
+date: '2025-07-09'
+description: 'Sample of ESXi syslog events showing attempts to modify the loghost configuration.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.003/esxi_loghost_config_tampering/esxi_loghost_config_tampering.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1562/003
