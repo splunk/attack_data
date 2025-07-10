@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 688a823a-5d79-11f0-bda4-629be353806a
+date: '2025-07-10'
+description: Generated datasets for file xml config in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.001/file_xml_config/filezilla_obj.log
+sourcetypes:
+- 'WinEventLog:Security'
+references:
+- https://www.trendmicro.com/en_us/research/18/k/trickbot-shows-off-new-trick-password-grabber-module.html
