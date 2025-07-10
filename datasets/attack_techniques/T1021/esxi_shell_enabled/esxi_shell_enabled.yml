@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: 117b7a96-83f5-4de9-9394-be8997bc43f4
+date: '2025-07-09'
+description: 'Sample of ESXi syslog events showing ESXi shell access being enabled.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021/esxi_shell_enabled/esxi_shell_enabled.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1021

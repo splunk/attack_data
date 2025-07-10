@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: 39edc074-9898-4de9-8296-45c51b7e18dd
+date: '2025-07-08'
+description: 'Sample of ESXi syslog events showing attempts to disable the firewall.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.004/esxi_firewall_disabled/esxi_firewall_disabled.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1562/004

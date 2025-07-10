@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: cf946971-ec10-4792-a697-4b208bc42e7f
+date: '2025-07-08'
+description: 'Sample of ESXi syslog events showing reverse shell attempts from the ESXi system.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/esxi_reverse_shell/esxi_reverse_shell.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1059

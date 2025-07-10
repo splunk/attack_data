@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: 5c239f0f-ec10-4107-b6a0-c9228257e4b1
+date: '2025-07-09'
+description: 'Sample of ESXi syslog events showing an ssh brute force attempt against an ESXi server.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110/esxi_ssh_brute_force/esxi_ssh_brute_force.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1110
