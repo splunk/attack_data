@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: d58e0ba2-5d76-11f0-bda4-629be353806a
+date: '2025-07-10'
+description: Generated datasets for moz lib loaded in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.003/moz_lib_loaded/mozilla_lib.log
+sourcetypes:
+- 'WinEventLog:Security'
+references:
+- https://www.trendmicro.com/vinfo/nz/threat-encyclopedia/malware/trojanspy.win32.vidar.yxdftz

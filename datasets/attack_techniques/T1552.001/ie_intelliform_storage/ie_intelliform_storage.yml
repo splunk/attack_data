@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: c2e6ef24-5d75-11f0-bda4-629be353806a
+date: '2025-07-10'
+description: Generated datasets for ie intelliform storage in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.001/ie_intelliform_storage/storage2_sim.log
+sourcetypes:
+- 'WinEventLog:Security'
+references:
+- https://stackoverflow.com/questions/1276700/where-does-internet-explorer-stores-its-form-data-history-that-is-uses-for-auto
