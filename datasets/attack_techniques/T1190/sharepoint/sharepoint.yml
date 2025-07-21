@@ -5,6 +5,7 @@ description: Manual generation of attack data related to CVE-2023-29357.
 environment: attack_range
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/sharepoint/sharepointeop.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/sharepoint/spinstall0.log
 sourcetypes:
 - suricata
 references:
