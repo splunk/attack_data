@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: 45640c5f-9ef7-4d93-aa3e-2bc188d0be0a
+date: '2025-07-30'
+description: 'Sample of Sysmon events showing execution of commands on a host via VMWare Tools.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/vmtoolsd_execution/vmtoolsd_execution.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1059
