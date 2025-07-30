@@ -4,7 +4,7 @@ date: '2025-07-30'
 description: 'Sample of Sysmon events showing execution of commands on a host via VMWare Tools.'
 environment: custom
 dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/vmtoolsd_execution/vmtoolsd_execution.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/vmtoolsd/vmtoolsd_execution.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 references:
