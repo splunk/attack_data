@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: c6e9706c-6d27-11f0-86b8-629be3538068
+date: '2025-07-30'
+description: Generated datasets for automatic file deleted in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.004/automatic_file_deleted/automatic_file_deleted.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://medium.com/@bonguides25/how-to-clear-rdp-connections-history-in-windows-cf0ffb67f344
