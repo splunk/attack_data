@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 28f730ce-72ae-11f0-9625-629be3538068
+date: '2025-08-06'
+description: Generated datasets for add store cert in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1587.003/add_store_cert/addstore_cert.log
+sourcetypes:
+- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://www.microsoft.com/en-us/security/blog/2025/07/31/frozen-in-transit-secret-blizzards-aitm-campaign-against-diplomats/
