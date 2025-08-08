@@ -1,196 +1,154 @@
-import argparse
-import sys
-import yaml
+#!/usr/bin/env python3
+
 import os
-import re
-import io
-import json
-import fileinput
-from datetime import datetime
-from datetime import timedelta
-import splunklib.client as client
+import sys
+import argparse
+import glob
+import uuid
+import urllib
+import requests
+from urllib3 import disable_warnings
 
 
-class DataManipulation:
-
-    def manipulate_timestamp(self, file_path, sourcetype, source):
-        # check that we support the source or sourcetype sent for manipulation
-        SUPPORTED = ['WinEventLog:System', 'WinEventLog:Security', 'exchange', 'aws:cloudtrail']
-        if (sourcetype in SUPPORTED) or (source in SUPPORTED):
-            print("updating timestamps before replaying for file: {0}".format(file_path))
-        else:
-            print("WARNING - cannot manipulate the timestamp for file: {0}, sourcetype: `{1}` or source: `{2}` it is not currently supported.".format(file_path, sourcetype, source))
-            return
-
-        if sourcetype == 'aws:cloudtrail':
-            self.manipulate_timestamp_cloudtrail(file_path)
-
-        if source == 'WinEventLog:System' or source == 'WinEventLog:Security':
-            self.manipulate_timestamp_windows_event_log_raw(file_path)
-
-        if source == 'exchange':
-            self.manipulate_timestamp_exchange_logs(file_path)
+def load_environment_variables():
+    """Load required environment variables for Splunk connection."""
+    required_vars = ['SPLUNK_HOST', 'SPLUNK_HEC_TOKEN']
+    env_vars = {}
+    for var in required_vars:
+        value = os.environ.get(var)
+        if not value:
+            raise ValueError(f"Environment variable {var} is required but not set")
+        env_vars[var.lower().replace('splunk_', '')] = value
+    return env_vars
 
 
-    def manipulate_timestamp_exchange_logs(self, file_path):
-        f = io.open(file_path, "r", encoding="utf-8")
-        first_line = f.readline()
-        d = json.loads(first_line)
-        latest_event  = datetime.strptime(d["CreationTime"],"%Y-%m-%dT%H:%M:%S")
-
-        now = datetime.now()
-        now = now.strftime("%Y-%m-%dT%H:%M:%S")
-        now = datetime.strptime(now,"%Y-%m-%dT%H:%M:%S")
-
-        difference = now - latest_event
-        f.close()
-
-        for line in fileinput.input(path, inplace=True):
-            d = json.loads(line)
-            original_time = datetime.strptime(d["CreationTime"],"%Y-%m-%dT%H:%M:%S")
-            new_time = (difference + original_time)
-
-            original_time = original_time.strftime("%Y-%m-%dT%H:%M:%S")
-            new_time = new_time.strftime("%Y-%m-%dT%H:%M:%S")
-            print (line.replace(original_time, new_time),end ='')
+def find_data_files(folder_path):
+    """Find all data files in the specified folder (supports .log, .json, .txt)."""
+    files = []
+    for ext in ("*.log", "*.json", "*.txt"):
+        files.extend(glob.glob(os.path.join(folder_path, ext)))
+    if not files:
+        print(f"Warning: No data files found in {folder_path}")
+    return files
 
 
-    def manipulate_timestamp_windows_event_log_raw(self, file_path):
-        f = io.open(file_path, "r", encoding="utf-8")
-        self.now = datetime.now()
-        self.now = self.now.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
-        self.now = datetime.strptime(self.now,"%Y-%m-%dT%H:%M:%S.%fZ")
-
-        # read raw logs
-        regex = r'\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2} [AP]M'
-        data = f.read()
-        lst_matches = re.findall(regex, data)
-        if len(lst_matches) > 0:
-            latest_event  = datetime.strptime(lst_matches[-1],"%m/%d/%Y %I:%M:%S %p")
-            self.difference = self.now - latest_event
-            f.close()
-
-            result = re.sub(regex, self.replacement_function, data)
-
-            with io.open(file_path, "w+", encoding='utf8') as f:
-                f.write(result)
-        else:
-            f.close()
-            return
-
-
-    def replacement_function(self, match):
+def send_data_to_splunk(file_path, splunk_host, hec_token, event_host_uuid,
+                        index="test", source="test", sourcetype="test",
+                        verify_ssl=False):
+    """Send a data file to Splunk HEC."""
+    if not verify_ssl:
+        disable_warnings()
+    hec_channel = str(uuid.uuid4())
+    headers = {
+        "Authorization": f"Splunk {hec_token}",
+        "X-Splunk-Request-Channel": hec_channel,
+    }
+    url_params = {
+        "index": index,
+        "source": source,
+        "sourcetype": sourcetype,
+        "host": event_host_uuid,
+    }
+    url = urllib.parse.urljoin(
+        f"https://{splunk_host}:8088",
+        "services/collector/raw"
+    )
+    with open(file_path, "rb") as datafile:
         try:
-            event_time = datetime.strptime(match.group(),"%m/%d/%Y %I:%M:%S %p")
-            new_time = self.difference + event_time
-            return new_time.strftime("%m/%d/%Y %I:%M:%S %p")
+            res = requests.post(
+                url,
+                params=url_params,
+                data=datafile.read(),
+                allow_redirects=True,
+                headers=headers,
+                verify=verify_ssl,
+            )
+            res.raise_for_status()
+            print(f":white_check_mark: Sent {file_path} to Splunk HEC")
         except Exception as e:
-            print("ERROR - in timestamp replacement occured: " + str(e))
-            return match.group()
+            print(f":x: Error sending {file_path} to Splunk HEC: {e}")
 
 
-    def manipulate_timestamp_cloudtrail(self, file_path):
-        f = io.open(file_path, "r", encoding="utf-8")
+def main():
+    parser = argparse.ArgumentParser(
+        description="Replay data files to Splunk via HTTP Event Collector (HEC)",
+        epilog="""
+Environment Variables Required:
+  SPLUNK_HOST      - Splunk server hostname/IP
+  SPLUNK_HEC_TOKEN - Splunk HEC token
 
-        try:
-            first_line = f.readline()
-            d = json.loads(first_line)
-            latest_event  = datetime.strptime(d["eventTime"],"%Y-%m-%dT%H:%M:%S.%fZ")
+Example usage:
+  python replay.py /path/to/data/folder
+  python replay.py /path/to/data/file.log --host-uuid 12345678-abcd-efgh
+  export SPLUNK_HOST="192.168.1.100"
+  export SPLUNK_HEC_TOKEN="your-hec-token"
+        """,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        'path',
+        help='Path to a data file or folder containing data files'
+    )
+    parser.add_argument(
+        '--source',
+        default='test',
+        help='Source field for Splunk events (default: test)'
+    )
+    parser.add_argument(
+        '--sourcetype',
+        default='test',
+        help='Sourcetype field for Splunk events (default: test)'
+    )
+    parser.add_argument(
+        '--index',
+        default='test',
+        help='Splunk index to send events to (default: test)'
+    )
+    parser.add_argument(
+        '--no-verify-ssl',
+        action='store_true',
+        help='Disable SSL verification for Splunk HEC'
+    )
+    parser.add_argument(
+        '--host-uuid',
+        help='UUID to use as the host field for Splunk events '
+             '(generates random UUID if not provided)'
+    )
+    args = parser.parse_args()
 
-            now = datetime.now()
-            now = now.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
-            now = datetime.strptime(now,"%Y-%m-%dT%H:%M:%S.%fZ")
-        except ValueError:
-            first_line = f.readline()
-            d = json.loads(first_line)
-            latest_event  = datetime.strptime(d["eventTime"],"%Y-%m-%dT%H:%M:%SZ")
-
-            now = datetime.now()
-            now = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-            now = datetime.strptime(now,"%Y-%m-%dT%H:%M:%SZ")
-
-        difference = now - latest_event
-        f.close()
-
-        for line in fileinput.input(file_path, inplace=True):
-            try:
-                d = json.loads(line)
-                original_time = datetime.strptime(d["eventTime"],"%Y-%m-%dT%H:%M:%S.%fZ")
-                new_time = (difference + original_time)
-
-                original_time = original_time.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
-                new_time = new_time.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
-                print (line.replace(original_time, new_time),end ='')
-            except ValueError:
-                d = json.loads(line)
-                original_time = datetime.strptime(d["eventTime"],"%Y-%m-%dT%H:%M:%SZ")
-                new_time = (difference + original_time)
-
-                original_time = original_time.strftime("%Y-%m-%dT%H:%M:%SZ")
-                new_time = new_time.strftime("%Y-%m-%dT%H:%M:%SZ")
-                print (line.replace(original_time, new_time),end ='')
-
-
-def send_to_splunk(settings):
-    # connect to splunk
     try:
-        service = client.connect(host=settings['splunk']['host'], port=8089, username=settings['splunk']['username'], password=settings['splunk']['password'])
-    except ConnectionRefusedError as e:
-        print("ERROR - could not connect to the splunk server {}:8089".format(settings['splunk']['host']))
-        sys.exit(1)
+        env_vars = load_environment_variables()
+        splunk_host = env_vars['host']
+        hec_token = env_vars['hec_token']
 
-    # go through all datasets
-    for dataset in settings['datasets']:
-        # check dataset is enabled
-        if dataset['enabled']:
-            # does the index exists?
-            if dataset['replay_parameters']['index'] not in service.indexes:
-                print("ERROR - index {0} does not exist on splunk server  {1}.".format(dataset['replay_parameters']['index'], settings['splunk']['host']))
-                sys.exit(1)
-            # set index
-            index = service.indexes[dataset['replay_parameters']['index']]
-            fullpath = os.path.abspath(dataset['path'])
+        # Generate UUID for host field if not provided
+        event_host_uuid = args.host_uuid or str(uuid.uuid4())
+        print(f"Using host UUID: {event_host_uuid}")
 
-            # update timestamps before replay
-            if 'update_timestamp' in dataset['replay_parameters']:
-                    if dataset['replay_parameters']['update_timestamp'] == True:
-                        data_manipulation = DataManipulation()
-                        data_manipulation.manipulate_timestamp(fullpath, dataset['replay_parameters']['sourcetype'], dataset['replay_parameters']['source'])
-
-            # upload file
-            kwargs_submit = dict()
-            kwargs_submit['sourcetype'] = dataset['replay_parameters']['sourcetype']
-            kwargs_submit['rename-source'] = dataset['replay_parameters']['source']
-            results = index.upload(fullpath, **kwargs_submit)
-    return True
-
-def parse_config(CONFIG_PATH, VERBOSE):
-    with open(CONFIG_PATH, 'r') as stream:
-        try:
-            settings = list(yaml.safe_load_all(stream))[0]
-        except yaml.YAMLError as exc:
-            print(exc)
-            print("ERROR: reading configuration file {0}".format(CONFIG_PATH))
+        if os.path.isdir(args.path):
+            files = find_data_files(args.path)
+        elif os.path.isfile(args.path):
+            files = [args.path]
+        else:
+            print(f"Error: {args.path} is not a valid file or directory")
             sys.exit(1)
-    return settings
+
+        for file_path in files:
+            send_data_to_splunk(
+                file_path=file_path,
+                splunk_host=splunk_host,
+                hec_token=hec_token,
+                event_host_uuid=event_host_uuid,
+                index=args.index,
+                source=args.source,
+                sourcetype=args.sourcetype,
+                verify_ssl=not args.no_verify_ssl,
+            )
+
+    except Exception as e:
+        print(f"Error: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
-    # grab arguments
-    parser = argparse.ArgumentParser(description="replays attack_data datasets into a configured splunk server", epilog="""
-        replay.py requires you to have a running splunk instance and username/password set under replay.yml in order to function.""")
-    parser.add_argument("-c", "--config", required=False, default="replay.yml",
-                        help="path to the configuration file of replay.py, defaults to replay.yml")
-    parser.add_argument("-v", "--verbose", required=False, action='store_true', help="prints verbose output")
-
-    # parse them
-    args = parser.parse_args()
-    CONFIG_PATH = args.config
-    verbose = args.verbose
-    settings = parse_config(CONFIG_PATH, verbose)
-    status = send_to_splunk(settings)
-
-    if status:
-        print("successfully indexed {0} dataset on splunk server {1}".format(len(settings['datasets']), settings['splunk']['host']))
-    else:
-        print("ERROR - issue replaying desired datasets on splunk server {0}".format(settings['splunk']['host']))
+    main()
