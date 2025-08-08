@@ -35,8 +35,8 @@ import re
 import logging
 import argparse
 from pathlib import Path
-from typing import Dict, List, Tuple, Optional
-from dataclasses import dataclass
+from typing import Dict, List, Tuple, Optional, Callable, Any
+from dataclasses import dataclass, field
 from datetime import datetime
 
 try:
@@ -70,6 +70,8 @@ class CategoryRule:
     source: Optional[str] = None
     content_check: Optional[str] = None
     description: str = ""
+    field_checks: Dict[str, Any] = field(default_factory=dict)
+    data_checker: Optional[Callable[[Path], Tuple[Optional[str], Optional[str]]]] = None
 
 
 class DatasetAnalyzer:
@@ -78,63 +80,172 @@ class DatasetAnalyzer:
     def __init__(self, base_path: str = "datasets"):
         self.base_path = Path(base_path)
         self.rules = self._initialize_rules()
+        self.provider_mappings = self._initialize_provider_mappings()
+
+    def _initialize_provider_mappings(self) -> Dict[str, Dict[str, str]]:
+        """Initialize Windows Event Log provider name to source/sourcetype mappings"""
+        return {
+            "Microsoft-Windows-Sysmon": {
+                "sourcetype": "XmlWinEventLog",
+                "source": "XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+            },
+            "Microsoft-Windows-PowerShell": {
+                "sourcetype": "XmlWinEventLog",
+                "source": "XmlWinEventLog:Microsoft-Windows-PowerShell/Operational"
+            },
+            "Microsoft-Windows-Security-Auditing": {
+                "sourcetype": "XmlWinEventLog",
+                "source": "XmlWinEventLog:Security"
+            },
+            "Microsoft-Windows-Kernel-General": {
+                "sourcetype": "XmlWinEventLog",
+                "source": "XmlWinEventLog:System"
+            },
+            "Microsoft-Windows-Kernel-Power": {
+                "sourcetype": "XmlWinEventLog",
+                "source": "XmlWinEventLog:System"
+            },
+            "Service Control Manager": {
+                "sourcetype": "XmlWinEventLog",
+                "source": "XmlWinEventLog:System"
+            },
+            "Microsoft-Windows-Windows Defender": {
+                "sourcetype": "XmlWinEventLog",
+                "source": ("XmlWinEventLog:Microsoft-Windows-Windows "
+                          "Defender/Operational")
+            },
+            "Microsoft-Windows-WinLogon": {
+                "sourcetype": "XmlWinEventLog",
+                "source": "XmlWinEventLog:Security"
+            },
+            "Microsoft-Windows-TerminalServices-LocalSessionManager": {
+                "sourcetype": "XmlWinEventLog",
+                "source": ("XmlWinEventLog:Microsoft-Windows-"
+                          "TerminalServices-LocalSessionManager/Operational")
+            },
+            "Microsoft-Windows-Application-Experience": {
+                "sourcetype": "XmlWinEventLog",
+                "source": "XmlWinEventLog:Application"
+            },
+            "Application Error": {
+                "sourcetype": "XmlWinEventLog",
+                "source": "XmlWinEventLog:Application"
+            }
+        }
+
+    def _check_windows_xml_provider(self, file_path: Path) -> (
+            Tuple[Optional[str], Optional[str]]):
+        """Check Windows XML logs for Provider name and return source/sourcetype"""
+        try:
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                # Read first few events to find provider
+                content = f.read(8192)  # Read first 8KB
+
+                # Look for Provider Name pattern
+                provider_pattern = r'<Provider Name=[\'"]([^\'"]+)[\'"]'
+                provider_match = re.search(provider_pattern, content)
+                
+                if provider_match:
+                    provider_name = provider_match.group(1)
+                    logger.debug(
+                        f"Found provider: {provider_name} in {file_path.name}")
+
+                    # Check if we have a mapping for this provider
+                    if provider_name in self.provider_mappings:
+                        mapping = self.provider_mappings[provider_name]
+                        return mapping["sourcetype"], mapping["source"]
+                    else:
+                        # Fallback for unknown providers
+                        logger.info(
+                            f"Unknown provider '{provider_name}' in "
+                            f"{file_path.name}, using generic XML mapping")
+                        return "XmlWinEventLog", f"XmlWinEventLog:{provider_name}"
+        except Exception as e:
+            logger.warning(f"Error parsing XML provider from {file_path}: {e}")
+
+        return None, None
 
     def _initialize_rules(self) -> List[CategoryRule]:
         """Initialize categorization rules based on common patterns"""
         return [
-            # Windows Event Logs - XML format
+            # Windows Event Logs - XML format with provider-based detection
             CategoryRule(
-                pattern=r".*windows-sysmon.*\.log$",
+                pattern=r".*windows.*",
+                # Default, will be overridden by data_checker
+                sourcetype="XmlWinEventLog",
+                source=None,  # Will be set by data_checker
+                content_check="xml",
+                description=("Windows Event logs in XML format "
+                           "(provider-based detection)"),
+                data_checker=self._check_windows_xml_provider
+            ),
+            CategoryRule(
+                pattern=r".*\.xml.*",
+                sourcetype="XmlWinEventLog",
+                source=None,
+                content_check="xml",
+                description="XML Event logs (provider-based detection)",
+                data_checker=self._check_windows_xml_provider
+            ),
+            # Legacy specific Windows log patterns (lower priority)
+            CategoryRule(
+                pattern=r".*windows-sysmon.*",
                 sourcetype="XmlWinEventLog",
                 source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational",
                 content_check="xml",
-                description="Windows Sysmon logs in XML format"
+                description=("Windows Sysmon logs in XML format "
+                           "(legacy pattern)")
             ),
             CategoryRule(
-                pattern=r".*sysmon.*\.log$",
+                pattern=r".*sysmon.*",
                 sourcetype="XmlWinEventLog",
                 source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational",
                 content_check="xml",
-                description="Sysmon logs in XML format"
+                description=("Sysmon logs in XML format "
+                           "(legacy pattern)")
             ),
             CategoryRule(
-                pattern=r".*windows-security.*\.log$",
+                pattern=r".*windows-security.*",
                 sourcetype="XmlWinEventLog",
                 source="XmlWinEventLog:Security",
                 content_check="xml",
-                description="Windows Security Event logs in XML format"
+                description=("Windows Security Event logs in XML format "
+                           "(legacy pattern)")
             ),
             CategoryRule(
-                pattern=r".*windows-system.*\.log$",
+                pattern=r".*windows-system.*",
                 sourcetype="XmlWinEventLog",
                 source="XmlWinEventLog:System",
                 content_check="xml",
-                description="Windows System Event logs in XML format"
+                description=("Windows System Event logs in XML format "
+                           "(legacy pattern)")
             ),
             CategoryRule(
-                pattern=r".*windows-powershell.*\.log$",
+                pattern=r".*windows-powershell.*",
                 sourcetype="XmlWinEventLog",
                 source="XmlWinEventLog:Microsoft-Windows-PowerShell/Operational",
                 content_check="xml",
-                description="Windows PowerShell logs in XML format"
+                description=("Windows PowerShell logs in XML format "
+                           "(legacy pattern)")
             ),
             CategoryRule(
-                pattern=r".*windows-application.*\.log$",
+                pattern=r".*windows-application.*",
                 sourcetype="XmlWinEventLog",
                 source="XmlWinEventLog:Application",
                 content_check="xml",
-                description="Windows Application Event logs in XML format"
+                description=("Windows Application Event logs in XML "
+                           "format (legacy pattern)")
             ),
 
             # CrowdStrike Falcon
             CategoryRule(
-                pattern=r".*crowdstrike.*\.log$",
+                pattern=r".*crowdstrike.*",
                 sourcetype="crowdstrike:events:sensor",
                 content_check="json",
                 description="CrowdStrike Falcon sensor events"
             ),
             CategoryRule(
-                pattern=r".*falcon.*\.log$",
+                pattern=r".*falcon.*",
                 sourcetype="crowdstrike:events:sensor",
                 content_check="json",
                 description="CrowdStrike Falcon sensor events"
@@ -142,157 +253,111 @@ class DatasetAnalyzer:
 
             # Linux/Unix logs
             CategoryRule(
-                pattern=r".*syslog.*\.log$",
+                pattern=r".*syslog.*",
                 sourcetype="syslog",
                 source="syslog",
                 description="Linux/Unix syslog files"
             ),
             CategoryRule(
-                pattern=r".*auth.*\.log$",
+                pattern=r".*auth.*",
                 sourcetype="linux_secure",
                 source="linux_secure",
                 description="Linux authentication logs"
             ),
             CategoryRule(
-                pattern=r".*secure.*\.log$",
+                pattern=r".*secure.*",
                 sourcetype="linux_secure",
                 source="linux_secure",
                 description="Linux secure logs"
             ),
+            CategoryRule(
+                pattern=r".*auditd.*",
+                sourcetype="auditd",
+                source="auditd",
+                description="Linux auditd logs"
+            ),
 
             # Network and Firewall logs
             CategoryRule(
-                pattern=r".*firewall.*\.log$",
+                pattern=r".*firewall.*",
                 sourcetype="firewall",
                 description="Firewall logs"
             ),
             CategoryRule(
-                pattern=r".*palo.*alto.*\.log$",
+                pattern=r".*palo.*alto.*",
                 sourcetype="pan:traffic",
                 description="Palo Alto firewall logs"
             ),
             CategoryRule(
-                pattern=r".*cisco.*\.log$",
+                pattern=r".*cisco.*",
                 sourcetype="cisco:asa",
                 description="Cisco network device logs"
             ),
 
             # Web server logs
             CategoryRule(
-                pattern=r".*access.*\.log$",
+                pattern=r".*access.*",
                 sourcetype="access_combined",
                 description="Web server access logs"
             ),
             CategoryRule(
-                pattern=r".*apache.*\.log$",
+                pattern=r".*apache.*",
                 sourcetype="access_combined",
                 description="Apache web server logs"
             ),
             CategoryRule(
-                pattern=r".*nginx.*\.log$",
+                pattern=r".*nginx.*",
                 sourcetype="nginx:plus:access",
                 description="Nginx web server logs"
             ),
             CategoryRule(
-                pattern=r".*iis.*\.log$",
+                pattern=r".*iis.*",
                 sourcetype="iis",
                 description="IIS web server logs"
             ),
 
             # Cloud and container logs
             CategoryRule(
-                pattern=r".*aws.*\.log$",
+                pattern=r".*aws.*",
                 sourcetype="aws:cloudtrail",
                 description="AWS CloudTrail logs"
             ),
             CategoryRule(
-                pattern=r".*azure.*\.log$",
+                pattern=r".*azure.*",
                 sourcetype="azure:monitor:aad",
                 description="Azure activity logs"
             ),
             CategoryRule(
-                pattern=r".*docker.*\.log$",
+                pattern=r".*docker.*",
                 sourcetype="docker",
                 description="Docker container logs"
             ),
             CategoryRule(
-                pattern=r".*kubernetes.*\.log$",
-                sourcetype="kube:container",
+                pattern=r".*kubernetes.*",
+                sourcetype="aws:cloudwatchlogs",
                 description="Kubernetes container logs"
-            ),
-
-            # Database logs
-            CategoryRule(
-                pattern=r".*mysql.*\.log$",
-                sourcetype="mysql:error",
-                description="MySQL database logs"
-            ),
-            CategoryRule(
-                pattern=r".*postgres.*\.log$",
-                sourcetype="postgresql",
-                description="PostgreSQL database logs"
-            ),
-            CategoryRule(
-                pattern=r".*mssql.*\.log$",
-                sourcetype="mssql:errorlog",
-                description="Microsoft SQL Server logs"
             ),
 
             # Application logs
             CategoryRule(
-                pattern=r".*exchange.*\.log$",
+                pattern=r".*exchange.*",
                 sourcetype="MSExchange:Management",
                 description="Microsoft Exchange logs"
             ),
             CategoryRule(
-                pattern=r".*sharepoint.*\.log$",
+                pattern=r".*sharepoint.*",
                 sourcetype="sharepoint:uls",
                 description="SharePoint logs"
-            ),
-            CategoryRule(
-                pattern=r".*jboss.*\.log$",
-                sourcetype="jboss",
-                description="JBoss application server logs"
-            ),
-            CategoryRule(
-                pattern=r".*tomcat.*\.log$",
-                sourcetype="catalina",
-                description="Apache Tomcat logs"
             ),
 
             # JSON format logs (generic)
             CategoryRule(
-                pattern=r".*\.json\.log$",
+                pattern=r".*\.json.*",
                 sourcetype="json",
                 content_check="json",
                 description="JSON formatted logs"
             ),
 
-            # CSV format logs
-            CategoryRule(
-                pattern=r".*\.csv\.log$",
-                sourcetype="csv",
-                description="CSV formatted logs"
-            ),
-            CategoryRule(
-                pattern=r".*\.csv$",
-                sourcetype="csv",
-                description="CSV data files"
-            ),
-
-            # Text files
-            CategoryRule(
-                pattern=r".*\.txt$",
-                sourcetype="text",
-                description="Plain text files"
-            ),
-
-            # Generic log file fallback
-            CategoryRule(
-                pattern=r".*\.log$",
-                sourcetype="generic_log",
-                description="Generic log files"
-            )
         ]
 
     def _detect_content_type(self, file_path: Path) -> str:
@@ -335,7 +400,8 @@ class DatasetAnalyzer:
     def _apply_rules(self, file_path: Path) -> Optional[
         Tuple[str, Optional[str], bool]
     ]:
-        """Apply categorization rules and return (sourcetype, source, is_specific_rule)"""
+        """Apply categorization rules and return (sourcetype, source,
+        is_specific_rule)"""
         filename = file_path.name.lower()
         content_type = self._detect_content_type(file_path)
 
@@ -345,14 +411,37 @@ class DatasetAnalyzer:
                 if rule.content_check and rule.content_check != content_type:
                     continue
 
-                # Check if this is the generic log fallback rule (last rule)
+                # Check if rule has a data checker
+                # (for field-based detection)
+                sourcetype = rule.sourcetype
+                source = rule.source
+                if rule.data_checker:
+                    try:
+                        checked_sourcetype, checked_source = (
+                            rule.data_checker(file_path))
+                        if checked_sourcetype:
+                            sourcetype = checked_sourcetype
+                            logger.info(
+                                f"Data checker updated sourcetype to "
+                                f"'{sourcetype}' for {filename}")
+                        if checked_source:
+                            source = checked_source
+                            logger.info(
+                                f"Data checker updated source to "
+                                f"'{source}' for {filename}")
+                    except Exception as e:
+                        logger.warning(f"Data checker failed for {filename}: {e}")
+                        # Continue with original rule values if
+                        # checker fails
+
+                # Check if this is the generic fallback rule (last rule)
                 is_specific_rule = i < len(self.rules) - 1
                 
                 logger.debug(
                     f"Applied rule '{rule.description}' to {filename} "
-                    f"(specific: {is_specific_rule})"
-                )
-                return rule.sourcetype, rule.source, is_specific_rule
+                    f"(specific: {is_specific_rule}, sourcetype: {sourcetype}, "
+                    f"source: {source})")
+                return sourcetype, source, is_specific_rule
 
         logger.warning(f"No matching rule found for {filename}")
         return None
