@@ -557,10 +557,22 @@ class DatasetAnalyzer:
         ignored_files = []
 
         for dataset_path in datasets:
-            # Create relative path from base directory
+            # Create relative path from the datasets directory
             try:
-                relative_path = dataset_path.relative_to(base_path.parent)
-                web_path = f"/datasets/{relative_path.as_posix()}"
+                # Find the datasets root by looking for "datasets" in the path
+                datasets_root = None
+                for parent in dataset_path.parents:
+                    if parent.name == "datasets":
+                        datasets_root = parent
+                        break
+                
+                if datasets_root:
+                    relative_path = dataset_path.relative_to(datasets_root)
+                    web_path = f"/datasets/{relative_path.as_posix()}"
+                else:
+                    # If no datasets parent found, try the original base_path
+                    relative_path = dataset_path.relative_to(self.base_path)
+                    web_path = f"/datasets/{relative_path.as_posix()}"
             except ValueError:
                 # Fallback if relative path fails
                 web_path = f"/datasets/{dataset_path.name}"
