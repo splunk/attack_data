@@ -241,12 +241,14 @@ class DatasetAnalyzer:
             CategoryRule(
                 pattern=r".*crowdstrike.*",
                 sourcetype="crowdstrike:events:sensor",
+                source="crowdstrike",
                 content_check="json",
                 description="CrowdStrike Falcon sensor events"
             ),
             CategoryRule(
                 pattern=r".*falcon.*",
                 sourcetype="crowdstrike:events:sensor",
+                source="crowdstrike",
                 content_check="json",
                 description="CrowdStrike Falcon sensor events"
             ),
@@ -276,6 +278,12 @@ class DatasetAnalyzer:
                 source="auditd",
                 description="Linux auditd logs"
             ),
+            CategoryRule(
+                pattern=r".*sysmon_linux.*",
+                sourcetype="sysmon:linux",
+                source="Syslog:Linux-Sysmon/Operational",
+                description="Linux Sysmon logs"
+            ),
 
             # Network and Firewall logs
             CategoryRule(
@@ -289,8 +297,9 @@ class DatasetAnalyzer:
                 description="Palo Alto firewall logs"
             ),
             CategoryRule(
-                pattern=r".*cisco.*",
-                sourcetype="cisco:asa",
+                pattern=r".*cisco_secure_firewall.*",
+                sourcetype="cisco:sfw:estreamer",
+                source="not_applicable",
                 description="Cisco network device logs"
             ),
 
@@ -313,6 +322,7 @@ class DatasetAnalyzer:
             CategoryRule(
                 pattern=r".*iis.*",
                 sourcetype="iis",
+                source="iis",
                 description="IIS web server logs"
             ),
 
@@ -320,34 +330,99 @@ class DatasetAnalyzer:
             CategoryRule(
                 pattern=r".*aws.*",
                 sourcetype="aws:cloudtrail",
+                source="aws_cloudtrail",
                 description="AWS CloudTrail logs"
+            ),
+            CategoryRule(
+                pattern=r".*asl.*",
+                sourcetype="aws:cloudtrail:lake",
+                source="aws_asl",
+                description="AWS ASL logs"
             ),
             CategoryRule(
                 pattern=r".*azure.*",
                 sourcetype="azure:monitor:aad",
+                source="azure",
                 description="Azure activity logs"
             ),
             CategoryRule(
-                pattern=r".*docker.*",
-                sourcetype="docker",
-                description="Docker container logs"
-            ),
-            CategoryRule(
                 pattern=r".*kubernetes.*",
-                sourcetype="aws:cloudwatchlogs",
+                sourcetype="__json",
+                source="kubernetes",
                 description="Kubernetes container logs"
             ),
 
             # Application logs
             CategoryRule(
+                pattern=r".*okta.*",
+                sourcetype="OktaIM2:log",
+                source="Okta",
+                description="Okta logs"
+            ),
+            CategoryRule(
+                pattern=r".*pingid.*",
+                sourcetype="__json",
+                source="PINGID",
+                description="PingID logs"
+            ),
+            CategoryRule(
+                pattern=r".*gws.*",
+                sourcetype="gws:reports:login",
+                source="gws:reports:login",
+                description="Google Workspace logs"
+            ),
+            CategoryRule(
+                pattern=r".*gsuite.*",
+                sourcetype="gsuite:gmail:bigquery",
+                source="http:gsuite",
+                description="GSuite logs"
+            ),
+            CategoryRule(
+                pattern=r".*o365.*",
+                sourcetype="o365:management:activity",
+                source="o365",
+                description="O365 logs"
+            ),
+            CategoryRule(
+                pattern=r".*cisco_duo.*",
+                sourcetype="cisco:duo:administrator",
+                source="duo",
+                description="Cisco Duo logs"
+            ),
+            CategoryRule(
+                pattern=r".*esxi.*",
+                sourcetype="vmw-syslog",
+                source="vmware:esxlog",
+                description="VMware ESXi logs"
+            ),
+            CategoryRule(
+                pattern=r".*zscalar.*",
+                sourcetype="zscalernss-web",
+                source="zscaler",
+                description="Zscaler logs"
+            ),
+            CategoryRule(
+                pattern=r".*suricata.*",
+                sourcetype="suricata",
+                source="suricata",
+                description="Suricata logs"
+            ),
+            CategoryRule(
                 pattern=r".*exchange.*",
                 sourcetype="MSExchange:Management",
+                source="MSExchange:Management",
                 description="Microsoft Exchange logs"
             ),
             CategoryRule(
                 pattern=r".*sharepoint.*",
                 sourcetype="sharepoint:uls",
                 description="SharePoint logs"
+            ),
+            CategoryRule(
+                pattern=r".*crushftp.*",
+                sourcetype="crushftp:sessionlogs",
+                source="crushftp",
+                description="CrushFTP logs"
             ),
 
             # JSON format logs (generic)
@@ -447,10 +522,13 @@ class DatasetAnalyzer:
         return None
 
     def _is_data_file(self, file_path: Path) -> bool:
-        """Check if a file is a data file (not .yml or .zip)"""
+        """Check if a file is a data file (not .yml, .zip, or system files)"""
         excluded_extensions = {'.yml', '.yaml', '.zip', '.tar', '.gz',
                                '.rar', '.7z'}
-        return file_path.suffix.lower() not in excluded_extensions
+        excluded_filenames = {'.ds_store'}
+        
+        return (file_path.suffix.lower() not in excluded_extensions and
+                file_path.name.lower() not in excluded_filenames)
 
     def _find_datasets(self, technique_path: Path) -> List[Path]:
         """Find all dataset files in a technique directory"""
@@ -1019,7 +1097,7 @@ Sourcetype Distribution (Included in data.yml):
             report += f"\nIgnored File Details:\n{'-' * 50}\n"
             for ignored_file in ignored_files:
                 reason = ignored_file['reason'].replace('_', ' ').title()
-                report += f"{ignored_file['name']:<50} {reason}\n"
+                report += f"{ignored_file['path']:<80} {reason}\n"
 
         report += f"\n{'-' * 50}\n"
         report += (f"Report generated on: "
