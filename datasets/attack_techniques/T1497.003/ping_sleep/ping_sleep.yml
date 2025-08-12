@@ -3,9 +3,11 @@ id: 3a828f4c-79f5-11ec-bf39-acde48001122
 date: '2022-01-20'
 description: Generated datasets for ping sleep in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1497.003/ping_sleep/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://www.microsoft.com/security/blog/2022/01/15/destructive-malware-targeting-ukrainian-organizations/
+directory: ping_sleep
+mitre_technique:
+- T1497.003
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1497.003/ping_sleep/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

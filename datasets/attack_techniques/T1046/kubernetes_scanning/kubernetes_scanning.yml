@@ -3,9 +3,11 @@ id: d8aaa455-a7ba-4bd8-a588-e09ef1dce552
 date: '2023-12-07'
 description: Kubernetes scanning activity in Kubernetes audit logs.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1046/kubernetes_scanning/kubernetes_scanning.json
-sourcetypes:
-- aws:cloudwatchlogs
-references:
-- https://attack.mitre.org/techniques/T1046
+directory: kubernetes_scanning
+mitre_technique:
+- T1046
+datasets:
+- name: kubernetes_scanning-json
+  path: /datasets/attack_techniques/T1046/kubernetes_scanning/kubernetes_scanning.json
+  sourcetype: __json
+  source: kubernetes

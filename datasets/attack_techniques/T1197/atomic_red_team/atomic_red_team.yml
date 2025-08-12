@@ -3,20 +3,15 @@ id: cc9b2617-efc9-11eb-926b-550bf0943fbb
 date: '2021-03-30'
 description: Execution of Atomic Red Team T1197 - BITS Jobs.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/T1197_windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/bits-windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/carbon_black_events.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1197/atomic_red_team/crowdstrike_falcon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:Security
-- bit9:carbonblack:json
-- crowdstrike:events:sensor
-references:
-- https://attack.mitre.org/techniques/T1197
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1197/T1197.md
+directory: atomic_red_team
+mitre_technique:
+- T1197
+datasets:
+- name: crowdstrike_falcon
+  path: /datasets/attack_techniques/T1197/atomic_red_team/crowdstrike_falcon.log
+  sourcetype: crowdstrike:events:sensor
+  source: crowdstrike
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1197/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

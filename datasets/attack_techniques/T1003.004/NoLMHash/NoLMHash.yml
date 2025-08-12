@@ -2,10 +2,12 @@ author: Teoderick Contreras, Splunk
 id: e68c62ae-dc5b-4852-bfb1-860b104358b7
 date: '2023-12-15'
 description: Generated datasets for NoLMHash in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.004/NoLMHash/lsa-reg-settings-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a
+environment: attack_range
+directory: NoLMHash
+mitre_technique:
+- T1003.004
+datasets:
+- name: lsa-reg-settings-sysmon
+  path: /datasets/attack_techniques/T1003.004/NoLMHash/lsa-reg-settings-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

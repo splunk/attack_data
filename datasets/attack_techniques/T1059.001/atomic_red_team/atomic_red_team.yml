@@ -4,24 +4,39 @@ date: '2021-03-01'
 description: Invoke-atomictest T1059.001 of all Atomic Red Team T1059.001 PowerShell
   tests.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/windows-security-2.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/downloadfile_windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/carbon_black_events.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/4104-psremoting-windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/start_stop_service_windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/get_ciminstance_windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/enableat_windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/enableat_windows-sysmon.log/win32_scheduledjob_windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/irm_powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/captcha_windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:Security
-- bit9:carbonblack:json
-references:
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1059.001/T1059.001.md
+directory: atomic_red_team
+mitre_technique:
+- T1059.001
+datasets:
+- name: captcha_windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/atomic_red_team/captcha_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: get_ciminstance_windows-powershell
+  path: /datasets/attack_techniques/T1059.001/atomic_red_team/get_ciminstance_windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: start_stop_service_windows-powershell
+  path: /datasets/attack_techniques/T1059.001/atomic_red_team/start_stop_service_windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-security-2
+  path: /datasets/attack_techniques/T1059.001/atomic_red_team/windows-security-2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: 4104-psremoting-windows-powershell
+  path: /datasets/attack_techniques/T1059.001/atomic_red_team/4104-psremoting-windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: win32_scheduledjob_windows-powershell
+  path: /datasets/attack_techniques/T1059.001/atomic_red_team/win32_scheduledjob_windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: enableat_windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/atomic_red_team/enableat_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

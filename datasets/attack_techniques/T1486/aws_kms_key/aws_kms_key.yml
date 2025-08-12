@@ -5,10 +5,15 @@ description: Dataset which contains cloudtrail logs and the creation of a kms ke
   with a policy that all people can use the key for encryption, which is common for
   S3 ransomware attacks.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/aws_kms_key/aws_cloudtrail_events.json
-sourcetypes:
-- aws:cloudtrail
-references:
-- https://attack.mitre.org/techniques/T1486
-- https://rhinosecuritylabs.com/aws/s3-ransomware-part-1-attack-vector/
+directory: aws_kms_key
+mitre_technique:
+- T1486
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1486/aws_kms_key/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail
+- name: asl_ocsf_cloudtrail-json
+  path: /datasets/attack_techniques/T1486/aws_kms_key/asl_ocsf_cloudtrail.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl

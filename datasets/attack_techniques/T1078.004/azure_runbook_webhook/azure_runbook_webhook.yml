@@ -1,15 +1,15 @@
 author: Mauricio Velazco
 id: f8e3dbe1-73ae-418b-8d71-5dcdae97cceb
 date: '2022-08-23'
-description: 'Manually created a Webhook for an Azure Automation Runbook through the Azure portal.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Azure tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/azure_runbook_webhook/azure-activity.log
-sourcetypes:
-- mscs:azure:audit
-references:
-- https://attack.mitre.org/techniques/T1078/004/
-- https://www.netspi.com/blog/technical/cloud-penetration-testing/maintaining-azure-persistence-via-automation-accounts/
-- https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT503/AZT503-3/
-- https://www.inversecos.com/2021/12/how-to-detect-malicious-azure.html
+description: Manually created a Webhook for an Azure Automation Runbook through the
+  Azure portal. Tenant specific details have been replaced in the dataset including
+  tenant id, user names, ips, etc.
+environment: attack_range
+directory: azure_runbook_webhook
+mitre_technique:
+- T1078.004
+datasets:
+- name: azure-activity
+  path: /datasets/attack_techniques/T1078.004/azure_runbook_webhook/azure-activity.log
+  sourcetype: azure:monitor:aad
+  source: azure

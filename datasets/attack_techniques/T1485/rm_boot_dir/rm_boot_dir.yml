@@ -3,9 +3,11 @@ id: 39bbc1a6-c607-11ec-ba6f-acde48001122
 date: '2022-04-27'
 description: Generated datasets for rm boot dir in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/rm_boot_dir/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/
+directory: rm_boot_dir
+mitre_technique:
+- T1485
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1485/rm_boot_dir/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

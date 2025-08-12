@@ -3,9 +3,11 @@ id: 626b6584-bdcf-4b12-9e72-6c63eda796c0
 date: '2022-08-12'
 description: apt-get linux living off the land and privilege escalation.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/apt_get/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://attack.mitre.org/tactics/TA0004/
+directory: apt_get
+mitre_technique:
+- T1548
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/apt_get/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

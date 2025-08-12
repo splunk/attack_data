@@ -3,9 +3,11 @@ id: 6a85a94e-45d6-11f0-9bec-629be3538068
 date: '2025-06-10'
 description: Generated datasets for linux auditd unix shell mod config in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.004/linux_auditd_unix_shell_mod_config//linux_path_profile_d.log
-sourcetypes:
-- 'auditd'
-references:
-- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+directory: linux_auditd_unix_shell_mod_config
+mitre_technique:
+- T1546.004
+datasets:
+- name: linux_auditd_unix_shell_mod_config
+  path: /datasets/attack_techniques/T1546.004/linux_auditd_unix_shell_mod_config/linux_auditd_unix_shell_mod_config.log
+  sourcetype: auditd
+  source: auditd

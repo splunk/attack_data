@@ -1,15 +1,33 @@
 author: Teoderick Contreras
 id: 85738b9d-8066-4934-a6ad-3285db2085c3
 date: '2021-08-24'
-description: 'Simulated test Attack range dataset for AD discovery techniques'
+description: Simulated test Attack range dataset for AD discovery techniques
 environment: attack_range
-dataset: 
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.002/AD_discovery/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.002/AD_discovery/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.002/AD_discovery/windows-system.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:System
-- WinEventLog:Security
+directory: AD_discovery
+mitre_technique:
+- T1087.002
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-LocalAdminAccess-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-LocalAdminAccess-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-DomainOU-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-DomainOU-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-ForestDomain-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-ForestDomain-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-interestingACL-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-interestingACL-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

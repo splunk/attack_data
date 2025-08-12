@@ -3,14 +3,10 @@ id: d5f9b9bf-1104-4232-9f18-202ecb06ded2
 date: '2024-09-09'
 description: Generation of data for the PowerShell Web Access (PSWA).
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/pswa/4648_pswa_pool.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/pswa/4648_4624_pswa_pool.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/pswa/iis_pswaaccess.log
-sourcetypes:
-- ms:iis:splunk
-- XmlWinEventLog
-references:
-  - https://attack.mitre.org/techniques/T1190
-
-  
+directory: pswa
+mitre_technique:
+- T1190
+datasets:
+- name: iis_pswaaccess
+  path: /datasets/attack_techniques/T1190/pswa/iis_pswaaccess.log
+  sourcetype: access_combined

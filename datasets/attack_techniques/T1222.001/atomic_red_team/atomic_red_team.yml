@@ -8,16 +8,11 @@ description: 'Atomic Test Results: Successful Execution of test T1222.001-1 Take
   - hide file Successful Execution of test T1222.001-5 Grant Full Access to Entire
   C:\ Drive for Everyone - Ryuk Ransomware Style '
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1222.001/atomic_red_team/windows-system.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:System
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1222/001/
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1222.001/T1222.001.md
+directory: atomic_red_team
+mitre_technique:
+- T1222.001
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1222.001/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

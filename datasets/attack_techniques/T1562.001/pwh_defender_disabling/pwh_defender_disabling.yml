@@ -3,10 +3,11 @@ id: cc9b2665-efc9-11eb-926b-550bf0943fbb
 date: '2021-07-05'
 description: Stopped win-defender application using powershell
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/pwh_defender_disabling/windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1562/001
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.001/T1562.001.md
+directory: pwh_defender_disabling
+mitre_technique:
+- T1562.001
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1562.001/pwh_defender_disabling/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

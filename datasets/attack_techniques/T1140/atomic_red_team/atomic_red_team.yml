@@ -4,12 +4,11 @@ date: '2021-03-25'
 description: 'Atomic Red Team test results of T1140, certutil.exe decode. Also included
   Invoke-CertUtil decoding files. '
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1140/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1140/atomic_red_team/encode-windows-security.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1140
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1140/T1140.md
+directory: atomic_red_team
+mitre_technique:
+- T1140
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1140/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

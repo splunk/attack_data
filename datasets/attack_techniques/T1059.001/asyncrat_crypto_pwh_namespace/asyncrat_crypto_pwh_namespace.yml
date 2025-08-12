@@ -2,10 +2,12 @@ author: Teoderick Contreras, Splunk
 id: 6ea89cfe-c6e2-4c77-9708-eef588178d15
 date: '2023-01-26'
 description: Generated datasets for asyncrat crypto pwh namespace in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/asyncrat_crypto_pwh_namespace/windows-powershell-xml.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
-references:
-- https://malpedia.caad.fkie.fraunhofer.de/details/win.asyncrat
+environment: attack_range
+directory: asyncrat_crypto_pwh_namespace
+mitre_technique:
+- T1059.001
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1059.001/asyncrat_crypto_pwh_namespace/windows-powershell-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

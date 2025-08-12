@@ -3,10 +3,15 @@ id: 6d3fda80-72dd-11ec-90de-acde48001122
 date: '2022-01-11'
 description: Generated datasets for ssh authorized keys in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.004/ssh_authorized_keys/sysmon_linux.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.004/ssh_authorized_keys/authkey_linux-sysmon.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://www.hackingarticles.in/ssh-penetration-testing-port-22/
+directory: ssh_authorized_keys
+mitre_technique:
+- T1098.004
+datasets:
+- name: authkey_linux-sysmon
+  path: /datasets/attack_techniques/T1098.004/ssh_authorized_keys/authkey_linux-sysmon.log
+  sourcetype: linux_secure
+  source: linux_secure
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1098.004/ssh_authorized_keys/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

@@ -1,13 +1,15 @@
 author: Mauricio Velazco
 id: 27baa027-31cf-43f8-bf9e-20c3946d4c45
 date: '2024-02-12'
-description: 'Used python to authenticate as a service principal to an Azure AD tenant.
-    Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Azure AD tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/azure_ad_service_principal_authentication/azure_ad_service_principal_authentication.log
-sourcetypes:
-- azure_monitor_aad
-references:
-- https://attack.mitre.org/techniques/T1078/004/
-- https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins#service-principal-sign-ins
+description: Used python to authenticate as a service principal to an Azure AD tenant.
+  Tenant specific details have been replaced in the dataset including tenant id, user
+  names, ips, etc.
+environment: attack_range
+directory: azure_ad_service_principal_authentication
+mitre_technique:
+- T1078.004
+datasets:
+- name: azure_ad_service_principal_authentication
+  path: /datasets/attack_techniques/T1078.004/azure_ad_service_principal_authentication/azure_ad_service_principal_authentication.log
+  sourcetype: linux_secure
+  source: linux_secure

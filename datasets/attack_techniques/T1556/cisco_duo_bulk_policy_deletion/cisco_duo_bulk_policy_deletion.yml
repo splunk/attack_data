@@ -1,11 +1,13 @@
 author: Patrick Bareiss
 id: 01167925-4c70-4c62-a850-54c3da8ed54e
 date: '2025-07-10'
-description: 'Deleted multiple policies in Duo.'
-environment: Cisco Duo Tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/cisco_duo_bulk_policy_deletion/cisco_duo_administrator.json
-sourcetypes:
-- cisco:duo:administrator
-references:
-- https://attack.mitre.org/techniques/T1556/ 
+description: Deleted multiple policies in Duo.
+environment: attack_range
+directory: cisco_duo_bulk_policy_deletion
+mitre_technique:
+- T1556
+datasets:
+- name: cisco_duo_administrator-json
+  path: /datasets/attack_techniques/T1556/cisco_duo_bulk_policy_deletion/cisco_duo_administrator.json
+  sourcetype: cisco:duo:administrator
+  source: duo

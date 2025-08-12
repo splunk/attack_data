@@ -3,9 +3,11 @@ id: a33aa580-5e02-11ef-b158-acde48001122
 date: '2024-08-19'
 description: Generated datasets for linux auditd find db in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1083/linux_auditd_find_db/linux_auditd_find_db.log
-sourcetypes:
-- 'linux:audit'
-references:
-- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+directory: linux_auditd_find_db
+mitre_technique:
+- T1083
+datasets:
+- name: linux_auditd_find_db
+  path: /datasets/attack_techniques/T1083/linux_auditd_find_db/linux_auditd_find_db.log
+  sourcetype: auditd
+  source: auditd

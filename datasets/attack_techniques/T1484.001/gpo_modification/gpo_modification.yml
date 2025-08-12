@@ -1,0 +1,13 @@
+author: Dean Luxton
+id: eaf30c7d-bff6-4273-8d5e-83154ffe25d0
+date: '2023-12-18'
+description: Manual Group Policy Object modification on a domain controller.
+environment: attack_range
+directory: gpo_modification
+mitre_technique:
+- T1484.001
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1484.001/gpo_modification/windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

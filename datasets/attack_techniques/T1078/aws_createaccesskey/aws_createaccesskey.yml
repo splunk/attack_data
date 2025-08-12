@@ -5,14 +5,16 @@ description: CloudTrail events where a user A who has already permission to crea
   access keys, makes an API call to create access keys for another user B. Attackers
   have been know to use this technique for Privilege Escalation in case new victim(user
   B) has more permissions than old victim(user B)
-environment: Cloud Attack Range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/aws_createaccesskey/aws_cloudtrail_events.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/amazon_security_lake.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/asl_ocsf_cloudtrail.json
-sourcetypes:
-- aws:cloudtrail
-- aws:asl
-references:
-- https://labs.bishopfox.com/tech-blog/privilege-escalation-in-aws
-- https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/
+environment: attack_range
+directory: aws_createaccesskey
+mitre_technique:
+- T1078
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1078/aws_createaccesskey/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail
+- name: asl_ocsf_cloudtrail-json
+  path: /datasets/attack_techniques/T1078/aws_createaccesskey/asl_ocsf_cloudtrail.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl

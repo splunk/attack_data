@@ -2,10 +2,16 @@ author: Patrick Bareiss
 id: cc9b25d0-efc9-11eb-926b-550bf0943fbb
 date: '2021-02-01'
 description: Multiple failed sso logins to O365
-environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/o365_sso_logon_errors/o365_sso_logon_errors.json
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1136/003/
+environment: attack_range
+directory: o365_sso_logon_errors
+mitre_technique:
+- T1556
+datasets:
+- name: o365_sso_logon_errors2-json
+  path: /datasets/attack_techniques/T1556/o365_sso_logon_errors/o365_sso_logon_errors2.json
+  sourcetype: o365:management:activity
+  source: o365
+- name: o365_sso_logon_errors-json
+  path: /datasets/attack_techniques/T1556/o365_sso_logon_errors/o365_sso_logon_errors.json
+  sourcetype: o365:management:activity
+  source: o365

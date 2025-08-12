@@ -18,20 +18,27 @@ description: 'Atomic Test Results: Return value unclear for test T1562.001-9 Unl
   Defender Evade Scanning -Extension Return value unclear for test T1562.001-23 Tamper
   with Windows Defender Evade Scanning -Process '
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-system.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_dism.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_raccine.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/hvci_windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:System
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1562/001
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.001/T1562.001.md
-- https://github.com/splunk/security-content/blob/develop/tests/T1562_001.yml
+directory: atomic_red_team
+mitre_technique:
+- T1562.001
+datasets:
+- name: hvci_windows-sysmon
+  path: /datasets/attack_techniques/T1562.001/atomic_red_team/hvci_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon_raccine
+  path: /datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_raccine.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: Disable-WindowsOptionalFeature-powershell
+  path: /datasets/attack_techniques/T1562.001/atomic_red_team/Disable-WindowsOptionalFeature-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-sysmon_dism
+  path: /datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_dism.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

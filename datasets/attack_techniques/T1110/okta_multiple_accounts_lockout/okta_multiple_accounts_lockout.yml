@@ -1,11 +1,14 @@
 author: Mauricio Velazco, Splunk
 id: 0419ad47-a1c2-46b2-a647-4651456a9029
 date: '2024-03-04'
-description: Performed a brute force attack against an Okta tenant until accounts were locked out.
-environment: Okta
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110/okta_multiple_accounts_lockout/okta_multiple_accounts_lockout.log
-sourcetypes:
-- OktaIM2:log
-references:
-- https://attack.mitre.org/techniques/T1110/
+description: Performed a brute force attack against an Okta tenant until accounts
+  were locked out.
+environment: attack_range
+directory: okta_multiple_accounts_lockout
+mitre_technique:
+- T1110
+datasets:
+- name: okta_multiple_accounts_lockout
+  path: /datasets/attack_techniques/T1110/okta_multiple_accounts_lockout/okta_multiple_accounts_lockout.log
+  sourcetype: OktaIM2:log
+  source: Okta

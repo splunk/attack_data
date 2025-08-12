@@ -3,9 +3,11 @@ id: efa49be2-3149-4802-b2b1-67c11403cb29
 date: '2022-08-08'
 description: Dataset which contains cloudtrail events with AWS login failure.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.001/aws_login_failure/aws_cloudtrail_events.json
-sourcetypes:
-- aws:cloudtrail
-references:
-- https://attack.mitre.org/techniques/T1110/001/
+directory: aws_login_failure
+mitre_technique:
+- T1110.001
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1110.001/aws_login_failure/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

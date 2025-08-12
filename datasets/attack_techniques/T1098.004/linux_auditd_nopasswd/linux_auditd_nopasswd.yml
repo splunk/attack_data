@@ -3,9 +3,11 @@ id: ccf196f8-45d4-11f0-9bec-629be3538068
 date: '2025-06-10'
 description: Generated datasets for linux auditd nopasswd in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.004/linux_auditd_nopasswd/linux_path_ssh_config.log
-sourcetypes:
-- 'auditd'
-references:
-- https://www.hackingarticles.in/ssh-penetration-testing-port-22/
+directory: linux_auditd_nopasswd
+mitre_technique:
+- T1098.004
+datasets:
+- name: linux_auditd_ssh_config
+  path: /datasets/attack_techniques/T1098.004/linux_auditd_nopasswd/linux_auditd_ssh_config.log
+  sourcetype: auditd
+  source: auditd

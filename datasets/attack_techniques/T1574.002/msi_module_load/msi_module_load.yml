@@ -1,12 +1,17 @@
 author: Michael Haag
 id: cc9b2664-efc9-11eb-926b-550bf094334b
 date: '2020-12-08'
-description: 'This behavior is related to the POC for InstallerFileTakeOver.'
+description: This behavior is related to the POC for InstallerFileTakeOver.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.002/msi_module_load/windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1574/002
-- https://github.com/klinix5/InstallerFileTakeOver/tree/main/InstallerFileTakeOver
+directory: msi_module_load
+mitre_technique:
+- T1574.002
+datasets:
+- name: windows-sysmon2
+  path: /datasets/attack_techniques/T1574.002/msi_module_load/windows-sysmon2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1574.002/msi_module_load/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

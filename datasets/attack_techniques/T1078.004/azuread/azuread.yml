@@ -1,13 +1,16 @@
 author: Mauricio Velazco
 id: d6b4e3c8-1f45-40a0-81a8-0fd5b9af19f2
 date: '2022-07-12'
-description: 'Used PowerShell to manually authenticate to an Azure AD tenant with an account that does not have Multi Factor authenttication enabled.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Azure AD tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/azuread/azure-audit.log
-sourcetypes:
-- mscs:azure:eventhub
-references:
-- https://attack.mitre.org/techniques/T1078/004/
-- https://docs.microsoft.com/en-us/powershell/module/azuread/connect-azuread?view=azureadps-2.0
+description: Used PowerShell to manually authenticate to an Azure AD tenant with an
+  account that does not have Multi Factor authenttication enabled. Tenant specific
+  details have been replaced in the dataset including tenant id, user names, ips,
+  etc.
+environment: attack_range
+directory: azuread
+mitre_technique:
+- T1078.004
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1078.004/azuread/azure-audit.log
+  sourcetype: azure:monitor:aad
+  source: azure

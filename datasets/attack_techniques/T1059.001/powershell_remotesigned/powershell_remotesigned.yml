@@ -2,11 +2,20 @@ author: Teoderick Contreras, Splunk
 id: a92e1082-ce62-4cdd-88e2-96707c6b0a39
 date: '2023-06-16'
 description: Generated datasets for powershell remotesigned in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/powershell_remotesigned/windows-powershell-xml.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/powershell_remotesigned/windows-powershell-remote-xml.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
-references:
-- https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3
+environment: attack_range
+directory: powershell_remotesigned
+mitre_technique:
+- T1059.001
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1059.001/powershell_remotesigned/windows-powershell-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: remotesigned_sysmon
+  path: /datasets/attack_techniques/T1059.001/powershell_remotesigned/remotesigned_sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-powershell-remote-xml
+  path: /datasets/attack_techniques/T1059.001/powershell_remotesigned/windows-powershell-remote-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

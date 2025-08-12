@@ -5,11 +5,11 @@ description: This search provides specific SAML access from specific Service Pro
   user and targeted principal at AWS. This search provides specific information to
   detect abnormal access or potential credential hijack or forgery, specially in federated
   environments using SAML protocol inside the perimeter or cloud provider.
-environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/aws_saml_access_by_provider_user_and_principal/aws_saml_access_by_provider_user_and_principal.json
-sourcetypes:
-- aws:cloudtrail
-references:
-- https://attack.mitre.org/techniques/T1552/004/
-- https://us-cert.cisa.gov/ncas/alerts/aa21-008a
+environment: attack_range
+directory: aws_saml_access_by_provider_user_and_principal
+mitre_technique:
+- T1078
+datasets:
+- name: aws_saml_access_by_provider_user_and_principal-json
+  path: /datasets/attack_techniques/T1078/aws_saml_access_by_provider_user_and_principal/aws_saml_access_by_provider_user_and_principal.json
+  sourcetype: access_combined

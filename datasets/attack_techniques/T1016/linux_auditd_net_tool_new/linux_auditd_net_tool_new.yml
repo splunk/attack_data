@@ -3,9 +3,11 @@ id: 05399f54-1ab2-11f0-a1c6-629be3538069
 date: '2025-04-16'
 description: Generated datasets for linux auditd net tool new in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1016/linux_auditd_net_tool_new/linux_auditd_net_tool_bucket_new.log
-sourcetypes:
-- 'auditd'
-references:
-- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html
+directory: linux_auditd_net_tool_new
+mitre_technique:
+- T1016
+datasets:
+- name: linux_auditd_net_tool_bucket_new
+  path: /datasets/attack_techniques/T1016/linux_auditd_net_tool_new/linux_auditd_net_tool_bucket_new.log
+  sourcetype: auditd
+  source: auditd

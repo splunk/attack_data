@@ -1,12 +1,13 @@
 author: Mauricio Velazco
 id: 55543737-a4d0-42fe-909e-c2750e409700
 date: '2024-02-07'
-description: 
-environment: Azure AD tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.003/azure_ad_multiple_service_principals_created/azure_ad_multiple_service_principals_created.log
-sourcetypes:
-- azure:monitor:aad
-references:
-- https://attack.mitre.org/techniques/T1136/003/
-- https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/
+description: null
+environment: attack_range
+directory: azure_ad_multiple_service_principals_created
+mitre_technique:
+- T1136.003
+datasets:
+- name: azure_ad_multiple_service_principals_created
+  path: /datasets/attack_techniques/T1136.003/azure_ad_multiple_service_principals_created/azure_ad_multiple_service_principals_created.log
+  sourcetype: azure:monitor:aad
+  source: azure

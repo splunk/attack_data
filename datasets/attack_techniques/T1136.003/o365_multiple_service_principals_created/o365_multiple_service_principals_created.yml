@@ -1,12 +1,13 @@
 author: Mauricio Velazco
 id: f9e755a0-5abc-4675-8313-79da901c87dd
 date: '2024-02-07'
-description: 
-environment: Office 365 tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.003/o365_multiple_service_principals_created/o365_multiple_service_principals_created.log
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1136/003/
-- https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/
+description: null
+environment: attack_range
+directory: o365_multiple_service_principals_created
+mitre_technique:
+- T1136.003
+datasets:
+- name: o365_multiple_service_principals_created
+  path: /datasets/attack_techniques/T1136.003/o365_multiple_service_principals_created/o365_multiple_service_principals_created.log
+  sourcetype: o365:management:activity
+  source: o365

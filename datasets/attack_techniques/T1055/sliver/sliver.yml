@@ -1,0 +1,21 @@
+author: Michael Haag
+id: 0cdc5c21-49af-47ed-a96a-84a0bb5070be
+date: '2023-02-22'
+description: Attack data generation using SliverC2 by BishopFox.
+environment: attack_range
+directory: sliver
+mitre_technique:
+- T1055
+datasets:
+- name: notepad_windows-sysmon
+  path: /datasets/attack_techniques/T1055/sliver/notepad_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: sliver_windows-system
+  path: /datasets/attack_techniques/T1055/sliver/sliver_windows-system.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:System
+- name: T1055_windows-sysmon
+  path: /datasets/attack_techniques/T1055/sliver/T1055_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

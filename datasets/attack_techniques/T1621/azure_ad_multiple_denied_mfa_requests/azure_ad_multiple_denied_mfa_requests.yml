@@ -1,14 +1,15 @@
 author: Mauricio Velazco
 id: 5a6ed21a-ea34-4950-b09b-0b0bf369269e
 date: '2022-10-31'
-description: 'Manually authenticated to the Azure AD Portal failed to pass MFA challenge by denying it.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Azure AD tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/azure_ad_multiple_denied_mfa_requests/azure_ad_multiple_denied_mfa_requests.log
-sourcetypes:
-- azure:monitor:aad
-references:
-- https://attack.mitre.org/techniques/T1621/ 
-- https://attack.mitre.org/techniques/T1078/004/
-- https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks
+description: Manually authenticated to the Azure AD Portal failed to pass MFA challenge
+  by denying it. Tenant specific details have been replaced in the dataset including
+  tenant id, user names, ips, etc.
+environment: attack_range
+directory: azure_ad_multiple_denied_mfa_requests
+mitre_technique:
+- T1621
+datasets:
+- name: azure_ad_multiple_denied_mfa_requests
+  path: /datasets/attack_techniques/T1621/azure_ad_multiple_denied_mfa_requests/azure_ad_multiple_denied_mfa_requests.log
+  sourcetype: azure:monitor:aad
+  source: azure

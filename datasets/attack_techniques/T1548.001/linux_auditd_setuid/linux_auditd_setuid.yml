@@ -3,9 +3,23 @@ id: d05ad908-efa3-11ef-b72e-629be3538068
 date: '2025-02-20'
 description: Generated datasets for linux auditd setuid in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.001/linux_auditd_setuid/auditd_execve_setcap.log
-sourcetypes:
-- 'auditd'
-references:
-- https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/
+directory: linux_auditd_setuid
+mitre_technique:
+- T1548.001
+datasets:
+- name: linux_auditd_setuid
+  path: /datasets/attack_techniques/T1548.001/linux_auditd_setuid/linux_auditd_setuid.log
+  sourcetype: auditd
+  source: auditd
+- name: auditd_proctitle_setuid
+  path: /datasets/attack_techniques/T1548.001/linux_auditd_setuid/auditd_proctitle_setuid.log
+  sourcetype: auditd
+  source: auditd
+- name: linux_auditd_setcap_priv
+  path: /datasets/attack_techniques/T1548.001/linux_auditd_setuid/linux_auditd_setcap_priv.log
+  sourcetype: auditd
+  source: auditd
+- name: auditd_execve_setcap
+  path: /datasets/attack_techniques/T1548.001/linux_auditd_setuid/auditd_execve_setcap.log
+  sourcetype: auditd
+  source: auditd

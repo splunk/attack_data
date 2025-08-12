@@ -1,12 +1,14 @@
 author: Mauricio Velazco
 id: adb9ad41-df52-40f7-a500-3ce343c1bbde
 date: '2021-11-18'
-description: Manually using PowerShell to start an interactive session on a remote endpoint leveraging the WinRM protocol for lateral movement and remote code execution.
+description: Manually using PowerShell to start an interactive session on a remote
+  endpoint leveraging the WinRM protocol for lateral movement and remote code execution.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement_pssession/windows-powershell.log
-sourcetypes:
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-references:
-- https://attack.mitre.org/techniques/T1021/006/
-- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.2
+directory: lateral_movement_pssession
+mitre_technique:
+- T1021.006
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1021.006/lateral_movement_pssession/windows-powershell-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

@@ -1,0 +1,13 @@
+author: 3237998318
+id: 54715c41-4283-44f7-a327-fbd230d83c60
+date: '2025-02-14'
+description: Detection of suspicious mailbox rule creation.
+environment: attack_range
+directory: o365
+mitre_technique:
+- T1564.008
+datasets:
+- name: o365_suspicious_mailbox_rule
+  path: /datasets/attack_techniques/T1564.008/o365/o365_suspicious_mailbox_rule.log
+  sourcetype: o365:management:activity
+  source: o365

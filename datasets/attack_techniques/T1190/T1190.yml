@@ -1,0 +1,13 @@
+author: Michael Haag, Splunk
+id: cc9b266c-efc9-11eb-926b-550bf0943fbb
+date: '2021-09-01'
+description: Manual generation of attack data related to ProxyShell.
+environment: attack_range
+directory: T1190
+mitre_technique:
+- T1190
+datasets:
+- name: exchange_events-json
+  path: /datasets/attack_techniques/T1190/exchange_events.json
+  sourcetype: MSExchange:Management
+  source: MSExchange:Management

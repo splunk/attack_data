@@ -1,0 +1,13 @@
+author: Steven Dick
+id: ea908665-bc39-4493-a20a-041543ba4f3b
+date: '2025-01-28'
+description: A sample event with a known malicous Task Name.
+environment: attack_range
+directory: winevent_scheduled_task_with_suspect_name
+mitre_technique:
+- T1053.005
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1053.005/winevent_scheduled_task_with_suspect_name/windows-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -8,20 +8,19 @@ description: 'Atomic Test Results: Return value unclear for test T1047-1 WMI Rec
   test T1047-5 WMI Execute Local Process Return value unclear for test T1047-6 WMI
   Execute Remote Process '
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/atomic_red_team/attack_data.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/atomic_red_team/attack_data.tar.gz
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/atomic_red_team/windows-system.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/atomic_red_team/invokewmiexec_windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/atomic_red_team/4104-cimmethod-windows-powershell.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:System
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1047/
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1047/T1047.md
+directory: atomic_red_team
+mitre_technique:
+- T1047
+datasets:
+- name: 4104-cimmethod-windows-powershell
+  path: /datasets/attack_techniques/T1047/atomic_red_team/4104-cimmethod-windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: invokewmiexec_windows-powershell
+  path: /datasets/attack_techniques/T1047/atomic_red_team/invokewmiexec_windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1047/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

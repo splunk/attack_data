@@ -1,12 +1,15 @@
 author: Mauricio Velazco
 id: 27d4f73d-6036-44f1-ad6d-a00a142ea33e
 date: '2022-08-30'
-description: 'Manually  enabled a previously disabled account and changed its password within 2 minutes using the Azure portal.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Azure AD tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/azure_ad_enable_and_reset/azure-audit.log
-sourcetypes:
-- mscs:azure:eventhub
-references:
-- https://attack.mitre.org/techniques/T1098/
+description: Manually  enabled a previously disabled account and changed its password
+  within 2 minutes using the Azure portal. Tenant specific details have been replaced
+  in the dataset including tenant id, user names, ips, etc.
+environment: attack_range
+directory: azure_ad_enable_and_reset
+mitre_technique:
+- T1098
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1098/azure_ad_enable_and_reset/azure-audit.log
+  sourcetype: azure:monitor:aad
+  source: azure

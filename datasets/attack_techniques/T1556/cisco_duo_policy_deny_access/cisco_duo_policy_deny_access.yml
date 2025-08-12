@@ -1,11 +1,13 @@
 author: Patrick Bareiss
 id: 4cad132f-5b35-4397-8a0a-4566272264ed
 date: '2025-07-08'
-description: 'Created a policy which denies access in Duo.'
-environment: Cisco Duo Tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/cisco_duo_policy_deny_access/cisco_duo_administrator.json
-sourcetypes:
-- cisco:duo:administrator
-references:
-- https://attack.mitre.org/techniques/T1556/ 
+description: Created a policy which denies access in Duo.
+environment: attack_range
+directory: cisco_duo_policy_deny_access
+mitre_technique:
+- T1556
+datasets:
+- name: cisco_duo_administrator-json
+  path: /datasets/attack_techniques/T1556/cisco_duo_policy_deny_access/cisco_duo_administrator.json
+  sourcetype: cisco:duo:administrator
+  source: duo

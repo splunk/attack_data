@@ -1,0 +1,14 @@
+author: Dean Luxton
+id: e47f3373-8794-4def-8b58-b26a8971a059
+date: '2022-11-18'
+description: Manually applying the necessary privileges to perform the DCSync attack
+  via adsiedit.
+environment: attack_range
+directory: aclmodification
+mitre_technique:
+- T1484
+datasets:
+- name: windows-security-xml
+  path: /datasets/attack_techniques/T1484/aclmodification/windows-security-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

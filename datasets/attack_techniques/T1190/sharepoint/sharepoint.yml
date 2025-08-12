@@ -3,12 +3,10 @@ id: 6e2c1f1c-0c0b-4c0b-8c0b-0c0c0c0c0c2c
 date: '2023-10-01'
 description: Manual generation of attack data related to CVE-2023-29357.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/sharepoint/sharepointeop.log
-sourcetypes:
-- suricata
-references:
-  - https://attack.mitre.org/techniques/T1190
-  - https://x.com/cyb3rops/status/1707678149448700270?s=46&t=yQ2cOUcQNpWKLmg_cvVIxQ
-  - https://socradar.io/microsoft-sharepoint-server-elevation-of-privilege-vulnerability-exploit-cve-2023-29357/
-  - https://github.com/Chocapikk/CVE-2023-29357/
+directory: sharepoint
+mitre_technique:
+- T1190
+datasets:
+- name: sharepointeop
+  path: /datasets/attack_techniques/T1190/sharepoint/sharepointeop.log
+  sourcetype: sharepoint:uls

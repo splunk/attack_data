@@ -2,10 +2,12 @@ author: Patrick Bareiss
 id: cc9b2637-efc9-11eb-926b-550bf0943fbb
 date: '2021-02-01'
 description: Update saml provider in aws
-environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/update_saml_provider/update_saml_provider.json
-sourcetypes:
-- aws:cloudtrail
-references:
-- https://attack.mitre.org/techniques/T1078/
+environment: attack_range
+directory: update_saml_provider
+mitre_technique:
+- T1078
+datasets:
+- name: asl_ocsf_cloudtrail-json
+  path: /datasets/attack_techniques/T1078/update_saml_provider/asl_ocsf_cloudtrail.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl

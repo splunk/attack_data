@@ -3,9 +3,11 @@ id: an9b2653-efc1-11eb-926b-550bf0943fbb
 date: '2022-03-30'
 description: Atomic testing with T1553.005 related to lnk and iso.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556.001/atomic_red_team/iso_windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1558/001
+directory: atomic_red_team
+mitre_technique:
+- T1556.001
+datasets:
+- name: iso_windows-sysmon
+  path: /datasets/attack_techniques/T1556.001/atomic_red_team/iso_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

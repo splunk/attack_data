@@ -1,13 +1,18 @@
 author: Gowthamaraj Rajendran, Splunk
 id: e95c46cb-7bd8-4824-a1da-3a559058dced
 date: '2022-07-19'
-description: Dataset which contains cloudtrail events when a cloudwatch log group is updated.
+description: Dataset which contains cloudtrail events when a cloudwatch log group
+  is updated.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/update_cloudtrail/aws_cloudtrail_events.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/update_cloudtrail/asl_ocsf_cloudtrail.json
-sourcetypes:
-- aws:cloudtrail
-- aws:asl
-references:
-- https://attack.mitre.org/techniques/T1562/008/
+directory: update_cloudtrail
+mitre_technique:
+- T1562.008
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1562.008/update_cloudtrail/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail
+- name: asl_ocsf_cloudtrail-json
+  path: /datasets/attack_techniques/T1562.008/update_cloudtrail/asl_ocsf_cloudtrail.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl

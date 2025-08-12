@@ -1,14 +1,14 @@
 author: Mauricio Velazco
 id: 49d07696-6d7f-468f-8b22-c021b6128627
 date: '2022-08-23'
-description: Manually create an Azure Automation Runbook account using the Azure Portal. Tenant specific details like tenant id, user names, etc. have been modified.
-environment: Azure tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/azure_automation_runbook/azure-activity.log
-sourcetypes:
-- mscs:azure:audit
-references:
-- https://www.netspi.com/blog/technical/cloud-penetration-testing/maintaining-azure-persistence-via-automation-accounts/
-- https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT503/AZT503-3/
-- https://www.inversecos.com/2021/12/how-to-detect-malicious-azure.html
-- https://attack.mitre.org/techniques/T1078/004/
+description: Manually create an Azure Automation Runbook account using the Azure Portal.
+  Tenant specific details like tenant id, user names, etc. have been modified.
+environment: attack_range
+directory: azure_automation_runbook
+mitre_technique:
+- T1078.004
+datasets:
+- name: azure-activity
+  path: /datasets/attack_techniques/T1078.004/azure_automation_runbook/azure-activity.log
+  sourcetype: azure:monitor:aad
+  source: azure

@@ -3,9 +3,11 @@ id: cfe5a4be-5645-11ef-b567-acde48001122
 date: '2024-08-09'
 description: Generated datasets for linux auditd modprobe in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.006/linux_auditd_modprobe/linux_auditd_modprobe.log
-sourcetypes:
-- 'linux:audit'
-references:
-- https://docs.fedoraproject.org/en-US/fedora/rawhide/system-administrators-guide/kernel-module-driver-configuration/Working_with_Kernel_Modules/
+directory: linux_auditd_modprobe
+mitre_technique:
+- T1547.006
+datasets:
+- name: linux_auditd_modprobe
+  path: /datasets/attack_techniques/T1547.006/linux_auditd_modprobe/linux_auditd_modprobe.log
+  sourcetype: auditd
+  source: auditd

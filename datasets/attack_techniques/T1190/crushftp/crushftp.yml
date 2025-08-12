@@ -1,17 +1,22 @@
 author: Michael Haag, Splunk
 id: 1e1c1f1c-0b0b-4b0b-8b0b-0b0b0b0b0b0d
 date: '2024-05-23'
-description: Generated event logs from CrushFTP server from simulated attack leveraging CVE-2024-4040 and CVE-2025-31161,.
+description: Generated event logs from CrushFTP server from simulated attack leveraging
+  CVE-2024-4040 and CVE-2025-31161,.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/crushftp/crushftp.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/crushftp/crushftp11_session.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/crushftp/windows-sysmon.log
-sourcetypes:
-- crushftp:sessionlogs
-
-references:
-  - https://attack.mitre.org/techniques/T1190
-  - https://github.com/airbus-cert/CVE-2024-4040
-  - https://www.bleepingcomputer.com/news/security/crushftp-warns-users-to-patch-exploited-zero-day-immediately/
-  - https://www.huntress.com/blog/crushftp-cve-2025-31161-auth-bypass-and-post-exploitation
+directory: crushftp
+mitre_technique:
+- T1190
+datasets:
+- name: crushftp
+  path: /datasets/attack_techniques/T1190/crushftp/crushftp.log
+  sourcetype: crushftp:sessionlogs
+  source: crushftp
+- name: crushftp11_session
+  path: /datasets/attack_techniques/T1190/crushftp/crushftp11_session.log
+  sourcetype: crushftp:sessionlogs
+  source: crushftp
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1190/crushftp/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

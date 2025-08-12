@@ -1,14 +1,14 @@
 author: Mauricio Velazco
 id: a5bb8668-a4e2-4d06-9de3-fae665fcf4c4
 date: '2023-10-18'
-description: 'Used 365-stealer and a multi-tenant application registration to simulate a consent grant attack. Once set up, simulated a user consenting the application.'
-environment:  O365 tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1528/o365_user_consent_file_permissions/o365_user_consent_file_permissions.log
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1528
-- https://github.com/AlteredSecurity/365-Stealer
-- https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide
-- https://www.alteredsecurity.com/post/introduction-to-365-stealer
+description: Used 365-stealer and a multi-tenant application registration to simulate
+  a consent grant attack. Once set up, simulated a user consenting the application.
+environment: attack_range
+directory: o365_user_consent_file_permissions
+mitre_technique:
+- T1528
+datasets:
+- name: o365_user_consent_file_permissions
+  path: /datasets/attack_techniques/T1528/o365_user_consent_file_permissions/o365_user_consent_file_permissions.log
+  sourcetype: o365:management:activity
+  source: o365

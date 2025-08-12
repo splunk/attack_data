@@ -1,15 +1,14 @@
 author: Mauricio Velazco
 id: 9aa6af3d-608e-4a69-8a89-c49b9b3cd3fa
 date: '2021-11-23'
-description: Manually using the sc.exe binary to create and start a Windows Service on a remote endpoint for lateral movement and remote code execution.
+description: Manually using the sc.exe binary to create and start a Windows Service
+  on a remote endpoint for lateral movement and remote code execution.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/lateral_movement_lolbas/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/lateral_movement_lolbas/windows-security.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1543/003/
-- https://docs.microsoft.com/en-us/windows/win32/services/controlling-a-service-using-sc
-- https://pentestlab.blog/2020/07/21/lateral-movement-services/ 
+directory: lateral_movement_lolbas
+mitre_technique:
+- T1543.003
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1543.003/lateral_movement_lolbas/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

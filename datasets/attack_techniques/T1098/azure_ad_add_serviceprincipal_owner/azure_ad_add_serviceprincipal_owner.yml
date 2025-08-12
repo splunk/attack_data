@@ -1,12 +1,15 @@
 author: Mauricio Velazco
 id: 629949e6-2905-4f9e-93da-7165df77f3ba
 date: '2022-08-30'
-description: 'Manually added a new owner to a service principal using the Azure portal.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Azure AD tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/azure_ad_add_serviceprincipal_owner/azure-audit.log
-sourcetypes:
-- mscs:azure:eventhub
-references:
-- https://attack.mitre.org/techniques/T1098/
+description: Manually added a new owner to a service principal using the Azure portal.
+  Tenant specific details have been replaced in the dataset including tenant id, user
+  names, ips, etc.
+environment: attack_range
+directory: azure_ad_add_serviceprincipal_owner
+mitre_technique:
+- T1098
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1098/azure_ad_add_serviceprincipal_owner/azure-audit.log
+  sourcetype: azure:monitor:aad
+  source: azure

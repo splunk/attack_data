@@ -3,9 +3,11 @@ id: a7c7fe4a-aa0e-11ec-a505-acde48001122
 date: '2022-03-22'
 description: Generated datasets for pwh av recon in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1592/pwh_av_recon/windows-powershell-xml.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
-references:
-- https://news.sophos.com/en-us/2020/05/12/maze-ransomware-1-year-counting/
+directory: pwh_av_recon
+mitre_technique:
+- unknown
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/t1592/pwh_av_recon/windows-powershell-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

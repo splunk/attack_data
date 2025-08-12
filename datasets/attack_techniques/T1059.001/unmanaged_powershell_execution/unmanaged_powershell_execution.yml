@@ -1,13 +1,14 @@
 author: Mauricio Velazco
 id: c76dae70-1dc5-49e5-b480-a78da4239701
 date: '2023-02-22'
-description: Manually using Nimplant to execute a PowerShell commandlet using unmanaged PowerShell.
+description: Manually using Nimplant to execute a PowerShell commandlet using unmanaged
+  PowerShell.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/unmanaged_powershell_execution/windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1059/001/
-- https://github.com/leechristensen/UnmanagedPowerShell
-- https://github.com/chvancooten/NimPlant
+directory: unmanaged_powershell_execution
+mitre_technique:
+- T1059.001
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/unmanaged_powershell_execution/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

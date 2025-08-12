@@ -1,0 +1,15 @@
+author: Dean Luxton
+id: fbedf606-d7c8-4fe5-96ae-ad0526b90ec0
+date: '2022-08-23'
+description: Utilising the sid::patch & sid::add commands from a mimikatz shell running
+  debug privilegs. Successfully patched ntds & added a SID history ad attribute to
+  a user object. Note, also works with computer accounts ;)
+environment: attack_range
+directory: mimikatz
+mitre_technique:
+- T1134.005
+datasets:
+- name: windows-security-xml
+  path: /datasets/attack_techniques/T1134.005/mimikatz/windows-security-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

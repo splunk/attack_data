@@ -3,9 +3,11 @@ id: 4505ff28-6260-11ec-85e5-acde48001122
 date: '2021-12-21'
 description: Generated datasets for nopasswd sudoers in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.003/nopasswd_sudoers/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://askubuntu.com/questions/334318/sudoers-file-enable-nopasswd-for-user-all-commands
+directory: nopasswd_sudoers
+mitre_technique:
+- T1548.003
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.003/nopasswd_sudoers/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

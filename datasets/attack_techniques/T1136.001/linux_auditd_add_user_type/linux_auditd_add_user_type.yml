@@ -3,9 +3,11 @@ id: 6f5ae8be-5a20-11ef-927e-acde48001122
 date: '2024-08-14'
 description: Generated datasets for linux auditd add user type in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/linux_auditd_add_user_type/linux_auditd_add_user_type.log
-sourcetypes:
-- 'linux:audit'
-references:
-- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html
+directory: linux_auditd_add_user_type
+mitre_technique:
+- T1136.001
+datasets:
+- name: linux_auditd_add_user_type
+  path: /datasets/attack_techniques/T1136.001/linux_auditd_add_user_type/linux_auditd_add_user_type.log
+  sourcetype: auditd
+  source: auditd

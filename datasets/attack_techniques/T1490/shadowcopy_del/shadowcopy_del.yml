@@ -3,14 +3,14 @@ id: cc9b261f-efc9-11eb-926b-550bf0943fbb
 date: '2025-03-18'
 description: This technique was seen in darkside ransomware where it will execute
   a child process powershell to execute an hex encoded command to delete shadow copy.
-  This hex encoded command was able to decrypt by powershell log. WMIC shadowcopy delete behavior. 
+  This hex encoded command was able to decrypt by powershell log. WMIC shadowcopy
+  delete behavior.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1490/shadowcopy_del/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1490/shadowcopy_del/wmicshadowcopydelete_sysmon.log
-sourcetypes:
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- wineventlog
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1490/
+directory: shadowcopy_del
+mitre_technique:
+- T1490
+datasets:
+- name: wmicshadowcopydelete_sysmon
+  path: /datasets/attack_techniques/T1490/shadowcopy_del/wmicshadowcopydelete_sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

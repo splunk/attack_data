@@ -1,11 +1,14 @@
 author: Mauricio Velazco
 id: 3fdec92b-7b2a-45ed-a74c-386708fbc877
 date: '2024-03-11'
-description: Manually reported suspicious user behavior using the link from an Okta email.
-environment: Okta tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/okta_suspicious_activity_reported_by_user/okta_suspicious_activity_reported_by_user.log
-sourcetypes:
-- OktaIM2:log
-references:
-- https://attack.mitre.org/techniques/T1078
+description: Manually reported suspicious user behavior using the link from an Okta
+  email.
+environment: attack_range
+directory: okta_suspicious_activity_reported_by_user
+mitre_technique:
+- T1078
+datasets:
+- name: okta_suspicious_activity_reported_by_user
+  path: /datasets/attack_techniques/T1078/okta_suspicious_activity_reported_by_user/okta_suspicious_activity_reported_by_user.log
+  sourcetype: OktaIM2:log
+  source: Okta

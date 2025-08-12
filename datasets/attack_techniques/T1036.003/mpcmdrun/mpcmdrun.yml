@@ -3,7 +3,11 @@ id: a025437b-075a-43b7-a932-e081ff356fcd
 date: '2022-07-18'
 description: copy files form system32 or syswow64 folder datasets.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1036.003/mpcmdrun/windows-security.log
-sourcetypes:
-- XmlWinEventLog
+directory: mpcmdrun
+mitre_technique:
+- T1036.003
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1036.003/mpcmdrun/windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

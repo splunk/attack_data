@@ -2,10 +2,15 @@ author: Teoderick Contreras, Splunk
 id: 5fd828a1-728d-4f17-adba-3e5e43ab290d
 date: '2023-12-12'
 description: Generated datasets for njrat add firewall rule in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.004/njrat_add_firewall_rule/njrat_firewall_sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://www.splunk.com/en_us/blog/security/more-than-just-a-rat-unveiling-njrat-s-mbr-wiping-capabilities.html
+environment: attack_range
+directory: njrat_add_firewall_rule
+mitre_technique:
+- T1562.004
+datasets:
+- name: njrat_firewall_security
+  path: /datasets/attack_techniques/T1562.004/njrat_add_firewall_rule/njrat_firewall_security.log
+  sourcetype: firewall
+- name: njrat_firewall_sysmon
+  path: /datasets/attack_techniques/T1562.004/njrat_add_firewall_rule/njrat_firewall_sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

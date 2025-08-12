@@ -3,13 +3,11 @@ id: 93252b82-8d73-11ec-bb43-acd118001122
 date: '2022-02-14'
 description: Generated datasets for linux net discovery in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.004/linux_discovery_tools/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://attack.mitre.org/matrices/enterprise/linux/
-- https://github.com/IvanGlinkin/AutoSUID
-- https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS
-- https://github.com/rebootuser/LinEnum
-- https://attack.mitre.org/techniques/T1059/004/
+directory: linux_discovery_tools
+mitre_technique:
+- T1059.004
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1059.004/linux_discovery_tools/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
