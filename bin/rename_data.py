@@ -7,14 +7,16 @@ When a folder contains:
 - Another yml file with a different name
 
 The script will:
-1. Remove the other yml file first
-2. Rename data.yml to match the folder name (folder_name.yml)
+1. Copy metadata (author, id, date, description) from the other yml file to data.yml
+2. Remove the other yml file
+3. Rename data.yml to match the folder name (folder_name.yml)
 """
 
 import argparse
 import logging
+import yaml
 from pathlib import Path
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Dict, Any
 
 
 def setup_logging(verbose: bool = False) -> None:
@@ -34,6 +36,69 @@ def find_yml_files(directory: Path) -> List[Path]:
         if file_path.is_file() and file_path.suffix.lower() in ['.yml', '.yaml']:
             yml_files.append(file_path)
     return yml_files
+
+
+def load_yaml_file(file_path: Path) -> Optional[Dict[str, Any]]:
+    """
+    Load and parse a YAML file.
+
+    Returns:
+        Dictionary containing the YAML data, or None if there was an error
+    """
+    logger = logging.getLogger(__name__)
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+    except Exception as e:
+        logger.error(f"Error loading YAML file {file_path}: {e}")
+        return None
+
+
+def save_yaml_file(file_path: Path, data: Dict[str, Any]) -> bool:
+    """
+    Save data to a YAML file.
+
+    Returns:
+        True if successful, False otherwise
+    """
+    logger = logging.getLogger(__name__)
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            yaml.dump(data, f, default_flow_style=False, sort_keys=False,
+                      allow_unicode=True)
+        return True
+    except Exception as e:
+        logger.error(f"Error saving YAML file {file_path}: {e}")
+        return False
+
+
+def copy_metadata_fields(source_data: Dict[str, Any], target_data: Dict[str, Any]) \
+        -> Dict[str, Any]:
+    """
+    Copy metadata fields (author, id, date, description) from source to target.
+
+    Args:
+        source_data: YAML data from the other yml file
+        target_data: YAML data from data.yml file
+
+    Returns:
+        Updated target data with copied metadata
+    """
+    logger = logging.getLogger(__name__)
+    metadata_fields = ['author', 'id', 'date', 'description']
+
+    updated_data = target_data.copy()
+
+    for field in metadata_fields:
+        if field in source_data:
+            old_value = updated_data.get(field, 'N/A')
+            new_value = source_data[field]
+            logger.info(f"Copying {field}: '{old_value}' -> '{new_value}'")
+            updated_data[field] = new_value
+        else:
+            logger.warning(f"Field '{field}' not found in source file")
+
+    return updated_data
 
 
 def analyze_directory(directory: Path) -> Optional[Tuple[Path, List[Path]]]:
@@ -91,7 +156,32 @@ def process_directory(directory: Path, dry_run: bool = False) -> bool:
     logger.info(f"Found other yml files: {[str(f) for f in other_yml_files]}")
 
     try:
-        # Step 1: Remove other yml files
+        # Step 1: Copy metadata from other yml files to data.yml
+        data_yml_content = load_yaml_file(data_yml)
+        if not data_yml_content:
+            logger.error(f"Failed to load data.yml: {data_yml}")
+            return False
+
+        # Process each other yml file and copy metadata
+        for other_yml in other_yml_files:
+            other_yml_content = load_yaml_file(other_yml)
+            if other_yml_content:
+                logger.info(f"Copying metadata from {other_yml.name} to data.yml")
+                data_yml_content = copy_metadata_fields(
+                    other_yml_content, data_yml_content)
+            else:
+                logger.warning(f"Failed to load other yml file: {other_yml}")
+
+        # Save the updated data.yml
+        if dry_run:
+            logger.info("[DRY RUN] Would update data.yml with copied metadata")
+        else:
+            logger.info("Updating data.yml with copied metadata")
+            if not save_yaml_file(data_yml, data_yml_content):
+                logger.error(f"Failed to save updated data.yml: {data_yml}")
+                return False
+
+        # Step 2: Remove other yml files
         for other_yml in other_yml_files:
             if dry_run:
                 logger.info(f"[DRY RUN] Would remove: {other_yml}")
@@ -99,7 +189,7 @@ def process_directory(directory: Path, dry_run: bool = False) -> bool:
                 logger.info(f"Removing: {other_yml}")
                 other_yml.unlink()
 
-        # Step 2: Rename data.yml to folder name
+        # Step 3: Rename data.yml to folder name
         if dry_run:
             logger.info(f"[DRY RUN] Would rename {data_yml} to {new_yml_path}")
         else:
