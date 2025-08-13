@@ -15,6 +15,7 @@ datasets:
 - name: nginx_screenconnect
   path: /datasets/attack_techniques/T1190/screenconnect/nginx_screenconnect.log
   sourcetype: nginx:plus:access
+  source: nginx
 - name: connectwise_auth_suricata
   path: /datasets/attack_techniques/T1190/screenconnect/connectwise_auth_suricata.log
   sourcetype: linux_secure

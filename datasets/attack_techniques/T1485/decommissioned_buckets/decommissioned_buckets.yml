@@ -13,4 +13,5 @@ mitre_technique:
 datasets:
 - name: web_cloudfront_access
   path: /datasets/attack_techniques/T1485/decommissioned_buckets/web_cloudfront_access.log
-  sourcetype: access_combined
+  source: aws_cloudfront_accesslogs
+  sourcetype: aws:cloudfront:accesslogs

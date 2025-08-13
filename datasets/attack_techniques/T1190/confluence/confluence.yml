@@ -10,9 +10,11 @@ datasets:
 - name: nginx_plus_kv_confluence
   path: /datasets/attack_techniques/T1190/confluence/nginx_plus_kv_confluence.log
   sourcetype: nginx:plus:access
+  source: nginx
 - name: nginx_kv_confluence_CVE-2024-21683
   path: /datasets/attack_techniques/T1190/confluence/nginx_kv_confluence_CVE-2024-21683.log
   sourcetype: nginx:plus:access
+  source: nginx
 - name: suricata_confluence_cve-2023-22527
   path: /datasets/attack_techniques/T1190/confluence/suricata_confluence_cve-2023-22527.log
   sourcetype: suricata
@@ -20,3 +22,4 @@ datasets:
 - name: nginx_shellservlet
   path: /datasets/attack_techniques/T1190/confluence/nginx_shellservlet.log
   sourcetype: nginx:plus:access
+  source: nginx

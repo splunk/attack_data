@@ -3,9 +3,11 @@ id: cc9b260c-efc9-11eb-916b-150bf0941fbb
 date: '2022-07-24'
 description: 'Simulated lateral movement with SSH'
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.004/atomic_red_team/linux-sysmon.log
-sourcetypes:
-- sysmon_linux
-references:
-- https://attack.mitre.org/techniques/T1021/004/
+directory: atomic_red_team
+mitre_technique:
+- T1021.004
+datasets:
+- name: linux-sysmon
+  path: /datasets/attack_techniques/T1021.004/atomic_red_team/linux-sysmon.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

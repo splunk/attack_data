@@ -9,4 +9,5 @@ mitre_technique:
 datasets:
 - name: sharepointeop
   path: /datasets/attack_techniques/T1190/sharepoint/sharepointeop.log
-  sourcetype: sharepoint:uls
+  source: suricata
+  sourcetype: suricata

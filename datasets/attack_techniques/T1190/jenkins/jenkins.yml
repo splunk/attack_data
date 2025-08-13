@@ -10,3 +10,4 @@ datasets:
 - name: nginx_jenkins_cve_2023_23897
   path: /datasets/attack_techniques/T1190/jenkins/nginx_jenkins_cve_2023_23897.log
   sourcetype: nginx:plus:access
+  source: nginx

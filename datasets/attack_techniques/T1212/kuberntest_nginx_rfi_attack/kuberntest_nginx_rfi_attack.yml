@@ -11,3 +11,4 @@ datasets:
 - name: kubernetes_nginx_rfi_attack
   path: /datasets/attack_techniques/T1212/kuberntest_nginx_rfi_attack/kubernetes_nginx_rfi_attack.log
   sourcetype: nginx:plus:access
+  source: nginx

@@ -28,7 +28,8 @@ datasets:
   source: XmlWinEventLog:Security
 - name: firewall-powershell
   path: /datasets/attack_techniques/T1021.002/atomic_red_team/firewall-powershell.log
-  sourcetype: firewall
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
 - name: 4688_wmiexec_windows-security
   path: /datasets/attack_techniques/T1021.002/atomic_red_team/4688_wmiexec_windows-security.log
   sourcetype: XmlWinEventLog

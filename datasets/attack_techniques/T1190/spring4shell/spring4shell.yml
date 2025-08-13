@@ -1,5 +1,5 @@
 author: Michael Haag, Splunk
-id: 9535ef60-d482-214c-bxbb-6d1bd61e83be
+id: 444c1707-a2db-43ee-ab04-e03307137ec5
 date: '2022-04-05'
 description: Manual generation of attack data related to Spring4Shell with Nginx proxy
   logs
@@ -11,3 +11,4 @@ datasets:
 - name: spring4shell_nginx
   path: /datasets/attack_techniques/T1190/spring4shell/spring4shell_nginx.log
   sourcetype: nginx:plus:access
+  source: nginx

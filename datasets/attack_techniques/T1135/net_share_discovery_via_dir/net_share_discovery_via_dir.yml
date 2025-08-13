@@ -9,7 +9,9 @@ mitre_technique:
 datasets:
 - name: smb_access_security_xml
   path: /datasets/attack_techniques/T1135/net_share_discovery_via_dir/smb_access_security_xml.log
-  sourcetype: access_combined
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Auditing
 - name: smbaccess-5140-security-xml2
   path: /datasets/attack_techniques/T1135/net_share_discovery_via_dir/smbaccess-5140-security-xml2.log
-  sourcetype: access_combined
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Auditing

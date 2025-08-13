@@ -6,7 +6,7 @@ description: manual activesetup stubpath registry modification datasets for pers
 environment: attack_range
 directory: active_setup_stubpath
 mitre_technique:
-- unknown
+- T1547.014
 datasets:
 - name: sysmon
   path: /datasets/attack_techniques/t1547.014/active_setup_stubpath/sysmon.log

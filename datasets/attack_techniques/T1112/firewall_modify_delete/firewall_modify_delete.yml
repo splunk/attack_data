@@ -9,7 +9,9 @@ mitre_technique:
 datasets:
 - name: firewall-mod-delete
   path: /datasets/attack_techniques/T1112/firewall_modify_delete/firewall-mod-delete.log
-  sourcetype: firewall
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - name: firewall_mod_delete
   path: /datasets/attack_techniques/T1112/firewall_modify_delete/firewall_mod_delete.log
-  sourcetype: firewall
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -29,7 +29,8 @@ datasets:
   source: suricata
 - name: ivanti_bookmark_web_access
   path: /datasets/attack_techniques/T1190/ivanti/ivanti_bookmark_web_access.log
-  sourcetype: access_combined
+  sourcetype: suricata
+  source: suricata
 - name: suricata_ivanti_CVE202335082
   path: /datasets/attack_techniques/T1190/ivanti/suricata_ivanti_CVE202335082.log
   sourcetype: suricata
@@ -37,3 +38,4 @@ datasets:
 - name: ivanti_vtm_nginxproxy
   path: /datasets/attack_techniques/T1190/ivanti/ivanti_vtm_nginxproxy.log
   sourcetype: nginx:plus:access
+  source: nginx

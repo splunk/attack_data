@@ -10,3 +10,4 @@ datasets:
 - name: log4shell-nginx
   path: /datasets/attack_techniques/T1190/java/log4shell-nginx.log
   sourcetype: nginx:plus:access
+  source: nginx

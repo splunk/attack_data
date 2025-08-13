@@ -11,3 +11,4 @@ datasets:
 - name: kubernetes_nginx_lfi_attack
   path: /datasets/attack_techniques/T1212/kubernetes_nginx_lfi_attack/kubernetes_nginx_lfi_attack.log
   sourcetype: nginx:plus:access
+  source: nginx

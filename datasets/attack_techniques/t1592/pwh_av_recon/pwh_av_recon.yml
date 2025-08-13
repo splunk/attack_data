@@ -5,7 +5,7 @@ description: Generated datasets for pwh av recon in attack range.
 environment: attack_range
 directory: pwh_av_recon
 mitre_technique:
-- unknown
+- T1592
 datasets:
 - name: windows-powershell-xml
   path: /datasets/attack_techniques/t1592/pwh_av_recon/windows-powershell-xml.log

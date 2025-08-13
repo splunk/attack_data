@@ -17,4 +17,5 @@ datasets:
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - name: credaccess-powershell
   path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/credaccess-powershell.log
-  sourcetype: access_combined
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

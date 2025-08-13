@@ -5,7 +5,7 @@ description: simulated remcos dxdiag execution for host information gathering
 environment: attack_range
 directory: host_info_dxdiag
 mitre_technique:
-- unknown
+- T1592
 datasets:
 - name: sysmon
   path: /datasets/attack_techniques/t1592/host_info_dxdiag/sysmon.log

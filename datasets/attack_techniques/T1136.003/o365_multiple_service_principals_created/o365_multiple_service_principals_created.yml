@@ -1,7 +1,7 @@
 author: Mauricio Velazco
 id: f9e755a0-5abc-4675-8313-79da901c87dd
 date: '2024-02-07'
-description: null
+description: 'o365 multiple service principals created'
 environment: attack_range
 directory: o365_multiple_service_principals_created
 mitre_technique:

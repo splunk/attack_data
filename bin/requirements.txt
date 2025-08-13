@@ -5,4 +5,4 @@ splunk-sdk
 gitpython
 tqdm
 colorama
-pyyaml
+jsonschema

@@ -9,7 +9,8 @@ mitre_technique:
 datasets:
 - name: aws_iam_accessdenied_discovery_events-json
   path: /datasets/attack_techniques/T1580/aws_iam_accessdenied_discovery_events/aws_iam_accessdenied_discovery_events.json
-  sourcetype: access_combined
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail
 - name: asl_ocsf_cloudtrail-json
   path: /datasets/attack_techniques/T1580/aws_iam_accessdenied_discovery_events/asl_ocsf_cloudtrail.json
   sourcetype: aws:cloudtrail:lake

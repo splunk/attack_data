@@ -9,7 +9,8 @@ mitre_technique:
 datasets:
 - name: njrat_firewall_security
   path: /datasets/attack_techniques/T1562.004/njrat_add_firewall_rule/njrat_firewall_security.log
-  sourcetype: firewall
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
 - name: njrat_firewall_sysmon
   path: /datasets/attack_techniques/T1562.004/njrat_add_firewall_rule/njrat_firewall_sysmon.log
   sourcetype: XmlWinEventLog

@@ -10,4 +10,5 @@ mitre_technique:
 datasets:
 - name: o365_multiple_mailboxes_accessed_via_api
   path: /datasets/attack_techniques/T1114.002/o365_multiple_mailboxes_accessed_via_api/o365_multiple_mailboxes_accessed_via_api.log
-  sourcetype: access_combined
+  sourcetype: o365:management:activity
+  source: o365

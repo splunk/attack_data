@@ -9,4 +9,5 @@ mitre_technique:
 datasets:
 - name: njrat_delete_firewall
   path: /datasets/attack_techniques/T1562.004/njrat_delete_firewall/njrat_delete_firewall.log
-  sourcetype: firewall
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

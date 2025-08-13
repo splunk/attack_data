@@ -10,3 +10,4 @@ datasets:
 - name: web_upload_nginx
   path: /datasets/attack_techniques/T1567/web_upload_nginx/web_upload_nginx.log
   sourcetype: nginx:plus:access
+  source: nginx

@@ -10,6 +10,7 @@ directory: aws_saml_access_by_provider_user_and_principal
 mitre_technique:
 - T1078
 datasets:
-- name: aws_saml_access_by_provider_user_and_principal-json
+- name: aws_saml_access_by_provider_user_and_principal
   path: /datasets/attack_techniques/T1078/aws_saml_access_by_provider_user_and_principal/aws_saml_access_by_provider_user_and_principal.json
-  sourcetype: access_combined
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

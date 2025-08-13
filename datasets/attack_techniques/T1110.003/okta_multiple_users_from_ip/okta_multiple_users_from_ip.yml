@@ -1,6 +1,6 @@
 author: Mauricio Velazco
 id: 84f64eb3-722c-4fe7-857c-c8e15bb96ef1
-date: '2022-02-29'
+date: '2022-02-27'
 description: Used a tool to spray Okta users
 environment: attack_range
 directory: okta_multiple_users_from_ip

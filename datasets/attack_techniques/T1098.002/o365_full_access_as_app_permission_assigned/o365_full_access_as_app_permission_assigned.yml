@@ -10,4 +10,5 @@ mitre_technique:
 datasets:
 - name: o365_full_access_as_app_permission_assigned
   path: /datasets/attack_techniques/T1098.002/o365_full_access_as_app_permission_assigned/o365_full_access_as_app_permission_assigned.log
-  sourcetype: access_combined
+  sourcetype: o365:management:activity
+  source: o365

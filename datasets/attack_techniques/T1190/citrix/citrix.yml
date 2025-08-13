@@ -1,5 +1,5 @@
 author: Michael Haag, Splunk
-id: cc9b266c-19c9-11eb-926b-220bf0943fas
+id: 56fbbe5d-d63e-4b59-abed-738363477b95
 date: '2023-07-21'
 description: Attack data related to CVE-2023-3519
 environment: attack_range
@@ -14,6 +14,8 @@ datasets:
 - name: nginx_kv_citrixbleed2_startwebview
   path: /datasets/attack_techniques/T1190/citrix/nginx_kv_citrixbleed2_startwebview.log
   sourcetype: nginx:plus:access
+  source: nginx
 - name: nginx_kv_cve_2023-4966-citrix
   path: /datasets/attack_techniques/T1190/citrix/nginx_kv_cve_2023-4966-citrix.log
   sourcetype: nginx:plus:access
+  source: nginx
