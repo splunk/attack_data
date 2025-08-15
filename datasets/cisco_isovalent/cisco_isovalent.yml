@@ -1,0 +1,12 @@
+author: Bhavin Patel, Splunk
+id: 1fc537db-5e0b-4a2e-a768-27e08eff0c70
+date: '2025-08-15'
+description: Generated datasets for Cisco Isovalent Process Exec EventType.
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/cisco_isovalent/cisco_isovalent.log
+sourcetypes:
+- cisco:isovalent
+references:
+- https://docs.isovalent.com/operations-guide/tetragon/installation/helm.html
+- https://docs.isovalent.com/user-guide/sec-ops-visibility/index.html
+- https://isovalent.com/blog/post/isovalent-splunk-better-together/
