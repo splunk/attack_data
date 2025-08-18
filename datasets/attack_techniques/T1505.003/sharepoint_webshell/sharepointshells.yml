@@ -1,0 +1,15 @@
+author: Michael Haag, Splunk
+id: cb9b2601-efc9-11eb-926b-550bf0943fbb
+date: '2025-07-20'
+description: Generation of attack data related to CVE-2025-53770 (ToolShell) showing file creation of the malicious spinstall0.aspx web shell in SharePoint layouts directories.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.003/sharepoint_webshell/sysmon_spinstall0.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+references:
+  - https://attack.mitre.org/techniques/T1505/003
+  - https://research.eye.security/sharepoint-under-siege/
+  - https://cybersecuritynews.com/sharepoint-0-day-rce-vulnerability-exploited/
+  - https://msrc.microsoft.com/blog/2025/07/customer-guidance-for-sharepoint-vulnerability-cve-2025-53770/
+  - https://www.cisa.gov/news-events/alerts/2025/07/20/microsoft-releases-guidance-exploitation-sharepoint-vulnerability-cve-2025-53770

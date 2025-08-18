@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: 6cbe3ac7-510d-49ab-983e-7ee504d6f386
+date: '2025-07-09'
+description: 'Sample of ESXi syslog events showing downloading of VMs from ESXi using remote tools."
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1005/esxi_vm_download/esxi_vm_download.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1005

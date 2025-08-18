@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: a398a202-5b62-4043-9286-647fde220dca
+date: '2025-07-08'
+description: 'Sample of ESXi syslog events showing dormant VMs being activated.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1584/esxi_dormant_vm_started/esxi_dormant_vm_started.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1584

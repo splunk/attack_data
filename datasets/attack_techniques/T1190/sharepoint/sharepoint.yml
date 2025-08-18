@@ -11,3 +11,7 @@ datasets:
   path: /datasets/attack_techniques/T1190/sharepoint/sharepointeop.log
   source: suricata
   sourcetype: suricata
+- name: spinstall0
+  path: /datasets/attack_techniques/T1190/sharepoint/spinstall0.log
+  source: suricata
+  sourcetype: suricata

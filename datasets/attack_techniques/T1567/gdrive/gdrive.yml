@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 9c1ebd7e-b293-4238-98ff-4ecef8444cdb
+date: '2025-08-01'
+description: Simulate usage of the gdrive binary to interact with Google Drive.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1567/gdrive/gdrive_windows.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1567/gdrive/gdrive_linux.log
+sourcetypes:
+- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- Syslog:Linux-Sysmon/Operational
+references:
+- https://attack.mitre.org/techniques/T1567/

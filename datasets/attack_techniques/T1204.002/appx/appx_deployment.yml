@@ -1,0 +1,12 @@
+author: Michael Haag, Splunk
+id: cc912623-efc9-11eb-926b-550bf0943f12
+date: '2025-08-07'
+description: Windows Appx Deployment Server logs
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204.002/appx/windows_appxdeploymentserver.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204.002/appx/windows-appxpackaging.log
+sourcetypes:
+- XmlWinEventLog
+references:
+- https://attack.mitre.org/techniques/T1204/002/

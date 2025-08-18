@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: d96eb482-6dee-11f0-b544-629be3538069
+date: '2025-07-31'
+description: Generated datasets for rdp session established in attack range.
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.001/rdp_session_established/4624_10_logon.log
+sourcetypes:
+- 'XmlWinEventLog:Security'
+references:
+- https://thelocalh0st.github.io/posts/rdp/

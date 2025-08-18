@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: f8571084-93e7-46fc-ae37-7a22e81e57f3
+date: '2025-07-09'
+description: 'Sample of ESXi syslog events showing manipulation of the system clock.'
+environment: custom
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070/esxi_system_clock_manipulation/esxi_system_clock_manipulation.log
+sourcetypes:
+- vmw-syslog
+references:
+- https://attack.mitre.org/techniques/T1070
