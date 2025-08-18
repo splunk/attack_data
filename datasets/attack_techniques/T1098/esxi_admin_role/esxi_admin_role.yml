@@ -3,9 +3,11 @@ id: 6957528c-1167-469f-a982-d03dea0ff09e
 date: '2025-07-09'
 description: 'Sample of ESXi syslog events showing account manipulation of esxi account to give it the admin role.'
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/esxi_admin_role/esxi_admin_role.log
-sourcetypes:
-- vmw-syslog
-references:
-- https://attack.mitre.org/techniques/T1098/
+directory: esxi_admin_role
+mitre_technique:
+- T1098
+datasets:
+- name: vmw-syslog
+  path: /datasets/attack_techniques/T1098/esxi_admin_role/esxi_admin_role.log
+  sourcetype: vmw-syslog
+  source: vmw-syslog

@@ -3,9 +3,11 @@ id: 6bce52c9-2cd1-4916-be2d-7d6214bc5c98
 date: '2025-07-09'
 description: 'Sample of ESXi syslog events ssh being enabled on the ESXi system.'
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.004/esxi_ssh_enabled/esxi_ssh_enabled.log
-sourcetypes:
-- vmw-syslog
-references:
-- https://attack.mitre.org/techniques/T1021/004
+directory: esxi_ssh_enabled
+mitre_technique:
+- T1021.004
+datasets:
+- name: vmw-syslog
+  path: /datasets/attack_techniques/T1021.004/esxi_ssh_enabled/esxi_ssh_enabled.log
+  sourcetype: vmw-syslog
+  source: vmw-syslog

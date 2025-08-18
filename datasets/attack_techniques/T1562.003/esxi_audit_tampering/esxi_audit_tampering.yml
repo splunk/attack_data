@@ -3,9 +3,11 @@ id: 1ca23917-04c2-41db-b31b-702bcd728737
 date: '2025-07-08'
 description: 'Sample of ESXi syslog events showing tampering of audit settings.'
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.003/esxi_audit_tampering/esxi_audit_tampering.log
-sourcetypes:
-- vmw-syslog
-references:
-- https://attack.mitre.org/techniques/T1562/003
+directory: esxi_audit_tampering
+mitre_technique:
+- T1562.003
+datasets:
+- name: vmw-syslog
+  path: /datasets/attack_techniques/T1562.003/esxi_audit_tampering/esxi_audit_tampering.log
+  sourcetype: vmw-syslog
+  source: vmw-syslog
