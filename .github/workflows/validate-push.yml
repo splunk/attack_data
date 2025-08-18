@@ -1,0 +1,72 @@
+name: Validate Attack Data on Push
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'datasets/**/*.yml'
+      - 'datasets/**/*.yaml'
+      - 'bin/validate.py'
+      - 'bin/dataset_schema.json'
+      - 'bin/requirements.txt'
+
+jobs:
+  validate-attack-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        lfs: true
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r bin/requirements.txt
+
+    - name: Validate YAML files
+      run: |
+        cd bin
+        python validate.py ../datasets
+      env:
+        PYTHONPATH: ${{ github.workspace }}/bin
+
+    - name: Create issue on validation failure
+      if: failure()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const title = `🚨 Attack Data Validation Failed - ${new Date().toISOString().split('T')[0]}`;
+          const body = `**Validation failed on push to ${context.ref}**
+          
+          Commit: ${context.sha}
+          
+          The YAML files in the datasets directory do not pass validation. This indicates that invalid data has been merged into the main branch.
+          
+          **Action Required:**
+          1. Review the [failed workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          2. Fix the validation errors
+          3. Create a hotfix PR to resolve the issues
+          
+          **Files that may be affected:**
+          - datasets/**/*.yml
+          - datasets/**/*.yaml
+          - bin/validate.py
+          - bin/dataset_schema.json
+          `;
+          
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: title,
+            body: body,
+            labels: ['bug', 'validation-failure', 'high-priority']
+          });
+

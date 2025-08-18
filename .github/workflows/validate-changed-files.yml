@@ -1,0 +1,164 @@
+name: Validate Changed Attack Data Files
+
+on:
+  pull_request:
+    branches: [ master, main ]
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'datasets/**/*.yml'
+      - 'datasets/**/*.yaml'
+
+jobs:
+  validate-changed-files:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        lfs: true
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r bin/requirements.txt
+
+    - name: Get changed YAML files
+      id: changed-files
+      uses: tj-actions/changed-files@v41
+      with:
+        files: |
+          datasets/**/*.yml
+          datasets/**/*.yaml
+        separator: ","
+
+    - name: Validate changed YAML files
+      if: steps.changed-files.outputs.any_changed == 'true'
+      run: |
+        echo "Changed YAML files:"
+        echo "${{ steps.changed-files.outputs.all_changed_files }}"
+        
+        # Create a temporary script to validate only changed files
+        cat > validate_changed.py << 'EOF'
+        #!/usr/bin/env python3
+        import sys
+        import os
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'bin'))
+        
+        from validate import load_yaml_schema, validate_yaml_file
+        from pathlib import Path
+        
+        # Get changed files from environment
+        changed_files = os.environ.get('CHANGED_FILES', '').split(',')
+        changed_files = [f.strip() for f in changed_files if f.strip()]
+        
+        if not changed_files:
+            print("No changed YAML files to validate")
+            sys.exit(0)
+        
+        # Load schema
+        schema = load_yaml_schema()
+        
+        total_files = len(changed_files)
+        valid_files = 0
+        invalid_files = 0
+        failed_validations = []
+        
+        print(f"Validating {total_files} changed YAML file(s)...")
+        print("-" * 60)
+        
+        for file_path in changed_files:
+            yaml_file = Path(file_path)
+            if not yaml_file.exists():
+                print(f"⚠️  File not found (may have been deleted): {yaml_file}")
+                continue
+                
+            print(f"\nValidating: {yaml_file}")
+            errors = validate_yaml_file(yaml_file, schema)
+            
+            if errors:
+                invalid_files += 1
+                print(f"❌ INVALID - {len(errors)} error(s):")
+                for error in errors:
+                    print(f"  • {error}")
+                failed_validations.append((yaml_file, errors))
+            else:
+                valid_files += 1
+                print("✅ VALID")
+        
+        # Print summary
+        print("\n" + "=" * 60)
+        print("VALIDATION SUMMARY")
+        print("=" * 60)
+        print(f"Total files processed: {valid_files + invalid_files}")
+        print(f"Valid files: {valid_files}")
+        print(f"Invalid files: {invalid_files}")
+        
+        if invalid_files > 0:
+            print(f"\n❌ {invalid_files} file(s) failed validation!")
+            sys.exit(1)
+        else:
+            print("\n✅ All changed files passed validation!")
+        EOF
+        
+        # Run validation on changed files
+        CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}" python validate_changed.py
+      env:
+        PYTHONPATH: ${{ github.workspace }}/bin
+
+    - name: No YAML files changed
+      if: steps.changed-files.outputs.any_changed == 'false'
+      run: |
+        echo "No YAML files were changed in this PR. Skipping validation."
+
+    - name: Comment PR on validation failure
+      if: failure() && steps.changed-files.outputs.any_changed == 'true'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { owner, repo, number } = context.issue;
+          await github.rest.issues.createComment({
+            owner,
+            repo,
+            issue_number: number,
+            body: `❌ **Changed Files Validation Failed**
+            
+            The following changed YAML files in this PR do not pass validation:
+            
+            \`\`\`
+            ${{ steps.changed-files.outputs.all_changed_files }}
+            \`\`\`
+            
+            Please check the workflow logs for detailed error messages and fix the issues before merging.
+            
+            [View workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})`
+          });
+
+    - name: Comment PR on validation success
+      if: success() && steps.changed-files.outputs.any_changed == 'true'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { owner, repo, number } = context.issue;
+          await github.rest.issues.createComment({
+            owner,
+            repo,
+            issue_number: number,
+            body: `✅ **Changed Files Validation Passed**
+            
+            All changed YAML files in this PR have been successfully validated:
+            
+            \`\`\`
+            ${{ steps.changed-files.outputs.all_changed_files }}
+            \`\`\`
+            
+            Ready for review and merge! 🚀`
+          });
+

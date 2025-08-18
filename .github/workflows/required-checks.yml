@@ -1,0 +1,59 @@
+name: Required Status Checks
+
+on:
+  pull_request:
+    branches: [ master, main ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  # This job ensures all validation workflows are required for PRs
+  validation-status:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check validation status
+      run: |
+        echo "This workflow ensures that all validation checks are required for PR merging."
+        echo "Required workflows:"
+        echo "  ✅ Validate Attack Data on PR"
+        echo "  ✅ Validate Changed Attack Data Files"
+        echo ""
+        echo "This job will always pass, but the other validation workflows must complete successfully."
+        echo "Configure branch protection rules to require these status checks before merging."
+
+  # Lint YAML syntax (basic check)
+  yaml-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install yamllint
+      run: pip install yamllint
+
+    - name: Lint YAML files
+      run: |
+        # Create a yamllint configuration
+        cat > .yamllint.yml << 'EOF'
+        extends: default
+        rules:
+          line-length:
+            max: 120
+          indentation:
+            spaces: 2
+          comments:
+            min-spaces-from-content: 1
+          document-start: disable
+          truthy: disable
+        EOF
+        
+        # Find and lint all YAML files in datasets
+        find datasets -name "*.yml" -o -name "*.yaml" | while read file; do
+          echo "Linting: $file"
+          yamllint -c .yamllint.yml "$file"
+        done
+
