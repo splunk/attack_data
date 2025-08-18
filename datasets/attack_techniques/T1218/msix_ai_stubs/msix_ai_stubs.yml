@@ -4,7 +4,7 @@ date: '2023-05-15'
 description: MSIX AI_STUBS execution detection for malicious installer packages
 environment: attack_range
 dataset:
-- https://raw.githubusercontent.com/splunk/attack_data/master/datasets/attack_techniques/T1218/msix_ai_stubs/windows_sysmon.log
+- https://media.githubusercontent.com/media/splunk/attack_data/refs/heads/master/datasets/attack_techniques/T1218/msix_ai_stubs/windows_sysmon.log
 sourcetypes:
 - XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 references:
