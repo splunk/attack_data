@@ -181,7 +181,8 @@ def parse_arguments():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  %(prog)s                    # Validate files in the default 'datasets' directory
+  %(prog)s                    # Validate files in default 'datasets' dir (failures only)
+  %(prog)s -v                 # Validate with verbose output (show all files)
   %(prog)s /path/to/data      # Validate files in a specific directory
   %(prog)s ../other_datasets  # Validate files in a relative path
         """
@@ -192,6 +193,12 @@ Examples:
         nargs='?',
         default='datasets',
         help='Directory to search for YAML files (default: datasets)'
+    )
+    
+    parser.add_argument(
+        '-v', '--verbose',
+        action='store_true',
+        help='Show validation results for all files (default: only show failures)'
     )
     
     return parser.parse_args()
@@ -239,7 +246,8 @@ def main():
         return
     
     print(f"Found {len(yaml_files)} YAML files to validate...")
-    print("-" * 60)
+    if args.verbose:
+        print("-" * 60)
     
     total_files = len(yaml_files)
     valid_files = 0
@@ -254,20 +262,22 @@ def main():
         except ValueError:
             relative_path = yaml_file.relative_to(input_dir)
         
-        print(f"\nValidating: {relative_path}")
-        
         errors = validate_yaml_file(yaml_file, schema)
         
         if errors:
             invalid_files += 1
-            print(f"❌ INVALID - {len(errors)} error(s):")
+            # Always show failures
+            print(f"\n❌ INVALID: {relative_path}")
+            print(f"   {len(errors)} error(s):")
             for error in errors:
                 print(f"  • {error}")
             # Store failed validation details
             failed_validations.append((relative_path, errors))
         else:
             valid_files += 1
-            print("✅ VALID")
+            # Only show valid files in verbose mode
+            if args.verbose:
+                print(f"\n✅ VALID: {relative_path}")
     
     # Print summary
     print("\n" + "=" * 60)
@@ -280,15 +290,16 @@ def main():
     if invalid_files > 0:
         print(f"\n❌ {invalid_files} file(s) failed validation!")
         
-        # Print detailed failed validations at the end
-        print("\n" + "=" * 60)
-        print("FAILED VALIDATIONS")
-        print("=" * 60)
-        for file_path, errors in failed_validations:
-            print(f"\n📁 {file_path}")
-            print("-" * 40)
-            for i, error in enumerate(errors, 1):
-                print(f"{i}. {error}")
+        # In verbose mode, also print detailed failed validations at the end
+        if args.verbose and failed_validations:
+            print("\n" + "=" * 60)
+            print("FAILED VALIDATIONS SUMMARY")
+            print("=" * 60)
+            for file_path, errors in failed_validations:
+                print(f"\n📁 {file_path}")
+                print("-" * 40)
+                for i, error in enumerate(errors, 1):
+                    print(f"{i}. {error}")
         
         sys.exit(1)
     else:
