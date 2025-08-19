@@ -3,11 +3,11 @@ id: 3f9b2623-abd5-11eb-926b-120zf0943f11
 date: '2023-06-22'
 description: PowerShell execution from MSIX packages and WindowsApps directory
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/refs/heads/master/datasets/attack_techniques/T1059.001/msix_powershell/windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1059/001
-- https://redcanary.com/blog/threat-intelligence/msix-installers/
-- https://redcanary.com/threat-detection-report/techniques/installer-packages/
+directory: msix_powershell
+mitre_technique:
+- T1059.001
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/msix_powershell/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
