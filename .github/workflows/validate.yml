@@ -110,12 +110,6 @@ jobs:
           1. Review the [failed workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
           2. Fix the validation errors
           3. Create a hotfix PR to resolve the issues
-          
-          **Files that may be affected:**
-          - datasets/**/*.yml
-          - datasets/**/*.yaml
-          - bin/validate.py
-          - bin/dataset_schema.json
           `;
           
           await github.rest.issues.create({
