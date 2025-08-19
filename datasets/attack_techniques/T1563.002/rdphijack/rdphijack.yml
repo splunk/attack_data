@@ -1,14 +1,17 @@
 author: Michael Haag
 id: 04cbf4da-19b8-44b6-a143-a7cfe4d7f6ec
 date: '2023-03-29'
-description: 'Atomic Testing of RDP Hijacking'
+description: Atomic Testing of RDP Hijacking
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1563.002/rdphijack/tscon_windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1563.002/rdphijack/4688_tscon_windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1563.002/rdphijack/remoteconnectionmanager.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- XmlWinEventLog
-references:
-- https://attack.mitre.org/techniques/T1563.002
+directory: rdphijack
+mitre_technique:
+- T1563.002
+datasets:
+- name: tscon_windows-sysmon
+  path: /datasets/attack_techniques/T1563.002/rdphijack/tscon_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 4688_tscon_windows-security
+  path: /datasets/attack_techniques/T1563.002/rdphijack/4688_tscon_windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

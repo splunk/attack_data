@@ -3,9 +3,11 @@ id: 98448462-9f32-47ef-ac24-844bb1c0f1c0
 date: '2025-07-08'
 description: 'Sample of ESXi syslog events showing ESXi lockdown settings being modified to impair defenses.'
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562/esxi_lockdown_disabled/esxi_lockdown_disabled.log
-sourcetypes:
-- vmw-syslog
-references:
-- https://attack.mitre.org/techniques/T1562
+directory: esxi_lockdown_disabled
+mitre_technique:
+- T1562
+datasets:
+- name: vmw-syslog
+  path: /datasets/attack_techniques/T1562/esxi_lockdown_disabled/esxi_lockdown_disabled.log
+  sourcetype: vmw-syslog
+  source: vmw-syslog

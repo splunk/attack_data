@@ -1,11 +1,14 @@
 author: Bhavin Patel
 id: cc922674-efc9-11eb-926b-550bf0943f33
 date: '2024-03-07'
-description: This dataset is synthetically generated using by simulating events in a lab 
-environment: NA
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1586.003/okta_multiple_city/okta_multiple_city_im2.json
-sourcetypes:
-- OktaIM2:log
-references:
-- https://attack.mitre.org/techniques/T1586.003
+description: This dataset is synthetically generated using by simulating events in
+  a lab
+environment: attack_range
+directory: okta_multiple_city
+mitre_technique:
+- T1586.003
+datasets:
+- name: okta_multiple_city_im2
+  path: /datasets/attack_techniques/T1586.003/okta_multiple_city/okta_multiple_city_im2.log
+  sourcetype: OktaIM2:log
+  source: Okta

@@ -3,12 +3,19 @@ id: cc9b2667-efc9-11eb-926b-660bf0943fbb
 date: '2021-11-15'
 description: Simulation of plink activity.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/plink/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/plink/plink-windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/plink/4688-windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- XmlWinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1572
+directory: plink
+mitre_technique:
+- T1572
+datasets:
+- name: plink-windows-sysmon
+  path: /datasets/attack_techniques/T1572/plink/plink-windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1572/plink/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 4688-windows-security
+  path: /datasets/attack_techniques/T1572/plink/4688-windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

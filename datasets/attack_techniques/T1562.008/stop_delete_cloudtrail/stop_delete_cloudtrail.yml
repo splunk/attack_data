@@ -1,15 +1,22 @@
 author: Bhavin Patel
 id: cc9b2603-efc9-11eb-926b-55ddf0dd3fbb
 date: '2022-07-12'
-description: Dataset which contains cloudtrail events when a cloudtrail is stopped from logging. This attack was simulated using status red team. 
+description: Dataset which contains cloudtrail events when a cloudtrail is stopped
+  from logging. This attack was simulated using status red team.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/aws_cloudtrail_events.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/amazon_security_lake.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/asl_ocsf_cloudtrail.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/asl_ocsf_cloudtrail_2.json
-sourcetypes:
-- aws:cloudtrail
-- aws:asl
-references:
-- https://attack.mitre.org/techniques/T1562/008/
+directory: stop_delete_cloudtrail
+mitre_technique:
+- T1562.008
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail
+- name: asl_ocsf_cloudtrail_2-json
+  path: /datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/asl_ocsf_cloudtrail_2.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl
+- name: asl_ocsf_cloudtrail-json
+  path: /datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/asl_ocsf_cloudtrail.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl

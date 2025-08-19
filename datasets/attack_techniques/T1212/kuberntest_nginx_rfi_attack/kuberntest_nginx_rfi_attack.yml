@@ -1,0 +1,14 @@
+author: Patrick Bareiss
+id: 1b1953b6-aebc-492f-8cf7-8791445aeaa8
+date: '2021-08-23'
+description: Manual generation of attack data by running a RFI attack againsta kubernetes
+  cluster with a web app running
+environment: attack_range
+directory: kuberntest_nginx_rfi_attack
+mitre_technique:
+- T1212
+datasets:
+- name: kubernetes_nginx_rfi_attack
+  path: /datasets/attack_techniques/T1212/kuberntest_nginx_rfi_attack/kubernetes_nginx_rfi_attack.log
+  sourcetype: nginx:plus:access
+  source: nginx

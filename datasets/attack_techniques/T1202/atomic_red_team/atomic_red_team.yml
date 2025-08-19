@@ -5,13 +5,15 @@ description: 'Atomic Test Results: Successful Execution of test T1202 Indirect C
   Execution using forfiles.exe and pcalua.exe for evading restructions on process
   execution.'
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1202/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1202/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1202/atomic_red_team/windows-sysmon_runmru.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1202
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1202/T1202.md
+directory: atomic_red_team
+mitre_technique:
+- T1202
+datasets:
+- name: windows-sysmon_runmru
+  path: /datasets/attack_techniques/T1202/atomic_red_team/windows-sysmon_runmru.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1202/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

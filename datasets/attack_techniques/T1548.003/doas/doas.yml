@@ -3,9 +3,11 @@ id: 934e2ef8-6e0e-11ec-9cba-acde48001122
 date: '2022-01-05'
 description: Generated datasets for doas in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.003/doas/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://wiki.gentoo.org/wiki/Doas
+directory: doas
+mitre_technique:
+- T1548.003
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.003/doas/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

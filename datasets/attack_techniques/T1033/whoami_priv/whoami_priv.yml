@@ -2,10 +2,12 @@ author: Teoderick Contreras, Splunk
 id: ea89e255-f54a-4627-a8de-10dcbd662993
 date: '2023-12-15'
 description: Generated datasets for whoami priv in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1033/whoami_priv/whoami-priv-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a
+environment: attack_range
+directory: whoami_priv
+mitre_technique:
+- T1033
+datasets:
+- name: whoami-priv-sysmon
+  path: /datasets/attack_techniques/T1033/whoami_priv/whoami-priv-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

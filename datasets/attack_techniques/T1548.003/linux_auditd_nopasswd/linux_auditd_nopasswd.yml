@@ -3,9 +3,15 @@ id: 97e7e652-ef9d-11ef-b72e-629be3538068
 date: '2025-02-20'
 description: Generated datasets for linux auditd nopasswd in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.003/linux_auditd_nopasswd/linux_auditd_nopasswd2.log
-sourcetypes:
-- 'auditd'
-references:
-- https://askubuntu.com/questions/334318/sudoers-file-enable-nopasswd-for-user-all-commands
+directory: linux_auditd_nopasswd
+mitre_technique:
+- T1548.003
+datasets:
+- name: linux_auditd_nopasswd
+  path: /datasets/attack_techniques/T1548.003/linux_auditd_nopasswd/linux_auditd_nopasswd.log
+  sourcetype: auditd
+  source: auditd
+- name: linux_auditd_nopasswd2
+  path: /datasets/attack_techniques/T1548.003/linux_auditd_nopasswd/linux_auditd_nopasswd2.log
+  sourcetype: auditd
+  source: auditd

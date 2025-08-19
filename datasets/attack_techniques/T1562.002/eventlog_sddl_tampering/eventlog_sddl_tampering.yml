@@ -1,12 +1,14 @@
 author: Nasreddine Bencherchali, Splunk
 id: c3d46f0d-4223-437f-96e3-7ed9636198c7
 date: '2024-12-06'
-description: This dataset contains registry set logs from Windows Sysmon logs related to modification of the ChannelAccess and CustomSD registry values.
+description: This dataset contains registry set logs from Windows Sysmon logs related
+  to modification of the ChannelAccess and CustomSD registry values.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.002/eventlog_sddl_tampering/eventlog_sddl_tampering_sysmon.log
-sourcetypes:
-- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
-references:
-- https://learn.microsoft.com/en-us/troubleshoot/windows-server/group-policy/set-event-log-security-locally-or-via-group-policy
-- https://web.archive.org/web/20220710181255/https://blog.minerva-labs.com/lockbit-3.0-aka-lockbit-black-is-here-with-a-new-icon-new-ransom-note-new-wallpaper-but-less-evasiveness
+directory: eventlog_sddl_tampering
+mitre_technique:
+- T1562.002
+datasets:
+- name: eventlog_sddl_tampering_sysmon
+  path: /datasets/attack_techniques/T1562.002/eventlog_sddl_tampering/eventlog_sddl_tampering_sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

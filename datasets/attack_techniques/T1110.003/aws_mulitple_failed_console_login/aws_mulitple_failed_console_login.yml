@@ -1,12 +1,14 @@
 author: Bhavin Patel
 id: cc9b2674-efc9-11eb-9211-110bf0943fbb
 date: '2022-09-26'
-description: This dataset is generated from cloudtrail events in Attack range by manually simulating attacks
-environment: NA
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/aws_mulitple_failed_console_login/aws_cloudtrail.json
-sourcetypes:
-- aws:cloudtrail
-references:
-- https://attack.mitre.org/techniques/T1110/003/
-
+description: This dataset is generated from cloudtrail events in Attack range by manually
+  simulating attacks
+environment: attack_range
+directory: aws_mulitple_failed_console_login
+mitre_technique:
+- T1110.003
+datasets:
+- name: aws_cloudtrail-json
+  path: /datasets/attack_techniques/T1110.003/aws_mulitple_failed_console_login/aws_cloudtrail.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

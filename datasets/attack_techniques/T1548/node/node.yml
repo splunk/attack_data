@@ -3,9 +3,11 @@ id: 1b157687-1552-49e6-af63-397a9a6a6eb9
 date: '2022-08-01'
 description: Node linux living off the land and privilege escalation.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/node/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://attack.mitre.org/tactics/TA0004/
+directory: node
+mitre_technique:
+- T1548
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/node/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

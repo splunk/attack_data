@@ -3,9 +3,11 @@ id: 7de57102-fefa-4883-b318-23be33b1a4af
 date: '2022-08-01'
 description: Docker linux living off the land and privilege escalation.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/docker/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://attack.mitre.org/tactics/TA0004/
+directory: docker
+mitre_technique:
+- T1548
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/docker/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

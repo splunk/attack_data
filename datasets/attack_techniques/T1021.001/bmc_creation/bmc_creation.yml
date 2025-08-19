@@ -3,9 +3,11 @@ id: 2050c38a-6d1e-11f0-86b8-629be3538068
 date: '2025-07-30'
 description: Generated datasets for bmc creation in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.001/bmc_creation/bmc_creation.log
-sourcetypes:
-- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
-references:
-- https://medium.com/@bonguides25/how-to-clear-rdp-connections-history-in-windows-cf0ffb67f344
+directory: bmc_creation
+mitre_technique:
+- T1021.001
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1021.001/bmc_creation/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

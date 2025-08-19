@@ -3,9 +3,15 @@ id: e5ff2d94-5f51-11ec-ba52-acde48001122
 date: '2021-12-17'
 description: Generated datasets for cronjobs entry in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.003/cronjobs_entry/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1053/003/ 
+directory: cronjobs_entry
+mitre_technique:
+- T1053.003
+datasets:
+- name: sysmon_linux_cron_append
+  path: /datasets/attack_techniques/T1053.003/cronjobs_entry/sysmon_linux_cron_append.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1053.003/cronjobs_entry/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

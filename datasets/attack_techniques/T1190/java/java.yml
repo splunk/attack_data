@@ -3,15 +3,11 @@ id: cc9b266c-23c9-11eb-926b-220bf0943fbb
 date: '2021-12-13'
 description: Attack data related to Log4Shell CVE-2021-44228
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/java/java.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/java/confluence.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/java/log4shell-nginx.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/java/java_spawn_shell_nix.log
-sourcetypes:
-- stream:http
-- nginx:plus:kv
-- sysmon_linux
-- pan:threat
-references:
-  - https://attack.mitre.org/techniques/T1190
+directory: java
+mitre_technique:
+- T1190
+datasets:
+- name: log4shell-nginx
+  path: /datasets/attack_techniques/T1190/java/log4shell-nginx.log
+  sourcetype: nginx:plus:access
+  source: nginx

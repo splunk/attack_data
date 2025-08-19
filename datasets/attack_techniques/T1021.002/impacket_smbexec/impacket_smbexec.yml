@@ -1,11 +1,13 @@
 author: Patrick Bareiss
 id: 09ce0268-89f8-4029-8812-49383f8afd36
 date: '2024-02-01'
-description: 'Impacket smbexec execution'
+description: Impacket smbexec execution
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/impacket_smbexec/windows_security_xml.log
-sourcetypes:
-- XmlWinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1021/002/
+directory: impacket_smbexec
+mitre_technique:
+- T1021.002
+datasets:
+- name: windows_security_xml
+  path: /datasets/attack_techniques/T1021.002/impacket_smbexec/windows_security_xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

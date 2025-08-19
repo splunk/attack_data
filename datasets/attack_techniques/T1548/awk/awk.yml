@@ -3,9 +3,11 @@ id: c243b463-7dbb-4887-8660-b4430e68d73a
 date: '2022-08-01'
 description: AWK linux living off the land and privilege escalation.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/awk/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://attack.mitre.org/tactics/TA0004/
+directory: awk
+mitre_technique:
+- T1548
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/awk/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

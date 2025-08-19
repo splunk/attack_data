@@ -1,13 +1,13 @@
 author: Michael Haag
-id: 4f9b2623-abd5-11eb-926b-120zf0943f22
+id: ebbe603c-a8e9-4d36-8c73-3bda679b4280
 date: '2023-06-22'
 description: Detection of unsigned MSIX package installation using PowerShell
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/refs/heads/master/datasets/attack_techniques/T1553.005/msix_unsigned/windows-powershell.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
-references:
-- https://attack.mitre.org/techniques/T1553/005
-- https://redcanary.com/blog/threat-intelligence/msix-installers/
-- https://redcanary.com/threat-detection-report/techniques/installer-packages/
+directory: msix_unsigned
+mitre_technique:
+- T1553.005
+datasets:
+- name: windows-powershell
+  path: /datasets/attack_techniques/T1553.005/msix_unsigned/windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

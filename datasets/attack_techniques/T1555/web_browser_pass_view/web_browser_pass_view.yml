@@ -1,9 +1,13 @@
 author: Teoderick Contreras
 id: c3e68b5e-babb-4ef1-b835-62de0b025006
 date: '2021-11-22'
-description: 'simulated brwser pass view application used by remcos in attackrange'
+description: simulated brwser pass view application used by remcos in attackrange
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1555/web_browser_pass_view/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+directory: web_browser_pass_view
+mitre_technique:
+- T1555
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1555/web_browser_pass_view/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

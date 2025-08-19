@@ -3,9 +3,11 @@ id: d9926de0-5a22-11ef-927e-acde48001122
 date: '2024-08-14'
 description: Generated datasets for linux auditd osquerd service stop in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1489/linux_auditd_osquerd_service_stop/linux_auditd_osquerd_service_stop.log
-sourcetypes:
-- 'linux:audit'
-references:
-- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html
+directory: linux_auditd_osquerd_service_stop
+mitre_technique:
+- T1489
+datasets:
+- name: linux_auditd_osquerd_service_stop
+  path: /datasets/attack_techniques/T1489/linux_auditd_osquerd_service_stop/linux_auditd_osquerd_service_stop.log
+  sourcetype: auditd
+  source: auditd

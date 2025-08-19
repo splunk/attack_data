@@ -1,0 +1,13 @@
+author: Michael Haag
+id: cc9b261a-efc9-11eb-926b-550bf0943fbb
+date: '2021-01-15'
+description: MSBuild.exe execution simulating a suspicious spawn, renamed and moved.
+environment: attack_range
+directory: T1127.001
+mitre_technique:
+- T1127.001
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1127.001/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

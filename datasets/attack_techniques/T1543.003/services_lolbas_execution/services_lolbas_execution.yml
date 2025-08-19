@@ -1,12 +1,13 @@
 author: Bhavin Patel
 id: cc9b2651-efc9-11eb-926b-550bf0143fbb
 date: '2023-10-02'
-description: 'Attack data for services.exe spawning msiexec'
+description: Attack data for services.exe spawning msiexec
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1543.003/services_lolbas_execution/4688_xml_windows_security.log
-sourcetypes:
-- XmlWinEventLog
-references:
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1543.003/T1543.003.md
-- https://atomicredteam.io/privilege-escalation/T1543.003/
+directory: services_lolbas_execution
+mitre_technique:
+- T1543.003
+datasets:
+- name: 4688_xml_windows_security
+  path: /datasets/attack_techniques/T1543.003/services_lolbas_execution/4688_xml_windows_security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

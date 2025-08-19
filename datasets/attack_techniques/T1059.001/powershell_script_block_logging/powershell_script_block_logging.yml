@@ -1,0 +1,21 @@
+author: Michael Haag
+id: cc9b264c-efc9-11eb-926b-550bf0943fbb
+date: '2021-06-09'
+description: Manual and Atomic Red Team testing to generate script block logging data.
+environment: attack_range
+directory: powershell_script_block_logging
+mitre_technique:
+- T1059.001
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/windows-powershell-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: credaccess-powershell
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/credaccess-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

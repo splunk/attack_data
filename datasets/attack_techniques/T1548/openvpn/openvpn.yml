@@ -3,9 +3,11 @@ id: 49252518-96e6-4f7a-8392-719c725bc3ca
 date: '2022-08-12'
 description: Openvpn linux living off the land and privilege escalation.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/openvpn/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://attack.mitre.org/tactics/TA0004/
+directory: openvpn
+mitre_technique:
+- T1548
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/openvpn/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

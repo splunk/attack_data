@@ -3,9 +3,11 @@ id: 6604d77c-fdb5-4b1c-9c1f-55ed41fcca8d
 date: '2023-12-13'
 description: Kubernetes falco logs containing a spawned shell.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204/kubernetes_falco_shell_spawned/kubernetes_falco_shell_spawned.log
-sourcetypes:
-- kube:container:falco
-references:
-- https://attack.mitre.org/techniques/T1204
+directory: kubernetes_falco_shell_spawned
+mitre_technique:
+- T1204
+datasets:
+- name: kubernetes_falco_shell_spawned
+  path: /datasets/attack_techniques/T1204/kubernetes_falco_shell_spawned/kubernetes_falco_shell_spawned.log
+  sourcetype: __json
+  source: kubernetes

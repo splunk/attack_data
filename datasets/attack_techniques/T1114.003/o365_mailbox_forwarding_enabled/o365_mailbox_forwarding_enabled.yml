@@ -1,0 +1,13 @@
+author: Patrick Bareiss
+id: cc9b25f8-efc9-11eb-926b-550bf0943fbb
+date: '2020-12-16'
+description: Configured forwarding rules for mailboxes in Office 365.
+environment: attack_range
+directory: o365_mailbox_forwarding_enabled
+mitre_technique:
+- T1114.003
+datasets:
+- name: o365_mailbox_forwarding_enabled-json
+  path: /datasets/attack_techniques/T1114.003/o365_mailbox_forwarding_enabled/o365_mailbox_forwarding_enabled.json
+  sourcetype: o365:management:activity
+  source: o365

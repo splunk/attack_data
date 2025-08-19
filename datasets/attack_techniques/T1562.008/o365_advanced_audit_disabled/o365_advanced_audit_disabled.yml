@@ -1,14 +1,15 @@
 author: Mauricio Velazco, Splunk
 id: 77abf938-1722-4b41-82c1-996db1c5214f
 date: '2023-09-19'
-description:  'Manually disabled advanced audit logging for one user in O365.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Offic3 365 tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/o365_advanced_audit_disabled/o365_advanced_audit_disabled.log
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1562/008/
-- https://www.mandiant.com/sites/default/files/2022-08/remediation-hardening-strategies-for-m365-defend-against-apt29-white-paper.pdf
-- https://learn.microsoft.com/en-us/purview/audit-premium
+description: Manually disabled advanced audit logging for one user in O365. Tenant
+  specific details have been replaced in the dataset including tenant id, user names,
+  ips, etc.
+environment: attack_range
+directory: o365_advanced_audit_disabled
+mitre_technique:
+- T1562.008
+datasets:
+- name: o365_advanced_audit_disabled
+  path: /datasets/attack_techniques/T1562.008/o365_advanced_audit_disabled/o365_advanced_audit_disabled.log
+  sourcetype: o365:management:activity
+  source: o365

@@ -1,15 +1,14 @@
 author: Mauricio Velazco
 id: c6b30c59-3a4e-43bf-8ad4-d2ff59d88ad8
 date: '2023-03-29'
-description: Manually modified the Default Domain Policy Group Policy Object on a domain controller.
+description: Manually modified the Default Domain Policy Group Policy Object on a
+  domain controller.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.001/default_domain_policy_modified/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.001/default_domain_policy_modified/security-4688.log
-sourcetypes:
-- XmlWinEventLog
-references:
-- https://attack.mitre.org/techniques/T1484/
-- https://attack.mitre.org/techniques/T1484/001
-- https://www.trustedsec.com/blog/weaponizing-group-policy-objects-access/
-- https://adsecurity.org/?p=2716
+directory: default_domain_policy_modified
+mitre_technique:
+- T1484.001
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1484.001/default_domain_policy_modified/windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

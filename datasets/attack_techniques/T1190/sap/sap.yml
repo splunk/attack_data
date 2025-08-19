@@ -3,11 +3,15 @@ id: ca1b266c-23c9-11eb-926b-220bf0943fbb
 date: '2025-04-28'
 description: Attack data related to NetWeaver CVE-2025-31324
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/sap/suricata_sapnetweaver.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/sap/windows-sysmon.log
-sourcetypes:
-- suricata
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-  - https://attack.mitre.org/techniques/T1190
+directory: sap
+mitre_technique:
+- T1190
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1190/sap/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: suricata_sapnetweaver
+  path: /datasets/attack_techniques/T1190/sap/suricata_sapnetweaver.log
+  sourcetype: suricata
+  source: suricata

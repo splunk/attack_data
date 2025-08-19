@@ -1,15 +1,16 @@
 author: Mauricio Velazco
 id: a962463f-581b-4faf-a237-da45248b4fb7
 date: '2022-07-11'
-description: 'Used Invoke-MSOLSpray to perform a password spraying attack against an Azure AD tenant using 50 users accounts. One of the authentication atttemps is successful. 
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Azure AD tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/azuread_highrisk/azure-audit.log
-sourcetypes:
-- mscs:azure:eventhub
-references:
-- https://attack.mitre.org/techniques/T1110/003/
-- https://github.com/dafthack/MSOLSpray
-- https://docs.microsoft.com/en-us/security/compass/incident-response-playbook-password-spray
-- https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
+description: Used Invoke-MSOLSpray to perform a password spraying attack against an
+  Azure AD tenant using 50 users accounts. One of the authentication atttemps is successful.
+  Tenant specific details have been replaced in the dataset including tenant id, user
+  names, ips, etc.
+environment: attack_range
+directory: azuread_highrisk
+mitre_technique:
+- T1110.003
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1110.003/azuread_highrisk/azure-audit.log
+  sourcetype: azure:monitor:aad
+  source: azure

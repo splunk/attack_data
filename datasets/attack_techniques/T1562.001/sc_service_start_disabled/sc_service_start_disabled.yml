@@ -1,15 +1,16 @@
 author: Michael Hart
+id: 40be2ce2-01a0-4210-8733-2e0b9e466df5
 date: '2020-06-23'
-description: 'This dataset contains observed behaviors in one of our honeypots.
-  It appears that the malware used sc.exe to disable various services from
-  starting.  The sheer volume and frequency of calls is excessive, something not
-  typically observed in the normal course of operation on windows.'
+description: This dataset contains observed behaviors in one of our honeypots. It
+  appears that the malware used sc.exe to disable various services from starting.  The
+  sheer volume and frequency of calls is excessive, something not typically observed
+  in the normal course of operation on windows.
 environment: attack_range
-technique:
+directory: sc_service_start_disabled
+mitre_technique:
 - T1562.001
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/sc_service_start_disabled/windows-sysmon.log
-references:
-- https://attack.mitre.org/techniques/T1562/001
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1562.001/sc_service_start_disabled/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

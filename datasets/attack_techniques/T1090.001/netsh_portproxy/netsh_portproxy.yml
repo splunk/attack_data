@@ -2,10 +2,12 @@ author: Teoderick Contreras, Splunk
 id: 7bf3cd9f-08b8-45f4-93f4-0713375fb1e0
 date: '2023-05-25'
 description: Generated datasets for netsh portproxy in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1090.001/netsh_portproxy/volt_sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/
+environment: attack_range
+directory: netsh_portproxy
+mitre_technique:
+- T1090.001
+datasets:
+- name: volt_sysmon
+  path: /datasets/attack_techniques/T1090.001/netsh_portproxy/volt_sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,15 +1,15 @@
 author: Mauricio Velazco
 id: 21ced607-7805-4725-943e-ea593097dd74
 date: '2023-09-04'
-description: 'Manually added new the Mail.Read Graph API permissions to an application registration.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Offic3 365 tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.003/o365_grant_mail_read/o365_grant_mail_read.log
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1098/001/
-- https://www.mandiant.com/resources/blog/remediation-and-hardening-strategies-for-microsoft-365-to-defend-against-unc2452
-- https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT501/AZT501-2/ 
-- https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Cloud%20-%20Azure%20Pentest.md#add-credentials-to-all-enterprise-applications 
+description: Manually added new the Mail.Read Graph API permissions to an application
+  registration. Tenant specific details have been replaced in the dataset including
+  tenant id, user names, ips, etc.
+environment: attack_range
+directory: o365_grant_mail_read
+mitre_technique:
+- T1098.003
+datasets:
+- name: o365_grant_mail_read
+  path: /datasets/attack_techniques/T1098.003/o365_grant_mail_read/o365_grant_mail_read.log
+  sourcetype: o365:management:activity
+  source: o365

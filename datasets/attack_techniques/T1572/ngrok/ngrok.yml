@@ -3,12 +3,11 @@ id: 24608f3f-bc86-43e1-ab46-4625f94a6cdf
 date: '2022-11-16'
 description: ngrok.exe execution on windows.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/ngrok/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1572/ngrok/ngrok_linux-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- sysmon_linux
-references:
-- https://attack.mitre.org/techniques/T1572
-- https://ngrok.com
+directory: ngrok
+mitre_technique:
+- T1572
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1572/ngrok/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,11 +1,14 @@
 author: Mauricio Velazco
 id: dc543b87-f169-4f05-8818-926b1eab8cf3
 date: '2023-02-09'
-description: 'Used the New-MgServicePrincipalAppRoleAssignedTo commandlet to bypass the admin consent process'
-environment: Office 365 tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.003/o365_bypass_admin_consent/o365_bypass_admin_consent.log
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1098/003/
+description: Used the New-MgServicePrincipalAppRoleAssignedTo commandlet to bypass
+  the admin consent process
+environment: attack_range
+directory: o365_bypass_admin_consent
+mitre_technique:
+- T1098.003
+datasets:
+- name: o365_bypass_admin_consent
+  path: /datasets/attack_techniques/T1098.003/o365_bypass_admin_consent/o365_bypass_admin_consent.log
+  sourcetype: o365:management:activity
+  source: o365

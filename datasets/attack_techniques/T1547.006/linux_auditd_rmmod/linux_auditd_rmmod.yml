@@ -3,9 +3,11 @@ id: 8ceb8526-5a22-11ef-927e-acde48001122
 date: '2024-08-14'
 description: Generated datasets for linux auditd rmmod in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.006/linux_auditd_rmmod/linux_auditd_rmmod.log
-sourcetypes:
-- 'linux:audit'
-references:
-- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html
+directory: linux_auditd_rmmod
+mitre_technique:
+- T1547.006
+datasets:
+- name: linux_auditd_rmmod
+  path: /datasets/attack_techniques/T1547.006/linux_auditd_rmmod/linux_auditd_rmmod.log
+  sourcetype: auditd
+  source: auditd

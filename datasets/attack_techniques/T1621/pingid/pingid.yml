@@ -1,0 +1,17 @@
+author: Steven Dick
+id: 050d14b8-455d-43a8-9d99-9c38f8afd73c
+date: '2023-09-26'
+description: Detection of a few common MFA abuse scenarios with datasets from pindID
+environment: attack_range
+directory: pingid
+mitre_technique:
+- T1621
+datasets:
+- name: pingid
+  path: /datasets/attack_techniques/T1621/pingid/pingid.log
+  sourcetype: __json
+  source: PINGID
+- name: windows_pw_reset
+  path: /datasets/attack_techniques/T1621/pingid/windows_pw_reset.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

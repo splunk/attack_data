@@ -3,9 +3,11 @@ id: 05d39cf3-abd8-46e3-b775-88935c28fffc
 date: '2025-07-08'
 description: 'Sample of ESXi syslog events showing ESXi encryption settings being modified to impair defenses.'
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562/esxi_encryption_modified/esxi_encryption_modified.log
-sourcetypes:
-- vmw-syslog
-references:
-- https://attack.mitre.org/techniques/T1562
+directory: esxi_encryption_modified
+mitre_technique:
+- T1562
+datasets:
+- name: vmw-syslog
+  path: /datasets/attack_techniques/T1562/esxi_encryption_modified/esxi_encryption_modified.log
+  sourcetype: vmw-syslog
+  source: vmw-syslog

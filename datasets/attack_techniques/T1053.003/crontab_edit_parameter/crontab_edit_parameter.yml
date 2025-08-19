@@ -3,9 +3,11 @@ id: d18a1f12-5f52-11ec-a48e-acde48001122
 date: '2021-12-17'
 description: Generated datasets for crontab edit parameter in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.003/crontab_edit_parameter/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1053/003/
+directory: crontab_edit_parameter
+mitre_technique:
+- T1053.003
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1053.003/crontab_edit_parameter/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

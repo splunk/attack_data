@@ -1,17 +1,14 @@
 author: Mauricio Velazco
 id: 1bacf0a4-52cc-47e3-85c5-a82dac07aa71
 date: '2021-11-23'
-description: Manually using the command line to start a process on a remote endpoint leveraging the DCOM protocol for lateral movement and remote code execution.
+description: Manually using the command line to start a process on a remote endpoint
+  leveraging the DCOM protocol for lateral movement and remote code execution.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.003/lateral_movement_lolbas/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.003/lateral_movement_lolbas/windows-security.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1021/003/
-- https://www.cybereason.com/blog/dcom-lateral-movement-techniques
-- https://lolbas-project.github.io/
-
-
+directory: lateral_movement_lolbas
+mitre_technique:
+- T1021.003
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1021.003/lateral_movement_lolbas/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

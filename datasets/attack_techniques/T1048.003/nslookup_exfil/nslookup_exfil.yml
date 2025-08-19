@@ -3,9 +3,15 @@ id: 83752ecc-e349-11ec-8e0c-acde48001122
 date: '2022-06-03'
 description: Generated datasets for nslookup exfil in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1048.003/nslookup_exfil/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://www.microsoft.com/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+directory: nslookup_exfil
+mitre_technique:
+- T1048.003
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1048.003/nslookup_exfil/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: sysmon
+  path: /datasets/attack_techniques/T1048.003/nslookup_exfil/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

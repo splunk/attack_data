@@ -1,13 +1,15 @@
 author: Mauricio Velazco
 id: b9cd42b4-d84d-4969-b61c-4a18b89efecd
 date: '2023-03-27'
-description: Manually executed PowerSploit's commandlet Invoke-ShareFinder with a domain admin to discover network file shares and check access in an Active Directory network that has more than 50 hosts.
+description: Manually executed PowerSploit's commandlet Invoke-ShareFinder with a
+  domain admin to discover network file shares and check access in an Active Directory
+  network that has more than 50 hosts.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/special_logon_on_mulitple_hosts/windows-security.log
-sourcetypes:
-- XmlWinEventLog
-references:
-- https://attack.mitre.org/techniques/T1135
-- https://github.com/PowerShellEmpire/PowerTools/blob/master/PowerView/powerview.ps1
-- https://thedfirreport.com/2023/01/23/sharefinder-how-threat-actors-discover-file-shares/
+directory: special_logon_on_mulitple_hosts
+mitre_technique:
+- T1078
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1078/special_logon_on_mulitple_hosts/windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

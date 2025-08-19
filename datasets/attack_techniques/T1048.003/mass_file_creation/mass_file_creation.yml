@@ -3,9 +3,11 @@ id: 52fd86dd-5f85-4d16-b80f-31b87592829f
 date: '2021-12-08'
 description: Manual generation of attack data by generating 100 xls files
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1048.003/mass_file_creation/windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1048/003
+directory: mass_file_creation
+mitre_technique:
+- T1048.003
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1048.003/mass_file_creation/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

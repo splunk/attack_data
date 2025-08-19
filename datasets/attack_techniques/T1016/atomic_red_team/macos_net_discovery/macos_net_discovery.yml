@@ -3,10 +3,15 @@ id: e0c0d5e5-8c29-4db3-9d27-d42f31c552f5
 date: '2025-08-15'
 description: Generated datasets for MacOS net discovery
 environment: vm
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1016/atomic_red_team/macos_net_discovery/macos_list_firewall_rules.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1016/atomic_red_team/macos_net_discovery/macos_network_discovery.log
-sourcetypes:
-- osquery:results
-references:
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1016/T1016.md
+directory: macos_net_discovery
+mitre_technique:
+- T1016
+datasets:
+- name: osquery:results
+  path: /datasets/attack_techniques/T1016/atomic_red_team/macos_net_discovery/macos_list_firewall_rules.log
+  sourcetype: osquery:results
+  source: osquery:results
+- name: osquery:results
+  path: /datasets/attack_techniques/T1016/atomic_red_team/macos_net_discovery/macos_network_discovery.log
+  sourcetype: osquery:results
+  source: osquery:results

@@ -1,0 +1,15 @@
+author: Teoderick Contreras
+id: a8d7ae24-f24b-4913-a8d8-9db9794175ad
+date: '2021-11-12'
+description: simulated ioc from vilsel malware.
+environment: attack_range
+directory: vilsel
+datasets:
+- name: windows-xml
+  path: /datasets/malware/vilsel/windows-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: sysmon
+  path: /datasets/malware/vilsel/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

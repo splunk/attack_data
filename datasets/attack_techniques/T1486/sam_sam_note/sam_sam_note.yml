@@ -4,15 +4,11 @@ date: '2020-12-07'
 description: Manual generation of attack data by creating a file with a known ransomware
   filename test.txt in Windows32 folder
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/sam_sam_note/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/sam_sam_note/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/sam_sam_note/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/sam_sam_note/windows-system.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:System
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1486/
+directory: sam_sam_note
+mitre_technique:
+- T1486
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1486/sam_sam_note/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -3,9 +3,11 @@ id: 765100c0-5a22-11ef-927e-acde48001122
 date: '2024-08-14'
 description: Generated datasets for linux auditd hidden file in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1564.001/linux_auditd_hidden_file/linux_auditd_hidden_file.log
-sourcetypes:
-- 'linux:audit'
-references:
-- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html
+directory: linux_auditd_hidden_file
+mitre_technique:
+- T1564.001
+datasets:
+- name: linux_auditd_hidden_file
+  path: /datasets/attack_techniques/T1564.001/linux_auditd_hidden_file/linux_auditd_hidden_file.log
+  sourcetype: auditd
+  source: auditd

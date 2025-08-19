@@ -3,7 +3,11 @@ id: fcc00e68-1283-4cf4-bfc7-e19784f5c453
 date: '2021-09-29'
 description: manual verclsid commandline data sets.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.012/verclsid_exec/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+directory: verclsid_exec
+mitre_technique:
+- T1218.012
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1218.012/verclsid_exec/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

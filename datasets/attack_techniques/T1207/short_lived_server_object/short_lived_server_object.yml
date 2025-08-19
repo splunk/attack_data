@@ -3,11 +3,11 @@ id: f43d4bd2-77a3-4eaa-805f-319e4dd45712
 date: '2022-10-17'
 description: Manual execution of DCShadow attack using Mimikatz.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1207/short_lived_server_object/windows-security.log
-sourcetypes:
-- XmlWinEventLog
-references:
-- https://www.dcshadow.com/
-- https://attack.mitre.org/techniques/T1207
-- https://pentestlab.blog/2018/04/16/dcshadow/
+directory: short_lived_server_object
+mitre_technique:
+- T1207
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1207/short_lived_server_object/windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

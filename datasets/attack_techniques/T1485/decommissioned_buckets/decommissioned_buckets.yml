@@ -1,18 +1,17 @@
 author: Jose Hernandez, Bhavin Patel
 id: 984e9022-b87b-499a-a260-8d0282c46ea2
 date: '2025-02-14'
-description: Dataset generated from AWS CloudTrail logs capturing the lifecycle of an intentionally exposed S3 bucket, including its creation, public access configuration (via bucket policy and website hosting), and subsequent deletion. This simulates the detection of potentially risky S3 bucket configurations and their decommissioning process.
+description: Dataset generated from AWS CloudTrail logs capturing the lifecycle of
+  an intentionally exposed S3 bucket, including its creation, public access configuration
+  (via bucket policy and website hosting), and subsequent deletion. This simulates
+  the detection of potentially risky S3 bucket configurations and their decommissioning
+  process.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/decommissioned_buckets/cloudtrail.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/decommissioned_buckets/dns.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/decommissioned_buckets/web_cloudfront_access.log
-sourcetypes:
-- aws:cloudtrail
-- aws:cloudfront:accesslogs
-- XmlWinEventLog
-references:
-- https://attack.mitre.org/techniques/T1485/
-- https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
-- https://labs.watchtowr.com/8-million-requests-later-we-made-the-solarwinds-supply-chain-attack-look-amateur/
-- https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/
+directory: decommissioned_buckets
+mitre_technique:
+- T1485
+datasets:
+- name: web_cloudfront_access
+  path: /datasets/attack_techniques/T1485/decommissioned_buckets/web_cloudfront_access.log
+  source: aws_cloudfront_accesslogs
+  sourcetype: aws:cloudfront:accesslogs

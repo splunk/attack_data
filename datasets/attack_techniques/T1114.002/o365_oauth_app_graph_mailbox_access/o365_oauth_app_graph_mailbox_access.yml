@@ -1,13 +1,14 @@
 author: Mauricio Velazco
 id: 82a7da52-467c-40f2-bbdb-37c97bbf67be
 date: '2024-01-31'
-description: 'Manually accessed O365 emails via the Graph API and an OAuth application registration using a PowerShell script'
-environment: Office 365 tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114.002/o365_oauth_app_graph_mailbox_access/o365_oauth_app_graph_mailbox_access.log
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1114/002/
-- https://learn.microsoft.com/en-us/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in
-- https://learn.microsoft.com/en-us/graph/permissions-reference
+description: Manually accessed O365 emails via the Graph API and an OAuth application
+  registration using a PowerShell script
+environment: attack_range
+directory: o365_oauth_app_graph_mailbox_access
+mitre_technique:
+- T1114.002
+datasets:
+- name: o365_oauth_app_graph_mailbox_access
+  path: /datasets/attack_techniques/T1114.002/o365_oauth_app_graph_mailbox_access/o365_oauth_app_graph_mailbox_access.log
+  sourcetype: linux_secure
+  source: linux_secure

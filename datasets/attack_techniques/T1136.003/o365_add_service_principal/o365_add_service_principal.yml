@@ -2,10 +2,12 @@ author: Patrick Bareiss
 id: cc9b25dd-efc9-11eb-926b-550bf0943fbb
 date: '2021-02-01'
 description: Performed operation Add service principal credentials
-environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.003/o365_add_service_principal/o365_add_service_principal.json
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1136/003/
+environment: attack_range
+directory: o365_add_service_principal
+mitre_technique:
+- T1136.003
+datasets:
+- name: o365_add_service_principal-json
+  path: /datasets/attack_techniques/T1136.003/o365_add_service_principal/o365_add_service_principal.json
+  sourcetype: o365:management:activity
+  source: o365

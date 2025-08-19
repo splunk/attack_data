@@ -3,9 +3,15 @@ id: 90026cbe-ef98-11ef-b72e-629be3538068
 date: '2025-02-20'
 description: Generated datasets for linux auditd find ssh files in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.004/linux_auditd_find_ssh_files/auditd_execve_find_ssh.log
-sourcetypes:
-- 'auditd'
-references:
-- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+directory: linux_auditd_find_ssh_files
+mitre_technique:
+- T1552.004
+datasets:
+- name: auditd_execve_find_ssh
+  path: /datasets/attack_techniques/T1552.004/linux_auditd_find_ssh_files/auditd_execve_find_ssh.log
+  sourcetype: auditd
+  source: auditd
+- name: linux_auditd_find_ssh_files
+  path: /datasets/attack_techniques/T1552.004/linux_auditd_find_ssh_files/linux_auditd_find_ssh_files.log
+  sourcetype: auditd
+  source: auditd

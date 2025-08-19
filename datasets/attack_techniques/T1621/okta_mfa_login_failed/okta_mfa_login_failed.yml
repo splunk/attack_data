@@ -1,14 +1,15 @@
 author: Bhavin Patel
 id: 6a21e46e-d759-11e0-bbd6-932611ee01ad
 date: '2024-03-05'
-description: 'Manually generated multple failed MFA requests for a user in Okta.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Okta Tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/okta_mfa_login_failed/okta_mfa_login_failed.log
-sourcetypes:
-- OktaIM2:log
-references:
-- https://attack.mitre.org/techniques/T1621/ 
-- https://attack.mitre.org/techniques/T1078/004/
-- https://arstechnica.com/information-technology/2022/03/lapsus-and-solar-winds-hackers-both-use-the-same-old-trick-to-bypass-mfa/
+description: Manually generated multple failed MFA requests for a user in Okta. Tenant
+  specific details have been replaced in the dataset including tenant id, user names,
+  ips, etc.
+environment: attack_range
+directory: okta_mfa_login_failed
+mitre_technique:
+- T1621
+datasets:
+- name: okta_mfa_login_failed
+  path: /datasets/attack_techniques/T1621/okta_mfa_login_failed/okta_mfa_login_failed.log
+  sourcetype: OktaIM2:log
+  source: Okta

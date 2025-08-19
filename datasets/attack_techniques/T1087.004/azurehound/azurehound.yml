@@ -2,10 +2,12 @@ author: Dean Luxton
 id: 14a1f8ea-e34a-449d-9081-0f16341e83c9
 date: '2025-01-07'
 description: Detonating AzureHound against Frothly
-environment: Frothly Azure
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.004/azurehound/azurehound.log
-sourcetypes:
-- azure:monitor:aad
-references:
-- https://github.com/SpecterOps/AzureHound
+environment: attack_range
+directory: azurehound
+mitre_technique:
+- T1087.004
+datasets:
+- name: azurehound
+  path: /datasets/attack_techniques/T1087.004/azurehound/azurehound.log
+  sourcetype: azure:monitor:aad
+  source: azure

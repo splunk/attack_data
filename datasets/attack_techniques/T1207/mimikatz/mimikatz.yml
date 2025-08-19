@@ -1,0 +1,13 @@
+author: Dean Luxton
+id: d2e3db4e-f6a2-4c59-8f07-85a0ae8db5e6
+date: '2022-07-20'
+description: Manual execution of the mimikatz DCShadow command.
+environment: attack_range
+directory: mimikatz
+mitre_technique:
+- T1207
+datasets:
+- name: windows-security-xml
+  path: /datasets/attack_techniques/T1207/mimikatz/windows-security-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

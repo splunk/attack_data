@@ -3,9 +3,11 @@ id: d3a715a6-e64e-11ec-990a-acde48001122
 date: '2022-06-07'
 description: Generated datasets for delete win defender context menu in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/delete_win_defender_context_menu/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://app.any.run/tasks/45f5d114-91ea-486c-ab01-41c4093d2861/
+directory: delete_win_defender_context_menu
+mitre_technique:
+- T1562.001
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1562.001/delete_win_defender_context_menu/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

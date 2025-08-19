@@ -1,15 +1,15 @@
 author: Bhavin Patel
 id: c56117f4-95de-46ae-8fbe-7b41e49bf95e
 date: '2023-01-24'
-description: 'Used Evilnginx2 to phish an AWS user and steal session cookies , then logged into the console  from attacker machiner while the session from victim machine was also connected.'
-environment: STRT AWS Account
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1185/aws_concurrent_sessions_from_different_ips/cloudtrail.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1185/aws_concurrent_sessions_from_different_ips/asl_ocsf_cloudtrail.json
-sourcetypes:
-- aws:cloudtrail
-- aws:asl
-references:
-- https://attack.mitre.org/techniques/T1185
-- https://github.com/kgretzky/evilginx2
-- https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens/
+description: Used Evilnginx2 to phish an AWS user and steal session cookies , then
+  logged into the console  from attacker machiner while the session from victim machine
+  was also connected.
+environment: attack_range
+directory: aws_concurrent_sessions_from_different_ips
+mitre_technique:
+- T1185
+datasets:
+- name: asl_ocsf_cloudtrail-json
+  path: /datasets/attack_techniques/T1185/aws_concurrent_sessions_from_different_ips/asl_ocsf_cloudtrail.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl

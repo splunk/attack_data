@@ -2,10 +2,12 @@ author: Teoderick Contreras, Splunk
 id: 702d7454-b111-4e1a-ac14-cf773e6a4fb5
 date: '2022-10-24'
 description: Generated datasets for wmi impersonate in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1047/wmi_impersonate/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://www.joesandbox.com/analysis/278341/0/html
+environment: attack_range
+directory: wmi_impersonate
+mitre_technique:
+- T1047
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1047/wmi_impersonate/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

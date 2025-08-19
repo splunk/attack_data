@@ -3,9 +3,11 @@ id: 9d807532-1ab0-11f0-a1c6-629be3538069
 date: '2025-04-16'
 description: Generated datasets for linux auditd insmod new in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.006/linux_auditd_insmod_new/linux_auditd_new_insmod.log
-sourcetypes:
-- 'auditd'
-references:
-- https://0x00sec.org/t/kernel-rootkits-getting-your-hands-dirty/1485
+directory: linux_auditd_insmod_new
+mitre_technique:
+- T1547.006
+datasets:
+- name: linux_auditd_new_insmod
+  path: /datasets/attack_techniques/T1547.006/linux_auditd_insmod_new/linux_auditd_new_insmod.log
+  sourcetype: auditd
+  source: auditd

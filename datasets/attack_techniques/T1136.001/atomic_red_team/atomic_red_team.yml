@@ -6,23 +6,31 @@ description: 'Atomic Test Results: Return value unclear for test T1136.001-3 Cre
   new user in PowerShell Successful Execution of test T1136.001-6 Create a new Windows
   admin user '
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/atomic_red_team/4720.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-system.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/atomic_red_team/xml-windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-powershell-esxadmins.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-sysmon-esxadmins.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1136.001/atomic_red_team/windows-security-esxadmins.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:System
-- WinEventLog:Security
-- XmlWinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1136/001
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1136.001/T1136.001.md
-- https://github.com/splunk/security-content/blob/develop/tests/T1136_001.yml
+directory: atomic_red_team
+mitre_technique:
+- T1136.001
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1136.001/atomic_red_team/windows-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: windows-sysmon-esxadmins
+  path: /datasets/attack_techniques/T1136.001/atomic_red_team/windows-sysmon-esxadmins.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1136.001/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-powershell-esxadmins
+  path: /datasets/attack_techniques/T1136.001/atomic_red_team/windows-powershell-esxadmins.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: xml-windows-security
+  path: /datasets/attack_techniques/T1136.001/atomic_red_team/xml-windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: windows-security-esxadmins
+  path: /datasets/attack_techniques/T1136.001/atomic_red_team/windows-security-esxadmins.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

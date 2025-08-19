@@ -1,13 +1,14 @@
 author: Michael Haag, Splunk
-id: 9535ef60-d482-214c-bxbb-6d1bd61e83be
+id: 36cda810-e712-4d51-9e00-3d91a07e5b7f
 date: '2022-04-05'
-description: Manual generation of attack data related to Text4Shell with Zeek HTTP logs and simulation of POC on docker. 
+description: Manual generation of attack data related to Text4Shell with Zeek HTTP
+  logs and simulation of POC on docker.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T11190/text4shell/text4shell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/text4shell/text4shell_nginx.log
-sourcetypes:
-- bro:http:json
-- nginx:plus:kv
-references:
-- https://attack.mitre.org/techniques/T1190
+directory: text4shell
+mitre_technique:
+- T1190
+datasets:
+- name: text4shell_nginx
+  path: /datasets/attack_techniques/T1190/text4shell/text4shell_nginx.log
+  sourcetype: nginx:plus:access
+  source: nginx

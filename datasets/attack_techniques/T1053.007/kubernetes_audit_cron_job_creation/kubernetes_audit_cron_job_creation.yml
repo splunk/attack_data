@@ -3,9 +3,11 @@ id: 18171239-e152-41f4-a1af-459d1b2aacb3
 date: '2023-12-14'
 description: Kubernetes audit logs which contains a creation of a cron job.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.007/kubernetes_audit_cron_job_creation/kubernetes_audit_cron_job_creation.json
-sourcetypes:
-- aws:cloudwatchlogs
-references:
-- https://attack.mitre.org/techniques/T1053/007
+directory: kubernetes_audit_cron_job_creation
+mitre_technique:
+- T1053.007
+datasets:
+- name: kubernetes_audit_cron_job_creation-json
+  path: /datasets/attack_techniques/T1053.007/kubernetes_audit_cron_job_creation/kubernetes_audit_cron_job_creation.json
+  sourcetype: __json
+  source: kubernetes

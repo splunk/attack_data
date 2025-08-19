@@ -3,13 +3,15 @@ id: 50f6c117-ff07-46d8-88fd-cc38515187f1
 date: '2023-03-17'
 description: Manually executed findstr attempt to find retrieve GPP credentials.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.006/findstr_gpp_discovery/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1552.006/findstr_gpp_discovery/windows-4688.log
-
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1552
-- https://attack.mitre.org/techniques/T1552/006/
-- https://pentestlab.blog/2017/03/20/group-policy-preferences/
+directory: findstr_gpp_discovery
+mitre_technique:
+- T1552.006
+datasets:
+- name: windows-4688
+  path: /datasets/attack_techniques/T1552.006/findstr_gpp_discovery/windows-4688.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: windows-security
+  path: /datasets/attack_techniques/T1552.006/findstr_gpp_discovery/windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
