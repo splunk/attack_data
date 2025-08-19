@@ -63,33 +63,33 @@ Datasets are defined by a common YML structure. The structure has the following 
 For example
 
 ```
-id: 405d5889-16c7-42e3-8865-1485d7a5b2b6
 author: Patrick Bareiss
+id: cc9b25e1-efc9-11eb-926b-550bf0943fbb
 date: '2020-10-08'
-description: 'Atomic Test Results: Successful Execution of test T1003.001-1 Windows
-  Credential Editor Successful Execution of test T1003.001-2 Dump LSASS.exe Memory
-  using ProcDump Return value unclear for test T1003.001-3 Dump LSASS.exe Memory using
-  comsvcs.dll Successful Execution of test T1003.001-4 Dump LSASS.exe Memory using
-  direct system calls and API unhooking Return value unclear for test T1003.001-6
-  Offline Credential Theft With Mimikatz Return value unclear for test T1003.001-7
-  LSASS read with pypykatz '
+description: 'Atomic Test Results: Successful Execution of test T1003.003-1 Create
+  Volume Shadow Copy with NTDS.dit Successful Execution of test T1003.003-2 Copy NTDS.dit
+  from Volume Shadow Copy Successful Execution of test T1003.003-3 Dump Active Directory
+  Database with NTDSUtil Successful Execution of test T1003.003-4 Create Volume Shadow
+  Copy with WMI Return value unclear for test T1003.003-5 Create Volume Shadow Copy
+  with Powershell Successful Execution of test T1003.003-6 Create Symlink to Volume
+  Shadow Copy '
 environment: attack_range
-technique:
-- T1003.001
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-system.log
-references:
-- https://attack.mitre.org/techniques/T1003/001/
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.001/T1003.001.md
-- https://github.com/splunk/security-content/blob/develop/tests/T1003_001.yml
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:System
-- WinEventLog:Security
+directory: atomic_red_team
+mitre_technique:
+- T1003.003
+datasets:
+- name: crowdstrike_falcon
+  path: /datasets/attack_techniques/T1003.003/atomic_red_team/crowdstrike_falcon.log
+  sourcetype: crowdstrike:events:sensor
+  source: crowdstrike
+- name: 4688_windows-security
+  path: /datasets/attack_techniques/T1003.003/atomic_red_team/4688_windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1003.003/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 ```
 
 
@@ -129,14 +129,6 @@ pip install -r bin/requirements.txt
 
 See a quick demo 📺 of this process [here](https://www.youtube.com/watch?v=41NAG0zGg40).
 
-### Into DSP
-
-To send datasets into DSP the simplest way is to use the [scloud](https://docs.splunk.com/Documentation/DSP/1.1.0/Admin/AuthenticatewithSCloud) command-line-tool as a requirement.
-
-1. Download the dataset
-2. Ingest the dataset into DSP via scloud command `cat attack_data.json | scloud ingest post-events --format JSON
-3. Build a pipeline that reads from the firehose and you should see the events.
-
 # Contribute Datasets 🥰
 
 1. Generate a dataset
@@ -162,7 +154,7 @@ This project takes advantage of automation to generate datasets using the attack
 
 ## License
 
-Copyright 2023 Splunk Inc.
+Copyright 2025 Splunk Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
