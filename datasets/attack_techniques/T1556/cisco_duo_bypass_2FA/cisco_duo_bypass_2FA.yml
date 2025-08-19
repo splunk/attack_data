@@ -1,11 +1,13 @@
 author: Patrick Bareiss
 id: 27cc5ad7-1afd-4409-863e-9fac6f4cf941
 date: '2025-07-08'
-description: 'Changed the setting for a user to allow them to bypass 2FA in Duo.'
-environment: Cisco Duo Tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/cisco_duo_bypass_2FA/cisco_duo_activity.json
-sourcetypes:
-- cisco:duo:activity
-references:
-- https://attack.mitre.org/techniques/T1556/ 
+description: Changed the setting for a user to allow them to bypass 2FA in Duo.
+environment: attack_range
+directory: cisco_duo_bypass_2FA
+mitre_technique:
+- T1556
+datasets:
+- name: cisco_duo_activity-json
+  path: /datasets/attack_techniques/T1556/cisco_duo_bypass_2FA/cisco_duo_activity.json
+  sourcetype: cisco:duo:administrator
+  source: duo

@@ -1,14 +1,15 @@
 author: Bhavin Patel
 id: 6ab28666-327b-4c39-8b30-b717b04763ec
 date: '2024-11-19'
-description: 'Manually generated multple MFA requests for a user in Okta.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Okta Tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/okta_mismatch/okta_mismatch.log
-sourcetypes:
-- OktaIM2:log
-references:
-- https://attack.mitre.org/techniques/T1621/ 
-- https://attack.mitre.org/techniques/T1078/004/
-- https://research.splunk.com/application/8085b79b-9b85-4e67-ad63-351c9e9a5e9a/
+description: Manually generated multple MFA requests for a user in Okta. Tenant specific
+  details have been replaced in the dataset including tenant id, user names, ips,
+  etc.
+environment: attack_range
+directory: okta_mismatch
+mitre_technique:
+- T1621
+datasets:
+- name: okta_mismatch
+  path: /datasets/attack_techniques/T1621/okta_mismatch/okta_mismatch.log
+  sourcetype: OktaIM2:log
+  source: Okta

@@ -1,9 +1,14 @@
 author: Teoderick Contreras
 id: 37c6214c-3b6d-44a8-b3d6-8cb45283ecc9
 date: '2021-08-19'
-description: 'Simulated test Gsuite Datasets for email having suspicious file extension attachment'
+description: Simulated test Gsuite Datasets for email having suspicious file extension
+  attachment
 environment: attack_range
-dataset: 
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.001/gsuite_susp_attachment_ext/gsuite_gmail_file_ext.log
-sourcetypes:
-- gsuite:gmail:bigquery
+directory: gsuite_susp_attachment_ext
+mitre_technique:
+- T1566.001
+datasets:
+- name: gsuite_gmail_file_ext
+  path: /datasets/attack_techniques/T1566.001/gsuite_susp_attachment_ext/gsuite_gmail_file_ext.log
+  sourcetype: gsuite:gmail:bigquery
+  source: http:gsuite

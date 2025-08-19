@@ -1,0 +1,14 @@
+author: Mauricio Velazco
+id: 1842051e-6efb-4fd8-8d5d-e82e14e6f493
+date: '2021-11-12'
+description: Manually using the at.exe binary to create and start a Scheduled Task
+  on a remote endpoint for lateral movement and remote code execution.
+environment: attack_range
+directory: lateral_movement
+mitre_technique:
+- T1053.002
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1053.002/lateral_movement/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

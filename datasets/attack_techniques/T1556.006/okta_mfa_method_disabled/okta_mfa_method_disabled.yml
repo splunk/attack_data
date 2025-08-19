@@ -2,12 +2,12 @@ author: Mauricio Velazco
 id: b582f8e4-283c-4b96-b64d-7723c540ff5e
 date: '2024-03-11'
 description: Using the Okta admin portal, disabled MFA for a user.
-environment: Okta tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556.006/okta_mfa_method_disabled/okta_mfa_method_disabled.log
-sourcetypes:
-- OktaIM2:log
-references:
-- https://attack.mitre.org/techniques/T1556/
-- https://attack.mitre.org/techniques/T1556/006/
-- https://attack.mitre.org/tactics/TA0005/
+environment: attack_range
+directory: okta_mfa_method_disabled
+mitre_technique:
+- T1556.006
+datasets:
+- name: okta_mfa_method_disabled
+  path: /datasets/attack_techniques/T1556.006/okta_mfa_method_disabled/okta_mfa_method_disabled.log
+  sourcetype: OktaIM2:log
+  source: Okta

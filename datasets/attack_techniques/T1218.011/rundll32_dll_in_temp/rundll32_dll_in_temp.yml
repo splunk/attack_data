@@ -3,9 +3,11 @@ id: 76f9a94c-6c63-11f0-89ae-629be3538068
 date: '2025-07-29'
 description: Generated datasets for rundll32 dll in temp in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.011/rundll32_dll_in_temp/rundll32_tmp.log
-sourcetypes:
-- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
-references:
-- https://blog.sekoia.io/interlock-ransomware-evolving-under-the-radar/
+directory: rundll32_dll_in_temp
+mitre_technique:
+- T1218.011
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1218.011/rundll32_dll_in_temp/rundll32_tmp.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

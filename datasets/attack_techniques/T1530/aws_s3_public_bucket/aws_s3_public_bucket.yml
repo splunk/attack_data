@@ -4,9 +4,11 @@ date: '2021-01-12'
 description: Dataset which contains cloudtrail logs and the creation of a public S3
   bucket.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1530/aws_s3_public_bucket/aws_cloudtrail_events.json
-sourcetypes:
-- aws:cloudtrail
-references:
-- https://attack.mitre.org/techniques/T1530
+directory: aws_s3_public_bucket
+mitre_technique:
+- T1530
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1530/aws_s3_public_bucket/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

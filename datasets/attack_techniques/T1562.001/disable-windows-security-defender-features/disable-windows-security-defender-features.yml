@@ -3,10 +3,12 @@ id: b8954128-7be5-4e5a-94eb-66632e6c468c
 date: '2024-01-08'
 description: Generated datasets for disable-windows-security-defender-features in
   attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/disable-windows-security-defender-features/windefender-bypas-2-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://github.com/undergroundwires/privacy.sexy
+environment: attack_range
+directory: disable-windows-security-defender-features
+mitre_technique:
+- T1562.001
+datasets:
+- name: windefender-bypas-2-sysmon
+  path: /datasets/attack_techniques/T1562.001/disable-windows-security-defender-features/windefender-bypas-2-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,17 @@
+author: Michael Haag
+id: cc9b25f1-efc1-12eb-926b-550bf0943fbb
+date: '2022-04-04'
+description: Interesting drivers loading on Windows.
+environment: attack_range
+directory: T1014
+mitre_technique:
+- T1014
+datasets:
+- name: windows-system
+  path: /datasets/attack_techniques/T1014/windows-system.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:System
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1014/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

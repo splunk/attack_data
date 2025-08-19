@@ -1,14 +1,14 @@
 author: Bhavin Patel
 id: 1c9b1174-efc9-11eb-111b-550bf0943fbb
 date: '2022-10-03'
-description: This dataset contains an cloudtrail events of disabling and deactivating MFA challenge.
-environment: NA
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/aws_mfa_disabled/cloudtrail.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/aws_mfa_disabled/amazon_security_lake.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/aws_mfa_disabled/asl_ocsf_cloudtrail.json
-sourcetypes:
-- aws:cloudtrail
-- aws:asl
-references:
-- https://attack.mitre.org/techniques/T1621
+description: This dataset contains an cloudtrail events of disabling and deactivating
+  MFA challenge.
+environment: attack_range
+directory: aws_mfa_disabled
+mitre_technique:
+- T1621
+datasets:
+- name: asl_ocsf_cloudtrail-json
+  path: /datasets/attack_techniques/T1621/aws_mfa_disabled/asl_ocsf_cloudtrail.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl

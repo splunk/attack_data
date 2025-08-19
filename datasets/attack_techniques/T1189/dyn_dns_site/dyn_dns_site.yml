@@ -3,9 +3,11 @@ id: cc9b266c-efc9-11eb-926b-550bf0943fbb
 date: '2021-01-14'
 description: Manual generation of attack data by browsing to dyndns site of Windows.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1189/dyn_dns_site/windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1189
+directory: dyn_dns_site
+mitre_technique:
+- T1189
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1189/dyn_dns_site/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

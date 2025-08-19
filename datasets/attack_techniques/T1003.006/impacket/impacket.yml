@@ -1,0 +1,14 @@
+author: Dean Luxton
+id: 3529f540-4c07-44f5-8e9c-940ebf3af41a
+date: '2022-07-20'
+description: Manual execution of secretsdump.py to perform a DCSync attack using a
+  domain administrator account & also DC's computer account.
+environment: attack_range
+directory: impacket
+mitre_technique:
+- T1003.006
+datasets:
+- name: windows-security-xml
+  path: /datasets/attack_techniques/T1003.006/impacket/windows-security-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

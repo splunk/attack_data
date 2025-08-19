@@ -2,10 +2,12 @@ author: Teoderick Contreras, Splunk
 id: e44d12fd-c4ff-4d10-846b-23cb9b8cdffb
 date: '2023-01-24'
 description: Generated datasets for onenote spear phishing in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.001/onenote_spear_phishing/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://malpedia.caad.fkie.fraunhofer.de/details/win.asyncrat
+environment: attack_range
+directory: onenote_spear_phishing
+mitre_technique:
+- T1566.001
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1566.001/onenote_spear_phishing/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

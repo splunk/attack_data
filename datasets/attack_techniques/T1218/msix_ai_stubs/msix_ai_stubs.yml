@@ -1,0 +1,13 @@
+author: Michael Haag
+id: 2ab56d32-5936-40cb-8903-eab35d4fa4c8
+date: '2023-05-15'
+description: MSIX AI_STUBS execution detection for malicious installer packages
+environment: attack_range
+directory: msix_ai_stubs
+mitre_technique:
+- T1218
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1218/msix_ai_stubs/windows_sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

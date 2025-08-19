@@ -1,14 +1,13 @@
 author: Automated Attack Data Service
 id: b3252a4d-449e-42cd-be46-bec739d77c4c
 date: '2023-05-03'
-description: 'Attack data for bootkits'
+description: Attack data for bootkits
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1542.003/bootkits/network-winlogon-windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:System
-- WinEventLog:Security
-references:
-- https://www.microsoft.com/en-us/security/blog/2023/04/11/guidance-for-investigating-attacks-using-cve-2022-21894-the-blacklotus-campaign/
+directory: bootkits
+mitre_technique:
+- T1542.003
+datasets:
+- name: network-winlogon-windows-sysmon
+  path: /datasets/attack_techniques/T1542.003/bootkits/network-winlogon-windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

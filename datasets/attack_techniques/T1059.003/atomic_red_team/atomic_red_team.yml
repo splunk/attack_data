@@ -3,11 +3,11 @@ id: cc9b25f9-efc9-11eb-926b-550bf09d3fbd
 date: '2024-02-04'
 description: Atomic Red Team T1059.003
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/atomic_red_team/sqlcmd_windows_sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/atomic_red_team/invokesqlcmd_powershell.log
-sourcetypes:
-- XmlWinEventLog
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-references:
-- https://attack.mitre.org/techniques/T1059/003/
+directory: atomic_red_team
+mitre_technique:
+- T1059.003
+datasets:
+- name: sqlcmd_windows_sysmon
+  path: /datasets/attack_techniques/T1059.003/atomic_red_team/sqlcmd_windows_sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

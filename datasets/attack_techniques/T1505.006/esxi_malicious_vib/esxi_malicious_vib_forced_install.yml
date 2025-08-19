@@ -3,9 +3,11 @@ id: 61568617-ad53-4998-b9aa-88d4114f5330
 date: '2025-07-08'
 description: 'Sample of ESXi syslog events showing attempted forced installation of malicious VIBs'
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.006/esxi_malicious_vib/esxi_malicious_vib_forced_install.yml
-sourcetypes:
-- vmw-syslog
-references:
-- https://attack.mitre.org/techniques/T1505/006
+directory: esxi_malicious_vib_forced_install
+mitre_technique:
+- T1505.006
+datasets:
+- name: vmw-syslog
+  path: /datasets/attack_techniques/T1505.006/esxi_malicious_vib/esxi_malicious_vib_forced_install.log
+  sourcetype: vmw-syslog
+  source: vmw-syslog

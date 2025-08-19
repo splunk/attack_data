@@ -1,9 +1,13 @@
 author: Teoderick Contreras
 id: 0ea6dc4a-b26d-4706-8c10-5d6fd485ba3a
 date: '2021-08-23'
-description: 'Simulated test Gsuite Datasets for email having suspicious link'
+description: Simulated test Gsuite Datasets for email having suspicious link
 environment: attack_range
-dataset: 
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566.001/gsuite_susp_url/gsuite_susp_url.log
-sourcetypes:
-- gsuite:gmail:bigquery
+directory: gsuite_susp_url
+mitre_technique:
+- T1566.001
+datasets:
+- name: gsuite_susp_url
+  path: /datasets/attack_techniques/T1566.001/gsuite_susp_url/gsuite_susp_url.log
+  sourcetype: gsuite:gmail:bigquery
+  source: http:gsuite

@@ -1,0 +1,14 @@
+author: Patrick Bareiss
+id: cc9b265f-efc9-11eb-926b-550bf0943fbb
+date: '2020-12-07'
+description: Manual generation of schtask registering a binary to run from non-standard
+  paths.
+environment: attack_range
+directory: schtasks
+mitre_technique:
+- T1053.005
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1053.005/schtasks/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

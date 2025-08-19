@@ -3,9 +3,11 @@ id: 5612e69e-c536-11ec-b3df-acde48001122
 date: '2022-04-26'
 description: Generated datasets for linux service stop disable in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1489/linux_service_stop_disable/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/
+directory: linux_service_stop_disable
+mitre_technique:
+- T1489
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1489/linux_service_stop_disable/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

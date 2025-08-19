@@ -1,14 +1,14 @@
 author: Steven Dick
 id: 0fe95fd6-68cf-41de-9e05-26547ce1e08a
 date: '2023-11-20'
-description: 'Detection of common User Account Control bypass techniques, generated using Atomic Tests for T1548.002'
+description: Detection of common User Account Control bypass techniques, generated
+  using Atomic Tests for T1548.002
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.002/uac_behavior/uac_behavior_sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1548/002/
-- https://atomicredteam.io/defense-evasion/T1548.002/
-- https://hadess.io/user-account-control-uncontrol-mastering-the-art-of-bypassing-windows-uac/
-- https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/
+directory: uac_behavior
+mitre_technique:
+- T1548.002
+datasets:
+- name: uac_behavior_sysmon
+  path: /datasets/attack_techniques/T1548.002/uac_behavior/uac_behavior_sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

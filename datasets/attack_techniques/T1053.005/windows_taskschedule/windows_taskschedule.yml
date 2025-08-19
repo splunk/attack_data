@@ -1,0 +1,13 @@
+author: Michael Haag, Splunk
+id: cc9b2660-efc9-11eb-926b-550bf0943f23
+date: '2021-10-21'
+description: Scheduled Tasks logs captured from Microsoft-Windows-TaskScheduler/Operational.
+environment: attack_range
+directory: windows_taskschedule
+mitre_technique:
+- T1053.005
+datasets:
+- name: windows-taskschedule_xml
+  path: /datasets/attack_techniques/T1053.005/windows_taskschedule/windows-taskschedule_xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-TaskScheduler

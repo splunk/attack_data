@@ -1,11 +1,17 @@
-author: Bhavin Patel 
+author: Bhavin Patel
 id: cc9b2602-efc9-11eb-926b-5511f09431bb
 date: '2023-03-31'
-description: Adversaries made suspicious AWS AMI attribute modifications, such as sharing it with another AWS account or making the full AMI image public. Adversaries are known to abuse these APIs to exfiltrate sensitive organization information stored in the AWS Resources, there by its very important to monitor these seemingly benign API activity in Cloudtrail logs.
+description: Adversaries made suspicious AWS AMI attribute modifications, such as
+  sharing it with another AWS account or making the full AMI image public. Adversaries
+  are known to abuse these APIs to exfiltrate sensitive organization information stored
+  in the AWS Resources, there by its very important to monitor these seemingly benign
+  API activity in Cloudtrail logs.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1537/aws_ami_shared_public/aws_cloudtrail_events.json
-sourcetypes:
-- aws:cloudtrail
-references:
-- https://attack.mitre.org/techniques/T1537/
+directory: aws_ami_shared_public
+mitre_technique:
+- T1537
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1537/aws_ami_shared_public/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

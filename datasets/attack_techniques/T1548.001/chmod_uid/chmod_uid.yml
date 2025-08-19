@@ -3,9 +3,11 @@ id: 3cda83cc-6261-11ec-b4f9-acde48001122
 date: '2021-12-21'
 description: Generated datasets for chmod uid in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.001/chmod_uid/sysmon_linux.log
-sourcetypes:
-- Syslog:Linux-Sysmon/Operational
-references:
-- https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/
+directory: chmod_uid
+mitre_technique:
+- T1548.001
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.001/chmod_uid/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

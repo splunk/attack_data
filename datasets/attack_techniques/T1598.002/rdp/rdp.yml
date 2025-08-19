@@ -3,9 +3,11 @@ id: 119b260b-efc9-11eb-926b-550bf3943f2b
 date: '2024-11-25'
 description: This dataset contains RDP file execution events from Windows Sysmon logs.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1598.002/rdp/mstsc_rdpfile-windows-sysmon.log
-sourcetypes:
-- xmlwineventlog
-references:
-- https://attack.mitre.org/techniques/T1598/002
+directory: rdp
+mitre_technique:
+- T1598.002
+datasets:
+- name: mstsc_rdpfile-windows-sysmon
+  path: /datasets/attack_techniques/T1598.002/rdp/mstsc_rdpfile-windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

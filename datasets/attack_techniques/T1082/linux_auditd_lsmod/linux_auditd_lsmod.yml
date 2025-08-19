@@ -3,9 +3,11 @@ id: f0ce5c20-5645-11ef-b567-acde48001122
 date: '2024-08-09'
 description: Generated datasets for linux auditd lsmod in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1082/linux_auditd_lsmod/linux_auditd_lsmod.log
-sourcetypes:
-- 'linux:audit'
-references:
-- https://man7.org/linux/man-pages/man8/kmod.8.html
+directory: linux_auditd_lsmod
+mitre_technique:
+- T1082
+datasets:
+- name: linux_auditd_lsmod
+  path: /datasets/attack_techniques/T1082/linux_auditd_lsmod/linux_auditd_lsmod.log
+  sourcetype: auditd
+  source: auditd

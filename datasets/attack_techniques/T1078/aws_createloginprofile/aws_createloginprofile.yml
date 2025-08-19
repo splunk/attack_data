@@ -1,13 +1,16 @@
 author: Bhavin Patel
+id: 96c87adb-e09f-404c-8586-3132a9c2f949
 date: '2021-02-22'
-description: This dataset has CloudTrail events where a user A(victim A) creates a login profile for user B, followed by a AWS Console login event from user B from the same src_ip as user B. This correlated event can be indicative of privilege escalation since both events happened from the same src_ip
-environment: Cloud Attack Range 
-technique:
+description: This dataset has CloudTrail events where a user A(victim A) creates a
+  login profile for user B, followed by a AWS Console login event from user B from
+  the same src_ip as user B. This correlated event can be indicative of privilege
+  escalation since both events happened from the same src_ip
+environment: attack_range
+directory: aws_createloginprofile
+mitre_technique:
 - T1078
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/aws_createloginprofile/aws_cloudtrail_events.json
-references:
-- https://labs.bishopfox.com/tech-blog/privilege-escalation-in-aws
-- https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/
-sourcetypes:
-- aws:cloudtrail
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1078/aws_createloginprofile/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

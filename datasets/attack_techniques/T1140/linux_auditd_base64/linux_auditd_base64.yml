@@ -3,9 +3,15 @@ id: d027d710-ef80-11ef-b72e-629be3538068
 date: '2025-02-20'
 description: Generated datasets for linux auditd base64 in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1140/linux_auditd_base64/auditd_execve_base64.log
-sourcetypes:
-- 'auditd'
-references:
-- https://gtfobins.github.io/gtfobins/dd/
+directory: linux_auditd_base64
+mitre_technique:
+- T1140
+datasets:
+- name: auditd_execve_base64
+  path: /datasets/attack_techniques/T1140/linux_auditd_base64/auditd_execve_base64.log
+  sourcetype: auditd
+  source: auditd
+- name: linux_auditd_base64
+  path: /datasets/attack_techniques/T1140/linux_auditd_base64/linux_auditd_base64.log
+  sourcetype: auditd
+  source: auditd

@@ -3,9 +3,15 @@ id: f27b4edc-ef80-11ef-b72e-629be3538068
 date: '2025-02-20'
 description: Generated datasets for linux auditd chown root in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.002/linux_auditd_chown_root/auditd_proctitle_chown_root.log
-sourcetypes:
-- 'auditd'
-references:
-- https://askubuntu.com/questions/617850/changing-from-user-to-superuser
+directory: linux_auditd_chown_root
+mitre_technique:
+- T1053.002
+datasets:
+- name: linux_auditd_chown_root
+  path: /datasets/attack_techniques/T1053.002/linux_auditd_chown_root/linux_auditd_chown_root.log
+  sourcetype: auditd
+  source: auditd
+- name: auditd_proctitle_chown_root
+  path: /datasets/attack_techniques/T1053.002/linux_auditd_chown_root/auditd_proctitle_chown_root.log
+  sourcetype: auditd
+  source: auditd

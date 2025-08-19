@@ -15,17 +15,15 @@ description: ' Invoked AtomicTestHarnesses executing T1218.005 manually and via 
   Engine with Inline Protocol Handler Successful Execution of test T1218.005-9 Invoke
   HTML Application - Simulate Lateral Movement over UNC Path '
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.005/atomic_red_team/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.005/atomic_red_team/windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.005/atomic_red_team/windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.005/atomic_red_team/mshta_tasks_windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218.005/atomic_red_team/windows-system.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-- WinEventLog:System
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1218/005
-- https://github.com/redcanaryco/atomic-red-team/blob/c8f43265c78d826080f62d8a8dfc4d6874f563e8/atomics/T1218.005/T1218.005.md
+directory: atomic_red_team
+mitre_technique:
+- T1218.005
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1218.005/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: mshta_tasks_windows-sysmon
+  path: /datasets/attack_techniques/T1218.005/atomic_red_team/mshta_tasks_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

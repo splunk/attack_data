@@ -1,0 +1,21 @@
+author: Michael Haag
+id: be2df144-7e69-464c-9c11-534c86aa9e1e
+date: '2022-03-30'
+description: 3CX software running in range
+environment: attack_range
+directory: 3CX
+mitre_technique:
+- T1195.002
+datasets:
+- name: 3cx_network-windows-sysmon
+  path: /datasets/attack_techniques/T1195.002/3CX/3cx_network-windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 3cx_4688_windows-security
+  path: /datasets/attack_techniques/T1195.002/3CX/3cx_4688_windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: 3cx_windows-sysmon
+  path: /datasets/attack_techniques/T1195.002/3CX/3cx_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

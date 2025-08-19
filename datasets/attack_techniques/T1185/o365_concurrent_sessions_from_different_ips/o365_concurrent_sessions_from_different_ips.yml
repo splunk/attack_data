@@ -1,14 +1,16 @@
 author: Mauricio Velazco
 id: 892ce442-f2e8-4e4c-894e-cb068ffe1fee
 date: '2023-12-04'
-description: 'Used Evilnginx3 to phish an O365 user and steal session cookies. Then, imported the stolen session cookies into a different browser to access M365 resources from a different location and source ip. 
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: O365
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1185/o365_concurrent_sessions_from_different_ips/o365_concurrent_sessions_from_different_ips.log
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1185/
-- https://github.com/kgretzky/evilginx2
-- https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens/
+description: Used Evilnginx3 to phish an O365 user and steal session cookies. Then,
+  imported the stolen session cookies into a different browser to access M365 resources
+  from a different location and source ip. Tenant specific details have been replaced
+  in the dataset including tenant id, user names, ips, etc.
+environment: attack_range
+directory: o365_concurrent_sessions_from_different_ips
+mitre_technique:
+- T1185
+datasets:
+- name: o365_concurrent_sessions_from_different_ips
+  path: /datasets/attack_techniques/T1185/o365_concurrent_sessions_from_different_ips/o365_concurrent_sessions_from_different_ips.log
+  sourcetype: o365:management:activity
+  source: o365

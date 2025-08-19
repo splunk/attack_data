@@ -2,18 +2,12 @@ author: Stanislav Miskovic
 id: cc9b25ec-efc9-11eb-926b-550bf0943fbb
 date: '2021-02-23'
 description: Account manipulation with likely malicious intent or tools.
-environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllDSInternalsModules.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllMimikatzModules.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/logAllPowerSploitModulesWithOldNames.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/aws_iam_delete_policy/aws_iam_delete_policy.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/aws_iam_failure_group_deletion/aws_iam_failure_group_deletion.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/aws_iam_successful_group_deletion/aws_iam_successful_group_deletion.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/account_manipulation/xml-windows-security.log
-sourcetypes:
-- WinEventLog:Security
-- aws:cloudtrail
-- XmlWinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1098/
+environment: attack_range
+directory: account_manipulation
+mitre_technique:
+- T1098
+datasets:
+- name: xml-windows-security
+  path: /datasets/attack_techniques/T1098/account_manipulation/xml-windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

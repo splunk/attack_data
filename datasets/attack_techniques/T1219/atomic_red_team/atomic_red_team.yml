@@ -1,12 +1,13 @@
 author: Michael Haag
-id: mh9b260e-efc9-11eb-926b-660bf0943cac
+id: 0ae53442-9f79-4e35-a58f-00d2316e23d5
 date: '2022-08-22'
-description: 'Atomic Red Team tests simulating remote access software installation.'
+description: Atomic Red Team tests simulating remote access software installation.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1219/atomic_red_team/windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1219
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1219/T1219.md
+directory: atomic_red_team
+mitre_technique:
+- T1219
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1219/atomic_red_team/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

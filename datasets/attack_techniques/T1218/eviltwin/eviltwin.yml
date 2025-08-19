@@ -1,11 +1,13 @@
 author: Michael Haag
-id: k22b2623-abd5-11eb-926b-120zf0943f11
+id: cfd5079f-a845-4a22-8ccd-b10d4c2aca90
 date: '2024-04-17'
 description: Events related to Evil Twin msc.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1218/eviltwin/windows-sysmon.log
-sourcetypes:
-- WinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://attack.mitre.org/techniques/T1218
+directory: eviltwin
+mitre_technique:
+- T1218
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1218/eviltwin/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

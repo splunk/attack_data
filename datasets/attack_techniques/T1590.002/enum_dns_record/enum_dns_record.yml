@@ -2,10 +2,12 @@ author: Teoderick Contreras, Splunk
 id: ed9a4df5-515e-49f3-9068-23b87f389fe9
 date: '2023-04-11'
 description: Generated datasets for enum dns record in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1590.002/enum_dns_record/sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://cert.gov.ua/article/3718487
+environment: attack_range
+directory: enum_dns_record
+mitre_technique:
+- T1590.002
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1590.002/enum_dns_record/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

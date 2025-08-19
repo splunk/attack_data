@@ -2,11 +2,12 @@ author: Michael Haag, Teoderick Contreras, Splunk
 id: cd06d28d-f107-434f-ba16-c7e0729aaa19
 date: '2023-12-18'
 description: Generated datasets for loaded modules in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.002/wineloader/sqlwriter_sqldumper_sideload_windows-sysmon.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-references:
-- https://www.mandiant.com/resources/blog/apt29-wineloader-german-political-parties
-- https://www.zscaler.com/blogs/security-research/european-diplomats-targeted-spikedwine-wineloader
+environment: attack_range
+directory: wineloader
+mitre_technique:
+- T1574.002
+datasets:
+- name: sqlwriter_sqldumper_sideload_windows-sysmon
+  path: /datasets/attack_techniques/T1574.002/wineloader/sqlwriter_sqldumper_sideload_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

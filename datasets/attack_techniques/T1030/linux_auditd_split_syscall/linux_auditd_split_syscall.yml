@@ -3,9 +3,11 @@ id: c6be94ea-5e01-11ef-b158-acde48001122
 date: '2024-08-19'
 description: Generated datasets for linux auditd split syscall in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1030/linux_auditd_split_syscall/linux_auditd_split_syscall.log
-sourcetypes:
-- 'linux:audit'
-references:
-- https://www.splunk.com/en_us/blog/security/deep-dive-on-persistence-privilege-escalation-technique-and-detection-in-linux-platform.html
+directory: linux_auditd_split_syscall
+mitre_technique:
+- T1030
+datasets:
+- name: linux_auditd_split_syscall
+  path: /datasets/attack_techniques/T1030/linux_auditd_split_syscall/linux_auditd_split_syscall.log
+  sourcetype: auditd
+  source: auditd

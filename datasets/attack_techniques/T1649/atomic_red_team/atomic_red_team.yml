@@ -1,26 +1,46 @@
 author: Michael Haag
 id: 43136df7-63f7-46d5-97af-a18d2a5f9e74
 date: '2023-02-01'
-description: Generation of Atomic Red Team techniques that create and export a certificate on Windows, simulating an adversary stealing certificates.
+description: Generation of Atomic Red Team techniques that create and export a certificate
+  on Windows, simulating an adversary stealing certificates.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/certificateservices-lifecycle.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/4104_export_pfxcertificate.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/4104_export_certificate.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/export_certificate_windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/export_pfxcertificate_windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/4886_windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/4887_windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/4876_windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/backupdb_certutil_windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/4688_certutil_backupdb-windows-security.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/capi2-operational.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/certwrite_windows-sysmon.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/risk_certificate_services.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/4104_export_pfx-windows-powershell.log
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- XmlWinEventLog
-- XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
-references:
-- https://attack.mitre.org/techniques/T1649
+directory: atomic_red_team
+mitre_technique:
+- T1649
+datasets:
+- name: export_certificate_windows-sysmon
+  path: /datasets/attack_techniques/T1649/atomic_red_team/export_certificate_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: certwrite_windows-sysmon
+  path: /datasets/attack_techniques/T1649/atomic_red_team/certwrite_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 4876_windows-security
+  path: /datasets/attack_techniques/T1649/atomic_red_team/4876_windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: export_pfxcertificate_windows-sysmon
+  path: /datasets/attack_techniques/T1649/atomic_red_team/export_pfxcertificate_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 4104_export_pfx-windows-powershell
+  path: /datasets/attack_techniques/T1649/atomic_red_team/4104_export_pfx-windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: backupdb_certutil_windows-sysmon
+  path: /datasets/attack_techniques/T1649/atomic_red_team/backupdb_certutil_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 4887_windows-security
+  path: /datasets/attack_techniques/T1649/atomic_red_team/4887_windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: 4886_windows-security
+  path: /datasets/attack_techniques/T1649/atomic_red_team/4886_windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: 4688_certutil_backupdb-windows-security
+  path: /datasets/attack_techniques/T1649/atomic_red_team/4688_certutil_backupdb-windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

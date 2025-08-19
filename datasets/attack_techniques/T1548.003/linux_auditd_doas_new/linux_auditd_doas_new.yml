@@ -3,9 +3,11 @@ id: d79ea71c-1aaf-11f0-a1c6-629be3538069
 date: '2025-04-16'
 description: Generated datasets for linux auditd doas new in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548.003/linux_auditd_doas_new/linux_auditd_new_doas.log
-sourcetypes:
-- 'auditd'
-references:
-- https://www.makeuseof.com/how-to-install-and-use-doas/
+directory: linux_auditd_doas_new
+mitre_technique:
+- T1548.003
+datasets:
+- name: linux_auditd_new_doas
+  path: /datasets/attack_techniques/T1548.003/linux_auditd_doas_new/linux_auditd_new_doas.log
+  sourcetype: auditd
+  source: auditd

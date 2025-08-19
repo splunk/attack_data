@@ -2,10 +2,16 @@ author: Teoderick Contreras, Splunk
 id: fe9d47bb-2da6-41d0-b8ac-ed38f3a08f71
 date: '2023-05-23'
 description: Generated datasets for net share discovery via dir in attack range.
-environment: attackrange
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1135/net_share_discovery_via_dir/smbaccess-5140-security-xml2.log
-sourcetypes:
-- XmlWinEventLog:Security
-references:
-- https://thedfirreport.com/2023/05/22/icedid-macro-ends-in-nokoyawa-ransomware/
+environment: attack_range
+directory: net_share_discovery_via_dir
+mitre_technique:
+- T1135
+datasets:
+- name: smb_access_security_xml
+  path: /datasets/attack_techniques/T1135/net_share_discovery_via_dir/smb_access_security_xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Auditing
+- name: smbaccess-5140-security-xml2
+  path: /datasets/attack_techniques/T1135/net_share_discovery_via_dir/smbaccess-5140-security-xml2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Auditing

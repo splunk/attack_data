@@ -2,11 +2,12 @@ author: Mauricio Velazco
 id: b6b3a10d-c90b-4b2c-9c6b-e200d16f266f
 date: '2023-04-26'
 description: Manually assigned and activated an Azure AD PIM role
-environment: Azure AD tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098.003/azure_ad_pim_role_activated/azure-audit.log
-sourcetypes:
-- mscs:azure:eventhub
-references:
-- https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure
-- https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-how-to-activate-role
+environment: attack_range
+directory: azure_ad_pim_role_activated
+mitre_technique:
+- T1098.003
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1098.003/azure_ad_pim_role_activated/azure-audit.log
+  sourcetype: azure:monitor:aad
+  source: azure

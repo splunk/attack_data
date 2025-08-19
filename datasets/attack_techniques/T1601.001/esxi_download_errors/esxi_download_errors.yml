@@ -3,9 +3,11 @@ id: 39edc074-9898-4de9-8296-45c51b7e18dd
 date: '2025-07-08'
 description: 'Sample of ESXi syslog events showing failed attempts to install malicious VIBs.'
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1601.001/esxi_download_errors/esxi_download_errors.log
-sourcetypes:
-- vmw-syslog
-references:
-- https://attack.mitre.org/techniques/T1601/001
+directory: esxi_download_errors
+mitre_technique:
+- T1601.001
+datasets:
+- name: vmw-syslog
+  path: /datasets/attack_techniques/T1601.001/esxi_download_errors/esxi_download_errors.log
+  sourcetype: vmw-syslog
+  source: vmw-syslog

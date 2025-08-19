@@ -1,11 +1,13 @@
 author: Patrick Bareiss
 id: 8e60394b-3334-484e-89e7-3cd9bbbac9fd
 date: '2024-01-29'
-description: 'Clear Windows Event Logs using wevtutil.exe'
+description: Clear Windows Event Logs using wevtutil.exe
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070/remove_windows_security_event_log/windows_security_xml.log
-sourcetypes:
-- XmlWinEventLog:Security
-references:
-- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1070/T1070.md
+directory: remove_windows_security_event_log
+mitre_technique:
+- T1070
+datasets:
+- name: windows_security_xml
+  path: /datasets/attack_techniques/T1070/remove_windows_security_event_log/windows_security_xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Eventlog

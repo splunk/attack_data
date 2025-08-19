@@ -3,9 +3,15 @@ id: 7146152c-ef94-11ef-b72e-629be3538068
 date: '2025-02-20'
 description: Generated datasets for linux auditd find document in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1083/linux_auditd_find_document/auditd_execve_file_dir_discovery.log
-sourcetypes:
-- 'auditd'
-references:
-- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+directory: linux_auditd_find_document
+mitre_technique:
+- T1083
+datasets:
+- name: auditd_execve_file_dir_discovery
+  path: /datasets/attack_techniques/T1083/linux_auditd_find_document/auditd_execve_file_dir_discovery.log
+  sourcetype: auditd
+  source: auditd
+- name: linux_auditd_find_document
+  path: /datasets/attack_techniques/T1083/linux_auditd_find_document/linux_auditd_find_document.log
+  sourcetype: auditd
+  source: auditd

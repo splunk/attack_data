@@ -3,9 +3,11 @@ id: 8c2fbcce-6d3b-11f0-86b8-629be3538068
 date: '2025-07-30'
 description: Generated datasets for terminal server reg deleted in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.004/terminal_server_reg_deleted/terminal_server_client_reg_deleted.log
-sourcetypes:
-- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
-references:
-- https://medium.com/@bonguides25/how-to-clear-rdp-connections-history-in-windows-cf0ffb67f344
+directory: terminal_server_reg_deleted
+mitre_technique:
+- T1070.004
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1070.004/terminal_server_reg_deleted/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

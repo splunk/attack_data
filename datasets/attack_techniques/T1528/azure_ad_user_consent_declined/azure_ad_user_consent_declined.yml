@@ -1,16 +1,14 @@
 author: Mauricio Velazco
 id: 2724e330-ee25-4644-8ea4-d7317f5bf8d6
 date: '2023-10-30'
-description: 'Used 365-stealer and a multi-tenant application registration to simulate a consent grant attack. Simulated a user denying consent.'
-environment:  Azure AD tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1528/azure_ad_user_consent_declined/azure_ad_user_consent_declined.log
-sourcetypes:
-- azure:monitor:aad
-references:
-- https://attack.mitre.org/techniques/T1528/
-- https://www.microsoft.com/en-us/security/blog/2022/09/22/malicious-oauth-applications-used-to-compromise-email-servers-and-spread-spam/
-- https://learn.microsoft.com/en-us/azure/active-directory/manage-apps/protect-against-consent-phishing
-- https://learn.microsoft.com/en-us/defender-cloud-apps/investigate-risky-oauth
-- https://www.alteredsecurity.com/post/introduction-to-365-stealer
-- https://github.com/AlteredSecurity/365-Stealer
+description: Used 365-stealer and a multi-tenant application registration to simulate
+  a consent grant attack. Simulated a user denying consent.
+environment: attack_range
+directory: azure_ad_user_consent_declined
+mitre_technique:
+- T1528
+datasets:
+- name: azure_ad_user_consent_declined
+  path: /datasets/attack_techniques/T1528/azure_ad_user_consent_declined/azure_ad_user_consent_declined.log
+  sourcetype: azure:monitor:aad
+  source: azure

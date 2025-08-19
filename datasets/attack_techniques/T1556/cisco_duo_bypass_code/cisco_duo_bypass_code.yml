@@ -1,11 +1,13 @@
 author: Patrick Bareiss
 id: 876dbd42-57bb-40dc-a61f-269b6b6f6a4a
 date: '2025-07-08'
-description: 'Generate a bypass code for a user in Duo.'
-environment: Cisco Duo Tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/cisco_duo_bypass_code/cisco_duo_activity.json
-sourcetypes:
-- cisco:duo:administrator
-references:
-- https://attack.mitre.org/techniques/T1556/ 
+description: Generate a bypass code for a user in Duo.
+environment: attack_range
+directory: cisco_duo_bypass_code
+mitre_technique:
+- T1556
+datasets:
+- name: cisco_duo_activity-json
+  path: /datasets/attack_techniques/T1556/cisco_duo_bypass_code/cisco_duo_activity.json
+  sourcetype: cisco:duo:administrator
+  source: duo

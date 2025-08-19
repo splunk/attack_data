@@ -1,0 +1,25 @@
+author: Michael Haag
+id: cc9b2609-1239-11eb-926b-550bf0943fbb
+date: '2025-02-05'
+description: Common SQL Server abuse simulation data
+environment: attack_range
+directory: simulation
+mitre_technique:
+- T1505.001
+datasets:
+- name: adhocdq_windows_application
+  path: /datasets/attack_techniques/T1505.001/simulation/adhocdq_windows_application.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:MSSQLSERVER
+- name: dllprocedureload_windows-application
+  path: /datasets/attack_techniques/T1505.001/simulation/dllprocedureload_windows-application.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:MSSQLSERVER
+- name: sqlservr-windows_sysmon
+  path: /datasets/attack_techniques/T1505.001/simulation/sqlservr-windows_sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-application
+  path: /datasets/attack_techniques/T1505.001/simulation/windows-application.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Security-SPP

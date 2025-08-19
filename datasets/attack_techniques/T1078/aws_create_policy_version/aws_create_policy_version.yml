@@ -3,12 +3,16 @@ id: cc9b2645-efc9-11eb-926b-550bf0943fbb
 date: '2021-02-22'
 description: This search looks for CloudTrail events where a user created a policy
   version that allows them to access any resource in their account
-environment: Cloud Attack Range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/aws_create_policy_version/aws_cloudtrail_events.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/aws_create_policy_version/asl_ocsf_cloudtrail.json
-sourcetypes:
-- aws:cloudtrail
-references:
-- https://labs.bishopfox.com/tech-blog/privilege-escalation-in-aws
-- https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/
+environment: attack_range
+directory: aws_create_policy_version
+mitre_technique:
+- T1078
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1078/aws_create_policy_version/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail
+- name: asl_ocsf_cloudtrail-json
+  path: /datasets/attack_techniques/T1078/aws_create_policy_version/asl_ocsf_cloudtrail.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl

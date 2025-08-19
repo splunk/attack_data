@@ -1,13 +1,15 @@
 author: Mauricio Velazco
 id: 0f9f0b2e-87d4-4a04-8cd0-9e2c6effcf65
 date: '2023-09-06'
-description: 'Manually added a new owner to an application registration on the Azure portal.
-  Tenant specific details have been replaced in the dataset including tenant id, user names, ips, etc.'
-environment: Offic3 365 tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1098/o365_add_app_registration_owner/o365_add_app_registration_owner.log
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1098/
-- https://learn.microsoft.com/en-us/azure/active-directory/manage-apps/overview-assign-app-owners
+description: Manually added a new owner to an application registration on the Azure
+  portal. Tenant specific details have been replaced in the dataset including tenant
+  id, user names, ips, etc.
+environment: attack_range
+directory: o365_add_app_registration_owner
+mitre_technique:
+- T1098
+datasets:
+- name: o365_add_app_registration_owner
+  path: /datasets/attack_techniques/T1098/o365_add_app_registration_owner/o365_add_app_registration_owner.log
+  sourcetype: o365:management:activity
+  source: o365

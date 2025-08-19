@@ -4,11 +4,11 @@ date: '2021-07-21'
 description: CVE-2021-36934 exploitation using PowerShell to copy the SAM, SYSTEM
   and SECURITY hives from a Volume Shadow Copy to a temp folder
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/serioussam/windows-powershell.log
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.002/serioussam/windows-security.log
-sourcetypes:
-- WinEventLog:Microsoft-Windows-PowerShell/Operational
-references:
-- https://attack.mitre.org/techniques/T1003/002/
-- https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36934
+directory: serioussam
+mitre_technique:
+- T1003.002
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1003.002/serioussam/windows-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

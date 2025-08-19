@@ -1,14 +1,18 @@
 author: Bhavin Patel, Splunk
 id: 31c58b11-66d9-4dfb-a614-3843d111e1c8
 date: '2022-07-19'
-description: Dataset which contains cloudtrail events with a deletes of AWS Services like CloudWatch, Guardduy, Web Application Firewalls.
+description: Dataset which contains cloudtrail events with a deletes of AWS Services
+  like CloudWatch, Guardduy, Web Application Firewalls.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/aws_delete_security_services/aws_cloudtrail_events.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/aws_delete_security_services/amazon_security_lake.json
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/aws_delete_security_services/asl_ocsf_cloudtrail.json
-sourcetypes:
-- aws:cloudtrail
-- aws:asl
-references:
-- https://attack.mitre.org/techniques/T1562/008/
+directory: aws_delete_security_services
+mitre_technique:
+- T1562.008
+datasets:
+- name: aws_cloudtrail_events-json
+  path: /datasets/attack_techniques/T1562.008/aws_delete_security_services/aws_cloudtrail_events.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail
+- name: asl_ocsf_cloudtrail-json
+  path: /datasets/attack_techniques/T1562.008/aws_delete_security_services/asl_ocsf_cloudtrail.json
+  sourcetype: aws:cloudtrail:lake
+  source: aws_asl

@@ -1,12 +1,14 @@
 author: Mauricio Velazco
 id: 70265c3b-8d9e-46b2-aaa4-2b0a42d4b4d1
 date: '2024-03-26'
-description: 'Created a forwarding rule programatically using msInvader which triggered an alert by Security & Compliance'
-environment: O365 tenant
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/o365_security_and_compliance_alert_triggered/o365_security_and_compliance_alert_triggered.log
-sourcetypes:
-- o365:management:activity
-references:
-- https://attack.mitre.org/techniques/T1078/004/
-- https://learn.microsoft.com/en-us/purview/alert-policies?view=o365-worldwide
+description: Created a forwarding rule programatically using msInvader which triggered
+  an alert by Security & Compliance
+environment: attack_range
+directory: o365_security_and_compliance_alert_triggered
+mitre_technique:
+- T1078.004
+datasets:
+- name: o365_security_and_compliance_alert_triggered
+  path: /datasets/attack_techniques/T1078.004/o365_security_and_compliance_alert_triggered/o365_security_and_compliance_alert_triggered.log
+  sourcetype: o365:management:activity
+  source: o365

@@ -1,0 +1,54 @@
+author: Michael Haag
+id: 22d2640d-cd56-4abd-8d76-13c881820615
+date: '2022-12-19'
+description: The following data was produced to emulate suspicious IIS Module activity
+  on Windows.
+environment: attack_range
+directory: T1505.004
+mitre_technique:
+- T1505.004
+datasets:
+- name: pwsh_installediismodules
+  path: /datasets/attack_techniques/T1505.004/pwsh_installediismodules.log
+  sourcetype: iis
+  source: iis
+- name: IIS-Configuration-Operational
+  path: /datasets/attack_techniques/T1505.004/IIS-Configuration-Operational.log
+  sourcetype: iis
+  source: iis
+- name: 4688_disable_http_logging-windows-security
+  path: /datasets/attack_techniques/T1505.004/4688_disable_http_logging-windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: appcmd_install-windows-sysmon
+  path: /datasets/attack_techniques/T1505.004/appcmd_install-windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 2282_windows-application
+  path: /datasets/attack_techniques/T1505.004/2282_windows-application.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-IIS-W3SVC-WP
+- name: 4104_disable_http_logging_windows-powershell
+  path: /datasets/attack_techniques/T1505.004/4104_disable_http_logging_windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: gacutil_windows-sysmon
+  path: /datasets/attack_techniques/T1505.004/gacutil_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 4104_windows-powershell
+  path: /datasets/attack_techniques/T1505.004/4104_windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: gacutil_4688_windows-security
+  path: /datasets/attack_techniques/T1505.004/gacutil_4688_windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: disable_http_logging_windows-sysmon
+  path: /datasets/attack_techniques/T1505.004/disable_http_logging_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: appcmd_4688-windows-security
+  path: /datasets/attack_techniques/T1505.004/appcmd_4688-windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

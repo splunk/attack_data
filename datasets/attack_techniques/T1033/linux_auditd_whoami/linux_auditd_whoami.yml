@@ -3,9 +3,11 @@ id: 77d03c0c-5e07-11ef-b158-acde48001122
 date: '2024-08-19'
 description: Generated datasets for linux auditd whoami in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1033/linux_auditd_whoami/linux_auditd_whoami.log
-sourcetypes:
-- 'linux:audit'
-references:
-- https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+directory: linux_auditd_whoami
+mitre_technique:
+- T1033
+datasets:
+- name: linux_auditd_whoami
+  path: /datasets/attack_techniques/T1033/linux_auditd_whoami/linux_auditd_whoami.log
+  sourcetype: auditd
+  source: auditd

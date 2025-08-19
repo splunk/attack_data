@@ -3,9 +3,11 @@ id: a61432b5-65c6-4509-b44a-3c176fa00d86
 date: '2025-07-09'
 description: 'Sample of ESXi syslog events showing root logins from multple locations in quick succession.'
 environment: custom
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078/esxi_stolen_root_account/esxi_stolen_root_account.log
-sourcetypes:
-- vmw-syslog
-references:
-- https://attack.mitre.org/techniques/T1078
+directory: esxi_stolen_root_account
+mitre_technique:
+- T1078
+datasets:
+- name: vmw-syslog
+  path: /datasets/attack_techniques/T1078/esxi_stolen_root_account/esxi_stolen_root_account.log
+  sourcetype: vmw-syslog
+  source: vmw-syslog
