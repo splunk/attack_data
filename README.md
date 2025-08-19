@@ -45,23 +45,7 @@ git lfs pull --include=datasets/attack_techniques/T1003.001/atomic_red_team/wind
 
 # Anatomy of a Dataset 🧬
 ### Datasets
-Datasets are defined by a common YML structure. The structure has the following fields:
-
-|field| description|
-|---|---|
-| id | UUID of dataset |
-|name  | name of author  |
-| date  | last modified date  |
-| dataset  | array of URLs where the hosted version of the dataset is located  |
-| description | describes the dataset as detailed as possible |
-| environment |  markdown filename of the environment description see below |
-| technique | array of MITRE ATT&CK techniques associated with dataset |
-| references | array of URLs that reference the dataset |
-| sourcetypes | array of sourcetypes that are contained in the dataset |
-
-
-For example
-
+example:
 ```
 author: Patrick Bareiss
 id: cc9b25e1-efc9-11eb-926b-550bf0943fbb
