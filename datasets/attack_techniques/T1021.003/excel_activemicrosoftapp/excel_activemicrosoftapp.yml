@@ -1,6 +1,6 @@
 author: Teoderick Contreras, Splunk
-id: bb7a2c30-7dd0-11f0-8ab3-629be3538069
-date: 2025-08-20
+id: 1177fe7c-7dd2-11f0-8ab3-629be3538069
+date: '2025-08-20'
 description: Generated datasets for excel activemicrosoftapp in attack range.
 environment: attack_range
 directory: excel_activemicrosoftapp
