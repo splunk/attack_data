@@ -6,7 +6,7 @@ environment: attack_range
 directory: dll_loaded_in_temp
 mitre_technique:
 - T1105
-dataset:
+datasets:
 - name: module_loaded_in_temp.log
   path: /datasets/attack_techniques/T1105/dll_loaded_in_temp/module_loaded_in_temp.log
   sourcetype: XmlWinEventLog
