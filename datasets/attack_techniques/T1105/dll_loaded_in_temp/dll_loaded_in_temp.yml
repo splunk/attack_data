@@ -9,5 +9,5 @@ mitre_technique:
 dataset:
 - name: module_loaded_in_temp.log
   path: /datasets/attack_techniques/T1105/dll_loaded_in_temp/module_loaded_in_temp.log
-  sourcetypes: XmlWinEventLog
-  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
