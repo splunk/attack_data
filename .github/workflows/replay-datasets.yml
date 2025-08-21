@@ -26,6 +26,9 @@ jobs:
       with:
         fetch-depth: 0  # Fetch full history for file change detection
     
+    - name: Pull Git LFS files
+      run: git lfs pull
+    
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
