@@ -1,0 +1,15 @@
+author: Bhavin Patel, Michael Haag, Splunk
+id: 3a7a9d5e-8f12-4b2d-a6e9-5c8b7f3e1d2a
+date: '2025-08-21'
+description: |
+  Generated datasets for Cisco Smart Install port discovery and exploitation attempts. Contains network traffic 
+  simulations targeting the Cisco Smart Install port (4786) for the following detections:
+  * Cisco Smart Install Port Discovery and Status
+environment: manual simulations in a controlled lab environment
+mitre_technique: 
+- T1190
+datasets:
+- name: cisco_smart_install_traffic
+  path: /datasets/attack_techniques/T1190/cisco_smart_install/stream_tcp.log
+  sourcetype: stream:tcp
+  source: stream:tcp
