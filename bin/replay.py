@@ -117,8 +117,8 @@ def send_data_to_splunk(file_path, splunk_host, hec_token, event_host_uuid,
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Replay datasets from YAML files to Splunk via HTTP Event Collector (HEC). "
-                    "All metadata (source, sourcetype, index) is read from the YAML files.",
+        description="Replay datasets from YAML files to Splunk via HEC. "
+                    "All metadata (source, sourcetype, index) is read from YAML files.",
         epilog="""
 Environment Variables Required:
   SPLUNK_HOST      - Splunk server hostname/IP
@@ -126,12 +126,13 @@ Environment Variables Required:
 
 Example usage:
   # Replay from specific YAML files
-  python replay.py datasets/attack_techniques/T1003.003/atomic_red_team/atomic_red_team.yml
+  python replay.py datasets/attack_techniques/T1003.003/atomic_red_team/\
+    atomic_red_team.yml
   python replay.py file1.yml file2.yml file3.yml
 
   # Replay from directories (finds all YAML files)
   python replay.py datasets/attack_techniques/T1003.003/
-  python replay.py datasets/attack_techniques/T1003.003/ datasets/attack_techniques/T1005/
+  python replay.py datasets/attack_techniques/T1003.003/ 
 
 Environment setup:
   export SPLUNK_HOST="192.168.1.100"
@@ -232,22 +233,33 @@ This script will:
                           f"'{dataset_name}', skipping")
                     continue
 
-                # Handle relative paths - relative to attack_data root
+                # Handle relative paths - relative to git project root
                 if dataset_path.startswith('/datasets/'):
                     # Convert to absolute path based on project structure
+                    # Find git project root by looking for .git directory
                     current_path = Path(yml_file).parent
-                    base_dir = current_path
+                    project_root = current_path
 
-                    # Walk up to find attack_data root
-                    while (base_dir.name != 'attack_data' and
-                           base_dir.parent != base_dir):
-                        base_dir = base_dir.parent
+                    # Walk up to find git project root (directory containing .git)
+                    while (not (project_root / '.git').exists() and
+                           project_root.parent != project_root):
+                        project_root = project_root.parent
 
-                    if base_dir.name == 'attack_data':
-                        full_path = base_dir / dataset_path.lstrip('/')
+                    if (project_root / '.git').exists():
+                        # Found git project root, construct path relative to it
+                        full_path = project_root / dataset_path.lstrip('/')
                     else:
-                        # Fallback: assume current working directory structure
-                        full_path = Path.cwd() / dataset_path.lstrip('/')
+                        # Fallback: try to find project root using current working dir
+                        cwd = Path.cwd()
+                        while (not (cwd / '.git').exists() and
+                               cwd.parent != cwd):
+                            cwd = cwd.parent
+
+                        if (cwd / '.git').exists():
+                            full_path = cwd / dataset_path.lstrip('/')
+                        else:
+                            # Last resort: assume current working directory structure
+                            full_path = Path.cwd() / dataset_path.lstrip('/')
                 else:
                     # Assume relative to yml file location
                     yml_dir = Path(yml_file).parent
