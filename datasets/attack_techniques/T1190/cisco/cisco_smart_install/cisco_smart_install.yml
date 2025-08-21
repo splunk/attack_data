@@ -13,3 +13,7 @@ datasets:
   path: /datasets/attack_techniques/T1190/cisco_smart_install/stream_tcp.log
   sourcetype: stream:tcp
   source: stream:tcp
+- name: cisco_ios_log
+  path: /datasets/attack_techniques/T1190/cisco_smart_install/cisco_ios.log
+  sourcetype: cisco:ios
+  source: cisco_ios
