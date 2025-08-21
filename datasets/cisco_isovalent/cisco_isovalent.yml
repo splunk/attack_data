@@ -1,0 +1,14 @@
+author: Bhavin Patel, Splunk
+id: 1fc537db-5e0b-4a2e-a768-27e08eff0c70
+date: '2025-08-15'
+description: |
+ Generated datasets for Cisco Isovalent Process Exec EventType. Contains simulations for the following detections:
+  * Cisco Isovalent - Detect Shell Execution
+  * Cisco Isovalent - Curl Execution With Insecure Flags
+environment: manual simulations in a K8s cluster running Tetragon
+mitre_technique: []
+datasets:
+- name: cisco_isovalent
+  path: /datasets/cisco_isovalent/cisco_isovalent.log
+  sourcetype: cisco:isovalent
+  source: cisco_isovalent
