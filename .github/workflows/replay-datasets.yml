@@ -2,11 +2,7 @@ name: Replay Changed Datasets to Splunk
 
 on:
   push:
-    branches: [ main, master ]
-    paths:
-      - 'datasets/**'
-  pull_request:
-    branches: [ main, master ]
+    branches: [ master ]
     paths:
       - 'datasets/**'
   workflow_dispatch:
