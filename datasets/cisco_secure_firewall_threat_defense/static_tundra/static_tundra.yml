@@ -1,0 +1,12 @@
+author: Bhavin Patel, Michael Haag, Splunk
+id: 8d843885-584d-43ef-926c-03d04ec22639
+date: '2025-08-21'
+description:  Synthetically generated datasets for testing Cisco Secure Firewall - Static Tundra Smart Install Abuse
+environment: manual simulations in a controlled lab environment
+mitre_technique: 
+- T1190
+datasets:
+- name: static_tundra_snort_events
+  path: /datasets/cisco_secure_firewall_threat_defense/static_tundra/static_tundra.log
+  sourcetype: cisco:sfw:estreamer
+  source: cisco:sfw:estreamer
