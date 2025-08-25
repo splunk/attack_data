@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 54417fe2-a9c5-46f8-895a-591f5d87231e
+date: '2025-08-25'
+description: Using DLL to start a process on a remote endpoint
+  leveraging COM Hijacking against SpeechRuntime to perform lateral movement and remote code execution.
+environment: attack_range
+directory: lateral_movement_speechruntime
+mitre_technique:
+- T1021.003
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1021.003/lateral_movement_speechruntime/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
