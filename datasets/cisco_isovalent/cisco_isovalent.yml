@@ -12,3 +12,7 @@ datasets:
   path: /datasets/cisco_isovalent/cisco_isovalent.log
   sourcetype: cisco:isovalent
   source: cisco_isovalent
+- name: delayed_shell
+  path: /datasets/cisco_isovalent/cisco_isovalent_process_exec_delayed_shell.log
+  sourcetype: cisco:isovalent:processExec
+  source: cisco_isovalent
