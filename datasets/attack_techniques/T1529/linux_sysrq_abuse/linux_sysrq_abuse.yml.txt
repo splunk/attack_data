@@ -1,0 +1,13 @@
+author: Milad Cheraghi
+id: b4b1271b-4529-4f36-9edc-d70765eaa4c0
+date: '2025-08-28'
+description: 'Sample of Linux auditd events showing potential abuse of the Magic SysRq key to manipulate or destabilize the system.'
+environment: custom
+directory: linux_sysrq_abuse
+mitre_technique:
+  - T1529
+datasets:
+  - name: linux-auditd
+    path: /datasets/attack_techniques/T1529/linux_sysrq_abuse/linux_sysrq_abuse.log
+    sourcetype: auditd
+    source: auditd
