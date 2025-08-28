@@ -1,5 +1,3 @@
-{"type": "PATH","msg": "audit(1747951721.229:634)","item": 1,"name": "/proc/sysrq-trigger","inode": 4026532271,"dev": "00:19","mode": "0100200","ouid": 0,"ogid": 0,"rdev": "00:00","nametype": "NORMAL","cap_fp": 0,"cap_fi": 0,"cap_fe": 0,"cap_fver": 0,"cap_frootid": 0,"OUID": "root","OGID": "root"}
-{"type": "PATH","msg": "audit(1747951721.494:677)","item": 1,"name": "/proc/sysrq-trigger","inode": 4026532271,"dev": "00:19","mode": "0100200","ouid": 0,"ogid": 0,"rdev": "00:00","nametype": "NORMAL","cap_fp": 0,"cap_fi": 0,"cap_fe": 0,"cap_fver": 0,"cap_frootid": 0,"OUID": "root","OGID": "root"}
-{"type": "PATH","msg": "audit(1747951721.234:699)","item": 1,"name": "/proc/sysrq-trigger","inode": 4026532271,"dev": "00:19","mode": "0100200","ouid": 0,"ogid": 0,"rdev": "00:00","nametype": "NORMAL","cap_fp": 0,"cap_fi": 0,"cap_fe": 0,"cap_fver": 0,"cap_frootid": 0,"OUID": "root","OGID": "root"}
-
-{"type": "PATH","msg": "audit(1747951721.546:712)","item": 1,"name": "/proc/sysrq-trigger","inode": 4026532271,"dev": "00:19","mode": "0100200","ouid": 0,"ogid": 0,"rdev": "00:00","nametype": "NORMAL","cap_fp": 0,"cap_fi": 0,"cap_fe": 0,"cap_fver": 0,"cap_frootid": 0,"OUID": "root","OGID": "root"}
+version https://git-lfs.github.com/spec/v1
+oid sha256:62bbba78697c76bb460b5151e4afd88f8383ee179b0722055ef124589989dd74
+size 1198
