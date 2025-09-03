@@ -1,6 +1,6 @@
 author: Milad Cheraghi
-id: b4b1271b-4529-4f36-9edc-d70765eaa4c0
-date: '2025-08-28'
+id: 7d1fc9be-c410-41d7-a69a-5c1f4bd80632
+date: '2025-09-03'
 description: 'Sample of Linux auditd events showing potential abuse of the Magic SysRq key to manipulate or destabilize the system.'
 environment: custom
 directory: linux_sysrq_abuse
