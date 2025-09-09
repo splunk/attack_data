@@ -1,0 +1,11 @@
+author: Raven Tait, Splunk
+id: 62f29b0e-692f-4dca-a17a-98809d1a40fe
+date: '2025-09-09'
+description: logs from NotDoor malware execution
+environment: attack_range
+directory: outlook_macro
+datasets:
+- name: windows-sysmon
+  path: /datasets/malware/notdoor/outlook_macro/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
