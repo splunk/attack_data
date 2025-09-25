@@ -8,6 +8,6 @@ mitre_technique:
 - T1573
 datasets:
 - name: cisco_asa
-  path: data/cisco_asa/cisco_asa.txt
+  path: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/cisco_asa/arcane_door/cisco_asa.log
   sourcetype: cisco:asa
   source: not_applicable
