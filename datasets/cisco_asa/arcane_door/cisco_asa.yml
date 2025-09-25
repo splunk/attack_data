@@ -1,0 +1,13 @@
+author: Bhavin Patel, Micheal Haag, Splunk
+id: 9e3e8683-75ab-44eb-9c4f-a247fa02d852
+date: '2025-09-23'
+description: Generated datasets for for Cisco ASA using manual simulation for ArcaneDoor behavior
+environment: attack_range
+directory: cisco_asa
+mitre_technique:
+- T1573
+datasets:
+- name: cisco_asa
+  path: data/cisco_asa/cisco_asa.txt
+  sourcetype: cisco:asa
+  source: not_applicable
