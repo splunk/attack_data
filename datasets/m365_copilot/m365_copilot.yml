@@ -1,0 +1,15 @@
+author: Rod Soto, Splunk
+id: 0bf90131-c582-4976-85b8-711d2c2c1926
+date: '2025-09-25'
+description: |
+ Logs from M365 Copilot Access Logs via Splunk Add-on for M365 and Exported Logs from eDsicovery Purview. Contains actual access logs and jailbreak attacks. 
+mitre_technique: []
+datasets:
+- name: m365_access_logs
+  path: /datasets/m365_copilot/copilot_prompts.log
+  sourcetype: csv
+  source: csv
+- name: m365_copilot_access
+  path: /datasets/m365_copilot/m365_copilot_access.log
+  sourcetype: o365:graph:api
+  source: AuditLogs.SignIns
