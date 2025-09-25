@@ -5,7 +5,7 @@ description: Generated datasets for for Cisco ASA using manual simulation for Ar
 environment: attack_range
 directory: cisco_asa
 mitre_technique:
-- T1573
+- T1562
 datasets:
 - name: cisco_asa
   path: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/cisco_asa/arcane_door/cisco_asa.log
