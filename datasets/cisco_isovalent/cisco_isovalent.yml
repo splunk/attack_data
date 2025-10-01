@@ -17,5 +17,5 @@ datasets:
   source: cisco_isovalent
 - name: kprobe_spike
   path: /datasets/cisco_isovalent/kprobe_spike.log
-  sourcetype: cisco:isovalent:processExec
+  sourcetype: cisco:isovalent
   source: cisco_isovalent
