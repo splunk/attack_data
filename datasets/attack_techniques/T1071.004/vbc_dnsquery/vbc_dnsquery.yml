@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 489169c0-9ea7-11f0-ba06-629be353806a
+date: '2025-10-01'
+description: Generated datasets for vbc dnsquery in attack range.
+environment: attack_range
+directory: vbc_dnsquery
+mitre_technique:
+- T1071.004
+datasets:
+- name: vbc_dns_query.log
+  path: /datasets/attack_techniques/T1071.004/vbc_dnsquery/vbc_dns_query.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

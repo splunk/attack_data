@@ -3,6 +3,8 @@ id: 0bf90131-c582-4976-85b8-711d2c2c1926
 date: '2025-09-25'
 description: |
  Logs from M365 Copilot Access Logs via Splunk Add-on for M365 and Exported Logs from eDsicovery Purview. Contains actual access logs and jailbreak attacks. 
+environment: attack_range
+directory: m365_copilot
 mitre_technique: []
 datasets:
 - name: m365_access_logs
