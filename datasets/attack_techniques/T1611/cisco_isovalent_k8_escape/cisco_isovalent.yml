@@ -1,0 +1,14 @@
+author: Bhavin Patel, Splunk
+id: b5484a09-fc58-4817-9d42-cdbb2691147b
+date: '2025-10-01'
+description: |
+ Generated datasets for Cisco Isovalent Process Exec EventType. Contains simulations for the escaping from host.
+environment: manual simulations in a K8s cluster running Tetragon
+directory: cisco_isovalent_k8_escape
+mitre_technique:
+- T1611
+datasets:
+- name: cisco_isovalent
+  path: /datasets/attack_techniques/T1611/cisco_isovalent_k8_escape/cisco_isovalent.log
+  sourcetype: cisco:isovalent
+  source: cisco_isovalent
