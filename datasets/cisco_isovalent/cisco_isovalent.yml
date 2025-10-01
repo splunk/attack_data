@@ -16,3 +16,7 @@ datasets:
   path: /datasets/cisco_isovalent/cisco_isovalent_process_exec_delayed_shell.log
   sourcetype: cisco:isovalent:processExec
   source: cisco_isovalent
+- name: kprobe_spike
+  path: /datasets/cisco_isovalent/kprobe_spike.log
+  sourcetype: cisco:isovalent:processExec
+  source: cisco_isovalent
