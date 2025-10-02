@@ -99,9 +99,8 @@ source venv/bin/activate
 pip install -r bin/requirements.txt
 ```
 
-0. Download dataset 
-1. configure [`bin/replay.yml`](/bin/replay.yml) 
-2. run `python bin/replay.py -c bin/replay.yml`
+0. Download dataset (pass as an argument in next step)
+1. run `python bin/replay.py datasets/attack_techniques/T1003.001`
 
 
 ##### using UI
