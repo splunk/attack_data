@@ -1,0 +1,14 @@
+author: Rod Soto, Splunk
+id: 9d1f6bd1-754a-481c-ad54-5a837f86d12b
+date: '2025-10-05'
+description: Logs from Ollama server, contain errors, system messages, http calls, methods and endpoint uris.
+mitre_technique: []
+datasets:
+- name: ollama_server_data
+  path: /datasets/ollama/server.log
+  sourcetype: ollama:server
+  source: server.log
+- name: ollama_app_data
+  path: /datasets/ollama/app.log
+  sourcetype: ollama:server
+  source: app.log
