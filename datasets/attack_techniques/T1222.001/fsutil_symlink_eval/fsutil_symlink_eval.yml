@@ -6,7 +6,7 @@ environment: attack_range
 directory: fsutil_symlink_eval
 mitre_technique:
 - T1222.001
-dataset:
+datasets:
 - name: fsutil_symlink_eval.log
   path: /datasets/attack_techniques/T1222.001/fsutil_symlink_eval/fsutil_symlink_eval.log
   sourcetypes: XmlWinEventLog

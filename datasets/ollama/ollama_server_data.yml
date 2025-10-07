@@ -3,6 +3,7 @@ id: 9d1f6bd1-754a-481c-ad54-5a837f86d12b
 date: '2025-10-05'
 description: Logs from Ollama server, contain errors, system messages, http calls, methods and endpoint uris.
 mitre_technique: []
+environment: attack_range
 datasets:
 - name: ollama_server_data
   path: /datasets/ollama/server.log
