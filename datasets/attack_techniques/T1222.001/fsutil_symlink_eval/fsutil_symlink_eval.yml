@@ -1,0 +1,15 @@
+author: Nasreddine Bencherchali, Splunk
+id: 169da367-87f4-413d-b0c9-b8c13e01d489
+date: '2025-10-07'
+description: Generated datasets for fsutil SymlinkEvaluation set in attack range.
+environment: attack_range
+directory: fsutil_symlink_eval
+mitre_technique:
+- T1222.001
+dataset:
+- name: fsutil_symlink_eval.log
+  path: /datasets/attack_techniques/T1222.001/fsutil_symlink_eval/fsutil_symlink_eval.log
+  sourcetypes: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+references:
+- https://learn.microsoft.com/windows-server/administration/windows-commands/fsutil-behavior
