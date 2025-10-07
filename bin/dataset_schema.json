@@ -1,3 +1,91 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:97085370d23378475c243e900bfeb0b462b849ff3e2b4f38fec5547177c91a3b
-size 2274
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Attack Data Dataset Schema",
+  "description": "JSON Schema for validating YAML dataset files in the attack_data project",
+  "type": "object",
+  "required": [
+    "author",
+    "id",
+    "date",
+    "description",
+    "environment",
+    "datasets"
+  ],
+  "properties": {
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Author(s) of the dataset"
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID identifier for the dataset"
+    },
+    "date": {
+      "type": "string",
+      "description": "Date of the dataset"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Description of the dataset"
+    },
+    "environment": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Environment where the dataset was created"
+    },
+    "directory": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Directory name for the dataset"
+    },
+    "mitre_technique": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^T\\d{4}(\\.\\d{3})*$"
+      },
+      "description": "List of MITRE ATT&CK technique IDs (can be empty)"
+    },
+    "datasets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "path",
+          "source",
+          "sourcetype"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of the dataset"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Path to the dataset file"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Source of the data"
+          },
+          "sourcetype": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Type of the data source"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "List of datasets (must contain at least one dataset)"
+    }
+  },
+  "additionalProperties": false
+}
