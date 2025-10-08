@@ -2,8 +2,8 @@ name: mirror-archive-on-merge-to-default-branch
 
 on:
   push:
-   branches:
-       - master
+   #branches:
+   #    - master
 
 jobs:
   mirror-archive:
@@ -12,6 +12,28 @@ jobs:
         BUCKET: attack-range-attack-data
         ATTACK_DATA_ARCHIVE_FILE: attack_data.tar.zstd
     steps:
+
+    # Use the following GitHub Action to free up disk space on a runner
+    # This removes dependencies and packages that may be important to many
+    # GitHub users, such as the Android and dotnet build tools, but are
+    # not relevant to us
+    # https://github.com/marketplace/actions/free-disk-space-ubuntu
+    - name: Free Disk Space (Ubuntu)
+      uses: jlumbroso/free-disk-space1.3.1
+      with:
+        # this might remove tools that are actually needed,
+        # if set to "true" but frees about 6 GB
+        tool-cache: false
+        
+        # all of these default to true, but feel free to set to
+        # "false" if necessary for your workflow
+        android: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        docker-images: true
+        #swap-storage: true
+
     - name: Checkout Repo
       uses: actions/checkout@v4
       # We must EXPLICITLY specificy lfs: true. It defaults to false
@@ -40,6 +62,6 @@ jobs:
         # File size reductions are diminishing returns after this - determined experimentally.
         tar -c attack_data | zstd --compress -T0 -10 -o $ATTACK_DATA_ARCHIVE_FILE
 
-    - name: Upload Attack data archive file to S3 Bucket
-      run: |
-        aws s3 cp $ATTACK_DATA_ARCHIVE_FILE  s3://$BUCKET/    
+    # - name: Upload Attack data archive file to S3 Bucket
+    #   run: |
+    #     aws s3 cp $ATTACK_DATA_ARCHIVE_FILE  s3://$BUCKET/    
