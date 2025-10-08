@@ -19,7 +19,7 @@ jobs:
     # not relevant to us
     # https://github.com/marketplace/actions/free-disk-space-ubuntu
     - name: Free Disk Space (Ubuntu)
-      uses: jlumbroso/free-disk-space1.3.1
+      uses: jlumbroso/free-disk-space@1.3.1
       with:
         # this might remove tools that are actually needed,
         # if set to "true" but frees about 6 GB
