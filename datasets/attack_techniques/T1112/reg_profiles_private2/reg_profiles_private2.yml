@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: d6e44c10-a410-11f0-8c8b-629be353806a
+date: '2025-10-08'
+description: Generated datasets for reg profiles private2 in attack range.
+environment: attack_range
+directory: reg_profiles_private
+mitre_technique:
+- T1112
+datasets:
+- name: reg_profiles_private2.log
+  path: /datasets/attack_techniques/T1112/reg_profiles_private2/reg_profiles_private2.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
