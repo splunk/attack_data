@@ -2,7 +2,7 @@ name: Replay Changed Datasets to Splunk
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
     paths:
       - 'datasets/**'
   workflow_dispatch:
@@ -14,115 +14,116 @@ on:
 
 jobs:
   replay-datasets:
-    runs-on: ubuntu-latest
-    
+    runs-on:
+      group: attack-data-runners
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  # Fetch full history for file change detection
-    
-    - name: Pull Git LFS files
-      run: git lfs pull
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-    
-    - name: Install dependencies
-      run: |
-        cd bin
-        pip install -r requirements.txt
-    
-    - name: Find changed YAML files
-      id: changed-files
-      if: github.event_name != 'workflow_dispatch' || github.event.inputs.dataset_path == ''
-      run: |
-        # Get list of changed YAML files in datasets directory
-        if [ "${{ github.event_name }}" = "pull_request" ]; then
-          # For PR, compare against base branch
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
-          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
-          echo "Comparing PR: $BASE_SHA...$HEAD_SHA"
-          YAML_FILES=$(python bin/find_changed_datasets.py --base-sha $BASE_SHA --head-sha $HEAD_SHA --output files 2>/dev/null || echo "")
-        else
-          # For push, compare against previous commit
-          BASE_SHA="${{ github.event.before }}"
-          HEAD_SHA="${{ github.sha }}"
-          echo "Comparing push: $BASE_SHA...$HEAD_SHA"
-          YAML_FILES=$(python bin/find_changed_datasets.py --base-sha $BASE_SHA --head-sha $HEAD_SHA --output files 2>/dev/null || echo "")
-        fi
-        
-        if [ -z "$YAML_FILES" ]; then
-          echo "No YAML dataset files changed"
-          echo "yaml_files=" >> $GITHUB_OUTPUT
-        else
-          echo "Changed YAML files:"
-          echo "$YAML_FILES"
-          # Convert newlines to spaces for easier handling
-          YAML_FILES_SPACE=$(echo "$YAML_FILES" | tr '\n' ' ')
-          echo "yaml_files=$YAML_FILES_SPACE" >> $GITHUB_OUTPUT
-        fi
-    
-    - name: Set manual dataset path
-      id: manual-path
-      if: github.event_name == 'workflow_dispatch' && github.event.inputs.dataset_path != ''
-      run: |
-        # For manual dispatch, find YAML files in the specified path
-        if [ -f "${{ github.event.inputs.dataset_path }}" ]; then
-          # Single file provided
-          echo "yaml_files=${{ github.event.inputs.dataset_path }}" >> $GITHUB_OUTPUT
-        else
-          # Directory provided - find YAML files
-          YAML_FILES=$(python bin/find_changed_datasets.py --directory "${{ github.event.inputs.dataset_path }}" --output files 2>/dev/null || echo "")
-          if [ -n "$YAML_FILES" ]; then
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch full history for file change detection
+
+      - name: Pull Git LFS files
+        run: git lfs pull
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          cd bin
+          pip install -r requirements.txt
+
+      - name: Find changed YAML files
+        id: changed-files
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.dataset_path == ''
+        run: |
+          # Get list of changed YAML files in datasets directory
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            # For PR, compare against base branch
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+            echo "Comparing PR: $BASE_SHA...$HEAD_SHA"
+            YAML_FILES=$(python bin/find_changed_datasets.py --base-sha $BASE_SHA --head-sha $HEAD_SHA --output files 2>/dev/null || echo "")
+          else
+            # For push, compare against previous commit
+            BASE_SHA="${{ github.event.before }}"
+            HEAD_SHA="${{ github.sha }}"
+            echo "Comparing push: $BASE_SHA...$HEAD_SHA"
+            YAML_FILES=$(python bin/find_changed_datasets.py --base-sha $BASE_SHA --head-sha $HEAD_SHA --output files 2>/dev/null || echo "")
+          fi
+
+          if [ -z "$YAML_FILES" ]; then
+            echo "No YAML dataset files changed"
+            echo "yaml_files=" >> $GITHUB_OUTPUT
+          else
+            echo "Changed YAML files:"
+            echo "$YAML_FILES"
+            # Convert newlines to spaces for easier handling
             YAML_FILES_SPACE=$(echo "$YAML_FILES" | tr '\n' ' ')
             echo "yaml_files=$YAML_FILES_SPACE" >> $GITHUB_OUTPUT
-          else
-            echo "yaml_files=" >> $GITHUB_OUTPUT
           fi
-        fi
-    
-    - name: Replay datasets to Splunk
-      if: steps.changed-files.outputs.yaml_files != '' || steps.manual-path.outputs.yaml_files != ''
-      env:
-        SPLUNK_HOST: ${{ secrets.SPLUNK_HOST }}
-        SPLUNK_HEC_TOKEN: ${{ secrets.SPLUNK_HEC_TOKEN }}
-      run: |
-        # Get the YAML files to process
-        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-          YAML_FILES="${{ steps.manual-path.outputs.yaml_files }}"
-        else
-          YAML_FILES="${{ steps.changed-files.outputs.yaml_files }}"
-        fi
-        
-        if [ -z "$YAML_FILES" ]; then
-          echo "No YAML files to process"
-          exit 0
-        fi
-        
-        echo "Processing YAML files: $YAML_FILES"
-        
-        # Run replay script with all YAML files
-        # The replay script now reads all metadata from the YAML files themselves
-        python bin/replay.py $YAML_FILES || echo "Failed to replay some datasets"
-    
-    - name: Summary
-      if: always()
-      run: |
-        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-          YAML_FILES="${{ steps.manual-path.outputs.yaml_files }}"
-          if [ -n "$YAML_FILES" ]; then
-            echo "Manual replay completed for YAML files: $YAML_FILES"
+
+      - name: Set manual dataset path
+        id: manual-path
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.dataset_path != ''
+        run: |
+          # For manual dispatch, find YAML files in the specified path
+          if [ -f "${{ github.event.inputs.dataset_path }}" ]; then
+            # Single file provided
+            echo "yaml_files=${{ github.event.inputs.dataset_path }}" >> $GITHUB_OUTPUT
           else
-            echo "No YAML files found in specified path: ${{ github.event.inputs.dataset_path }}"
+            # Directory provided - find YAML files
+            YAML_FILES=$(python bin/find_changed_datasets.py --directory "${{ github.event.inputs.dataset_path }}" --output files 2>/dev/null || echo "")
+            if [ -n "$YAML_FILES" ]; then
+              YAML_FILES_SPACE=$(echo "$YAML_FILES" | tr '\n' ' ')
+              echo "yaml_files=$YAML_FILES_SPACE" >> $GITHUB_OUTPUT
+            else
+              echo "yaml_files=" >> $GITHUB_OUTPUT
+            fi
           fi
-        else
-          YAML_FILES="${{ steps.changed-files.outputs.yaml_files }}"
-          if [ -n "$YAML_FILES" ]; then
-            echo "Automated replay completed for changed YAML files: $YAML_FILES"
+
+      - name: Replay datasets to Splunk
+        if: steps.changed-files.outputs.yaml_files != '' || steps.manual-path.outputs.yaml_files != ''
+        env:
+          SPLUNK_HOST: ${{ secrets.SPLUNK_HOST }}
+          SPLUNK_HEC_TOKEN: ${{ secrets.SPLUNK_HEC_TOKEN }}
+        run: |
+          # Get the YAML files to process
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            YAML_FILES="${{ steps.manual-path.outputs.yaml_files }}"
           else
-            echo "No YAML dataset changes detected, no replay needed"
+            YAML_FILES="${{ steps.changed-files.outputs.yaml_files }}"
           fi
-        fi
+
+          if [ -z "$YAML_FILES" ]; then
+            echo "No YAML files to process"
+            exit 0
+          fi
+
+          echo "Processing YAML files: $YAML_FILES"
+
+          # Run replay script with all YAML files
+          # The replay script now reads all metadata from the YAML files themselves
+          python bin/replay.py $YAML_FILES || echo "Failed to replay some datasets"
+
+      - name: Summary
+        if: always()
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            YAML_FILES="${{ steps.manual-path.outputs.yaml_files }}"
+            if [ -n "$YAML_FILES" ]; then
+              echo "Manual replay completed for YAML files: $YAML_FILES"
+            else
+              echo "No YAML files found in specified path: ${{ github.event.inputs.dataset_path }}"
+            fi
+          else
+            YAML_FILES="${{ steps.changed-files.outputs.yaml_files }}"
+            if [ -n "$YAML_FILES" ]; then
+              echo "Automated replay completed for changed YAML files: $YAML_FILES"
+            else
+              echo "No YAML dataset changes detected, no replay needed"
+            fi
+          fi
