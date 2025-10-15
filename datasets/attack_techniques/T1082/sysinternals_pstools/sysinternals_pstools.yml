@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: cb4024aa-8397-4739-adeb-7e2e2e14ef30
+date: '2025-10-15'
+description: Generated datasets covering the execution of different tools of the PsTools Sysinternals suit in attack range.
+environment: attack_range
+directory: sysinternals_pstools
+mitre_technique:
+- T1046
+datasets:
+- name: sysinternals_pstools.log
+  path: /datasets/attack_techniques/T1082/sysinternals_pstools/sysinternals_pstools.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
