@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: 0232e68d-338f-4963-8602-614357458534
+date: '2025-10-15'
+description: Generated datasets covering the execution of wbadmin for recovery in attack range.
+environment: attack_range
+directory: wbadmin_recovery
+mitre_technique:
+- T1046
+datasets:
+- name: wbadmin_recovery.log
+  path: /datasets/attack_techniques/T1565.001/wbadmin_recovery/wbadmin_recovery.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
