@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: a846253e-7b37-4713-8a78-da3c058658cc
+date: '2025-10-13'
+description: Generated datasets covering the execution of Advanced IP / Port Scanner in attack range.
+environment: attack_range
+directory: advanced_ip_port_scanner
+mitre_technique:
+- T1046
+datasets:
+- name: advanced_ip_port_scanner.log
+  path: /datasets/attack_techniques/T1046/advanced_ip_port_scanner/advanced_ip_port_scanner.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

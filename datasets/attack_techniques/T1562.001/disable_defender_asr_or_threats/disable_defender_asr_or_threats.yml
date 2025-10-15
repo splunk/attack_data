@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: 179da367-87f4-413d-b0c9-b8c13e01d489
+date: '2025-10-13'
+description: Generated datasets for disabling or allowing certain ASR rule or threat IDs respectively in attack range.
+environment: attack_range
+directory: disable_defender_asr_or_threats
+mitre_technique:
+- T1562.001
+datasets:
+- name: disable_defender_asr_or_threats.log
+  path: /datasets/attack_techniques/T1562.001/disable_defender_asr_or_threats/disable_defender_asr_or_threats.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
