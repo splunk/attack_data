@@ -1,5 +1,5 @@
 author: Raven Tait, Splunk
-id:b052c3c6-ec55-49a9-82ea-1f68da25763f
+id: b052c3c6-ec55-49a9-82ea-1f68da25763f
 date: '2023-10-16'
 description: Attack data related to request_smuggling
 environment: attack_range
