@@ -1,0 +1,21 @@
+author: Raven Tait, Splunk
+id:b052c3c6-ec55-49a9-82ea-1f68da25763f
+date: '2023-10-16'
+description: Attack data related to request_smuggling
+environment: attack_range
+directory: request_smuggling
+mitre_technique:
+- T1190
+datasets:
+- name: suricata_request_smuggling
+  path: /datasets/attack_techniques/T1190/request_smuggling/suricata_request_smuggling.log
+  sourcetype: suricata
+  source: suricata
+- name: nginx_scripting_tools
+  path: /datasets/attack_techniques/T1190/request_smuggling/nginx_scripting_tools.log
+  sourcetype: nginx:plus:kv
+  source: nginx:plus:kv
+- name: nginx_request_smuggling
+  path: /datasets/attack_techniques/T1190/request_smuggling/nginx_request_smuggling.log
+  sourcetype: nginx:plus:kv
+  source: nginx:plus:kv
