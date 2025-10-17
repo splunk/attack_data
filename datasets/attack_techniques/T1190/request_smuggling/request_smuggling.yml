@@ -11,6 +11,10 @@ datasets:
   path: /datasets/attack_techniques/T1190/request_smuggling/suricata_request_smuggling.log
   sourcetype: suricata
   source: suricata
+- name: suricata_reserved_names
+  path: /datasets/attack_techniques/T1190/request_smuggling/suricata_reserved_names.log
+  sourcetype: suricata
+  source: suricata
 - name: nginx_scripting_tools
   path: /datasets/attack_techniques/T1190/request_smuggling/nginx_scripting_tools.log
   sourcetype: nginx:plus:kv
