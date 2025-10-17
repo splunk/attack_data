@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: f25b05ae-99d7-4f67-917d-5db3d219fcbb
+date: 2025-10-17
+description: Dataset generated in attack range for the attack technique of download to pipe execution.
+environment: attack_range
+directory: atomic_red_team
+mitre_technique:
+- T1105
+datasets:
+- name: windows-sysmon_curl_upload
+  path: /datasets/attack_techniques/T1105/download_to_pipe_exec/download_to_pipe_exec.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
