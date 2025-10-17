@@ -1,6 +1,6 @@
 author: Nasreddine Bencherchali, Splunk
 id: f25b05ae-99d7-4f67-917d-5db3d219fcbb
-date: 2025-10-17
+date: '2025-10-17'
 description: Dataset generated in attack range for the attack technique of download to pipe execution.
 environment: attack_range
 directory: atomic_red_team
