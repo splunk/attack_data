@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: 5b9f127a-50a1-469e-a806-6a89fd1b3076
+date: '2025-10-21'
+description: Generated datasets covering the creation or execution of NirSof ttooling.
+environment: attack_range
+directory: nirsoft_tooling
+mitre_technique:
+- T1588.002
+datasets:
+- name: nirsoft_file_bundle_created.log
+  path: /datasets/attack_techniques/T1588.002/nirsoft_tooling/nirsoft_file_bundle_created.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
