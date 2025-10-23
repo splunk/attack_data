@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: 2d2d0452-1d37-4f73-8e58-c2f0c57de465
+date: '2025-10-23'
+description: Generated datasets covering the manual Base64 decoding using PowerShell.
+environment: attack_range
+directory: manual_b64_decode_pwsh
+mitre_technique:
+- T1027.010
+datasets:
+- name: nirsoft_file_bundle_created.log
+  path: /datasets/attack_techniques/T1027.010/manual_b64_decode_pwsh/manual_b64_decode_pwsh.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
