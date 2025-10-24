@@ -1,0 +1,13 @@
+author: Patrick Bareiss
+id: 90ba20be-803c-4770-ac7e-05f818a7bdaf
+date: '2025-10-24'
+description: Attack data for technique T1003
+environment: attack_range
+directory: attack_techniques
+mitre_technique:
+- T1003
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1003/attack_techniques/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
