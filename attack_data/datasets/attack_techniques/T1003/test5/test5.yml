@@ -1,0 +1,13 @@
+author: PB
+id: 045e120a-1943-4f38-ba38-d9fc8da660d6
+date: '2025-10-24'
+description: Attack data for technique T1003
+environment: attack_range
+directory: test5
+mitre_technique:
+- T1003
+datasets:
+- name: sysmon
+  path: attack_data/datasets/attack_techniques/T1003/test5/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
