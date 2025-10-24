@@ -1,0 +1,13 @@
+author: PB
+id: 254547bf-ca0a-46e5-91a4-631d712f91c2
+date: '2025-10-24'
+description: Attack data for technique T1003
+environment: attack_range
+directory: atomic_red_team
+mitre_technique:
+- T1003
+datasets:
+- name: sysmon
+  path: attack_data/datasets/attack_techniques/T1003.002/atomic_red_team/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
