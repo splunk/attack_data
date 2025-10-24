@@ -17,3 +17,7 @@ datasets:
   path: /datasets/attack_techniques/T1003.002/atomic_red_team/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: sysmon
+  path: datasets/attack_techniques/T1003.002/atomic_red_team/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
