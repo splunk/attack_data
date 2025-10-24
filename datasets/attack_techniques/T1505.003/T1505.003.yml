@@ -1,6 +1,6 @@
 author: Michael Haag
 id: cc9b2609-efc9-11eb-926b-550bf0943fbb
-date: '2021-03-11'
+date: '2025-10-24'
 description: The following data was produced to emulate IIS, w3wp.exe, spawning shells,
   simulating web shell activity. In addition, behavior related to Microsoft Exchange
   Server's Unified Messaging services, umworkerprocess.exe and umservice.exe, spawning
@@ -26,5 +26,9 @@ datasets:
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - name: moveit_windows-sysmon
   path: /datasets/attack_techniques/T1505.003/moveit_windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: wsus-windows-sysmon
+  path: /datasets/attack_techniques/T1505.003/wsus-windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
