@@ -7,7 +7,7 @@ directory: susp_default_rdp_creation
 mitre_technique:
 - T1021.001
 datasets:
-- name: default_rdp.log
-  path: /datasets/attack_techniques/T1021.001/susp_default_rdp_creation/default_rdp.log
+- name: default_rdp_dropped.log
+  path: /datasets/attack_techniques/T1021.001/susp_default_rdp_creation/default_rdp_dropped.log
   sourcetype: 'XmlWinEventLog'
   source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
