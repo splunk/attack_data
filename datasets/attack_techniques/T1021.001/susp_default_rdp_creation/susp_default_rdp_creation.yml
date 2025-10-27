@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: f3a83b08-b334-11f0-894e-629be3538069
+date: '2025-10-27'
+description: Generated datasets for susp default rdp creation in attack range.
+environment: attack_range
+directory: susp_default_rdp_creation
+mitre_technique:
+- T1021.001
+datasets:
+- name: default_rdp_dropped.log
+  path: /datasets/attack_techniques/T1021.001/susp_default_rdp_creation/default_rdp_dropped.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
