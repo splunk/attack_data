@@ -3,10 +3,11 @@ id: 0e029cfc-ce81-48c4-ba74-598afa1ddbba
 date: '2025-10-28'
 description: Dataset generated in attack range for the attack technique of npm supply chain.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.001/npm/workflow_yml_sysmon.log
-sourcetypes:
-- sysmon:linux
-- sysmon:windows
-references:
-- https://attack.mitre.org/techniques/T1195
+directory: npm
+mitre_technique:
+- T1195.001
+datasets:
+- name: workflow_yml_sysmon_linux
+  path: /datasets/attack_techniques/T1195.001/npm/workflow_yml_sysmon.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
