@@ -1,0 +1,13 @@
+author: PB
+id: 791b8984-9559-44f5-9871-afcdd7d8cc52
+date: '2025-10-29'
+description: Attack data for technique T1003
+environment: attack_range
+directory: test
+mitre_technique:
+- T1003
+datasets:
+- name: sysmon
+  path: datasets/attack_techniques/T1003/test/sysmon.xml
+  sourcetype: test
+  source: Sysmon
