@@ -44,3 +44,7 @@ datasets:
   path: /datasets/attack_techniques/T1505.003/wsus-suricata.log
   sourcetype: suricata
   source: suricata
+- name: wsus-7053-windows-application
+  path: /datasets/attack_techniques/T1505.003/wsus-7053-windows-application.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Application
