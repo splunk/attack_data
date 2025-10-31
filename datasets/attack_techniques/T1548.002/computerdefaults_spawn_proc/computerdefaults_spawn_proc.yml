@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 55a86252-b672-11f0-b923-629be353806a
+date: '2025-10-31'
+description: Generated datasets for computerdefaults spawn proc in attack range.
+environment: attack_range
+directory: computerdefaults_spawn_proc
+mitre_technique:
+- T1548.002
+datasets:
+- name: computerdefaults_process.log
+  path: /datasets/attack_techniques/T1548.002/computerdefaults_spawn_proc/computerdefaults_process.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
