@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 9c496a76-b672-11f0-b923-629be353806a
+date: '2025-10-31'
+description: Generated datasets for uac process handle dup in attack range.
+environment: attack_range
+directory: uac_process_handle_dup
+mitre_technique:
+- T1134.001
+datasets:
+- name: Computerdefaults_access.log
+  path: /datasets/attack_techniques/T1134.001/uac_process_handle_dup/Computerdefaults_access.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
