@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 79bea778-b672-11f0-b923-629be353806a
+date: '2025-10-31'
+description: Generated datasets for browser unusual flag in attack range.
+environment: attack_range
+directory: browser_unusual_flag
+mitre_technique:
+- T1185
+datasets:
+- name: castle_chrome_shell32.log
+  path: /datasets/attack_techniques/T1185/browser_unusual_flag/castle_chrome_shell32.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
