@@ -1,0 +1,13 @@
+author: Bhavin Patel, Splunk
+id: 04085959-2f4e-4804-bebc-64daff81d0c4
+date: '2025-10-28'
+description: This data is created in a K8s cluster running Tetragon and Cisco Isovalent Runtime Security to simulate accessing cloud metadata service.
+environment: not_applicable
+directory: isovalent_cloud_metadata
+mitre_technique:
+- T1552.005
+datasets:
+- name: process_connect
+  path: /datasets/attack_techniques/T1552.005/isovalent_cloud_metadata/process_connect.log
+  sourcetype: cisco:isovalent:processConnect
+  source: not_applicable
