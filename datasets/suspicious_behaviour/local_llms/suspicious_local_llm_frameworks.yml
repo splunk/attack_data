@@ -1,17 +1,17 @@
 author: Rod Soto
 id: f936bf82-07dd-40f9-a04b-c8b392cafc97
 date: '2025-11-12'
-description: These datasets contain events related to suspicious executions of local LLM frameworks on endpoints, which may indicate potential misuse or unauthorized activities.
+description: These datasets contain events related to suspicious executions of local LLM frameworks on endpoints, which may indicate installation and potential misuse or unauthorized activities.
 environment: attack_range
 directory: local_llms
 mitre_technique: []
 datasets:
 - name: sysmon_local_llms
   path: /datasets/local_llms/sysmon_local_llms.txt
-  source: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/sysmon_local_llms.txt
+  source: https://raw.githubusercontent.com/splunk/attack_data/master/datasets/suspicious_behaviour/sysmon_local_llms.txt
   sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - name: 4688_local_llms
   path: /datasets/local_llms/4688_local_llms.txt
-  source: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/local_llms/4688_local_llms.txt
+  source: https://raw.githubusercontent.com/splunk/attack_data/master/datasets/suspicious_behaviour/local_llms/4688_local_llms.txt
   sourcetype: XmlWinEventLog:Security
 
