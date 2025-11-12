@@ -3,7 +3,7 @@ id: f936bf82-07dd-40f9-a04b-c8b392cafc97
 date: '2025-11-12'
 description: These datasets contain events related to suspicious executions of local LLM frameworks on endpoints, which may indicate potential misuse or unauthorized activities.
 environment: attack_range
-dataset:
+datasets:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/sysmon_local_llms.txt
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/local_llms/4688_local_llms.txt
 sourcetypes:
