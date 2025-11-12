@@ -10,5 +10,4 @@ datasets:
 - name: 4688_local_llms
   source: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/local_llms/4688_local_llms.txt
   sourcetype: XmlWinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1543/
+
