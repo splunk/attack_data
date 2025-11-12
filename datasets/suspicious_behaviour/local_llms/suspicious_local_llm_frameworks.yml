@@ -6,8 +6,8 @@ environment: attack_range
 datasets:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/sysmon_local_llms.txt
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/local_llms/4688_local_llms.txt
-sourcetypes:
-- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-- WinEventLog:Security
-references:
-- https://attack.mitre.org/techniques/T1543/
+#sourcetypes:
+#- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+#- WinEventLog:Security
+#references:
+#- https://attack.mitre.org/techniques/T1543/
