@@ -4,10 +4,11 @@ date: '2025-11-12'
 description: These datasets contain events related to suspicious executions of local LLM frameworks on endpoints, which may indicate potential misuse or unauthorized activities.
 environment: attack_range
 datasets:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/sysmon_local_llms.txt
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/local_llms/4688_local_llms.txt
-#sourcetypes:
-#- XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-#- WinEventLog:Security
-#references:
-#- https://attack.mitre.org/techniques/T1543/
+- name: sysmon_local_llms
+  source: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/sysmon_local_llms.txt
+  sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 4688_local_llms
+  source: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/local_llms/4688_local_llms.txt
+  sourcetype: XmlWinEventLog:Security
+references:
+- https://attack.mitre.org/techniques/T1543/
