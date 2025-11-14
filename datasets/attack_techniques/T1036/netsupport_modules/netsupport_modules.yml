@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: ddd747f6-c15d-11f0-8cf9-629be353806a
+date: '2025-11-14'
+description: Generated datasets for netsupport modules in attack range.
+environment: attack_range
+directory: netsupport_modules
+mitre_technique:
+- T1036
+datasets:
+- name: net_support_module.log
+  path: /datasets/attack_techniques/T1036/netsupport_modules/net_support_module.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

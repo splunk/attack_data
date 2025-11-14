@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 0f2d6b50-c15e-11f0-8cf9-629be353806a
+date: '2025-11-14'
+description: Generated datasets for masquerading executable as non exec file type in attack range.
+environment: attack_range
+directory: masquerading_executable_as_non_exec_file_type
+mitre_technique:
+- T1036.008
+datasets:
+- name: non_exec_ext_but_exec_detected.log
+  path: /datasets/attack_techniques/T1036.008/masquerading_executable_as_non_exec_file_type/non_exec_ext_but_exec_detected.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
