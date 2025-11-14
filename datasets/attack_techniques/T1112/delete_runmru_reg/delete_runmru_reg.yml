@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 24e060c4-c15e-11f0-8cf9-629be353806a
+date: '2025-11-14'
+description: Generated datasets for delete runmru reg in attack range.
+environment: attack_range
+directory: delete_runmru_reg
+mitre_technique:
+- T1112
+datasets:
+- name: runmru_deletion.log
+  path: /datasets/attack_techniques/T1112/delete_runmru_reg/runmru_deletion.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
