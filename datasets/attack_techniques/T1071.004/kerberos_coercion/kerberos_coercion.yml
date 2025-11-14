@@ -1,0 +1,21 @@
+author: Raven Tait, Splunk
+id: 6f05e912-8743-4328-8ac2-4b0592918dfd
+date: '2025-11-14'
+description: Generated datasets for kerberos coercion using DNS in attack range.
+environment: attack_range
+directory: kerberos_coercion
+mitre_technique:
+- T1071.004
+datasets:
+- name: sysmon.log
+  path: /datasets/attack_techniques/T1071.004/kerberos_coercion/sysmon.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+- name: suricata.log
+  path: /datasets/attack_techniques/T1071.004/kerberos_coercion/suricata.log
+  sourcetype: suricata
+  source: suricata
+- name: windows-xml.log
+  path: /datasets/attack_techniques/T1071.004/kerberos_coercion/windows-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
