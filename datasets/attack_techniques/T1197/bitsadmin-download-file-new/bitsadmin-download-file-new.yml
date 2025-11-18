@@ -1,0 +1,13 @@
+author: PB
+id: 860011fc-435b-47bf-bed3-16c1654c18ea
+date: '2025-11-18'
+description: Attack data for detection BITSAdmin Download File New
+environment: attack_range
+directory: bitsadmin-download-file-new
+mitre_technique:
+- T1197
+datasets:
+- name: data
+  path: datasets/attack_techniques/T1197/bitsadmin-download-file-new/data.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
