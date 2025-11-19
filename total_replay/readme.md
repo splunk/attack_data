@@ -8,32 +8,66 @@ This lightweight tool helps you make the most of Splunk’s [Security Content](h
 
 ## Installation
 
-### MAC/LINUX
-#### TOTAL-REPLAY IN SPLUNK ATTACK-DATA REPO
+### MAC/LINUX:
+
+**How to install TOTAL-REPLAY when working with Splunk Attack Range or Splunk Attack Data**
+
+#### TOTAL-REPLAY IN SPLUNK ATTACK-RANGE REPO:
+---
+
 1. Clone the Splunk Security Content github repo. We recommend to follow this steps [Security Content Getting Started](https://github.com/splunk/security_content).
 
-2. Install Poetry (if not already installed)
+2. Clone the Attack Range github repo. We recommend to follow this steps [Attack Range Getting Started](https://github.com/splunk/attack_range).
+
+3. In total_replay->configuration->config.yml, add the folder path of the Splunk Attack Data repo and the detection folder path in Splunk Security Content.
+
+```
+settings:
+  security_content_detection_path: ~/path/to/your/security_content/detections
+  attack_range_dir_path: ~/path/to/your/attack_range
+```
+
+4. enable the `attack_range_version_on` config setting in total_replay->configuration->config.yml:
+   **NOTE: You can enable  either `attack_range_version_on` or `attack_data_version_on` settings**
+```
+attack_range_version_on: True
+```
+
+#### TOTAL-REPLAY IN SPLUNK ATTACK-DATA REPO:
+---
+
+1. Clone the Splunk Attack Data github repo. We recommend to follow this steps [Attack Data Getting Started](https://github.com/splunk/attack_data/).
+
+2. Clone the Splunk Security Content github repo. We recommend to follow this steps [Security Content Getting Started](https://github.com/splunk/security_content).
+
+3. Install Poetry (if not already installed)
 ```
 curl -sSL https://install.python-poetry.org/ | python3 -
 ```
-3. Navigate to your project directory
+4. Navigate to your project directory
 ```
 cd /path/to/your/total-replay-project
 ```
-4. Create a virtual environment and activate it
+5. Create a virtual environment and activate it
 ```
 poetry shell
 ```
-5. Install project dependencies
+6. Install project dependencies
 
-6. In total_replay->configuration->config.yml, add the folder path of the Splunk Attack Data repo and the detection folder path in Splunk Security Content.
+7. In total_replay->configuration->config.yml, add the folder path of the Splunk Attack Data repo and the detection folder path in Splunk Security Content.
 
 ```
 settings:
   security_content_detection_path: ~/path/to/your/security_content/detections
   attack_data_dir_path: ~/path/to/your/attack_data
 ```
-7. make sure you setup the required environment variables for splunk server connection
+8. enable the `attack_data_version_on` config setting in total_replay->configuration->config.yml:
+   **NOTE: You can enable  either `attack_range_version_on` or `attack_data_version_on` settings**
+```
+attack_data_version_on: True
+```
+
+9. make sure you setup the required environment variables for splunk server connection
 
     | Environment Variables.     | Description             |
     |----------------------------|-------------------------|
@@ -47,8 +81,13 @@ settings:
     export SPLUNK_HEC_TOKEN= <SPLUNK_HEC_TOKEN>
     ```
 
-### Windows
+### Windows OS:
+
 We recommend using the Windows Subsystem for Linux (WSL). You can find a tutorial [here](https://learn.microsoft.com/en-us/windows/wsl/install). After installing WSL, you can follow the steps described in the Linux section.
+
+
+### OPTIONAL:
+- You can toggle the `debug_print` configuration setting of TOTAL-REPLAY to disable or enable debug print during execution.
 
 
 ## Usage
@@ -66,7 +105,10 @@ A. This tool accepts the following types of metadata as input:
 
 It then uses these inputs to identify and replay the attack data associated with them.
 
-B. Or for automation purposes, you can use a simple .txt file like:
+B. For automation, you can also provide a simple .txt file.
+For example:
+
+**test.txt**:
 
 ```
 wsreset_uac_bypass.yml
@@ -81,7 +123,30 @@ T1589.001
 Amos Stealer
 PromptLock
 f64579c0-203f-11ec-abcc-acde48001122
-004e32e2-146d-11ec-a83f-acde48001122  
+004e32e2-146d-11ec-a83f-acde48001122
 ```
 
- that contains all the Security Content metadata you want to replay and then choose if you want to replay them all 
+This file can contain any mix of Security Content metadata you want to replay.
+From there, you can choose whether to replay only detection GUIDs, only analytic stories, or all entries using the tool’s greedy replay feature.
+
+C. TOTAL-REPLAY downloads the required Attack Data each time you execute or replay data during detection testing or development. To help reduce disk space usage, the tool generates a cached .yml file for every downloaded dataset. You can then use the `local_data_path` parameter to replay the cached data, allowing you to avoid downloading the same Attack Data again.
+
+## Author
+
+* [Teoderick Contreras](https://www.linkedin.com/in/teoderickc/)
+
+## License
+
+Copyright 2025 Splunk Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
