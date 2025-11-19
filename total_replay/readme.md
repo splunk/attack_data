@@ -17,7 +17,8 @@ This lightweight tool helps you make the most of Splunk’s [Security Content](h
 
 1. Clone the Splunk Security Content github repo. We recommend to follow this steps [Security Content Getting Started](https://github.com/splunk/security_content).
 
-2. Clone the Attack Range github repo. We recommend to follow this steps [Attack Range Getting Started](https://github.com/splunk/attack_range).
+2. We recommend following the instructions in the [Attack Range Getting Started](https://github.com/splunk/attack_range)
+ guide. Once Attack Range is installed and its virtual environment (managed via Poetry) is activated, TOTAL-REPLAY is almost ready to use — you just need to configure it.
 
 3. In total_replay->configuration->config.yml, add the folder path of the Splunk Attack Data repo and the detection folder path in Splunk Security Content.
 
