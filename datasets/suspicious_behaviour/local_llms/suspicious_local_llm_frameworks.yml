@@ -7,11 +7,14 @@ directory: local_llms
 mitre_technique: []
 datasets:
 - name: sysmon_local_llms
-  path: /datasets/local_llms/sysmon_local_llms.txt
-  source: https://raw.githubusercontent.com/splunk/attack_data/master/datasets/suspicious_behaviour/local_llms/sysmon_local_llms.txt
-  sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  path: /datasets/suspicious_behaviour/local_llms/sysmon_local_llms.log
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  sourcetype: XmlWinEventLog
 - name: 4688_local_llms
-  path: /datasets/local_llms/4688_local_llms.txt
-  source: https://raw.githubusercontent.com/splunk/attack_data/master/datasets/suspicious_behaviour/local_llms/4688_local_llms.txt
-  sourcetype: XmlWinEventLog:Security
-
+  path: /datasets/suspicious_behaviour/local_llms/4688_local_llms.log
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  sourcetype: XmlWinEventLog
+- name: sysmon_dns
+  path: /datasets/suspicious_behaviour/local_llms/sysmon_dns.log
+  source: XmlWinEventLog:Security
+  sourcetype: XmlWinEventLog
