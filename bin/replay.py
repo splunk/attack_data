@@ -10,7 +10,7 @@ import requests
 from urllib3 import disable_warnings
 import yaml
 from pathlib import Path
-
+from urllib.parse import urlparse, urlunparse, unquote
 
 def load_environment_variables():
     """Load required environment variables for Splunk connection."""
@@ -114,6 +114,70 @@ def send_data_to_splunk(file_path, splunk_host, hec_token, event_host_uuid,
         except Exception as e:
             print(f":x: Error sending {file_path} to Splunk HEC: {e}")
 
+def parse_old_attack_yml_data_file(yml_file_path, 
+                                   index_override, 
+                                   source_override, 
+                                   sourcetype_override, 
+                                   host_uuid):
+    ### handling possible empty inputs
+    print("Processing old attack data yml file")
+    if source_override == "" or sourcetype_override == "" or index_override == "":
+        return None, [], {}
+    
+    try:
+        with open(yml_file_path, 'r') as file:
+            data = yaml.safe_load(file)
+
+        # Extract required fields
+        file_id = host_uuid
+        d = data.get('dataset')
+        ### if the instance is list
+        if isinstance(d, list):
+            dataset_val = d[0]
+        if isinstance(d, str):
+            dataset_val = d
+
+        name_value = os.path.basename(dataset_val).split(".")[0]
+        p = urlparse(dataset_val)
+        if not p.scheme or not p.netloc:
+            raise ValueError(f"Unsupported GitHub URL format: {dataset_val}")
+
+        m, path_value = str(p.path).split("master")
+        ### generate our own datasets data
+        ### "datasets": [
+        ###     {
+        ###        "name": "windows-sysmon_creddump",
+        ###        "path": "/datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon_creddump.log",
+        ###        "sourcetype": "XmlWinEventLog",
+        ###        "source": "XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+        ###    }
+        ### ]
+        # Extract required fields
+
+        datasets = [
+            {
+                "name": name_value,
+                "path": path_value,
+                "sourcetype":sourcetype_override,
+                "source":source_override
+            }
+        ]
+        #print(datasets)
+        # Extract default metadata from YAML file
+        default_index = index_override  
+        default_source = source_override
+        default_sourcetype = sourcetype_override
+
+        # Return tuple of (id, datasets_list, default_metadata)
+        return file_id, datasets, {
+            'index': default_index,
+            'source': default_source,
+            'sourcetype': default_sourcetype
+        }
+
+    except Exception as e:
+        print(f"Error parsing {yml_file_path}: {e}")
+        return None, [], {}
 
 def main():
     parser = argparse.ArgumentParser(
@@ -205,8 +269,12 @@ This script will:
             file_id, datasets, defaults = parse_data_yml(yml_file)
 
             if not file_id or not datasets:
-                print(f"Skipping {yml_file} - no valid data found")
-                continue
+                
+                file_id, datasets, defaults = parse_old_attack_yml_data_file(yml_file, args.index_override, args.source_override, args.sourcetype_override, args.host_uuid)
+                
+                if not file_id or not datasets:
+                    print(f"Skipping {yml_file} - no valid data found")
+                    continue
 
             # Use the id from YAML file as host field (unless user provided one)
             event_host_uuid = args.host_uuid or file_id
