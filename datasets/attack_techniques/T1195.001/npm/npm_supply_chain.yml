@@ -1,0 +1,21 @@
+author: Michael Haag, Splunk
+id: 0e029cfc-ce81-48c4-ba74-598afa1ddbba
+date: '2025-10-28'
+description: Dataset generated in attack range for the attack technique of npm supply chain.
+environment: attack_range
+directory: npm
+mitre_technique:
+- T1195.001
+datasets:
+- name: workflow_yml_sysmon_linux
+  path: /datasets/attack_techniques/T1195.001/npm/workflow_yml_sysmon.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: shai_hulud_workflow_sysmon
+  path: /datasets/attack_techniques/T1195.001/npm/shai_hulud_workflow_sysmon.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: windows_workflow_sysmon
+  path: /datasets/attack_techniques/T1195.001/npm/windows_workflow_sysmon.log
+  sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
