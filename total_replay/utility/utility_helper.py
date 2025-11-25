@@ -1,6 +1,5 @@
 """
 author: Teoderick Contreras
-email: tccontreras@splunk.com
 description: a utility class for several helper functions for echo-attack utility tool:
  - analytic story
  - detection name

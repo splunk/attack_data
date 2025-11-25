@@ -1,6 +1,5 @@
 """
 author: Teoderick Contreras
-email: tccontreras@splunk.com
 description: a simple attack range utility tool designed to replay attack data via several category:
  - analytic story
  - detection name
