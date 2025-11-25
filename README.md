@@ -126,6 +126,11 @@ See a quick demo 📺 of the process to dump a dataset [here](https://www.youtub
 
 To contribute a dataset simply create a PR on this repository, for general instructions on creating a PR [see this guide](https://gist.github.com/Chaser324/ce0505fbed06b947d962).
 
+# TOTAL-REPLAY
+A lightweight tool helps you make the most of Splunk’s [Security Content](https://github.com/splunk/security_content) metadata, such as detection names, analytic stories, and more, by replaying relevant test event logs or attack data from either the [Splunk Attack Data](https://github.com/splunk/attack_data) or [Splunk Attack Range](https://github.com/splunk/attack_range) projects.
+
+for more information of this tool, please refer to [TOTAL-REPLAY Guide](total_replay/readme.md)
+
 # Automatically generated Datasets ⚙️
 
 This project takes advantage of automation to generate datasets using the attack_range. You can see details about this service on this [sub-project folder attack_data_service](https://github.com/splunk/attack_data/tree/master/attack_data_service).

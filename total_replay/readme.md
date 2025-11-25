@@ -28,10 +28,15 @@ settings:
   attack_range_dir_path: ~/path/to/your/attack_range
 ```
 
-4. enable the `attack_range_version_on` config setting in total_replay->configuration->config.yml:
+4. Enable the `attack_range_version_on` config setting in total_replay->configuration->config.yml:
    **NOTE: You can enable  either `attack_range_version_on` or `attack_data_version_on` settings**
 ```
 attack_range_version_on: True
+```
+
+5. If you encounter problem with colorama python library just update it.
+```  
+poetry update colorama
 ```
 
 #### TOTAL-REPLAY IN SPLUNK ATTACK-DATA REPO:
@@ -54,7 +59,9 @@ cd /path/to/your/total-replay-project
 poetry shell
 ```
 6. Install project dependencies
-
+```
+poetry install
+```
 7. In total_replay->configuration->config.yml, add the folder path of the Splunk Attack Data repo and the detection folder path in Splunk Security Content.
 
 ```
