@@ -9,15 +9,21 @@ description: Simulated Windows Security and System events demonstrating the
   BitLocker Network Unlock COM Object Hijacking lateral movement technique
   (T1574.015 / T1546.015) using RemoteRegistry service enablement, HKCU CLSID
   manipulation, and execution via baaupdate.exe or BdeUISrv.exe.
+environment: NA
+directory: bitlocker_com_hijacking
+mitre_technique:
+  - T1546.015
 references:
   - https://ipurple.team/2025/08/04/lateral-movement-bitlocker/
   - https://github.com/rtecCyberSec/BitlockMove
 attack_data:
   - file_name: windows-security.log
-    data: datasets/attack_techniques/T1546.015/bitlocker_com_hijacking/windows-security.log
-    source: WinEventLog:Security
-    sourcetype: WinEventLog:Security
+    data: datasets/attack_techniques/T1546.015/
+        bitlocker_com_hijacking/windows-security.log
+    source: XmlWinEventLog:Security
+    sourcetype: XmlWinEventLog:Security
   - file_name: windows-system.log
-    data: datasets/attack_techniques/T1546.015/bitlocker_com_hijacking/windows-system.log
-    source: WinEventLog:System
-    sourcetype: WinEventLog:System
+    data: datasets/attack_techniques/T1546.015/
+        bitlocker_com_hijacking/windows-system.log
+    source: XmlWinEventLog:System
+    sourcetype: XmlWinEventLog:System
