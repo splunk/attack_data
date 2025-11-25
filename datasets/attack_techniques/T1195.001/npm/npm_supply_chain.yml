@@ -15,3 +15,7 @@ datasets:
   path: /datasets/attack_techniques/T1195.001/npm/shai_hulud_workflow_sysmon.log
   sourcetype: sysmon:linux
   source: Syslog:Linux-Sysmon/Operational
+- name: windows_workflow_sysmon
+  path: /datasets/attack_techniques/T1195.001/npm/windows_workflow_sysmon.log
+  sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
