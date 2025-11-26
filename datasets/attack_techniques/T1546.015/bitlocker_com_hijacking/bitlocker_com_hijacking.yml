@@ -1,0 +1,17 @@
+author: Ali Atashgar (AAtashGar)
+id: b8f4c2a1-9e7d-4f3b-8a1c-5d9e7f2b6a3e
+date: '2025-11-25'
+description: Simulated Windows Security and System events demonstrating the BitLocker Network Unlock COM Object Hijacking lateral movement technique (T1574.015 / T1546.015) using RemoteRegistry service enablement, HKCU CLSID manipulation, and execution via baaupdate.exe or BdeUISrv.exe.
+environment: NA
+directory: bitlocker_com_hijacking
+mitre_technique:
+  - T1546.015
+datasets:
+  - name: windows-security.log
+    path: datasets/attack_techniques/T1546.015/bitlocker_com_hijacking/windows-security.log
+    source: XmlWinEventLog:Security
+    sourcetype: XmlWinEventLog
+  - name: windows-system.log
+    path: datasets/attack_techniques/T1546.015/bitlocker_com_hijacking/windows-system.log
+    source: XmlWinEventLog:System
+    sourcetype: XmlWinEventLog
