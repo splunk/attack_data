@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: ebb93346-cab0-11f0-9d54-629be353806a
+date: '2025-11-26'
+description: Generated datasets for auditd path cron in attack range.
+environment: attack_range
+directory: auditd_path_cron
+mitre_technique:
+- T1053.003
+datasets:
+- name: path_cron.log
+  path: /datasets/attack_techniques/T1053.003/auditd_path_cron/path_cron.log
+  sourcetype: 'auditd'
+  source: 'auditd'
