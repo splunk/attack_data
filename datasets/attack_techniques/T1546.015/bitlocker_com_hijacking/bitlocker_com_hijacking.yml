@@ -6,12 +6,12 @@ environment: NA
 directory: bitlocker_com_hijacking
 mitre_technique:
   - T1546.015
-attack_data:
+datasets:
   - name: windows-security.log
-    data: datasets/attack_techniques/T1546.015/bitlocker_com_hijacking/windows-security.log
+    path: datasets/attack_techniques/T1546.015/bitlocker_com_hijacking/windows-security.log
     source: XmlWinEventLog:Security
     sourcetype: XmlWinEventLog
   - name: windows-system.log
-    data: datasets/attack_techniques/T1546.015/bitlocker_com_hijacking/windows-system.log
+    path: datasets/attack_techniques/T1546.015/bitlocker_com_hijacking/windows-system.log
     source: XmlWinEventLog:System
     sourcetype: XmlWinEventLog
