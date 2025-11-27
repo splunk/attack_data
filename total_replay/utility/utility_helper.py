@@ -21,9 +21,10 @@ import subprocess
 import typer
 import uuid
 import re
+import urllib
 from collections import defaultdict
 from urllib.parse import urlparse, urlunparse, unquote
-
+from urllib3 import disable_warnings
 from utility.color_print import ColorPrint
 import json
 
@@ -139,146 +140,117 @@ class UtilityHelper:
     def normalized_args_tolist(self, input_args:str)->list:
         return [i.strip() for i in input_args.split(',')] 
 
-    def check_total_replay_setup(self)->str:
+    def parse_needed_detection_name(self, normalized_args_list:list)->list:
+        
+        ColorPrint.print_info_fg(f'[+][.  INFO]: ... Enumerating detection .yml file name ... []')
+        security_content_dir_path = self.read_config_settings("security_content_detection_path")
 
-        header = ""
+        if not os.path.isdir(os.path.expanduser(security_content_dir_path)):
+            ColorPrint.print_error_fg("[+][. ERROR]: The security Content folder path in config is invalid or not exist.")
+            return
+        
+        search_count= 0
+        search_found_list = []
+        found_flag = False            
+        needed_replay_yaml_field = {}
+        for roots, dirs, files in os.walk(os.path.expanduser(security_content_dir_path)):
 
-        attack_range_switch = self.read_config_settings("attack_range_version_on")
-        attack_data_switch = self.read_config_settings("attack_data_version_on")
+            ### skip deprecated directories
+            if dirs == "deprecated":
+                continue
+            
+            if found_flag:
+                break
 
-        if attack_range_switch == True and attack_data_switch == False:
-            header = "TOTAL_REPLAY_ATTACK_RANGE_ON"
-        elif attack_range_switch == False and attack_data_switch == True:
-            header = "TOTAL_REPLAY_ATTACK_DATA_ON"
-        else:
-            header = ""
-        return header
+            ### enumerate the files in the directory
+            for file in files:
+                
+                if file.lower() in [fn.lower() for fn in normalized_args_list]:
+                    ColorPrint.print_success_fg(f"[+][SUCCESS]: ... SEARCH FOUND -> [ {file} ]")
+                    file_path = os.path.join(roots, file)
+                    
+                    yaml_data = self.read_yaml_file(file_path)
 
+                    ### check if file content is empty or invalid 
+                    if yaml_data == None:
+                        ColorPrint.print_warning_fg(f"[!][WARNING]: ... Skipping empty or invalid YAML file: {file_path}")
+                        continue
+                    needed_replay_yaml_field = self.create_metadata_cache(yaml_data)
+                    search_found_list.append(needed_replay_yaml_field)
+                    
+                    search_count+=1
+                    if search_count == len(normalized_args_list):
+                        found_flag = True
+                        break
+ 
+        ColorPrint.print_info_fg(f"[+][.  INFO]: ... Total filtered detections: {len(search_found_list)} ")
+        ColorPrint.print_info_fg(f"[+][.  INFO]: ... ")
+        ColorPrint.print_info_fg(f"[+][.  INFO]: ... ")
+
+        return search_found_list
+    
     def process_replay_attack_data_by_file_name(self, tag:str, normalized_args_list:list, index_value:str, generated_guid:str)->None:
         """main function in replaying attack data base on Splunk detection filename"""
 
-        ### check which setup version of total-replay should be enable. attack range or attack data
-        self.header_val  = ""
-        self.header_val  = self.check_total_replay_setup()
+        ColorPrint.print_cyan_fg(self.header_divider("TOTAl-REPLAY-ACTIVATED", tag))
 
-        if self.header_val  == "":
-            ColorPrint.print_error_fg("[-][. ERROR]: ... You cannot enable/disable both version of TOTAL-REPLAY in config.yml. Choose either Attack Range or Attack Data version")
-            return
-        else:
-            ColorPrint.print_cyan_fg(self.header_divider(self.header_val, tag))
+        search_found_list=[]
+        search_found_list = self.parse_needed_detection_name(normalized_args_list)
+       
+        ### generate uid for caching purposes of replay data
 
-            ColorPrint.print_info_fg(f'[+][.  INFO]: ... Enumerating detection .yml file name ... []')
-            security_content_dir_path = self.read_config_settings("security_content_detection_path")
+        for ctr, needed_replay_yaml_field in enumerate(search_found_list):
 
-            if not os.path.isdir(os.path.expanduser(security_content_dir_path)):
-                ColorPrint.print_error_fg("[+][. ERROR]: The security Content folder path in config is invalid or not exist.")
+            ### get the attack data url link
+            if "attack_data_link" in needed_replay_yaml_field:
+                attack_data_link = needed_replay_yaml_field["attack_data_link"]
+            else:
+                continue
+
+            ### generate replay yaml output folder
+            output_base_dir = os.path.join(self.curdir, self.read_config_settings('output_dir_name'))
+            self.generate_output_dir(output_base_dir)
+            
+            attack_data_timestamp_dir_path = os.path.join(output_base_dir, datetime.date.today().strftime("%Y-%m-%d"))
+            escu_detection_guid = needed_replay_yaml_field['id']
+
+            ColorPrint.print_info_fg(f"[+][.  INFO]: ... Downloading attack data for: {needed_replay_yaml_field['name']} ... item:{ctr+1}")
+            attack_datasets_full_path, attack_datasets_path = self.download_via_attack_data(attack_data_link, attack_data_timestamp_dir_path, generated_guid)                    
+
+            ### update the total-replay cache yaml file
+            needed_replay_yaml_field['attack_data_output_file_path'] = attack_datasets_full_path
+            
+
+            needed_replay_yaml_field = self.locate_associated_attack_data_yaml_file(attack_data_link, attack_datasets_path, needed_replay_yaml_field)
+            if not needed_replay_yaml_field:
                 return
             
+            ### dropped the replay yaml cache
+            replayed_yaml_cache_path = os.path.join(attack_data_timestamp_dir_path, generated_guid, self.read_config_settings('replayed_yaml_cache_dir_name'))
+            self.generate_output_dir(replayed_yaml_cache_path)
 
-            ctr= 1
-            search_found_list = []
-            for field_name in normalized_args_list:
+            cache_replay_yaml_file_path = os.path.join(replayed_yaml_cache_path, needed_replay_yaml_field['id']+ "_" + self.read_config_settings('cache_replay_yaml_name'))
+            self.dump_yaml_file(cache_replay_yaml_file_path, needed_replay_yaml_field)
 
-                ### skipped if the inputted string has no file extension or not a .yml file
-                if not field_name.endswith(".yml"):
-                    continue
-                
-                found_flag = False
-                needed_replay_yaml_field = {}
+            ### comment me if you dont want to see the replay_cache yml file
+            if self.read_config_settings('debug_print'):
+                ColorPrint.print_yellow_fg(Style.DIM + self.header_divider("TOTAL-REPLAY CACHE YAML FILE", tag))
+                ColorPrint.print_yellow_fg(Style.DIM + f"[+] ... \n{json.dumps(needed_replay_yaml_field, indent=4)}")
+                ColorPrint.print_yellow_fg(Style.DIM + self.footer_divider("TOTAL-REPLAY CACHE YAML FILE"))
 
-                for roots, dirs, files in os.walk(os.path.expanduser(security_content_dir_path)):
-
-                    ### skip deprecated directories
-                    if dirs == "deprecated":
-                        continue
-                    
-                    ### break the loop once we found the needed field name
-                    if found_flag:
-                        break
-
-                    ### enumerate the files in the directory
-                    for file in files:
-                        
-                        if file.lower() == field_name.lower():
-                            ColorPrint.print_success_fg(f"[+][SUCCESS]: ... SEARCH FOUND -> [ {file} ]")
-                            file_path = os.path.join(roots, file)
-                            
-                            yaml_data = self.read_yaml_file(file_path)
-
-                            ### check if file content is empty or invalid 
-                            if yaml_data == None:
-                                ColorPrint.print_warning_fg(f"[!][WARNING]: ... Skipping empty or invalid YAML file: {file_path}")
-                                continue
-
-                            needed_replay_yaml_field = self.create_metadata_cache(yaml_data)
-                            search_found_list.append(needed_replay_yaml_field)
-                            found_flag = True
+            self.processed_attack_data_uuid.append(needed_replay_yaml_field['attack_data_uuid'])
             
-            ColorPrint.print_info_fg(f"[+][.  INFO]: ... Total filtered detections: {len(search_found_list)} ")
+            
+            try:
+                self.attack_data_replay_cmd(needed_replay_yaml_field, index_value)
+            except:
+                raise ValueError(f"[+][. ERROR]: ... Attack Data Replay Exception!")
+            
 
-                
-            ### generate uid for caching purposes of replay data
+            
+            ColorPrint.print_magenta_fg("\n[+]" + "█" * 160 + "\n")
 
-            for needed_replay_yaml_field in search_found_list:
-
-                ### get the attack data url link
-                if "attack_data_link" in needed_replay_yaml_field:
-                    attack_data_link = needed_replay_yaml_field["attack_data_link"]
-                else:
-                    continue
-
-                ### generate replay yaml output folder
-                output_base_dir = os.path.join(self.curdir, self.read_config_settings('output_dir_name'))
-                self.generate_output_dir(output_base_dir)
-                
-                attack_data_timestamp_dir_path = os.path.join(output_base_dir, datetime.date.today().strftime("%Y-%m-%d"))
-                escu_detection_guid = needed_replay_yaml_field['id']
-
-                ColorPrint.print_info_fg(f"[+][.  INFO]: ... Downloading attack data ... item:{ctr}")
-                attack_datasets_path = self.download_attack_data(attack_data_link, needed_replay_yaml_field, generated_guid, attack_data_timestamp_dir_path, escu_detection_guid)                    
-
-                ### update the total-replay cache yaml file
-                needed_replay_yaml_field['attack_data_output_file_path'] = attack_datasets_path
-                
-                if self.header_val == "TOTAL_REPLAY_ATTACK_DATA_ON": 
-                    needed_replay_yaml_field = self.locate_associated_attack_data_yaml_file(attack_data_link, attack_datasets_path, needed_replay_yaml_field)
-                if not needed_replay_yaml_field:
-                    return
-                
-                ### dropped the replay yaml cache
-                replayed_yaml_cache_path = os.path.join(attack_data_timestamp_dir_path, generated_guid, self.read_config_settings('replayed_yaml_cache_dir_name'))
-                self.generate_output_dir(replayed_yaml_cache_path)
-
-                cache_replay_yaml_file_path = os.path.join(replayed_yaml_cache_path, needed_replay_yaml_field['id']+ "_" + self.read_config_settings('cache_replay_yaml_name'))
-                self.dump_yaml_file(cache_replay_yaml_file_path, needed_replay_yaml_field)
-
-                ### comment me if you dont want to see the replay_cache yml file
-                if self.read_config_settings('debug_print'):
-                    ColorPrint.print_yellow_fg(Style.DIM + self.header_divider("TOTAL-REPLAY CACHE YAML FILE", tag))
-                    ColorPrint.print_yellow_fg(Style.DIM + f"[+] ... \n{json.dumps(needed_replay_yaml_field, indent=4)}")
-                    ColorPrint.print_yellow_fg(Style.DIM + self.footer_divider("TOTAL-REPLAY CACHE YAML FILE"))
-
-                ### simple logic to avoid replaying the same attack data again and again (note: only applicable in attack_data_version)
-                if self.header_val == "TOTAL_REPLAY_ATTACK_DATA_ON": 
-                    if needed_replay_yaml_field['attack_data_uuid'] in self.processed_attack_data_uuid:
-                        ColorPrint.print_info_fg(Style.BRIGHT + f"[+][.  INFO]: ... ATTACK_DATA UUID: {needed_replay_yaml_field['attack_data_uuid']} has already been replayed.")
-                        ctr+=1
-                        continue                
-
-                    self.processed_attack_data_uuid.append(needed_replay_yaml_field['attack_data_uuid'])
-
-                if self.header_val == "TOTAL_REPLAY_ATTACK_DATA_ON":
-                    self.attack_data_replay_cmd(needed_replay_yaml_field, index_value)
-                elif self.header_val == "TOTAL_REPLAY_ATTACK_RANGE_ON":
-                    self.attack_range_replay_cmd(needed_replay_yaml_field, index_value)
-                else:
-                    raise ValueError(f"Unknown Total-Replay Switch Version: {self.header_val}")
-
-
-                ctr+=1
-                ColorPrint.print_magenta_fg("\n[+]" + "█" * 160 + "\n")
-
-        ColorPrint.print_cyan_fg(self.footer_divider(self.header_val))               
+        ColorPrint.print_cyan_fg(self.footer_divider("TOTAl-REPLAY-ACTIVATED"))               
 
         return
     
@@ -298,70 +270,8 @@ class UtilityHelper:
             os.makedirs(dir_name, exist_ok=True)
             ColorPrint.print_success_fg(f"[+][SUCCESS]: ... {dir_name} folder created!")
         return
-        
-    def download_via_attack_range(self, attack_data_link:str, attack_data_timestamp_dir_path:str, generated_guid:str, escu_detection_guid:str)->str:
-        """download needed raw attack data via attack range feature"""
-
-        guid_dir_path = os.path.join(attack_data_timestamp_dir_path, generated_guid, escu_detection_guid)
-        self.generate_output_dir(guid_dir_path)
-
-        ## download the file with streaming enable
-        response = requests.get(attack_data_link, stream=True)
-        response.raise_for_status() # Raise an error for bad responses (e.g., 404, 403)
-
-        attack_data_file_path = os.path.join(guid_dir_path,os.path.basename(attack_data_link))
-
-        with open(attack_data_file_path, "wb") as f:
-            for chunk in response.iter_content(chunk_size=8192):
-                f.write(chunk)
-        ColorPrint.print_success_fg(f"[+][SUCCESS]: ... file {os.path.basename(attack_data_link)} downloaded successfully")  
-
-        
-        return attack_data_file_path
-
-    def attack_range_replay_cmd(self, needed_replay_yaml_field:dict, index_value:str)->bool:
-        """replay the attack_data logs via attack range replay feature"""
-
-        if not os.path.isdir(os.path.expanduser(self.read_config_settings('attack_range_dir_path'))):
-            ColorPrint.print_error_fg("[+][. ERROR]: The attack range folder path in config is invalid or not exist.")
-            return False
-
-        attack_range_py_file_path = os.path.join(os.path.expanduser(self.read_config_settings('attack_range_dir_path')), self.read_config_settings('attack_range_py_name'))
-
-        error_terms = ["error", "Failed to connect","unreacheable=1", "timed out", "exception","fatal"]
-        ### setup Command arguments
-        attack_data_file_path = needed_replay_yaml_field['attack_data_output_file_path']
-        attack_data_source = needed_replay_yaml_field['attack_data_source']
-        attack_data_source_type = needed_replay_yaml_field['attack_data_sourcetype']
-        python_interpreter_name = self.read_config_settings('python_interpreter_name')
-
-        command = ["poetry", "run", f"{python_interpreter_name}", f"{attack_range_py_file_path}",  "replay", "-fn", f"{attack_data_file_path}", "--source", f"{attack_data_source}", "--sourcetype", f"{attack_data_source_type}", "--index", f"{index_value}"]
-        
-        try:
-            result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,text=True)
-            output = result.stdout.strip()
-
-            ### comment this if you dont want to see the replay stdout
-            if self.read_config_settings('debug_print'):
-                ColorPrint.print_green_fg(Style.DIM + self.header_divider("ATTACK DATA REPLAY SUMMARY"))
-                ColorPrint.print_green_fg(Style.DIM + f"[+] ...\n{output}\n")
-                ColorPrint.print_green_fg(Style.DIM + self.footer_divider("ATTACK DATA REPLAY SUMMARY"))
             
-            if any(term.lower() in str(result).lower() for term in error_terms):
-                ColorPrint.print_error_fg(Style.BRIGHT + f"[+][. ERROR]: ... [{needed_replay_yaml_field['name']}] replayed Failed")
-                return False
-            else:
-                ColorPrint.print_success_fg(Style.BRIGHT + f"[+][SUCCESS]: ... [{needed_replay_yaml_field['name']}] replayed succesfully")
-                return True  # If successful, return True
-        except subprocess.CalledProcessError as e:
-            # If an error occurs, print the error and return False
-            output = e.stdout.strip() if e.stdout else "No output"
-
-            ColorPrint.print_error_fg(f"[-][. ERROR]: ... running command: {e}")
-            ColorPrint.print_error_fg(f"[-][. ERROR]: ... running command: {output}")
-            return False
-    
-    def download_via_attack_data(self, attack_data_link:str, attack_data_timestamp_dir_path:str, generated_guid:str)->str:
+    def download_via_attack_data(self, attack_data_link:str, attack_data_timestamp_dir_path:str, generated_guid:str)->tuple:
         """download needed raw attack data via attack data feature"""
         
         ### generate a unique guid folder path
@@ -374,6 +284,16 @@ class UtilityHelper:
             raise ValueError(f"[-][. ERROR]: ... Unsupported GitHub URL format: {attack_data_link}")
         
         m, datasets_path = str(p.path).split("master/")
+
+        ### locate the attack_data path in config
+        if not os.path.isdir(os.path.expanduser(self.read_config_settings('attack_data_dir_path'))):
+            ColorPrint.print_error_fg("[+][. ERROR]: The attack data folder path in config is invalid or not exist.")
+            return {}
+        else:
+            attack_datasets_full_path =  os.path.join(os.path.expanduser(self.read_config_settings('attack_data_dir_path')), datasets_path)
+            if os.path.isfile(attack_datasets_full_path):
+                ColorPrint.print_info_fg(f"[+][.  INFO]: ... Attack data at: {attack_datasets_full_path} already exists. Download skipped.")
+                return (attack_datasets_full_path, datasets_path)
 
         # Find the Git repository root
         repo_root = subprocess.check_output(["git", "rev-parse", "--show-toplevel"],text=True).strip()
@@ -391,17 +311,9 @@ class UtilityHelper:
             ColorPrint.print_error_fg("[-][. ERROR]: ... Stdout:", e.stdout)
             ColorPrint.print_error_fg("[-][. ERROR]: ... Stderr:", e.stderr) 
 
-        return datasets_path
+
+        return (attack_datasets_full_path, datasets_path)
      
-    def download_attack_data(self, attack_data_link:str, needed_yaml_field_cache:dict, generated_guid:str, attack_data_timestamp_dir_path:str, escu_detection_guid:str)->str:
-        """download attack data raw logs """
-
-        if self.header_val == "TOTAL_REPLAY_ATTACK_RANGE_ON":
-            attack_datasets_path = self.download_via_attack_range(attack_data_link, attack_data_timestamp_dir_path, generated_guid, escu_detection_guid)
-        if self.header_val == "TOTAL_REPLAY_ATTACK_DATA_ON":
-            attack_datasets_path = self.download_via_attack_data(attack_data_link, attack_data_timestamp_dir_path, generated_guid)
-
-        return attack_datasets_path
 
     def read_yaml_file(self, file_path:str)->dict:
         """Read a YAML file and return its content as a dictionary."""
@@ -503,68 +415,83 @@ class UtilityHelper:
 
         return needed_replay_yaml_field
     
+    def send_data_to_splunk(self, file_path, splunk_host, hec_token, event_host_uuid, index="test", source="test", sourcetype="test"):
+        """Send a data file to Splunk HEC."""
+        disable_warnings()
+        hec_channel = str(uuid.uuid4())
+        headers = {
+            "Authorization": f"Splunk {hec_token}",
+            "X-Splunk-Request-Channel": hec_channel,
+        }
+        url_params = {
+            "index": index,
+            "source": source,
+            "sourcetype": sourcetype,
+            "host": event_host_uuid,
+        }
+        url = urllib.parse.urljoin(
+            f"https://{splunk_host}:8088",
+            "services/collector/raw"
+        )
+        if self.read_config_settings('debug_print'):
+            ColorPrint.print_yellow_fg(Style.DIM + self.header_divider("ATTACK DATA REPLAY SUMMARY"))
+            name_value = os.path.basename(file_path).split(".")[0]
+            ColorPrint.print_yellow_fg(Style.DIM + f"[+][.  INFO]: ... Sending dataset '{name_value}' from {file_path}")
+            ColorPrint.print_yellow_fg(Style.DIM + f"[+][.  INFO]: ... index: {index}")
+            ColorPrint.print_yellow_fg(Style.DIM + f"[+][.  INFO]: ... source: {source}")
+            ColorPrint.print_yellow_fg(Style.DIM + f"[+][.  INFO]: ... sourcetype: {sourcetype}")
+            ColorPrint.print_yellow_fg(Style.DIM + f"[+][.  INFO]: ... uuid: {event_host_uuid}")
+            ColorPrint.print_yellow_fg(Style.DIM + self.footer_divider("ATTACK DATA REPLAY SUMMARY"))
+
+        with open(file_path, "rb") as datafile:
+            try:
+                res = requests.post(
+                    url,
+                    params=url_params,
+                    data=datafile.read(),
+                    allow_redirects=True,
+                    headers=headers,
+                    verify=False,
+                )
+                res.raise_for_status()
+                ColorPrint.print_success_fg(f"[+][SUCCESS]: ... :white_check_mark: Sent {file_path} to Splunk HEC")
+            except Exception as e:
+                ColorPrint.print_error_fg(f"[+][. ERROR]: ... :x: Error sending {file_path} to Splunk HEC: {e}")
+        return
+
     def attack_data_replay_cmd(self, needed_replay_yaml_field:dict, index_value:str)->bool:
         """main function in replaying attack data in splunk server"""
         
         env_var = self.load_environment_variables()
-        error_terms = ["error", "Failed to connect","unreacheable=1", "timed out", "exception","fatal"]
+        splunk_host = env_var['host']
+        hec_token = env_var['hec_token']
+        #error_terms = ["error", "Failed to connect","unreacheable=1", "timed out", "exception","fatal"]
         ### setup Command arguments
         attack_data_file_path = needed_replay_yaml_field['attack_data_output_file_path']
         attack_data_source = needed_replay_yaml_field['attack_data_source']
         attack_data_source_type = needed_replay_yaml_field['attack_data_sourcetype']
         attack_data_uuid = needed_replay_yaml_field['attack_data_uuid']
         attack_data_yml_file_path = needed_replay_yaml_field['attack_data_yml_file_path']
-        python_interpreter_name = self.read_config_settings('python_interpreter_name')
-
 
         if not os.path.isdir(os.path.expanduser(self.read_config_settings('attack_data_dir_path'))):
-            ColorPrint.print_error_fg("[+][. ERROR]: The attack data folder path in config is invalid or not exist.")
+            ColorPrint.print_error_fg("[+][. ERROR]: ... The attack data folder path in config is invalid or not exist.")
             return False
         
-        replay_path = os.path.join(os.path.expanduser(self.read_config_settings('attack_data_dir_path')), "bin","replay.py")
-
-        command = ["poetry", "run", f"{python_interpreter_name}",  f"{replay_path}", "--index-override", f"{index_value}", "--source-override", f"{attack_data_source}", "--sourcetype-override", f"{attack_data_source_type}", "--host-uuid", f"{attack_data_uuid}", f"{attack_data_yml_file_path}"]
-        ColorPrint.print_info_fg(f"[+][.  INFO]: ... {" ".join(command)}")
-
         try:
-            result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,text=True)
-            output = result.stdout.strip()
-
-            ### comment this if you dont want to see the replay stdout
-            if self.read_config_settings('debug_print'):
-                ColorPrint.print_green_fg(Style.DIM + self.header_divider("ATTACK DATA REPLAY SUMMARY"))
-                ColorPrint.print_green_fg(Style.DIM + f"[+] ...\n{output}\n")
-                ColorPrint.print_green_fg(Style.DIM + self.footer_divider("ATTACK DATA REPLAY SUMMARY"))
-
-            if any(term.lower() in str(result).lower() for term in error_terms):
-                ColorPrint.print_error_fg(Style.BRIGHT + f"[+][. ERROR]: ... [{needed_replay_yaml_field['name']}] replayed Failed")
-                return False
-            else:
-                ColorPrint.print_success_fg(Style.BRIGHT + f"[+][SUCCESS]: ... [{needed_replay_yaml_field['name']}] replayed succesfully")
-                return True  # If successful, return True
-        except subprocess.CalledProcessError as e:
-            # If an error occurs, print the error and return False
-            output = e.stdout.strip() if e.stdout else "No output"
-
+            self.send_data_to_splunk(attack_data_file_path, splunk_host, hec_token, attack_data_uuid, index_value, attack_data_source, attack_data_source_type)
+            return True
+        except Exception as e:
             ColorPrint.print_error_fg(f"[-][. ERROR]: ... running command: {e}")
-            ColorPrint.print_error_fg(f"[-][. ERROR]: ... running command: {output}")
             return False
 
 
     def process_replay_attack_data(self, tag:str, normalized_args_list:list, index_value:str, generated_guid:str)->None:
         """main function in replaying attack data using ESCU metadata"""
 
-        ### check which setup version of total-replay should be enable. attack range or attack data
-        self.header_val  = ""
-        self.header_val  = self.check_total_replay_setup()
 
-        if self.header_val  == "":
-            ColorPrint.print_error_fg("[-][. ERROR]: ... You cannot enable/disable both version of TOTAL-REPLAY in config.yml. Choose either Attack Range or Attack Data version")
-            return
-        else:
-            ColorPrint.print_cyan_fg(self.header_divider(self.header_val, tag))
+        ColorPrint.print_cyan_fg(self.header_divider("TOTAl-REPLAY-ACTIVATED", tag))
 
-        ctr = 1
+        
         search_found_list = [] 
         for field_name in normalized_args_list:
 
@@ -581,7 +508,7 @@ class UtilityHelper:
             ColorPrint.print_info_fg(f"[+][.  INFO]: ... Total filtered detections: {len(search_found_list)} ")
 
                
-            for needed_replay_yaml_field in search_found_list:
+            for ctr, needed_replay_yaml_field in enumerate(search_found_list):
 
                 ### get the attack data url link
                 if "attack_data_link" in needed_replay_yaml_field:
@@ -596,14 +523,12 @@ class UtilityHelper:
                 attack_data_timestamp_dir_path = os.path.join(output_base_dir, datetime.date.today().strftime("%Y-%m-%d"))
                 escu_detection_guid = needed_replay_yaml_field['id']
 
-                ColorPrint.print_info_fg(f"[+][.  INFO]: ... Downloading attack data ... item:{ctr}")
-                attack_datasets_path = self.download_attack_data(attack_data_link, needed_replay_yaml_field, generated_guid, attack_data_timestamp_dir_path, escu_detection_guid)
+                ColorPrint.print_info_fg(f"[+][.  INFO]: ... Downloading attack data for: {needed_replay_yaml_field['name']} ... item:{ctr+1}")
+                attack_datasets_full_path, attack_datasets_path = self.download_via_attack_data(attack_data_link, attack_data_timestamp_dir_path, generated_guid)
 
                 ### update the total-replay cache yaml file
-                needed_replay_yaml_field['attack_data_output_file_path'] = attack_datasets_path
-                
-                if self.header_val == "TOTAL_REPLAY_ATTACK_DATA_ON": 
-                    needed_replay_yaml_field = self.locate_associated_attack_data_yaml_file(attack_data_link, attack_datasets_path, needed_replay_yaml_field)
+                needed_replay_yaml_field['attack_data_output_file_path'] = attack_datasets_full_path
+                needed_replay_yaml_field = self.locate_associated_attack_data_yaml_file(attack_data_link, attack_datasets_path, needed_replay_yaml_field)
                 if not needed_replay_yaml_field:
                     return
 
@@ -619,27 +544,18 @@ class UtilityHelper:
                     ColorPrint.print_yellow_fg(Style.DIM + self.header_divider("TOTAL-REPLAY CACHE YAML FILE", tag))
                     ColorPrint.print_yellow_fg(Style.DIM + f"[+] ... \n{json.dumps(needed_replay_yaml_field, indent=4)}")
                     ColorPrint.print_yellow_fg(Style.DIM + self.footer_divider("TOTAL-REPLAY CACHE YAML FILE"))
+            
 
-                ### simple logic to avoid replaying the same attack data again and again
-                if self.header_val == "TOTAL_REPLAY_ATTACK_DATA_ON": 
-                    if needed_replay_yaml_field['attack_data_uuid'] in self.processed_attack_data_uuid:
-                        ColorPrint.print_info_fg(Style.BRIGHT + f"[+][.  INFO]: ... ATTACK_DATA UUID: {needed_replay_yaml_field['attack_data_uuid']} has already been replayed.")
-                        ctr+=1
-                        continue                
+                self.processed_attack_data_uuid.append(needed_replay_yaml_field['attack_data_uuid'])
 
-                    self.processed_attack_data_uuid.append(needed_replay_yaml_field['attack_data_uuid'])
-
-                if self.header_val == "TOTAL_REPLAY_ATTACK_DATA_ON":
+                try:
                     self.attack_data_replay_cmd(needed_replay_yaml_field, index_value)
-                elif self.header_val == "TOTAL_REPLAY_ATTACK_RANGE_ON":
-                    self.attack_range_replay_cmd(needed_replay_yaml_field, index_value)
-                else:
-                    raise ValueError(f"Unknown Total-Replay Switch Version: {self.header_val}")
-                    
-                ctr+=1
+                except:
+                    raise ValueError(f"[+][. ERROR]: ... Attack Data Replay Exception!")
+
                 ColorPrint.print_magenta_fg("\n[+]" + "█" * 160 + "\n")
 
-        ColorPrint.print_cyan_fg(self.footer_divider(self.header_val))                                    
+        ColorPrint.print_cyan_fg(self.footer_divider("TOTAl-REPLAY-ACTIVATED"))                                    
 
 
         return
@@ -767,19 +683,14 @@ class UtilityHelper:
         return segregate
     
     def process_local_yaml_cache(self, local_replayed_yaml_dir_path:str,index_value:str)->None:
-        """Process local YAML cache files for replaying attack data."""
-        ### check which setup version of total-replay should be enable. attack range or attack data
-        self.header_val  = ""
-        self.header_val  = self.check_total_replay_setup()
-        
+        """Process local YAML cache files for replaying attack data."""        
         if not os.path.isdir(local_replayed_yaml_dir_path):
             ColorPrint.print_error_fg(f"[-][. ERROR]: ... Inputted {local_replayed_yaml_dir_path} is invalid!")
             return
         else:
-            ctr = 1
             for root, dirs, files in os.walk(local_replayed_yaml_dir_path):
-                for file in files:
-                    ColorPrint.print_info_fg(f'[+][.  INFO]: ... Processing {ctr} => [ {file} ]')
+                for ctr, file in enumerate(files):
+                    ColorPrint.print_info_fg(f'[+][.  INFO]: ... Processing {ctr+1} => [ {file} ]')
                     file_path = os.path.join(root, file)
 
                     if file.endswith((".yaml",".yml")):
@@ -794,23 +705,14 @@ class UtilityHelper:
                             ColorPrint.print_yellow_fg(Style.DIM + self.header_divider("TOTAL-REPLAY CACHE YAML FILE", "local cache"))
                             ColorPrint.print_yellow_fg(Style.DIM + f"[+] ... \n{json.dumps(yaml_data, indent=4)}")
                             ColorPrint.print_yellow_fg(Style.DIM + self.footer_divider("TOTAL-REPLAY CACHE YAML FILE"))
+                
+                        self.processed_attack_data_uuid.append(yaml_data['attack_data_uuid'])
 
-                        ### simple logic to avoid replaying the same attack data again and again
-                        if self.header_val == "TOTAL_REPLAY_ATTACK_DATA_ON": 
-                            if yaml_data['attack_data_uuid'] in self.processed_attack_data_uuid:
-                                ColorPrint.print_info_fg(Style.BRIGHT + f"[+][.  INFO]: ... ATTACK_DATA UUID: {yaml_data['attack_data_uuid']} has already been replayed.")
-                                ctr+=1
-                                continue
-                    
-                            self.processed_attack_data_uuid.append(yaml_data['attack_data_uuid'])
-
-                        if self.header_val == "TOTAL_REPLAY_ATTACK_DATA_ON":
+                        try:
                             self.attack_data_replay_cmd(yaml_data, index_value)
-                        if self.header_val == "TOTAL_REPLAY_ATTACK_RANGE_ON":
-                            self.attack_range_replay_cmd(yaml_data, index_value)
+                        except:
+                            raise ValueError(f"[+][. ERROR]: ... Attack Data Replay Exception!")                        
                         
-
-                        ctr+=1
                         ColorPrint.print_magenta_fg("\n[+]" + "█" * 160 + "\n")
 
 

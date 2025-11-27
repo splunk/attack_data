@@ -9,37 +9,6 @@ This lightweight tool helps you make the most of Splunk’s [Security Content](h
 ## Installation
 
 ### MAC/LINUX:
-
-**How to install TOTAL-REPLAY when working with Splunk Attack Range or Splunk Attack Data**
-
-#### TOTAL-REPLAY IN SPLUNK ATTACK-RANGE REPO:
----
-
-1. Clone the Splunk Security Content github repo. We recommend to follow this steps [Security Content Getting Started](https://github.com/splunk/security_content).
-
-2. We recommend following the instructions in the [Attack Range Getting Started](https://github.com/splunk/attack_range)
- guide. Once Attack Range is installed and its virtual environment (managed via Poetry) is activated, TOTAL-REPLAY is almost ready to use — you just need to configure it.
-
-3. In total_replay->configuration->config.yml, add the folder path of the Splunk Attack Data repo and the detection folder path in Splunk Security Content.
-
-```
-settings:
-  security_content_detection_path: ~/path/to/your/security_content/detections
-  attack_range_dir_path: ~/path/to/your/attack_range
-```
-
-4. Enable the `attack_range_version_on` config setting in total_replay->configuration->config.yml:
-   **NOTE: You can enable  either `attack_range_version_on` or `attack_data_version_on` settings**
-```
-attack_range_version_on: True
-```
-
-5. If you encounter problem with colorama python library just update it.
-```  
-poetry update colorama
-```
-
-#### TOTAL-REPLAY IN SPLUNK ATTACK-DATA REPO:
 ---
 
 1. Clone the Splunk Attack Data github repo. We recommend to follow this steps [Attack Data Getting Started](https://github.com/splunk/attack_data/).
@@ -90,6 +59,12 @@ attack_data_version_on: True
     export SPLUNK_HEC_TOKEN= <SPLUNK_HEC_TOKEN>
     ```
 
+10. Make sure HEC token is set to "Enabled" in Splunk server (Settings → Data Inputs → HTTP Event Collector).
+
+11. Confirm the HEC listener port is enabled, typically 8088, using HTTPS.
+
+12. Update your firewall settings to allow inbound connections on port 8088, otherwise your data sender will not be able to reach Splunk.
+
 ### Windows OS:
 
 We recommend using the Windows Subsystem for Linux (WSL). You can find a tutorial [here](https://learn.microsoft.com/en-us/windows/wsl/install). After installing WSL, you can follow the steps described in the Linux section.
@@ -112,7 +87,16 @@ A. This tool accepts the following types of metadata as input:
     - **Splunk detection GUIDs**
     - **Analytic stories**
 
-It then uses these inputs to identify and replay the attack data associated with them.
+  It then uses these inputs to identify and replay the attack data associated with them.
+
+  Example A - Replay Attack Data via Splunk detection name:
+
+  ```
+  python3 total_replay.py -n '7zip CommandLine To SMB Share Path, CMLUA Or CMSTPLUA UAC Bypass'
+  ```
+
+
+
 
 B. For automation, you can also provide a simple .txt file.
 For example:
