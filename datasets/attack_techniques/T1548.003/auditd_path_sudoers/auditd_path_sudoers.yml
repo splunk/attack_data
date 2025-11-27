@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 982cabce-caa9-11f0-9d54-629be353806a
+date: '2025-11-26'
+description: Generated datasets for auditd path sudoers in attack range.
+environment: attack_range
+directory: auditd_path_sudoers
+mitre_technique:
+- T1548.003
+datasets:
+- name: path_sudoers.log
+  path: /datasets/attack_techniques/T1548.003/auditd_path_sudoers/path_sudoers.log
+  sourcetype: 'auditd'
+  source: 'auditd'

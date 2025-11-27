@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 371a046e-cab1-11f0-9d54-629be353806a
+date: '2025-11-26'
+description: Generated datasets for auditd path preload file in attack range.
+environment: attack_range
+directory: auditd_path_preload_file
+mitre_technique:
+- T1574.006
+datasets:
+- name: path_preload.log
+  path: /datasets/attack_techniques/T1574.006/auditd_path_preload_file/path_preload.log
+  sourcetype: 'auditd'
+  source: 'auditd'

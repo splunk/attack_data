@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: af16a08e-caa8-11f0-9d54-629be353806a
+date: '2025-11-26'
+description: Generated datasets for auditd path cwd doas conf in attack range.
+environment: attack_range
+directory: auditd_path_cwd_doas_conf
+mitre_technique:
+- T1548.003
+datasets:
+- name: path_doas.log
+  path: /datasets/attack_techniques/T1548.003/auditd_path_cwd_doas_conf/path_doas.log
+  sourcetype: 'auditd'
+  source: 'auditd'

@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 30034558-caa9-11f0-9d54-629be353806a
+date: '2025-11-26'
+description: Generated datasets for auditd path ssh config in attack range.
+environment: attack_range
+directory: auditd_path_ssh_config
+mitre_technique:
+- T1098.004
+datasets:
+- name: path_ssh_config.log
+  path: /datasets/attack_techniques/T1098.004/auditd_path_ssh_config/path_ssh_config.log
+  sourcetype: 'auditd'
+  source: 'auditd'
