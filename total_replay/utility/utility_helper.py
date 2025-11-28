@@ -370,13 +370,13 @@ class UtilityHelper:
                     if attack_id:
                         needed_yaml_field_cache['attack_data_uuid'] = attack_data_yaml_buff['id']
                         ColorPrint.print_success_fg(f"[+][SUCCESS]: ... {file} ==> associated yml file extracted successfully")
-                        break
+                        return needed_yaml_field_cache
                     else:
                         ColorPrint.print_warning_fg(f"[!][WARNING]: ... attack_data yaml field: [uuid] => not found!!")
-                else:
-                    continue           
-
-        return needed_yaml_field_cache
+        else:
+            # This runs ONLY if the loop never hits 'return' or 'break'
+            ColorPrint.print_error_fg("[-][ERROR]: No matching YAML file was found during iteration!")
+            return {}
 
     def create_metadata_cache(self, yaml_data: yaml) -> dict:
         """Create a metadata cache from the YAML data."""
@@ -474,7 +474,7 @@ class UtilityHelper:
         attack_data_yml_file_path = needed_replay_yaml_field['attack_data_yml_file_path']
 
         if not os.path.isdir(os.path.expanduser(self.read_config_settings('attack_data_dir_path'))):
-            ColorPrint.print_error_fg("[+][. ERROR]: ... The attack data folder path in config is invalid or not exist.")
+            ColorPrint.print_error_fg("[-][. ERROR]: ... The attack data folder path in config is invalid or not exist.")
             return False
         
         try:
