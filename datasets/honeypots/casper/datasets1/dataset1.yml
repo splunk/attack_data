@@ -1,0 +1,11 @@
+author: Teoderick Contreras, Splunk
+id: 27ca7347-8778-4e63-837c-93132524932e
+date: '2025-11-28'
+description: Generated datasets for casper dataset1 in attack range.
+environment: attack_range
+directory: dataset1
+datasets:
+- name: sysmon
+  path: /datasets/honeypots/casper/dataset1/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
