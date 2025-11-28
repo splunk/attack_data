@@ -375,7 +375,7 @@ class UtilityHelper:
                         ColorPrint.print_warning_fg(f"[!][WARNING]: ... attack_data yaml field: [uuid] => not found!!")
         else:
             # This runs ONLY if the loop never hits 'return' or 'break'
-            ColorPrint.print_error_fg("[-][ERROR]: No matching YAML file was found during iteration!")
+            ColorPrint.print_error_fg("[-][ERROR]: No matching YAML file was found during iteration!!")
             return {}
 
     def create_metadata_cache(self, yaml_data: yaml) -> dict:
