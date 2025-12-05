@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: e7dc3e89-157f-41bc-97d3-9161fa9a5620
+date: '2025-12-05'
+description: Manual generation of attack data to generate default
+  named pipes associated with offensive tools.
+environment: custom
+directory: named_pipes
+mitre_technique:
+- T1055
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1055/named_pipes/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
