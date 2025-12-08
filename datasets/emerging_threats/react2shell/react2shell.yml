@@ -1,0 +1,21 @@
+author: Nasreddine Bencherchali, Splunk
+id: f0beed06-629e-4d1e-9dae-b4687c779668
+date: '2025-12-08'
+description: Generated datasets for React2Shell exploitation
+environment: attack_range
+directory: reacr2shell
+mitre_technique:
+- T1059
+- T1059.001
+- T1059.003
+- T1059.004
+- T1190
+datasets:
+- name: react2shell_linux
+  path: /datasets/react2shell/react2shell_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: react2shell_windows
+  path: /datasets/react2shell/react2shell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
