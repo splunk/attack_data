@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: f0aeed06-629e-4d1e-9dae-b4687c779668
+date: '2025-12-08'
+description: Generated datasets for React2Shell exploitation 
+environment: NA
+directory: react2shell
+mitre_technique:
+- T1190
+datasets:
+- name: react2shell_ftd
+  path: /datasets/cisco_secure_firewall_threat_defense/react2shell/react2shell.log
+  sourcetype: cisco:sfw:estreamer
+  source: not_applicable
