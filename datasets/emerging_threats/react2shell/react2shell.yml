@@ -3,7 +3,7 @@ id: f0beed06-629e-4d1e-9dae-b4687c779668
 date: '2025-12-08'
 description: Generated datasets for React2Shell exploitation
 environment: attack_range
-directory: reacr2shell
+directory: react2shell
 mitre_technique:
 - T1059
 - T1059.001
