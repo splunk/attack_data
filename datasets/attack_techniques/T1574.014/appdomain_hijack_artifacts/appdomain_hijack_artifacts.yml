@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 5125e5e0-d046-11f0-8a26-629be3538068
+date: '2025-12-03'
+description: Generated datasets for appdomain hijack artifacts in attack range.
+environment: attack_range
+directory: appdomain_hijack_artifacts
+mitre_technique:
+- T1574.014
+datasets:
+- name: appdomain_hijack.log
+  path: /datasets/attack_techniques/T1574.014/appdomain_hijack_artifacts/appdomain_hijack.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
