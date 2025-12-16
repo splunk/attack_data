@@ -3,9 +3,9 @@ id: fbcfb4fb-1be3-4348-87d3-60c68a0b6334
 date: '2025-12-16'
 description: Generated dataset for MacOS Gatekeeper Bypass by making changes to LSFileQuarantineEnabled field in Info.plist
 environment: vm
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.001/macos_gatekeeper_bypass_LSFileQuarantineEnabled/macos_gatekeeper_bypass_LSFileQuarantineEnabled.log
-sourcetypes:
-- osquery:results
+datasets:
+- name: macos_gatekeeper_bypass_LSFileQuarantineEnabled.log
+  path: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.001/macos_gatekeeper_bypass_LSFileQuarantineEnabled/
+  sourcetypes: 'osquery:results'
 references:
 - https://attack.mitre.org/detectionstrategies/DET0288
