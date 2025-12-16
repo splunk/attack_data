@@ -6,5 +6,5 @@ environment: vm
 datasets:
 - name: macos_gatekeeper_bypass_LSFileQuarantineEnabled.log
   path: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.001/macos_gatekeeper_bypass_LSFileQuarantineEnabled/
-  sourcetypes: 'osquery:results'
+  sourcetype: 'osquery:results'
   source: '/var/log/osquery/osqueryd.results.log'
