@@ -7,5 +7,3 @@ datasets:
 - name: macos_gatekeeper_bypass_xattr.log
   path: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.001/atomic_red_team/macos_gatekeeper_bypass_xattr/
   sourcetype: 'osquery:results'
-references:
-- https://www.atomicredteam.io/atomic-red-team/atomics/T1553.001
