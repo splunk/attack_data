@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: a48c7e9c-db4f-11f0-a898-629be3538069
+date: '2025-12-17'
+description: Generated datasets for chrome allow list in attack range.
+environment: attack_range
+directory: chrome_allow_list
+mitre_technique:
+- T1185
+datasets:
+- name: chrome_extension_allow_list.log
+  path: /datasets/attack_techniques/T1185/chrome_allow_list/chrome_extension_allow_list.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
