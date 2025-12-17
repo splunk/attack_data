@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 7b328a46-db4f-11f0-a898-629be3538069
+date: '2025-12-17'
+description: Generated datasets for chrome load extensions in attack range.
+environment: attack_range
+directory: chrome_load_extensions
+mitre_technique:
+- T1185
+datasets:
+- name: chrome_load_extension.log
+  path: /datasets/attack_techniques/T1185/chrome_load_extensions/chrome_load_extension.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

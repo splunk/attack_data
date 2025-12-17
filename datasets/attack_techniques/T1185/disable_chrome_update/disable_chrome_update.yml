@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: ba339474-db4f-11f0-a898-629be3538069
+date: '2025-12-17'
+description: Generated datasets for disable chrome update in attack range.
+environment: attack_range
+directory: disable_chrome_update
+mitre_technique:
+- T1185
+datasets:
+- name: disable_chrome_update.log
+  path: /datasets/attack_techniques/T1185/disable_chrome_update/disable_chrome_update.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
