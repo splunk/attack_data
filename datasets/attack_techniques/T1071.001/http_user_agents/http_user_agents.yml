@@ -1,7 +1,7 @@
 author: Raven Tait, Splunk
 id: fdc85d57-acaf-4552-a363-1fd59a447f33
 date: '2023-12-16'
-description: Attack data related to various web request user agents
+description: Attack data related to various http user agents
 environment: attack_range
 directory: http_user_agents
 mitre_technique:
@@ -9,5 +9,17 @@ mitre_technique:
 datasets:
 - name: suricata_c2
   path: /datasets/attack_techniques/T1071.001/http_user_agents/suricata_c2.log
+  sourcetype: suricata
+  source: suricata
+- name: suricata_malware
+  path: /datasets/attack_techniques/T1071.001/http_user_agents/suricata_malware.log
+  sourcetype: suricata
+  source: suricata
+- name: suricata_pua
+  path: /datasets/attack_techniques/T1071.001/http_user_agents/suricata_pua.log
+  sourcetype: suricata
+  source: suricata
+- name: suricata_rmm
+  path: /datasets/attack_techniques/T1071.001/http_user_agents/suricata_rmm.log
   sourcetype: suricata
   source: suricata
