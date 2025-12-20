@@ -3,6 +3,9 @@ id: bc5865ff-2ea2-4b78-b34b-f2b375d464a3
 date: '2025-12-16'
 description: Generated dataset for MacOS Gatekeeper Bypass using xattr
 environment: vm
+directory: macos_gatekeeper_bypass_xattr
+mitre_technique:
+- T1553.001
 datasets:
 - name: macos_gatekeeper_bypass_xattr.log
   path: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.001/atomic_red_team/macos_gatekeeper_bypass_xattr/
