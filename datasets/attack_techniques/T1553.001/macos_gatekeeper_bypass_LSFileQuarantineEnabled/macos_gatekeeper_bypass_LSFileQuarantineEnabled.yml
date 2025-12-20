@@ -8,6 +8,6 @@ mitre_technique:
 - T1553.001
 datasets:
 - name: macos_gatekeeper_bypass_LSFileQuarantineEnabled.log
-  path: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1553.001/macos_gatekeeper_bypass_LSFileQuarantineEnabled/
+  path: /datasets/attack_techniques/T1553.001/macos_gatekeeper_bypass_LSFileQuarantineEnabled/macos_gatekeeper_bypass_LSFileQuarantineEnabled.log
   sourcetype: 'osquery:results'
   source: '/var/log/osquery/osqueryd.results.log'
