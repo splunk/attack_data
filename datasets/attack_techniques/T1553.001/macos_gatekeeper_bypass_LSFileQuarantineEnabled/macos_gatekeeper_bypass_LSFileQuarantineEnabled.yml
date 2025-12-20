@@ -1,0 +1,13 @@
+author: Jamie Windley
+id: fbcfb4fb-1be3-4348-87d3-60c68a0b6334
+date: '2025-12-16'
+description: Generated dataset for MacOS Gatekeeper Bypass by making changes to LSFileQuarantineEnabled field in Info.plist
+environment: vm
+directory: macos_gatekeeper_bypass_LSFileQuarantineEnabled
+mitre_technique:
+- T1553.001
+datasets:
+- name: macos_gatekeeper_bypass_LSFileQuarantineEnabled.log
+  path: /datasets/attack_techniques/T1553.001/macos_gatekeeper_bypass_LSFileQuarantineEnabled/macos_gatekeeper_bypass_LSFileQuarantineEnabled.log
+  sourcetype: 'osquery:results'
+  source: '/var/log/osquery/osqueryd.results.log'
