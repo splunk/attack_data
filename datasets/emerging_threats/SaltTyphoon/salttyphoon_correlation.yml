@@ -3,11 +3,11 @@ id: d403fecb-720c-48fb-9d1a-5671f0195513
 date: '2026-01-08'
 description: Generated datasets for Cisco IOS switch exploitation. Correlating Cisco Secure Firewall logs with Cisco IOS logs to detect SaltTyphoon activities.
 environment: NA
-directory: react2shell
+directory: SaltTyphoon
 mitre_technique:
 - T1021.004
 datasets:
-- name: react2shell_linux
-  path: /datasets/react2shell/react2shell_linux.log
+- name: salttyphoon_correlation
+  path: /datasets/emerging_threats/SaltTyphoon/salttyphoon_correlation.log
   sourcetype: stash
   source: not_applicable
