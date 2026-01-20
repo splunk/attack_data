@@ -38,14 +38,8 @@ settings:
   security_content_detection_path: ~/path/to/your/security_content/detections
   attack_data_dir_path: ~/path/to/your/attack_data
 ```
-8. enable the `attack_data_version_on` config setting in total_replay->configuration->config.yml:
 
-    **NOTE: You can only enable either one of the `attack_range_version_on` or `attack_data_version_on` settings of TOTAL-REPLAY**
-```
-attack_data_version_on: True
-```
-
-9. make sure you setup the required environment variables for splunk server connection
+8. make sure you setup the required environment variables for splunk server connection
 
     | Environment Variables.     | Description             |
     |----------------------------|-------------------------|
@@ -59,11 +53,11 @@ attack_data_version_on: True
     export SPLUNK_HEC_TOKEN= <SPLUNK_HEC_TOKEN>
     ```
 
-10. Make sure HEC token is set to "Enabled" in Splunk server (Settings → Data Inputs → HTTP Event Collector).
+9. Make sure HEC token is set to "Enabled" in Splunk server (Settings → Data Inputs → HTTP Event Collector).
 
-11. Confirm the HEC listener port is enabled, typically 8088, using HTTPS.
+10. Confirm the HEC listener port is enabled, typically 8088, using HTTPS.
 
-12. Update your firewall settings to allow inbound connections on port 8088, otherwise your data sender will not be able to reach Splunk.
+11. Update your firewall settings to allow inbound connections on port 8088, otherwise your data sender will not be able to reach Splunk.
 
 ### Windows OS:
 
