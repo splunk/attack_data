@@ -503,7 +503,7 @@ class UtilityHelper:
             search_found_list = self.search_security_content(tag, field_name)
 
             if not search_found_list:
-                return
+                continue
             
             ColorPrint.print_info_fg(f"[+][.  INFO]: ... Total filtered detections: {len(search_found_list)} ")
 
