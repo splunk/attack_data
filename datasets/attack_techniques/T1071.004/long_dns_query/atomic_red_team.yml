@@ -1,0 +1,13 @@
+author: Bhavin Patel, Splunk
+id: d1c13a02-9fa8-4d72-8e80-a75db51ed88e
+date: '2026-01-22'
+description: 'Contains DNS query data from the windows machine where powershell is trying to make a query to a long domain name'
+environment: attack_range
+directory: atomic_red_team
+mitre_technique:
+- T1071.004
+datasets:
+- name: dns-sysmon
+  path: /datasets/attack_techniques/T1071.004/long_dns_query/dns-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
