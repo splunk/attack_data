@@ -38,3 +38,7 @@ datasets:
   path: /datasets/attack_techniques/T1021.002/atomic_red_team/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: dns-sysmon
+  path: /datasets/attack_techniques/T1021.002/atomic_red_team/dns-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
