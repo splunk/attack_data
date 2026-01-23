@@ -1,0 +1,13 @@
+author: Bhavin Patel, Splunk
+id: 822a7bed-b71f-4818-9f60-d1799a23528c
+date: '2026-01-23'
+description: This data is collected from an industary event that shows the execution of outlook.exe writing a zip file to the disk.
+environment: attack_range
+directory: outlook_writing_zip
+mitre_technique:
+- T1566.001
+datasets:
+- name: outlook_writing_zip
+  path: /datasets/attack_techniques/T1566.001/outlook_writing_zip/outlook_writing_zip.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
