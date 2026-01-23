@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 9d33e0f6-f85d-11f0-89c9-629be3538068
+date: '2026-01-23'
+description: Generated datasets for chrome disable popup in attack range.
+environment: attack_range
+directory: chrome_disable_popup
+mitre_technique:
+- T1497
+datasets:
+- name: chrome_disable_popup.log
+  path: /datasets/attack_techniques/T1497/chrome_disable_popup/chrome_disable_popup.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
