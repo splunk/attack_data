@@ -11,6 +11,7 @@ import typer
 import os
 import sys
 import yaml
+import logging
 from rich.live import Live
 from rich.layout import Layout
 from rich.panel import Panel
@@ -20,6 +21,16 @@ from colorama import Fore, Back, Style, init
 from utility.color_print import ColorPrint
 
 from utility.utility_helper import UtilityHelper
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stderr)
+    ]
+)
+logger = logging.getLogger(__name__)
 
 
 def main():
@@ -53,9 +64,11 @@ def main():
                                                 help="file path that contains security content detection guid.\n\n <e.g. python3 total_replay.py -fg '~\\home\\detection_guid_list.txt'>"),
         file_detection_analytic_story: str = typer.Option(None, "--file_detection_analytic_story", "-fas", 
                                                           help="file path that contains security content detection analytic story.\n\n <e.g. python3 total_replay.py -fas '~\\home\\detection_analytic_story_list.txt'>"),
-        file_detection_greedy: str = typer.Option(None, "--file_detection_greedy", "-fgr", 
+        file_detection_greedy: str = typer.Option(None, "--file_detection_greedy", "-fgr",
                                                           help="file path that contains security content detection analytic story, technique ID, guid and detection name.\n\n <e.g. python3 total_replay.py -fgr '~\\home\\detection_analytic_story_list.txt'>"),
-        index_value: str = typer.Option("test", "--index", "-i", 
+        all_detections: bool = typer.Option(False, "--all", "-a",
+                                            help="Replay attack data for ALL detection YAML files in security content.\n\n <e.g. python3 total_replay.py --all>"),
+        index_value: str = typer.Option("test", "--index", "-i",
                                   help="Index to replay the attack data. Set this first if you want to use a different index.\n\n <python3 total_replay.py -i test -tid 'T1071, T1059'>", hidden=True),
     ):
         
@@ -64,110 +77,236 @@ def main():
         ### via console
         if detection_name:
             ColorPrint.print_yellow_fg("[+][. INFO]: Searching For both Security Content Detection Name and .YML Filename ...")
+            logger.info(f"Processing detection name search: {detection_name}")
             normalized_list_args = uh.normalized_args_tolist(detection_name)
+            if not normalized_list_args:
+                logger.error("Failed to parse detection name argument")
+                ColorPrint.print_error_fg("[+][. ERROR]: Failed to parse detection name argument")
+                return
             generated_guid = uuid.uuid4()
             marker_uid = "detection_name_replay_" + str(generated_guid)
-            uh.process_replay_attack_data_by_file_name("file_name", normalized_list_args, index_value, marker_uid)
-            uh.process_replay_attack_data("name", normalized_list_args, index_value, marker_uid)
+            try:
+                uh.process_replay_attack_data_by_file_name("file_name", normalized_list_args, index_value, marker_uid)
+                uh.process_replay_attack_data("name", normalized_list_args, index_value, marker_uid)
+            except Exception as e:
+                logger.error(f"Error processing detection name replay: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process detection name replay: {e}")
 
         elif guid:
             ColorPrint.print_yellow_fg("[+][. INFO]: Searching For Security Content Detection GUID ...")
+            logger.info(f"Processing GUID search: {guid}")
             normalized_list_args = uh.normalized_args_tolist(guid)
+            if not normalized_list_args:
+                logger.error("Failed to parse GUID argument")
+                ColorPrint.print_error_fg("[+][. ERROR]: Failed to parse GUID argument")
+                return
             generated_guid = uuid.uuid4()
             marker_uid = "guid_replay_" + str(generated_guid)
-            uh.process_replay_attack_data("id", normalized_list_args, index_value, marker_uid)
+            try:
+                uh.process_replay_attack_data("id", normalized_list_args, index_value, marker_uid)
+            except Exception as e:
+                logger.error(f"Error processing GUID replay: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process GUID replay: {e}")
 
         elif technique_id:
             ColorPrint.print_yellow_fg("[+][. INFO]: Searching For Security Content Detection Mitre ATT&CK Technique ID ...")
+            logger.info(f"Processing technique ID search: {technique_id}")
             normalized_list_args = uh.normalized_args_tolist(technique_id)
+            if not normalized_list_args:
+                logger.error("Failed to parse technique ID argument")
+                ColorPrint.print_error_fg("[+][. ERROR]: Failed to parse technique ID argument")
+                return
             generated_guid = uuid.uuid4()
             marker_uid = "technique_id_replay_" + str(generated_guid)
-            uh.process_replay_attack_data("mitre_attack_id", normalized_list_args, index_value, marker_uid)
+            try:
+                uh.process_replay_attack_data("mitre_attack_id", normalized_list_args, index_value, marker_uid)
+            except Exception as e:
+                logger.error(f"Error processing technique ID replay: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process technique ID replay: {e}")
 
         elif analytic_story:
             ColorPrint.print_yellow_fg("[+][. INFO]: Searching For Security Content Analytic Story ...")
+            logger.info(f"Processing analytic story search: {analytic_story}")
             normalized_list_args = uh.normalized_args_tolist(analytic_story)
+            if not normalized_list_args:
+                logger.error("Failed to parse analytic story argument")
+                ColorPrint.print_error_fg("[+][. ERROR]: Failed to parse analytic story argument")
+                return
             generated_guid = uuid.uuid4()
             marker_uid = "analytic_story_replay_" + str(generated_guid)
-            uh.process_replay_attack_data("analytic_story", normalized_list_args, index_value, marker_uid)
+            try:
+                uh.process_replay_attack_data("analytic_story", normalized_list_args, index_value, marker_uid)
+            except Exception as e:
+                logger.error(f"Error processing analytic story replay: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process analytic story replay: {e}")
 
         ### by file input
         elif file_detection_name:
-            segregate = uh.normalized_file_args(file_detection_name)
-            generated_guid = uuid.uuid4()
-            marker_uid = "file_detection_name_replay_" + str(generated_guid)
+            logger.info(f"Processing detection names from file: {file_detection_name}")
+            if not os.path.isfile(file_detection_name):
+                logger.error(f"Input file not found: {file_detection_name}")
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Input file not found: {file_detection_name}")
+                return
+            try:
+                segregate = uh.normalized_file_args(file_detection_name)
+                if not segregate:
+                    logger.warning(f"No valid entries found in file: {file_detection_name}")
+                    ColorPrint.print_warning_fg(f"[!][WARNING]: No valid entries found in file: {file_detection_name}")
+                    return
+                generated_guid = uuid.uuid4()
+                marker_uid = "file_detection_name_replay_" + str(generated_guid)
 
-            if "detection_filename" in segregate:
-                normalized_list_args = segregate['detection_filename']
-                uh.process_replay_attack_data_by_file_name("file_name", normalized_list_args, index_value, marker_uid)
-            
-            if "detection_and_analytic_story_name" in segregate:
-                normalized_list_args = segregate['detection_and_analytic_story_name']
-                uh.process_replay_attack_data("name", normalized_list_args, index_value, marker_uid)
+                if "detection_filename" in segregate:
+                    normalized_list_args = segregate['detection_filename']
+                    uh.process_replay_attack_data_by_file_name("file_name", normalized_list_args, index_value, marker_uid)
+
+                if "detection_and_analytic_story_name" in segregate:
+                    normalized_list_args = segregate['detection_and_analytic_story_name']
+                    uh.process_replay_attack_data("name", normalized_list_args, index_value, marker_uid)
+            except Exception as e:
+                logger.error(f"Error processing file detection name: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process file: {e}")
 
         elif file_detection_tid:
-            segregate = uh.normalized_file_args(file_detection_tid)
-            
-            if "mitre_attack_tid" in segregate:
-                normalized_list_args = segregate['mitre_attack_tid'] 
-                generated_guid = uuid.uuid4()
-                marker_uid = "file_detection_tid_replay_" + str(generated_guid)
-                uh.process_replay_attack_data("mitre_attack_id", normalized_list_args, index_value, marker_uid)
+            logger.info(f"Processing technique IDs from file: {file_detection_tid}")
+            if not os.path.isfile(file_detection_tid):
+                logger.error(f"Input file not found: {file_detection_tid}")
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Input file not found: {file_detection_tid}")
+                return
+            try:
+                segregate = uh.normalized_file_args(file_detection_tid)
+                if not segregate:
+                    logger.warning(f"No valid entries found in file: {file_detection_tid}")
+                    ColorPrint.print_warning_fg(f"[!][WARNING]: No valid entries found in file: {file_detection_tid}")
+                    return
+
+                if "mitre_attack_tid" in segregate:
+                    normalized_list_args = segregate['mitre_attack_tid']
+                    generated_guid = uuid.uuid4()
+                    marker_uid = "file_detection_tid_replay_" + str(generated_guid)
+                    uh.process_replay_attack_data("mitre_attack_id", normalized_list_args, index_value, marker_uid)
+                else:
+                    logger.warning("No MITRE ATT&CK technique IDs found in file")
+                    ColorPrint.print_warning_fg("[!][WARNING]: No MITRE ATT&CK technique IDs found in file")
+            except Exception as e:
+                logger.error(f"Error processing technique ID file: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process file: {e}")
 
         elif file_detection_guid:
-            segregate = uh.normalized_file_args(file_detection_guid)
+            logger.info(f"Processing GUIDs from file: {file_detection_guid}")
+            if not os.path.isfile(file_detection_guid):
+                logger.error(f"Input file not found: {file_detection_guid}")
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Input file not found: {file_detection_guid}")
+                return
+            try:
+                segregate = uh.normalized_file_args(file_detection_guid)
+                if not segregate:
+                    logger.warning(f"No valid entries found in file: {file_detection_guid}")
+                    ColorPrint.print_warning_fg(f"[!][WARNING]: No valid entries found in file: {file_detection_guid}")
+                    return
 
-            if "guid" in segregate:
-                normalized_list_args = segregate['guid']             
-                generated_guid = uuid.uuid4()
-                marker_uid = "file_detection_guid_replay_" + str(generated_guid)
-                uh.process_replay_attack_data("id", normalized_list_args, index_value, marker_uid)
+                if "guid" in segregate:
+                    normalized_list_args = segregate['guid']
+                    generated_guid = uuid.uuid4()
+                    marker_uid = "file_detection_guid_replay_" + str(generated_guid)
+                    uh.process_replay_attack_data("id", normalized_list_args, index_value, marker_uid)
+                else:
+                    logger.warning("No GUIDs found in file")
+                    ColorPrint.print_warning_fg("[!][WARNING]: No GUIDs found in file")
+            except Exception as e:
+                logger.error(f"Error processing GUID file: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process file: {e}")
 
         elif file_detection_analytic_story:
-            
-            segregate = uh.normalized_file_args(file_detection_analytic_story)
+            logger.info(f"Processing analytic stories from file: {file_detection_analytic_story}")
+            if not os.path.isfile(file_detection_analytic_story):
+                logger.error(f"Input file not found: {file_detection_analytic_story}")
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Input file not found: {file_detection_analytic_story}")
+                return
+            try:
+                segregate = uh.normalized_file_args(file_detection_analytic_story)
+                if not segregate:
+                    logger.warning(f"No valid entries found in file: {file_detection_analytic_story}")
+                    ColorPrint.print_warning_fg(f"[!][WARNING]: No valid entries found in file: {file_detection_analytic_story}")
+                    return
 
-            if "detection_and_analytic_story_name" in segregate:
-                normalized_list_args = segregate['detection_and_analytic_story_name']
-                generated_guid = uuid.uuid4()
-                marker_uid = "file_detection_analytic_story_replay_" + str(generated_guid)
-                uh.process_replay_attack_data("analytic_story", normalized_list_args, index_value, marker_uid)
+                if "detection_and_analytic_story_name" in segregate:
+                    normalized_list_args = segregate['detection_and_analytic_story_name']
+                    generated_guid = uuid.uuid4()
+                    marker_uid = "file_detection_analytic_story_replay_" + str(generated_guid)
+                    uh.process_replay_attack_data("analytic_story", normalized_list_args, index_value, marker_uid)
+                else:
+                    logger.warning("No analytic story names found in file")
+                    ColorPrint.print_warning_fg("[!][WARNING]: No analytic story names found in file")
+            except Exception as e:
+                logger.error(f"Error processing analytic story file: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process file: {e}")
 
         elif file_detection_greedy:
-            segregate = uh.normalized_file_args(file_detection_greedy)
-            generated_guid = uuid.uuid4()
-            marker_uid = "file_detection_greedy_replay_" + str(generated_guid)
-            
-            if "detection_filename" in segregate:
-                ColorPrint.print_info_fg("[+] greedy replay... [detection_filename]")
-                normalized_list_args = segregate['detection_filename']
-                uh.process_replay_attack_data_by_file_name("file_name", normalized_list_args, index_value, marker_uid)
-            
-            if "detection_and_analytic_story_name" in segregate:
-                ColorPrint.print_info_fg("[+] greedy replay... [detection_and_analytic_story_name]")
-                normalized_list_args = segregate['detection_and_analytic_story_name']
-                uh.process_replay_attack_data("name", normalized_list_args, index_value, marker_uid)
-                uh.process_replay_attack_data("analytic_story", normalized_list_args, index_value, marker_uid)
+            logger.info(f"Processing greedy mode from file: {file_detection_greedy}")
+            if not os.path.isfile(file_detection_greedy):
+                logger.error(f"Input file not found: {file_detection_greedy}")
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Input file not found: {file_detection_greedy}")
+                return
+            try:
+                segregate = uh.normalized_file_args(file_detection_greedy)
+                if not segregate:
+                    logger.warning(f"No valid entries found in file: {file_detection_greedy}")
+                    ColorPrint.print_warning_fg(f"[!][WARNING]: No valid entries found in file: {file_detection_greedy}")
+                    return
+                generated_guid = uuid.uuid4()
+                marker_uid = "file_detection_greedy_replay_" + str(generated_guid)
 
-            if "mitre_attack_id" in segregate:
-                ColorPrint.print_info_fg("[+] greedy replay... [mitre_attack_id]")
-                normalized_list_args = segregate['mitre_attack_id']            
-                uh.process_replay_attack_data("mitre_attack_id", normalized_list_args, index_value, marker_uid)
+                if "detection_filename" in segregate:
+                    ColorPrint.print_info_fg("[+] greedy replay... [detection_filename]")
+                    normalized_list_args = segregate['detection_filename']
+                    uh.process_replay_attack_data_by_file_name("file_name", normalized_list_args, index_value, marker_uid)
 
-            if "guid" in segregate:
-                ColorPrint.print_info_fg("[+] greedy replay... [mitre_attack_id]")
-                normalized_list_args = segregate['guid']  
-                uh.process_replay_attack_data("id", normalized_list_args, index_value, marker_uid)
+                if "detection_and_analytic_story_name" in segregate:
+                    ColorPrint.print_info_fg("[+] greedy replay... [detection_and_analytic_story_name]")
+                    normalized_list_args = segregate['detection_and_analytic_story_name']
+                    uh.process_replay_attack_data("name", normalized_list_args, index_value, marker_uid)
+                    uh.process_replay_attack_data("analytic_story", normalized_list_args, index_value, marker_uid)
 
+                if "mitre_attack_id" in segregate:
+                    ColorPrint.print_info_fg("[+] greedy replay... [mitre_attack_id]")
+                    normalized_list_args = segregate['mitre_attack_id']
+                    uh.process_replay_attack_data("mitre_attack_id", normalized_list_args, index_value, marker_uid)
+
+                if "guid" in segregate:
+                    ColorPrint.print_info_fg("[+] greedy replay... [guid]")
+                    normalized_list_args = segregate['guid']
+                    uh.process_replay_attack_data("id", normalized_list_args, index_value, marker_uid)
+            except Exception as e:
+                logger.error(f"Error processing greedy file: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process file: {e}")
 
         elif local_data_path:
-            uh.process_local_yaml_cache(local_data_path, index_value)
+            logger.info(f"Processing local cache from: {local_data_path}")
+            try:
+                uh.process_local_yaml_cache(local_data_path, index_value)
+            except Exception as e:
+                logger.error(f"Error processing local cache: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process local cache: {e}")
 
+        elif all_detections:
+            ColorPrint.print_yellow_fg("[+][. INFO]: Replaying attack data for ALL detection YAML files ...")
+            logger.info("Processing ALL detection YAML files")
+            generated_guid = uuid.uuid4()
+            marker_uid = "all_detections_replay_" + str(generated_guid)
+            try:
+                uh.process_replay_all_detections(index_value, marker_uid)
+            except Exception as e:
+                logger.error(f"Error processing all detections replay: {e}", exc_info=True)
+                ColorPrint.print_error_fg(f"[+][. ERROR]: Failed to process all detections replay: {e}")
 
         else:
-            ColorPrint.print_error_fg("[+] [STATUS]: [ERROR] invalid inputs\n")
+            logger.error("No valid input provided. Use --help for usage information.")
+            ColorPrint.print_error_fg("[+][. ERROR]: No valid input provided. Use --help for usage information.\n")
+            return
 
-        ColorPrint.print_success_fg("Thank you... <(^_^)>")    
+        ColorPrint.print_success_fg("Thank you... <(^_^)>")
+        logger.info("Total replay completed successfully")    
         
     app()
 
