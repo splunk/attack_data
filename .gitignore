@@ -103,3 +103,6 @@ venv.bak/
 .mypy_cache/
 package/bin/sftp-config.json
 package/default/sftp-config.json
+
+# total_replay output
+total_replay/output/
