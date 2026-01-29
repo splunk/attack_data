@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: f33eeaa5-ecd3-4e6c-b73b-b84feedbaa89
+date: '2026-01-29'
+description: Telnet authentication bypass and privilege escalation.
+environment: attack_range
+directory: telnet
+mitre_technique:
+- T1548
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/telnet/sysmon_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
