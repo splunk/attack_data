@@ -1,5 +1,5 @@
 author: Vignesh Subramanian, Splunk
-id: 
+id: 59206f25-1c8a-43a8-878e-a0f5c8aed211
 date: '2026-01-19'
 description: 'Generated dataset of Windows Sysmon process creation logs (Event ID 1) capturing TOR browser and related TOR component activities on Windows endpoints. Insider threats and external attackers may use TOR to hide their activity and bypass network security controls. This dataset helps detect the presence and execution of TOR components on Windows systems.'
 environment: manual simulations in a controlled lab environment
