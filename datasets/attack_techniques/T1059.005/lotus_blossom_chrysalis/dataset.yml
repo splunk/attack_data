@@ -1,0 +1,13 @@
+author: Michael Haag, Splunk
+id: 5010d236-00a5-434f-bfeb-20af07d478aa
+date: '2026-02-02'
+description: Lotus Blossom TinyCC shellcode execution simulation. Svchost.exe executed with TinyCC compiler flags (-nostdlib -run) to simulate Chrysalis backdoor's shellcode compilation technique.
+environment: attack_range
+directory: lotus_blossom_chrysalis
+mitre_technique:
+- T1059.005
+datasets:
+- name: windows-sysmon.log
+  path: /datasets/attack_techniques/T1059.005/lotus_blossom_chrysalis/windows-sysmon.log
+  sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

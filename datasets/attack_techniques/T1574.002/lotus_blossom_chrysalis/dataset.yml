@@ -1,0 +1,13 @@
+author: Michael Haag, Splunk
+id: 66eb3815-e429-4bc2-a8f1-e3ea8bc7e8c2
+date: '2026-02-02'
+description: Lotus Blossom Bitdefender DLL side-loading test execution. Rundll32.exe loading malicious log.dll from user directory mimicking Bitdefender Submission Wizard abuse.
+environment: attack_range
+directory: lotus_blossom_chrysalis
+mitre_technique:
+- T1574.002
+datasets:
+- name: windows-sysmon.log
+  path: /datasets/attack_techniques/T1574.002/lotus_blossom_chrysalis/windows-sysmon.log
+  sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
