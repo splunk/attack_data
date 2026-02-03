@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 78393210-0113-11f1-b6d6-629be3538068
+date: '2026-02-03'
+description: Generated datasets for msc execution in attack range.
+environment: attack_range
+directory: msc_execution
+mitre_technique:
+- T1218.014
+datasets:
+- name: loaded_msc_mmc.log
+  path: /datasets/attack_techniques/T1218.014/msc_execution/loaded_msc_mmc.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
