@@ -118,6 +118,73 @@ From there, you can choose whether to replay only detection GUIDs, only analytic
 
 C. TOTAL-REPLAY downloads the required Attack Data each time you execute or replay data during detection testing or development. To help reduce disk space usage, the tool generates a cached .yml file for every downloaded dataset. You can then use the `local_data_path` parameter to replay the cached data, allowing you to avoid downloading the same Attack Data again.
 
+---
+
+## Run Detections
+
+In addition to replaying attack data, TOTAL-REPLAY includes a detection runner tool (`run_detections.py`) that executes SPL queries from Security Content detection YAML files directly against your Splunk instance and outputs results to a JSONL file.
+
+### Environment Variables
+
+The detection runner requires the following environment variables (or config file settings):
+
+| Environment Variable   | Description                          |
+|------------------------|--------------------------------------|
+| **SPLUNK_HOST**        | Splunk server IP/hostname            |
+| **SPLUNK_USERNAME**    | Splunk username for REST API auth    |
+| **SPLUNK_PASSWORD**    | Splunk password for REST API auth    |
+
+```bash
+export SPLUNK_HOST=<IP_ADDRESS>
+export SPLUNK_USERNAME=<USERNAME>
+export SPLUNK_PASSWORD=<PASSWORD>
+```
+
+Alternatively, configure these in `configuration/config.yml`:
+```yaml
+splunk:
+  host: "your-splunk-server"
+  username: "admin"
+  password: "your-password"
+```
+
+### Usage Examples
+
+```bash
+# Run all detections
+python3 run_detections.py --all
+
+# Filter by detection name
+python3 run_detections.py -n 'Windows Remote Services, CMLUA Or CMSTPLUA UAC Bypass'
+
+# Filter by MITRE ATT&CK technique ID
+python3 run_detections.py -tid 'T1021, T1059'
+
+# Filter by detection GUID
+python3 run_detections.py -g '01d29b48-ff6f-11eb-b81e-acde48001123'
+
+# Filter by analytic story
+python3 run_detections.py -as 'AgentTesla, Remcos'
+
+# Custom output file and time range
+python3 run_detections.py -as 'AgentTesla' --output results.jsonl --earliest -24h --latest now
+```
+
+### Options
+
+| Option                    | Description                                      |
+|---------------------------|--------------------------------------------------|
+| `-n, --name`              | Comma-separated detection names or filenames     |
+| `-tid, --technique_id`    | Comma-separated MITRE ATT&CK technique IDs       |
+| `-g, --guid`              | Comma-separated detection GUIDs                  |
+| `-as, --analytic_story`   | Comma-separated analytic stories                 |
+| `-a, --all`               | Run all detection YAML files                     |
+| `-o, --output`            | Output JSONL file path (default: detection_results.jsonl) |
+| `-e, --earliest`          | Earliest time for search (default: 0 = all time) |
+| `-l, --latest`            | Latest time for search (default: now)            |
+
+---
+
 ### Other
 
 For replaying captured datasets or event logs during detection development or testing outside of the Splunk Security Content or Splunk Attack Data GitHub repositories, we recommend using the built-in replay.py feature provided by either Splunk Attack Range or Attack Data.
