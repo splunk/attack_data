@@ -639,7 +639,7 @@ class UtilityHelper:
                             allow_redirects=True,
                             headers=headers,
                             verify=False,
-                            timeout=60
+                            timeout=300
                         )
                         res.raise_for_status()
                         logger.info(f"Successfully sent data to Splunk HEC: {file_path}")
