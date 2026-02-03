@@ -1,0 +1,17 @@
+author: Nasreddine Bencherchali, Splunk
+id: d9db07a0-13da-4fc5-8abe-451188ce3aa1
+date: '2026-02-02'
+description: Generated dataset for URL encoded curl commands used in obfuscation techniques.
+environment: attack_range
+directory: url_encoded_curl
+mitre_technique:
+- T1027
+datasets:
+- name: linux-sysmon
+  path: /datasets/attack_techniques/T1027/url_encoded_curl/linux-sysmon.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1027/url_encoded_curl/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Windows-Sysmon/Operational

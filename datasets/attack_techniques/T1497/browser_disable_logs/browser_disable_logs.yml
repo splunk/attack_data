@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 6e7e5bec-f85d-11f0-89c9-629be3538068
+date: '2026-01-23'
+description: Generated datasets for browser disable logs in attack range.
+environment: attack_range
+directory: browser_disable_logs
+mitre_technique:
+- T1497
+datasets:
+- name: chrome_disable_log.log
+  path: /datasets/attack_techniques/T1497/browser_disable_logs/chrome_disable_log.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

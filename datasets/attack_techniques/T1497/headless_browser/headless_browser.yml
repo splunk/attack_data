@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 842f5932-f85d-11f0-89c9-629be3538068
+date: '2026-01-23'
+description: Generated datasets for headless browser in attack range.
+environment: attack_range
+directory: headless_browser
+mitre_technique:
+- T1497
+datasets:
+- name: headless_chrome.log
+  path: /datasets/attack_techniques/T1497/headless_browser/headless_chrome.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
