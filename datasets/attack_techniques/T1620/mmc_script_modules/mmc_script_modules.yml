@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 5b4a49dc-0113-11f1-b6d6-629be3538068
+date: '2026-02-03'
+description: Generated datasets for mmc script modules in attack range.
+environment: attack_range
+directory: mmc_script_modules
+mitre_technique:
+- T1620
+datasets:
+- name: loaded_module_mmc.log
+  path: /datasets/attack_techniques/T1620/mmc_script_modules/loaded_module_mmc.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
