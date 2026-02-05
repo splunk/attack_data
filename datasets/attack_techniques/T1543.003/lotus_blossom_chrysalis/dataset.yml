@@ -1,0 +1,13 @@
+author: Michael Haag, Splunk
+id: bfab9adc-3767-487a-87cd-35f1a7cd8706
+date: '2026-02-02'
+description: Lotus Blossom BluetoothService persistence test execution. Service created in user AppData directory for persistence.
+environment: attack_range
+directory: lotus_blossom_chrysalis
+mitre_technique:
+- T1543.003
+datasets:
+- name: windows-system.log
+  path: /datasets/attack_techniques/T1543.003/lotus_blossom_chrysalis/windows-system.log
+  sourcetype: XmlWinEventLog:System
+  source: XmlWinEventLog:System
