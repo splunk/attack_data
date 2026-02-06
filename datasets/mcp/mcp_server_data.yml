@@ -1,0 +1,11 @@
+author: Rod Soto, Splunk
+id: 05814111-ec73-49ea-93aa-4563c90b27e5
+date: '2026-02-05'
+description: Logs from MCP server, contain errors, requests, and responses from MCP-enabled AI assistants and agents.
+mitre_technique: []
+environment: attack_range
+datasets:
+- name: mcp_server_data
+  path: /datasets/mcp/mcp.log
+  sourcetype: mcp:jsonrpc
+  source: mcp.log
