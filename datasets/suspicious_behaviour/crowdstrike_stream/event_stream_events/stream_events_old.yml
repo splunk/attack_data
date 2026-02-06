@@ -1,10 +1,11 @@
 author: Bryan Pluta, Splunk
 id: ddc1277f-7cfb-47cd-80d2-a84dd4b873ac
-date: '2025-06-02'
+date: '2026-02-06'
 description: Generated datasets from a demo environment for Crowdstrike Event Stream Events.
 environment: NA
 dataset:
 - https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/crowdstrike_stream/event_stream_events/stream_events.log
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/suspicious_behaviour/crowdstrike_stream/event_stream_events/stream_events_2.log
 sourcetypes:
 - 'CrowdStrike:Event:Streams:JSON'
 references:
