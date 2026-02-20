@@ -3,9 +3,10 @@ id: 69fb68a6-dce5-400f-8a5e-086abda181aa
 date: '2026-02-19'
 description: Generation of Mac OSX techniques logged with osquery
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1037.002/osquery_logon_scripts/osquery.log
-sourcetypes:
-- osquery:results
-references:
-- https://attack.mitre.org/techniques/T1037/002/
+mitre_technique:
+- T1037.002
+datasets:
+- name: osquery:results
+  sourcetype: osquery:results
+  source: osquery:results
+  path: /datasets/attack_techniques/T1037.002/osquery_logon_scripts/osquery.log

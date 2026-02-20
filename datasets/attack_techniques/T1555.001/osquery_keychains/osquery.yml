@@ -3,9 +3,10 @@ id: d9cbe409-3012-48d7-8926-b5ee0287ee3f
 date: '2026-02-19'
 description: Generation of Mac OSX techniques involving keychains and osquery
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1555.001/osquery_keychains/osquery.log
-sourcetypes:
-- osquery:results
-references:
-- https://attack.mitre.org/techniques/T1555/001/
+mitre_technique:
+- T1555.001
+datasets:
+- name: osquery:results
+  sourcetype: osquery:results
+  source: osquery:results
+  path: /datasets/attack_techniques/T1555.001/osquery_keychains/osquery.log
