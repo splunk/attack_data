@@ -1,0 +1,11 @@
+author: Raven Tait
+id: e1ad8f03-6cb5-4ae9-a0c0-b9eb9ff0e4b8
+date: '2026-02-19'
+description: Generation of Mac OSX techniques logged with osquery
+environment: attack_range
+dataset:
+- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1030/osquery_data_chunking/osquery.log
+sourcetypes:
+- osquery:results
+references:
+- https://attack.mitre.org/techniques/T1030/
