@@ -1,0 +1,12 @@
+author: Raven Tait
+id: d9cbe409-3012-48d7-8926-b5ee0287ee3f
+date: '2026-02-19'
+description: Generation of Mac OSX techniques involving keychains and osquery
+environment: attack_range
+mitre_technique:
+- T1555.001
+datasets:
+- name: osquery:results
+  sourcetype: osquery:results
+  source: osquery:results
+  path: /datasets/attack_techniques/T1555.001/osquery_keychains/osquery.log
