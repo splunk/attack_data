@@ -1,0 +1,12 @@
+author: Raven Tait
+id: 5eeb597e-c6e4-4bd2-8f1e-809dabfeec54
+date: '2026-02-26'
+description: Generation of Mac OSX techniques logged with osquery
+environment: attack_range
+mitre_technique:
+- T1553.001
+datasets:
+- name: osquery:results
+  sourcetype: osquery:results
+  source: osquery:results
+  path: /datasets/attack_techniques/T1553.001/osquery_gatekeeper/osquery.log
