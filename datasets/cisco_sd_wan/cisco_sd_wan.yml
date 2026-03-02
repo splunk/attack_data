@@ -1,0 +1,12 @@
+author: Nasreddine Bencherchali
+id: 694e402a-dcab-4608-bcbf-7cd7c1a19391
+date: '2026-03-02'
+description: Cisco Catalyst SD-WAN sample logs
+environment: custom
+mitre_technique:
+- T1190
+datasets:
+- name: cisco-sd-wan-logs
+  sourcetype: cisco:sdwan:syslog
+  source: /var/log/vsyslog
+  path: /datasets/cisco_sd_wan/vsyslog.log
