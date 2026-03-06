@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: f5d8301e-196d-11f1-a72e-629be353806a
+date: '2026-03-06'
+description: Generated datasets for upload files dns in attack range.
+environment: attack_range
+directory: upload_files_dns
+mitre_technique:
+- T1071.004
+datasets:
+- name: upload_files.log
+  path: /datasets/attack_techniques/T1071.004/upload_files_dns/upload_files.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

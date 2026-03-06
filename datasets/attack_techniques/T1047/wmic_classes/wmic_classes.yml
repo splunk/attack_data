@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 8188a806-196d-11f1-a72e-629be353806a
+date: '2026-03-06'
+description: Generated datasets for wmic classes in attack range.
+environment: attack_range
+directory: wmic_classes
+mitre_technique:
+- T1047
+datasets:
+- name: wmic_cmd.log
+  path: /datasets/attack_techniques/T1047/wmic_classes/wmic_cmd.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 1248c214-196d-11f1-a72e-629be353806a
+date: '2026-03-06'
+description: Generated datasets for host file accessed in attack range.
+environment: attack_range
+directory: host_file_accessed
+mitre_technique:
+- T1012
+datasets:
+- name: hosts_accessed.log
+  path: /datasets/attack_techniques/T1012/host_file_accessed/hosts_accessed.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Security'
