@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: af95e1a6-196c-11f1-a72e-629be353806a
+date: '2026-03-06'
+description: Generated datasets for backup product key registry in attack range.
+environment: attack_range
+directory: backup_product_key_registry
+mitre_technique:
+- T1012
+datasets:
+- name: backup_protection.log
+  path: /datasets/attack_techniques/T1012/backup_product_key_registry/backup_protection.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Security'
