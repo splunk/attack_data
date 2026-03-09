@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: ebd77fee-196c-11f1-a72e-629be353806a
+date: '2026-03-06'
+description: Generated datasets for susp winrar in attack range.
+environment: attack_range
+directory: susp_winrar
+mitre_technique:
+- T1047
+datasets:
+- name: blank123.log
+  path: /datasets/attack_techniques/T1047/susp_winrar/blank123.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
