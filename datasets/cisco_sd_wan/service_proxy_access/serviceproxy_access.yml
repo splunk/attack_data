@@ -1,0 +1,12 @@
+author: Nasreddine Bencherchali
+id: 695e402a-dcab-4608-bcbf-7cd7c1a19391
+date: '2026-03-09'
+description: Cisco Catalyst SD-WAN Service Proxy access logs samples
+environment: custom
+mitre_technique:
+- T1190
+datasets:
+- name: cisco-sd-wan-service-proxy-access-logs
+  sourcetype: cisco:sdwan:access
+  source: /var/log/nms/containers/service-proxy/serviceproxy-access.log
+  path: /datasets/cisco_sd_wan/service_proxy_access/serviceproxy_access.log
