@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: e37858dc-1e21-11f1-b9d8-629be353806a
+date: '2026-03-12'
+description: Generated datasets for ai cli override in attack range.
+environment: attack_range
+directory: ai_cli_override
+mitre_technique:
+- T1480
+datasets:
+- name: gemini_yolo.log
+  path: /datasets/attack_techniques/T1480/ai_cli_override/gemini_yolo.log
+  sourcetype: 'auditd'
+  source: 'auditd'
