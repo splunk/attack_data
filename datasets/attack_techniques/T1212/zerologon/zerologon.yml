@@ -1,0 +1,12 @@
+author: Nasreddine Bencherchali
+id: 694e402a-dcab-4608-bcbf-7cd7c1a18391
+date: '2026-03-18'
+description: Zerologon attack samples from EVTX-ATTACK-SAMPLES
+environment: custom
+mitre_technique:
+- T1212
+datasets:
+- name: zerologon-logs
+  source: XmlWinEventLog:Security
+  sourcetype: XmlWinEventLog
+  path: /datasets/attack_techniques/T1212/zerologon/zerologon.log
