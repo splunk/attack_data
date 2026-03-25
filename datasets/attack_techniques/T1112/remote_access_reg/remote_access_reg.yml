@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: cd569370-2768-11f1-9dd5-629be353806a
+date: '2026-03-24'
+description: Generated datasets for remote access reg in attack range.
+environment: attack_range
+directory: remote_access_reg
+mitre_technique:
+- T1112
+datasets:
+- name: remote_access_reg.log
+  path: /datasets/attack_techniques/T1112/remote_access_reg/remote_access_reg.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

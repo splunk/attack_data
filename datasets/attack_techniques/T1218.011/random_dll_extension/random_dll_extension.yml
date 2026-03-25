@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 9fd9defc-2768-11f1-9dd5-629be353806a
+date: '2026-03-24'
+description: Generated datasets for random dll extension in attack range.
+environment: attack_range
+directory: random_dll_extension
+mitre_technique:
+- T1218.011
+datasets:
+- name: random_dll_rundll32.log
+  path: /datasets/attack_techniques/T1218.011/random_dll_extension/random_dll_rundll32.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
