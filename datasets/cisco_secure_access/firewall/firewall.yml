@@ -11,3 +11,11 @@ datasets:
   path: /datasets/cisco_secure_access/firewall/rdp_brute_force.log
   sourcetype: cisco:secure_access:firewall
   source: cisco_secure_access:firewall
+- name: large_icmp
+  path: /datasets/cisco_secure_access/firewall/large_icmp.log
+  sourcetype: cisco:secure_access:firewall
+  source: cisco_secure_access:firewall
+- name: ldap
+  path: /datasets/cisco_secure_access/firewall/ldap.log
+  sourcetype: cisco:secure_access:firewall
+  source: cisco_secure_access:firewall
