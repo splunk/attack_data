@@ -19,3 +19,11 @@ datasets:
   path: /datasets/cisco_secure_access/firewall/ldap.log
   sourcetype: cisco:secure_access:firewall
   source: cisco_secure_access:firewall
+- name: outbound_smb
+  path: /datasets/cisco_secure_access/firewall/outbound_smb.log
+  sourcetype: cisco:secure_access:firewall
+  source: cisco_secure_access:firewall
+- name: nmap
+  path: /datasets/cisco_secure_access/firewall/nmap.log
+  sourcetype: cisco:secure_access:firewall
+  source: cisco_secure_access:firewall
