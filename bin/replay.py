@@ -109,8 +109,50 @@ def send_data_to_splunk(file_path, splunk_host, hec_token, event_host_uuid,
                 headers=headers,
                 verify=False,
             )
-            res.raise_for_status()
-            print(f":white_check_mark: Sent {file_path} to Splunk HEC")
+            if res.ok:
+                print(f":white_check_mark: Sent {file_path} to Splunk HEC")
+                return
+
+            print(
+                f":x: Error sending {file_path} to Splunk HEC: "
+                f"HTTP {res.status_code}"
+            )
+
+            try:
+                response_data = res.json()
+                hec_code = response_data.get("code")
+                hec_text = response_data.get("text")
+                print(f"    Splunk HEC response: code={hec_code}, text={hec_text}")
+
+                if hec_code == 7:
+                    print(
+                        "    Hint: incorrect index. "
+                        "Use --index-override <existing_index> or create attack_data index."
+                    )
+                elif hec_code == 4:
+                    print(
+                        "    Hint: invalid HEC token. "
+                        "Verify SPLUNK_HEC_TOKEN and token status in Splunk."
+                    )
+                elif hec_code == 6:
+                    print(
+                        "    Hint: invalid data format. "
+                        "Check sourcetype/source values and file content."
+                    )
+                elif hec_code == 10:
+                    print(
+                        "    Hint: data channel missing/invalid. "
+                        "Check HEC indexer acknowledgment settings."
+                    )
+            except ValueError:
+                print(f"    Splunk HEC raw response: {res.text.strip()}")
+
+            print(f"    URL: {res.url}")
+            print(
+                "    Metadata: "
+                f"index={index}, source={source}, sourcetype={sourcetype}, "
+                f"host={event_host_uuid}"
+            )
         except Exception as e:
             print(f":x: Error sending {file_path} to Splunk HEC: {e}")
 
