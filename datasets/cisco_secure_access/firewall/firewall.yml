@@ -1,0 +1,29 @@
+author: Bhavin Patel, Splunk
+id: 1fc537db-5e0b-4a2e-a768-27e08eff0c70
+date: '2026-03-19'
+description: |
+ Generated datasets for Cisco Secure Access Firewall EventType by manual /atomic-red team simulations in a K8s cluster running Tetragon
+environment: custom
+directory: cisco_secure_access/firewall
+mitre_technique: []
+datasets:
+- name: firewall
+  path: /datasets/cisco_secure_access/firewall/rdp_brute_force.log
+  sourcetype: cisco:secure_access:firewall
+  source: cisco_secure_access:firewall
+- name: large_icmp
+  path: /datasets/cisco_secure_access/firewall/large_icmp.log
+  sourcetype: cisco:secure_access:firewall
+  source: cisco_secure_access:firewall
+- name: ldap
+  path: /datasets/cisco_secure_access/firewall/ldap.log
+  sourcetype: cisco:secure_access:firewall
+  source: cisco_secure_access:firewall
+- name: outbound_smb
+  path: /datasets/cisco_secure_access/firewall/outbound_smb.log
+  sourcetype: cisco:secure_access:firewall
+  source: cisco_secure_access:firewall
+- name: nmap
+  path: /datasets/cisco_secure_access/firewall/nmap.log
+  sourcetype: cisco:secure_access:firewall
+  source: cisco_secure_access:firewall
