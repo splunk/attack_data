@@ -3,9 +3,11 @@ id: 4a5c3288-8391-4e80-9c3d-9dbb60ed1c45
 date: '2026-03-29'
 description: The following data contains simulated bulk Intune "wipe ManagedDevice" events from the Intune admin portal. 
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1561.001/microsoft_intune_bulk_wipe/microsoft_intune_bulk_wipe.log
-sourcetypes:
-- azure:monitor:activity
-references:
-- https://www.lumos.com/blog/stryker-hack
+directory: microsoft_intune_bulk_wipe
+mitre_technique:
+- T1561.001
+datasets:
+- name: microsoft_intune_bulk_wipe
+  path: /datasets/attack_techniques/T1561.001/microsoft_intune_bulk_wipe/microsoft_intune_bulk_wipe.log
+  sourcetype: azure:monitor:activity
+  source: not_applicable
