@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: a2887fd7-921d-4411-a338-8262c2f42a52
+date: '2026-04-01'
+description: Generated datasets for Windows GoldFinder DNS Query in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1016.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1016.001/snapattack/snaattack.log

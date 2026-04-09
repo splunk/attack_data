@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 6aa773e5-444c-4a85-8cd4-bda041588559
+date: '2026-04-01'
+description: Generated datasets for Windows Defender Control Artifact in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1562.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1562.001/snapattack/snaattack.log

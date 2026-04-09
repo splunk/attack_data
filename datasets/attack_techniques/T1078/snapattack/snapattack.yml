@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 729e8602-60aa-4b91-be56-aa6812e106bc
+date: '2026-04-01'
+description: Generated datasets for Windows Azure Powershell Modules Installed in
+    attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1078
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1078/snapattack/snaattack.log

@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 0516d3d2-50c0-40d7-b32b-2f6fe71ffa3e
+date: '2026-04-01'
+description: Generated datasets for Windows AppCertDLL Modification in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1546.009
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1546.009/snapattack/snaattack.log

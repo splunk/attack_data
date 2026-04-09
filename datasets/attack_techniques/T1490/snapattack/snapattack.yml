@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: e5299a70-0166-4f6c-872e-b56321ec3638
+date: '2026-04-01'
+description: Generated datasets for Windows Modification of Recycle Bin related registry
+    keys in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1490
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1490/snapattack/snaattack.log

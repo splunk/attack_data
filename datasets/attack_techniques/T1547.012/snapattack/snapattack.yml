@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 84f5095f-afed-4f75-affd-6ef3f3b22110
+date: '2026-04-01'
+description: Generated datasets for Windows Spoolsv Writing a DLL in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1547.012
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1547.012/snapattack/snaattack.log

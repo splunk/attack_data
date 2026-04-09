@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: d9741377-7584-4915-ab6d-bfa1d721a194
+date: '2026-04-01'
+description: Generated datasets for Windows Symbolic Link Tools in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1222
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1222/snapattack/snaattack.log

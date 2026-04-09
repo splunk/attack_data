@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: a6347eca-8597-4384-8b4b-ec0b8003f7cd
+date: '2026-04-01'
+description: Generated datasets for Windows Get-Variable.exe Establishing Network
+    Connections in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1574.008
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1574.008/snapattack/snaattack.log

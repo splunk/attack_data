@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: d1045710-e8c2-4bc7-b28e-6b67cc10ae3a
+date: '2026-04-01'
+description: Generated datasets for Windows Possible Command Execution from ADS in
+    attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1564
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1564/snapattack/snaattack.log

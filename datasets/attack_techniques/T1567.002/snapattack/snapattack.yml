@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 9f061461-5800-4fe0-9c18-6600a22eecbf
+date: '2026-04-01'
+description: Generated datasets for Windows Azure Storage Tools in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1567.002
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1567.002/snapattack/snaattack.log

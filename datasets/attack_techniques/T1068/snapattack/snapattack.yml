@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 430623fe-f2ec-42a1-9015-41077aa40f74
+date: '2026-04-01'
+description: Generated datasets for Windows FileSystem Privilege Escalation Tools
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1068
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1068/snapattack/snaattack.log

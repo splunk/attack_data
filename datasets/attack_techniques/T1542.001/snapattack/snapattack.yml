@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 17757060-bbf1-41ba-ac80-607e76af0dde
+date: '2026-04-01'
+description: Generated datasets for Windows Possible Bootkit Manipulation in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1542.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1542.001/snapattack/snaattack.log

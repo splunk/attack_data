@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: e877093f-bf3d-4542-b1b4-8ec884ffc196
+date: '2026-04-01'
+description: Generated datasets for Windows Command line contains an HTTP string in
+    attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1071.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1071.001/snapattack/snaattack.log

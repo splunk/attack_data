@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: a0c61c8d-b591-43ea-960e-e07c70908955
+date: '2026-04-01'
+description: Generated datasets for Windows Usage of Mimikatz lsadump::cache module
+    (Sysmon) in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1003.005
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1003.005/snapattack/snaattack.log

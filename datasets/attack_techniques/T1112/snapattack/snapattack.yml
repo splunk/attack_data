@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 764ab654-e554-4139-9e9f-630da812ae1f
+date: '2026-04-01'
+description: Generated datasets for Windows AuKill Indicators - Registry in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1112
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1112/snapattack/snaattack.log

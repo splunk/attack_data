@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 3b59510d-cca2-4076-9310-934dbd9ee165
+date: '2026-04-01'
+description: Generated datasets for Windows Seatbelt Tool Execution in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1526
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1526/snapattack/snaattack.log

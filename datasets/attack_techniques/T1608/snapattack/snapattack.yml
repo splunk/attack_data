@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: f7a29d1d-e687-4232-a65c-1078f62d9d73
+date: '2026-04-01'
+description: Generated datasets for Windows Amadey File Indicators in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1608
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1608/snapattack/snaattack.log

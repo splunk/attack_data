@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: e5db1bc4-ae73-4cd2-8117-a0f10f2f3457
+date: '2026-04-01'
+description: Generated datasets for Windows File Association Modification via Ftype
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1059.003
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1059.003/snapattack/snaattack.log

@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 53065f7f-c068-4a10-8009-26bb81ba80f9
+date: '2026-04-01'
+description: Generated datasets for Windows Explorer mounting a ntdsutil snapshot
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1003.003
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1003.003/snapattack/snaattack.log

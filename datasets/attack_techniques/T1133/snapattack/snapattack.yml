@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 3407d901-5e03-48de-a35f-869570399600
+date: '2026-04-01'
+description: Generated datasets for Windows Potentially Unwanted Program - Remote
+    Admin Tools in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1133
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1133/snapattack/snaattack.log

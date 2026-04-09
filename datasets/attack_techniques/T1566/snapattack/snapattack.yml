@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: b0bb28f7-ef8d-4fdf-ac7d-666ed1dc7e73
+date: '2026-04-01'
+description: Generated datasets for Windows UDL File Opened - Registry in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1566
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1566/snapattack/snaattack.log

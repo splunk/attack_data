@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 67a6dbde-f352-4c16-8d31-546195a2f15b
+date: '2026-04-01'
+description: Generated datasets for Windows Suspicious Key Created in Root Directory
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1022
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1022/snapattack/snaattack.log

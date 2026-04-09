@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 825df80c-94ee-4fd4-9282-0cf0bba69181
+date: '2026-04-01'
+description: Generated datasets for Windows Active Directory Command Line Tools in
+    attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1069
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1069/snapattack/snaattack.log

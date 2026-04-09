@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 603a0756-a08b-41b0-b07d-2e14200b0496
+date: '2026-04-01'
+description: Generated datasets for Windows Impacket DCOMExec Activity in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1059.006
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1059.006/snapattack/snaattack.log

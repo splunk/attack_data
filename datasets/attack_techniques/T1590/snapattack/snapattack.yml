@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 4c171be5-c3e5-4d3b-8a0c-a2ce8d64cf82
+date: '2026-04-01'
+description: Generated datasets for Windows Hacktool - WinPEAS.ps1 in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1590
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1590/snapattack/snaattack.log

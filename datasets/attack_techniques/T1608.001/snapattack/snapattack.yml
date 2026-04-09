@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 9c0441e6-0e99-4c61-b709-306848e88740
+date: '2026-04-01'
+description: Generated datasets for Windows Fake zero-day PoC Malware in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1608.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1608.001/snapattack/snaattack.log

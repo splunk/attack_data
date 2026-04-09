@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 1921312e-9f31-49a7-ac93-e5be2711ce9a
+date: '2026-04-01'
+description: Generated datasets for Windows Possible CVE-2023-36025 Exploitation in
+    attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1218
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1218/snapattack/snaattack.log

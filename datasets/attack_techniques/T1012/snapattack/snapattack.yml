@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 24d12d67-7cba-4ee2-aadd-05a6a224064d
+date: '2026-04-01'
+description: Generated datasets for Windows Possible Turla Snake Malware via Covert
+    Store Registry Key in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1012
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1012/snapattack/snaattack.log

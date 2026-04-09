@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: df6e0f1e-1da6-4891-b022-2cd1b0a779ed
+date: '2026-04-01'
+description: Generated datasets for Windows Netsh DLL Persistence in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1128
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1128/snapattack/snaattack.log

@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: f56f382b-a2a9-49c9-bb19-54a595b0a8e3
+date: '2026-04-01'
+description: Generated datasets for Windows Mavinject Process Injection via RemoteThread
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1055
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1055/snapattack/snaattack.log

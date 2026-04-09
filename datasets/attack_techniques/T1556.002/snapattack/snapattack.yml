@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: f04f48e9-ab85-4b2b-8205-1904c9302d49
+date: '2026-04-01'
+description: Generated datasets for Windows Password Filter DLL in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1556.002
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1556.002/snapattack/snaattack.log

@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 4dc4a0fc-aa2b-4647-99a9-0bbcc3ddede5
+date: '2026-04-01'
+description: Generated datasets for Windows Possible LAPS Access in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1078.003
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1078.003/snapattack/snaattack.log

@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: d29d7889-4677-4f08-84d2-f06668e144f7
+date: '2026-04-01'
+description: Generated datasets for Windows Visual Basic Commandline Compiler DNSQuery
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1071.004
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1071.004/snapattack/snaattack.log

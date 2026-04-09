@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 1e744155-d897-4aec-aa75-69a11f7b39ac
+date: '2026-04-01'
+description: Generated datasets for Windows Hivelocker Cleanup Script in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1485
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1485/snapattack/snaattack.log

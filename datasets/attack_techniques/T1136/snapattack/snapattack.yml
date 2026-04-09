@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: cd08fc7d-2263-487f-8e55-fa1159f99601
+date: '2026-04-01'
+description: Generated datasets for Windows Azure User Activity via CLI in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1136
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1136/snapattack/snaattack.log

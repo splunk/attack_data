@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: c03df1ca-587c-447b-8a4b-30a5eabd7b3f
+date: '2026-04-01'
+description: Generated datasets for Windows Powershell Writing Roaming Credential
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1037.005
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1037.005/snapattack/snaattack.log

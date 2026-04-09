@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 8857e0c1-8fc6-4326-80ad-7b7bb74d09c5
+date: '2026-04-01'
+description: Generated datasets for Windows Guest Account Activated in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1078.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1078.001/snapattack/snaattack.log

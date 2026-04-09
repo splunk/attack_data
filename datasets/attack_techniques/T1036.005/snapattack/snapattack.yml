@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: acb07b81-669a-4f31-b669-737136025702
+date: '2026-04-01'
+description: Generated datasets for Windows Hook Created by Git.exe in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1036.005
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1036.005/snapattack/snaattack.log

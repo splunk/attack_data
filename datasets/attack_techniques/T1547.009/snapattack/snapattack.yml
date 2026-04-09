@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: d3092c67-e7be-4a45-b80b-74aa35f4d1b0
+date: '2026-04-01'
+description: Generated datasets for Windows Office Creating or Modifying Desktop Shortcut
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1547.009
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1547.009/snapattack/snaattack.log

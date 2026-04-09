@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: df5b874a-91f8-4eca-bf06-2570a6f7834b
+date: '2026-04-01'
+description: Generated datasets for Windows Usage of Mimikatz lsadump::sam module
+    (PoSh) in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1003.002
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1003.002/snapattack/snaattack.log

@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 1499a5ff-0e8b-4b68-b451-8042ccd54f50
+date: '2026-04-01'
+description: Generated datasets for Windows IOBit Unlocker Extension DLL in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1218.010
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1218.010/snapattack/snaattack.log

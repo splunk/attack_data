@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: d3e3aea9-f4ff-474b-9c8d-e31c3de30faf
+date: '2026-04-01'
+description: Generated datasets for Windows Chrome Bookmarks Activity in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1217
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1217/snapattack/snaattack.log

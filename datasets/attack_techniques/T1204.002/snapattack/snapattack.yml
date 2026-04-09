@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 0ca9d89a-0934-45b9-b25b-4e031205f90f
+date: '2026-04-01'
+description: Generated datasets for Windows Binary Executed within 7zip in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1204.002
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1204.002/snapattack/snaattack.log

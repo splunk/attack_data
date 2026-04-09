@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 7a3a94cc-a1fd-4b07-8eb8-cfc28d7ce5be
+date: '2026-04-01'
+description: Generated datasets for Windows Software Discovery via Powershell in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1518
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1518/snapattack/snaattack.log

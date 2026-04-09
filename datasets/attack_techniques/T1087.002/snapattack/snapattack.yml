@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 839ae0f7-7316-400e-8dcd-faf873544af5
+date: '2026-04-01'
+description: Generated datasets for Windows Attempt to access Groups.xml in SYSVOL
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1087.002
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1087.002/snapattack/snaattack.log

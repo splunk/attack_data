@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: de014240-7568-4868-972a-70a934ee8ade
+date: '2026-04-01'
+description: Generated datasets for Windows Possible MagicDot Exploitation in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1036
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1036/snapattack/snaattack.log
