@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: fc6c4374-86e1-4e36-8675-302748dd7477
+date: '2026-04-01'
+description: Generated datasets for Windows MPNotify Creating File in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1074
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1074/snapattack/snaattack.log

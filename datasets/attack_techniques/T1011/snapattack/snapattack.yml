@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 13356374-aa80-49d4-9e1e-10e0ed9a2093
+date: '2026-04-01'
+description: Generated datasets for Windows Suspicious Program Location with Network
+    Connections in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1011
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1011/snapattack/snaattack.log

@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 5c795d84-31f5-48eb-ad75-021061efe92f
+date: '2026-04-01'
+description: Generated datasets for Windows Office VSTO Add-in DLL in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1137.006
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1137.006/snapattack/snaattack.log

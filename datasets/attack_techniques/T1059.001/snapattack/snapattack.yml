@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 8e9835ec-c311-4b45-b4cc-9b55f23ee84e
+date: '2026-04-01'
+description: Generated datasets for Windows Cobalt Strike Powershell in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1059.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1059.001/snapattack/snaattack.log

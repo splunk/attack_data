@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 26daac40-7593-4ebc-981b-e8a1a13f5876
+date: '2026-04-01'
+description: Generated datasets for Windows Devtunnels Commands in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1090
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1090/snapattack/snaattack.log

@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 5d47289f-40f0-4cfa-a0fd-3fe124377e5a
+date: '2026-04-01'
+description: Generated datasets for Windows Defender Signatures Removed (Powershell)
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1562
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1562/snapattack/snaattack.log

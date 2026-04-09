@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 9dcaa6c2-4017-431f-8ccd-535408ed7428
+date: '2026-04-01'
+description: Generated datasets for Windows Suspicious child processes of Atlassian
+    Confluence in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1210
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1210/snapattack/snaattack.log

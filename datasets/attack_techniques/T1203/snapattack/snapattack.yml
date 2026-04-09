@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 136ffbec-3ac9-47b1-9f42-ebb6a14e158a
+date: '2026-04-01'
+description: Generated datasets for Windows Suspicious Git Config Commands in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1203
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1203/snapattack/snaattack.log

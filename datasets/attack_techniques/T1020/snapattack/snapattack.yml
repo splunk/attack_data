@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: bd2aeef0-e309-41aa-8e46-7ebf9cf226be
+date: '2026-04-01'
+description: Generated datasets for Windows Impacket Remote Temporary File Activity
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1020
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1020/snapattack/snaattack.log

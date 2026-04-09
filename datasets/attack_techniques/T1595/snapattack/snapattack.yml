@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 9f41bb24-0cbb-4024-9beb-2d62ccd56093
+date: '2026-04-01'
+description: Generated datasets for Windows Netspy Network Scanner in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1595
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1595/snapattack/snaattack.log

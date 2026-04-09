@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 43d600c2-c62e-4598-a41a-2dc7b1e86d96
+date: '2026-04-01'
+description: Generated datasets for Windows Terminal Spawned via Special Administration
+    Console in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1505
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1505/snapattack/snaattack.log

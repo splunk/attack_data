@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 25ad88e6-d332-4a62-a584-a3eb3a531881
+date: '2026-04-01'
+description: Generated datasets for Windows Attempt to access GptTmpl.inf in SYSVOL
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1484.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1484.001/snapattack/snaattack.log

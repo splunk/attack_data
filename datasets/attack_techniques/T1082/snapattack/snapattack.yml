@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 678e0d41-1fb6-40e4-8556-fc5168784634
+date: '2026-04-01'
+description: Generated datasets for Windows PrivescCheck Powershell Functions in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1082
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1082/snapattack/snaattack.log

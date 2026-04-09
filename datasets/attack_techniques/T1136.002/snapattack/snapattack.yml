@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 53e422d7-93de-4586-9a5a-378c9d644d31
+date: '2026-04-01'
+description: Generated datasets for Windows Computer AD account escalated to a domain
+    controller in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1136.002
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1136.002/snapattack/snaattack.log

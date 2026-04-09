@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 33739096-0646-4694-a724-91c751b14590
+date: '2026-04-01'
+description: Generated datasets for Windows RMM Tool Installation in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1543.003
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1543.003/snapattack/snaattack.log

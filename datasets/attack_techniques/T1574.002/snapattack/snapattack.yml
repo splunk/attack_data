@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 0d6be70c-1b48-433c-af22-4965ca077d83
+date: '2026-04-01'
+description: Generated datasets for Windows CVE-2024-6769 File Indicators in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1574.002
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1574.002/snapattack/snaattack.log

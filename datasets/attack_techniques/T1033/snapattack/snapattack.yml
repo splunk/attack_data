@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 1ea06ecf-1423-4f00-a3b0-66bc2be38008
+date: '2026-04-01'
+description: Generated datasets for Windows Discovery Via Dsregcmd in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1033
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1033/snapattack/snaattack.log

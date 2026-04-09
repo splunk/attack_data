@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 610dfbc6-0ce6-4a13-b500-251775f4fc39
+date: '2026-04-01'
+description: Generated datasets for Windows MagicCopy in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1030
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1030/snapattack/snaattack.log

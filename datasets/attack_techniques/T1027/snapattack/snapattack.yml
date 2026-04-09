@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: f7e0f1ec-2f22-47c8-8e13-59f521c08829
+date: '2026-04-01'
+description: Generated datasets for Windows Possible Nuitka Artifacts in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1027
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1027/snapattack/snaattack.log

@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 5a3f7ee5-4eab-4a85-ac6b-de8ef1a290af
+date: '2026-04-01'
+description: Generated datasets for Windows mmc.exe loading vbscript.dll in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1059.005
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1059.005/snapattack/snaattack.log

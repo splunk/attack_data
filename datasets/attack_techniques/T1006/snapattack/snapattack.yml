@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 1588ea84-f7f1-4ed3-8d53-acba5c6a5c2d
+date: '2026-04-01'
+description: Generated datasets for Windows IsaacWiper DLL RawDiskRead in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1006
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1006/snapattack/snaattack.log

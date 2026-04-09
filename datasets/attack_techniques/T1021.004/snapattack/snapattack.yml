@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: cac19d26-abb2-4a44-88ac-8b78e0528e4c
+date: '2026-04-01'
+description: Generated datasets for Windows Putty suite in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1021.004
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1021.004/snapattack/snaattack.log

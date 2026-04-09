@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 17ba91bc-f520-4b11-aaf5-260750e2f555
+date: '2026-04-01'
+description: Generated datasets for Windows Port in Command Line in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1562.004
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1562.004/snapattack/snaattack.log

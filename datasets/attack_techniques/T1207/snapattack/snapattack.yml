@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 0f2ead61-a5ea-42ec-a5e2-4291f7c9d1dc
+date: '2026-04-01'
+description: Generated datasets for Windows Operation performed with DS-Install-Replica
+    privilege in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1207
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1207/snapattack/snaattack.log

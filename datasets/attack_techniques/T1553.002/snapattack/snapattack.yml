@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: df283512-6879-495b-8456-53a863ed5a8a
+date: '2026-04-01'
+description: Generated datasets for Windows Expired Signature in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1553.002
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1553.002/snapattack/snaattack.log

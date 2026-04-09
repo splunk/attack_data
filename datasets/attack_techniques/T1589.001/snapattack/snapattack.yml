@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 52cbbd8d-8b85-4aff-9095-70599a5aa093
+date: '2026-04-01'
+description: Generated datasets for Windows Unusual LogonUI Activity in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1589.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1589.001/snapattack/snaattack.log

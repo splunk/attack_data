@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: f1af43d6-2a35-48c4-b796-6ceb29f4c8a4
+date: '2026-04-01'
+description: Generated datasets for Windows Registry Modification of BCD Configuration
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1562.009
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1562.009/snapattack/snaattack.log

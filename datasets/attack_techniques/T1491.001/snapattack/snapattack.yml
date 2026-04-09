@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 14dd611a-9b0e-4342-a719-d989570345b9
+date: '2026-04-01'
+description: Generated datasets for Windows PowerShell Post Exploitation Common Keywords
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1491.001
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1491.001/snapattack/snaattack.log

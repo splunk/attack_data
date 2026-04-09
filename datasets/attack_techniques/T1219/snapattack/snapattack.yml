@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 2633c157-cfa0-410b-9c3c-a74c9eb1ec8a
+date: '2026-04-01'
+description: Generated datasets for Windows Level Powershell Installer in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1219
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1219/snapattack/snaattack.log

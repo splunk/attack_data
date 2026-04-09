@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: a1ce25ca-ccff-4320-ad9a-dfaf58106899
+date: '2026-04-01'
+description: Generated datasets for Windows Process Accessing Windows Recall Directory
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1119
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1119/snapattack/snaattack.log

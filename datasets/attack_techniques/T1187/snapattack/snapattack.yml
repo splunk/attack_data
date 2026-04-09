@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 4153361b-39d9-49d6-abb7-11ca1b4f245f
+date: '2026-04-01'
+description: Generated datasets for Windows Possible DFSCoerce Attack in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1187
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1187/snapattack/snaattack.log

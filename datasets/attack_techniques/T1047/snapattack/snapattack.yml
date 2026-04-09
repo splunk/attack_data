@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 40e76f02-222e-4029-9d6d-e8f0306e5fc0
+date: '2026-04-01'
+description: Generated datasets for Windows Creation of WBEM\CIMOM registry subkeys
+    in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1047
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1047/snapattack/snaattack.log
