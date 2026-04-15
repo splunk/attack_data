@@ -7,7 +7,11 @@ directory: windows_event_log_cleared
 mitre_technique:
 - T1070.001
 datasets:
-- name: windows-xml
-  path: /datasets/attack_techniques/T1070.001/windows_event_log_cleared/windows-xml.log
+- name: windows-system
+  path: /datasets/attack_techniques/T1070.001/windows_event_log_cleared/windows-system.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:System
+- name: windows-security
+  path: /datasets/attack_techniques/T1070.001/windows_event_log_cleared/windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
