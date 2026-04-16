@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 37c77a40-39a6-11f1-b68e-629be3538069
+date: '2026-04-16'
+description: Generated datasets for vip big env variable in attack range.
+environment: attack_range
+directory: vip_big_env_variable
+mitre_technique:
+- T1112
+datasets:
+- name: vip_INTERNAL_DB_CACHE.log
+  path: /datasets/attack_techniques/T1112/vip_big_env_variable/vip_INTERNAL_DB_CACHE.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
