@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 71500688-39a6-11f1-b68e-629be3538069
+date: '2026-04-16'
+description: Generated datasets for vip aspnet process in attack range.
+environment: attack_range
+directory: vip_aspnet_process
+mitre_technique:
+- T1218
+datasets:
+- name: vip_aspnet_process.log
+  path: /datasets/attack_techniques/T1218/vip_aspnet_process/vip_aspnet_process.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
