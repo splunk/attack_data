@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 552e13f8-267f-4a91-a56f-9209ab4e2f1f
+date: '2026-04-20'
+description: Generated datasets for Linux Evidence of BPFdoor implant - creation of
+    known lockfiles in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1014
+datasets:
+-   name: snapattack
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1014/snapattack/snapattack_linux.log

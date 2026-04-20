@@ -12,3 +12,7 @@ datasets:
     sourcetype: XmlWinEventLog
     source: XmlWinEventLog:Security
     path: /datasets/attack_techniques/T1204.002/snapattack/snaattack.log
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1204.002/snapattack/snapattack_linux.log
