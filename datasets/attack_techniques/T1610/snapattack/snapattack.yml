@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: d49a676c-491e-4165-94bb-1d0e4fb1f5d0
+date: '2026-04-20'
+description: Generated datasets for Linux Suspicious Docker Build in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1610
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1610/snapattack/snapattack_linux.log

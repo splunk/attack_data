@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: bf223b24-4cb9-44aa-b43d-63c5d564355a
+date: '2026-04-20'
+description: Generated datasets for Linux GobRAT Malware Execution in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1036.004
+datasets:
+-   name: snapattack
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1036.004/snapattack/snapattack_linux.log

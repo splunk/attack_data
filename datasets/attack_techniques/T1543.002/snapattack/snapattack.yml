@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: aaab2742-a782-4392-9332-6f68ad5ae804
+date: '2026-04-20'
+description: Generated datasets for Linux Service Enabled from Web Directory in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1543.002
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1543.002/snapattack/snapattack_linux.log

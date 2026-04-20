@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 1c980891-b00d-4076-ab9c-6854a1de7517
+date: '2026-04-20'
+description: Generated datasets for Linux Bash History Access in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1552.003
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1552.003/snapattack/snapattack_linux.log

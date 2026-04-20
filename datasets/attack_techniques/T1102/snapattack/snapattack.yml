@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: a1eede05-8cac-4d11-8b09-95f4a7205db0
+date: '2026-04-20'
+description: Generated datasets for Linux Suspicious Splunk Process (Linux) in attack
+    range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1102
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1102/snapattack/snapattack_linux.log

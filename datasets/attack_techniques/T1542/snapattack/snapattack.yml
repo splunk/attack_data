@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: e55d922f-209d-4461-97fb-2578bd8d7620
+date: '2026-04-20'
+description: Generated datasets for Linux EFI Bootloader File Deletion in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1542
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1542/snapattack/snapattack_linux.log
