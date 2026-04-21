@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 47f8b9ce-3cc6-11f1-99d5-629be353806a
+date: '2026-04-20'
+description: Generated datasets for vip env var execution in attack range.
+environment: attack_range
+directory: vip_env_var_execution
+mitre_technique:
+- T1059.001
+datasets:
+- name: env_vip_pwh_intl.log
+  path: /datasets/attack_techniques/T1059.001/vip_env_var_execution/env_vip_pwh_intl.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-PowerShell/Operational'
