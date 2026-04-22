@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: df6600c0-3e4a-11f1-91b6-629be3538068
+date: '2026-04-22'
+description: Generated datasets for vip injection pwh in attack range.
+environment: attack_range
+directory: vip_injection_pwh
+mitre_technique:
+- T1059.001
+datasets:
+- name: pwh_net_inline.log
+  path: /datasets/attack_techniques/T1059.001/vip_injection_pwh/pwh_net_inline.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-PowerShell/Operational'
