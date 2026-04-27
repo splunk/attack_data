@@ -1,0 +1,14 @@
+author: Bhavin Patel, Splunk
+id: 8b2f4c1e-9a0d-4e8b-b7c3-1d2e3f4a5b6c
+date: '2026-04-27'
+description: |
+  This dataset is based on the Cisco Secure Access RAVPN security event schema and the data here is generated from various simulated activities in a controlled lab environment.
+environment: custom
+directory: cisco_secure_access/ravpn
+mitre_technique:
+  - T1110
+datasets:
+  - name: ravpn_high_auth_failures
+    path: /datasets/cisco_secure_access/ravpn/ravpn_high_auth_failures.log
+    source: not_applicable
+    sourcetype: cisco:secure_access:security_events_ravpn
