@@ -1,0 +1,15 @@
+author: Bhavin Patel, Splunk
+id: 9ac78446-a25a-42a5-b022-a01de06752e7
+date: '2026-05-06'
+description: |
+  Sample Cisco Secure Access DNS events representing access to proxy-evasion / anonymizer destinations (lab-generated).
+  Events include URL categorization values that contain "Anonymizer" for validation of Cisco SA content aligned to MITRE ATT&CK T1562.001.
+environment: custom
+directory: cisco_secure_access/dns
+mitre_technique:
+  - T1562.001
+datasets:
+  - name: anonymizer_dns
+    path: /datasets/cisco_secure_access/dns/anonymizer_dns.log
+    source: cisco_cloud_security_addon
+    sourcetype: cisco:cloud_security:dns
