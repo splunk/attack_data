@@ -1,0 +1,15 @@
+author: Bhavin Patel, Splunk
+id: b25742dd-1536-4173-a3fa-19f1583c834f
+date: '2026-05-08'
+description: |
+  Sample Cisco Secure Access proxy events representing automated web reconnaissance behavior.
+  The dataset includes high-volume HTTP 401/403/404 access errors across many unique URLs from a single source, consistent with directory and content enumeration tooling.
+environment: custom
+directory: cisco_secure_access/proxy
+mitre_technique:
+  - T1595
+datasets:
+  - name: automated_web_recon_http_errors
+    path: /datasets/cisco_secure_access/proxy/automated_web_recon_http_errors.log
+    source: cisco_cloud_security_addon
+    sourcetype: cisco:cloud_security:proxy
