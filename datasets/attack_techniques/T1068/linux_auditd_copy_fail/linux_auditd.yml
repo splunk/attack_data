@@ -12,3 +12,11 @@ datasets:
     sourcetype: auditd
     source: auditd
     path: /datasets/attack_techniques/T1068/linux_auditd_copy_fail/linux_auditd.log
+-   name: kern
+    sourcetype: linux_messages_syslog
+    source: /var/log/kern
+    path: /datasets/attack_techniques/T1068/linux_auditd_copy_fail/kern.log
+-   name: auth
+    sourcetype: linux_secure
+    source: /var/log/auth
+    path: /datasets/attack_techniques/T1068/linux_auditd_copy_fail/auth.log
