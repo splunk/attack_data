@@ -1,0 +1,22 @@
+author: Raven Tait, Splunk
+id: 94352419-a489-4fb9-a6c2-348c30d86906
+date: '2026-05-13'
+description: Generated datasets for Dirty Frag privilege escalation
+    in attack range.
+environment: attack_range
+directory: linux_dirtyfrag
+mitre_technique:
+- T1068
+datasets:
+-   name: audit
+    sourcetype: auditd
+    source: auditd
+    path: /datasets/attack_techniques/T1068/linux_dirtyfrag/audit.log
+-   name: kern
+    sourcetype: linux_messages_syslog
+    source: /var/log/kern
+    path: /datasets/attack_techniques/T1068/linux_dirtyfrag/kern.log
+-   name: linux_sysmon
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1068/linux_dirtyfrag/linux_sysmon.log
