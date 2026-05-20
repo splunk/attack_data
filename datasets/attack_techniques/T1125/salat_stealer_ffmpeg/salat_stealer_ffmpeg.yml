@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: eb855e6c-543b-11f1-8233-629be3538068
+date: '2026-05-20'
+description: Generated datasets for salat stealer ffmpeg in attack range.
+environment: attack_range
+directory: salat_stealer_ffmpeg
+mitre_technique:
+- T1125
+datasets:
+- name: ffmpeg_event.log
+  path: /datasets/attack_techniques/T1125/salat_stealer_ffmpeg/ffmpeg_event.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
