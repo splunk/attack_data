@@ -14,13 +14,13 @@ jobs:
       ATTACK_DATA_ARCHIVE_FILE: attack_data.tar.zstd
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         # We must EXPLICITLY specificy lfs: true. It defaults to false
         with:
           lfs: true
 
       - name: Setup AWS CLI and Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           aws-access-key-id: ${{ secrets.ACCESS_KEY}}
           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
