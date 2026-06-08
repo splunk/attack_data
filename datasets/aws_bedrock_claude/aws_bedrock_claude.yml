@@ -1,0 +1,30 @@
+author: Rod Soto, Splunk
+id: 286f9904-49f7-417c-a6a8-51cd9b45cd3d
+date: '2026-05-20'
+description: Generated datasets for AWS Bedrock Claude using synthetic model invocation log simulation
+environment: attack_range
+directory: aws_bedrock_claude
+mitre_technique:
+- T1055
+- T1599
+datasets:
+- name: aws_bedrock_claude_cross_region_possible_inference_abuse
+  path: /datasets/aws_bedrock_claude/aws_bedrock_claude_cross_region_possible_inference_abuse.ndjson
+  sourcetype: json_no_timestamp
+  source: http:bulkawsbedrock
+- name: aws_bedrock_claude_hostile_prompt_sentiment
+  path: /datasets/aws_bedrock_claude/aws_bedrock_claude_hostile_prompt_sentiment.ndjson
+  sourcetype: json_no_timestamp
+  source: http:bulkawsbedrock
+- name: aws_bedrock_claude_possible_prompt_injection
+  path: /datasets/aws_bedrock_claude/aws_bedrock_claude_possible_prompt_injection.ndjson
+  sourcetype: json_no_timestamp
+  source: http:bulkawsbedrock
+- name: aws_bedrock_claude_sensitive_data_in_prompts
+  path: /datasets/aws_bedrock_claude/aws_bedrock_claude_sensitive_data_in_prompts.ndjson
+  sourcetype: json_no_timestamp
+  source: http:bulkawsbedrock
+- name: aws_bedrock_claude_unusually_large_prompts
+  path: /datasets/aws_bedrock_claude/aws_bedrock_claude_unusually_large_prompts.ndjson
+  sourcetype: json_no_timestamp
+  source: http:bulkawsbedrock
