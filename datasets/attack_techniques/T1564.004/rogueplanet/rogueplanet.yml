@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: d0e448cc-6596-11f1-aaad-629be3538069
+date: '2026-06-11'
+description: Generated datasets for rogueplanet in attack range.
+environment: attack_range
+directory: rogueplanet
+mitre_technique:
+- T1564.004
+datasets:
+- name: rogue_15.log
+  path: /datasets/attack_techniques/T1564.004/rogueplanet/rogue_15.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
