@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: 7da0e3c4-aa21-40ef-9aed-9f291cb89618
+date: '2026-06-14'
+description: Generated datasets for WindChill exploitation CVE-2026-4681
+environment: NA
+directory: windchill
+mitre_technique:
+- T1190
+datasets:
+- name: windchill_exploitation
+  path: /datasets/emerging_threats/windchill/windchill_exploitation.log
+  sourcetype: log4j
+  source: not_applicable
