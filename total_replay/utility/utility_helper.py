@@ -291,8 +291,8 @@ class UtilityHelper:
             return {}
         else:
             attack_datasets_full_path =  os.path.join(os.path.expanduser(self.read_config_settings('attack_data_dir_path')), datasets_path)
-            if os.path.isfile(attack_datasets_full_path):
-                ColorPrint.print_info_fg(f"[+][.  INFO]: ... Attack data at: {attack_datasets_full_path} already exists. Download skipped.")
+            if os.path.isfile(attack_datasets_full_path) and not self.is_lsf_managed_file(attack_datasets_full_path):
+                ColorPrint.print_info_fg(f"[+][.  INFO]: ... Attack data at: {attack_datasets_full_path} already exists and Git LFS File Check is: {self.is_lsf_managed_file(attack_datasets_full_path)}. Download skipped.")
                 return (attack_datasets_full_path, datasets_path)
 
         # Find the Git repository root
@@ -313,7 +313,14 @@ class UtilityHelper:
 
 
         return (attack_datasets_full_path, datasets_path)
-     
+
+    def is_lsf_managed_file(self, file_path:str)->bool:
+        """Check if a file is managed by Git LFS."""
+        try:
+            with open(file_path, "rb") as f:
+                return f.read(120).startswith(b"version https://git-lfs.github.com/spec/v1")
+        except OSError:
+            return False    
 
     def read_yaml_file(self, file_path:str)->dict:
         """Read a YAML file and return its content as a dictionary."""
@@ -384,8 +391,8 @@ class UtilityHelper:
         needed_replay_yaml_field = {
             "name": yaml_data.get("name", "Unknown"),
             "id": yaml_data.get("id", "Unknown"),
-            "mitre_attack_id": yaml_data.get("tags", {}).get("mitre_attack_id", "Unknown"),
-            "analytic_story": yaml_data.get("tags", {}).get("analytic_story", "Unknown"),
+            "mitre_attack_id": yaml_data.get("mitre_attack_id", "Unknown"),
+            "analytic_story": yaml_data.get("analytic_story", "Unknown"),
             "description": yaml_data.get("description", "No description available"),
             #"file_path": yaml_data.get("file_path", "Unknown")
         }
@@ -613,16 +620,14 @@ class UtilityHelper:
                 return True
             
         elif yaml_key_name == "mitre_attack_id":
-            if yaml_data['tags']:
-                if "mitre_attack_id" in yaml_data['tags']:
-                    if field_name.lower() in [i.lower() for i in yaml_data['tags']['mitre_attack_id']]:
-                        return True
+            if "mitre_attack_id" in yaml_data:
+                if field_name.lower() in [i.lower() for i in yaml_data['mitre_attack_id']]:
+                    return True
                     
         elif yaml_key_name == "analytic_story":
-            if yaml_data['tags']:
-                if "analytic_story" in yaml_data['tags']:
-                    if field_name.lower() in [i.lower() for i in yaml_data['tags']['analytic_story']]:
-                        return True
+            if "analytic_story" in yaml_data:
+                if field_name.lower() in [i.lower() for i in yaml_data['analytic_story']]:
+                    return True
 
         elif yaml_key_name == "id":
             if yaml_data.get(yaml_key_name).lower() == field_name.lower():
