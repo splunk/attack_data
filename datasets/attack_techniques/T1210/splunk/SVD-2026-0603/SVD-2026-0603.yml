@@ -1,0 +1,13 @@
+author: Hiroaki Ogawa, Bhavin Patel, Splunk
+id: d1e1764c-68bc-4c6c-8913-05f899cd009d
+date: '2026-06-23'
+description: Generated datasets for SVD-2026-0603 unauthenticated arbitrary file creation via PostgreSQL sidecar service endpoint in Splunk Enterprise.
+environment: custom
+directory: SVD-2026-0603
+mitre_technique:
+- T1210
+datasets:
+- name: SVD-2026-0603_splunkd_ui_access.log
+  path: /datasets/attack_techniques/T1210/splunk/SVD-2026-0603/SVD-2026-0603_splunkd_ui_access.log
+  sourcetype: splunkd_ui_access
+  source: /opt/splunk/var/log/splunk/splunkd_ui_access.log
