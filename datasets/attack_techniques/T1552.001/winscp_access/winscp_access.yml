@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: f30180dc-6fd7-11f1-b678-629be3538069
+date: '2026-06-24'
+description: Generated datasets for winscp access in attack range.
+environment: attack_range
+directory: winscp_access
+mitre_technique:
+- T1552.001
+datasets:
+- name: winscp_phnatom.log
+  path: /datasets/attack_techniques/T1552.001/winscp_access/winscp_phnatom.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Security'
