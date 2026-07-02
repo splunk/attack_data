@@ -1,0 +1,12 @@
+author: Nasreddine Bencherchali
+id: 594e402a-dcab-4608-bcbf-7cd7c1a19391
+date: '2026-07-01'
+description: Sample events containing emails files being created outside of common directories
+environment: custom
+mitre_technique:
+- T1114.001
+datasets:
+- name: emails_outside_dir_sysmon
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  path: /datasets/attack_techniques/T1114.001/windows_email_files_outside_email_dir/sysmon.log
