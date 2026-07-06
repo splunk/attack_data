@@ -21,6 +21,6 @@ datasets:
     source: Syslog:Linux-Sysmon/Operational
     path: /datasets/attack_techniques/T1068/linux_dirtyfrag/linux_sysmon.log
 -   name: dirty_frag_events_trimmed
-    sourcetype: linux_audit
-    source: /var/log/audit/audit.log
+    sourcetype: auditd
+    source: auditd
     path: /datasets/attack_techniques/T1068/linux_dirtyfrag/dirty_frag_events_trimmed.log
