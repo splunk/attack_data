@@ -1,0 +1,22 @@
+author: Raven Tait, Splunk
+id: c94e56b2-9e11-4d15-9c46-ae6ca9b3bc80
+date: '2026-07-06'
+description: Generated datasets for CVE-2026-46331 privilege escalation
+    in attack range.
+environment: attack_range
+directory: linux_pedit
+mitre_technique:
+- T1068
+datasets:
+-   name: linux_sysmon
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1068/linux_pedit/sysmon_linux.log
+-   name: syslog
+    sourcetype: linux_messages_syslog
+    source: /var/log/syslog
+    path: /datasets/attack_techniques/T1068/linux_pedit/syslog.log
+-   name: audit
+    sourcetype: auditd
+    source: auditd
+    path: /datasets/attack_techniques/T1068/linux_pedit/linux_auditd.log
