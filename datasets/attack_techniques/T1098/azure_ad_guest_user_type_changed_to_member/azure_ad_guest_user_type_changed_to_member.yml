@@ -1,0 +1,17 @@
+author: descambiado
+id: 4b8d2f6a-1c9e-4a3b-9d7f-6e2a4c8b1f95
+date: '2026-06-11'
+description: Changed the UserType property of an Entra ID guest account from Guest
+  to Member, removing the tenant-resource restrictions guest accounts normally carry.
+  Includes one benign Update user event (MobilePhone change) with no UserType property,
+  to validate filter specificity. Tenant specific details have been replaced in
+  the dataset including tenant id, user names, ips, etc.
+environment: attack_range
+directory: azure_ad_guest_user_type_changed_to_member
+mitre_technique:
+- T1098
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1098/azure_ad_guest_user_type_changed_to_member/azure-audit.log
+  sourcetype: azure:monitor:aad
+  source: azure
