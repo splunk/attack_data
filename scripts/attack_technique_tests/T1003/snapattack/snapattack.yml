@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: b7b26034-912b-4cb5-9f7a-f1389e00a680
+date: '2026-04-01'
+description: "Generated datasets for Windows Common credential dumpers in attack range."
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1003
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1003/snapattack/snaattack.log

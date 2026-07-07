@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: c662746c-b0c8-440e-b0a0-2ae243fdd61d
+date: '2026-04-01'
+description: Generated datasets for Windows Possible DCSync attack in attack range.
+environment: attack_range
+directory: snapattack
+mitre_technique:
+- T1003.006
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1003.006/snapattack/snaattack.log

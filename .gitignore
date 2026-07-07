@@ -7,9 +7,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-scripts/detection_tests/**
-scripts/attack_technique_tests/**
-
 # C extensions
 *.so
 .env
