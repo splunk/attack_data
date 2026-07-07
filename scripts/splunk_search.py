@@ -56,6 +56,7 @@ def run_search(
 ) -> List[Dict[str, str]]:
     """Run a blocking search and return result rows as dicts."""
     query = _as_search_command(spl)
+    print(f"    SPL [earliest={earliest_time}, latest={latest_time}]: {query}")
     job = service.jobs.create(
         query,
         earliest_time=earliest_time,
@@ -84,7 +85,6 @@ def delete_index_data(service, index: str) -> int:
     number of events reported deleted.
     """
     query = f"search index={index} | delete"
-    print(f"    cleanup: {query}")
     rows = run_search(service, query, earliest_time="0", latest_time="now", max_count=1)
     deleted = 0
     for row in rows:

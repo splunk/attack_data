@@ -159,17 +159,22 @@ export AWS_REGION="us-east-1"
 
 ### Full pipeline (upload → detect → export → cleanup)
 
-The `run` command processes **one attack data file at a time**: it uploads that
-file's datasets, runs every detection against them, exports the matched events,
-and then deletes the file's data from the index (`index=<index> | delete`)
-before moving on to the next file. Because only a single attack data file's data
-is in the index at any time, the index-wide delete cleanly isolates each file
-and keeps detection results from mingling across files.
+The `run` command runs in four stages:
+
+1. **Upload** every attack data file (and all of their datasets) to the index.
+   Each event line gets its own UUID (used as the Splunk `host`) recorded in
+   DynamoDB against its attack data file and dataset.
+2. **Detect** — run every detection once over the whole index.
+3. **Attribute & export** — for each detection hit, the matched `host` UUIDs are
+   mapped back to the attack data file and dataset they came from (via the
+   DynamoDB UUID map). Only events with detection hits are exported, one file
+   per dataset.
+4. **Cleanup** — once everything is detected and exported, delete the uploaded
+   data from the index with `index=<index> | delete`.
 
 Cleanup is on by default and requires a Splunk user with the `can_delete`
 capability. Disable it with `--no-delete`. Cleanup is automatically skipped when
-`--skip-upload` is used (nothing is re-uploaded, so deleting would wipe data
-that later files still need).
+`--skip-upload` is used (nothing was re-uploaded in that run).
 
 Single attack data file + single detection:
 
@@ -198,7 +203,7 @@ python scripts/migrate.py run \
   --skip-upload
 ```
 
-Keep the uploaded data in the index after the run (skip the per-file cleanup):
+Keep the uploaded data in the index after the run (skip the final cleanup):
 
 ```bash
 python scripts/migrate.py run \

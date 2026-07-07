@@ -617,6 +617,10 @@ def do_export(
     """
     if not matched_hosts:
         print("\nNo matched host UUIDs to export.")
+        for attack_data_uuid, entry in uuid_map.items():
+            print(f"  ! WARNING: no detection matches for "
+                  f"{entry.get('file', attack_data_uuid)}; "
+                  "leaving attack data unchanged (no export)")
         return
 
     out_dir: Optional[Path] = None
@@ -631,6 +635,13 @@ def do_export(
     total_files = 0
 
     for attack_data_uuid, entry in uuid_map.items():
+        # Skip files with no detection hits: no export, no yml update, warn.
+        if not (matched_hosts & _file_uuid_set(entry)):
+            print(f"  ! WARNING: no detection matches for "
+                  f"{entry.get('file', attack_data_uuid)}; "
+                  "leaving attack data unchanged (no export)")
+            continue
+
         dataset_events: Dict[str, List[str]] = {}
         for dataset_name, dataset_uuids in entry["datasets"].items():
             hosts = matched_hosts & dataset_uuids
@@ -857,12 +868,35 @@ def cmd_run(args: argparse.Namespace) -> None:
     table, table_name = get_dynamo_table(args)
     print(f"DynamoDB table={table_name}")
 
-    # Cleanup after each file keeps only one attack data file's data in the
-    # index at a time, so `index=test | delete` is safe. In --skip-upload mode
-    # nothing is re-uploaded, so cleanup is disabled to avoid wiping the index.
-    do_cleanup = not args.no_delete and not args.skip_upload
-    if args.skip_upload and not args.no_delete:
-        print("Note: --skip-upload set; index cleanup after each file is disabled")
+    # Stage 1: upload every attack data file first, building the full UUID map.
+    if args.skip_upload:
+        print("\nSkipping upload; loading event UUIDs from DynamoDB")
+        uuid_map: Dict[str, Dict[str, Any]] = {}
+        for yml_file in yaml_files:
+            file_id, _ = parse_attack_data_file(yml_file)
+            if not file_id:
+                continue
+            datasets = dynamo_utils.get_uploads_for_attack_data(table, file_id)
+            uuid_map[file_id] = {
+                "file": _relative(yml_file, project_root),
+                "datasets": datasets,
+            }
+            total = sum(len(u) for u in datasets.values())
+            print(f"  {file_id}: {len(datasets)} dataset(s), {total} event UUID(s)")
+    else:
+        uuid_map = do_upload(
+            yaml_files=yaml_files,
+            table=table,
+            hec_config=hec_config,
+            project_root=project_root,
+            index=args.index,
+            batch_size=args.batch_size,
+            verify_tls=args.verify_tls,
+        )
+
+    if not any(entry["datasets"] for entry in uuid_map.values()):
+        print("No uploaded event UUIDs available; aborting.")
+        sys.exit(1)
 
     if not args.verify_ssl:
         disable_warnings()
@@ -874,87 +908,45 @@ def cmd_run(args: argparse.Namespace) -> None:
         verify_ssl=args.verify_ssl,
     )
 
-    hec_session = None
-    hec_url = None
-    if not args.skip_upload:
-        if not args.verify_tls:
-            disable_warnings()
-        hec_session = requests.Session()
-        hec_url = build_hec_url(hec_config)
+    # Stage 2: run all detections once over the whole index. do_detect attributes
+    # each matched host UUID back to its attack data file via the UUID map.
+    matched = do_detect(
+        detection_files=detection_files,
+        service=service,
+        table=table,
+        uuid_map=uuid_map,
+        index=args.index,
+        earliest=args.earliest,
+        latest=args.latest,
+    )
 
-    total_matched = 0
-    files_processed = 0
+    # Stage 3: export only the events with detection hits, per dataset/file.
+    do_export(
+        service=service,
+        index=args.index,
+        uuid_map=uuid_map,
+        matched_hosts=matched,
+        export_dir=args.export_dir,
+        update_attack_data=args.update_attack_data,
+        project_root=project_root,
+        earliest=args.earliest,
+        latest=args.latest,
+    )
 
-    # Process one attack data file at a time: upload -> detect -> export -> delete.
-    for yml_file in yaml_files:
-        if args.skip_upload:
-            file_id, _ = parse_attack_data_file(yml_file)
-            if not file_id:
-                print(f"\nSkipping {yml_file} - no valid attack data structure")
-                continue
-            datasets = dynamo_utils.get_uploads_for_attack_data(table, file_id)
-            print(f"\nProcessing {_relative(yml_file, project_root)} "
-                  f"(skip-upload; {sum(len(u) for u in datasets.values())} UUID(s))")
-            uuid_map = {
-                file_id: {"file": _relative(yml_file, project_root), "datasets": datasets}
-            }
-        else:
-            file_id, rel_file, dataset_uuids, _, _ = upload_attack_data_file(
-                session=hec_session,
-                url=hec_url,
-                table=table,
-                yml_file=yml_file,
-                project_root=project_root,
-                config=hec_config,
-                index=args.index,
-                batch_size=args.batch_size,
-                verify_tls=args.verify_tls,
-            )
-            if not file_id or not dataset_uuids:
-                continue
-            uuid_map = {file_id: {"file": rel_file, "datasets": dataset_uuids}}
-
-        if not any(entry["datasets"] for entry in uuid_map.values()):
-            print("  ! No event UUIDs for this file; skipping detections")
-            if do_cleanup:
-                splunk_search.delete_index_data(service, args.index)
-            continue
-
-        matched = do_detect(
-            detection_files=detection_files,
-            service=service,
-            table=table,
-            uuid_map=uuid_map,
-            index=args.index,
-            earliest=args.earliest,
-            latest=args.latest,
-        )
-        do_export(
-            service=service,
-            index=args.index,
-            uuid_map=uuid_map,
-            matched_hosts=matched,
-            export_dir=args.export_dir,
-            update_attack_data=args.update_attack_data,
-            project_root=project_root,
-            earliest=args.earliest,
-            latest=args.latest,
-        )
-
-        # Delete this file's data before moving on to the next one.
-        if do_cleanup:
-            deleted = splunk_search.delete_index_data(service, args.index)
-            print(f"    deleted {deleted} event(s) from index={args.index}")
-
-        total_matched += len(matched)
-        files_processed += 1
+    # Stage 4: clean up the index once everything has been detected and exported.
+    do_cleanup = not args.no_delete and not args.skip_upload
+    if args.skip_upload and not args.no_delete:
+        print("\nNote: --skip-upload set; index cleanup skipped")
+    if do_cleanup:
+        deleted = splunk_search.delete_index_data(service, args.index)
+        print(f"\nCleanup: deleted {deleted} event(s) from index={args.index}")
 
     print("\n" + "=" * 60)
     print("PIPELINE SUMMARY")
     print("=" * 60)
-    print(f"Attack data files processed: {files_processed}")
-    print(f"Detections run per file:     {len(detection_files)}")
-    print(f"Total matched events:        {total_matched}")
+    print(f"Attack data files: {len(uuid_map)}")
+    print(f"Detections run:    {len(detection_files)}")
+    print(f"Matched events:    {len(matched)}")
 
 
 def cmd_export(args: argparse.Namespace) -> None:
