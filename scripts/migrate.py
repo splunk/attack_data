@@ -61,6 +61,13 @@ Examples:
         --detection ~/security_content/detections/endpoint \\
         --update-attack-data
 
+    # Update detection YAML tests with matched attack data
+    python scripts/migrate.py run \\
+        --attack-data datasets/malware/qakbot \\
+        --detection scripts/detection_tests \\
+        --update-attack-data \\
+        --update-detection-tests
+
     # Upload only
     python scripts/migrate.py upload --attack-data datasets/malware/qakbot
 
@@ -91,6 +98,9 @@ DEFAULT_INDEX = "test"
 DEFAULT_HEC_PORT = "8088"
 DEFAULT_MGMT_PORT = "8089"
 DEFAULT_BATCH_SIZE = 500
+ATTACK_DATA_GITHUB_BASE = (
+    "https://media.githubusercontent.com/media/splunk/attack_data/master"
+)
 
 
 # --------------------------------------------------------------------------- #
@@ -460,12 +470,14 @@ def do_detect(
     index: str,
     earliest: str,
     latest: str,
-) -> Set[str]:
+) -> Tuple[Set[str], Dict[str, Dict[str, Set[str]]]]:
     """Run detections, attribute matched hosts to attack data files, store in DynamoDB.
 
-    Returns the global set of matched host UUIDs (across all detections).
+    Returns the global set of matched host UUIDs (across all detections) and a
+    per-detection map ``{detection_file: {attack_data_uuid: matched_hosts}}``.
     """
     all_matched: Set[str] = set()
+    detection_matches: Dict[str, Dict[str, Set[str]]] = {}
     our_uuids: Set[str] = set()
     for entry in uuid_map.values():
         our_uuids.update(_file_uuid_set(entry))
@@ -498,22 +510,27 @@ def do_detect(
             continue
         all_matched.update(matched_hosts)
 
+        file_matches: Dict[str, Set[str]] = {}
         # Attribute matched hosts back to each attack data file.
         for attack_data_uuid, entry in uuid_map.items():
-            attributed = sorted(matched_hosts & _file_uuid_set(entry))
+            attributed = matched_hosts & _file_uuid_set(entry)
             if not attributed:
                 continue
+            file_matches[attack_data_uuid] = attributed
             dynamo_utils.store_detection_result(
                 table=table,
                 attack_data_uuid=attack_data_uuid,
                 detection_id=detection.get("id", ""),
                 detection_name=detection["name"],
                 detection_file=detection["file"],
-                matched_host_uuids=attributed,
+                matched_host_uuids=sorted(attributed),
             )
             print(f"      {attack_data_uuid}: {len(attributed)} matched event(s)")
 
-    return all_matched
+        if file_matches:
+            detection_matches[detection["file"]] = file_matches
+
+    return all_matched, detection_matches
 
 
 # --------------------------------------------------------------------------- #
@@ -593,6 +610,138 @@ def update_attack_data_yml(
         return
     print(f"    updated attack data yml: {yml_abs} "
           f"(date + {len(new_datasets)} dataset(s))")
+
+
+def path_to_attack_data_url(path: str) -> str:
+    """Convert a repo dataset path to the attack_data GitHub raw URL."""
+    clean = path.lstrip("/")
+    if not clean.startswith("datasets/"):
+        clean = f"datasets/{clean}"
+    return f"{ATTACK_DATA_GITHUB_BASE}/{clean}"
+
+
+def load_attack_data_dataset_meta(yml_file: Path) -> Dict[str, Dict[str, str]]:
+    """Return ``{dataset_name: {path, source, sourcetype}}`` from an attack data YAML."""
+    _, datasets = parse_attack_data_file(yml_file)
+    meta: Dict[str, Dict[str, str]] = {}
+    for dataset in datasets:
+        name = dataset.get("name")
+        if not name:
+            continue
+        meta[name] = {
+            "path": dataset.get("path", ""),
+            "source": dataset.get("source", ""),
+            "sourcetype": dataset.get("sourcetype", ""),
+        }
+    return meta
+
+
+def _resolve_attack_data_yml(project_root: Path, file_rel: str) -> Path:
+    yml_abs = Path(file_rel)
+    if not yml_abs.is_absolute():
+        yml_abs = (project_root / file_rel).resolve()
+    return yml_abs
+
+
+def update_detection_tests_yml(
+    detection_file: Path,
+    attack_data_entries: List[Dict[str, str]],
+) -> None:
+    """Replace a detection YAML's ``tests`` section with matched attack data."""
+    if not detection_file.is_file():
+        print(f"    ! Cannot update detection tests (not found): {detection_file}")
+        return
+
+    try:
+        with open(detection_file, "r", encoding="utf-8") as handle:
+            data = yaml.safe_load(handle)
+    except (yaml.YAMLError, OSError) as exc:
+        print(f"    ! Failed to read {detection_file}: {exc}")
+        return
+    if not isinstance(data, dict):
+        print(f"    ! Unexpected YAML structure in {detection_file}; not updating")
+        return
+
+    data["date"] = datetime.now().strftime("%Y-%m-%d")
+    data["tests"] = [
+        {
+            "name": "True Positive Test",
+            "attack_data": attack_data_entries,
+        }
+    ]
+
+    try:
+        with open(detection_file, "w", encoding="utf-8") as handle:
+            yaml.safe_dump(
+                data, handle, sort_keys=False, default_flow_style=False,
+                allow_unicode=True,
+            )
+    except OSError as exc:
+        print(f"    ! Failed to write {detection_file}: {exc}")
+        return
+    print(f"    updated detection tests: {detection_file} "
+          f"({len(attack_data_entries)} dataset(s))")
+
+
+def do_update_detection_tests(
+    detection_matches: Dict[str, Dict[str, Set[str]]],
+    uuid_map: Dict[str, Dict[str, Any]],
+    project_root: Path,
+) -> None:
+    """Update each detection YAML's tests with attack data that matched it."""
+    if not detection_matches:
+        print("\nNo per-detection matches available; detection tests not updated.")
+        return
+
+    print("\nUpdating detection test attack_data sections")
+    for detection_file, file_matches in sorted(detection_matches.items()):
+        if not file_matches:
+            print(f"  ! WARNING: no attack data matches for {detection_file}; "
+                  "leaving detection tests unchanged")
+            continue
+
+        attack_data_entries: List[Dict[str, str]] = []
+        seen_urls: Set[str] = set()
+
+        for attack_data_uuid, matched_hosts in file_matches.items():
+            entry = uuid_map.get(attack_data_uuid)
+            if not entry or not matched_hosts:
+                continue
+
+            yml_abs = _resolve_attack_data_yml(project_root, entry.get("file", ""))
+            if not yml_abs.is_file():
+                print(f"    ! Cannot load attack data yml: {yml_abs}")
+                continue
+
+            meta_by_name = load_attack_data_dataset_meta(yml_abs)
+            for dataset_name, dataset_uuids in entry["datasets"].items():
+                if not (matched_hosts & dataset_uuids):
+                    continue
+                meta = meta_by_name.get(dataset_name)
+                if not meta or not meta.get("path") or not meta.get("sourcetype"):
+                    print(f"    ! Missing metadata for dataset '{dataset_name}' "
+                          f"in {yml_abs}")
+                    continue
+
+                data_url = path_to_attack_data_url(meta["path"])
+                if data_url in seen_urls:
+                    continue
+                seen_urls.add(data_url)
+
+                attack_data_entry: Dict[str, str] = {
+                    "data": data_url,
+                    "sourcetype": meta["sourcetype"],
+                }
+                if meta.get("source"):
+                    attack_data_entry["source"] = meta["source"]
+                attack_data_entries.append(attack_data_entry)
+
+        if not attack_data_entries:
+            print(f"  ! WARNING: no attack data matches for {detection_file}; "
+                  "leaving detection tests unchanged")
+            continue
+
+        update_detection_tests_yml(Path(detection_file), attack_data_entries)
 
 
 def do_export(
@@ -766,6 +915,11 @@ def parse_arguments() -> argparse.Namespace:
         "update the YAML (new date + datasets section)",
     )
     p_run.add_argument(
+        "--update-detection-tests", action="store_true",
+        help="Update each detection YAML's tests section with attack data that "
+        "matched that detection",
+    )
+    p_run.add_argument(
         "--skip-upload", action="store_true",
         help="Skip uploading (reuse event UUIDs already in DynamoDB)",
     )
@@ -791,6 +945,11 @@ def parse_arguments() -> argparse.Namespace:
         "--update-attack-data", action="store_true",
         help="Save curated logs into each attack data YAML's own folder and "
         "update the YAML (new date + datasets section)",
+    )
+    p_export.add_argument(
+        "--update-detection-tests", action="store_true",
+        help="Update each detection YAML's tests section with attack data that "
+        "matched that detection (from DynamoDB)",
     )
     add_common_splunk_args(p_export)
     add_search_args(p_export)
@@ -910,7 +1069,7 @@ def cmd_run(args: argparse.Namespace) -> None:
 
     # Stage 2: run all detections once over the whole index. do_detect attributes
     # each matched host UUID back to its attack data file via the UUID map.
-    matched = do_detect(
+    matched, detection_matches = do_detect(
         detection_files=detection_files,
         service=service,
         table=table,
@@ -932,6 +1091,10 @@ def cmd_run(args: argparse.Namespace) -> None:
         earliest=args.earliest,
         latest=args.latest,
     )
+
+    # Stage 3b: optionally repoint detection YAML tests to matched attack data.
+    if args.update_detection_tests:
+        do_update_detection_tests(detection_matches, uuid_map, project_root)
 
     # Stage 4: clean up the index once everything has been detected and exported.
     do_cleanup = not args.no_delete and not args.skip_upload
@@ -984,6 +1147,9 @@ def cmd_export(args: argparse.Namespace) -> None:
         earliest=args.earliest,
         latest=args.latest,
     )
+    if args.update_detection_tests:
+        detection_matches = dynamo_utils.get_all_detection_matches(table)
+        do_update_detection_tests(detection_matches, uuid_map, project_root)
 
 
 def main() -> None:

@@ -272,6 +272,34 @@ detections and updates the YAML to describe the curated data. It can be combined
 with `--export-dir`, or used on its own. The original log files are left on disk
 (the YAML simply stops referencing them), so review/commit the changes with git.
 
+### Updating detection tests (`--update-detection-tests`)
+
+With `--update-detection-tests` (available on `run` and `export`), each detection
+YAML's `tests` section is rewritten to reference the attack data that matched
+**that specific detection**. For every matched dataset, an `attack_data` entry is
+added using the standard GitHub URL format:
+
+```yaml
+tests:
+    - name: True Positive Test
+      attack_data:
+        - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/...
+          source: ...
+          sourcetype: ...
+```
+
+The detection's `date` field is also set to today. Detections with no matches are
+left unchanged and a warning is printed. Run this after `--update-attack-data` if
+you want the tests to point at the curated log files.
+
+```bash
+python scripts/migrate.py run \
+  --attack-data datasets/attack_techniques/T1003.001/atomic_red_team \
+  --detection scripts/detection_tests \
+  --update-attack-data \
+  --update-detection-tests
+```
+
 ## How detections are rewritten to output `host`
 
 `add_host_output_field()` in `detection_utils.py` rewrites the SPL so the `host` field

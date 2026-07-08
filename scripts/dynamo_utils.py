@@ -212,3 +212,30 @@ def get_all_matched_host_uuids(table) -> Set[str]:
             break
         kwargs["ExclusiveStartKey"] = resp["LastEvaluatedKey"]
     return uuids
+
+
+def get_all_detection_matches(table) -> Dict[str, Dict[str, Set[str]]]:
+    """Scan detection results and return per-detection attribution.
+
+    Returns::
+
+        { detection_file: { attack_data_uuid: {matched_host_uuids} } }
+    """
+    matches: Dict[str, Dict[str, Set[str]]] = {}
+    kwargs = {
+        "FilterExpression": Attr("record_type").eq(RECORD_DETECTION),
+    }
+    while True:
+        resp = table.scan(**kwargs)
+        for item in resp.get("Items", []):
+            detection_file = item.get("detection_file", "")
+            attack_data_uuid = item.get("attack_data_uuid", "")
+            if not detection_file or not attack_data_uuid:
+                continue
+            matches.setdefault(detection_file, {}).setdefault(
+                attack_data_uuid, set()
+            ).update(item.get("matched_host_uuids", []))
+        if "LastEvaluatedKey" not in resp:
+            break
+        kwargs["ExclusiveStartKey"] = resp["LastEvaluatedKey"]
+    return matches
