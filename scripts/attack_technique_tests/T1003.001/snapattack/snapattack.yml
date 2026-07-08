@@ -11,4 +11,4 @@ datasets:
 -   name: snapattack
     sourcetype: XmlWinEventLog
     source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-    path: /datasets/attack_techniques/T1003.001/snapattack/snaattack.log
+    path: /datasets/attack_techniques/T1003.001/snapattack/snapattack.log
