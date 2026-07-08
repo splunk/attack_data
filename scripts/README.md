@@ -1,19 +1,19 @@
 # Attack Data → Splunk Detection Pipeline
 
-A three-stage pipeline that validates [Splunk security_content](https://github.com/splunk/security_content)
+A detection-first pipeline that validates [Splunk security_content](https://github.com/splunk/security_content)
 detections against [attack_data](https://github.com/splunk/attack_data) datasets and
-exports only the events that actually produced detection results.
+curates only the events that produced detection hits.
 
-1. **upload** – Each dataset log file is split line-by-line. Every line becomes an
-   individual event with its own freshly generated UUID, uploaded to Splunk HEC with
-   that UUID as the `host` field. The UUID map is stored in **DynamoDB**.
-2. **detect** – security_content detections are run against the uploaded data. Each
-   detection's SPL is rewritten so that `host` is an output field, so we learn exactly
-   which uploaded events triggered it. Matches are attributed back to their attack data
-   file and stored in DynamoDB.
-3. **export** – Only the events that produced detection results are exported using
-   `index=<index> host IN (uuid1, uuid2, ...)`, written one file per dataset as
-   `<dataset_name>_<attack_data_uuid>.log`.
+For each detection (processed alphabetically):
+
+1. **resolve** – Read `tests[].attack_data[].data` URLs and locate source attack
+   data YAML files in the repository.
+2. **upload** – Replay every dataset from those YAMLs to Splunk HEC with a per-line
+   UUID as `host`. Mappings are stored in **DynamoDB**.
+3. **detect** – Run only that detection (SPL rewritten so `host` is an output field).
+4. **curate** – Export matched events and merge them into `{technique}_{folder}.yml`
+   (e.g. `T1001_snapattack.yml`) without modifying the original source YAML.
+5. **cleanup** – Delete uploaded events from the Splunk index before the next detection.
 
 ## Why per-event UUIDs?
 
@@ -157,64 +157,72 @@ export AWS_REGION="us-east-1"
 
 ## Usage
 
-### Full pipeline (upload → detect → export → cleanup)
+### Detection-first pipeline (`run`)
 
-The `run` command runs in four stages:
+The `run` command processes detections **one at a time**, in alphabetical order
+by detection name. For each detection:
 
-1. **Upload** every attack data file (and all of their datasets) to the index.
-   Each event line gets its own UUID (used as the Splunk `host`) recorded in
-   DynamoDB against its attack data file and dataset.
-2. **Detect** — run every detection once over the whole index.
-3. **Attribute & export** — for each detection hit, the matched `host` UUIDs are
-   mapped back to the attack data file and dataset they came from (via the
-   DynamoDB UUID map). Only events with detection hits are exported, one file
-   per dataset.
-4. **Cleanup** — once everything is detected and exported, delete the uploaded
-   data from the index with `index=<index> | delete`, then clear all items from
-   the DynamoDB table so the next run starts fresh.
-
-Splunk index cleanup is on by default and requires a Splunk user with the
-`can_delete` capability. Disable it with `--no-delete`. Index cleanup is
-automatically skipped when `--skip-upload` is used (nothing was re-uploaded in
-that run). DynamoDB cleanup is also on by default; disable it with
-`--no-clear-dynamodb` if you need to keep the UUID map for a later `export`.
-
-Single attack data file + single detection:
+1. **Resolve** — read `tests[].attack_data[].data` URLs and locate the
+   corresponding source attack data YAML files in the repository (original YAMLs
+   such as `snapattack.yml` are never modified).
+2. **Upload** — replay every dataset from those YAMLs to Splunk (per-line UUID
+   as `host`; mappings stored in DynamoDB).
+3. **Detect** — run only that detection (with `host` preserved in SPL output).
+4. **Export & curate** — export matched events per dataset and merge them into a
+   curated YAML named `{technique}_{folder}.yml` (e.g. `T1001_snapattack.yml` in
+   `datasets/attack_techniques/T1001/snapattack/`). If the curated YAML already
+   exists, new datasets are appended.
+5. **Cleanup** — delete uploaded events from the Splunk index before the next
+   detection. After the full run, DynamoDB is cleared by default.
 
 ```bash
 python scripts/migrate.py run \
-  --attack-data datasets/malware/qakbot/qakbot.yml \
-  --detection ~/security_content/detections/endpoint/some_detection.yml \
-  --export-dir exported
+  --detection scripts/detection_tests
 ```
 
-Whole folders (searched recursively):
+Resolve attack data from a custom root folder (default is `datasets`):
 
 ```bash
 python scripts/migrate.py run \
-  --attack-data datasets/malware/qakbot \
-  --detection ~/security_content/detections/endpoint \
-  --export-dir exported
+  --detection scripts/detection_tests \
+  --attack-data-root scripts/attack_technique_tests
 ```
 
-Re-run detections without re-uploading (reuses UUIDs already in DynamoDB):
+`--attack-data-root` (alias `--attack-data`) is used when mapping detection
+`tests[].attack_data[].data` URLs to local log files and source YAMLs. The
+resolver tries the full repo path first, then paths relative to the root
+(including stripping the `datasets/attack_techniques/` prefix when needed).
+
+Resume after a failure at a specific detection UUID (inclusive):
 
 ```bash
 python scripts/migrate.py run \
-  --attack-data datasets/malware/qakbot \
-  --detection ~/security_content/detections/endpoint \
-  --skip-upload
+  --detection scripts/detection_tests \
+  --start-from-detection-id fb4c31b0-13e8-4155-8aa5-24de4b8d6717
 ```
 
-Keep the uploaded data in the index after the run (skip the final cleanup):
+Optional flags:
 
 ```bash
 python scripts/migrate.py run \
-  --attack-data datasets/malware/qakbot \
-  --detection ~/security_content/detections/endpoint \
+  --detection scripts/detection_tests \
+  --update-detection-tests \
   --export-dir exported \
-  --no-delete
+  --no-delete \
+  --no-clear-dynamodb
 ```
+
+`--attack-data-root` defaults to `datasets` and controls where detection test
+URLs are resolved. `--update-attack-data` is legacy: it additionally mutates the
+**original** source YAML in place (curated YAML creation is always on for `run`).
+
+Splunk index cleanup after each detection requires the `can_delete` capability.
+Disable with `--no-delete`. DynamoDB cleanup after the full run is disabled with
+`--no-clear-dynamodb`.
+
+At the end of the run, a **DETECTIONS NOT UPDATED** summary lists detections that
+did not produce curated output (or detection test updates when
+`--update-detection-tests` is set).
 
 ### Upload only
 
@@ -252,11 +260,20 @@ exported/windows-sysmon_cc9b25e7-efc9-11eb-926b-550bf0943fbb.log
 
 Only events that produced detection results are written.
 
-### Updating the attack data in place (`--update-attack-data`)
+### Curated attack data YAML (`T1001_snapattack.yml`)
 
-With `--update-attack-data` (available on `run` and `export`), the curated
-per-dataset logs are additionally written **into the attack data YAML's own
-folder**, and the YAML is updated:
+For a source folder such as `datasets/attack_techniques/T1001/snapattack/`, the
+pipeline writes curated output to `T1001_snapattack.yml` in the same folder.
+Only datasets with detection hits are included. The original `snapattack.yml` is
+left unchanged. When multiple detections reference datasets from the same folder,
+later runs append new dataset entries to the existing curated YAML.
+
+### Legacy: updating source attack data in place (`--update-attack-data`)
+
+With `--update-attack-data` on `export` (or `run` for legacy behavior), curated
+per-dataset logs are written into the **original** attack data YAML's folder and
+that YAML is updated in place. The default `run` workflow uses separate curated
+YAML files instead.
 
 - `date` is set to today.
 - the `datasets` section is rewritten to point at the curated files

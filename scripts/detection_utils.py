@@ -24,11 +24,15 @@ Raw (non-aggregating) searches already carry ``host`` through to the output.
 import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from urllib.parse import urlparse
 
 import yaml
 
 STATS_COMMANDS = ("tstats", "sistats", "stats", "eventstats", "streamstats")
 PROJECT_COMMANDS = ("table", "fields")
+ATTACK_DATA_GITHUB_BASE = (
+    "https://media.githubusercontent.com/media/splunk/attack_data/master"
+)
 
 
 def find_detection_files(path: str) -> List[Path]:
@@ -68,6 +72,81 @@ def parse_detection_file(file_path: Path) -> Optional[Dict[str, Any]]:
         "status": data.get("status", ""),
         "search": search,
     }
+
+
+def load_full_detection(file_path: Path) -> Optional[Dict[str, Any]]:
+    """Parse a detection YAML file including id, name, search, and tests."""
+    try:
+        with open(file_path, "r", encoding="utf-8") as handle:
+            data = yaml.safe_load(handle)
+    except (yaml.YAMLError, OSError):
+        return None
+
+    if not isinstance(data, dict):
+        return None
+    search = data.get("search")
+    name = data.get("name")
+    if not search or not name:
+        return None
+
+    return {
+        "file": str(file_path),
+        "name": name,
+        "id": data.get("id", ""),
+        "type": data.get("type", ""),
+        "status": data.get("status", ""),
+        "search": search,
+        "tests": data.get("tests", []),
+    }
+
+
+def parse_detection_tests(detection_data: Dict[str, Any]) -> List[Dict[str, str]]:
+    """Extract ``attack_data`` entries from a detection's ``tests`` section."""
+    entries: List[Dict[str, str]] = []
+    for test in detection_data.get("tests", []) or []:
+        if not isinstance(test, dict):
+            continue
+        for attack_data in test.get("attack_data", []) or []:
+            if not isinstance(attack_data, dict):
+                continue
+            data_url = attack_data.get("data")
+            if not data_url:
+                continue
+            entry: Dict[str, str] = {"data_url": str(data_url)}
+            if attack_data.get("source"):
+                entry["source"] = str(attack_data["source"])
+            if attack_data.get("sourcetype"):
+                entry["sourcetype"] = str(attack_data["sourcetype"])
+            entries.append(entry)
+    return entries
+
+
+def github_url_to_repo_path(url: str) -> Optional[str]:
+    """Convert an attack_data GitHub media URL to a repo-relative ``/datasets/...`` path."""
+    if not url:
+        return None
+
+    parsed = urlparse(url.strip())
+    path = parsed.path.lstrip("/")
+    marker = "splunk/attack_data/master/"
+    if marker in path:
+        path = path.split(marker, 1)[1]
+    elif path.startswith("datasets/"):
+        pass
+    else:
+        return None
+
+    if not path.startswith("datasets/"):
+        path = f"datasets/{path}"
+    return f"/{path}"
+
+
+def path_to_attack_data_url(path: str) -> str:
+    """Convert a repo dataset path to the attack_data GitHub raw URL."""
+    clean = path.lstrip("/")
+    if not clean.startswith("datasets/"):
+        clean = f"datasets/{clean}"
+    return f"{ATTACK_DATA_GITHUB_BASE}/{clean}"
 
 
 def split_pipeline(search: str) -> List[str]:

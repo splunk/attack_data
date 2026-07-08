@@ -2,24 +2,22 @@
 """
 Attack Data -> Splunk pipeline.
 
-A three-stage pipeline for validating Splunk security_content detections
+Detection-first pipeline for validating Splunk security_content detections
 against attack_data datasets:
 
-  1. upload  Split each dataset log file line-by-line, assign every line its own
-             UUID, and upload each event to Splunk HEC with that UUID as the
-             ``host``. The UUID map is stored in DynamoDB (not the filesystem).
+  1. For each detection (alphabetically): resolve ``tests[].attack_data[].data``
+     URLs to source attack data YAML files in the repository.
+  2. upload  Replay every dataset from those YAMLs to Splunk HEC with per-line
+     UUID hosts; store mappings in DynamoDB.
+  3. detect  Run only that detection (with ``host`` preserved in output).
+  4. export  Export matched events and merge them into curated YAML files named
+     ``{technique}_{folder}.yml`` (e.g. ``T1001_snapattack.yml``) without
+     modifying the original source YAML.
+  5. cleanup Delete uploaded events from the Splunk index before the next
+     detection.
 
-  2. detect  Run security_content detections (rewritten so ``host`` is an output
-             field) against the uploaded data. The event UUIDs each detection
-             matches are attributed back to their attack data file and stored in
-             DynamoDB.
-
-  3. export  Export only the events that produced detection results using
-             ``index=<index> host IN (uuid1, uuid2, ...)``.
-
-The ``run`` subcommand performs all three stages in one pass. ``upload`` and
-``export`` are also available standalone. Both ``--attack-data`` and
-``--detection`` accept either a single file or a folder (searched recursively).
+The ``run`` subcommand performs this loop. ``upload`` and ``export`` remain
+available standalone. ``--detection`` accepts a single file or folder.
 
 Connection settings (CLI flags override environment variables):
     SPLUNK_HOST        Splunk hostname/IP                (required)
@@ -31,47 +29,30 @@ Connection settings (CLI flags override environment variables):
     DYNAMODB_TABLE     DynamoDB table name               (default: attack_data_map)
     AWS_REGION         AWS region for DynamoDB           (optional)
 
-DynamoDB table setup (create it manually once):
-    aws dynamodb create-table \\
-        --table-name attack_data_map \\
-        --attribute-definitions AttributeName=pk,AttributeType=S \\
-                                AttributeName=sk,AttributeType=S \\
-        --key-schema AttributeName=pk,KeyType=HASH \\
-                     AttributeName=sk,KeyType=RANGE \\
-        --billing-mode PAY_PER_REQUEST \\
-        --region <your-region>
-
 Examples:
-    # Full pipeline: one attack data file + one detection
+    # Detection-first pipeline over a folder of detections
     python scripts/migrate.py run \\
-        --attack-data datasets/malware/qakbot/qakbot.yml \\
-        --detection ~/security_content/detections/endpoint/some_detection.yml \\
-        --export-dir exported
+        --detection scripts/detection_tests
 
-    # Full pipeline over whole folders
+    # Use an alternate attack data root (e.g. local test copies)
     python scripts/migrate.py run \\
-        --attack-data datasets/malware/qakbot \\
-        --detection ~/security_content/detections/endpoint \\
-        --export-dir exported
-
-    # Minimize datasets in place: save curated logs next to each YAML and
-    # update the YAML (new date + datasets section)
-    python scripts/migrate.py run \\
-        --attack-data datasets/malware/qakbot \\
-        --detection ~/security_content/detections/endpoint \\
-        --update-attack-data
-
-    # Update detection YAML tests with matched attack data
-    python scripts/migrate.py run \\
-        --attack-data datasets/malware/qakbot \\
         --detection scripts/detection_tests \\
-        --update-attack-data \\
+        --attack-data-root scripts/attack_technique_tests
+
+    # Resume after a failure at a specific detection UUID
+    python scripts/migrate.py run \\
+        --detection scripts/detection_tests \\
+        --start-from-detection-id fb4c31b0-13e8-4155-8aa5-24de4b8d6717
+
+    # Also update detection YAML tests with curated attack data URLs
+    python scripts/migrate.py run \\
+        --detection scripts/detection_tests \\
         --update-detection-tests
 
-    # Upload only
+    # Upload only (still requires --attack-data)
     python scripts/migrate.py upload --attack-data datasets/malware/qakbot
 
-    # Export previously-matched events recorded in DynamoDB (one file per dataset)
+    # Export previously-matched events recorded in DynamoDB
     python scripts/migrate.py export --export-dir exported
 """
 
@@ -98,9 +79,7 @@ DEFAULT_INDEX = "test"
 DEFAULT_HEC_PORT = "8088"
 DEFAULT_MGMT_PORT = "8089"
 DEFAULT_BATCH_SIZE = 500
-ATTACK_DATA_GITHUB_BASE = (
-    "https://media.githubusercontent.com/media/splunk/attack_data/master"
-)
+CURATED_ATTACK_DATA_YML = re.compile(r"^T[\d.]+_.+\.(ya?ml)$", re.IGNORECASE)
 
 
 # --------------------------------------------------------------------------- #
@@ -230,6 +209,163 @@ def _relative(path: Path, root: Path) -> str:
         return str(path.relative_to(root))
     except ValueError:
         return str(path)
+
+
+def resolve_attack_data_root(raw_path: Optional[str], project_root: Path) -> Path:
+    """Resolve the attack data root directory used for test URL lookup."""
+    rel = raw_path or "datasets"
+    path = Path(rel)
+    if not path.is_absolute():
+        candidate = (Path.cwd() / path)
+        path = candidate if candidate.exists() else (project_root / rel)
+    return path.resolve()
+
+
+def resolve_attack_data_log_path(
+    repo_path: str,
+    project_root: Path,
+    attack_data_root: Path,
+) -> Optional[Path]:
+    """Resolve a ``/datasets/...`` repo path to a local attack data log file."""
+    relative = repo_path.lstrip("/")
+    root = attack_data_root.resolve()
+    default_root = (project_root / "datasets").resolve()
+
+    root_candidates: List[Path] = []
+    if relative.startswith("datasets/"):
+        remainder = relative[len("datasets/"):]
+        root_candidates.append(root / remainder)
+        if remainder.startswith("attack_techniques/"):
+            root_candidates.append(root / remainder[len("attack_techniques/"):])
+    else:
+        root_candidates.append(root / relative)
+
+    repo_candidate = project_root / relative
+    if root != default_root:
+        candidates = root_candidates + [repo_candidate]
+    else:
+        candidates = [repo_candidate] + root_candidates
+
+    seen: Set[Path] = set()
+    for candidate in candidates:
+        resolved = candidate.resolve()
+        if resolved in seen:
+            continue
+        seen.add(resolved)
+        if resolved.is_file():
+            return resolved
+    return None
+
+
+def is_curated_attack_data_yml(name: str) -> bool:
+    """Return True if ``name`` looks like a generated curated attack data YAML."""
+    return bool(CURATED_ATTACK_DATA_YML.match(name))
+
+
+def curated_attack_data_path(source_yml: Path) -> Path:
+    """Return the curated YAML path for a source attack data folder."""
+    folder = source_yml.parent
+    technique = folder.parent.name
+    folder_name = folder.name
+    return folder / f"{technique}_{folder_name}.yml"
+
+
+def find_source_attack_data_yml(folder: Path) -> Optional[Path]:
+    """Find the original attack data YAML in a dataset folder."""
+    candidates: List[Path] = []
+    for yml_file in folder.glob("*.yml"):
+        if is_curated_attack_data_yml(yml_file.name):
+            continue
+        if yml_file.name.startswith("TEMPLATE") or "old" in yml_file.name.lower():
+            continue
+        file_id, datasets = parse_attack_data_file(yml_file)
+        if file_id and datasets:
+            candidates.append(yml_file)
+
+    if not candidates:
+        for yml_file in folder.glob("*.yaml"):
+            if is_curated_attack_data_yml(yml_file.name):
+                continue
+            if yml_file.name.startswith("TEMPLATE") or "old" in yml_file.name.lower():
+                continue
+            file_id, datasets = parse_attack_data_file(yml_file)
+            if file_id and datasets:
+                candidates.append(yml_file)
+
+    if not candidates:
+        return None
+    if len(candidates) == 1:
+        return candidates[0]
+
+    preferred = folder / f"{folder.name}.yml"
+    if preferred in candidates:
+        return preferred
+    return sorted(candidates)[0]
+
+
+def resolve_source_attack_data_ymls(
+    detection_file: Path,
+    project_root: Path,
+    attack_data_root: Path,
+) -> List[Path]:
+    """Resolve detection test URLs to local source attack data YAML files."""
+    detection = detection_utils.load_full_detection(detection_file)
+    if not detection:
+        return []
+
+    source_ymls: Dict[Path, bool] = {}
+    for test_entry in detection_utils.parse_detection_tests(detection):
+        repo_path = detection_utils.github_url_to_repo_path(test_entry["data_url"])
+        if not repo_path:
+            print(f"  ! Could not parse attack data URL: {test_entry['data_url']}")
+            continue
+
+        log_path = resolve_attack_data_log_path(
+            repo_path, project_root, attack_data_root
+        )
+        if log_path is None:
+            print(f"  ! Attack data log not found for {repo_path} "
+                  f"(root={attack_data_root})")
+            continue
+
+        source_yml = find_source_attack_data_yml(log_path.parent)
+        if not source_yml:
+            print(f"  ! No source attack data YAML in {log_path.parent}")
+            continue
+        source_ymls[source_yml.resolve()] = True
+
+    return sorted(source_ymls.keys())
+
+
+def sort_detections_by_name(detection_files: List[Path]) -> List[Path]:
+    """Sort detection files alphabetically by detection name."""
+    def sort_key(det_file: Path) -> str:
+        detection = detection_utils.parse_detection_file(det_file)
+        return (detection or {}).get("name", det_file.stem).lower()
+
+    return sorted(detection_files, key=sort_key)
+
+
+def filter_detections_from_id(
+    detection_files: List[Path],
+    start_from_id: Optional[str],
+) -> List[Path]:
+    """Return detections sorted by name, optionally starting at a detection UUID."""
+    sorted_files = sort_detections_by_name(detection_files)
+    if not start_from_id:
+        return sorted_files
+
+    for index, det_file in enumerate(sorted_files):
+        detection = detection_utils.load_full_detection(det_file)
+        if detection and detection.get("id", "").lower() == start_from_id.lower():
+            if index > 0:
+                print(f"Resuming at detection id={start_from_id} "
+                      f"({detection['name']}); skipping {index} earlier detection(s)")
+            return sorted_files[index:]
+
+    print(f"Warning: --start-from-detection-id {start_from_id} not found; "
+          "processing all detections")
+    return sorted_files
 
 
 # --------------------------------------------------------------------------- #
@@ -540,6 +676,188 @@ def do_detect(
     return all_matched, detection_matches, detection_status
 
 
+def run_single_detection(
+    detection_file: Path,
+    service,
+    table,
+    uuid_map: Dict[str, Dict[str, Any]],
+    earliest: str,
+    latest: str,
+) -> Tuple[Set[str], Dict[str, Set[str]], str]:
+    """Run one detection and return matched hosts plus per-file attribution."""
+    detection = detection_utils.parse_detection_file(detection_file)
+    if not detection:
+        return set(), {}, "skipped"
+
+    our_uuids: Set[str] = set()
+    for entry in uuid_map.values():
+        our_uuids.update(_file_uuid_set(entry))
+
+    det_path = detection["file"]
+    patched = detection_utils.add_host_output_field(detection["search"])
+    print(f"\n  Detection: {detection['name']}")
+    try:
+        rows = splunk_search.run_search(
+            service, patched, earliest_time=earliest, latest_time=latest
+        )
+    except Exception as exc:  # noqa: BLE001 - report and continue
+        print(f"    x Search failed: {exc}")
+        return set(), {}, "search_failed"
+
+    matched_hosts = splunk_search.collect_hosts_from_rows(rows)
+    matched_hosts &= our_uuids
+    print(f"    results: {len(rows)} row(s), {len(matched_hosts)} matched host(s)")
+    if not matched_hosts:
+        return set(), {}, "no_matches"
+
+    file_matches: Dict[str, Set[str]] = {}
+    for attack_data_uuid, entry in uuid_map.items():
+        attributed = matched_hosts & _file_uuid_set(entry)
+        if not attributed:
+            continue
+        file_matches[attack_data_uuid] = attributed
+        dynamo_utils.store_detection_result(
+            table=table,
+            attack_data_uuid=attack_data_uuid,
+            detection_id=detection.get("id", ""),
+            detection_name=detection["name"],
+            detection_file=detection["file"],
+            matched_host_uuids=sorted(attributed),
+        )
+        print(f"      {attack_data_uuid}: {len(attributed)} matched event(s)")
+
+    return matched_hosts, file_matches, "matched"
+
+
+def upload_source_ymls(
+    source_ymls: List[Path],
+    session: requests.Session,
+    url: str,
+    table,
+    hec_config: Dict[str, str],
+    project_root: Path,
+    index: str,
+    batch_size: int,
+    verify_tls: bool,
+) -> Dict[str, Dict[str, Any]]:
+    """Upload all datasets from the given source attack data YAML files."""
+    uuid_map: Dict[str, Dict[str, Any]] = {}
+    for yml_file in source_ymls:
+        file_id, rel_file, dataset_uuids, _, _ = upload_attack_data_file(
+            session=session,
+            url=url,
+            table=table,
+            yml_file=yml_file,
+            project_root=project_root,
+            config=hec_config,
+            index=index,
+            batch_size=batch_size,
+            verify_tls=verify_tls,
+        )
+        if file_id and dataset_uuids:
+            uuid_map[file_id] = {
+                "file": rel_file,
+                "datasets": dataset_uuids,
+                "source_yml": str(yml_file.resolve()),
+            }
+    return uuid_map
+
+
+def export_and_curate_detection(
+    service,
+    index: str,
+    uuid_map: Dict[str, Dict[str, Any]],
+    matched_hosts: Set[str],
+    export_dir: Optional[str],
+    project_root: Path,
+    earliest: str,
+    latest: str,
+) -> bool:
+    """Export matched events for one detection and merge into curated YAML files."""
+    if not matched_hosts:
+        return False
+
+    out_dir: Optional[Path] = None
+    if export_dir:
+        out_dir = Path(export_dir)
+        if not out_dir.is_absolute():
+            out_dir = (Path.cwd() / out_dir).resolve()
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"\nExporting matched events per dataset from index={index}")
+    curated_any = False
+
+    for attack_data_uuid, entry in uuid_map.items():
+        if not (matched_hosts & _file_uuid_set(entry)):
+            continue
+
+        source_yml = Path(entry.get("source_yml", entry.get("file", "")))
+        if not source_yml.is_file():
+            source_yml = _resolve_attack_data_yml(project_root, entry.get("file", ""))
+        if not source_yml.is_file():
+            print(f"  ! Cannot resolve source YAML for {attack_data_uuid}")
+            continue
+
+        dataset_events: Dict[str, List[str]] = {}
+        for dataset_name, dataset_uuids in entry["datasets"].items():
+            hosts = matched_hosts & dataset_uuids
+            if not hosts:
+                continue
+
+            raw_events = splunk_search.export_events(
+                service, index, hosts, earliest_time=earliest, latest_time=latest
+            )
+            filename = f"{_safe_filename(dataset_name)}_{attack_data_uuid}.log"
+            print(f"  {dataset_name} ({attack_data_uuid}): "
+                  f"{len(hosts)} matched host(s), {len(raw_events)} event(s) -> {filename}")
+            if out_dir is not None:
+                _write_events(out_dir / filename, raw_events)
+            dataset_events[dataset_name] = raw_events
+
+        if dataset_events:
+            merge_curated_attack_data_yml(
+                curated_attack_data_path(source_yml),
+                source_yml,
+                dataset_events,
+                project_root,
+            )
+            curated_any = True
+
+    return curated_any
+
+
+def build_attack_data_entries_from_curated(
+    source_ymls: List[Path],
+    matched_dataset_names: Set[str],
+    project_root: Path,
+) -> List[Dict[str, str]]:
+    """Build detection test attack_data entries from curated YAML files."""
+    entries: List[Dict[str, str]] = []
+    seen_urls: Set[str] = set()
+
+    for source_yml in source_ymls:
+        curated_path = curated_attack_data_path(source_yml)
+        yml_to_read = curated_path if curated_path.is_file() else source_yml
+        meta_by_name = load_attack_data_dataset_meta(yml_to_read)
+        for dataset_name, meta in meta_by_name.items():
+            if dataset_name not in matched_dataset_names:
+                continue
+            if not meta.get("path") or not meta.get("sourcetype"):
+                continue
+            data_url = path_to_attack_data_url(meta["path"])
+            if data_url in seen_urls:
+                continue
+            seen_urls.add(data_url)
+            entry: Dict[str, str] = {
+                "data": data_url,
+                "sourcetype": meta["sourcetype"],
+            }
+            if meta.get("source"):
+                entry["source"] = meta["source"]
+            entries.append(entry)
+    return entries
+
+
 # --------------------------------------------------------------------------- #
 # Export
 # --------------------------------------------------------------------------- #
@@ -621,10 +939,109 @@ def update_attack_data_yml(
 
 def path_to_attack_data_url(path: str) -> str:
     """Convert a repo dataset path to the attack_data GitHub raw URL."""
-    clean = path.lstrip("/")
-    if not clean.startswith("datasets/"):
-        clean = f"datasets/{clean}"
-    return f"{ATTACK_DATA_GITHUB_BASE}/{clean}"
+    return detection_utils.path_to_attack_data_url(path)
+
+
+def merge_curated_attack_data_yml(
+    curated_path: Path,
+    source_yml: Path,
+    dataset_events: Dict[str, List[str]],
+    project_root: Path,
+) -> None:
+    """Create or update a curated attack data YAML without modifying the source YAML."""
+    if not dataset_events:
+        return
+
+    try:
+        with open(source_yml, "r", encoding="utf-8") as handle:
+            source_data = yaml.safe_load(handle)
+    except (yaml.YAMLError, OSError) as exc:
+        print(f"    ! Failed to read source attack data {source_yml}: {exc}")
+        return
+    if not isinstance(source_data, dict):
+        print(f"    ! Unexpected source YAML structure in {source_yml}")
+        return
+
+    source_datasets = {
+        ds.get("name"): ds
+        for ds in source_data.get("datasets", [])
+        if isinstance(ds, dict) and ds.get("name")
+    }
+    folder = curated_path.parent
+    new_entries: List[Dict[str, Any]] = []
+
+    for name, events in dataset_events.items():
+        source_ds = source_datasets.get(name, {})
+        log_filename = f"{_safe_filename(name)}.log"
+        out_log = folder / log_filename
+        _write_events(out_log, events)
+        try:
+            path_str = "/" + str(out_log.relative_to(project_root))
+        except ValueError:
+            path_str = out_log.name
+
+        entry: Dict[str, Any] = {
+            "name": name,
+            "path": path_str,
+            "sourcetype": source_ds.get("sourcetype", ""),
+        }
+        if source_ds.get("source"):
+            entry["source"] = source_ds["source"]
+        new_entries.append(entry)
+
+    if curated_path.is_file():
+        try:
+            with open(curated_path, "r", encoding="utf-8") as handle:
+                data = yaml.safe_load(handle)
+        except (yaml.YAMLError, OSError) as exc:
+            print(f"    ! Failed to read curated YAML {curated_path}: {exc}")
+            return
+        if not isinstance(data, dict):
+            print(f"    ! Unexpected curated YAML structure in {curated_path}")
+            return
+
+        existing_names = {
+            ds.get("name")
+            for ds in data.get("datasets", [])
+            if isinstance(ds, dict)
+        }
+        existing_paths = {
+            ds.get("path")
+            for ds in data.get("datasets", [])
+            if isinstance(ds, dict)
+        }
+        appended = 0
+        for entry in new_entries:
+            if entry["name"] in existing_names or entry["path"] in existing_paths:
+                continue
+            data.setdefault("datasets", []).append(entry)
+            existing_names.add(entry["name"])
+            existing_paths.add(entry["path"])
+            appended += 1
+        data["date"] = datetime.now().strftime("%Y-%m-%d")
+        print(f"    merged {appended} dataset(s) into {curated_path}")
+    else:
+        data = {
+            "author": source_data.get("author", ""),
+            "id": str(uuid.uuid4()),
+            "date": datetime.now().strftime("%Y-%m-%d"),
+            "description": source_data.get("description", ""),
+            "environment": source_data.get("environment", "attack_range"),
+            "directory": source_data.get("directory", source_yml.parent.name),
+            "mitre_technique": source_data.get("mitre_technique", []),
+            "datasets": new_entries,
+        }
+        print(f"    created curated attack data YAML: {curated_path} "
+              f"({len(new_entries)} dataset(s))")
+
+    try:
+        with open(curated_path, "w", encoding="utf-8") as handle:
+            yaml.safe_dump(
+                data, handle, sort_keys=False, default_flow_style=False,
+                allow_unicode=True,
+            )
+    except OSError as exc:
+        print(f"    ! Failed to write curated YAML {curated_path}: {exc}")
 
 
 def load_attack_data_dataset_meta(yml_file: Path) -> Dict[str, Dict[str, str]]:
@@ -776,24 +1193,44 @@ def print_not_updated_detections(
     detection_files: List[Path],
     detection_status: Dict[str, str],
     updated_files: Set[str],
+    curated_files: Set[str],
     update_detection_tests: bool,
 ) -> None:
-    """Print detections whose tests were not updated during the run."""
+    """Print detections that were not curated or had their tests updated."""
     not_updated: List[Tuple[str, str, str]] = []
 
     for det_file in detection_files:
         det_path = str(det_file)
         status = detection_status.get(det_path, "not_run")
 
-        if update_detection_tests:
+        if det_path in curated_files:
+            if update_detection_tests and det_path not in updated_files:
+                reason = "curated_without_test_update"
+            else:
+                continue
+        elif update_detection_tests:
             if det_path in updated_files:
                 continue
             if status == "matched":
                 reason = "no_attack_data_entries"
             else:
                 reason = status
-        elif status not in ("no_matches", "search_failed", "skipped"):
+        elif status == "matched":
+            reason = "no_curated_output"
+        elif status in ("curated",):
             continue
+        elif status not in (
+            "no_matches",
+            "search_failed",
+            "skipped",
+            "no_tests_urls",
+            "no_source_yml",
+            "upload_failed",
+            "not_run",
+        ):
+            continue
+        else:
+            reason = status
 
         name = _detection_display_name(det_path)
         not_updated.append((name, det_path, reason))
@@ -964,22 +1401,28 @@ def parse_arguments() -> argparse.Namespace:
         "run", help="Upload, run detections, and export matching events"
     )
     p_run.add_argument(
-        "--attack-data", required=True,
-        help="Attack data YAML file or folder",
+        "--attack-data-root", "--attack-data",
+        dest="attack_data_root",
+        default="datasets",
+        help="Root folder for resolving detection test URLs to local attack data "
+        "(default: datasets). Use e.g. scripts/attack_technique_tests for alternate "
+        "layouts.",
     )
     p_run.add_argument(
         "--detection", required=True,
         help="Detection YAML file or folder (security_content)",
     )
     p_run.add_argument(
+        "--start-from-detection-id",
+        help="Resume processing at this detection UUID (inclusive, alphabetical order)",
+    )
+    p_run.add_argument(
         "--export-dir",
-        help="Folder to write exported logs, one file per dataset named "
-        "<dataset_name>_<attack_data_uuid>.log",
+        help="Optional folder for extra exported log copies",
     )
     p_run.add_argument(
         "--update-attack-data", action="store_true",
-        help="Save curated logs into each attack data YAML's own folder and "
-        "update the YAML (new date + datasets section)",
+        help="(Legacy) Also mutate source attack data YAML files in place",
     )
     p_run.add_argument(
         "--update-detection-tests", action="store_true",
@@ -1093,40 +1536,16 @@ def cmd_run(args: argparse.Namespace) -> None:
         print(f"Error: {exc}")
         sys.exit(1)
 
-    yaml_files = resolve_attack_data_files(args.attack_data, project_root)
-    detection_files = resolve_detection_files(args.detection)
+    all_detection_files = resolve_detection_files(args.detection)
+    detection_files = filter_detections_from_id(
+        all_detection_files,
+        args.start_from_detection_id,
+    )
+    attack_data_root = resolve_attack_data_root(args.attack_data_root, project_root)
     table, table_name = get_dynamo_table(args)
     print(f"DynamoDB table={table_name}")
-
-    # Stage 1: upload every attack data file first, building the full UUID map.
-    if args.skip_upload:
-        print("\nSkipping upload; loading event UUIDs from DynamoDB")
-        uuid_map: Dict[str, Dict[str, Any]] = {}
-        for yml_file in yaml_files:
-            file_id, _ = parse_attack_data_file(yml_file)
-            if not file_id:
-                continue
-            datasets = dynamo_utils.get_uploads_for_attack_data(table, file_id)
-            uuid_map[file_id] = {
-                "file": _relative(yml_file, project_root),
-                "datasets": datasets,
-            }
-            total = sum(len(u) for u in datasets.values())
-            print(f"  {file_id}: {len(datasets)} dataset(s), {total} event UUID(s)")
-    else:
-        uuid_map = do_upload(
-            yaml_files=yaml_files,
-            table=table,
-            hec_config=hec_config,
-            project_root=project_root,
-            index=args.index,
-            batch_size=args.batch_size,
-            verify_tls=args.verify_tls,
-        )
-
-    if not any(entry["datasets"] for entry in uuid_map.values()):
-        print("No uploaded event UUIDs available; aborting.")
-        sys.exit(1)
+    print(f"Attack data root: {attack_data_root}")
+    print(f"Processing {len(detection_files)} detection(s) in alphabetical order")
 
     if not args.verify_ssl:
         disable_warnings()
@@ -1138,57 +1557,149 @@ def cmd_run(args: argparse.Namespace) -> None:
         verify_ssl=args.verify_ssl,
     )
 
-    # Stage 2: run all detections once over the whole index. do_detect attributes
-    # each matched host UUID back to its attack data file via the UUID map.
-    matched, detection_matches, detection_status = do_detect(
-        detection_files=detection_files,
-        service=service,
-        table=table,
-        uuid_map=uuid_map,
-        index=args.index,
-        earliest=args.earliest,
-        latest=args.latest,
-    )
+    hec_session: Optional[requests.Session] = None
+    hec_url: Optional[str] = None
+    if not args.skip_upload:
+        if not args.verify_tls:
+            disable_warnings()
+        hec_session = requests.Session()
+        hec_url = build_hec_url(hec_config)
 
-    # Stage 3: export only the events with detection hits, per dataset/file.
-    do_export(
-        service=service,
-        index=args.index,
-        uuid_map=uuid_map,
-        matched_hosts=matched,
-        export_dir=args.export_dir,
-        update_attack_data=args.update_attack_data,
-        project_root=project_root,
-        earliest=args.earliest,
-        latest=args.latest,
-    )
-
-    # Stage 3b: optionally repoint detection YAML tests to matched attack data.
+    detection_status: Dict[str, str] = {}
     updated_detection_files: Set[str] = set()
-    if args.update_detection_tests:
-        updated_detection_files = do_update_detection_tests(
-            detection_matches, uuid_map, project_root
-        )
+    curated_detection_files: Set[str] = set()
+    total_matched = 0
+    source_yml_count = 0
 
-    # Stage 4: clean up the index once everything has been detected and exported.
-    do_cleanup = not args.no_delete and not args.skip_upload
-    if args.skip_upload and not args.no_delete:
-        print("\nNote: --skip-upload set; index cleanup skipped")
-    if do_cleanup:
-        deleted = splunk_search.delete_index_data(service, args.index)
-        print(f"\nCleanup: deleted {deleted} event(s) from index={args.index}")
+    for det_file in detection_files:
+        detection = detection_utils.load_full_detection(det_file)
+        det_path = str(det_file)
+        print("\n" + "=" * 60)
+        if detection:
+            print(f"Detection: {detection['name']} ({det_path})")
+        else:
+            print(f"Detection: {det_path}")
+
+        if not detection:
+            detection_status[det_path] = "skipped"
+            continue
+
+        test_entries = detection_utils.parse_detection_tests(detection)
+        if not test_entries:
+            print("  ! No tests.attack_data URLs found; skipping")
+            detection_status[det_path] = "no_tests_urls"
+            continue
+
+        source_ymls = resolve_source_attack_data_ymls(
+            det_file, project_root, attack_data_root
+        )
+        if not source_ymls:
+            detection_status[det_path] = "no_source_yml"
+            continue
+        source_yml_count += len(source_ymls)
+
+        if args.skip_upload:
+            print("\nSkipping upload; loading event UUIDs from DynamoDB")
+            uuid_map: Dict[str, Dict[str, Any]] = {}
+            for yml_file in source_ymls:
+                file_id, _ = parse_attack_data_file(yml_file)
+                if not file_id:
+                    continue
+                datasets = dynamo_utils.get_uploads_for_attack_data(table, file_id)
+                uuid_map[file_id] = {
+                    "file": _relative(yml_file, project_root),
+                    "datasets": datasets,
+                    "source_yml": str(yml_file.resolve()),
+                }
+        else:
+            uuid_map = upload_source_ymls(
+                source_ymls=source_ymls,
+                session=hec_session,
+                url=hec_url,
+                table=table,
+                hec_config=hec_config,
+                project_root=project_root,
+                index=args.index,
+                batch_size=args.batch_size,
+                verify_tls=args.verify_tls,
+            )
+
+        if not any(entry["datasets"] for entry in uuid_map.values()):
+            print("  ! No event UUIDs uploaded for this detection; skipping")
+            detection_status[det_path] = "upload_failed"
+            continue
+
+        matched, _, status = run_single_detection(
+            detection_file=det_file,
+            service=service,
+            table=table,
+            uuid_map=uuid_map,
+            earliest=args.earliest,
+            latest=args.latest,
+        )
+        detection_status[det_path] = status
+        total_matched += len(matched)
+
+        if status == "matched":
+            curated = export_and_curate_detection(
+                service=service,
+                index=args.index,
+                uuid_map=uuid_map,
+                matched_hosts=matched,
+                export_dir=args.export_dir,
+                project_root=project_root,
+                earliest=args.earliest,
+                latest=args.latest,
+            )
+            if curated:
+                detection_status[det_path] = "curated"
+                curated_detection_files.add(det_path)
+
+            if args.update_attack_data:
+                do_export(
+                    service=service,
+                    index=args.index,
+                    uuid_map=uuid_map,
+                    matched_hosts=matched,
+                    export_dir=None,
+                    update_attack_data=True,
+                    project_root=project_root,
+                    earliest=args.earliest,
+                    latest=args.latest,
+                )
+
+            if args.update_detection_tests:
+                matched_dataset_names: Set[str] = set()
+                for entry in uuid_map.values():
+                    for dataset_name, dataset_uuids in entry["datasets"].items():
+                        if matched & dataset_uuids:
+                            matched_dataset_names.add(dataset_name)
+                attack_data_entries = build_attack_data_entries_from_curated(
+                    source_ymls, matched_dataset_names, project_root
+                )
+                if attack_data_entries and update_detection_tests_yml(
+                    det_file, attack_data_entries
+                ):
+                    updated_detection_files.add(det_path)
+
+        do_cleanup = not args.no_delete and not args.skip_upload
+        if do_cleanup:
+            deleted = splunk_search.delete_index_data(service, args.index)
+            print(f"    deleted {deleted} event(s) from index={args.index}")
 
     print("\n" + "=" * 60)
     print("PIPELINE SUMMARY")
     print("=" * 60)
-    print(f"Attack data files: {len(uuid_map)}")
-    print(f"Detections run:    {len(detection_files)}")
-    print(f"Matched events:    {len(matched)}")
+    print(f"Detections processed: {len(detection_files)}")
+    print(f"Source attack data YAMLs referenced: {source_yml_count}")
+    print(f"Curated detections:    {len(curated_detection_files)}")
+    print(f"Total matched events:  {total_matched}")
 
     print_not_updated_detections(
         detection_files=detection_files,
         detection_status=detection_status,
         updated_files=updated_detection_files,
+        curated_files=curated_detection_files,
         update_detection_tests=args.update_detection_tests,
     )
 
