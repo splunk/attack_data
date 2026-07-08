@@ -170,11 +170,14 @@ The `run` command runs in four stages:
    DynamoDB UUID map). Only events with detection hits are exported, one file
    per dataset.
 4. **Cleanup** — once everything is detected and exported, delete the uploaded
-   data from the index with `index=<index> | delete`.
+   data from the index with `index=<index> | delete`, then clear all items from
+   the DynamoDB table so the next run starts fresh.
 
-Cleanup is on by default and requires a Splunk user with the `can_delete`
-capability. Disable it with `--no-delete`. Cleanup is automatically skipped when
-`--skip-upload` is used (nothing was re-uploaded in that run).
+Splunk index cleanup is on by default and requires a Splunk user with the
+`can_delete` capability. Disable it with `--no-delete`. Index cleanup is
+automatically skipped when `--skip-upload` is used (nothing was re-uploaded in
+that run). DynamoDB cleanup is also on by default; disable it with
+`--no-clear-dynamodb` if you need to keep the UUID map for a later `export`.
 
 Single attack data file + single detection:
 
@@ -291,6 +294,11 @@ tests:
 The detection's `date` field is also set to today. Detections with no matches are
 left unchanged and a warning is printed. Run this after `--update-attack-data` if
 you want the tests to point at the curated log files.
+
+At the end of each `run`, a **DETECTIONS NOT UPDATED** summary lists every
+detection whose tests were not updated, with the reason (`no matches`,
+`search failed`, etc.). When `--update-detection-tests` is enabled, any detection
+not successfully written is included.
 
 ```bash
 python scripts/migrate.py run \

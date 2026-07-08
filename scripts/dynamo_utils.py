@@ -239,3 +239,21 @@ def get_all_detection_matches(table) -> Dict[str, Dict[str, Set[str]]]:
             break
         kwargs["ExclusiveStartKey"] = resp["LastEvaluatedKey"]
     return matches
+
+
+def clear_table(table) -> int:
+    """Delete every item in the DynamoDB table. Returns the number of items removed."""
+    deleted = 0
+    kwargs: Dict[str, Any] = {}
+    while True:
+        resp = table.scan(**kwargs)
+        items = resp.get("Items", [])
+        if items:
+            with table.batch_writer() as batch:
+                for item in items:
+                    batch.delete_item(Key={"pk": item["pk"], "sk": item["sk"]})
+            deleted += len(items)
+        if "LastEvaluatedKey" not in resp:
+            break
+        kwargs["ExclusiveStartKey"] = resp["LastEvaluatedKey"]
+    return deleted

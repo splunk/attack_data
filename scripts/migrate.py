@@ -470,14 +470,16 @@ def do_detect(
     index: str,
     earliest: str,
     latest: str,
-) -> Tuple[Set[str], Dict[str, Dict[str, Set[str]]]]:
+) -> Tuple[Set[str], Dict[str, Dict[str, Set[str]]], Dict[str, str]]:
     """Run detections, attribute matched hosts to attack data files, store in DynamoDB.
 
-    Returns the global set of matched host UUIDs (across all detections) and a
-    per-detection map ``{detection_file: {attack_data_uuid: matched_hosts}}``.
+    Returns the global set of matched host UUIDs (across all detections), a
+    per-detection map ``{detection_file: {attack_data_uuid: matched_hosts}}``,
+    and a per-detection status map ``{detection_file: reason}``.
     """
     all_matched: Set[str] = set()
     detection_matches: Dict[str, Dict[str, Set[str]]] = {}
+    detection_status: Dict[str, str] = {}
     our_uuids: Set[str] = set()
     for entry in uuid_map.values():
         our_uuids.update(_file_uuid_set(entry))
@@ -489,8 +491,10 @@ def do_detect(
         detection = detection_utils.parse_detection_file(det_file)
         if not detection:
             print(f"  ! Skipping non-detection file: {det_file}")
+            detection_status[str(det_file)] = "skipped"
             continue
 
+        det_path = detection["file"]
         patched = detection_utils.add_host_output_field(detection["search"])
         print(f"\n  Detection: {detection['name']}")
         try:
@@ -499,6 +503,7 @@ def do_detect(
             )
         except Exception as exc:  # noqa: BLE001 - report and continue
             print(f"    x Search failed: {exc}")
+            detection_status[det_path] = "search_failed"
             continue
 
         matched_hosts = splunk_search.collect_hosts_from_rows(rows)
@@ -507,8 +512,10 @@ def do_detect(
         print(f"    results: {len(rows)} row(s), {len(matched_hosts)} matched host(s)")
 
         if not matched_hosts:
+            detection_status[det_path] = "no_matches"
             continue
         all_matched.update(matched_hosts)
+        detection_status[det_path] = "matched"
 
         file_matches: Dict[str, Set[str]] = {}
         # Attribute matched hosts back to each attack data file.
@@ -530,7 +537,7 @@ def do_detect(
         if file_matches:
             detection_matches[detection["file"]] = file_matches
 
-    return all_matched, detection_matches
+    return all_matched, detection_matches, detection_status
 
 
 # --------------------------------------------------------------------------- #
@@ -646,21 +653,21 @@ def _resolve_attack_data_yml(project_root: Path, file_rel: str) -> Path:
 def update_detection_tests_yml(
     detection_file: Path,
     attack_data_entries: List[Dict[str, str]],
-) -> None:
+) -> bool:
     """Replace a detection YAML's ``tests`` section with matched attack data."""
     if not detection_file.is_file():
         print(f"    ! Cannot update detection tests (not found): {detection_file}")
-        return
+        return False
 
     try:
         with open(detection_file, "r", encoding="utf-8") as handle:
             data = yaml.safe_load(handle)
     except (yaml.YAMLError, OSError) as exc:
         print(f"    ! Failed to read {detection_file}: {exc}")
-        return
+        return False
     if not isinstance(data, dict):
         print(f"    ! Unexpected YAML structure in {detection_file}; not updating")
-        return
+        return False
 
     data["date"] = datetime.now().strftime("%Y-%m-%d")
     data["tests"] = [
@@ -678,20 +685,25 @@ def update_detection_tests_yml(
             )
     except OSError as exc:
         print(f"    ! Failed to write {detection_file}: {exc}")
-        return
+        return False
     print(f"    updated detection tests: {detection_file} "
           f"({len(attack_data_entries)} dataset(s))")
+    return True
 
 
 def do_update_detection_tests(
     detection_matches: Dict[str, Dict[str, Set[str]]],
     uuid_map: Dict[str, Dict[str, Any]],
     project_root: Path,
-) -> None:
-    """Update each detection YAML's tests with attack data that matched it."""
+) -> Set[str]:
+    """Update each detection YAML's tests with attack data that matched it.
+
+    Returns the set of detection file paths that were updated.
+    """
+    updated_files: Set[str] = set()
     if not detection_matches:
         print("\nNo per-detection matches available; detection tests not updated.")
-        return
+        return updated_files
 
     print("\nUpdating detection test attack_data sections")
     for detection_file, file_matches in sorted(detection_matches.items()):
@@ -741,7 +753,62 @@ def do_update_detection_tests(
                   "leaving detection tests unchanged")
             continue
 
-        update_detection_tests_yml(Path(detection_file), attack_data_entries)
+        if update_detection_tests_yml(Path(detection_file), attack_data_entries):
+            updated_files.add(detection_file)
+
+    return updated_files
+
+
+def _detection_display_name(detection_file: str) -> str:
+    """Return a human-readable detection label for summary output."""
+    path = Path(detection_file)
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            data = yaml.safe_load(handle)
+        if isinstance(data, dict) and data.get("name"):
+            return str(data["name"])
+    except (yaml.YAMLError, OSError):
+        pass
+    return path.stem
+
+
+def print_not_updated_detections(
+    detection_files: List[Path],
+    detection_status: Dict[str, str],
+    updated_files: Set[str],
+    update_detection_tests: bool,
+) -> None:
+    """Print detections whose tests were not updated during the run."""
+    not_updated: List[Tuple[str, str, str]] = []
+
+    for det_file in detection_files:
+        det_path = str(det_file)
+        status = detection_status.get(det_path, "not_run")
+
+        if update_detection_tests:
+            if det_path in updated_files:
+                continue
+            if status == "matched":
+                reason = "no_attack_data_entries"
+            else:
+                reason = status
+        elif status not in ("no_matches", "search_failed", "skipped"):
+            continue
+
+        name = _detection_display_name(det_path)
+        not_updated.append((name, det_path, reason))
+
+    print("\n" + "=" * 60)
+    print("DETECTIONS NOT UPDATED")
+    print("=" * 60)
+    if not not_updated:
+        print("  (none)")
+        return
+
+    for name, path, reason in sorted(not_updated, key=lambda item: item[0].lower()):
+        print(f"  - {name}")
+        print(f"    file: {path}")
+        print(f"    reason: {reason.replace('_', ' ')}")
 
 
 def do_export(
@@ -925,8 +992,12 @@ def parse_arguments() -> argparse.Namespace:
     )
     p_run.add_argument(
         "--no-delete", action="store_true",
-        help="Do not run 'index=<index> | delete' to clean up after each "
-        "attack data file (cleanup is on by default)",
+        help="Do not run 'index=<index> | delete' to clean up the index after "
+        "the run (cleanup is on by default)",
+    )
+    p_run.add_argument(
+        "--no-clear-dynamodb", action="store_true",
+        help="Do not clear the DynamoDB table after the run (cleared by default)",
     )
     add_common_splunk_args(p_run)
     add_hec_args(p_run)
@@ -1069,7 +1140,7 @@ def cmd_run(args: argparse.Namespace) -> None:
 
     # Stage 2: run all detections once over the whole index. do_detect attributes
     # each matched host UUID back to its attack data file via the UUID map.
-    matched, detection_matches = do_detect(
+    matched, detection_matches, detection_status = do_detect(
         detection_files=detection_files,
         service=service,
         table=table,
@@ -1093,8 +1164,11 @@ def cmd_run(args: argparse.Namespace) -> None:
     )
 
     # Stage 3b: optionally repoint detection YAML tests to matched attack data.
+    updated_detection_files: Set[str] = set()
     if args.update_detection_tests:
-        do_update_detection_tests(detection_matches, uuid_map, project_root)
+        updated_detection_files = do_update_detection_tests(
+            detection_matches, uuid_map, project_root
+        )
 
     # Stage 4: clean up the index once everything has been detected and exported.
     do_cleanup = not args.no_delete and not args.skip_upload
@@ -1110,6 +1184,17 @@ def cmd_run(args: argparse.Namespace) -> None:
     print(f"Attack data files: {len(uuid_map)}")
     print(f"Detections run:    {len(detection_files)}")
     print(f"Matched events:    {len(matched)}")
+
+    print_not_updated_detections(
+        detection_files=detection_files,
+        detection_status=detection_status,
+        updated_files=updated_detection_files,
+        update_detection_tests=args.update_detection_tests,
+    )
+
+    if not args.no_clear_dynamodb:
+        removed = dynamo_utils.clear_table(table)
+        print(f"\nDynamoDB cleanup: removed {removed} item(s) from {table_name}")
 
 
 def cmd_export(args: argparse.Namespace) -> None:
