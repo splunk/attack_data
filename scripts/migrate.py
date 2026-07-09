@@ -423,6 +423,51 @@ def iter_event_lines(file_path: Path) -> Iterator[str]:
                 yield line
 
 
+def _is_powershell_xml_dataset(source: str, sourcetype: str) -> bool:
+    """Return True when a dataset file contains multi-line Windows PowerShell XML events."""
+    return (
+        sourcetype.lower() == "xmlwineventlog"
+        and "powershell" in source.lower()
+    )
+
+
+def iter_xml_events(file_path: Path) -> Iterator[str]:
+    """Yield each top-level ``<Event>...</Event>`` document from a file."""
+    with open(file_path, "r", encoding="utf-8", errors="replace") as datafile:
+        content = datafile.read()
+
+    start = 0
+    while True:
+        event_start = content.find("<Event", start)
+        if event_start < 0:
+            break
+        event_end = content.find("</Event>", event_start)
+        if event_end < 0:
+            break
+        event_end += len("</Event>")
+        event = content[event_start:event_end]
+        if event.strip():
+            yield event
+        start = event_end
+
+
+def iter_dataset_events(
+    file_path: Path,
+    source: str,
+    sourcetype: str,
+) -> Iterator[str]:
+    """Yield uploadable events from a dataset file.
+
+    Line-delimited files (JSON, single-line XML, etc.) yield one event per non-empty
+    line. PowerShell ``XmlWinEventLog`` files can contain multi-line script block
+    events and are split into individual ``<Event>...</Event>`` documents instead.
+    """
+    if _is_powershell_xml_dataset(source, sourcetype):
+        yield from iter_xml_events(file_path)
+        return
+    yield from iter_event_lines(file_path)
+
+
 def upload_dataset_lines(
     session: requests.Session,
     url: str,
@@ -434,7 +479,7 @@ def upload_dataset_lines(
     batch_size: int,
     verify_tls: bool,
 ) -> Tuple[List[str], int]:
-    """Split a dataset file line-by-line, upload each line with its own UUID host."""
+    """Upload each event in a dataset file to HEC with its own UUID host."""
     event_uuids: List[str] = []
     failed = 0
     batch: List[Dict[str, Any]] = []
@@ -451,11 +496,11 @@ def upload_dataset_lines(
         batch.clear()
         batch_uuids.clear()
 
-    for line in iter_event_lines(file_path):
+    for event in iter_dataset_events(file_path, source, sourcetype):
         event_uuid = str(uuid.uuid4())
         batch.append(
             {
-                "event": line,
+                "event": event,
                 "host": event_uuid,
                 "source": source,
                 "sourcetype": sourcetype,
