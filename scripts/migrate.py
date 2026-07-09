@@ -94,8 +94,8 @@ def load_env() -> None:
     """Load environment variables from a .env file if one is present.
 
     Looks for a .env file next to this script first, then at the repository
-    root. Existing environment variables are not overridden, so real shell
-    variables always win over the .env file.
+    root. Each run re-loads the .env file and overrides any existing values
+    already present in the environment.
     """
     try:
         from dotenv import load_dotenv
@@ -105,7 +105,7 @@ def load_env() -> None:
     script_dir = Path(__file__).resolve().parent
     for candidate in (script_dir / ".env", get_project_root() / ".env"):
         if candidate.is_file():
-            load_dotenv(candidate, override=False)
+            load_dotenv(candidate, override=True)
             print(f"Loaded environment from {candidate}")
 
 
