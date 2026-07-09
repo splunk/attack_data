@@ -226,6 +226,25 @@ def _add_host_to_projection(stage: str) -> str:
     return f"{stripped}, host{trailing}"
 
 
+def _is_filter_macro_stage(stage: str) -> bool:
+    """Return True when a pipeline stage is a security_content ``*_filter`` macro."""
+    stripped = stage.strip()
+    return re.fullmatch(r"`[^`]+_filter`", stripped) is not None
+
+
+def remove_trailing_filter_macro(search: str) -> str:
+    """Drop the terminal ``*_filter`` macro stage from a detection search."""
+    stages = split_pipeline(search)
+    if stages and _is_filter_macro_stage(stages[-1]):
+        stages = stages[:-1]
+    return "|".join(stages)
+
+
+def prepare_detection_search(search: str) -> str:
+    """Rewrite a detection search for execution in the migrate pipeline."""
+    return add_host_output_field(remove_trailing_filter_macro(search))
+
+
 def add_host_output_field(search: str) -> str:
     """Rewrite an SPL search so that ``host`` survives to the output."""
     stages = split_pipeline(search)

@@ -678,7 +678,7 @@ def do_detect(
             continue
 
         det_path = detection["file"]
-        patched = detection_utils.add_host_output_field(detection["search"])
+        patched = detection_utils.prepare_detection_search(detection["search"])
         print(f"\n  Detection: {detection['name']}")
         try:
             rows = splunk_search.run_search(
@@ -741,7 +741,7 @@ def run_single_detection(
         our_uuids.update(_file_uuid_set(entry))
 
     det_path = detection["file"]
-    patched = detection_utils.add_host_output_field(detection["search"])
+    patched = detection_utils.prepare_detection_search(detection["search"])
     print(f"\n  Detection: {detection['name']}")
     try:
         rows = splunk_search.run_search(
