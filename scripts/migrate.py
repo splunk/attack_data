@@ -81,7 +81,9 @@ DEFAULT_HEC_PORT = "8088"
 DEFAULT_MGMT_PORT = "8089"
 DEFAULT_BATCH_SIZE = 500
 DEFAULT_INDEX_WAIT_SECONDS = 10
+DEFAULT_RUN_LOG = "migrate_run.log"
 CURATED_ATTACK_DATA_YML = re.compile(r"^T[\d.]+_.+\.(ya?ml)$", re.IGNORECASE)
+SUCCESS_DETECTION_STATUSES = frozenset({"curated", "matched"})
 
 
 # --------------------------------------------------------------------------- #
@@ -368,6 +370,28 @@ def filter_detections_from_id(
     print(f"Warning: --start-from-detection-id {start_from_id} not found; "
           "processing all detections")
     return sorted_files
+
+
+def filter_runnable_detections(
+    detection_files: List[Path],
+) -> Tuple[List[Path], List[Tuple[str, str, str]]]:
+    """Drop experimental and deprecated detections from the run list."""
+    runnable: List[Path] = []
+    ignored: List[Tuple[str, str, str]] = []
+
+    for det_file in detection_files:
+        detection = detection_utils.parse_detection_file(det_file)
+        det_path = str(det_file)
+        if not detection:
+            runnable.append(det_file)
+            continue
+        status = detection.get("status", "")
+        if detection_utils.is_ignored_detection_status(status):
+            ignored.append((detection["name"], det_path, status))
+            continue
+        runnable.append(det_file)
+
+    return runnable, ignored
 
 
 # --------------------------------------------------------------------------- #
@@ -1243,6 +1267,122 @@ def _detection_display_name(detection_file: str) -> str:
     return path.stem
 
 
+def _status_description(status: str) -> str:
+    """Return a short human-readable description for a detection status code."""
+    descriptions = {
+        "curated": "matched and curated attack data exported",
+        "matched": "matched events (no curated output written)",
+        "no_matches": "no matches",
+        "search_failed": "Splunk search failed",
+        "skipped": "skipped (not a valid detection file)",
+        "no_tests_urls": "no tests.attack_data URLs found",
+        "no_source_yml": "no source attack data YAML found",
+        "upload_failed": "upload failed",
+        "not_run": "not run",
+    }
+    return descriptions.get(status, status.replace("_", " "))
+
+
+def write_migration_run_log(
+    log_path: Path,
+    detection_files: List[Path],
+    detection_status: Dict[str, str],
+    detection_matched_counts: Dict[str, int],
+    *,
+    index: str,
+    total_matched: int,
+    curated_count: int,
+    ignored_detections: Optional[List[Tuple[str, str, str]]] = None,
+) -> None:
+    """Write a summary log of successful and failed detections from a ``run``."""
+    ignored_detections = ignored_detections or []
+    successful: List[Tuple[str, str, str, int]] = []
+    failed: List[Tuple[str, str, str, int]] = []
+
+    for det_file in detection_files:
+        det_path = str(det_file)
+        status = detection_status.get(det_path, "not_run")
+        name = _detection_display_name(det_path)
+        matched_count = detection_matched_counts.get(det_path, 0)
+        entry = (name, det_path, status, matched_count)
+        if status in SUCCESS_DETECTION_STATUSES:
+            successful.append(entry)
+        else:
+            failed.append(entry)
+
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    lines = [
+        f"Migrate run log - {timestamp}",
+        "=" * 60,
+        f"Index: {index}",
+        f"Detections processed: {len(detection_files)}",
+        f"Ignored (experimental/deprecated): {len(ignored_detections)}",
+        f"Successful: {len(successful)}",
+        f"Failed: {len(failed)}",
+        f"Curated detections: {curated_count}",
+        f"Total matched events: {total_matched}",
+        "",
+        f"SUCCESSFUL ({len(successful)})",
+        "-" * 60,
+    ]
+    if successful:
+        for name, path, status, matched_count in sorted(
+            successful, key=lambda item: item[0].lower()
+        ):
+            lines.extend(
+                [
+                    f"- {name}",
+                    f"  file: {path}",
+                    f"  status: {status}",
+                    f"  reason: {_status_description(status)}",
+                    f"  matched events: {matched_count}",
+                    "",
+                ]
+            )
+    else:
+        lines.append("  (none)")
+        lines.append("")
+
+    lines.extend([f"FAILED ({len(failed)})", "-" * 60])
+    if failed:
+        for name, path, status, matched_count in sorted(
+            failed, key=lambda item: item[0].lower()
+        ):
+            lines.extend(
+                [
+                    f"- {name}",
+                    f"  file: {path}",
+                    f"  status: {status}",
+                    f"  reason: {_status_description(status)}",
+                    "",
+                ]
+            )
+    else:
+        lines.append("  (none)")
+        lines.append("")
+
+    if ignored_detections:
+        lines.extend([f"IGNORED ({len(ignored_detections)})", "-" * 60])
+        for name, path, status in sorted(ignored_detections, key=lambda item: item[0].lower()):
+            lines.extend(
+                [
+                    f"- {name}",
+                    f"  file: {path}",
+                    f"  status: {status}",
+                    "",
+                ]
+            )
+
+    try:
+        with open(log_path, "w", encoding="utf-8") as handle:
+            handle.write("\n".join(lines).rstrip() + "\n")
+    except OSError as exc:
+        print(f"  ! Failed to write run log {log_path}: {exc}")
+        return
+    print(f"\nRun log written to {log_path}")
+
+
 def print_not_updated_detections(
     detection_files: List[Path],
     detection_status: Dict[str, str],
@@ -1501,6 +1641,10 @@ def parse_arguments() -> argparse.Namespace:
         help="Seconds to wait after HEC upload before running detection searches, "
         f"so Splunk can index events (default: {DEFAULT_INDEX_WAIT_SECONDS}; 0 to disable)",
     )
+    p_run.add_argument(
+        "--run-log", default=DEFAULT_RUN_LOG,
+        help=f"Write a success/failure summary log to this file (default: {DEFAULT_RUN_LOG})",
+    )
     add_common_splunk_args(p_run)
     add_hec_args(p_run)
     add_search_args(p_run)
@@ -1600,10 +1744,16 @@ def cmd_run(args: argparse.Namespace) -> None:
         all_detection_files,
         args.start_from_detection_id,
     )
+    detection_files, ignored_detections = filter_runnable_detections(detection_files)
     attack_data_root = resolve_attack_data_root(args.attack_data_root, project_root)
     table, table_name = get_dynamo_table(args)
     print(f"DynamoDB table={table_name}")
     print(f"Attack data root: {attack_data_root}")
+    if ignored_detections:
+        print(f"Ignoring {len(ignored_detections)} detection(s) "
+              f"with status experimental or deprecated:")
+        for name, path, status in ignored_detections:
+            print(f"  - {name} ({path}): status={status}")
     print(f"Processing {len(detection_files)} detection(s) in alphabetical order")
 
     if not args.verify_ssl:
@@ -1625,6 +1775,7 @@ def cmd_run(args: argparse.Namespace) -> None:
         hec_url = build_hec_url(hec_config)
 
     detection_status: Dict[str, str] = {}
+    detection_matched_counts: Dict[str, int] = {}
     updated_detection_files: Set[str] = set()
     curated_detection_files: Set[str] = set()
     total_matched = 0
@@ -1701,6 +1852,7 @@ def cmd_run(args: argparse.Namespace) -> None:
             latest=args.latest,
         )
         detection_status[det_path] = status
+        detection_matched_counts[det_path] = len(matched)
         total_matched += len(matched)
 
         if status == "matched":
@@ -1764,6 +1916,20 @@ def cmd_run(args: argparse.Namespace) -> None:
         updated_files=updated_detection_files,
         curated_files=curated_detection_files,
         update_detection_tests=args.update_detection_tests,
+    )
+
+    run_log_path = Path(args.run_log)
+    if not run_log_path.is_absolute():
+        run_log_path = (Path.cwd() / run_log_path).resolve()
+    write_migration_run_log(
+        run_log_path,
+        detection_files,
+        detection_status,
+        detection_matched_counts,
+        index=args.index,
+        total_matched=total_matched,
+        curated_count=len(curated_detection_files),
+        ignored_detections=ignored_detections,
     )
 
     if not args.no_clear_dynamodb:

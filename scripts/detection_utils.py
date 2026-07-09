@@ -30,6 +30,7 @@ import yaml
 
 STATS_COMMANDS = ("tstats", "sistats", "stats", "eventstats", "streamstats")
 PROJECT_COMMANDS = ("table", "fields")
+IGNORED_DETECTION_STATUSES = frozenset({"experimental", "deprecated"})
 ATTACK_DATA_GITHUB_BASE = (
     "https://media.githubusercontent.com/media/splunk/attack_data/master"
 )
@@ -147,6 +148,11 @@ def path_to_attack_data_url(path: str) -> str:
     if not clean.startswith("datasets/"):
         clean = f"datasets/{clean}"
     return f"{ATTACK_DATA_GITHUB_BASE}/{clean}"
+
+
+def is_ignored_detection_status(status: str) -> bool:
+    """Return True when a detection YAML status should not be run (e.g. experimental)."""
+    return status.strip().lower() in IGNORED_DETECTION_STATUSES
 
 
 def split_pipeline(search: str) -> List[str]:
