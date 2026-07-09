@@ -61,6 +61,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.parse
 import uuid
 from datetime import datetime
@@ -79,6 +80,7 @@ DEFAULT_INDEX = "test"
 DEFAULT_HEC_PORT = "8088"
 DEFAULT_MGMT_PORT = "8089"
 DEFAULT_BATCH_SIZE = 500
+DEFAULT_INDEX_WAIT_SECONDS = 10
 CURATED_ATTACK_DATA_YML = re.compile(r"^T[\d.]+_.+\.(ya?ml)$", re.IGNORECASE)
 
 
@@ -1442,6 +1444,11 @@ def parse_arguments() -> argparse.Namespace:
         "--no-clear-dynamodb", action="store_true",
         help="Do not clear the DynamoDB table after the run (cleared by default)",
     )
+    p_run.add_argument(
+        "--index-wait", type=int, default=DEFAULT_INDEX_WAIT_SECONDS,
+        help="Seconds to wait after HEC upload before running detection searches, "
+        f"so Splunk can index events (default: {DEFAULT_INDEX_WAIT_SECONDS}; 0 to disable)",
+    )
     add_common_splunk_args(p_run)
     add_hec_args(p_run)
     add_search_args(p_run)
@@ -1628,6 +1635,10 @@ def cmd_run(args: argparse.Namespace) -> None:
             print("  ! No event UUIDs uploaded for this detection; skipping")
             detection_status[det_path] = "upload_failed"
             continue
+
+        if not args.skip_upload and args.index_wait > 0:
+            print(f"  Waiting {args.index_wait}s for Splunk indexing...")
+            time.sleep(args.index_wait)
 
         matched, _, status = run_single_detection(
             detection_file=det_file,
