@@ -809,7 +809,7 @@ def export_and_curate_detection(
             raw_events = splunk_search.export_events(
                 service, index, hosts, earliest_time=earliest, latest_time=latest
             )
-            filename = f"{_safe_filename(dataset_name)}_{attack_data_uuid}.log"
+            filename = _dataset_log_filename(dataset_name, attack_data_uuid)
             print(f"  {dataset_name} ({attack_data_uuid}): "
                   f"{len(hosts)} matched host(s), {len(raw_events)} event(s) -> {filename}")
             if out_dir is not None:
@@ -822,6 +822,7 @@ def export_and_curate_detection(
                 source_yml,
                 dataset_events,
                 project_root,
+                attack_data_uuid,
             )
             curated_any = True
 
@@ -868,6 +869,11 @@ def _safe_filename(text: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "_", text).strip("_") or "dataset"
 
 
+def _dataset_log_filename(dataset_name: str, file_uuid: str) -> str:
+    """Build an exported dataset log filename: ``<dataset_name>-<uuid>.log``."""
+    return f"{_safe_filename(dataset_name)}-{file_uuid}.log"
+
+
 def _write_events(path: Path, raw_events: List[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as handle:
@@ -884,7 +890,7 @@ def update_attack_data_yml(
     """Save curated per-dataset logs next to the YAML and update the YAML in place.
 
     For each dataset that produced matches, its exported events are written to
-    ``<yml_folder>/<dataset_name>_<attack_data_uuid>.log``. The attack data YAML
+    ``<yml_folder>/<dataset_name>-<attack_data_uuid>.log``. The attack data YAML
     is then updated with today's date and a datasets section repointed to those
     curated files (datasets without matches are dropped).
     """
@@ -898,7 +904,7 @@ def update_attack_data_yml(
     folder = yml_abs.parent
     written_paths: Dict[str, str] = {}
     for name, events in dataset_events.items():
-        out_file = folder / f"{_safe_filename(name)}_{attack_data_uuid}.log"
+        out_file = folder / _dataset_log_filename(name, attack_data_uuid)
         _write_events(out_file, events)
         try:
             written_paths[name] = "/" + str(out_file.relative_to(project_root))
@@ -949,6 +955,7 @@ def merge_curated_attack_data_yml(
     source_yml: Path,
     dataset_events: Dict[str, List[str]],
     project_root: Path,
+    attack_data_uuid: str,
 ) -> None:
     """Create or update a curated attack data YAML without modifying the source YAML."""
     if not dataset_events:
@@ -974,7 +981,7 @@ def merge_curated_attack_data_yml(
 
     for name, events in dataset_events.items():
         source_ds = source_datasets.get(name, {})
-        log_filename = f"{_safe_filename(name)}.log"
+        log_filename = _dataset_log_filename(name, attack_data_uuid)
         out_log = folder / log_filename
         _write_events(out_log, events)
         try:
@@ -1265,7 +1272,7 @@ def do_export(
 
     For every dataset of every attack data file, the intersection of that
     dataset's uploaded UUIDs with the globally matched hosts is exported to
-    ``<export_dir>/<dataset_name>_<attack_data_uuid>.log``. When
+    ``<export_dir>/<dataset_name>-<attack_data_uuid>.log``. When
     ``update_attack_data`` is set, the curated events are also written into the
     attack data YAML's own folder and the YAML is updated (new date + datasets
     section).
@@ -1307,7 +1314,7 @@ def do_export(
                 service, index, hosts, earliest_time=earliest, latest_time=latest
             )
             total_events += len(raw_events)
-            filename = f"{_safe_filename(dataset_name)}_{attack_data_uuid}.log"
+            filename = _dataset_log_filename(dataset_name, attack_data_uuid)
             print(f"  {dataset_name} ({attack_data_uuid}): "
                   f"{len(hosts)} matched host(s), {len(raw_events)} event(s) -> {filename}")
 
@@ -1460,7 +1467,7 @@ def parse_arguments() -> argparse.Namespace:
     p_export.add_argument(
         "--export-dir",
         help="Folder to write exported logs, one file per dataset named "
-        "<dataset_name>_<attack_data_uuid>.log",
+        "<dataset_name>-<attack_data_uuid>.log",
     )
     p_export.add_argument(
         "--update-attack-data", action="store_true",
