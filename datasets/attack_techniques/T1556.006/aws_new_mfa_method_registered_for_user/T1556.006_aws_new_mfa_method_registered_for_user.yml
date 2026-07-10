@@ -1,0 +1,17 @@
+author: STRT
+id: f2763798-c161-49fd-89c2-7dc8b154776d
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS New MFA Method Registered
+  For User
+environment: attack_range
+directory: aws_new_mfa_method_registered_for_user
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1556.006/aws_new_mfa_method_registered_for_user/asl_ocsf_cloudtrail-f2763798-c161-49fd-89c2-7dc8b154776d.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1556.006/aws_new_mfa_method_registered_for_user/cloudtrail-f2763798-c161-49fd-89c2-7dc8b154776d.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

@@ -1,0 +1,17 @@
+author: STRT
+id: 4fcb871a-596c-4ea0-a4c4-cf01efc0fce3
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS Network Access Control
+  List Deleted
+environment: attack_range
+directory: aws_delete_acl
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1562.007/aws_delete_acl/asl_ocsf_cloudtrail-4fcb871a-596c-4ea0-a4c4-cf01efc0fce3.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1562.007/aws_delete_acl/aws_cloudtrail_events-4fcb871a-596c-4ea0-a4c4-cf01efc0fce3.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

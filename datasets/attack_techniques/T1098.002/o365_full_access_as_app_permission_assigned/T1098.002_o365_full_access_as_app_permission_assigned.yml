@@ -1,0 +1,13 @@
+author: STRT
+id: de7f19b6-a4d6-4bd5-8217-13a6bb0692e1
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 FullAccessAsApp Permission
+  Assigned
+environment: attack_range
+directory: o365_full_access_as_app_permission_assigned
+mitre_technique: []
+datasets:
+- name: o365_full_access_as_app_permission_assigned
+  path: /datasets/attack_techniques/T1098.002/o365_full_access_as_app_permission_assigned/o365_full_access_as_app_permission_assigned-de7f19b6-a4d6-4bd5-8217-13a6bb0692e1.log
+  sourcetype: o365:management:activity
+  source: o365:management:activity

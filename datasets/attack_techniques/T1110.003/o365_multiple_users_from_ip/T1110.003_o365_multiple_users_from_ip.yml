@@ -1,0 +1,13 @@
+author: STRT
+id: 3d651cdf-3c8f-4f62-9078-96f4bf1b964c
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Multiple Users Failing
+  To Authenticate From Ip
+environment: attack_range
+directory: o365_multiple_users_from_ip
+mitre_technique: []
+datasets:
+- name: o365_multiple_users_from_ip
+  path: /datasets/attack_techniques/T1110.003/o365_multiple_users_from_ip/o365_multiple_users_from_ip-3d651cdf-3c8f-4f62-9078-96f4bf1b964c.log
+  sourcetype: o365:management:activity
+  source: o365
