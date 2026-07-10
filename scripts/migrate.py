@@ -83,6 +83,7 @@ DEFAULT_INDEX_WAIT_SECONDS = 10
 DEFAULT_RUN_LOG = "migrate_run.log"
 CURATED_ATTACK_DATA_YML = re.compile(r"^T[\d.]+_.+\.(ya?ml)$", re.IGNORECASE)
 EXTRACTION_SUCCESS_STATUSES = frozenset({"curated"})
+ATTACK_DATA_AUTHOR = "STRT"
 
 
 # --------------------------------------------------------------------------- #
@@ -1197,6 +1198,7 @@ def update_attack_data_yml(
         return
 
     data["date"] = datetime.now().strftime("%Y-%m-%d")
+    data["author"] = ATTACK_DATA_AUTHOR
     new_datasets = []
     for dataset in data.get("datasets", []):
         name = dataset.get("name")
@@ -1310,6 +1312,7 @@ def merge_curated_attack_data_yml(
             existing_paths.add(entry["path"])
             appended += 1
         data["date"] = datetime.now().strftime("%Y-%m-%d")
+        data["author"] = ATTACK_DATA_AUTHOR
         print(f"    merged {appended} dataset(s) into {curated_path}")
     else:
         description = ""
@@ -1320,7 +1323,7 @@ def merge_curated_attack_data_yml(
         elif source_data.get("description"):
             description = str(source_data["description"])
         data = {
-            "author": detection.get("author", "") if detection else source_data.get("author", ""),
+            "author": ATTACK_DATA_AUTHOR,
             "id": attack_data_uuid,
             "date": datetime.now().strftime("%Y-%m-%d"),
             "description": description,
