@@ -82,7 +82,7 @@ DEFAULT_BATCH_SIZE = 500
 DEFAULT_INDEX_WAIT_SECONDS = 10
 DEFAULT_RUN_LOG = "migrate_run.log"
 CURATED_ATTACK_DATA_YML = re.compile(r"^T[\d.]+_.+\.(ya?ml)$", re.IGNORECASE)
-SUCCESS_DETECTION_STATUSES = frozenset({"curated", "matched"})
+EXTRACTION_SUCCESS_STATUSES = frozenset({"curated"})
 
 
 # --------------------------------------------------------------------------- #
@@ -1508,19 +1508,12 @@ def _status_description(status: str) -> str:
     return descriptions.get(status, status.replace("_", " "))
 
 
-def write_migration_run_log(
-    log_path: Path,
+def _partition_detection_results(
     detection_files: List[Path],
     detection_status: Dict[str, str],
     detection_matched_counts: Dict[str, int],
-    *,
-    index: str,
-    total_matched: int,
-    curated_count: int,
-    ignored_detections: Optional[List[Tuple[str, str, str]]] = None,
-) -> None:
-    """Write a summary log of successful and failed detections from a ``run``."""
-    ignored_detections = ignored_detections or []
+) -> Tuple[List[Tuple[str, str, str, int]], List[Tuple[str, str, str, int]]]:
+    """Split detections into successfully extracted vs failed result tuples."""
     successful: List[Tuple[str, str, str, int]] = []
     failed: List[Tuple[str, str, str, int]] = []
 
@@ -1530,10 +1523,80 @@ def write_migration_run_log(
         name = _detection_display_name(det_path)
         matched_count = detection_matched_counts.get(det_path, 0)
         entry = (name, det_path, status, matched_count)
-        if status in SUCCESS_DETECTION_STATUSES:
+        if status in EXTRACTION_SUCCESS_STATUSES:
             successful.append(entry)
         else:
             failed.append(entry)
+    return successful, failed
+
+
+def print_extraction_summary(
+    detection_files: List[Path],
+    detection_status: Dict[str, str],
+    detection_matched_counts: Dict[str, int],
+    ignored_detections: Optional[List[Tuple[str, str, str]]] = None,
+) -> None:
+    """Print successful and failed detection extractions at the end of a run."""
+    ignored_detections = ignored_detections or []
+    successful, failed = _partition_detection_results(
+        detection_files, detection_status, detection_matched_counts
+    )
+
+    print("\n" + "=" * 60)
+    print(f"SUCCESSFUL EXTRACTIONS ({len(successful)})")
+    print("=" * 60)
+    if successful:
+        for name, path, status, matched_count in sorted(
+            successful, key=lambda item: item[0].lower()
+        ):
+            print(f"  - {name}")
+            print(f"    file: {path}")
+            print(f"    status: {status}")
+            print(f"    matched events: {matched_count}")
+    else:
+        print("  (none)")
+
+    print("\n" + "=" * 60)
+    print(f"FAILED EXTRACTIONS ({len(failed)})")
+    print("=" * 60)
+    if failed:
+        for name, path, status, matched_count in sorted(
+            failed, key=lambda item: item[0].lower()
+        ):
+            print(f"  - {name}")
+            print(f"    file: {path}")
+            print(f"    status: {status}")
+            print(f"    reason: {_status_description(status)}")
+            if matched_count:
+                print(f"    matched events: {matched_count}")
+    else:
+        print("  (none)")
+
+    if ignored_detections:
+        print("\n" + "=" * 60)
+        print(f"IGNORED ({len(ignored_detections)})")
+        print("=" * 60)
+        for name, path, status in sorted(ignored_detections, key=lambda item: item[0].lower()):
+            print(f"  - {name}")
+            print(f"    file: {path}")
+            print(f"    status: {status}")
+
+
+def write_migration_run_log(
+    log_path: Path,
+    detection_files: List[Path],
+    detection_status: Dict[str, str],
+    detection_matched_counts: Dict[str, int],
+    *,
+    index: str,
+    total_matched: int,
+    ignored_detections: Optional[List[Tuple[str, str, str]]] = None,
+) -> None:
+    """Write a summary log of successful and failed detections from a ``run``."""
+    ignored_detections = ignored_detections or []
+    successful, failed = _partition_detection_results(
+        detection_files, detection_status, detection_matched_counts
+    )
 
     log_path.parent.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -1543,12 +1606,11 @@ def write_migration_run_log(
         f"Index: {index}",
         f"Detections processed: {len(detection_files)}",
         f"Ignored (experimental/deprecated): {len(ignored_detections)}",
-        f"Successful: {len(successful)}",
-        f"Failed: {len(failed)}",
-        f"Curated detections: {curated_count}",
+        f"Successful extractions: {len(successful)}",
+        f"Failed extractions: {len(failed)}",
         f"Total matched events: {total_matched}",
         "",
-        f"SUCCESSFUL ({len(successful)})",
+        f"SUCCESSFUL EXTRACTIONS ({len(successful)})",
         "-" * 60,
     ]
     if successful:
@@ -1569,20 +1631,21 @@ def write_migration_run_log(
         lines.append("  (none)")
         lines.append("")
 
-    lines.extend([f"FAILED ({len(failed)})", "-" * 60])
+    lines.extend([f"FAILED EXTRACTIONS ({len(failed)})", "-" * 60])
     if failed:
         for name, path, status, matched_count in sorted(
             failed, key=lambda item: item[0].lower()
         ):
-            lines.extend(
-                [
-                    f"- {name}",
-                    f"  file: {path}",
-                    f"  status: {status}",
-                    f"  reason: {_status_description(status)}",
-                    "",
-                ]
-            )
+            block = [
+                f"- {name}",
+                f"  file: {path}",
+                f"  status: {status}",
+                f"  reason: {_status_description(status)}",
+            ]
+            if matched_count:
+                block.append(f"  matched events: {matched_count}")
+            block.append("")
+            lines.extend(block)
     else:
         lines.append("  (none)")
         lines.append("")
@@ -2154,6 +2217,13 @@ def cmd_run(args: argparse.Namespace) -> None:
     print(f"Curated detections:    {len(curated_detection_files)}")
     print(f"Total matched events:  {total_matched}")
 
+    print_extraction_summary(
+        detection_files=detection_files,
+        detection_status=detection_status,
+        detection_matched_counts=detection_matched_counts,
+        ignored_detections=ignored_detections,
+    )
+
     print_not_updated_detections(
         detection_files=detection_files,
         detection_status=detection_status,
@@ -2172,7 +2242,6 @@ def cmd_run(args: argparse.Namespace) -> None:
         detection_matched_counts,
         index=args.index,
         total_matched=total_matched,
-        curated_count=len(curated_detection_files),
         ignored_detections=ignored_detections,
     )
 
