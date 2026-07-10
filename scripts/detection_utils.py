@@ -238,6 +238,15 @@ def _is_filter_macro_stage(stage: str) -> bool:
     return re.fullmatch(r"`[^`]+_filter`", stripped) is not None
 
 
+def remove_where_and_following(search: str) -> str:
+    """Drop the first ``where`` pipeline stage and everything after it."""
+    stages = split_pipeline(search)
+    for index, stage in enumerate(stages):
+        if _command_of(stage) == "where":
+            return "|".join(stages[:index])
+    return search
+
+
 def remove_trailing_filter_macro(search: str) -> str:
     """Drop the terminal ``*_filter`` macro stage from a detection search."""
     stages = split_pipeline(search)
@@ -248,7 +257,9 @@ def remove_trailing_filter_macro(search: str) -> str:
 
 def prepare_detection_search(search: str) -> str:
     """Rewrite a detection search for execution in the migrate pipeline."""
-    return add_host_output_field(remove_trailing_filter_macro(search))
+    rewritten = remove_where_and_following(search)
+    rewritten = remove_trailing_filter_macro(rewritten)
+    return add_host_output_field(rewritten)
 
 
 def add_host_output_field(search: str) -> str:
