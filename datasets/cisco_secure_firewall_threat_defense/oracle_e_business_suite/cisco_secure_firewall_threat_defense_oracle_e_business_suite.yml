@@ -1,0 +1,13 @@
+author: STRT
+id: 189b9bef-cdff-4068-8fff-a71e5f7a83ce
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Secure Firewall - Oracle
+  E-Business Suite Correlation
+environment: attack_range
+directory: oracle_e_business_suite
+mitre_technique: []
+datasets:
+- name: oracle_e_business_suite
+  path: /datasets/cisco_secure_firewall_threat_defense/oracle_e_business_suite/oracle_e_business_suite-189b9bef-cdff-4068-8fff-a71e5f7a83ce.log
+  sourcetype: cisco:sfw:estreamer
+  source: not_applicable
