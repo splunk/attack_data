@@ -1,6 +1,6 @@
 author: STRT
 id: adef9abd-16e9-4c74-aae8-508af2fc9c8d
-date: '2026-07-10'
+date: '2026-07-13'
 description: Curated attack data generated for detection Java Writing JSP File
 environment: attack_range
 directory: spring4shell
@@ -10,3 +10,7 @@ datasets:
   path: /datasets/attack_techniques/T1190/spring4shell/java_write_jsp-linux-sysmon-adef9abd-16e9-4c74-aae8-508af2fc9c8d.log
   sourcetype: sysmon:linux
   source: Syslog:Linux-Sysmon/Operational
+- name: spring4shell_nginx
+  path: /datasets/attack_techniques/T1190/spring4shell/spring4shell_nginx-adef9abd-16e9-4c74-aae8-508af2fc9c8d.log
+  sourcetype: nginx:plus:kv
+  source: /var/log/nginx/access.log

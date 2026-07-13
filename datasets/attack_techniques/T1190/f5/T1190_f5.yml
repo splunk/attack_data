@@ -11,3 +11,7 @@ datasets:
   path: /datasets/attack_techniques/T1190/f5/f5-95b9000e-76a2-4392-b87c-ac7572744cfc.log
   sourcetype: pan:threat
   source: not_applicable
+- name: f5_tmui
+  path: /datasets/attack_techniques/T1190/f5/f5_tmui-95b9000e-76a2-4392-b87c-ac7572744cfc.log
+  sourcetype: suricata
+  source: not_applicable

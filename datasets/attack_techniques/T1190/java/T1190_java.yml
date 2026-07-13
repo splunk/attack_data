@@ -1,6 +1,6 @@
 author: STRT
 id: b006f086-b7ff-4ab9-80e8-43cb06c8975e
-date: '2026-07-11'
+date: '2026-07-13'
 description: Curated attack data generated for detection Web or Application Server
   Spawning a Shell
 environment: attack_range
@@ -11,3 +11,11 @@ datasets:
   path: /datasets/attack_techniques/T1190/java/java_spawn_shell_nix-b006f086-b7ff-4ab9-80e8-43cb06c8975e.log
   sourcetype: sysmon:linux
   source: Syslog:Linux-Sysmon/Operational
+- name: confluence
+  path: /datasets/attack_techniques/T1190/java/confluence-b006f086-b7ff-4ab9-80e8-43cb06c8975e.log
+  sourcetype: pan:threat
+  source: not_applicable
+- name: log4shell-nginx
+  path: /datasets/attack_techniques/T1190/java/log4shell-nginx-b006f086-b7ff-4ab9-80e8-43cb06c8975e.log
+  sourcetype: nginx:plus:kv
+  source: /var/log/nginx/access.log
