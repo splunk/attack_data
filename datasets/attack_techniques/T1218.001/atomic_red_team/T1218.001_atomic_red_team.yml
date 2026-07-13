@@ -1,6 +1,6 @@
 author: STRT
 id: 9a5fbea8-199a-4c9f-8510-e55eeb2b0eb3
-date: '2026-07-11'
+date: '2026-07-13'
 description: Curated attack data generated for detection Detect HTML Help Renamed
 environment: attack_range
 directory: atomic_red_team

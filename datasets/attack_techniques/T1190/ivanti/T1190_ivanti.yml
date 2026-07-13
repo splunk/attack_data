@@ -1,0 +1,12 @@
+author: STRT
+id: 0673db9c-eb80-423b-b71a-78b386e53ac2
+date: '2026-07-13'
+description: Curated attack data generated for detection Ivanti VTM New Account Creation
+environment: attack_range
+directory: ivanti
+mitre_technique: []
+datasets:
+- name: ivanti_vtm_audit
+  path: /datasets/attack_techniques/T1190/ivanti/ivanti_vtm_audit-0673db9c-eb80-423b-b71a-78b386e53ac2.log
+  sourcetype: ivanti_vtm_audit
+  source: ivanti_vtm
