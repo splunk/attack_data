@@ -1,0 +1,12 @@
+author: STRT
+id: 6a41cf7e-9c68-4945-888c-f4e2cac41011
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows WMIC Shadowcopy Delete
+environment: attack_range
+directory: shadowcopy_del
+mitre_technique: []
+datasets:
+- name: wmicshadowcopydelete_sysmon
+  path: /datasets/attack_techniques/T1490/shadowcopy_del/wmicshadowcopydelete_sysmon-6a41cf7e-9c68-4945-888c-f4e2cac41011.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

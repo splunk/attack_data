@@ -1,0 +1,13 @@
+author: STRT
+id: 28acba4d-497c-447f-ae53-50f976557860
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux At Allow Config File
+  Creation
+environment: attack_range
+directory: at_execution
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1053.002/at_execution/sysmon_linux-28acba4d-497c-447f-ae53-50f976557860.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

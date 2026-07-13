@@ -1,0 +1,12 @@
+author: STRT
+id: adef9abd-16e9-4c74-aae8-508af2fc9c8d
+date: '2026-07-10'
+description: Curated attack data generated for detection Java Writing JSP File
+environment: attack_range
+directory: spring4shell
+mitre_technique: []
+datasets:
+- name: java_write_jsp-linux-sysmon
+  path: /datasets/attack_techniques/T1190/spring4shell/java_write_jsp-linux-sysmon-adef9abd-16e9-4c74-aae8-508af2fc9c8d.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: a734252e-d30e-4da6-8d1e-22805adf20af
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerShell Module
+  File Created
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1129/snapattack/snapattack-a734252e-d30e-4da6-8d1e-22805adf20af.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

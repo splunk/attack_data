@@ -1,0 +1,12 @@
+author: STRT
+id: cb5166ac-0e90-4cdc-8dda-697ad947fdaf
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux GDB Privilege Escalation
+environment: attack_range
+directory: gdb
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/gdb/sysmon_linux-cb5166ac-0e90-4cdc-8dda-697ad947fdaf.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

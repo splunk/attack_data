@@ -1,0 +1,13 @@
+author: STRT
+id: 864b3971-97e0-40df-9df8-7f3011aca6c6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows EFI Volume Mount
+  Attempt Via Mountvol
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1204.002/snapattack/snapattack-864b3971-97e0-40df-9df8-7f3011aca6c6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

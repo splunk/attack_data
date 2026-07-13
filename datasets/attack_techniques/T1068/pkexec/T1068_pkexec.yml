@@ -1,0 +1,12 @@
+author: STRT
+id: 5b5cf5c7-b614-4208-b643-3f58b3df7492
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux pkexec Privilege Escalation
+environment: attack_range
+directory: pkexec
+mitre_technique: []
+datasets:
+- name: linux-sysmon
+  path: /datasets/attack_techniques/T1068/pkexec/linux-sysmon-5b5cf5c7-b614-4208-b643-3f58b3df7492.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

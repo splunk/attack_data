@@ -1,0 +1,13 @@
+author: STRT
+id: 37d472b8-b09b-4737-9188-5e0cee9b3c23
+date: '2026-07-10'
+description: Curated attack data generated for detection PowerShell Environment Variable
+  Execution
+environment: attack_range
+directory: vip_env_var_execution
+mitre_technique: []
+datasets:
+- name: env_vip_pwh_intl
+  path: /datasets/attack_techniques/T1059.001/vip_env_var_execution/env_vip_pwh_intl-37d472b8-b09b-4737-9188-5e0cee9b3c23.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

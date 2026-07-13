@@ -1,0 +1,13 @@
+author: STRT
+id: f8f6173e-97ed-48a6-b579-5860f760c1fa
+date: '2026-07-10'
+description: Curated attack data generated for detection Excessive number of service
+  control start as disabled
+environment: attack_range
+directory: sc_service_start_disabled
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1562.001/sc_service_start_disabled/windows-sysmon-f8f6173e-97ed-48a6-b579-5860f760c1fa.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

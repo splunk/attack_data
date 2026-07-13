@@ -1,0 +1,13 @@
+author: STRT
+id: 37d6626d-85fe-467a-86d2-ab64db8e38f2
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Shell Process from
+  CrushFTP
+environment: attack_range
+directory: crushftp
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1190/crushftp/windows-sysmon-37d6626d-85fe-467a-86d2-ab64db8e38f2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

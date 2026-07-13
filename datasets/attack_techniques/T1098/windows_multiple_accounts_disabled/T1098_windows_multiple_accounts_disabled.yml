@@ -1,0 +1,13 @@
+author: STRT
+id: 4e0e377e-3074-476b-9495-44337113c0c1
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Multiple Accounts
+  Disabled
+environment: attack_range
+directory: windows_multiple_accounts_disabled
+mitre_technique: []
+datasets:
+- name: windows_multiple_accounts_disabled
+  path: /datasets/attack_techniques/T1098/windows_multiple_accounts_disabled/windows_multiple_accounts_disabled-4e0e377e-3074-476b-9495-44337113c0c1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

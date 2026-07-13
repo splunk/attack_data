@@ -1,0 +1,13 @@
+author: STRT
+id: 770511b9-7f0c-407d-82a8-fa8e165fcab6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Unusual SysWOW64
+  Process Run System32 Executable
+environment: attack_range
+directory: 32bit_process_execute_64bit
+mitre_technique: []
+datasets:
+- name: 32bit_spawn_64bit
+  path: /datasets/attack_techniques/T1036.009/32bit_process_execute_64bit/32bit_spawn_64bit-770511b9-7f0c-407d-82a8-fa8e165fcab6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 1c50df72-f67a-4f12-a65e-0122e3ec9e1d
+date: '2026-07-11'
+description: Curated attack data generated for detection Scheduled Task Initiation
+  on Remote Endpoint
+environment: attack_range
+directory: lateral_movement
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1053.005/lateral_movement/windows-sysmon-1c50df72-f67a-4f12-a65e-0122e3ec9e1d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

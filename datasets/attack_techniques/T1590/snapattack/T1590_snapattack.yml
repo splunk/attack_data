@@ -1,0 +1,13 @@
+author: STRT
+id: 5bfac3e9-d57a-43c4-bc6b-62304e17ae16
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows WinPEAS PowerShell
+  Script Execution
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1590/snapattack/snapattack-5bfac3e9-d57a-43c4-bc6b-62304e17ae16.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

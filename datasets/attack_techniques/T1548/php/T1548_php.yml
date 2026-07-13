@@ -1,0 +1,12 @@
+author: STRT
+id: f8d3b38e-e9be-4fec-bd73-bb17236f4b18
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux PHP Privilege Escalation
+environment: attack_range
+directory: php
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/php/sysmon_linux-f8d3b38e-e9be-4fec-bd73-bb17236f4b18.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

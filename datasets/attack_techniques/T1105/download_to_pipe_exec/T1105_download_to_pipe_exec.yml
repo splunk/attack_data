@@ -1,0 +1,17 @@
+author: STRT
+id: 8427b872-32fa-483c-ad1d-c26d35fa725f
+date: '2026-07-10'
+description: Curated attack data generated for detection File Download or Read to
+  Pipe Execution
+environment: attack_range
+directory: download_to_pipe_exec
+mitre_technique: []
+datasets:
+- name: download_to_pipe_exec
+  path: /datasets/attack_techniques/T1105/download_to_pipe_exec/download_to_pipe_exec-8427b872-32fa-483c-ad1d-c26d35fa725f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: download_to_pipe_exec_linux
+  path: /datasets/attack_techniques/T1105/download_to_pipe_exec/download_to_pipe_exec_linux-8427b872-32fa-483c-ad1d-c26d35fa725f.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

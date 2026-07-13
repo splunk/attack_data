@@ -1,0 +1,44 @@
+author: STRT
+id: 4cca73c1-045f-4ce3-a043-d6a7593bb58a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Export Certificate
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: certificateservices-lifecycle
+  path: /datasets/attack_techniques/T1649/atomic_red_team/certificateservices-lifecycle-4cca73c1-045f-4ce3-a043-d6a7593bb58a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-CertificateServicesClient-Lifecycle-System/Operational
+- name: certwrite_windows-sysmon
+  path: /datasets/attack_techniques/T1649/atomic_red_team/certwrite_windows-sysmon-4cca73c1-045f-4ce3-a043-d6a7593bb58a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 4104_export_certificate
+  path: /datasets/attack_techniques/T1649/atomic_red_team/4104_export_certificate-4cca73c1-045f-4ce3-a043-d6a7593bb58a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: 4104_export_pfxcertificate
+  path: /datasets/attack_techniques/T1649/atomic_red_team/4104_export_pfxcertificate-4cca73c1-045f-4ce3-a043-d6a7593bb58a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: backupdb_certutil_windows-sysmon
+  path: /datasets/attack_techniques/T1649/atomic_red_team/backupdb_certutil_windows-sysmon-4cca73c1-045f-4ce3-a043-d6a7593bb58a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: capi2-operational
+  path: /datasets/attack_techniques/T1649/atomic_red_team/capi2-operational-4cca73c1-045f-4ce3-a043-d6a7593bb58a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-CAPI2/Operational
+- name: 4876_windows-security
+  path: /datasets/attack_techniques/T1649/atomic_red_team/4876_windows-security-4cca73c1-045f-4ce3-a043-d6a7593bb58a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: export_certificate_windows-sysmon
+  path: /datasets/attack_techniques/T1649/atomic_red_team/export_certificate_windows-sysmon-4cca73c1-045f-4ce3-a043-d6a7593bb58a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: export_pfxcertificate_windows-sysmon
+  path: /datasets/attack_techniques/T1649/atomic_red_team/export_pfxcertificate_windows-sysmon-4cca73c1-045f-4ce3-a043-d6a7593bb58a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

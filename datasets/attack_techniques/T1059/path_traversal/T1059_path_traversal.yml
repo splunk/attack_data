@@ -1,0 +1,13 @@
+author: STRT
+id: f01e46c8-5e7c-4225-98e1-6b74e8c7643a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Command and Scripting
+  Interpreter Hunting Path Traversal
+environment: attack_range
+directory: path_traversal
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1059/path_traversal/sysmon-f01e46c8-5e7c-4225-98e1-6b74e8c7643a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

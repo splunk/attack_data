@@ -1,0 +1,13 @@
+author: STRT
+id: a96c0559-23eb-4118-8ff7-41639f5c18d3
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Impair Defenses Disable
+  Auto Logger Session
+environment: attack_range
+directory: disable_defender_logging
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1562.001/disable_defender_logging/sysmon-a96c0559-23eb-4118-8ff7-41639f5c18d3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

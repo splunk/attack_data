@@ -1,0 +1,13 @@
+author: STRT
+id: 86c42cba-c8dc-4921-a60f-157176c3855a
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Auditd Preload Hijack
+  Via Preload File
+environment: attack_range
+directory: auditd_path_preload_file
+mitre_technique: []
+datasets:
+- name: path_preload
+  path: /datasets/attack_techniques/T1574.006/auditd_path_preload_file/path_preload-86c42cba-c8dc-4921-a60f-157176c3855a.log
+  sourcetype: auditd
+  source: auditd

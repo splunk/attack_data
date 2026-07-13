@@ -1,0 +1,13 @@
+author: STRT
+id: f60922d0-7d7d-4b30-8622-031f4e8ea04f
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Protocol Tunneling
+  with Plink
+environment: attack_range
+directory: plink
+mitre_technique: []
+datasets:
+- name: plink-windows-sysmon
+  path: /datasets/attack_techniques/T1572/plink/plink-windows-sysmon-f60922d0-7d7d-4b30-8622-031f4e8ea04f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

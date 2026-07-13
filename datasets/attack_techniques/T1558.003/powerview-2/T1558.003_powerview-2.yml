@@ -1,0 +1,12 @@
+author: STRT
+id: d2add060-78ef-4f51-a08d-d9773eda55a7
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerView SPN Discovery
+environment: attack_range
+directory: powerview-2
+mitre_technique: []
+datasets:
+- name: windows-powershell
+  path: /datasets/attack_techniques/T1558.003/powerview-2/windows-powershell-d2add060-78ef-4f51-a08d-d9773eda55a7.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

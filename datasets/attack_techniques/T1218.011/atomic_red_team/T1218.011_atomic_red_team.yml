@@ -1,0 +1,16 @@
+author: STRT
+id: b1c36f5a-f8c5-4c56-885c-0db9e058fb18
+date: '2026-07-11'
+description: Curated attack data generated for detection RunDLL Loading DLL By Ordinal
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: ordinal_windows-sysmon
+  path: /datasets/attack_techniques/T1218.011/atomic_red_team/ordinal_windows-sysmon-b1c36f5a-f8c5-4c56-885c-0db9e058fb18.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1218.011/atomic_red_team/windows-sysmon-b1c36f5a-f8c5-4c56-885c-0db9e058fb18.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

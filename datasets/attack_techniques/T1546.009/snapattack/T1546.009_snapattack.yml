@@ -1,0 +1,13 @@
+author: STRT
+id: 112f54ab-186d-438d-986e-c70eee467749
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AppCertDLL Modification
+  Via Command Line
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1546.009/snapattack/snapattack-112f54ab-186d-438d-986e-c70eee467749.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

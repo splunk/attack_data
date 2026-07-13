@@ -1,0 +1,12 @@
+author: STRT
+id: 39cc79ee-ff0b-486c-b9c9-1d3febc89ff6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry ProxyEnable
+environment: attack_range
+directory: proxy_enable
+mitre_technique: []
+datasets:
+- name: proxyenable
+  path: /datasets/attack_techniques/T1112/proxy_enable/proxyenable-39cc79ee-ff0b-486c-b9c9-1d3febc89ff6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

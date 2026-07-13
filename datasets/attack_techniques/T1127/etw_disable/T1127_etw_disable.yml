@@ -1,0 +1,12 @@
+author: STRT
+id: 4714c8a5-b1c5-40ee-8e2e-0732a8217792
+date: '2026-07-10'
+description: Curated attack data generated for detection ETW Registry Disabled
+environment: attack_range
+directory: etw_disable
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1127/etw_disable/sysmon-4714c8a5-b1c5-40ee-8e2e-0732a8217792.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

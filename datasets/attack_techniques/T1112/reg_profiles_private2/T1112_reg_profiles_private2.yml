@@ -1,0 +1,13 @@
+author: STRT
+id: 97c2976b-47d6-4450-ae42-60b23fc0a5fe
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Set Network Profile
+  Category to Private via Registry
+environment: attack_range
+directory: reg_profiles_private2
+mitre_technique: []
+datasets:
+- name: reg_profiles_private2
+  path: /datasets/attack_techniques/T1112/reg_profiles_private2/reg_profiles_private2-97c2976b-47d6-4450-ae42-60b23fc0a5fe.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
