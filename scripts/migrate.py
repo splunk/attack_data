@@ -8,25 +8,23 @@ against attack_data datasets:
   1. For each detection (alphabetically): resolve ``tests[].attack_data[]`` entries
      (data URL, source, sourcetype) to local log files.
   2. upload  Replay those logs to Splunk HEC with per-event UUID hosts; store
-     mappings in DynamoDB.
+     mappings in memory for the duration of the run.
   3. detect  Run only that detection (with ``host`` preserved in output).
   4. export  Export matched events and create or update curated attack data YAML
      files named ``{technique}_{folder}.yml`` (e.g. ``T1001_snapattack.yml``).
   5. cleanup Delete uploaded events from the Splunk index before the next
      detection.
 
-The ``run`` subcommand performs this loop. ``upload`` and ``export`` remain
-available standalone. ``--detection`` accepts a single file or folder.
+The ``run`` subcommand performs this loop. ``upload`` remains available standalone.
+``--detection`` accepts a single file or folder.
 
 Connection settings (CLI flags override environment variables):
     SPLUNK_HOST        Splunk hostname/IP                (required)
     SPLUNK_HEC_TOKEN   HEC token for uploading           (required for upload)
     SPLUNK_HEC_PORT    HEC port                          (default: 8088)
-    SPLUNK_USERNAME    Splunk user for searching         (required for detect/export)
-    SPLUNK_PASSWORD    Splunk password for searching     (required for detect/export)
+    SPLUNK_USERNAME    Splunk user for searching         (required for run)
+    SPLUNK_PASSWORD    Splunk password for searching     (required for run)
     SPLUNK_PORT        Splunk management port            (default: 8089)
-    DYNAMODB_TABLE     DynamoDB table name               (default: attack_data_map)
-    AWS_REGION         AWS region for DynamoDB           (optional)
 
 Examples:
     # Detection-first pipeline over a folder of detections
@@ -50,9 +48,6 @@ Examples:
 
     # Upload only (still requires --attack-data)
     python scripts/migrate.py upload --attack-data datasets/malware/qakbot
-
-    # Export previously-matched events recorded in DynamoDB
-    python scripts/migrate.py export --export-dir exported
 """
 
 import argparse
@@ -71,7 +66,7 @@ import requests
 import yaml
 from urllib3 import disable_warnings
 
-import dynamo_utils
+import memory_store
 import detection_utils
 import splunk_search
 
@@ -148,17 +143,6 @@ def load_mgmt_config(args: argparse.Namespace) -> Dict[str, str]:
         raise ValueError("Missing Splunk management settings: " + ", ".join(missing))
 
     return {"host": host, "username": username, "password": password, "port": str(port)}
-
-
-def get_dynamo_table(args: argparse.Namespace):
-    """Return the configured DynamoDB table resource."""
-    table_name = (
-        args.dynamodb_table
-        or os.environ.get("DYNAMODB_TABLE")
-        or dynamo_utils.DEFAULT_TABLE_NAME
-    )
-    region = args.aws_region or os.environ.get("AWS_REGION")
-    return dynamo_utils.get_table(table_name, region), table_name
 
 
 # --------------------------------------------------------------------------- #
@@ -621,7 +605,7 @@ def upload_dataset_lines(
 def upload_attack_data_file(
     session: requests.Session,
     url: str,
-    table,
+    store: memory_store.MigrationStore,
     yml_file: Path,
     project_root: Path,
     config: Dict[str, str],
@@ -629,7 +613,7 @@ def upload_attack_data_file(
     batch_size: int,
     verify_tls: bool,
 ) -> Tuple[Optional[str], str, Dict[str, Set[str]], int, int]:
-    """Upload every dataset in one attack data file; record the UUID map in DynamoDB.
+    """Upload every dataset in one attack data file; record the UUID map in memory.
 
     Returns (attack_data_uuid, attack_data_file, dataset_uuids, sent, failed) where
     dataset_uuids maps each dataset name to its set of event UUIDs.
@@ -675,8 +659,7 @@ def upload_attack_data_file(
         )
         print(f"    + {len(event_uuids)} event(s) sent, {failed} failed")
 
-        dynamo_utils.store_upload(
-            table=table,
+        store.store_upload(
             attack_data_uuid=file_id,
             attack_data_file=rel_file,
             dataset_name=name,
@@ -695,7 +678,7 @@ def upload_attack_data_file(
 
 def do_upload(
     yaml_files: List[Path],
-    table,
+    store: memory_store.MigrationStore,
     hec_config: Dict[str, str],
     project_root: Path,
     index: str,
@@ -718,7 +701,7 @@ def do_upload(
         file_id, rel_file, dataset_uuids, sent, failed = upload_attack_data_file(
             session=session,
             url=url,
-            table=table,
+            store=store,
             yml_file=yml_file,
             project_root=project_root,
             config=hec_config,
@@ -734,7 +717,7 @@ def do_upload(
                 entry["datasets"].setdefault(name, set()).update(uuids)
 
     print(f"\nUpload complete: {total_sent} event(s) sent, {total_failed} failed, "
-          f"{len(uuid_map)} attack data file(s) mapped in DynamoDB")
+          f"{len(uuid_map)} attack data file(s) mapped in memory")
     return uuid_map
 
 
@@ -752,13 +735,13 @@ def _file_uuid_set(entry: Dict[str, Any]) -> Set[str]:
 def do_detect(
     detection_files: List[Path],
     service,
-    table,
+    store: memory_store.MigrationStore,
     uuid_map: Dict[str, Dict[str, Any]],
     index: str,
     earliest: str,
     latest: str,
 ) -> Tuple[Set[str], Dict[str, Dict[str, Set[str]]], Dict[str, str]]:
-    """Run detections, attribute matched hosts to attack data files, store in DynamoDB.
+    """Run detections, attribute matched hosts to attack data files, store in memory.
 
     Returns the global set of matched host UUIDs (across all detections), a
     per-detection map ``{detection_file: {attack_data_uuid: matched_hosts}}``,
@@ -811,8 +794,7 @@ def do_detect(
             if not attributed:
                 continue
             file_matches[attack_data_uuid] = attributed
-            dynamo_utils.store_detection_result(
-                table=table,
+            store.store_detection_result(
                 attack_data_uuid=attack_data_uuid,
                 detection_id=detection.get("id", ""),
                 detection_name=detection["name"],
@@ -830,7 +812,7 @@ def do_detect(
 def run_single_detection(
     detection_file: Path,
     service,
-    table,
+    store: memory_store.MigrationStore,
     uuid_map: Dict[str, Dict[str, Any]],
     earliest: str,
     latest: str,
@@ -867,8 +849,7 @@ def run_single_detection(
         if not attributed:
             continue
         file_matches[attack_data_uuid] = attributed
-        dynamo_utils.store_detection_result(
-            table=table,
+        store.store_detection_result(
             attack_data_uuid=attack_data_uuid,
             detection_id=detection.get("id", ""),
             detection_name=detection["name"],
@@ -884,7 +865,7 @@ def upload_source_ymls(
     source_ymls: List[Path],
     session: requests.Session,
     url: str,
-    table,
+    store: memory_store.MigrationStore,
     hec_config: Dict[str, str],
     project_root: Path,
     index: str,
@@ -897,7 +878,7 @@ def upload_source_ymls(
         file_id, rel_file, dataset_uuids, _, _ = upload_attack_data_file(
             session=session,
             url=url,
-            table=table,
+            store=store,
             yml_file=yml_file,
             project_root=project_root,
             config=hec_config,
@@ -920,7 +901,7 @@ def upload_detection_test_datasets(
     dataset_specs: List[Dict[str, Any]],
     session: requests.Session,
     url: str,
-    table,
+    store: memory_store.MigrationStore,
     hec_config: Dict[str, str],
     project_root: Path,
     index: str,
@@ -969,8 +950,7 @@ def upload_detection_test_datasets(
             if not event_uuids:
                 continue
 
-            dynamo_utils.store_upload(
-                table=table,
+            store.store_upload(
                 attack_data_uuid=attack_data_uuid,
                 attack_data_file=rel_curated,
                 dataset_name=name,
@@ -1821,12 +1801,6 @@ def add_common_splunk_args(parser: argparse.ArgumentParser) -> None:
         "--index", default=DEFAULT_INDEX,
         help=f"Target Splunk index (default: {DEFAULT_INDEX})",
     )
-    parser.add_argument(
-        "--dynamodb-table",
-        help="DynamoDB table name (default: $DYNAMODB_TABLE or "
-        f"{dynamo_utils.DEFAULT_TABLE_NAME})",
-    )
-    parser.add_argument("--aws-region", help="AWS region (default: $AWS_REGION)")
 
 
 def add_hec_args(parser: argparse.ArgumentParser) -> None:
@@ -1916,17 +1890,9 @@ def parse_arguments() -> argparse.Namespace:
         "matched that detection",
     )
     p_run.add_argument(
-        "--skip-upload", action="store_true",
-        help="Skip uploading (reuse event UUIDs already in DynamoDB)",
-    )
-    p_run.add_argument(
         "--no-delete", action="store_true",
         help="Do not run 'index=<index> | delete' to clean up the index after "
         "the run (cleanup is on by default)",
-    )
-    p_run.add_argument(
-        "--no-clear-dynamodb", action="store_true",
-        help="Do not clear the DynamoDB table after the run (cleared by default)",
     )
     p_run.add_argument(
         "--index-wait", type=int, default=DEFAULT_INDEX_WAIT_SECONDS,
@@ -1940,28 +1906,6 @@ def parse_arguments() -> argparse.Namespace:
     add_common_splunk_args(p_run)
     add_hec_args(p_run)
     add_search_args(p_run)
-
-    # export
-    p_export = sub.add_parser(
-        "export", help="Export events matched by detections (from DynamoDB)"
-    )
-    p_export.add_argument(
-        "--export-dir",
-        help="Folder to write exported logs, one file per dataset named "
-        "<dataset_name>-<attack_data_uuid>.log",
-    )
-    p_export.add_argument(
-        "--update-attack-data", action="store_true",
-        help="Save curated logs into each attack data YAML's own folder and "
-        "update the YAML (new date + datasets section)",
-    )
-    p_export.add_argument(
-        "--update-detection-tests", action="store_true",
-        help="Update each detection YAML's tests section with attack data that "
-        "matched that detection (from DynamoDB)",
-    )
-    add_common_splunk_args(p_export)
-    add_search_args(p_export)
 
     return parser.parse_args()
 
@@ -2001,14 +1945,14 @@ def cmd_upload(args: argparse.Namespace) -> None:
         sys.exit(1)
 
     yaml_files = resolve_attack_data_files(args.attack_data, project_root)
-    table, table_name = get_dynamo_table(args)
+    store = memory_store.MigrationStore()
     print(f"Uploading to Splunk HEC at {hec_config['host']}:{hec_config['port']} "
-          f"(index={args.index}); DynamoDB table={table_name}")
+          f"(index={args.index})")
     print(f"Found {len(yaml_files)} attack data file(s)")
 
     do_upload(
         yaml_files=yaml_files,
-        table=table,
+        store=store,
         hec_config=hec_config,
         project_root=project_root,
         index=args.index,
@@ -2025,8 +1969,7 @@ def cmd_run(args: argparse.Namespace) -> None:
 
     try:
         mgmt_config = load_mgmt_config(args)
-        if not args.skip_upload:
-            hec_config = load_hec_config(args)
+        hec_config = load_hec_config(args)
     except ValueError as exc:
         print(f"Error: {exc}")
         sys.exit(1)
@@ -2038,8 +1981,7 @@ def cmd_run(args: argparse.Namespace) -> None:
     )
     detection_files, ignored_detections = filter_runnable_detections(detection_files)
     attack_data_root = resolve_attack_data_root(args.attack_data_root, project_root)
-    table, table_name = get_dynamo_table(args)
-    print(f"DynamoDB table={table_name}")
+    store = memory_store.MigrationStore()
     print(f"Attack data root: {attack_data_root}")
     if ignored_detections:
         print(f"Ignoring {len(ignored_detections)} detection(s) "
@@ -2060,11 +2002,10 @@ def cmd_run(args: argparse.Namespace) -> None:
 
     hec_session: Optional[requests.Session] = None
     hec_url: Optional[str] = None
-    if not args.skip_upload:
-        if not args.verify_tls:
-            disable_warnings()
-        hec_session = requests.Session()
-        hec_url = build_hec_url(hec_config)
+    if not args.verify_tls:
+        disable_warnings()
+    hec_session = requests.Session()
+    hec_url = build_hec_url(hec_config)
 
     detection_status: Dict[str, str] = {}
     detection_matched_counts: Dict[str, int] = {}
@@ -2100,62 +2041,31 @@ def cmd_run(args: argparse.Namespace) -> None:
             continue
         test_dataset_count += len(dataset_specs)
 
-        if args.skip_upload:
-            print("\nSkipping upload; loading event UUIDs from DynamoDB")
-            uuid_map: Dict[str, Dict[str, Any]] = {}
-            for folder, folder_specs in _group_detection_datasets_by_folder(
-                dataset_specs
-            ).items():
-                attack_data_uuid = _attack_data_uuid_for_folder(folder)
-                if not attack_data_uuid:
-                    continue
-                datasets = dynamo_utils.get_uploads_for_attack_data(
-                    table, attack_data_uuid
-                )
-                if not datasets:
-                    continue
-                curated_path = curated_attack_data_path(folder)
-                dataset_meta = {
-                    spec["name"]: {
-                        "source": spec["source"],
-                        "sourcetype": spec["sourcetype"],
-                        "path": spec["repo_path"],
-                    }
-                    for spec in folder_specs
-                }
-                uuid_map[attack_data_uuid] = {
-                    "file": _relative(curated_path, project_root),
-                    "datasets": datasets,
-                    "dataset_meta": dataset_meta,
-                    "output_folder": str(folder),
-                    "curated_path": str(curated_path.resolve()),
-                }
-        else:
-            uuid_map = upload_detection_test_datasets(
-                dataset_specs=dataset_specs,
-                session=hec_session,
-                url=hec_url,
-                table=table,
-                hec_config=hec_config,
-                project_root=project_root,
-                index=args.index,
-                batch_size=args.batch_size,
-                verify_tls=args.verify_tls,
-            )
+        uuid_map = upload_detection_test_datasets(
+            dataset_specs=dataset_specs,
+            session=hec_session,
+            url=hec_url,
+            store=store,
+            hec_config=hec_config,
+            project_root=project_root,
+            index=args.index,
+            batch_size=args.batch_size,
+            verify_tls=args.verify_tls,
+        )
 
         if not any(entry["datasets"] for entry in uuid_map.values()):
             print("  ! No event UUIDs uploaded for this detection; skipping")
             detection_status[det_path] = "upload_failed"
             continue
 
-        if not args.skip_upload and args.index_wait > 0:
+        if args.index_wait > 0:
             print(f"  Waiting {args.index_wait}s for Splunk indexing...")
             time.sleep(args.index_wait)
 
         matched, _, status = run_single_detection(
             detection_file=det_file,
             service=service,
-            table=table,
+            store=store,
             uuid_map=uuid_map,
             earliest=args.earliest,
             latest=args.latest,
@@ -2207,8 +2117,7 @@ def cmd_run(args: argparse.Namespace) -> None:
                 ):
                     updated_detection_files.add(det_path)
 
-        do_cleanup = not args.no_delete and not args.skip_upload
-        if do_cleanup:
+        if not args.no_delete:
             deleted = splunk_search.delete_index_data(service, args.index)
             print(f"    deleted {deleted} event(s) from index={args.index}")
 
@@ -2248,50 +2157,6 @@ def cmd_run(args: argparse.Namespace) -> None:
         ignored_detections=ignored_detections,
     )
 
-    if not args.no_clear_dynamodb:
-        removed = dynamo_utils.clear_table(table)
-        print(f"\nDynamoDB cleanup: removed {removed} item(s) from {table_name}")
-
-
-def cmd_export(args: argparse.Namespace) -> None:
-    project_root = get_project_root()
-    try:
-        mgmt_config = load_mgmt_config(args)
-    except ValueError as exc:
-        print(f"Error: {exc}")
-        sys.exit(1)
-
-    table, table_name = get_dynamo_table(args)
-    print(f"DynamoDB table={table_name}")
-    uuid_map = dynamo_utils.get_all_uploads(table)
-    matched = dynamo_utils.get_all_matched_host_uuids(table)
-    print(f"Found {len(uuid_map)} attack data file(s) and "
-          f"{len(matched)} matched host UUID(s) in DynamoDB")
-
-    if not args.verify_ssl:
-        disable_warnings()
-    service = splunk_search.connect(
-        host=mgmt_config["host"],
-        port=mgmt_config["port"],
-        username=mgmt_config["username"],
-        password=mgmt_config["password"],
-        verify_ssl=args.verify_ssl,
-    )
-    do_export(
-        service=service,
-        index=args.index,
-        uuid_map=uuid_map,
-        matched_hosts=matched,
-        export_dir=args.export_dir,
-        update_attack_data=args.update_attack_data,
-        project_root=project_root,
-        earliest=args.earliest,
-        latest=args.latest,
-    )
-    if args.update_detection_tests:
-        detection_matches = dynamo_utils.get_all_detection_matches(table)
-        do_update_detection_tests(detection_matches, uuid_map, project_root)
-
 
 def main() -> None:
     args = parse_arguments()
@@ -2300,8 +2165,6 @@ def main() -> None:
         cmd_upload(args)
     elif args.command == "run":
         cmd_run(args)
-    elif args.command == "export":
-        cmd_export(args)
     else:  # pragma: no cover - argparse enforces valid commands
         print(f"Unknown command: {args.command}")
         sys.exit(1)

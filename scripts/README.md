@@ -9,7 +9,7 @@ For each detection (processed alphabetically):
 1. **resolve** – Read `tests[].attack_data[].data` URLs and locate source attack
    data YAML files in the repository.
 2. **upload** – Replay every dataset from those YAMLs to Splunk HEC with a per-line
-   UUID as `host`. Mappings are stored in **DynamoDB**.
+   UUID as `host`. Mappings are kept in memory for the duration of the run.
 3. **detect** – Run only that detection (SPL rewritten so `host` is an output field).
 4. **curate** – Export matched events and merge them into `{technique}_{folder}.yml`
    (e.g. `T1001_snapattack.yml`) without modifying the original source YAML.
@@ -25,10 +25,10 @@ targeted export of just the "interesting" data instead of the entire dataset.
 
 | File | Purpose |
 | --- | --- |
-| `migrate.py` | CLI entry point with `upload`, `run`, and `export` subcommands |
+| `migrate.py` | CLI entry point with `upload` and `run` subcommands |
 | `detection_utils.py` | Discover/parse detection YAML + rewrite SPL to output `host` |
 | `splunk_search.py` | Run detections over the Splunk REST API + export raw events |
-| `dynamo_utils.py` | DynamoDB store (replaces the old filesystem UUID map) |
+| `memory_store.py` | In-memory store for upload UUID maps and detection attribution |
 | `requirements.txt` | Python dependencies |
 
 ## Installation
@@ -37,7 +37,7 @@ targeted export of just the "interesting" data instead of the entire dataset.
 pip install -r scripts/requirements.txt
 ```
 
-Dependencies: `requests`, `urllib3`, `pyyaml`, `splunk-sdk`, `boto3`.
+Dependencies: `requests`, `urllib3`, `pyyaml`, `splunk-sdk`, `python-dotenv`.
 
 You also need a local clone of security_content for the detections:
 
@@ -51,86 +51,6 @@ git clone https://github.com/splunk/security_content.git
 > installed on the Splunk instance, otherwise the searches will error. Detections whose
 > searches fail are logged and skipped; the run continues.
 
-## DynamoDB table setup
-
-The pipeline stores its UUID map and detection results in a single DynamoDB table.
-Create it once, manually.
-
-### Schema
-
-| Attribute | Type | Role |
-| --- | --- | --- |
-| `pk` | String | Partition key |
-| `sk` | String | Sort key |
-
-- **Billing mode:** `PAY_PER_REQUEST` (on-demand) is recommended.
-- **No secondary indexes** are required.
-
-### Create with the AWS CLI
-
-```bash
-aws dynamodb create-table \
-  --table-name attack_data_map \
-  --attribute-definitions \
-      AttributeName=pk,AttributeType=S \
-      AttributeName=sk,AttributeType=S \
-  --key-schema \
-      AttributeName=pk,KeyType=HASH \
-      AttributeName=sk,KeyType=RANGE \
-  --billing-mode PAY_PER_REQUEST \
-  --region <your-region>
-```
-
-Wait until the table is active:
-
-```bash
-aws dynamodb wait table-exists --table-name attack_data_map --region <your-region>
-```
-
-### Create in the AWS Console
-
-1. Open **DynamoDB → Tables → Create table**.
-2. **Table name:** `attack_data_map`
-3. **Partition key:** `pk` (String)
-4. **Sort key:** `sk` (String)
-5. **Table settings:** choose *Customize settings* → **Capacity mode:** *On-demand*.
-6. Create table.
-
-### Item layout
-
-Uploads and detection results for the same attack data file share the same partition
-key, so a single query on `pk` returns everything about that file. UUID lists are
-chunked (5,000 per item) to stay under DynamoDB's 400 KB item-size limit.
-
-**Upload record**
-
-```
-pk = ATTACK_DATA#<attack_data_uuid>
-sk = DATASET#<dataset_name>#<chunk_index>
-record_type      = upload
-attack_data_uuid, attack_data_file, dataset_name,
-source, sourcetype, index_name, chunk_index, event_count,
-event_uuids      = [<uuid>, ...]
-```
-
-**Detection result record**
-
-```
-pk = ATTACK_DATA#<attack_data_uuid>
-sk = DETECTION#<detection_id>#<chunk_index>
-record_type        = detection_result
-attack_data_uuid, detection_id, detection_name, detection_file,
-chunk_index, matched_count, updated_at,
-matched_host_uuids = [<uuid>, ...]
-```
-
-### AWS credentials
-
-`boto3` uses the standard AWS credential chain (environment variables, shared
-credentials file, or an IAM role). The identity needs
-`dynamodb:PutItem`, `dynamodb:BatchWriteItem`, `dynamodb:Query`, and
-`dynamodb:Scan` on the table.
-
 ## Configuration
 
 CLI flags override environment variables.
@@ -140,19 +60,15 @@ CLI flags override environment variables.
 | `SPLUNK_HOST` | `--host` | – (required) | all |
 | `SPLUNK_HEC_TOKEN` | `--hec-token` | – (required) | upload |
 | `SPLUNK_HEC_PORT` | `--hec-port` | `8088` | upload |
-| `SPLUNK_USERNAME` | `--username` | – (required) | detect/export |
-| `SPLUNK_PASSWORD` | `--password` | – (required) | detect/export |
-| `SPLUNK_PORT` | `--mgmt-port` | `8089` | detect/export |
-| `DYNAMODB_TABLE` | `--dynamodb-table` | `attack_data_map` | all |
-| `AWS_REGION` | `--aws-region` | (boto3 default) | all |
+| `SPLUNK_USERNAME` | `--username` | – (required) | run |
+| `SPLUNK_PASSWORD` | `--password` | – (required) | run |
+| `SPLUNK_PORT` | `--mgmt-port` | `8089` | run |
 
 ```bash
 export SPLUNK_HOST="192.168.1.100"
 export SPLUNK_HEC_TOKEN="00000000-0000-0000-0000-000000000000"
 export SPLUNK_USERNAME="admin"
 export SPLUNK_PASSWORD="changeme"
-export DYNAMODB_TABLE="attack_data_map"
-export AWS_REGION="us-east-1"
 ```
 
 ## Usage
@@ -166,14 +82,14 @@ by detection name. For each detection:
    corresponding source attack data YAML files in the repository (original YAMLs
    such as `snapattack.yml` are never modified).
 2. **Upload** — replay every dataset from those YAMLs to Splunk (per-line UUID
-   as `host`; mappings stored in DynamoDB).
+   as `host`; mappings kept in memory during the run).
 3. **Detect** — run only that detection (with `host` preserved in SPL output).
 4. **Export & curate** — export matched events per dataset and merge them into a
    curated YAML named `{technique}_{folder}.yml` (e.g. `T1001_snapattack.yml` in
    `datasets/attack_techniques/T1001/snapattack/`). If the curated YAML already
    exists, new datasets are appended.
 5. **Cleanup** — delete uploaded events from the Splunk index before the next
-   detection. After the full run, DynamoDB is cleared by default.
+   detection.
 
 ```bash
 python scripts/migrate.py run \
@@ -208,8 +124,7 @@ python scripts/migrate.py run \
   --detection scripts/detection_tests \
   --update-detection-tests \
   --export-dir exported \
-  --no-delete \
-  --no-clear-dynamodb
+  --no-delete
 ```
 
 `--attack-data-root` defaults to `datasets` and controls where detection test
@@ -217,8 +132,7 @@ URLs are resolved. `--update-attack-data` is legacy: it additionally mutates the
 **original** source YAML in place (curated YAML creation is always on for `run`).
 
 Splunk index cleanup after each detection requires the `can_delete` capability.
-Disable with `--no-delete`. DynamoDB cleanup after the full run is disabled with
-`--no-clear-dynamodb`.
+Disable with `--no-delete`.
 
 At the end of the run, a **DETECTIONS NOT UPDATED** summary lists detections that
 did not produce curated output (or detection test updates when
@@ -228,15 +142,6 @@ did not produce curated output (or detection test updates when
 
 ```bash
 python scripts/migrate.py upload --attack-data datasets/malware/qakbot
-```
-
-### Export previously matched events
-
-Reads all uploads and detection-matched host UUIDs from DynamoDB and exports
-them, one file per dataset:
-
-```bash
-python scripts/migrate.py export --export-dir exported
 ```
 
 ### Exported files
@@ -270,7 +175,7 @@ later runs append new dataset entries to the existing curated YAML.
 
 ### Legacy: updating source attack data in place (`--update-attack-data`)
 
-With `--update-attack-data` on `export` (or `run` for legacy behavior), curated
+With `--update-attack-data` on `run` (legacy behavior), curated per-dataset logs
 per-dataset logs are written into the **original** attack data YAML's folder and
 that YAML is updated in place. The default `run` workflow uses separate curated
 YAML files instead.
@@ -294,7 +199,7 @@ with `--export-dir`, or used on its own. The original log files are left on disk
 
 ### Updating detection tests (`--update-detection-tests`)
 
-With `--update-detection-tests` (available on `run` and `export`), each detection
+With `--update-detection-tests` on `run`, each detection YAML's `tests` section
 YAML's `tests` section is rewritten to reference the attack data that matched
 **that specific detection**. For every matched dataset, an `attack_data` entry is
 added using the standard GitHub URL format:
@@ -354,4 +259,3 @@ Example:
 - Matched hosts are intersected with the UUIDs actually uploaded in the run, so
   pre-existing data in the target index is ignored during attribution.
 - The target index defaults to `test` (`--index` to change).
-```

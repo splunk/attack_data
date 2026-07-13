@@ -2,5 +2,4 @@ requests
 urllib3
 pyyaml
 splunk-sdk
-boto3
 python-dotenv
