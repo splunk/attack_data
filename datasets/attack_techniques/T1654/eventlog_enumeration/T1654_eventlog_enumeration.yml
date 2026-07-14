@@ -1,0 +1,13 @@
+author: STRT
+id: 92a680fb-c51a-477d-a2ae-c7b3f5dba138
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows EventLog Recon Activity
+  Using Log Query Utilities
+environment: attack_range
+directory: eventlog_enumeration
+mitre_technique: []
+datasets:
+- name: eventlog_enumeration
+  path: /datasets/attack_techniques/T1654/eventlog_enumeration/eventlog_enumeration-92a680fb-c51a-477d-a2ae-c7b3f5dba138.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

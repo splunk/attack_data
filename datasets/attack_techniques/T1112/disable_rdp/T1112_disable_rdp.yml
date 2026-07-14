@@ -1,0 +1,13 @@
+author: STRT
+id: 58b6a341-40b5-45b8-b231-786c78b7c6a6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry Disable
+  RDP
+environment: attack_range
+directory: disable_rdp
+mitre_technique: []
+datasets:
+- name: fdenytsconnection-reg
+  path: /datasets/attack_techniques/T1112/disable_rdp/fdenytsconnection-reg-58b6a341-40b5-45b8-b231-786c78b7c6a6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

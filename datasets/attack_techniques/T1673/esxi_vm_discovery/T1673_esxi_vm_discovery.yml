@@ -1,0 +1,12 @@
+author: STRT
+id: 9126b4fe-fb4e-4173-b33a-cda21f438f14
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi VM Discovery
+environment: attack_range
+directory: esxi_vm_discovery
+mitre_technique: []
+datasets:
+- name: esxi_vm_discovery
+  path: /datasets/attack_techniques/T1673/esxi_vm_discovery/esxi_vm_discovery-9126b4fe-fb4e-4173-b33a-cda21f438f14.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

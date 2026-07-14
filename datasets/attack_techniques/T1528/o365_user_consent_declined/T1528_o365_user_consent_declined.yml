@@ -1,0 +1,13 @@
+author: STRT
+id: 515e831c-ccbc-4548-a172-07643fb58662
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 User Consent Denied
+  for OAuth Application
+environment: attack_range
+directory: o365_user_consent_declined
+mitre_technique: []
+datasets:
+- name: o365_user_consent_declined
+  path: /datasets/attack_techniques/T1528/o365_user_consent_declined/o365_user_consent_declined-515e831c-ccbc-4548-a172-07643fb58662.log
+  sourcetype: o365:graph:api
+  source: o365

@@ -1,0 +1,13 @@
+author: STRT
+id: 05171fd9-87f0-4140-a4ae-54413921df2e
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerView Constrained
+  Delegation Discovery
+environment: attack_range
+directory: windows_powerview_constrained_delegation_discovery
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1018/windows_powerview_constrained_delegation_discovery/windows-xml-05171fd9-87f0-4140-a4ae-54413921df2e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

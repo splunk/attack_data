@@ -1,0 +1,13 @@
+author: STRT
+id: c2ff8a17-564f-469a-bfa9-816295d92851
+date: '2026-07-10'
+description: Curated attack data generated for detection Excessive File Deletion In
+  WinDefender Folder
+environment: attack_range
+directory: excessive_file_del_in_windefender_dir
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1485/excessive_file_del_in_windefender_dir/sysmon-c2ff8a17-564f-469a-bfa9-816295d92851.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

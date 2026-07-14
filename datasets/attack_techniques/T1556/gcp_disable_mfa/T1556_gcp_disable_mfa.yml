@@ -1,0 +1,13 @@
+author: STRT
+id: 1ce964dc-04c5-476d-af91-db04464804ca
+date: '2026-07-10'
+description: Curated attack data generated for detection GCP Multi-Factor Authentication
+  Disabled
+environment: attack_range
+directory: gcp_disable_mfa
+mitre_technique: []
+datasets:
+- name: gws_admin
+  path: /datasets/attack_techniques/T1556/gcp_disable_mfa/gws_admin-1ce964dc-04c5-476d-af91-db04464804ca.log
+  sourcetype: gws:reports:admin
+  source: gws:reports:admin

@@ -1,0 +1,13 @@
+author: STRT
+id: a7ebe6a0-3155-4858-becc-b73d1894bf56
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Multiple Service Principals
+  Created by SP
+environment: attack_range
+directory: o365_multiple_service_principals_created
+mitre_technique: []
+datasets:
+- name: o365_multiple_service_principals_created
+  path: /datasets/attack_techniques/T1136.003/o365_multiple_service_principals_created/o365_multiple_service_principals_created-a7ebe6a0-3155-4858-becc-b73d1894bf56.log
+  sourcetype: o365:management:activity
+  source: o365

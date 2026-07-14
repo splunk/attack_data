@@ -1,0 +1,12 @@
+author: STRT
+id: 3eb5f12e-a0aa-41e1-9cb1-59c5c461245c
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux System Network Discovery
+environment: attack_range
+directory: linux_net_discovery
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1016/atomic_red_team/linux_net_discovery/sysmon_linux-3eb5f12e-a0aa-41e1-9cb1-59c5c461245c.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

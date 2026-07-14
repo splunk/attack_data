@@ -1,0 +1,13 @@
+author: STRT
+id: 5456d4ec-14bc-4ed1-ac21-b01e2758c096
+date: '2026-07-10'
+description: Curated attack data generated for detection Potential Telegram API Request
+  Via CommandLine
+environment: attack_range
+directory: telegram_api_cli
+mitre_technique: []
+datasets:
+- name: telegram_cli
+  path: /datasets/attack_techniques/T1102.002/telegram_api_cli/telegram_cli-5456d4ec-14bc-4ed1-ac21-b01e2758c096.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

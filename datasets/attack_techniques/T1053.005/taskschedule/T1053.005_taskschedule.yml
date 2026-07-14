@@ -1,0 +1,13 @@
+author: STRT
+id: 6d615581-321d-4c39-9bc2-3fe9e811ac30
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Registry Delete Task
+  SD
+environment: attack_range
+directory: taskschedule
+mitre_technique: []
+datasets:
+- name: sd_delete_windows-sysmon
+  path: /datasets/attack_techniques/T1053.005/taskschedule/sd_delete_windows-sysmon-6d615581-321d-4c39-9bc2-3fe9e811ac30.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

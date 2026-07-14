@@ -1,0 +1,13 @@
+author: STRT
+id: 546cf1b0-109e-48a2-8a48-8b012932852c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD AdminSDHolder
+  ACL Modified
+environment: attack_range
+directory: adminsdholder_modified
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1546/adminsdholder_modified/windows-security-546cf1b0-109e-48a2-8a48-8b012932852c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

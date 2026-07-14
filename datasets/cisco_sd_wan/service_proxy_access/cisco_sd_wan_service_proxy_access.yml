@@ -1,0 +1,13 @@
+author: STRT
+id: 8f4269aa-ea6d-48f2-928b-cbd33438887e
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco SD-WAN - Arbitrary
+  File Overwrite Exploitation Activity
+environment: attack_range
+directory: service_proxy_access
+mitre_technique: []
+datasets:
+- name: serviceproxy_access
+  path: /datasets/cisco_sd_wan/service_proxy_access/serviceproxy_access-8f4269aa-ea6d-48f2-928b-cbd33438887e.log
+  sourcetype: cisco:sdwan:access
+  source: /var/log/nms/containers/service-proxy/serviceproxy-access.log

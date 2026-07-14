@@ -1,0 +1,13 @@
+author: STRT
+id: d9209f7d-9b4d-4292-b9d8-1ec11b1d5cd7
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Handle Duplication
+  in Known UAC-Bypass Binaries
+environment: attack_range
+directory: uac_process_handle_dup
+mitre_technique: []
+datasets:
+- name: Computerdefaults_access
+  path: /datasets/attack_techniques/T1134.001/uac_process_handle_dup/Computerdefaults_access-d9209f7d-9b4d-4292-b9d8-1ec11b1d5cd7.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

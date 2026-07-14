@@ -1,0 +1,13 @@
+author: STRT
+id: c4065433-725b-4e1d-87ff-559a08a594d4
+date: '2026-07-13'
+description: Curated attack data generated for detection Suspicious Process With Discord
+  DNS Query
+environment: attack_range
+directory: discord_dnsquery
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1059.005/discord_dnsquery/sysmon-c4065433-725b-4e1d-87ff-559a08a594d4.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

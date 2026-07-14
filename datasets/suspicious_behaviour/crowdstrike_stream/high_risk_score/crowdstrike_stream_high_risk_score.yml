@@ -1,0 +1,13 @@
+author: STRT
+id: 36ffa385-4f30-4838-bbb1-411aa1eb96c0
+date: '2026-07-10'
+description: Curated attack data generated for detection Crowdstrike High Identity
+  Risk Severity
+environment: attack_range
+directory: high_risk_score
+mitre_technique: []
+datasets:
+- name: crowdstrike_high_riskscore_cleaned
+  path: /datasets/suspicious_behaviour/crowdstrike_stream/high_risk_score/crowdstrike_high_riskscore_cleaned-36ffa385-4f30-4838-bbb1-411aa1eb96c0.log
+  sourcetype: crowdstrike:identities
+  source: crowdstrike:identities

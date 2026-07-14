@@ -1,0 +1,13 @@
+author: STRT
+id: a5beb523-07a7-49e0-bf8e-29c06f05b6c7
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Remote Management
+  Execute Shell
+environment: attack_range
+directory: wirm_execute_shell
+mitre_technique: []
+datasets:
+- name: winrshost_pwh
+  path: /datasets/attack_techniques/T1021.006/wirm_execute_shell/winrshost_pwh-a5beb523-07a7-49e0-bf8e-29c06f05b6c7.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

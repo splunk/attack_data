@@ -1,0 +1,12 @@
+author: STRT
+id: 8d5e84d8-b0ab-4cd5-af4e-990e313fb89e
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Excessive Security Scanning
+environment: attack_range
+directory: aws_security_scanner
+mitre_technique: []
+datasets:
+- name: aws_security_scanner
+  path: /datasets/attack_techniques/T1526/aws_security_scanner/aws_security_scanner-8d5e84d8-b0ab-4cd5-af4e-990e313fb89e.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

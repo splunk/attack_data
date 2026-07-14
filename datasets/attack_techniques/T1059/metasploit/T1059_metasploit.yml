@@ -1,0 +1,17 @@
+author: STRT
+id: b472a318-72a3-4118-8538-ca337d188092
+date: '2026-07-11'
+description: Curated attack data generated for detection Powershell Load Module in
+  Meterpreter
+environment: attack_range
+directory: metasploit
+mitre_technique: []
+datasets:
+- name: msf.powershell.powershell
+  path: /datasets/attack_techniques/T1059/metasploit/msf.powershell.powershell-b472a318-72a3-4118-8538-ca337d188092.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: apachebench_windows-sysmon
+  path: /datasets/attack_techniques/T1059/metasploit/apachebench_windows-sysmon-b472a318-72a3-4118-8538-ca337d188092.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

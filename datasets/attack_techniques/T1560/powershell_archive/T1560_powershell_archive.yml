@@ -1,0 +1,13 @@
+author: STRT
+id: e7a89c2f-a90f-4fc9-8f2d-3e0a8f46230f
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Archive Collected
+  Data via Powershell
+environment: attack_range
+directory: powershell_archive
+mitre_technique: []
+datasets:
+- name: powershell_archive
+  path: /datasets/attack_techniques/T1560/powershell_archive/powershell_archive-e7a89c2f-a90f-4fc9-8f2d-3e0a8f46230f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

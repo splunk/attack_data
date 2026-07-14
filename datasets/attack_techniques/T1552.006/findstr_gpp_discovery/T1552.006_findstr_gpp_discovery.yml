@@ -1,0 +1,12 @@
+author: STRT
+id: 433ca3af-3a58-4c55-86c8-b385b77e8e82
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Findstr GPP Discovery
+environment: attack_range
+directory: findstr_gpp_discovery
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1552.006/findstr_gpp_discovery/windows-security-433ca3af-3a58-4c55-86c8-b385b77e8e82.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

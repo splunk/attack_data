@@ -1,0 +1,13 @@
+author: STRT
+id: 71211adc-ea33-4398-995e-804f2e96b0b9
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows MMC Loaded Script
+  Engine DLL
+environment: attack_range
+directory: mmc_script_modules
+mitre_technique: []
+datasets:
+- name: loaded_module_mmc
+  path: /datasets/attack_techniques/T1620/mmc_script_modules/loaded_module_mmc-71211adc-ea33-4398-995e-804f2e96b0b9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

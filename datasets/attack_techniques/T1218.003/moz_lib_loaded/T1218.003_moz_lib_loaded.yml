@@ -1,0 +1,13 @@
+author: STRT
+id: 87bda6d8-b57c-4daf-9b65-b6d50d7ca9c3
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Unusual Process Load
+  Mozilla NSS-Mozglue Module
+environment: attack_range
+directory: moz_lib_loaded
+mitre_technique: []
+datasets:
+- name: mozilla_lib
+  path: /datasets/attack_techniques/T1218.003/moz_lib_loaded/mozilla_lib-87bda6d8-b57c-4daf-9b65-b6d50d7ca9c3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

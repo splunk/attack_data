@@ -1,0 +1,12 @@
+author: STRT
+id: 35c17afd-e411-48d0-a84f-a874498feb43
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Visudo Utility Execution
+environment: attack_range
+directory: visudo
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.003/visudo/sysmon_linux-35c17afd-e411-48d0-a84f-a874498feb43.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

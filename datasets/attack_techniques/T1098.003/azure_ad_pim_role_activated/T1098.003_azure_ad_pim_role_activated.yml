@@ -1,0 +1,12 @@
+author: STRT
+id: b79a7552-e43a-40dc-97a2-06cbbbb9a6e1
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD PIM Role Assigned
+environment: attack_range
+directory: azure_ad_pim_role_activated
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1098.003/azure_ad_pim_role_activated/azure-audit-b79a7552-e43a-40dc-97a2-06cbbbb9a6e1.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

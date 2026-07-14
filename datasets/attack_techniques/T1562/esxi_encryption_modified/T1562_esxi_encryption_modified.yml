@@ -1,0 +1,13 @@
+author: STRT
+id: e179ee5f-4763-4ee8-befe-a11e8f127ecc
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Encryption Settings
+  Modified
+environment: attack_range
+directory: esxi_encryption_modified
+mitre_technique: []
+datasets:
+- name: esxi_encryption_modified
+  path: /datasets/attack_techniques/T1562/esxi_encryption_modified/esxi_encryption_modified-e179ee5f-4763-4ee8-befe-a11e8f127ecc.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

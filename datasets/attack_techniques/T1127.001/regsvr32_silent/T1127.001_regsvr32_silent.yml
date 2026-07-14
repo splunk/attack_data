@@ -1,0 +1,13 @@
+author: STRT
+id: 8e1ffe51-8106-4a75-9106-81b6fc6a9a02
+date: '2026-07-10'
+description: Curated attack data generated for detection MSBuild Suspicious Spawned
+  By Script Process
+environment: attack_range
+directory: regsvr32_silent
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1127.001/regsvr32_silent/sysmon-8e1ffe51-8106-4a75-9106-81b6fc6a9a02.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

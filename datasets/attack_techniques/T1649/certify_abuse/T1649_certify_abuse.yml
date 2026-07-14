@@ -1,0 +1,17 @@
+author: STRT
+id: bda8f57e-f3f3-4c6b-b82f-fe1737c273c3
+date: '2026-07-11'
+description: Curated attack data generated for detection Detect Certify Command Line
+  Arguments
+environment: attack_range
+directory: certify_abuse
+mitre_technique: []
+datasets:
+- name: certify_esc1_abuse_sysmon
+  path: /datasets/attack_techniques/T1649/certify_abuse/certify_esc1_abuse_sysmon-bda8f57e-f3f3-4c6b-b82f-fe1737c273c3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: certify_esc1_abuse_powershell
+  path: /datasets/attack_techniques/T1649/certify_abuse/certify_esc1_abuse_powershell-bda8f57e-f3f3-4c6b-b82f-fe1737c273c3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

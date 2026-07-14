@@ -1,0 +1,12 @@
+author: STRT
+id: a76d589b-6f7f-4763-b57e-3ae7effd2bee
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Sudo OR Su Execution
+environment: attack_range
+directory: sudo_su
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.003/sudo_su/sysmon_linux-a76d589b-6f7f-4763-b57e-3ae7effd2bee.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

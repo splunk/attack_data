@@ -1,0 +1,13 @@
+author: STRT
+id: 96aca243-cd8f-4d22-b4d7-7b44b43436e3
+date: '2026-07-10'
+description: Curated attack data generated for detection DNS Exfiltration Using Nslookup
+  App
+environment: attack_range
+directory: nslookup_exfil
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1048.003/nslookup_exfil/windows-sysmon-96aca243-cd8f-4d22-b4d7-7b44b43436e3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

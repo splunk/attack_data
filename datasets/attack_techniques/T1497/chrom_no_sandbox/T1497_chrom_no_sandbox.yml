@@ -1,0 +1,13 @@
+author: STRT
+id: 89843d28-16d2-44a5-a1c4-c3bf76645db0
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Chromium Browser
+  No Security Sandbox Process
+environment: attack_range
+directory: chrom_no_sandbox
+mitre_technique: []
+datasets:
+- name: chrome-no_sandbox
+  path: /datasets/attack_techniques/T1497/chrom_no_sandbox/chrome-no_sandbox-89843d28-16d2-44a5-a1c4-c3bf76645db0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

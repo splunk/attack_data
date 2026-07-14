@@ -1,0 +1,13 @@
+author: STRT
+id: 107f3594-e347-4e22-86d4-e4e33072eef7
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Deleting Critical Directory
+  Using RM Command
+environment: attack_range
+directory: rm_shred_critical_dir
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1485/rm_shred_critical_dir/sysmon_linux-107f3594-e347-4e22-86d4-e4e33072eef7.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

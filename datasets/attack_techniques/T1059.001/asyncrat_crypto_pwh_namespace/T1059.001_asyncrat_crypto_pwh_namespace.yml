@@ -1,0 +1,13 @@
+author: STRT
+id: fadfa938-6796-41df-8d05-0be4c9dba4cc
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Powershell Cryptography
+  Namespace
+environment: attack_range
+directory: asyncrat_crypto_pwh_namespace
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1059.001/asyncrat_crypto_pwh_namespace/windows-powershell-xml-fadfa938-6796-41df-8d05-0be4c9dba4cc.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: 4e994cc4-1dfd-4cd0-8b3d-cbaf98294e29
+date: '2026-07-13'
+description: Curated attack data generated for detection Windows Abused Web Services
+environment: attack_range
+directory: njrat_ngrok_connection
+mitre_technique: []
+datasets:
+- name: ngrok
+  path: /datasets/attack_techniques/T1102/njrat_ngrok_connection/ngrok-4e994cc4-1dfd-4cd0-8b3d-cbaf98294e29.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
