@@ -1,0 +1,11 @@
+author: Nasreddine Bencherchali, Splunk
+id: a0b50980-bad7-4f55-be33-3210f3902bdc
+date: '2025-06-23'
+description: Generated datasets for Cisco Network Visibility Module Flow Data EventType.
+environment: custom
+mitre_technique: []
+datasets:
+- name: nvm_flowdata
+  path: /datasets/cisco_network_visibility_module/cisco_nvm_flowdata/nvm_flowdata.log
+  source: not_applicable
+  sourcetype: cisco:nvm:flowdata:v2
