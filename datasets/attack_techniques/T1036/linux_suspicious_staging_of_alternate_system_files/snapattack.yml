@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: ded21f8a-60f7-49eb-a468-19e98b7e480d
+date: '2026-07-20'
+description: Generated datasets for Linux Suspicious Staging of Alternate System Files
+    in attack range.
+environment: attack_range
+directory: linux_suspicious_staging_of_alternate_system_files
+mitre_technique:
+- T1036
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1036/linux_suspicious_staging_of_alternate_system_files/snapattack_linux.log

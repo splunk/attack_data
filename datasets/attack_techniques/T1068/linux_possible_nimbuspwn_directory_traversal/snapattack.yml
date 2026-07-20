@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 61442f32-cabb-4650-ae52-f1753836f19f
+date: '2026-07-20'
+description: Generated datasets for Linux Possible Nimbuspwn Directory Traversal in
+    attack range.
+environment: attack_range
+directory: linux_possible_nimbuspwn_directory_traversal
+mitre_technique:
+- T1068
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1068/linux_possible_nimbuspwn_directory_traversal/snapattack_linux.log

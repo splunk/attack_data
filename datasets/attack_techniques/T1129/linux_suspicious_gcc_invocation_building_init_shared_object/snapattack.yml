@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 49235d80-cc53-4caf-820d-4ed94aed55a6
+date: '2026-07-20'
+description: Generated datasets for Linux Suspicious GCC Invocation Building Init
+    Shared Object in attack range.
+environment: attack_range
+directory: linux_suspicious_gcc_invocation_building_init_shared_object
+mitre_technique:
+- T1129
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1129/linux_suspicious_gcc_invocation_building_init_shared_object/snapattack_linux.log

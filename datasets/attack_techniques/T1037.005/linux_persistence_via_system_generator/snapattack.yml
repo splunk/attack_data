@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 3c5f6d29-63da-4f5f-adca-4471b49c8c04
+date: '2026-07-20'
+description: Generated datasets for Linux Persistence via System Generator in attack
+    range.
+environment: attack_range
+directory: linux_persistence_via_system_generator
+mitre_technique:
+- T1037.005
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1037.005/linux_persistence_via_system_generator/snapattack_linux.log

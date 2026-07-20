@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 1e8ff302-a71a-46bc-845f-9f593a8df7dd
+date: '2026-07-16'
+description: Generated datasets for Linux Binary Executed from Shared Memory Directory
+    in attack range.
+environment: attack_range
+directory: linux_binary_executed_from_shared_memory_directory
+mitre_technique:
+- T1059
+datasets:
+-   name: snapattack
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1059/linux_binary_executed_from_shared_memory_directory/snapattack_linux.log

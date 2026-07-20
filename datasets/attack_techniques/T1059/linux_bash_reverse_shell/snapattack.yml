@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 35cc06fa-17c7-42ec-83f9-22f3ad88d47b
+date: '2026-07-20'
+description: Generated datasets for Linux Bash Reverse Shell in attack range.
+environment: attack_range
+directory: linux_bash_reverse_shell
+mitre_technique:
+- T1059
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1059/linux_bash_reverse_shell/snapattack_linux.log

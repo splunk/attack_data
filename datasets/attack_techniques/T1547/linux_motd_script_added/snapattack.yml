@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 977050e9-44e9-4075-a4c8-58235394aac6
+date: '2026-07-20'
+description: Generated datasets for Linux MOTD Script Added in attack range.
+environment: attack_range
+directory: linux_motd_script_added
+mitre_technique:
+- T1547
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1547/linux_motd_script_added/snapattack_linux.log

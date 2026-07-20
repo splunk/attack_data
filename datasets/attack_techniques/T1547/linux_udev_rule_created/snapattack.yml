@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: d9e280e9-4036-4db9-8ab3-2d5d0741f0b5
+date: '2026-07-20'
+description: Generated datasets for Linux UDEV Rule Created in attack range.
+environment: attack_range
+directory: linux_udev_rule_created
+mitre_technique:
+- T1547
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1547/linux_udev_rule_created/snapattack_linux.log

@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 8aef6445-a594-44ce-901c-805a59c803c9
+date: '2026-07-20'
+description: Generated datasets for Linux Suspicious XDG Autostart in attack range.
+environment: attack_range
+directory: linux_suspicious_xdg_autostart
+mitre_technique:
+- T1547
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1547/linux_suspicious_xdg_autostart/snapattack_linux.log

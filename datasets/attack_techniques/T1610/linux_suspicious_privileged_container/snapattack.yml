@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 963ad8fb-60b5-4db2-a5e7-0f97e2d29bc6
+date: '2026-07-20'
+description: Generated datasets for Linux Suspicious Privileged Container in attack
+    range.
+environment: attack_range
+directory: linux_suspicious_privileged_container
+mitre_technique:
+- T1610
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1610/linux_suspicious_privileged_container/snapattack_linux.log
