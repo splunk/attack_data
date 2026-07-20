@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 96ea331d-e379-4d05-96fc-d382f3f84629
+date: '2026-07-20'
+description: Generated datasets for Linux Suspicious Sudo Parameter in attack range.
+environment: attack_range
+directory: linux_suspicious_sudo_parameter
+mitre_technique:
+- T1548.003
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1548.003/linux_suspicious_sudo_parameter/snapattack_linux.log

@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 2b3a7fcf-68ad-447c-a9a5-bb2f5e1a6402
+date: '2026-07-20'
+description: Generated datasets for Linux Suspicious Redis Activity in attack range.
+environment: attack_range
+directory: linux_suspicious_redis_activity
+mitre_technique:
+- T1505
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1505/linux_suspicious_redis_activity/snapattack_linux.log

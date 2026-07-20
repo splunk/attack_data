@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 24920c8a-6442-48ad-808d-49682bc3f802
+date: '2026-07-20'
+description: Generated datasets for Linux Netcat Outbound Connection in attack range.
+environment: attack_range
+directory: linux_netcat_outbound_connection
+mitre_technique:
+- T1059.004
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1059.004/linux_netcat_outbound_connection/snapattack_linux.log

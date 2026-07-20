@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: d01afb53-3320-46ce-9590-31df1f5c11b4
+date: '2026-07-20'
+description: Generated datasets for Linux Root execution of id in attack range.
+environment: attack_range
+directory: linux_root_execution_of_id
+mitre_technique:
+- T1033
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1033/linux_root_execution_of_id/snapattack_linux.log

@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: d2e18574-c000-4c63-8478-a59656f3a4f9 
+date: '2026-07-08'
+description: Generated datasets for Linux Suspicious Child of Postgresql in
+    attack range.
+environment: attack_range
+directory: linux_suspicious_child_of_postgresql
+mitre_technique:
+- T1190
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1190/linux_suspicious_child_of_postgresql/snapattack_linux.log

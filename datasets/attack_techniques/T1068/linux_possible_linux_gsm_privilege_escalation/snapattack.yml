@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 9b5ca1df-dff4-40c7-8188-b7bf48500a3e
+date: '2026-07-20'
+description: Generated datasets for Linux Possible Linux GSM Privilege Escalation
+    in attack range.
+environment: attack_range
+directory: linux_possible_linux_gsm_privilege_escalation
+mitre_technique:
+- T1068
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1068/linux_possible_linux_gsm_privilege_escalation/snapattack_linux.log

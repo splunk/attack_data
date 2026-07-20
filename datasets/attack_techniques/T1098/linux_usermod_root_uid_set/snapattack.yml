@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 5bf5a40c-86a8-470e-b356-e7978edb8b0b
+date: '2026-07-20'
+description: Generated datasets for Linux Usermod Root UID Set in attack range.
+environment: attack_range
+directory: linux_usermod_root_uid_set
+mitre_technique:
+- T1098
+datasets:
+-   name: snapattack_linux
+    sourcetype: sysmon:linux
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1098/linux_usermod_root_uid_set/snapattack_linux.log
