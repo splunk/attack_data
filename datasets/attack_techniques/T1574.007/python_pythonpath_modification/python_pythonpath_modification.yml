@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: e5a0e812-8fdd-4aea-ae7a-a8f99e5e7c5e
+date: '2026-07-23'
+description: Generated datasets for Python PYTHONPATH environment variable modification in attack range.
+environment: attack_range
+directory: python_pythonpath_modification
+mitre_technique:
+- T1574.007
+datasets:
+- name: python_pythonpath_modification.log
+  path: /datasets/attack_techniques/T1574.007/python_pythonpath_modification/python_pythonpath_modification.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

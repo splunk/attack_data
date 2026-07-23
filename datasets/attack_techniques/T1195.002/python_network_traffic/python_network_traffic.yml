@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 21cfdb7e-032e-467c-8fa7-688b20b1cd7b
+date: '2026-07-23'
+description: Generated datasets for Python network traffic in attack range.
+environment: attack_range
+directory: python_network_traffic
+mitre_technique:
+- T1195.002
+datasets:
+- name: python_network_traffic.log
+  path: /datasets/attack_techniques/T1195.002/python_network_traffic/python_network_traffic.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
