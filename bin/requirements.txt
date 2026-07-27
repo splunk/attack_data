@@ -6,3 +6,5 @@ gitpython
 tqdm
 colorama
 jsonschema
+pydantic
+pydantic-cli
