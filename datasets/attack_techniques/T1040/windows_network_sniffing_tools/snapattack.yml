@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: de939340-39b2-49e7-8a81-f632c2913150
+date: '2026-07-22'
+description: Generated datasets for Windows Network Sniffing Tools in attack range.
+environment: attack_range
+directory: windows_network_sniffing_tools
+mitre_technique:
+- T1040
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1040/windows_network_sniffing_tools/snapattack_windows.log

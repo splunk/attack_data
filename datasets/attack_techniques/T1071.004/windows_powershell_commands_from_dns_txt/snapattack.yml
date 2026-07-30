@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 5dbb38a0-78c3-45fc-882b-7cc4b4773fc6
+date: '2026-07-22'
+description: Generated datasets for Windows Powershell Commands from DNS TXT in attack
+    range.
+environment: attack_range
+directory: windows_powershell_commands_from_dns_txt
+mitre_technique:
+- T1071.004
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+    path: /datasets/attack_techniques/T1071.004/windows_powershell_commands_from_dns_txt/snapattack_windows.log
