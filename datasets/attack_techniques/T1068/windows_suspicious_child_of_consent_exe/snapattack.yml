@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 04ab08ee-0036-4f26-ab04-46cabe550937
+date: '2026-07-22'
+description: Generated datasets for Windows Suspicious Child of Consent.exe in attack
+    range.
+environment: attack_range
+directory: windows_suspicious_child_of_consent.exe
+mitre_technique:
+- T1068
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+    path: /datasets/attack_techniques/T1068/windows_suspicious_child_of_consent.exe/snapattack_windows.log

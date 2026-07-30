@@ -1,0 +1,14 @@
+author: Raven Tait, Splunk
+id: 05e75f48-1434-46a1-9581-f0a9728098d5
+date: '2026-07-22'
+description: Generated datasets for Windows Dir Piped to Findstr Activity in attack
+    range.
+environment: attack_range
+directory: windows_dir_piped_to_findstr_activity
+mitre_technique:
+- T1119
+datasets:
+-   name: snapattack
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1119/windows_dir_piped_to_findstr_activity/snapattack_windows.log
