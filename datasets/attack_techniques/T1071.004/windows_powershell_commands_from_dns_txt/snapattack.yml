@@ -9,6 +9,6 @@ mitre_technique:
 - T1071.004
 datasets:
 -   name: snapattack
-    sourcetype: ''
+    sourcetype: XmlWinEventLog
     source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
     path: /datasets/attack_techniques/T1071.004/windows_powershell_commands_from_dns_txt/snapattack_windows.log
