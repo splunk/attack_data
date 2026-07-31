@@ -9,5 +9,5 @@ mitre_technique:
 datasets:
 -   name: snapattack
     sourcetype: XmlWinEventLog
-    source: XmlWinEventLog:Security
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational 
     path: /datasets/attack_techniques/T1040/windows_network_sniffing_tools/snapattack_windows.log
