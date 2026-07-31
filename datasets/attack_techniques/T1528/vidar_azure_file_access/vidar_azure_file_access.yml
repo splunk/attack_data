@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 9e38a878-8cd3-11f1-a4f8-629be3538068
+date: '2026-07-31'
+description: Generated datasets for vidar azure file access in attack range.
+environment: attack_range
+directory: vidar_azure_file_access
+mitre_technique:
+- T1528
+datasets:
+- name: azure_vidar_access.log
+  path: /datasets/attack_techniques/T1528/vidar_azure_file_access/azure_vidar_access.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Security'
