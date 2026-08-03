@@ -3,12 +3,11 @@
 Build a compressed (ZIP_ZSTANDARD) archive of the datasets/ folder.
 
 The archive contains:
-  - datasets/...                  the datasets folder, unchanged
-  - metadata.yml                  generation time, git ref, size, etc.
-  - url_to_file_mappings.yml      LFS vs. non-LFS file listing
+  - datasets/...   the datasets folder, unchanged
+  - metadata.yml   generation info plus the LFS vs. non-LFS file listing
 
-metadata.yml and url_to_file_mappings.yml are also written as standalone
-files next to the archive, in addition to being embedded inside it.
+metadata.yml is also written as a standalone file next to the archive, in
+addition to being embedded inside it.
 
 Requires Python 3.14+ (zipfile.ZIP_ZSTANDARD support), pydantic, and pydantic-cli.
 """
@@ -43,23 +42,8 @@ def _as_utc_iso(dt: Optional[datetime]) -> Optional[str]:
     return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z") if dt else None
 
 
-class Metadata(BaseModel):
-    """Contents of metadata.yml: when and from what git state the archive was built."""
-
-    generated_at_utc: datetime
-    file_count: int
-    gitref: str
-    github_url: str
-    total_uncompressed_size_bytes: int
-
-    @field_serializer("generated_at_utc", when_used="json")
-    def _serialize_generated_at_utc(self, value: datetime) -> str:
-        """Serialize generated_at_utc as a UTC ISO-8601 string."""
-        return _as_utc_iso(value)
-
-
 class LfsFileEntry(BaseModel):
-    """Details for a single git-lfs-tracked file, keyed by its download URL in url_to_file_mappings.yml."""
+    """Details for a single git-lfs-tracked file, keyed by its download URL in metadata.yml."""
 
     relative_path: str
     uncompressed_size: int
@@ -73,13 +57,23 @@ class LfsFileEntry(BaseModel):
         return _as_utc_iso(value)
 
 
-class UrlToFileMappings(BaseModel):
-    """Contents of url_to_file_mappings.yml: LFS files keyed by URL, plus a flat list of non-LFS file paths."""
+class Metadata(BaseModel):
+    """Contents of metadata.yml: generation info, and the LFS/non-LFS file listing."""
 
+    generated_at_utc: datetime
+    file_count: int
+    gitref: str
+    github_url: str
+    total_uncompressed_size_bytes: int
     lfs_files: Dict[str, LfsFileEntry] = Field(default_factory=dict, alias="lfs-files")
     non_lfs_files: List[str] = Field(default_factory=list, alias="non-lfs-files")
 
     model_config = {"populate_by_name": True}
+
+    @field_serializer("generated_at_utc", when_used="json")
+    def _serialize_generated_at_utc(self, value: datetime) -> str:
+        """Serialize generated_at_utc as a UTC ISO-8601 string."""
+        return _as_utc_iso(value)
 
 
 def to_yaml(model: BaseModel) -> str:
@@ -164,10 +158,10 @@ def build_archive(
     ref_name: str,
     ref_type: str,
 ) -> Tuple[int, int, int, int]:
-    """Write a ZIP_ZSTANDARD archive of datasets_dir plus metadata.yml and url_to_file_mappings.yml.
+    """Write a ZIP_ZSTANDARD archive of datasets_dir plus metadata.yml.
 
-    metadata.yml and url_to_file_mappings.yml are also written as standalone
-    files alongside output_path, in addition to being embedded in the archive.
+    metadata.yml is also written as a standalone file alongside output_path,
+    in addition to being embedded in the archive.
 
     Returns (file_count, total_uncompressed_size_bytes, lfs_file_count, non_lfs_file_count).
     """
@@ -184,7 +178,8 @@ def build_archive(
 
     files = list(iter_dataset_files(datasets_dir))
     total_size = 0
-    mappings = UrlToFileMappings()
+    lfs_files: Dict[str, LfsFileEntry] = {}
+    non_lfs_files: List[str] = []
 
     with zipfile.ZipFile(output_path, "w") as zf:
         for index, path in enumerate(files, start=1):
@@ -199,13 +194,13 @@ def build_archive(
 
             if rel in lfs_paths:
                 url = f"https://media.githubusercontent.com/media/{owner}/{repo}/refs/{ref_segment}/{ref_name}/{rel}"
-                mappings.lfs_files[url] = LfsFileEntry(
+                lfs_files[url] = LfsFileEntry(
                     relative_path=rel,
                     uncompressed_size=size,
                     **{"last-updated": last_updated_map.get(rel)},
                 )
             else:
-                mappings.non_lfs_files.append(rel)
+                non_lfs_files.append(rel)
 
         metadata = Metadata(
             generated_at_utc=datetime.now(timezone.utc),
@@ -213,17 +208,15 @@ def build_archive(
             gitref=git_hash,
             github_url=f"https://github.com/{owner}/{repo}/tree/{ref_name}",
             total_uncompressed_size_bytes=total_size,
+            **{"lfs-files": lfs_files, "non-lfs-files": non_lfs_files},
         )
         metadata_yaml = to_yaml(metadata)
-        mappings_yaml = to_yaml(mappings)
         zf.writestr("metadata.yml", metadata_yaml)
-        zf.writestr("url_to_file_mappings.yml", mappings_yaml)
 
     output_dir = Path(output_path).resolve().parent
     (output_dir / "metadata.yml").write_text(metadata_yaml)
-    (output_dir / "url_to_file_mappings.yml").write_text(mappings_yaml)
 
-    return len(files), total_size, len(mappings.lfs_files), len(mappings.non_lfs_files)
+    return len(files), total_size, len(lfs_files), len(non_lfs_files)
 
 
 class Options(Cmd):
@@ -254,7 +247,6 @@ class Options(Cmd):
         output_dir = Path(self.output).resolve().parent
         print(f"Wrote {self.output}")
         print(f"Wrote {output_dir / 'metadata.yml'}")
-        print(f"Wrote {output_dir / 'url_to_file_mappings.yml'}")
         print(f"  files:          {file_count} ({total_size:,} bytes uncompressed)")
         print(f"  lfs files:      {lfs_count}")
         print(f"  non-lfs files:  {non_lfs_count}")
