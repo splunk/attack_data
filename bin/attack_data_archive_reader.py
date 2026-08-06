@@ -6,10 +6,11 @@ folder produced by build_dataset_archive.py.
 Given an LFS file's download URL (the key under lfs-files in metadata.yml), this:
   1. Verifies the attack_data_archive/ folder exists.
   2. Verifies attack_data_archive.zip and metadata.yml exist inside it.
-  3. Parses metadata.yml.
-  4. Verifies the URL is a known LFS file in metadata.yml.
-  5. Verifies that file's relative path is actually present in the zip.
-  6. Returns that file's bytes.
+  3. Verifies the standalone metadata.yml matches the copy embedded in the zip.
+  4. Parses metadata.yml.
+  5. Verifies the URL is a known LFS file in metadata.yml.
+  6. Verifies that file's relative path is actually present in the zip.
+  7. Returns that file's bytes.
 
 Can be used as a CLI, or imported and called as a function
 (see get_lfs_file_bytes / load_metadata).
@@ -49,6 +50,23 @@ class ArchiveVerificationError(Exception):
     """Raised when the attack_data_archive folder, its files, or a requested LFS entry fail verification."""
 
 
+class MetadataFilesDiffer(ArchiveVerificationError):
+    """Raised when the standalone metadata.yml and the copy embedded in the zip are not byte-identical."""
+
+
+def _first_differing_line(a: str, b: str) -> int:
+    """Return the 1-indexed line number of the first line where a and b differ.
+
+    If one text is a prefix of the other, returns the line just past the shorter text's end.
+    """
+    a_lines = a.splitlines()
+    b_lines = b.splitlines()
+    for i, (a_line, b_line) in enumerate(zip(a_lines, b_lines), start=1):
+        if a_line != b_line:
+            return i
+    return min(len(a_lines), len(b_lines)) + 1
+
+
 def default_archive_dir() -> Path:
     """The attack_data_archive/ folder that build_dataset_archive.py writes, alongside this repo's bin/ folder."""
     return Path(__file__).resolve().parent.parent / OUTPUT_DIR_NAME
@@ -57,7 +75,11 @@ def default_archive_dir() -> Path:
 def load_metadata(archive_dir: Path) -> Metadata:
     """Verify archive_dir and its zip/yml files exist, then parse and return metadata.yml.
 
-    Raises ArchiveVerificationError if the folder or either file is missing.
+    Also verifies the standalone metadata.yml is byte-identical to the copy embedded
+    in the zip, so the two can never silently drift apart.
+
+    Raises ArchiveVerificationError if the folder or either file is missing, or
+    MetadataFilesDiffer if the standalone and embedded metadata.yml contents differ.
     """
     if not archive_dir.is_dir():
         raise ArchiveVerificationError(f"Archive folder not found: {archive_dir}")
@@ -70,7 +92,21 @@ def load_metadata(archive_dir: Path) -> Metadata:
     if not yml_path.is_file():
         raise ArchiveVerificationError(f"Archive metadata not found: {yml_path}")
 
-    return parse_metadata_yaml(yml_path.read_text())
+    standalone_text = yml_path.read_text()
+
+    with zipfile.ZipFile(zip_path) as zf:
+        try:
+            embedded_text = zf.read(METADATA_FILE_NAME).decode()
+        except KeyError:
+            raise ArchiveVerificationError(f"{METADATA_FILE_NAME} not found inside {zip_path}") from None
+
+    if standalone_text != embedded_text:
+        line = _first_differing_line(standalone_text, embedded_text)
+        raise MetadataFilesDiffer(
+            f"{yml_path} and the {METADATA_FILE_NAME} embedded in {zip_path} differ, first at line {line}"
+        )
+
+    return parse_metadata_yaml(standalone_text)
 
 
 def get_lfs_file_bytes(url: str, archive_dir: Optional[Path] = None) -> bytes:
