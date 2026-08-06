@@ -6,10 +6,12 @@ The archive contains:
   - datasets/...   the datasets folder, unchanged
   - metadata.yml   generation info plus the LFS vs. non-LFS file listing
 
-metadata.yml is also written as a standalone file next to the archive, in
-addition to being embedded inside it.
+Output is always written to attack_data_archive/ (created if missing):
+  - attack_data_archive/attack_data_archive.zip
+  - attack_data_archive/metadata.yml   (the same metadata.yml, also
+    written standalone alongside the archive)
 
-Requires Python 3.14+ (zipfile.ZIP_ZSTANDARD support), pydantic, and pydantic-cli.
+Requires Python 3.14+ (zipfile.ZIP_ZSTANDARD support), pydantic, and pydantic-settings.
 """
 
 import os
@@ -24,11 +26,14 @@ from typing import Dict, Iterator, List, Literal, Optional, Tuple
 try:
     import yaml
     from pydantic import BaseModel, Field, field_serializer
-    from pydantic_cli import Cmd, run_and_exit
+    from pydantic_settings import BaseSettings, CliApp, SettingsConfigDict
 except ImportError as exc:
     sys.exit(f"Error: missing dependency ({exc}). Install with: pip install -r bin/requirements.txt")
 
 MIN_PYTHON = (3, 14)
+
+OUTPUT_DIR_NAME = "attack_data_archive"
+ARCHIVE_FILE_NAME = "attack_data_archive.zip"
 
 if sys.version_info < MIN_PYTHON:
     sys.exit(
@@ -153,18 +158,21 @@ def iter_dataset_files(datasets_dir: Path) -> Iterator[Path]:
 def build_archive(
     repo_root: Path,
     datasets_dir: Path,
-    output_path: str,
+    output_dir: Path,
     compresslevel: int,
     ref_name: str,
     ref_type: str,
 ) -> Tuple[int, int, int, int]:
-    """Write a ZIP_ZSTANDARD archive of datasets_dir plus metadata.yml.
+    """Write a ZIP_ZSTANDARD archive of datasets_dir plus metadata.yml into output_dir.
 
-    metadata.yml is also written as a standalone file alongside output_path,
+    metadata.yml is also written as a standalone file alongside the archive,
     in addition to being embedded in the archive.
 
     Returns (file_count, total_uncompressed_size_bytes, lfs_file_count, non_lfs_file_count).
     """
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / ARCHIVE_FILE_NAME
+
     owner, repo = parse_github_owner_repo(run_git(["remote", "get-url", "origin"], cwd=repo_root))
     ref_segment = "heads" if ref_type == "branch" else "tags"
     git_hash = run_git(["rev-parse", "HEAD"], cwd=repo_root)
@@ -213,39 +221,40 @@ def build_archive(
         metadata_yaml = to_yaml(metadata)
         zf.writestr("metadata.yml", metadata_yaml)
 
-    output_dir = Path(output_path).resolve().parent
     (output_dir / "metadata.yml").write_text(metadata_yaml)
 
     return len(files), total_size, len(lfs_files), len(non_lfs_files)
 
 
-class Options(Cmd):
+class Options(BaseSettings):
     """CLI options for building the datasets archive."""
 
-    output: str = Field("attack_data_archive.zip", cli=("-o", "--output"), description="Path to the archive to create")
-    compresslevel: int = Field(9, cli=("--compresslevel",), description="Zstandard compression level (default: 9)")
-    ref: Optional[str] = Field(
-        None, cli=("--ref",), description="Override the git branch/tag name used to build GitHub URLs"
-    )
-    ref_type: Optional[Literal["branch", "tag"]] = Field(
-        None, cli=("--ref-type",), description="Whether --ref is a branch or a tag (default: branch)"
+    model_config = SettingsConfigDict(
+        cli_prog_name="build_dataset_archive.py",
+        cli_kebab_case=True,
     )
 
-    def run(self) -> None:
+    compresslevel: int = Field(9, description="Zstandard compression level (default: 9)")
+    ref: Optional[str] = Field(None, description="Override the git branch/tag name used to build GitHub URLs")
+    ref_type: Optional[Literal["branch", "tag"]] = Field(
+        None, description="Whether --ref is a branch or a tag (default: branch)"
+    )
+
+    def cli_cmd(self) -> None:
         """Build the archive using the parsed CLI options and print a summary."""
         repo_root = Path(run_git(["rev-parse", "--show-toplevel"], cwd=os.getcwd())).resolve()
         datasets_dir = repo_root / "datasets"
         if not datasets_dir.is_dir():
             sys.exit(f"Error: {datasets_dir} does not exist")
 
+        output_dir = repo_root / OUTPUT_DIR_NAME
         ref_name, ref_type = determine_ref(repo_root, self.ref, self.ref_type)
 
         file_count, total_size, lfs_count, non_lfs_count = build_archive(
-            repo_root, datasets_dir, self.output, self.compresslevel, ref_name, ref_type
+            repo_root, datasets_dir, output_dir, self.compresslevel, ref_name, ref_type
         )
 
-        output_dir = Path(self.output).resolve().parent
-        print(f"Wrote {self.output}")
+        print(f"Wrote {output_dir / ARCHIVE_FILE_NAME}")
         print(f"Wrote {output_dir / 'metadata.yml'}")
         print(f"  files:          {file_count} ({total_size:,} bytes uncompressed)")
         print(f"  lfs files:      {lfs_count}")
@@ -254,4 +263,4 @@ class Options(Cmd):
 
 
 if __name__ == "__main__":
-    run_and_exit(Options, description=__doc__, version="1.0.0")
+    CliApp.run(Options)

@@ -7,4 +7,4 @@ tqdm
 colorama
 jsonschema
 pydantic
-pydantic-cli
+pydantic-settings
