@@ -21,7 +21,7 @@ import sys
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, Iterator, List, Literal, Optional, Tuple
+from typing import Dict, Iterator, List, Tuple
 
 try:
     from pydantic import Field
@@ -39,6 +39,8 @@ from attack_data_archive_models import (
 )
 
 MIN_PYTHON = (3, 14)
+
+REF_NAME = "master"
 
 if sys.version_info < MIN_PYTHON:
     sys.exit(
@@ -59,35 +61,6 @@ def parse_github_owner_repo(remote_url: str) -> Tuple[str, str]:
     if not match:
         raise ValueError(f"Could not parse a GitHub owner/repo from remote URL: {remote_url}")
     return match.group(1), match.group(2)
-
-
-def determine_ref(
-    repo_root: Path, ref_override: Optional[str], ref_type_override: Optional[str]
-) -> Tuple[str, str]:
-    """Resolve the (ref_name, ref_type) to embed in generated URLs.
-
-    Preference order: an explicit override, then the GitHub Actions
-    GITHUB_REF_NAME/GITHUB_REF_TYPE env vars, then the current local branch.
-    """
-    if ref_override:
-        return ref_override, ref_type_override or "branch"
-
-    ref_name = os.environ.get("GITHUB_REF_NAME")
-    ref_type = os.environ.get("GITHUB_REF_TYPE")
-    if ref_name and ref_type:
-        return ref_name, ref_type
-
-    try:
-        branch = run_git(["symbolic-ref", "--short", "HEAD"], cwd=repo_root)
-        if branch:
-            return branch, "branch"
-    except subprocess.CalledProcessError:
-        pass
-
-    raise RuntimeError(
-        "Could not determine a branch/tag name for this checkout (HEAD is "
-        "detached and GITHUB_REF_NAME is not set). Pass --ref/--ref-type explicitly."
-    )
 
 
 def collect_last_updated(repo_root: Path) -> Dict[str, datetime]:
@@ -121,8 +94,6 @@ def build_archive(
     datasets_dir: Path,
     output_dir: Path,
     compresslevel: int,
-    ref_name: str,
-    ref_type: str,
 ) -> Tuple[int, int, int, int]:
     """Write a ZIP_ZSTANDARD archive of datasets_dir plus metadata.yml into output_dir.
 
@@ -135,7 +106,6 @@ def build_archive(
     output_path = output_dir / ARCHIVE_FILE_NAME
 
     owner, repo = parse_github_owner_repo(run_git(["remote", "get-url", "origin"], cwd=repo_root))
-    ref_segment = "heads" if ref_type == "branch" else "tags"
     git_hash = run_git(["rev-parse", "HEAD"], cwd=repo_root)
 
     lfs_paths = {
@@ -162,7 +132,7 @@ def build_archive(
                 print(f"  added {index}/{len(files)} files...")
 
             if rel in lfs_paths:
-                url = f"https://media.githubusercontent.com/media/{owner}/{repo}/refs/{ref_segment}/{ref_name}/{rel}"
+                url = f"https://media.githubusercontent.com/media/{owner}/{repo}/{REF_NAME}/{rel}"
                 lfs_files[url] = LfsFileEntry(
                     relative_path=rel,
                     uncompressed_size=size,
@@ -175,7 +145,7 @@ def build_archive(
             generated_at_utc=datetime.now(timezone.utc),
             file_count=len(files),
             gitref=git_hash,
-            github_url=f"https://github.com/{owner}/{repo}/tree/{ref_name}",
+            github_url=f"https://github.com/{owner}/{repo}/tree/{REF_NAME}",
             total_uncompressed_size_bytes=total_size,
             **{"lfs-files": lfs_files, "non-lfs-files": non_lfs_files},
         )
@@ -196,10 +166,6 @@ class Options(BaseSettings):
     )
 
     compresslevel: int = Field(9, description="Zstandard compression level (default: 9)")
-    ref: Optional[str] = Field(None, description="Override the git branch/tag name used to build GitHub URLs")
-    ref_type: Optional[Literal["branch", "tag"]] = Field(
-        None, description="Whether --ref is a branch or a tag (default: branch)"
-    )
 
     def cli_cmd(self) -> None:
         """Build the archive using the parsed CLI options and print a summary."""
@@ -209,10 +175,9 @@ class Options(BaseSettings):
             sys.exit(f"Error: {datasets_dir} does not exist")
 
         output_dir = repo_root / OUTPUT_DIR_NAME
-        ref_name, ref_type = determine_ref(repo_root, self.ref, self.ref_type)
 
         file_count, total_size, lfs_count, non_lfs_count = build_archive(
-            repo_root, datasets_dir, output_dir, self.compresslevel, ref_name, ref_type
+            repo_root, datasets_dir, output_dir, self.compresslevel
         )
 
         print(f"Wrote {output_dir / ARCHIVE_FILE_NAME}")
@@ -220,7 +185,7 @@ class Options(BaseSettings):
         print(f"  files:          {file_count} ({total_size:,} bytes uncompressed)")
         print(f"  lfs files:      {lfs_count}")
         print(f"  non-lfs files:  {non_lfs_count}")
-        print(f"  ref:            {ref_name} ({ref_type})")
+        print(f"  ref:            {REF_NAME} (branch)")
 
 
 if __name__ == "__main__":
