@@ -24,66 +24,27 @@ from pathlib import Path
 from typing import Dict, Iterator, List, Literal, Optional, Tuple
 
 try:
-    import yaml
-    from pydantic import BaseModel, Field, field_serializer
+    from pydantic import Field
     from pydantic_settings import BaseSettings, CliApp, SettingsConfigDict
 except ImportError as exc:
     sys.exit(f"Error: missing dependency ({exc}). Install with: pip install -r bin/requirements.txt")
 
-MIN_PYTHON = (3, 14)
+from attack_data_archive_models import (
+    ARCHIVE_FILE_NAME,
+    METADATA_FILE_NAME,
+    OUTPUT_DIR_NAME,
+    LfsFileEntry,
+    Metadata,
+    to_yaml,
+)
 
-OUTPUT_DIR_NAME = "attack_data_archive"
-ARCHIVE_FILE_NAME = "attack_data_archive.zip"
+MIN_PYTHON = (3, 14)
 
 if sys.version_info < MIN_PYTHON:
     sys.exit(
         f"Error: this script requires Python {MIN_PYTHON[0]}.{MIN_PYTHON[1]}+ "
         f"(zipfile.ZIP_ZSTANDARD support). Running {sys.version_info.major}.{sys.version_info.minor}."
     )
-
-
-def _as_utc_iso(dt: Optional[datetime]) -> Optional[str]:
-    """Format a datetime as a UTC ISO-8601 string ending in 'Z', or None if dt is None."""
-    return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z") if dt else None
-
-
-class LfsFileEntry(BaseModel):
-    """Details for a single git-lfs-tracked file, keyed by its download URL in metadata.yml."""
-
-    relative_path: str
-    uncompressed_size: int
-    last_updated: Optional[datetime] = Field(default=None, alias="last-updated")
-
-    model_config = {"populate_by_name": True}
-
-    @field_serializer("last_updated", when_used="json")
-    def _serialize_last_updated(self, value: Optional[datetime]) -> Optional[str]:
-        """Serialize last_updated as a UTC ISO-8601 string."""
-        return _as_utc_iso(value)
-
-
-class Metadata(BaseModel):
-    """Contents of metadata.yml: generation info, and the LFS/non-LFS file listing."""
-
-    generated_at_utc: datetime
-    file_count: int
-    gitref: str
-    github_url: str
-    total_uncompressed_size_bytes: int
-    lfs_files: Dict[str, LfsFileEntry] = Field(default_factory=dict, alias="lfs-files")
-    non_lfs_files: List[str] = Field(default_factory=list, alias="non-lfs-files")
-
-    model_config = {"populate_by_name": True}
-
-    @field_serializer("generated_at_utc", when_used="json")
-    def _serialize_generated_at_utc(self, value: datetime) -> str:
-        """Serialize generated_at_utc as a UTC ISO-8601 string."""
-        return _as_utc_iso(value)
-
-
-def to_yaml(model: BaseModel) -> str:
-    """Serialize a pydantic model to a YAML document, using its field aliases as keys."""
-    return yaml.safe_dump(model.model_dump(mode="json", by_alias=True), sort_keys=False, default_flow_style=False)
 
 
 def run_git(args: List[str], cwd: "Path | str") -> str:
@@ -219,9 +180,9 @@ def build_archive(
             **{"lfs-files": lfs_files, "non-lfs-files": non_lfs_files},
         )
         metadata_yaml = to_yaml(metadata)
-        zf.writestr("metadata.yml", metadata_yaml)
+        zf.writestr(METADATA_FILE_NAME, metadata_yaml)
 
-    (output_dir / "metadata.yml").write_text(metadata_yaml)
+    (output_dir / METADATA_FILE_NAME).write_text(metadata_yaml)
 
     return len(files), total_size, len(lfs_files), len(non_lfs_files)
 
@@ -255,7 +216,7 @@ class Options(BaseSettings):
         )
 
         print(f"Wrote {output_dir / ARCHIVE_FILE_NAME}")
-        print(f"Wrote {output_dir / 'metadata.yml'}")
+        print(f"Wrote {output_dir / METADATA_FILE_NAME}")
         print(f"  files:          {file_count} ({total_size:,} bytes uncompressed)")
         print(f"  lfs files:      {lfs_count}")
         print(f"  non-lfs files:  {non_lfs_count}")
