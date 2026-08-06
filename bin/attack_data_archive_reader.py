@@ -3,17 +3,20 @@
 Fetch a single LFS-tracked dataset file's bytes out of the local attack_data_archive/
 folder produced by build_dataset_archive.py.
 
-Given an LFS file's download URL (the key under lfs-files in metadata.yml), this:
-  1. Verifies the attack_data_archive/ folder exists.
-  2. Verifies attack_data_archive.zip and metadata.yml exist inside it.
-  3. Verifies the standalone metadata.yml matches the copy embedded in the zip.
-  4. Parses metadata.yml.
-  5. Verifies the URL is a known LFS file in metadata.yml.
-  6. Verifies that file's relative path is actually present in the zip.
-  7. Returns that file's bytes.
+AttackDataArchiveResolver does the one-time verification (archive folder exists,
+attack_data_archive.zip and metadata.yml exist inside it, and the standalone
+metadata.yml matches the copy embedded in the zip) once, at construction. Reuse the
+same instance across many calls to verify_lfs_file_existence / get_lfs_file_bytes
+to avoid re-verifying and re-reading metadata.yml every time.
 
-Can be used as a CLI, or imported and called as a function
-(see get_lfs_file_bytes / load_metadata).
+Given an LFS file's download URL (the key under lfs-files in metadata.yml),
+verify_lfs_file_existence:
+  1. Verifies the URL is a known LFS file in metadata.yml.
+  2. Verifies that file's relative path is actually present in the zip.
+
+get_lfs_file_bytes calls verify_lfs_file_existence, then returns that file's bytes.
+
+Can be used as a CLI, or imported and used as a class (see AttackDataArchiveResolver).
 
 Requires Python 3.14+ (zipfile.ZIP_ZSTANDARD support), pydantic, and pydantic-settings.
 """
@@ -24,7 +27,7 @@ from pathlib import Path
 from typing import Optional
 
 try:
-    from pydantic import Field
+    from pydantic import BaseModel, Field, PrivateAttr
     from pydantic_settings import BaseSettings, CliApp, CliPositionalArg, SettingsConfigDict
 except ImportError as exc:
     sys.exit(f"Error: missing dependency ({exc}). Install with: pip install -r bin/requirements.txt")
@@ -72,65 +75,96 @@ def default_archive_dir() -> Path:
     return Path(__file__).resolve().parent.parent / OUTPUT_DIR_NAME
 
 
-def load_metadata(archive_dir: Path) -> Metadata:
-    """Verify archive_dir and its zip/yml files exist, then parse and return metadata.yml.
+class AttackDataArchiveResolver(BaseModel):
+    """Verifies the local attack_data_archive/ once, then resolves many LFS URLs against it cheaply.
 
-    Also verifies the standalone metadata.yml is byte-identical to the copy embedded
-    in the zip, so the two can never silently drift apart.
+    Construction verifies that archive_dir exists, that attack_data_archive.zip and metadata.yml
+    exist inside it, and that the standalone metadata.yml is byte-identical to the copy embedded
+    in the zip. metadata.yml is parsed once and cached on the instance.
+
+    Reuse the same instance across many verify_lfs_file_existence / get_lfs_file_bytes calls to
+    avoid re-verifying and re-parsing metadata.yml on every call.
 
     Raises ArchiveVerificationError if the folder or either file is missing, or
     MetadataFilesDiffer if the standalone and embedded metadata.yml contents differ.
     """
-    if not archive_dir.is_dir():
-        raise ArchiveVerificationError(f"Archive folder not found: {archive_dir}")
 
-    zip_path = archive_dir / ARCHIVE_FILE_NAME
-    if not zip_path.is_file():
-        raise ArchiveVerificationError(f"Archive zip not found: {zip_path}")
+    archive_dir: Path = Field(default_factory=default_archive_dir)
 
-    yml_path = archive_dir / METADATA_FILE_NAME
-    if not yml_path.is_file():
-        raise ArchiveVerificationError(f"Archive metadata not found: {yml_path}")
+    _metadata: Metadata = PrivateAttr()
 
-    standalone_text = yml_path.read_text()
+    def model_post_init(self, __context: object) -> None:
+        """Verify the archive folder/files exist and are consistent, then cache parsed metadata.yml."""
+        archive_dir = self.archive_dir
 
-    with zipfile.ZipFile(zip_path) as zf:
-        try:
-            embedded_text = zf.read(METADATA_FILE_NAME).decode()
-        except KeyError:
-            raise ArchiveVerificationError(f"{METADATA_FILE_NAME} not found inside {zip_path}") from None
+        if not archive_dir.is_dir():
+            raise ArchiveVerificationError(f"Archive folder not found: {archive_dir}")
 
-    if standalone_text != embedded_text:
-        line = _first_differing_line(standalone_text, embedded_text)
-        raise MetadataFilesDiffer(
-            f"{yml_path} and the {METADATA_FILE_NAME} embedded in {zip_path} differ, first at line {line}"
-        )
+        zip_path = self.zip_path
+        if not zip_path.is_file():
+            raise ArchiveVerificationError(f"Archive zip not found: {zip_path}")
 
-    return parse_metadata_yaml(standalone_text)
+        yml_path = self.yml_path
+        if not yml_path.is_file():
+            raise ArchiveVerificationError(f"Archive metadata not found: {yml_path}")
 
+        standalone_text = yml_path.read_text()
 
-def get_lfs_file_bytes(url: str, archive_dir: Optional[Path] = None) -> bytes:
-    """Look up an LFS file by its download URL and return its bytes from the local archive.
+        with zipfile.ZipFile(zip_path) as zf:
+            try:
+                embedded_text = zf.read(METADATA_FILE_NAME).decode()
+            except KeyError:
+                raise ArchiveVerificationError(f"{METADATA_FILE_NAME} not found inside {zip_path}") from None
 
-    archive_dir defaults to the attack_data_archive/ folder alongside this repo's bin/ folder.
-
-    Raises ArchiveVerificationError if the archive folder/files are missing, the URL is not
-    a known LFS file in metadata.yml, or the file it points to is missing from the zip.
-    """
-    archive_dir = Path(archive_dir) if archive_dir is not None else default_archive_dir()
-    metadata = load_metadata(archive_dir)
-
-    entry = metadata.lfs_files.get(url)
-    if entry is None:
-        raise ArchiveVerificationError(f"URL not found in {METADATA_FILE_NAME}'s lfs-files: {url}")
-
-    zip_path = archive_dir / ARCHIVE_FILE_NAME
-    with zipfile.ZipFile(zip_path) as zf:
-        if entry.relative_path not in zf.namelist():
-            raise ArchiveVerificationError(
-                f"{entry.relative_path} is listed in {METADATA_FILE_NAME} but missing from {zip_path}"
+        if standalone_text != embedded_text:
+            line = _first_differing_line(standalone_text, embedded_text)
+            raise MetadataFilesDiffer(
+                f"{yml_path} and the {METADATA_FILE_NAME} embedded in {zip_path} differ, first at line {line}"
             )
-        return zf.read(entry.relative_path)
+
+        self._metadata = parse_metadata_yaml(standalone_text)
+
+    @property
+    def zip_path(self) -> Path:
+        """Path to attack_data_archive.zip inside archive_dir."""
+        return self.archive_dir / ARCHIVE_FILE_NAME
+
+    @property
+    def yml_path(self) -> Path:
+        """Path to the standalone metadata.yml inside archive_dir."""
+        return self.archive_dir / METADATA_FILE_NAME
+
+    @property
+    def metadata(self) -> Metadata:
+        """The parsed metadata.yml, cached at construction time."""
+        return self._metadata
+
+    def verify_lfs_file_existence(self, url: str) -> str:
+        """Verify url is a known LFS file in metadata.yml and that its file is present in the zip.
+
+        Returns the file's relative path within the zip on success.
+
+        Raises ArchiveVerificationError if the URL is not a known LFS file in metadata.yml,
+        or the file it points to is missing from the zip.
+        """
+        entry = self._metadata.lfs_files.get(url)
+        if entry is None:
+            raise ArchiveVerificationError(f"URL not found in {METADATA_FILE_NAME}'s lfs-files: {url}")
+
+        with zipfile.ZipFile(self.zip_path) as zf:
+            if entry.relative_path not in zf.namelist():
+                raise ArchiveVerificationError(
+                    f"{entry.relative_path} is listed in {METADATA_FILE_NAME} but missing from {self.zip_path}"
+                )
+
+        return entry.relative_path
+
+    def get_lfs_file_bytes(self, url: str) -> bytes:
+        """Look up an LFS file by its download URL and return its bytes from the local archive."""
+        relative_path = self.verify_lfs_file_existence(url)
+
+        with zipfile.ZipFile(self.zip_path) as zf:
+            return zf.read(relative_path)
 
 
 class Options(BaseSettings):
@@ -151,7 +185,9 @@ class Options(BaseSettings):
     def cli_cmd(self) -> None:
         """Fetch the requested LFS file's bytes and write them to --output or stdout."""
         try:
-            data = get_lfs_file_bytes(self.url, Path(self.archive_dir) if self.archive_dir else None)
+            kwargs = {"archive_dir": Path(self.archive_dir)} if self.archive_dir else {}
+            resolver = AttackDataArchiveResolver(**kwargs)
+            data = resolver.get_lfs_file_bytes(self.url)
         except ArchiveVerificationError as exc:
             sys.exit(f"Error: {exc}")
 
