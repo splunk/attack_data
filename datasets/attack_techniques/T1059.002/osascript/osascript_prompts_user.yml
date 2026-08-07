@@ -6,7 +6,7 @@ environment: TalosOffensiveLab
 directory: osascript
 mitre_technique: 
 - T1059.002
-dataset:
+datasets:
 - name: osascript_prompts_user
   path: /datasets/attack_techniques/T1059.002/osascript/osascript_prompts_user.log
   sourcetype: osquery:results
