@@ -33,7 +33,7 @@ Requires Python 3.14+ (zipfile.ZIP_ZSTANDARD support), pydantic, and pydantic-se
 
 import sys
 import zipfile
-from enum import StrEnum
+from datetime import datetime, timezone
 from functools import cached_property
 from pathlib import Path
 from types import MappingProxyType
@@ -60,9 +60,14 @@ from pydantic_settings import (
 from attack_data_archive_models import (
     ARCHIVE_FILE_NAME,
     METADATA_FILE_NAME,
+    MISSING_FROM_CACHE_FILE_NAME,
     OUTPUT_DIR_NAME,
+    AttackDataProvenance,
     Metadata,
+    MissingFromCache,
+    missing_from_cache_to_markdown,
     parse_metadata_yaml,
+    to_yaml,
 )
 
 MIN_PYTHON = (3, 14)
@@ -84,15 +89,6 @@ class MetadataFilesDiffer(ArchiveVerificationError):
 
 class UrlUnreachable(ArchiveVerificationError):
     """Raised when an HttpUrl not found in the cache fails a HEAD/GET request."""
-
-
-class AttackDataProvenance(StrEnum):
-    """Where verify_path/get_data found (or would fetch) a path's data."""
-
-    FILE = "file"
-    ATTACK_DATA_CACHE = "attack_data_cache"
-    URL_GET = "url_get"
-    DOES_NOT_EXIST = "does_not_exist"
 
 
 HTTP_REQUEST_MAX_ATTEMPTS = 3
@@ -220,6 +216,13 @@ class AttackDataArchiveResolver(BaseModel):
     def missing_from_archive_log(self) -> Mapping[str, AttackDataProvenance]:
         """Read-only view of every HttpUrl that has missed the cache so far, and how it resolved."""
         return MappingProxyType(self._missing_from_archive_log)
+
+    def missing_from_cache(self) -> MissingFromCache:
+        """Snapshot missing_from_archive_log as a MissingFromCache model, timestamped with the current time."""
+        return MissingFromCache(
+            generated_at_utc=datetime.now(timezone.utc),
+            files=dict(self._missing_from_archive_log),
+        )
 
     @property
     def _zip_path(self) -> Path:
@@ -360,14 +363,14 @@ class Options(BaseSettings):
 
     def cli_cmd(self) -> None:
         """Fetch the requested LFS file's bytes and write them to --output or stdout, or just verify it resolves."""
-        try:
-            kwargs = {"archive_dir": Path(self.archive_dir)} if self.archive_dir else {}
-            resolver = AttackDataArchiveResolver(
-                check_existence_with_head_request=self.check_existence_with_head_request,
-                require_attack_data_archive=self.require_attack_data_archive,
-                **kwargs,
-            )
+        kwargs = {"archive_dir": Path(self.archive_dir)} if self.archive_dir else {}
+        resolver = AttackDataArchiveResolver(
+            check_existence_with_head_request=self.check_existence_with_head_request,
+            require_attack_data_archive=self.require_attack_data_archive,
+            **kwargs,
+        )
 
+        try:
             if self.resolve:
                 provenance = resolver.verify_path(self.url)
                 print(f"Resolved ({provenance}): {self.url}")
@@ -376,12 +379,30 @@ class Options(BaseSettings):
             data, provenance = resolver.get_data(self.url)
         except ArchiveVerificationError as exc:
             sys.exit(f"Error: {exc}")
+        finally:
+            self._write_missing_from_cache(resolver)
 
         if self.output:
             Path(self.output).write_bytes(data)
             print(f"Wrote {len(data):,} bytes ({provenance}) to {self.output}")
         else:
             sys.stdout.buffer.write(data)
+
+    def _write_missing_from_cache(self, resolver: "AttackDataArchiveResolver") -> None:
+        """If url missed the cache, write missing_from_cache.yml plus a markdown table alongside the archive."""
+        if not resolver.missing_from_archive_log:
+            return
+
+        missing = resolver.missing_from_cache()
+        resolver.archive_dir.mkdir(parents=True, exist_ok=True)
+
+        yml_path = resolver.archive_dir / MISSING_FROM_CACHE_FILE_NAME
+        yml_path.write_text(to_yaml(missing))
+
+        md_path = yml_path.with_suffix(".md")
+        md_path.write_text(missing_from_cache_to_markdown(missing))
+
+        print(f"Wrote {yml_path} and {md_path}")
 
 
 if __name__ == "__main__":
