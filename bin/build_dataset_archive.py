@@ -19,7 +19,7 @@ import re
 import subprocess
 import sys
 import zipfile
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, Iterator, List, Tuple
 
@@ -29,7 +29,7 @@ try:
 except ImportError as exc:
     sys.exit(f"Error: missing dependency ({exc}). Install with: pip install -r bin/requirements.txt")
 
-from attack_data_archive_models import (
+from attack_data_models import (
     ARCHIVE_FILE_NAME,
     METADATA_FILE_NAME,
     OUTPUT_DIR_NAME,
@@ -38,15 +38,7 @@ from attack_data_archive_models import (
     to_yaml,
 )
 
-MIN_PYTHON = (3, 14)
-
 REF_NAME = "master"
-
-if sys.version_info < MIN_PYTHON:
-    sys.exit(
-        f"Error: this script requires Python {MIN_PYTHON[0]}.{MIN_PYTHON[1]}+ "
-        f"(zipfile.ZIP_ZSTANDARD support). Running {sys.version_info.major}.{sys.version_info.minor}."
-    )
 
 
 def run_git(args: List[str], cwd: "Path | str") -> str:
@@ -142,7 +134,6 @@ def build_archive(
                 non_lfs_files.append(rel)
 
         metadata = Metadata(
-            generated_at_utc=datetime.now(timezone.utc),
             file_count=len(files),
             gitref=git_hash,
             github_url=f"https://github.com/{owner}/{repo}/tree/{REF_NAME}",
