@@ -12,13 +12,15 @@ re-reading metadata.yml every time.
 
 verify_path and get_data are the only public entry points; everything else on
 AttackDataArchiveResolver is a private implementation detail. Both accept either a
-FilePath (an existing local file) or an HttpUrl (an LFS download URL):
+FilePath (an existing local file) or an HttpUrl (an LFS download URL), and both
+return an AttackDataProvenance saying where the data came from (or, for get_data's
+URL_GET case, was fetched from):
   - verify_path checks that a FilePath exists, or that an HttpUrl is a known,
     present-in-the-zip LFS file (i.e. it's in the cache) — or, if
     check_existence_with_head_request is enabled, that an uncached HttpUrl is
     reachable via a HEAD request.
-  - get_data calls verify_path, then returns the bytes: read from disk for a
-    FilePath, from the cache for a cached HttpUrl, or via a GET request otherwise.
+  - get_data calls verify_path, then returns the bytes alongside it: read from disk
+    for a FilePath, from the cache for a cached HttpUrl, or via a GET request otherwise.
 
 Can be used as a CLI, or imported and used as a class (see AttackDataArchiveResolver).
 
@@ -27,9 +29,10 @@ Requires Python 3.14+ (zipfile.ZIP_ZSTANDARD support), pydantic, and pydantic-se
 
 import sys
 import zipfile
+from enum import StrEnum
 from functools import cached_property
 from pathlib import Path
-from typing import Callable, Optional, Union
+from typing import Callable, Optional, Tuple, Union
 
 import requests
 from pydantic import (
@@ -76,6 +79,14 @@ class MetadataFilesDiffer(ArchiveVerificationError):
 
 class UrlUnreachable(ArchiveVerificationError):
     """Raised when an HttpUrl not found in the cache fails a HEAD/GET request."""
+
+
+class AttackDataProvenance(StrEnum):
+    """Where verify_path/get_data found (or would fetch) a path's data."""
+
+    FILE = "file"
+    ATTACK_DATA_CACHE = "attack_data_cache"
+    URL_GET = "url_get"
 
 
 HTTP_REQUEST_MAX_ATTEMPTS = 3
@@ -221,7 +232,7 @@ class AttackDataArchiveResolver(BaseModel):
         return entry.relative_path
 
     @validate_call
-    def verify_path(self, path: Union[FilePath, HttpUrl]) -> None:
+    def verify_path(self, path: Union[FilePath, HttpUrl]) -> AttackDataProvenance:
         """Verify that path exists, whether it's a local file or an HttpUrl.
 
         A FilePath is verified simply by being accepted as an argument (pydantic's
@@ -231,14 +242,16 @@ class AttackDataArchiveResolver(BaseModel):
         in the cache). If it's not in the cache and check_existence_with_head_request
         is enabled, falls back to a HEAD request (see _verify_url_reachable).
 
+        Returns where the data was found (or, for URL_GET, would be fetched from).
+
         Raises ArchiveVerificationError if path is an HttpUrl that's neither in the
         cache nor (when enabled) reachable via HEAD request.
         """
         if isinstance(path, Path):
-            return
+            return AttackDataProvenance.FILE
 
         if self._cached_lfs_relative_path(str(path)) is not None:
-            return
+            return AttackDataProvenance.ATTACK_DATA_CACHE
 
         if not self.check_existence_with_head_request:
             raise ArchiveVerificationError(
@@ -246,26 +259,27 @@ class AttackDataArchiveResolver(BaseModel):
             )
 
         _verify_url_reachable(path)
+        return AttackDataProvenance.URL_GET
 
     @validate_call
-    def get_data(self, path: Union[FilePath, HttpUrl]) -> bytes:
-        """Return the bytes at path, whether it's a local file or an HttpUrl.
+    def get_data(self, path: Union[FilePath, HttpUrl]) -> Tuple[bytes, AttackDataProvenance]:
+        """Return the bytes at path plus where they came from, whether path is a local file or an HttpUrl.
 
-        Calls verify_path first. A FilePath's bytes are then read directly from disk.
-        An HttpUrl's bytes are returned from the cache if it's a known, present-in-the-zip
-        LFS file; otherwise they're downloaded with a GET request.
+        Calls verify_path first, then reuses its result: a FilePath's bytes are read
+        directly from disk, an HttpUrl's bytes are read from the cache if it's a known,
+        present-in-the-zip LFS file, or otherwise downloaded with a GET request.
         """
-        self.verify_path(path)
+        provenance = self.verify_path(path)
 
-        if isinstance(path, Path):
-            return path.read_bytes()
+        if provenance is AttackDataProvenance.FILE:
+            return path.read_bytes(), provenance
 
-        relative_path = self._cached_lfs_relative_path(str(path))
-        if relative_path is not None:
+        if provenance is AttackDataProvenance.ATTACK_DATA_CACHE:
+            relative_path = self._cached_lfs_relative_path(str(path))
             with zipfile.ZipFile(self._zip_path) as zf:
-                return zf.read(relative_path)
+                return zf.read(relative_path), provenance
 
-        return _request_with_retry(requests.get, "GET", path).content
+        return _request_with_retry(requests.get, "GET", path).content, provenance
 
 
 class Options(BaseSettings):
@@ -306,17 +320,17 @@ class Options(BaseSettings):
             )
 
             if self.resolve:
-                resolver.verify_path(self.url)
-                print(f"Resolved: {self.url}")
+                provenance = resolver.verify_path(self.url)
+                print(f"Resolved ({provenance}): {self.url}")
                 return
 
-            data = resolver.get_data(self.url)
+            data, provenance = resolver.get_data(self.url)
         except ArchiveVerificationError as exc:
             sys.exit(f"Error: {exc}")
 
         if self.output:
             Path(self.output).write_bytes(data)
-            print(f"Wrote {len(data):,} bytes to {self.output}")
+            print(f"Wrote {len(data):,} bytes ({provenance}) to {self.output}")
         else:
             sys.stdout.buffer.write(data)
 
