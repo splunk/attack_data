@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 177ddfaa-80ee-42f7-a2e5-774995898a13
+date: '2026-07-23'
+description: Generated datasets for Python .pth file creation in attack range.
+environment: attack_range
+directory: python_pth_file_creation
+mitre_technique:
+- T1546
+datasets:
+- name: python_pth_file_creation.log
+  path: /datasets/attack_techniques/T1546/python_pth_file_creation/python_pth_file_creation.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
