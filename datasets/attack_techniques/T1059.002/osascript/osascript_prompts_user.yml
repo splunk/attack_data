@@ -11,7 +11,3 @@ datasets:
   path: /datasets/attack_techniques/T1059.002/osascript/osascript_prompts_user.log
   sourcetype: osquery:results
   source: osquery
-references:
-- https://osquery.readthedocs.io/en/stable/deployment/process-auditing/
-- https://attack.mitre.org/techniques/T1059/002/
-- https://attack.mitre.org/techniques/T1056/002/
