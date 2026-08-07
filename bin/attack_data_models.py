@@ -244,7 +244,7 @@ class AttackDataArchiveResolver:
         """Snapshot missing_from_archive_log as a MissingFromCache model, timestamped with the current time."""
         return MissingFromCache(files=dict(self._missing_from_archive_log))
 
-    def write_missing_from_cache(self) -> Optional[Tuple[Path, Path]]:
+    def write_missing_from_cache(self, test_artifacts_path:Path) -> Optional[Tuple[Path, Path]]:
         """Write missing_from_cache.yml plus a markdown table into archive_dir, for other tooling to consume.
 
         Returns the (yml_path, md_path) written, or None if nothing has missed the cache yet.
@@ -253,9 +253,9 @@ class AttackDataArchiveResolver:
             return None
 
         missing = self.missing_from_cache()
-        self.archive_dir.mkdir(parents=True, exist_ok=True)
+        test_artifacts_path.mkdir(parents=True, exist_ok=True)
 
-        yml_path = self.archive_dir / MISSING_FROM_CACHE_FILE_NAME
+        yml_path = test_artifacts_path / MISSING_FROM_CACHE_FILE_NAME
         yml_path.write_text(to_yaml(missing))
 
         md_path = yml_path.with_suffix(".md")
