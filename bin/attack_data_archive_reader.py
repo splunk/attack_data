@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
 """
-Fetch a single LFS-tracked dataset file's bytes out of the local attack_data_archive/
-folder produced by build_dataset_archive.py.
+Fetch a single dataset file's bytes, either from the local attack_data_archive/
+folder produced by build_dataset_archive.py or, for LFS URLs not present in that
+archive, straight from GitHub.
 
 AttackDataArchiveResolver does the one-time verification (archive folder exists,
 attack_data_archive.zip and metadata.yml exist inside it, and the standalone
 metadata.yml matches the copy embedded in the zip) once, at construction. Reuse the
-same instance across many calls to verify_lfs_file_existence / get_lfs_file_bytes
-to avoid re-verifying and re-reading metadata.yml every time.
+same instance across many calls to verify_path / get_data to avoid re-verifying and
+re-reading metadata.yml every time.
 
-Given an LFS file's download URL (the key under lfs-files in metadata.yml),
-verify_lfs_file_existence:
-  1. Verifies the URL is a known LFS file in metadata.yml.
-  2. Verifies that file's relative path is actually present in the zip.
-
-get_lfs_file_bytes calls verify_lfs_file_existence, then returns that file's bytes.
+verify_path and get_data are the only public entry points; everything else on
+AttackDataArchiveResolver is a private implementation detail. Both accept either a
+FilePath (an existing local file) or an HttpUrl (an LFS download URL):
+  - verify_path checks that a FilePath exists, or that an HttpUrl is a known,
+    present-in-the-zip LFS file (i.e. it's in the cache) — or, if
+    check_existence_with_head_request is enabled, that an uncached HttpUrl is
+    reachable via a HEAD request.
+  - get_data calls verify_path, then returns the bytes: read from disk for a
+    FilePath, from the cache for a cached HttpUrl, or via a GET request otherwise.
 
 Can be used as a CLI, or imported and used as a class (see AttackDataArchiveResolver).
 
@@ -23,14 +27,27 @@ Requires Python 3.14+ (zipfile.ZIP_ZSTANDARD support), pydantic, and pydantic-se
 
 import sys
 import zipfile
+from functools import cached_property
 from pathlib import Path
-from typing import Optional
+from typing import Callable, Optional, Union
 
-try:
-    from pydantic import BaseModel, Field, PrivateAttr
-    from pydantic_settings import BaseSettings, CliApp, CliPositionalArg, SettingsConfigDict
-except ImportError as exc:
-    sys.exit(f"Error: missing dependency ({exc}). Install with: pip install -r bin/requirements.txt")
+import requests
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    FilePath,
+    HttpUrl,
+    PrivateAttr,
+    validate_call,
+)
+from pydantic_settings import (
+    BaseSettings,
+    CliApp,
+    CliImplicitFlag,
+    CliPositionalArg,
+    SettingsConfigDict,
+)
 
 from attack_data_archive_models import (
     ARCHIVE_FILE_NAME,
@@ -57,11 +74,22 @@ class MetadataFilesDiffer(ArchiveVerificationError):
     """Raised when the standalone metadata.yml and the copy embedded in the zip are not byte-identical."""
 
 
+class UrlUnreachable(ArchiveVerificationError):
+    """Raised when an HttpUrl not found in the cache fails a HEAD/GET request."""
+
+
+HTTP_REQUEST_MAX_ATTEMPTS = 3
+HTTP_REQUEST_RETRY_STATUS_CODES = {403, 503}
+HTTP_REQUEST_TIMEOUT_SECONDS = 10
+
+
 def _first_differing_line(a: str, b: str) -> int:
     """Return the 1-indexed line number of the first line where a and b differ.
 
     If one text is a prefix of the other, returns the line just past the shorter text's end.
     """
+    x = requests.head
+
     a_lines = a.splitlines()
     b_lines = b.splitlines()
     for i, (a_line, b_line) in enumerate(zip(a_lines, b_lines), start=1):
@@ -70,26 +98,56 @@ def _first_differing_line(a: str, b: str) -> int:
     return min(len(a_lines), len(b_lines)) + 1
 
 
+def _request_with_retry(
+    request_fn: Callable[..., requests.Response], method_name: str, url: HttpUrl
+) -> "requests.Response":
+    """Call request_fn(url), retrying up to HTTP_REQUEST_MAX_ATTEMPTS total attempts on 403/503.
+
+    Returns the response on a 200. Raises UrlUnreachable if every attempt returns 403/503,
+    or on the first response with any other non-200 status.
+    """
+    last_status: Optional[int] = None
+    for _ in range(1, HTTP_REQUEST_MAX_ATTEMPTS + 1):
+        response = request_fn(str(url), timeout=HTTP_REQUEST_TIMEOUT_SECONDS)
+        if response.status_code == 200:
+            return response
+        if response.status_code not in HTTP_REQUEST_RETRY_STATUS_CODES:
+            raise UrlUnreachable(f"{method_name} {url} returned {response.status_code}")
+        last_status = response.status_code
+
+    raise UrlUnreachable(
+        f"{method_name} {url} returned {last_status} on all {HTTP_REQUEST_MAX_ATTEMPTS} attempts"
+    )
+
+
+def _verify_url_reachable(url: HttpUrl) -> None:
+    """HEAD-request url, using the same retry/success/failure modes as a GET (see _request_with_retry)."""
+    _request_with_retry(requests.head, "HEAD", url)
+
+
 def default_archive_dir() -> Path:
     """The attack_data_archive/ folder that build_dataset_archive.py writes, alongside this repo's bin/ folder."""
     return Path(__file__).resolve().parent.parent / OUTPUT_DIR_NAME
 
 
 class AttackDataArchiveResolver(BaseModel):
-    """Verifies the local attack_data_archive/ once, then resolves many LFS URLs against it cheaply.
+    """Verifies the local attack_data_archive/ once, then resolves many files/URLs against it cheaply.
 
     Construction verifies that archive_dir exists, that attack_data_archive.zip and metadata.yml
     exist inside it, and that the standalone metadata.yml is byte-identical to the copy embedded
     in the zip. metadata.yml is parsed once and cached on the instance.
 
-    Reuse the same instance across many verify_lfs_file_existence / get_lfs_file_bytes calls to
-    avoid re-verifying and re-parsing metadata.yml on every call.
+    verify_path and get_data are the only public methods; reuse the same instance across many
+    calls to them to avoid re-verifying and re-parsing metadata.yml on every call.
 
     Raises ArchiveVerificationError if the folder or either file is missing, or
     MetadataFilesDiffer if the standalone and embedded metadata.yml contents differ.
     """
 
+    model_config = ConfigDict(frozen=True)
+
     archive_dir: Path = Field(default_factory=default_archive_dir)
+    check_existence_with_head_request: bool = False
 
     _metadata: Metadata = PrivateAttr()
 
@@ -100,11 +158,11 @@ class AttackDataArchiveResolver(BaseModel):
         if not archive_dir.is_dir():
             raise ArchiveVerificationError(f"Archive folder not found: {archive_dir}")
 
-        zip_path = self.zip_path
+        zip_path = self._zip_path
         if not zip_path.is_file():
             raise ArchiveVerificationError(f"Archive zip not found: {zip_path}")
 
-        yml_path = self.yml_path
+        yml_path = self._yml_path
         if not yml_path.is_file():
             raise ArchiveVerificationError(f"Archive metadata not found: {yml_path}")
 
@@ -114,7 +172,9 @@ class AttackDataArchiveResolver(BaseModel):
             try:
                 embedded_text = zf.read(METADATA_FILE_NAME).decode()
             except KeyError:
-                raise ArchiveVerificationError(f"{METADATA_FILE_NAME} not found inside {zip_path}") from None
+                raise ArchiveVerificationError(
+                    f"{METADATA_FILE_NAME} not found inside {zip_path}"
+                ) from None
 
         if standalone_text != embedded_text:
             line = _first_differing_line(standalone_text, embedded_text)
@@ -125,46 +185,87 @@ class AttackDataArchiveResolver(BaseModel):
         self._metadata = parse_metadata_yaml(standalone_text)
 
     @property
-    def zip_path(self) -> Path:
+    def _zip_path(self) -> Path:
         """Path to attack_data_archive.zip inside archive_dir."""
         return self.archive_dir / ARCHIVE_FILE_NAME
 
     @property
-    def yml_path(self) -> Path:
+    def _yml_path(self) -> Path:
         """Path to the standalone metadata.yml inside archive_dir."""
         return self.archive_dir / METADATA_FILE_NAME
 
-    @property
-    def metadata(self) -> Metadata:
-        """The parsed metadata.yml, cached at construction time."""
-        return self._metadata
+    @cached_property
+    def _zip_namelist(self) -> frozenset:
+        """Set of every relative path stored inside the zip, computed once since the archive is immutable."""
+        with zipfile.ZipFile(self._zip_path) as zf:
+            return frozenset(zf.namelist())
 
-    def verify_lfs_file_existence(self, url: str) -> str:
-        """Verify url is a known LFS file in metadata.yml and that its file is present in the zip.
+    def _cached_lfs_relative_path(self, url: str) -> Optional[str]:
+        """Look up url in the cached metadata.yml and verify its file is present in the zip.
 
-        Returns the file's relative path within the zip on success.
+        Returns the file's relative path within the zip if url is a known, present-in-the-zip
+        LFS file, or None if url is not a known LFS file at all (i.e. not in the cache).
 
-        Raises ArchiveVerificationError if the URL is not a known LFS file in metadata.yml,
-        or the file it points to is missing from the zip.
+        Raises ArchiveVerificationError if url is a known LFS file but its file is missing
+        from the zip.
         """
         entry = self._metadata.lfs_files.get(url)
         if entry is None:
-            raise ArchiveVerificationError(f"URL not found in {METADATA_FILE_NAME}'s lfs-files: {url}")
+            return None
 
-        with zipfile.ZipFile(self.zip_path) as zf:
-            if entry.relative_path not in zf.namelist():
-                raise ArchiveVerificationError(
-                    f"{entry.relative_path} is listed in {METADATA_FILE_NAME} but missing from {self.zip_path}"
-                )
+        if entry.relative_path not in self._zip_namelist:
+            raise ArchiveVerificationError(
+                f"{entry.relative_path} is listed in {METADATA_FILE_NAME} but missing from {self._zip_path}"
+            )
 
         return entry.relative_path
 
-    def get_lfs_file_bytes(self, url: str) -> bytes:
-        """Look up an LFS file by its download URL and return its bytes from the local archive."""
-        relative_path = self.verify_lfs_file_existence(url)
+    @validate_call
+    def verify_path(self, path: Union[FilePath, HttpUrl]) -> None:
+        """Verify that path exists, whether it's a local file or an HttpUrl.
 
-        with zipfile.ZipFile(self.zip_path) as zf:
-            return zf.read(relative_path)
+        A FilePath is verified simply by being accepted as an argument (pydantic's
+        FilePath validation already requires it to exist on disk).
+
+        An HttpUrl is verified if it's a known, present-in-the-zip LFS file (i.e. it's
+        in the cache). If it's not in the cache and check_existence_with_head_request
+        is enabled, falls back to a HEAD request (see _verify_url_reachable).
+
+        Raises ArchiveVerificationError if path is an HttpUrl that's neither in the
+        cache nor (when enabled) reachable via HEAD request.
+        """
+        if isinstance(path, Path):
+            return
+
+        if self._cached_lfs_relative_path(str(path)) is not None:
+            return
+
+        if not self.check_existence_with_head_request:
+            raise ArchiveVerificationError(
+                f"URL not found in {METADATA_FILE_NAME}'s lfs-files: {path}"
+            )
+
+        _verify_url_reachable(path)
+
+    @validate_call
+    def get_data(self, path: Union[FilePath, HttpUrl]) -> bytes:
+        """Return the bytes at path, whether it's a local file or an HttpUrl.
+
+        Calls verify_path first. A FilePath's bytes are then read directly from disk.
+        An HttpUrl's bytes are returned from the cache if it's a known, present-in-the-zip
+        LFS file; otherwise they're downloaded with a GET request.
+        """
+        self.verify_path(path)
+
+        if isinstance(path, Path):
+            return path.read_bytes()
+
+        relative_path = self._cached_lfs_relative_path(str(path))
+        if relative_path is not None:
+            with zipfile.ZipFile(self._zip_path) as zf:
+                return zf.read(relative_path)
+
+        return _request_with_retry(requests.get, "GET", path).content
 
 
 class Options(BaseSettings):
@@ -176,18 +277,40 @@ class Options(BaseSettings):
         cli_shortcuts={"output": "o", "archive_dir": "d"},
     )
 
-    url: CliPositionalArg[str] = Field(description="LFS download URL to look up under lfs-files in metadata.yml")
-    output: Optional[str] = Field(None, description="Write the file's bytes here instead of stdout")
+    url: CliPositionalArg[str] = Field(
+        description="LFS download URL to look up under lfs-files in metadata.yml"
+    )
+    output: Optional[str] = Field(
+        None, description="Write the file's bytes here instead of stdout"
+    )
     archive_dir: Optional[str] = Field(
-        None, description="Path to the attack_data_archive folder (default: alongside this repo's bin/ folder)"
+        None,
+        description="Path to the attack_data_archive folder (default: alongside this repo's bin/ folder)",
+    )
+    resolve: CliImplicitFlag[bool] = Field(
+        False,
+        description="Only verify that the URL resolves (is in the cache, or reachable via a HEAD request); don't fetch its bytes",
+    )
+    check_existence_with_head_request: CliImplicitFlag[bool] = Field(
+        False,
+        description="When resolving a URL not in the cache, verify it with a HEAD request instead of failing immediately",
     )
 
     def cli_cmd(self) -> None:
-        """Fetch the requested LFS file's bytes and write them to --output or stdout."""
+        """Fetch the requested LFS file's bytes and write them to --output or stdout, or just verify it resolves."""
         try:
             kwargs = {"archive_dir": Path(self.archive_dir)} if self.archive_dir else {}
-            resolver = AttackDataArchiveResolver(**kwargs)
-            data = resolver.get_lfs_file_bytes(self.url)
+            resolver = AttackDataArchiveResolver(
+                check_existence_with_head_request=self.check_existence_with_head_request,
+                **kwargs,
+            )
+
+            if self.resolve:
+                resolver.verify_path(self.url)
+                print(f"Resolved: {self.url}")
+                return
+
+            data = resolver.get_data(self.url)
         except ArchiveVerificationError as exc:
             sys.exit(f"Error: {exc}")
 
