@@ -10,7 +10,7 @@ datasets:
 -   name: snapattack
     sourcetype: XmlWinEventLog
     source: XmlWinEventLog:Security
-    path: /datasets/attack_techniques/T1546.009/snapattack/snaattack.log
+    path: /datasets/attack_techniques/T1546.009/snapattack/snapattack.log
 -   name: registry_entry
     sourcetype: XmlWinEventLog
     source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
