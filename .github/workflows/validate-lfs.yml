@@ -1,0 +1,70 @@
+name: Validate LFS Files
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'datasets/**/*.log'
+      - 'datasets/**/*.json'
+      - 'datasets/**/*.ndjson'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-lfs-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          lfs: 'false'
+
+      - name: Verify Git LFS is available
+        run: git lfs version
+
+      - name: Validate changed LFS files
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          mapfile -t files < <(
+            git diff --name-only --diff-filter=ACMRT "$BASE_SHA" "$HEAD_SHA" |
+              awk '/^datasets\/.*\.(log|json|ndjson)$/ { print }'
+          )
+
+          if (( ${#files[@]} == 0 )); then
+            echo "No changed .log, .json, or .ndjson files to validate."
+            exit 0
+          fi
+
+          failed_files=()
+
+          for file in "${files[@]}"; do
+            if git cat-file blob "HEAD:${file}" | git lfs pointer --check --strict --stdin >/dev/null; then
+              echo "LFS OK: ${file}"
+            else
+              echo "::error file=${file}::File is not stored in Git LFS."
+              failed_files+=("$file")
+            fi
+          done
+
+          if (( ${#failed_files[@]} != 0 )); then
+            echo "One or more changed .log, .json, or .ndjson files are not stored with Git LFS."
+            echo "Failed files:"
+            printf '  - %s\n' "${failed_files[@]}"
+
+            {
+              echo "### Files not stored with Git LFS"
+              echo
+              printf -- '- `%s`\n' "${failed_files[@]}"
+            } >> "$GITHUB_STEP_SUMMARY"
+
+            exit 1
+          fi
