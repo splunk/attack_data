@@ -44,18 +44,27 @@ jobs:
             exit 0
           fi
 
-          failures=0
+          failed_files=()
 
           for file in "${files[@]}"; do
             if git cat-file blob "HEAD:${file}" | git lfs pointer --check --strict --stdin >/dev/null; then
               echo "LFS OK: ${file}"
             else
               echo "::error file=${file}::File is not stored in Git LFS."
-              failures=1
+              failed_files+=("$file")
             fi
           done
 
-          if (( failures != 0 )); then
+          if (( ${#failed_files[@]} != 0 )); then
             echo "One or more changed .log, .json, or .ndjson files are not stored with Git LFS."
+            echo "Failed files:"
+            printf '  - %s\n' "${failed_files[@]}"
+
+            {
+              echo "### Files not stored with Git LFS"
+              echo
+              printf -- '- `%s`\n' "${failed_files[@]}"
+            } >> "$GITHUB_STEP_SUMMARY"
+
             exit 1
           fi
