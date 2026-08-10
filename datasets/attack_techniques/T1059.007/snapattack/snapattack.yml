@@ -11,4 +11,4 @@ datasets:
 -   name: snapattack
     sourcetype: XmlWinEventLog
     source: XmlWinEventLog:Security
-    path: /datasets/attack_techniques/T1059.007/snapattack/snaattack.log
+    path: /datasets/attack_techniques/T1059.007/snapattack/snapattack.log
