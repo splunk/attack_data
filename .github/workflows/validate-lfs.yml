@@ -35,8 +35,8 @@ jobs:
           set -euo pipefail
 
           mapfile -t files < <(
-            git diff --name-only --diff-filter=ACMRT "$BASE_SHA" "$HEAD_SHA" -- \
-              'datasets/**/*.log' 'datasets/**/*.json' 'datasets/**/*.ndjson'
+            git diff --name-only --diff-filter=ACMRT "$BASE_SHA" "$HEAD_SHA" |
+              awk '/^datasets\/.*\.(log|json|ndjson)$/ { print }'
           )
 
           if (( ${#files[@]} == 0 )); then
