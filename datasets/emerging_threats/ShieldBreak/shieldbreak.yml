@@ -14,26 +14,26 @@ mitre_technique:
 - T1021.002
 datasets:
 - name: system_integrity_process.log
-  path: /datasets/emerging_threats/shieldbreak/system_integrity_process.log
+  path: /datasets/emerging_threats/ShieldBreak/system_integrity_process.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - name: wer_file_creation.log
-  path: /datasets/emerging_threats/shieldbreak/wer_file_creation.log
+  path: /datasets/emerging_threats/ShieldBreak/wer_file_creation.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - name: phoneinfo_dll_created.log
-  path: /datasets/emerging_threats/shieldbreak/phoneinfo_dll_created.log
+  path: /datasets/emerging_threats/ShieldBreak/phoneinfo_dll_created.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - name: mpclient_dll_loaded.log
-  path: /datasets/emerging_threats/shieldbreak/mpclient_dll_loaded.log
+  path: /datasets/emerging_threats/ShieldBreak/mpclient_dll_loaded.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - name: defender_kernel_object.log
-  path: /datasets/emerging_threats/shieldbreak/defender_kernel_object.log
+  path: /datasets/emerging_threats/ShieldBreak/defender_kernel_object.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Windows Defender/Operational
 - name: ads_over_local_share.log
-  path: /datasets/emerging_threats/shieldbreak/ads_over_local_share.log
+  path: /datasets/emerging_threats/ShieldBreak/ads_over_local_share.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
