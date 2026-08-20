@@ -1,0 +1,13 @@
+author: STRT
+id: 814dfdb9-3a9d-4260-8c67-dd667fd9132f
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Remove
+  Organization
+environment: attack_range
+directory: github_remove_organization
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1485/github_remove_organization/github-814dfdb9-3a9d-4260-8c67-dd667fd9132f.log
+  sourcetype: httpevent
+  source: http:github

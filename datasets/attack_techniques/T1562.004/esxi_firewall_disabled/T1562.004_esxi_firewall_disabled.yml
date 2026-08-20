@@ -1,0 +1,12 @@
+author: STRT
+id: fa3ceefb-7e81-48f9-b79e-a9eccbb95db9
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Firewall Disabled
+environment: attack_range
+directory: esxi_firewall_disabled
+mitre_technique: []
+datasets:
+- name: esxi_firewall_disabled
+  path: /datasets/attack_techniques/T1562.004/esxi_firewall_disabled/esxi_firewall_disabled-fa3ceefb-7e81-48f9-b79e-a9eccbb95db9.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

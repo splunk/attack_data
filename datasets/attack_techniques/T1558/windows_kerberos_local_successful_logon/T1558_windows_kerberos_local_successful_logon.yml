@@ -1,0 +1,13 @@
+author: STRT
+id: a20c56a9-f9cb-4b0c-a68e-517ce5b7e8d3
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Kerberos Local Successful
+  Logon
+environment: attack_range
+directory: windows_kerberos_local_successful_logon
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1558/windows_kerberos_local_successful_logon/windows-xml-a20c56a9-f9cb-4b0c-a68e-517ce5b7e8d3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,16 @@
+author: STRT
+id: 5839375e-a2e6-4d21-908b-c8802e54682d
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Event Log Cleared
+environment: attack_range
+directory: windows_event_log_cleared
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1070.001/windows_event_log_cleared/windows-security-5839375e-a2e6-4d21-908b-c8802e54682d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: windows-system
+  path: /datasets/attack_techniques/T1070.001/windows_event_log_cleared/windows-system-5839375e-a2e6-4d21-908b-c8802e54682d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:System

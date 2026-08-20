@@ -1,0 +1,13 @@
+author: STRT
+id: 1c91b2dd-dcc4-4cc2-81db-1f7c75b5537b
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Large Number of Computer
+  Service Tickets Requested
+environment: attack_range
+directory: large_number_computer_service_tickets
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1135/large_number_computer_service_tickets/windows-security-1c91b2dd-dcc4-4cc2-81db-1f7c75b5537b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

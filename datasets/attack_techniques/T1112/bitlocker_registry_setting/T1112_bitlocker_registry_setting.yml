@@ -1,0 +1,13 @@
+author: STRT
+id: 0e20ec98-d62d-40c3-a8d8-6a8e86ec3b45
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry Configure
+  BitLocker
+environment: attack_range
+directory: bitlocker_registry_setting
+mitre_technique: []
+datasets:
+- name: fve-reg
+  path: /datasets/attack_techniques/T1112/bitlocker_registry_setting/fve-reg-0e20ec98-d62d-40c3-a8d8-6a8e86ec3b45.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

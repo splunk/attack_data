@@ -1,0 +1,13 @@
+author: STRT
+id: 341a937f-68d7-48cf-89de-ae516fb74d83
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Disable
+  Dependabot
+environment: attack_range
+directory: disable_dependabot
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1562.001/disable_dependabot/github-341a937f-68d7-48cf-89de-ae516fb74d83.log
+  sourcetype: httpevent
+  source: http:github

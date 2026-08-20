@@ -1,0 +1,13 @@
+author: STRT
+id: 6c1a9c96-63e6-45dc-b06c-4d21d04d108e
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux NOPASSWD Entry In Sudoers
+  File
+environment: attack_range
+directory: nopasswd_sudoers
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.003/nopasswd_sudoers/sysmon_linux-6c1a9c96-63e6-45dc-b06c-4d21d04d108e.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

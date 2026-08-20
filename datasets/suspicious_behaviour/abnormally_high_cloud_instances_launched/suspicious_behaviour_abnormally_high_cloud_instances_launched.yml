@@ -1,0 +1,13 @@
+author: STRT
+id: 67d22489-b77e-4ba2-ab98-b2912bd097d8
+date: '2026-07-10'
+description: Curated attack data generated for detection Cloud API Calls From Previously
+  Unseen User Roles
+environment: attack_range
+directory: abnormally_high_cloud_instances_launched
+mitre_technique: []
+datasets:
+- name: cloudtrail_behavioural_detections
+  path: /datasets/suspicious_behaviour/abnormally_high_cloud_instances_launched/cloudtrail_behavioural_detections-67d22489-b77e-4ba2-ab98-b2912bd097d8.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

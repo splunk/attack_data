@@ -1,0 +1,12 @@
+author: STRT
+id: 2d70b381-1f47-4535-8a72-721da1b37865
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Add User Account
+environment: attack_range
+directory: linux_adduser
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.003/linux_adduser/sysmon_linux-2d70b381-1f47-4535-8a72-721da1b37865.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

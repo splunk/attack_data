@@ -1,0 +1,13 @@
+author: STRT
+id: ceb8e463-864d-46ec-aa88-781a6b78bb46
+date: '2026-07-10'
+description: Curated attack data generated for detection Cisco Isovalent - Potential
+  Escape to Host
+environment: attack_range
+directory: cisco_isovalent_k8_escape
+mitre_technique: []
+datasets:
+- name: cisco_isovalent
+  path: /datasets/attack_techniques/T1611/cisco_isovalent_k8_escape/cisco_isovalent-ceb8e463-864d-46ec-aa88-781a6b78bb46.log
+  sourcetype: cisco:isovalent:processExec
+  source: not_applicable

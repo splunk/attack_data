@@ -1,0 +1,13 @@
+author: STRT
+id: b1ce50dc-93a8-4e2a-b8af-43760311fb26
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Service Execution
+  RemCom
+environment: attack_range
+directory: remcom
+mitre_technique: []
+datasets:
+- name: remcom_windows-sysmon
+  path: /datasets/attack_techniques/T1569.002/remcom/remcom_windows-sysmon-b1ce50dc-93a8-4e2a-b8af-43760311fb26.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: c644ab5e-1377-4a85-a68b-f5b57d665bd8
+date: '2026-07-10'
+description: Curated attack data generated for detection Disable Security Logs Using
+  MiniNt Registry
+environment: attack_range
+directory: minint_reg
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1112/minint_reg/sysmon-c644ab5e-1377-4a85-a68b-f5b57d665bd8.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

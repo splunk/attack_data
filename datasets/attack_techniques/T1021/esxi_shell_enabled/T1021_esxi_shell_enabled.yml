@@ -1,0 +1,12 @@
+author: STRT
+id: d1bb18ac-1626-4cf3-bd46-5d0f4d665a12
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Shell Access Enabled
+environment: attack_range
+directory: esxi_shell_enabled
+mitre_technique: []
+datasets:
+- name: esxi_shell_enabled
+  path: /datasets/attack_techniques/T1021/esxi_shell_enabled/esxi_shell_enabled-d1bb18ac-1626-4cf3-bd46-5d0f4d665a12.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

@@ -1,0 +1,12 @@
+author: STRT
+id: 8e674dad-48a4-41d8-a010-13a3100f92e3
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry LongPathsEnabled
+environment: attack_range
+directory: longpathsenabled
+mitre_technique: []
+datasets:
+- name: longpath_sysmon
+  path: /datasets/attack_techniques/T1112/blackbyte/longpathsenabled/longpath_sysmon-8e674dad-48a4-41d8-a010-13a3100f92e3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: cf8bf985-984c-4b38-9058-370eedb12592
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows .Key File Creation
+  in Root Directory
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1022/snapattack/snapattack-cf8bf985-984c-4b38-9058-370eedb12592.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

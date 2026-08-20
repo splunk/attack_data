@@ -1,0 +1,13 @@
+author: STRT
+id: d9abfc74-06b4-4fec-b5f6-de3e2cff2784
+date: '2026-07-11'
+description: Curated attack data generated for detection ServicePrincipalNames Discovery
+  with SetSPN
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon_setspn
+  path: /datasets/attack_techniques/T1558.003/atomic_red_team/windows-sysmon_setspn-d9abfc74-06b4-4fec-b5f6-de3e2cff2784.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

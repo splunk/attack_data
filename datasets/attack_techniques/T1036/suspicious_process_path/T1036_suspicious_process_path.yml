@@ -1,0 +1,13 @@
+author: STRT
+id: 3b912b23-5799-4979-b157-80c0642923ee
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Suspicious Process
+  File Path
+environment: attack_range
+directory: suspicious_process_path
+mitre_technique: []
+datasets:
+- name: susp_path_sysmon1
+  path: /datasets/attack_techniques/T1036/suspicious_process_path/susp_path_sysmon1-3b912b23-5799-4979-b157-80c0642923ee.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

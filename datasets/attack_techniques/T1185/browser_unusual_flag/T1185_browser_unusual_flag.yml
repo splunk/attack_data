@@ -1,0 +1,13 @@
+author: STRT
+id: 81c5968e-e90b-48dd-9664-d7f092684a9f
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Browser Process Launched
+  with Unusual Flags
+environment: attack_range
+directory: browser_unusual_flag
+mitre_technique: []
+datasets:
+- name: castle_chrome_shell32
+  path: /datasets/attack_techniques/T1185/browser_unusual_flag/castle_chrome_shell32-81c5968e-e90b-48dd-9664-d7f092684a9f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

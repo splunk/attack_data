@@ -1,0 +1,13 @@
+author: STRT
+id: ff6c96c8-6bb6-42bd-8a45-9c1b533755bf
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Rundll32 Apply User
+  Settings Changes
+environment: attack_range
+directory: update_per_user_system
+mitre_technique: []
+datasets:
+- name: rundll32_updateperusersystem
+  path: /datasets/attack_techniques/T1218.011/update_per_user_system/rundll32_updateperusersystem-ff6c96c8-6bb6-42bd-8a45-9c1b533755bf.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

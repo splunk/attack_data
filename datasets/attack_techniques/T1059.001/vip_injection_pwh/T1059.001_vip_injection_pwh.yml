@@ -1,0 +1,13 @@
+author: STRT
+id: ee2b674a-9e5b-467d-927d-9b41a7745729
+date: '2026-07-10'
+description: Curated attack data generated for detection PowerShell PInvoke Process
+  Injection API Chain
+environment: attack_range
+directory: vip_injection_pwh
+mitre_technique: []
+datasets:
+- name: pwh_net_inline
+  path: /datasets/attack_techniques/T1059.001/vip_injection_pwh/pwh_net_inline-ee2b674a-9e5b-467d-927d-9b41a7745729.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

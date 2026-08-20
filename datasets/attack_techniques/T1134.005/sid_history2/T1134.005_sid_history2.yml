@@ -1,0 +1,13 @@
+author: STRT
+id: 55f8ea9c-b252-4615-9987-ac45b8eb7657
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD SID History Attribute
+  Modified
+environment: attack_range
+directory: sid_history2
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1134.005/sid_history2/windows-security-55f8ea9c-b252-4615-9987-ac45b8eb7657.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

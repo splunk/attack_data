@@ -1,0 +1,13 @@
+author: STRT
+id: 681ed506-86f6-478e-8806-4c3244cf2f4f
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows RunMRU Registry Key
+  or Value Deleted
+environment: attack_range
+directory: delete_runmru_reg
+mitre_technique: []
+datasets:
+- name: runmru_deletion
+  path: /datasets/attack_techniques/T1112/delete_runmru_reg/runmru_deletion-681ed506-86f6-478e-8806-4c3244cf2f4f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

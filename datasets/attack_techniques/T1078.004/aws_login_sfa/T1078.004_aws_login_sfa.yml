@@ -1,0 +1,13 @@
+author: STRT
+id: 015bb8ae-d43a-4aba-8403-64e9ffeb662b
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Successful Single-Factor
+  Authentication
+environment: attack_range
+directory: aws_login_sfa
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1078.004/aws_login_sfa/cloudtrail-015bb8ae-d43a-4aba-8403-64e9ffeb662b.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

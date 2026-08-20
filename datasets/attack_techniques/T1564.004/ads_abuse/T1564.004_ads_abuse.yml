@@ -1,0 +1,13 @@
+author: STRT
+id: 846e4327-a3d9-46d5-a40e-c903336cc0db
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Alternate DataStream
+  - Executable Content
+environment: attack_range
+directory: ads_abuse
+mitre_technique: []
+datasets:
+- name: ads_abuse_sysmon
+  path: /datasets/attack_techniques/T1564.004/ads_abuse/ads_abuse_sysmon-846e4327-a3d9-46d5-a40e-c903336cc0db.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

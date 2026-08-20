@@ -1,0 +1,13 @@
+author: STRT
+id: ecae5a49-d4b8-4543-96c5-e5e49714d1a3
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Multiple Users Remotely
+  Failed To Authenticate From Host
+environment: attack_range
+directory: purplesharp_remote_spray_xml
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1110.003/purplesharp_remote_spray_xml/windows-security-ecae5a49-d4b8-4543-96c5-e5e49714d1a3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

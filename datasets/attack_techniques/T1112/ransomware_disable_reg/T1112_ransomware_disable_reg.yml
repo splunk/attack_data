@@ -1,0 +1,13 @@
+author: STRT
+id: 88a8083f-8363-41f9-9f1c-d8397fc07da1
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Disable Change Password
+  Through Registry
+environment: attack_range
+directory: ransomware_disable_reg
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1112/ransomware_disable_reg/sysmon-88a8083f-8363-41f9-9f1c-d8397fc07da1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

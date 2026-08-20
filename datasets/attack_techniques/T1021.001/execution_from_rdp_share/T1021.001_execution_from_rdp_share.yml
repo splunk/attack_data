@@ -1,0 +1,13 @@
+author: STRT
+id: b1132abf-98cc-4316-8b1a-08acd0bf0111
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Process Execution
+  From RDP Share
+environment: attack_range
+directory: execution_from_rdp_share
+mitre_technique: []
+datasets:
+- name: execution_from_rdp_share
+  path: /datasets/attack_techniques/T1021.001/execution_from_rdp_share/execution_from_rdp_share-b1132abf-98cc-4316-8b1a-08acd0bf0111.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

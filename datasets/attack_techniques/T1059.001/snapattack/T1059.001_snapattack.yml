@@ -1,0 +1,13 @@
+author: STRT
+id: 58ac2b61-e6f8-4f49-8570-7921e98b9b87
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Crowdstrike RTR Script
+  Execution
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1059.001/snapattack/snapattack-58ac2b61-e6f8-4f49-8570-7921e98b9b87.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

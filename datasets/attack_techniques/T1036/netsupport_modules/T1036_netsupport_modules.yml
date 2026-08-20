@@ -1,0 +1,13 @@
+author: STRT
+id: a9be2d79-bc28-44c4-a210-8d42e838f579
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows NetSupport RMM DLL
+  Loaded By Uncommon Process
+environment: attack_range
+directory: netsupport_modules
+mitre_technique: []
+datasets:
+- name: net_support_module
+  path: /datasets/attack_techniques/T1036/netsupport_modules/net_support_module-a9be2d79-bc28-44c4-a210-8d42e838f579.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

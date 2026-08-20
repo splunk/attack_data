@@ -1,0 +1,13 @@
+author: STRT
+id: d9f980c1-040a-4994-9682-21bd0ba82e51
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Phishing Outlook
+  Drop Dll In FORM Dir
+environment: attack_range
+directory: outlook_dropped_dll
+mitre_technique: []
+datasets:
+- name: outlook_phishing_form_dll
+  path: /datasets/attack_techniques/T1566/outlook_dropped_dll/outlook_phishing_form_dll-d9f980c1-040a-4994-9682-21bd0ba82e51.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

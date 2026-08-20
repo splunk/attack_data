@@ -1,0 +1,16 @@
+author: STRT
+id: 2834275c-5dca-4500-9d2c-fd3fca459f76
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS Disable Bucket Versioning
+environment: attack_range
+directory: aws_bucket_version
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1490/aws_bucket_version/asl_ocsf_cloudtrail-2834275c-5dca-4500-9d2c-fd3fca459f76.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1490/aws_bucket_version/cloudtrail-2834275c-5dca-4500-9d2c-fd3fca459f76.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

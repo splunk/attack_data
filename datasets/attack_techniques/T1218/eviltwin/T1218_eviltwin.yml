@@ -1,0 +1,13 @@
+author: STRT
+id: 8d9bfd2f-4502-4a73-9f3b-0331e8bde9a9
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows MSC EvilTwin Directory
+  Path Manipulation
+environment: attack_range
+directory: eviltwin
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1218/eviltwin/windows-sysmon-8d9bfd2f-4502-4a73-9f3b-0331e8bde9a9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

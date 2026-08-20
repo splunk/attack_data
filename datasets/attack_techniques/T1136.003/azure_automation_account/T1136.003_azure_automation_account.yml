@@ -1,0 +1,13 @@
+author: STRT
+id: 57f86758-9d43-48b0-8494-aaa6004d960a
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure Automation Account
+  Created
+environment: attack_range
+directory: azure_automation_account
+mitre_technique: []
+datasets:
+- name: azure-activity
+  path: /datasets/attack_techniques/T1136.003/azure_automation_account/azure-activity-57f86758-9d43-48b0-8494-aaa6004d960a.log
+  sourcetype: mscs:azure:audit
+  source: mscs:azure:audit

@@ -1,0 +1,13 @@
+author: STRT
+id: 20298b80-ffd2-4e61-9539-0c497d70cdec
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD New Custom Domain
+  Added
+environment: attack_range
+directory: new_federated_domain
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1484.002/new_federated_domain/azure-audit-20298b80-ffd2-4e61-9539-0c497d70cdec.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

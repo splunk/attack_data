@@ -1,0 +1,13 @@
+author: STRT
+id: 77c78f1e-0cca-4b1e-aff0-297105bb2994
+date: '2026-07-10'
+description: Curated attack data generated for detection CrowdStrike Falcon Stream
+  Alerts
+environment: attack_range
+directory: event_stream_events
+mitre_technique: []
+datasets:
+- name: stream_events_2
+  path: /datasets/suspicious_behaviour/crowdstrike_stream/event_stream_events/stream_events_2-77c78f1e-0cca-4b1e-aff0-297105bb2994.log
+  sourcetype: CrowdStrike:Event:Streams:JSON
+  source: CrowdStrike:Event:Streams

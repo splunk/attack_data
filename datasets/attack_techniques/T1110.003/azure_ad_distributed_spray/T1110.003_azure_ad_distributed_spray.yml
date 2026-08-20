@@ -1,0 +1,13 @@
+author: STRT
+id: ac42f470-f4c6-441b-ba59-f27c8b2d23a1
+date: '2026-07-13'
+description: Curated attack data generated for detection Azure AD Multi-Source Failed
+  Authentications Spike
+environment: attack_range
+directory: azure_ad_distributed_spray
+mitre_technique: []
+datasets:
+- name: azure_ad_distributed_spray
+  path: /datasets/attack_techniques/T1110.003/azure_ad_distributed_spray/azure_ad_distributed_spray-ac42f470-f4c6-441b-ba59-f27c8b2d23a1.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

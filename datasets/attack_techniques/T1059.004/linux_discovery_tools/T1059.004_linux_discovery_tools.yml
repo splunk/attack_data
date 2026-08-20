@@ -1,0 +1,13 @@
+author: STRT
+id: 851a598e-51bc-4a40-adc9-2cd4ef8c4dc4
+date: '2026-07-11'
+description: Curated attack data generated for detection Suspicious Linux Discovery
+  Commands
+environment: attack_range
+directory: linux_discovery_tools
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1059.004/linux_discovery_tools/sysmon_linux-851a598e-51bc-4a40-adc9-2cd4ef8c4dc4.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

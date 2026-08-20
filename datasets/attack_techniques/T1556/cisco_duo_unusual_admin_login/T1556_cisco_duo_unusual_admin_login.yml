@@ -1,0 +1,13 @@
+author: STRT
+id: 24e5cbd7-99d8-4d7a-a720-d7654d2bd73e
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Duo Admin Login Unusual
+  Browser
+environment: attack_range
+directory: cisco_duo_unusual_admin_login
+mitre_technique: []
+datasets:
+- name: cisco_duo_activity
+  path: /datasets/attack_techniques/T1556/cisco_duo_unusual_admin_login/cisco_duo_activity-24e5cbd7-99d8-4d7a-a720-d7654d2bd73e.log
+  sourcetype: cisco:duo:activity
+  source: duo

@@ -1,0 +1,13 @@
+author: STRT
+id: 9c743bb8-e8d5-4680-8009-3fbeb7ebb06b
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Registry Dotnet ETW
+  Disabled Via ENV Variable
+environment: attack_range
+directory: dotnet_etw_bypass
+mitre_technique: []
+datasets:
+- name: dotnet_etw_bypass
+  path: /datasets/attack_techniques/T1562.006/dotnet_etw_bypass/dotnet_etw_bypass-9c743bb8-e8d5-4680-8009-3fbeb7ebb06b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

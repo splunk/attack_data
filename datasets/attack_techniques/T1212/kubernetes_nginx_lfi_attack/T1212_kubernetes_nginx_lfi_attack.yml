@@ -1,0 +1,13 @@
+author: STRT
+id: b38ebcec-5ad4-4c4c-ae5c-2e7c4e3cd8f5
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes Nginx Ingress
+  LFI
+environment: attack_range
+directory: kubernetes_nginx_lfi_attack
+mitre_technique: []
+datasets:
+- name: kubernetes_nginx_lfi_attack
+  path: /datasets/attack_techniques/T1212/kubernetes_nginx_lfi_attack/kubernetes_nginx_lfi_attack-b38ebcec-5ad4-4c4c-ae5c-2e7c4e3cd8f5.log
+  sourcetype: kube:container:controller
+  source: kubernetes

@@ -1,0 +1,13 @@
+author: STRT
+id: d7e9d22a-78a0-4830-8e90-3dd1194a5959
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta Multiple Accounts Locked
+  Out
+environment: attack_range
+directory: okta_multiple_accounts_lockout
+mitre_technique: []
+datasets:
+- name: okta_multiple_accounts_lockout
+  path: /datasets/attack_techniques/T1110/okta_multiple_accounts_lockout/okta_multiple_accounts_lockout-d7e9d22a-78a0-4830-8e90-3dd1194a5959.log
+  sourcetype: OktaIM2:log
+  source: Okta

@@ -1,0 +1,13 @@
+author: STRT
+id: ef1004c6-1544-4709-b07c-d63d203df4a1
+date: '2026-07-10'
+description: Curated attack data generated for detection Recon AVProduct Through Pwh
+  or WMI
+environment: attack_range
+directory: pwh_av_recon
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/t1592/pwh_av_recon/windows-powershell-xml-ef1004c6-1544-4709-b07c-d63d203df4a1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

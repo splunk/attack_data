@@ -1,0 +1,13 @@
+author: STRT
+id: b98153fc-a74a-4b4d-96c5-55e06eab937c
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Mail Permissioned Application
+  Consent Granted by User
+environment: attack_range
+directory: o365_user_consent_mail_permissions
+mitre_technique: []
+datasets:
+- name: o365_user_consent_mail_permissions
+  path: /datasets/attack_techniques/T1528/o365_user_consent_mail_permissions/o365_user_consent_mail_permissions-b98153fc-a74a-4b4d-96c5-55e06eab937c.log
+  sourcetype: o365:management:activity
+  source: o365

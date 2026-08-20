@@ -1,0 +1,13 @@
+author: STRT
+id: 4cec375c-0ff1-403a-a059-b58f868169bd
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Executable Masquerading
+  as Benign File Types
+environment: attack_range
+directory: masquerading_executable_as_non_exec_file_type
+mitre_technique: []
+datasets:
+- name: non_exec_ext_but_exec_detected
+  path: /datasets/attack_techniques/T1036.008/masquerading_executable_as_non_exec_file_type/non_exec_ext_but_exec_detected-4cec375c-0ff1-403a-a059-b58f868169bd.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

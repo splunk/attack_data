@@ -1,0 +1,12 @@
+author: STRT
+id: de9ce0c8-1155-4f8a-9848-1f9c5f504884
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux c89 Privilege Escalation
+environment: attack_range
+directory: c89
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/c89/sysmon_linux-de9ce0c8-1155-4f8a-9848-1f9c5f504884.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

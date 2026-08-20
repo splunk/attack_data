@@ -1,0 +1,13 @@
+author: STRT
+id: b514f09c-961b-421c-adec-ebbee07c10d4
+date: '2026-07-11'
+description: Curated attack data generated for detection UAC Bypass With Colorui COM
+  Object
+environment: attack_range
+directory: uac_colorui
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1546.015/uac_colorui/windows-sysmon-b514f09c-961b-421c-adec-ebbee07c10d4.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

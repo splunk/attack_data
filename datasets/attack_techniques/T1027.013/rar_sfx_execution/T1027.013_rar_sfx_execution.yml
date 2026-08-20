@@ -1,0 +1,13 @@
+author: STRT
+id: e985b42a-bb88-4734-a554-9ed0333ce8f7
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Obfuscated Files
+  or Information via RAR SFX
+environment: attack_range
+directory: rar_sfx_execution
+mitre_technique: []
+datasets:
+- name: rar_sfx
+  path: /datasets/attack_techniques/T1027.013/rar_sfx_execution/rar_sfx-e985b42a-bb88-4734-a554-9ed0333ce8f7.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: ec13f29e-25a8-4203-8380-e474ca696d5a
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Secure Firewall - Citrix
+  NetScaler Memory Overread Attempt
+environment: attack_range
+directory: intrusion_event
+mitre_technique: []
+datasets:
+- name: intrusion_events
+  path: /datasets/cisco_secure_firewall_threat_defense/intrusion_event/intrusion_events-ec13f29e-25a8-4203-8380-e474ca696d5a.log
+  sourcetype: cisco:sfw:estreamer
+  source: not_applicable

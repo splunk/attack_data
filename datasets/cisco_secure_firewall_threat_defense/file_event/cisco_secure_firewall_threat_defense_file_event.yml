@@ -1,0 +1,13 @@
+author: STRT
+id: 7770416a-12a3-46bd-aab6-0adce0da2ef5
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Secure Firewall - Binary
+  File Type Download
+environment: attack_range
+directory: file_event
+mitre_technique: []
+datasets:
+- name: file_events
+  path: /datasets/cisco_secure_firewall_threat_defense/file_event/file_events-7770416a-12a3-46bd-aab6-0adce0da2ef5.log
+  sourcetype: cisco:sfw:estreamer
+  source: not_applicable

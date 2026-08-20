@@ -1,0 +1,13 @@
+author: STRT
+id: b5e5d5fe-78ab-4978-bfac-e667e565d2f1
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows BitLocker Suspicious
+  Command Usage
+environment: attack_range
+directory: bitlocker_sus_commands
+mitre_technique: []
+datasets:
+- name: bitlocker_sus_commands
+  path: /datasets/attack_techniques/T1486/bitlocker_sus_commands/bitlocker_sus_commands-b5e5d5fe-78ab-4978-bfac-e667e565d2f1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

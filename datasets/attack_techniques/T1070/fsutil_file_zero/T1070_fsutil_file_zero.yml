@@ -1,0 +1,12 @@
+author: STRT
+id: 5a0a6692-0cd2-459e-8870-54841bbac27d
+date: '2026-07-10'
+description: Curated attack data generated for detection Fsutil Zeroing File
+environment: attack_range
+directory: fsutil_file_zero
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1070/fsutil_file_zero/windows-sysmon-5a0a6692-0cd2-459e-8870-54841bbac27d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
