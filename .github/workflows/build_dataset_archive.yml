@@ -1,0 +1,36 @@
+name: build-dataset-archive-on-merge-to-default-branch
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-archive:
+    runs-on:
+      group: attack-data-runners
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+        with:
+          lfs: true
+          fetch-depth: 0 # full history needed to compute per-file last-updated timestamps
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r bin/requirements.txt
+
+      - name: Build datasets archive
+        run: python bin/build_dataset_archive.py
+
+      - name: Upload archive as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: attack_data_archive
+          path: attack_data_archive/attack_data_archive.zip
