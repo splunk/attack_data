@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: 07335ddc-97c4-44c4-b3af-feabe28a356d
+date: '2026-08-23'
+description: Windows Security event for EDRSilencer creating a Windows Filtering Platform outbound filter.
+environment: attack_range
+directory: edr_silencer
+mitre_technique:
+- T1685
+datasets:
+- name: windows-security-xml
+  path: /datasets/attack_techniques/T1685/edr_silencer/windows-security-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
