@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 947b2dd5-1604-4ef3-a06d-e67a72162018
+date: '2026-08-24'
+description: Generated datasets for Windows Builtin Account rename in attack range.
+environment: attack_range
+directory: builtin_account_rename
+mitre_technique:
+- T1078.003
+datasets:
+-   name: windows_security
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1078.003/builtin_account_rename/windows_security.log

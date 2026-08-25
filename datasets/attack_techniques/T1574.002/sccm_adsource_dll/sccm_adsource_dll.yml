@@ -1,0 +1,13 @@
+author: Raven Tait
+id: 4f55b07b-7aeb-47f4-a234-b222a902276b
+date: '2026-08-20'
+description: Sysmon file creation telemetry capturing adsource.dll staging in the SCCM SMS Provider bin\X64 directory, consistent with CVE-2026-47301 DLL side-loading exploitation.
+environment: attack_range
+directory: sccm_adsource_dll
+mitre_technique:
+- T1574.002
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1574.002/sccm_adsource_dll/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
