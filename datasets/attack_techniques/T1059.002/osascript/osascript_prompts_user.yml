@@ -1,0 +1,13 @@
+author: Radka Viskova
+id: 67d286c1-1f42-47c1-806a-eb976bb9c542
+date: '2026-08-07'
+description: Generated dataset for osascript execution prompting for user interaction with osquery and endpoint security
+environment: TalosOffensiveLab
+directory: osascript
+mitre_technique: 
+- T1059.002
+datasets:
+- name: osascript_prompts_user
+  path: /datasets/attack_techniques/T1059.002/osascript/osascript_prompts_user.log
+  sourcetype: osquery:results
+  source: osquery
