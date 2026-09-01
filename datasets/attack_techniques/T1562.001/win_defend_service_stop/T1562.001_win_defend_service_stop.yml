@@ -1,0 +1,13 @@
+author: STRT
+id: d45bd839-b65b-4dc6-b525-2d889ccf9ab6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Attempt To Stop Security
+  Service
+environment: attack_range
+directory: win_defend_service_stop
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1562.001/win_defend_service_stop/windows-sysmon-d45bd839-b65b-4dc6-b525-2d889ccf9ab6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 579d3a25-9fab-4085-90e1-8a130123cac9
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Add Files In Known
+  Crontab Directories
+environment: attack_range
+directory: cronjobs_entry
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1053.003/cronjobs_entry/sysmon_linux-579d3a25-9fab-4085-90e1-8a130123cac9.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

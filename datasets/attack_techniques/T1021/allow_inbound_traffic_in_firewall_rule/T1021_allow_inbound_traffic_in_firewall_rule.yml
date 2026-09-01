@@ -1,0 +1,13 @@
+author: STRT
+id: 65659385-a0a1-47bf-86a4-0089c920d0f1
+date: '2026-07-10'
+description: Curated attack data generated for detection Allow Inbound Traffic In
+  Firewall Rule
+environment: attack_range
+directory: allow_inbound_traffic_in_firewall_rule
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1021/allow_inbound_traffic_in_firewall_rule/windows-xml-65659385-a0a1-47bf-86a4-0089c920d0f1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

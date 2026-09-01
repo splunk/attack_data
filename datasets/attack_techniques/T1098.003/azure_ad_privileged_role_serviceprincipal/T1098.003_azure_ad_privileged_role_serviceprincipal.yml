@@ -1,0 +1,13 @@
+author: STRT
+id: c9779c66-267d-4c75-b9a1-7c5fac6abf1b
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Privileged Role
+  Assigned to Service Principal
+environment: attack_range
+directory: azure_ad_privileged_role_serviceprincipal
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1098.003/azure_ad_privileged_role_serviceprincipal/azure-audit-c9779c66-267d-4c75-b9a1-7c5fac6abf1b.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

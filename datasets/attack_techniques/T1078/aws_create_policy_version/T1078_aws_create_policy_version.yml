@@ -1,0 +1,17 @@
+author: STRT
+id: c51db4dd-8159-43fa-b388-001289402bb2
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS Create Policy Version
+  to allow all resources
+environment: attack_range
+directory: aws_create_policy_version
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1078/aws_create_policy_version/asl_ocsf_cloudtrail-c51db4dd-8159-43fa-b388-001289402bb2.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1078/aws_create_policy_version/aws_cloudtrail_events-c51db4dd-8159-43fa-b388-001289402bb2.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

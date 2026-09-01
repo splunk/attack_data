@@ -1,0 +1,13 @@
+author: STRT
+id: 8eaf0472-ddf3-46a4-9a62-566352e7d1bc
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Suspicious VMWare
+  Tools Child Process
+environment: attack_range
+directory: vmtoolsd
+mitre_technique: []
+datasets:
+- name: vmtoolsd_execution
+  path: /datasets/attack_techniques/T1059/vmtoolsd/vmtoolsd_execution-8eaf0472-ddf3-46a4-9a62-566352e7d1bc.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

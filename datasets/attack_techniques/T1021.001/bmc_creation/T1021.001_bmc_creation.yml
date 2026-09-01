@@ -1,0 +1,13 @@
+author: STRT
+id: 8962175d-32f2-4cf9-a164-8c1512da4478
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows RDP Bitmap Cache
+  File Creation
+environment: attack_range
+directory: bmc_creation
+mitre_technique: []
+datasets:
+- name: bmc_creation
+  path: /datasets/attack_techniques/T1021.001/bmc_creation/bmc_creation-8962175d-32f2-4cf9-a164-8c1512da4478.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

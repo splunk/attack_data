@@ -1,0 +1,13 @@
+author: STRT
+id: b404fdb5-2477-435d-b58c-020733e4d485
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Service Create with
+  Tscon
+environment: attack_range
+directory: rdphijack
+mitre_technique: []
+datasets:
+- name: tscon_windows-sysmon
+  path: /datasets/attack_techniques/T1563.002/rdphijack/tscon_windows-sysmon-b404fdb5-2477-435d-b58c-020733e4d485.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

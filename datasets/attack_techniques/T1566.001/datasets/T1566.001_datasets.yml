@@ -1,0 +1,13 @@
+author: STRT
+id: 0347f5a4-0f46-4879-bc10-2dda6c1be99b
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Office Product Loading
+  Taskschd DLL
+environment: attack_range
+directory: datasets
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1566.001/datasets/windows-sysmon-0347f5a4-0f46-4879-bc10-2dda6c1be99b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

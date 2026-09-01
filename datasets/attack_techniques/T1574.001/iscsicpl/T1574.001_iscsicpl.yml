@@ -1,0 +1,13 @@
+author: STRT
+id: f5a39438-6798-4b8b-9dc3-e6ad2c20b63b
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows DLL Search Order
+  Hijacking with iscsicpl
+environment: attack_range
+directory: iscsicpl
+mitre_technique: []
+datasets:
+- name: iscsicpl-windows-sysmon
+  path: /datasets/attack_techniques/T1574.001/iscsicpl/iscsicpl-windows-sysmon-f5a39438-6798-4b8b-9dc3-e6ad2c20b63b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

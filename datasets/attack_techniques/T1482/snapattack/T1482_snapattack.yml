@@ -1,0 +1,13 @@
+author: STRT
+id: 250d1229-3435-40ed-8c84-cf6c2cc4e4ff
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows ConvertTo-AADIntBackdoor
+  Execution Via PowerShell Script
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1482/snapattack/snapattack-250d1229-3435-40ed-8c84-cf6c2cc4e4ff.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

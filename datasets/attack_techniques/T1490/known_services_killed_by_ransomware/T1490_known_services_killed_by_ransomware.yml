@@ -1,0 +1,13 @@
+author: STRT
+id: 8971478a-c0c0-4f38-a277-4577b9630c7c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Security And Backup
+  Services Stop
+environment: attack_range
+directory: known_services_killed_by_ransomware
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1490/known_services_killed_by_ransomware/windows-xml-8971478a-c0c0-4f38-a277-4577b9630c7c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:System

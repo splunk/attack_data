@@ -1,0 +1,13 @@
+author: STRT
+id: 0554f7b1-30ed-478e-a06a-109c00ae8b7e
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi External Root Login
+  Activity
+environment: attack_range
+directory: esxi_external_root_login
+mitre_technique: []
+datasets:
+- name: esxi_external_root_login
+  path: /datasets/attack_techniques/T1078/esxi_external_root_login/esxi_external_root_login-0554f7b1-30ed-478e-a06a-109c00ae8b7e.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

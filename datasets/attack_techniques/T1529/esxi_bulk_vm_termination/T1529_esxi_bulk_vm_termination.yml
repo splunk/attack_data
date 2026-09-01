@@ -1,0 +1,12 @@
+author: STRT
+id: fcdf9f93-dd8a-4377-92b7-e84030cde7fd
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Bulk VM Termination
+environment: attack_range
+directory: esxi_bulk_vm_termination
+mitre_technique: []
+datasets:
+- name: esxi_bulk_vm_termination
+  path: /datasets/attack_techniques/T1529/esxi_bulk_vm_termination/esxi_bulk_vm_termination-fcdf9f93-dd8a-4377-92b7-e84030cde7fd.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

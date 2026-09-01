@@ -1,0 +1,13 @@
+author: STRT
+id: c7c1488c-1c47-425a-a286-fc077fc8b7e0
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Executable in Loaded
+  Modules
+environment: attack_range
+directory: executable_shared_modules
+mitre_technique: []
+datasets:
+- name: image_loaded_exe
+  path: /datasets/attack_techniques/T1129/executable_shared_modules/image_loaded_exe-c7c1488c-1c47-425a-a286-fc077fc8b7e0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

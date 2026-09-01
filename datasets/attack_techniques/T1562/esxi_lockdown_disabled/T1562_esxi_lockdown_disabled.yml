@@ -1,0 +1,12 @@
+author: STRT
+id: c01910dd-bbe6-4e66-8a9d-2e23db2f6890
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Lockdown Mode Disabled
+environment: attack_range
+directory: esxi_lockdown_disabled
+mitre_technique: []
+datasets:
+- name: esxi_lockdown_disabled
+  path: /datasets/attack_techniques/T1562/esxi_lockdown_disabled/esxi_lockdown_disabled-c01910dd-bbe6-4e66-8a9d-2e23db2f6890.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

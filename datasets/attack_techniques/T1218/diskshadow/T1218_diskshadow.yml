@@ -1,0 +1,13 @@
+author: STRT
+id: 475c4bdb-60ce-4ab6-9462-4b08a814bc74
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Diskshadow Proxy
+  Execution
+environment: attack_range
+directory: diskshadow
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1218/diskshadow/windows-sysmon-475c4bdb-60ce-4ab6-9462-4b08a814bc74.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

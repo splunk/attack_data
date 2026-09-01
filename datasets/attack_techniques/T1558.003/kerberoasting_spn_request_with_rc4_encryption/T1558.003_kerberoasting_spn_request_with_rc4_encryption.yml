@@ -1,0 +1,13 @@
+author: STRT
+id: 2d3fc9cd-f303-4804-b180-e27f7eef6743
+date: '2026-07-10'
+description: Curated attack data generated for detection Kerberoasting spn request
+  with RC4 encryption
+environment: attack_range
+directory: kerberoasting_spn_request_with_rc4_encryption
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1558.003/kerberoasting_spn_request_with_rc4_encryption/windows-xml-2d3fc9cd-f303-4804-b180-e27f7eef6743.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,13 @@
+author: STRT
+id: 0ece945b-a86f-4bcf-9702-b6942e86403e
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Raw Access To Master
+  Boot Record Drive
+environment: attack_range
+directory: mbr_raw_access
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1561.002/mbr_raw_access/sysmon-0ece945b-a86f-4bcf-9702-b6942e86403e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

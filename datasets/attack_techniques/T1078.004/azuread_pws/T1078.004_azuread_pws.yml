@@ -1,0 +1,13 @@
+author: STRT
+id: 067b0907-209b-41b2-a978-c0907f2c4dd3
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Successful PowerShell
+  Authentication
+environment: attack_range
+directory: azuread_pws
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1078.004/azuread_pws/azure-audit-067b0907-209b-41b2-a978-c0907f2c4dd3.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

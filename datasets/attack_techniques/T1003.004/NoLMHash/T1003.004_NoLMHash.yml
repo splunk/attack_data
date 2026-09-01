@@ -1,0 +1,13 @@
+author: STRT
+id: 92614a55-d3a7-4ac7-9e61-ae0155a287b6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows LSA Secrets NoLMhash
+  Registry
+environment: attack_range
+directory: NoLMHash
+mitre_technique: []
+datasets:
+- name: lsa-reg-settings-sysmon
+  path: /datasets/attack_techniques/T1003.004/NoLMHash/lsa-reg-settings-sysmon-92614a55-d3a7-4ac7-9e61-ae0155a287b6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

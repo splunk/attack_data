@@ -1,0 +1,12 @@
+author: STRT
+id: 680d9917-e39b-4855-a759-c54a6fb32f2c
+date: '2026-07-13'
+description: Curated attack data generated for detection WS FTP Remote Code Execution
+environment: attack_range
+directory: ws_ftp
+mitre_technique: []
+datasets:
+- name: wsftpweb
+  path: /datasets/attack_techniques/T1190/ws_ftp/wsftpweb-680d9917-e39b-4855-a759-c54a6fb32f2c.log
+  sourcetype: suricata
+  source: not_applicable

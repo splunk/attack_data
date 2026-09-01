@@ -1,0 +1,17 @@
+author: STRT
+id: fe0820ab-c310-4ff2-8270-98a0da31c6e9
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS EC2 Snapshot Shared
+  Externally
+environment: attack_range
+directory: aws_snapshot_exfil
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1537/aws_snapshot_exfil/asl_ocsf_cloudtrail-fe0820ab-c310-4ff2-8270-98a0da31c6e9.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1537/aws_snapshot_exfil/aws_cloudtrail_events-fe0820ab-c310-4ff2-8270-98a0da31c6e9.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

@@ -1,0 +1,21 @@
+author: STRT
+id: a7933ab4-c472-407d-8a1a-2f8fee35787a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Driver Load Non-Standard
+  Path
+environment: attack_range
+directory: drivers
+mitre_technique: []
+datasets:
+- name: xml7045_windows-system
+  path: /datasets/attack_techniques/T1068/drivers/xml7045_windows-system-a7933ab4-c472-407d-8a1a-2f8fee35787a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:System
+- name: sc_kernel
+  path: /datasets/attack_techniques/T1068/drivers/sc_kernel-a7933ab4-c472-407d-8a1a-2f8fee35787a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: sysmon_sys_filemod
+  path: /datasets/attack_techniques/T1068/drivers/sysmon_sys_filemod-a7933ab4-c472-407d-8a1a-2f8fee35787a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

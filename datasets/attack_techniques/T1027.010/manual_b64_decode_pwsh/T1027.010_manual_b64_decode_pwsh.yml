@@ -1,0 +1,13 @@
+author: STRT
+id: 939c131f-669c-402d-8bc8-4178c606dd9d
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerShell Process
+  Implementing Manual Base64 Decoder
+environment: attack_range
+directory: manual_b64_decode_pwsh
+mitre_technique: []
+datasets:
+- name: manual_b64_decode_pwsh
+  path: /datasets/attack_techniques/T1027.010/manual_b64_decode_pwsh/manual_b64_decode_pwsh-939c131f-669c-402d-8bc8-4178c606dd9d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

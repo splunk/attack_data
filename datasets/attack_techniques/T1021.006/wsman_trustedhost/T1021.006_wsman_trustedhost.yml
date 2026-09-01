@@ -1,0 +1,13 @@
+author: STRT
+id: 59642323-7c28-46bc-9032-c024d390b394
+date: '2026-07-10'
+description: Curated attack data generated for detection Powershell Remote Services
+  Add TrustedHost
+environment: attack_range
+directory: wsman_trustedhost
+mitre_technique: []
+datasets:
+- name: wsman_pwh
+  path: /datasets/attack_techniques/T1021.006/wsman_trustedhost/wsman_pwh-59642323-7c28-46bc-9032-c024d390b394.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

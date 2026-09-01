@@ -1,0 +1,12 @@
+author: STRT
+id: 5644431a-232e-4b1c-a7cd-4034f41be3b2
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Lambda UpdateFunctionCode
+environment: attack_range
+directory: aws_updatelambdafunctioncode
+mitre_technique: []
+datasets:
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1204/aws_updatelambdafunctioncode/aws_cloudtrail_events-5644431a-232e-4b1c-a7cd-4034f41be3b2.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

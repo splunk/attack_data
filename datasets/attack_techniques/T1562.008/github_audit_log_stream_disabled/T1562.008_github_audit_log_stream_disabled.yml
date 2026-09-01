@@ -1,0 +1,13 @@
+author: STRT
+id: a0d060ce-aea3-44ad-8bfb-0695340572cd
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Disable
+  Audit Log Event Stream
+environment: attack_range
+directory: github_audit_log_stream_disabled
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1562.008/github_audit_log_stream_disabled/github-a0d060ce-aea3-44ad-8bfb-0695340572cd.log
+  sourcetype: httpevent
+  source: http:github

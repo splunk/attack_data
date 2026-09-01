@@ -1,0 +1,13 @@
+author: STRT
+id: 2c4c6c17-58db-491a-823d-4fbb0572db6f
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerShell Script
+  From WindowsApps Directory
+environment: attack_range
+directory: msix_powershell
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/msix_powershell/windows-sysmon-2c4c6c17-58db-491a-823d-4fbb0572db6f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

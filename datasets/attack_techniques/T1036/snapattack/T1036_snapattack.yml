@@ -1,0 +1,13 @@
+author: STRT
+id: 391f58b5-0b94-4cb7-9747-0ab24853b9cb
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows SoftEther VPN Masquerading
+  as Legitimate Binary
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1036/snapattack/snapattack-391f58b5-0b94-4cb7-9747-0ab24853b9cb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

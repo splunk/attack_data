@@ -1,0 +1,13 @@
+author: STRT
+id: a73d8d53-6eca-4b04-82b0-9df1dff96b69
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Service Principal Privilege
+  Escalation
+environment: attack_range
+directory: o365_spn_privesc
+mitre_technique: []
+datasets:
+- name: o365_spn_privesc
+  path: /datasets/attack_techniques/T1098.003/o365_spn_privesc/o365_spn_privesc-a73d8d53-6eca-4b04-82b0-9df1dff96b69.log
+  sourcetype: o365:management:activity
+  source: Office 365

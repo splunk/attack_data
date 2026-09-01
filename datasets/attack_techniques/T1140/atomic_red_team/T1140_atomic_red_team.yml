@@ -1,0 +1,16 @@
+author: STRT
+id: f793d36a-54f0-4083-b488-625dffa63dd5
+date: '2026-07-11'
+description: Curated attack data generated for detection CertUtil With Decode Argument
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1140/atomic_red_team/windows-sysmon-f793d36a-54f0-4083-b488-625dffa63dd5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: expand_windows-sysmon
+  path: /datasets/attack_techniques/T1140/atomic_red_team/expand_windows-sysmon-f793d36a-54f0-4083-b488-625dffa63dd5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

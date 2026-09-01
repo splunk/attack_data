@@ -1,0 +1,13 @@
+author: STRT
+id: 88cb72fe-482e-424f-b812-a2e2f3ad0ba8
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Privileged Graph
+  API Permission Assigned
+environment: attack_range
+directory: azure_ad_privileged_graph_perm_assigned
+mitre_technique: []
+datasets:
+- name: azure_ad_privileged_graph_perm_assigned
+  path: /datasets/attack_techniques/T1098.003/azure_ad_privileged_graph_perm_assigned/azure_ad_privileged_graph_perm_assigned-88cb72fe-482e-424f-b812-a2e2f3ad0ba8.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

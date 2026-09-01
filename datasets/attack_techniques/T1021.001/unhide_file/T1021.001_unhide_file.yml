@@ -1,0 +1,13 @@
+author: STRT
+id: 172e8018-bfe2-4751-a3b7-7f34cf5fe775
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Default Rdp File
+  Unhidden
+environment: attack_range
+directory: unhide_file
+mitre_technique: []
+datasets:
+- name: unhide_file
+  path: /datasets/attack_techniques/T1021.001/unhide_file/unhide_file-172e8018-bfe2-4751-a3b7-7f34cf5fe775.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

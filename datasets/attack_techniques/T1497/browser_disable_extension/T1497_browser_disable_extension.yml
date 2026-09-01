@@ -1,0 +1,13 @@
+author: STRT
+id: e05cebd3-2ec2-4ab8-b9a1-ecd55c0ddc95
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Chromium Process
+  with Disabled Extensions
+environment: attack_range
+directory: browser_disable_extension
+mitre_technique: []
+datasets:
+- name: chrome_disable_ext
+  path: /datasets/attack_techniques/T1497/browser_disable_extension/chrome_disable_ext-e05cebd3-2ec2-4ab8-b9a1-ecd55c0ddc95.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

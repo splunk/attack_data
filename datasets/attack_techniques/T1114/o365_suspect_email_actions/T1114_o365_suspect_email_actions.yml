@@ -1,0 +1,17 @@
+author: STRT
+id: 5ac90014-d2ca-4eeb-bc78-5cbc44381d3f
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Email Hard Delete Excessive
+  Volume
+environment: attack_range
+directory: o365_suspect_email_actions
+mitre_technique: []
+datasets:
+- name: o365_exchange_suspect_events
+  path: /datasets/attack_techniques/T1114/o365_suspect_email_actions/o365_exchange_suspect_events-5ac90014-d2ca-4eeb-bc78-5cbc44381d3f.log
+  sourcetype: o365:management:activity
+  source: o365
+- name: o365_messagetrace_suspect_events
+  path: /datasets/attack_techniques/T1114/o365_suspect_email_actions/o365_messagetrace_suspect_events-5ac90014-d2ca-4eeb-bc78-5cbc44381d3f.log
+  sourcetype: o365:reporting:messagetrace
+  source: o365_messagetrace

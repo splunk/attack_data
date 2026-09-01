@@ -1,0 +1,13 @@
+author: STRT
+id: 78c6f4cd-db28-49db-94f8-93b0d65699e5
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows IOBit Unlocker Extension
+  DLL Registration via Regsvr32
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1218.010/snapattack/snapattack-78c6f4cd-db28-49db-94f8-93b0d65699e5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

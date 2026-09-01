@@ -1,0 +1,13 @@
+author: STRT
+id: dbf1fea5-b10b-4ba7-ad14-c00e62386d00
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Theme File Creation
+  in Unusual Location
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1187/snapattack/snapattack-dbf1fea5-b10b-4ba7-ad14-c00e62386d00.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

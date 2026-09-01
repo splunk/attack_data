@@ -1,0 +1,13 @@
+author: STRT
+id: 059eac8a-737c-4fea-9f9b-3c7c86caf133
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Multiple Users Failed
+  To Authenticate From Process
+environment: attack_range
+directory: purplesharp_multiple_users_from_process_xml
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1110.003/purplesharp_multiple_users_from_process_xml/windows-security-059eac8a-737c-4fea-9f9b-3c7c86caf133.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

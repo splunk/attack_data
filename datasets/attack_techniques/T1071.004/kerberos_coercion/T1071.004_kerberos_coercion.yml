@@ -1,0 +1,21 @@
+author: STRT
+id: ac7ce727-f8e8-4bf7-a017-5bd70b0a265d
+date: '2026-07-13'
+description: Curated attack data generated for detection Windows Credential Target
+  Information Structure in Commandline
+environment: attack_range
+directory: kerberos_coercion
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1071.004/kerberos_coercion/sysmon-ac7ce727-f8e8-4bf7-a017-5bd70b0a265d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-xml
+  path: /datasets/attack_techniques/T1071.004/kerberos_coercion/windows-xml-ac7ce727-f8e8-4bf7-a017-5bd70b0a265d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: suricata
+  path: /datasets/attack_techniques/T1071.004/kerberos_coercion/suricata-ac7ce727-f8e8-4bf7-a017-5bd70b0a265d.log
+  sourcetype: suricata
+  source: not_applicable

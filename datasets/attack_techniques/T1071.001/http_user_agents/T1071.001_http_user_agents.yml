@@ -1,0 +1,24 @@
+author: STRT
+id: 40bd6d97-6c5b-44a2-b6f2-64d3bd913990
+date: '2026-07-13'
+description: Curated attack data generated for detection HTTP C2 Framework User Agent
+environment: attack_range
+directory: http_user_agents
+mitre_technique: []
+datasets:
+- name: suricata_c2
+  path: /datasets/attack_techniques/T1071.001/http_user_agents/suricata_c2-40bd6d97-6c5b-44a2-b6f2-64d3bd913990.log
+  sourcetype: suricata
+  source: not_applicable
+- name: suricata_malware
+  path: /datasets/attack_techniques/T1071.001/http_user_agents/suricata_malware-40bd6d97-6c5b-44a2-b6f2-64d3bd913990.log
+  sourcetype: suricata
+  source: not_applicable
+- name: suricata_pua
+  path: /datasets/attack_techniques/T1071.001/http_user_agents/suricata_pua-40bd6d97-6c5b-44a2-b6f2-64d3bd913990.log
+  sourcetype: suricata
+  source: not_applicable
+- name: suricata_rmm
+  path: /datasets/attack_techniques/T1071.001/http_user_agents/suricata_rmm-40bd6d97-6c5b-44a2-b6f2-64d3bd913990.log
+  sourcetype: suricata
+  source: not_applicable

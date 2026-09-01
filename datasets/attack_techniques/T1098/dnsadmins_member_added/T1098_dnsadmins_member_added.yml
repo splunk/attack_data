@@ -1,0 +1,13 @@
+author: STRT
+id: 0c41eb7e-5a99-4754-b264-03ce87b3c20c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows DnsAdmins New Member
+  Added
+environment: attack_range
+directory: dnsadmins_member_added
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1098/dnsadmins_member_added/windows-security-0c41eb7e-5a99-4754-b264-03ce87b3c20c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

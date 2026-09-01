@@ -1,0 +1,13 @@
+author: STRT
+id: c1412640-a870-45e6-9284-aa205026d9a0
+date: '2026-07-10'
+description: Curated attack data generated for detection Cisco Isovalent - Access
+  To Cloud Metadata Service
+environment: attack_range
+directory: isovalent_cloud_metadata
+mitre_technique: []
+datasets:
+- name: process_connect
+  path: /datasets/attack_techniques/T1552.005/isovalent_cloud_metadata/process_connect-c1412640-a870-45e6-9284-aa205026d9a0.log
+  sourcetype: cisco:isovalent:processConnect
+  source: not_applicable

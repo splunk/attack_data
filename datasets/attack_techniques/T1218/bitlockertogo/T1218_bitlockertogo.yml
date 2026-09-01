@@ -1,0 +1,17 @@
+author: STRT
+id: 69cef76d-fce1-4c62-8fa2-ef12594c2cbb
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows BitLockerToGo Process
+  Execution
+environment: attack_range
+directory: bitlockertogo
+mitre_technique: []
+datasets:
+- name: 4688_bitlockertogo_windows-security
+  path: /datasets/attack_techniques/T1218/bitlockertogo/4688_bitlockertogo_windows-security-69cef76d-fce1-4c62-8fa2-ef12594c2cbb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: bitlockertogo_windows-sysmon
+  path: /datasets/attack_techniques/T1218/bitlockertogo/bitlockertogo_windows-sysmon-69cef76d-fce1-4c62-8fa2-ef12594c2cbb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

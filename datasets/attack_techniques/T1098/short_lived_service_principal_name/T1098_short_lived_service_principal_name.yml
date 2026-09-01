@@ -1,0 +1,13 @@
+author: STRT
+id: 984c6d40-c1bf-4edd-b845-91d7cfb54d2c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD Short Lived Domain
+  Account ServicePrincipalName
+environment: attack_range
+directory: short_lived_service_principal_name
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1098/short_lived_service_principal_name/windows-security-984c6d40-c1bf-4edd-b845-91d7cfb54d2c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

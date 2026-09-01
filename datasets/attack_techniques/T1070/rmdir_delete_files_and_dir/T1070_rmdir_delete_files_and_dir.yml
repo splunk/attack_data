@@ -1,0 +1,13 @@
+author: STRT
+id: 6f2446db-f16d-45c9-9834-602f342b4d28
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Indicator Removal
+  Via Rmdir
+environment: attack_range
+directory: rmdir_delete_files_and_dir
+mitre_technique: []
+datasets:
+- name: rmdir
+  path: /datasets/attack_techniques/T1070/rmdir_delete_files_and_dir/rmdir-6f2446db-f16d-45c9-9834-602f342b4d28.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

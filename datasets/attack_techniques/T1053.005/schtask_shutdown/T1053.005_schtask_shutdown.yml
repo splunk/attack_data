@@ -1,0 +1,13 @@
+author: STRT
+id: 63944ba1-c441-4c2a-b71f-ad32b0ab90df
+date: '2026-07-11'
+description: Curated attack data generated for detection Schtasks used for forcing
+  a reboot
+environment: attack_range
+directory: schtask_shutdown
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1053.005/schtask_shutdown/windows-sysmon-63944ba1-c441-4c2a-b71f-ad32b0ab90df.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

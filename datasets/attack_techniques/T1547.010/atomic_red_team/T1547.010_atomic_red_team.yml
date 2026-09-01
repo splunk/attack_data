@@ -1,0 +1,13 @@
+author: STRT
+id: 0330bcb5-48a1-4b90-bf2d-162a7dc6dd2a
+date: '2026-07-10'
+description: Curated attack data generated for detection Monitor Registry Keys for
+  Print Monitors
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1547.010/atomic_red_team/sysmon-0330bcb5-48a1-4b90-bf2d-162a7dc6dd2a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

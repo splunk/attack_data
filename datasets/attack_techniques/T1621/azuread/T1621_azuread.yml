@@ -1,0 +1,13 @@
+author: STRT
+id: 7173c206-0ab6-403c-9adf-04f56c1c346c
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Authentication Failed
+  During MFA Challenge
+environment: attack_range
+directory: azuread
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1621/azuread/azure-audit-7173c206-0ab6-403c-9adf-04f56c1c346c.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

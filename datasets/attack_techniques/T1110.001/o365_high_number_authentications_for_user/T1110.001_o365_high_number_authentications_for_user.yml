@@ -1,0 +1,13 @@
+author: STRT
+id: cef9378e-bf5c-453d-9e7c-18ea5fcc8c8b
+date: '2026-07-10'
+description: Curated attack data generated for detection High Number of Login Failures
+  from a single source
+environment: attack_range
+directory: o365_high_number_authentications_for_user
+mitre_technique: []
+datasets:
+- name: o365_high_number_authentications_for_user
+  path: /datasets/attack_techniques/T1110.001/o365_high_number_authentications_for_user/o365_high_number_authentications_for_user-cef9378e-bf5c-453d-9e7c-18ea5fcc8c8b.log
+  sourcetype: o365:management:activity
+  source: o365

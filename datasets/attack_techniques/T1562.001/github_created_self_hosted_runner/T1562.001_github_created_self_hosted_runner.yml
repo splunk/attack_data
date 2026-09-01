@@ -1,0 +1,13 @@
+author: STRT
+id: ee18c27e-a8e5-4199-9bd5-e3fc9cae8fd6
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Register
+  Self Hosted Runner
+environment: attack_range
+directory: github_created_self_hosted_runner
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1562.001/github_created_self_hosted_runner/github-ee18c27e-a8e5-4199-9bd5-e3fc9cae8fd6.log
+  sourcetype: httpevent
+  source: http:github

@@ -1,0 +1,13 @@
+author: STRT
+id: 3f8330d7-671e-47b9-aed6-546207714f9b
+date: '2026-07-11'
+description: Curated attack data generated for detection Regsvr32 Silent and Install
+  Param Dll Loading
+environment: attack_range
+directory: vbs_wscript
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1059.005/vbs_wscript/sysmon-3f8330d7-671e-47b9-aed6-546207714f9b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

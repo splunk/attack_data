@@ -1,0 +1,13 @@
+author: STRT
+id: 81db75c3-deb0-4c04-86cc-68325b082c1d
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows SymbolicLink-Testing-Tools
+  Utility Execution
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1222/snapattack/snapattack-81db75c3-deb0-4c04-86cc-68325b082c1d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
