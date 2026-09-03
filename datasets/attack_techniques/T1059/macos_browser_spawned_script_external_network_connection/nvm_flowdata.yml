@@ -1,0 +1,13 @@
+author: Maria Jose Erquiaga
+id: 436d5044-ae22-475d-9e19-dfc8a2f4e94f
+date: '2026-09-02'
+description: Generated datasets for Cisco Network Visibility Module Flow Data EventType.
+environment: custom
+directory: macos_browser_spawned_script_external_network_connection
+mitre_technique:
+    - T1059
+datasets:
+    - name: nvm_flowdata
+      sourcetype: cisco:nvm:flowdata:v2
+      source: not_applicable
+      path: /datasets/attack_techniques/T1059/macos_browser_spawned_script_external_network_connection/nvm_flowdata.log
