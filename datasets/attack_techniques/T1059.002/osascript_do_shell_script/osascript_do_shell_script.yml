@@ -1,0 +1,13 @@
+author: Radka Viskova
+id: a0bd4a40-c54d-4ce4-9504-f7f217d6d9a8
+date: '2026-09-03'
+description: Generated dataset for osascript binary inline command execution with osquery and endpoint security.
+environment: TalosOffensiveLab
+directory: osascript_do_shell_script
+mitre_technique: 
+- T1059.002
+datasets:
+- name: osascript_do_shell_script
+  path: /datasets/attack_techniques/T1059.002/osascript_do_shell_script/osascript_do_shell_script.log
+  sourcetype: osquery:results
+  source: osquery
