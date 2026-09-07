@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 74f24e56-e6ad-4004-b896-a0f8b1bf927e
+date: '2026-09-07'
+description: Generated datasets for Content Copied from Browser in attack range.
+environment: attack_range
+directory: windows_browser_copy_paste
+mitre_technique:
+- T1202
+datasets:
+- name: windows_browser_copy_paste.log
+  path: /datasets/attack_techniques/T1202/windows_browser_copy_paste/windows_browser_copy_paste.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
