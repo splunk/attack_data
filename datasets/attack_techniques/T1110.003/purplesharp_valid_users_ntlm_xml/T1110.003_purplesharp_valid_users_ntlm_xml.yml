@@ -1,0 +1,13 @@
+author: STRT
+id: fe443bb1-55d6-4cf9-8a4a-a6d255dd495a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Multiple Users Failed
+  To Authenticate From Host Using NTLM
+environment: attack_range
+directory: purplesharp_valid_users_ntlm_xml
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1110.003/purplesharp_valid_users_ntlm_xml/windows-security-fe443bb1-55d6-4cf9-8a4a-a6d255dd495a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

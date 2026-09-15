@@ -1,0 +1,13 @@
+author: STRT
+id: 2a5f526a-d32f-4903-9dad-4a0a644e5377
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Security And Compliance
+  Alert Triggered
+environment: attack_range
+directory: o365_security_and_compliance_alert_triggered
+mitre_technique: []
+datasets:
+- name: o365_security_and_compliance_alert_triggered
+  path: /datasets/attack_techniques/T1078.004/o365_security_and_compliance_alert_triggered/o365_security_and_compliance_alert_triggered-2a5f526a-d32f-4903-9dad-4a0a644e5377.log
+  sourcetype: o365:management:activity
+  source: o365

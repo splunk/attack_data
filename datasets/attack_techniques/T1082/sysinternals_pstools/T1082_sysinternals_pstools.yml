@@ -1,0 +1,12 @@
+author: STRT
+id: 254b2ecf-cf3e-4c5d-947f-ea99bcd6f3b4
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PsTools Recon Usage
+environment: attack_range
+directory: sysinternals_pstools
+mitre_technique: []
+datasets:
+- name: sysinternals_pstools
+  path: /datasets/attack_techniques/T1082/sysinternals_pstools/sysinternals_pstools-254b2ecf-cf3e-4c5d-947f-ea99bcd6f3b4.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

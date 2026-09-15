@@ -1,0 +1,13 @@
+author: STRT
+id: eb9fd1b7-aef0-4e8c-9430-9d33b43eed77
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Masquerading Msdtc
+  Process
+environment: attack_range
+directory: msdtc_process_param
+mitre_technique: []
+datasets:
+- name: msdtc_a_sysmon
+  path: /datasets/attack_techniques/T1036/msdtc_process_param/msdtc_a_sysmon-eb9fd1b7-aef0-4e8c-9430-9d33b43eed77.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

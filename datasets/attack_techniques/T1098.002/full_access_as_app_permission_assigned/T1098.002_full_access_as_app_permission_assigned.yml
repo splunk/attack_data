@@ -1,0 +1,13 @@
+author: STRT
+id: 1f63cf80-2e29-4e7b-ab0d-858b1d114eaa
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD FullAccessAsApp
+  Permission Assigned
+environment: attack_range
+directory: full_access_as_app_permission_assigned
+mitre_technique: []
+datasets:
+- name: full_access_as_app_permission_assigned
+  path: /datasets/attack_techniques/T1098.002/full_access_as_app_permission_assigned/full_access_as_app_permission_assigned-1f63cf80-2e29-4e7b-ab0d-858b1d114eaa.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

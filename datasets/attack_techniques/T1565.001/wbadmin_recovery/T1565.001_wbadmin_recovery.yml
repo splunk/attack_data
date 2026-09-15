@@ -1,0 +1,13 @@
+author: STRT
+id: 3db9ea5e-6e6a-4a23-b612-64b02687f72a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows WBAdmin File Recovery
+  From Backup
+environment: attack_range
+directory: wbadmin_recovery
+mitre_technique: []
+datasets:
+- name: wbadmin_recovery
+  path: /datasets/attack_techniques/T1565.001/wbadmin_recovery/wbadmin_recovery-3db9ea5e-6e6a-4a23-b612-64b02687f72a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

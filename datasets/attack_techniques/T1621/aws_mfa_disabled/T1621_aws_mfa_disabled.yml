@@ -1,0 +1,17 @@
+author: STRT
+id: 528ac45e-3da5-426d-a515-892a882c7ce8
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS Multi-Factor Authentication
+  Disabled
+environment: attack_range
+directory: aws_mfa_disabled
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1621/aws_mfa_disabled/asl_ocsf_cloudtrail-528ac45e-3da5-426d-a515-892a882c7ce8.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1621/aws_mfa_disabled/cloudtrail-528ac45e-3da5-426d-a515-892a882c7ce8.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

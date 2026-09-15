@@ -1,0 +1,16 @@
+author: STRT
+id: 316379a7-4c81-40fc-9a70-0d7e5af3806f
+date: '2026-07-11'
+description: Curated attack data generated for detection GetLocalUser with PowerShell
+environment: attack_range
+directory: AD_discovery
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1087.001/AD_discovery/windows-sysmon-316379a7-4c81-40fc-9a70-0d7e5af3806f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1087.001/AD_discovery/windows-powershell-xml-316379a7-4c81-40fc-9a70-0d7e5af3806f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 87764383-30c0-453a-b55f-90ebafd235d9
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows WinRAR Launched Outside
+  Default Installation Directory
+environment: attack_range
+directory: susp_winrar
+mitre_technique: []
+datasets:
+- name: blank123
+  path: /datasets/attack_techniques/T1047/susp_winrar/blank123-87764383-30c0-453a-b55f-90ebafd235d9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

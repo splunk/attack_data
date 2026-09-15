@@ -1,0 +1,13 @@
+author: STRT
+id: 4fcd322d-2e44-41c8-b4a6-f796ca7545bc
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS AMI Attribute Modification
+  for Exfiltration
+environment: attack_range
+directory: aws_ami_shared_public
+mitre_technique: []
+datasets:
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1537/aws_ami_shared_public/aws_cloudtrail_events-4fcd322d-2e44-41c8-b4a6-f796ca7545bc.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

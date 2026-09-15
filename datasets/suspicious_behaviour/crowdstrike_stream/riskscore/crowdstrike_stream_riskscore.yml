@@ -1,0 +1,13 @@
+author: STRT
+id: 0feed5a9-8c51-4160-8973-39014bd7f24b
+date: '2026-07-10'
+description: Curated attack data generated for detection Crowdstrike Medium Identity
+  Risk Severity
+environment: attack_range
+directory: riskscore
+mitre_technique: []
+datasets:
+- name: crowdstrike_riskscore_cleaned
+  path: /datasets/suspicious_behaviour/crowdstrike_stream/riskscore/crowdstrike_riskscore_cleaned-0feed5a9-8c51-4160-8973-39014bd7f24b.log
+  sourcetype: crowdstrike:identities
+  source: crowdstrike:identities

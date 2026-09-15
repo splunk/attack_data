@@ -1,0 +1,13 @@
+author: STRT
+id: 3bfe1e6a-12cd-45e5-aad9-1626063e8976
+date: '2026-07-10'
+description: Curated attack data generated for detection Cloud Security Groups Modifications
+  by User
+environment: attack_range
+directory: aws_authorize_security_group
+mitre_technique: []
+datasets:
+- name: aws_authorize_security_group
+  path: /datasets/attack_techniques/T1578.005/aws_authorize_security_group/aws_authorize_security_group-3bfe1e6a-12cd-45e5-aad9-1626063e8976.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

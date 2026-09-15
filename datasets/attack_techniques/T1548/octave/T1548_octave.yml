@@ -1,0 +1,12 @@
+author: STRT
+id: ff6db0a5-dac2-4f97-b975-cc1014ca5210
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Octave Privilege Escalation
+environment: attack_range
+directory: octave
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/octave/sysmon_linux-ff6db0a5-dac2-4f97-b975-cc1014ca5210.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

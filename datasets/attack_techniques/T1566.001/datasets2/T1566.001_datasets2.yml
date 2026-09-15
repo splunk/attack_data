@@ -1,0 +1,13 @@
+author: STRT
+id: 7eb0da64-0028-4bd4-9a84-c5730124b113
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Office Product Spawned
+  Child Process For Download
+environment: attack_range
+directory: datasets2
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1566.001/datasets2/windows-sysmon-7eb0da64-0028-4bd4-9a84-c5730124b113.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

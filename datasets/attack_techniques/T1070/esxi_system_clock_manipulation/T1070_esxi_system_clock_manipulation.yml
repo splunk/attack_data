@@ -1,0 +1,12 @@
+author: STRT
+id: ff347d7c-4c09-483b-a010-0f1a0b23168d
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi System Clock Manipulation
+environment: attack_range
+directory: esxi_system_clock_manipulation
+mitre_technique: []
+datasets:
+- name: esxi_system_clock_manipulation
+  path: /datasets/attack_techniques/T1070/esxi_system_clock_manipulation/esxi_system_clock_manipulation-ff347d7c-4c09-483b-a010-0f1a0b23168d.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

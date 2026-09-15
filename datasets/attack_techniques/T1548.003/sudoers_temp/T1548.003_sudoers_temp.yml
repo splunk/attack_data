@@ -1,0 +1,12 @@
+author: STRT
+id: cf305413-cc15-4daa-8fdf-2003d615eef5
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Sudoers Tmp File Creation
+environment: attack_range
+directory: sudoers_temp
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.003/sudoers_temp/sysmon_linux-cf305413-cc15-4daa-8fdf-2003d615eef5.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

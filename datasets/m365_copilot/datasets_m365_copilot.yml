@@ -1,0 +1,13 @@
+author: STRT
+id: 80410804-f681-4a7b-b4d7-6999b3cdac41
+date: '2026-07-13'
+description: Curated attack data generated for detection M365 Copilot Application
+  Usage Pattern Anomalies
+environment: attack_range
+directory: m365_copilot
+mitre_technique: []
+datasets:
+- name: m365_copilot_access
+  path: /datasets/m365_copilot/m365_copilot_access-80410804-f681-4a7b-b4d7-6999b3cdac41.log
+  sourcetype: o365:graph:api
+  source: AuditLogs.SignIns

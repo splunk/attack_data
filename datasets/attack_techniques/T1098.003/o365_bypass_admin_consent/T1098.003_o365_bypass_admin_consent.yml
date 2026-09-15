@@ -1,0 +1,13 @@
+author: STRT
+id: fd53d6cd-5930-4f58-af7e-261a2f3ffa05
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Admin Consent Bypassed
+  by Service Principal
+environment: attack_range
+directory: o365_bypass_admin_consent
+mitre_technique: []
+datasets:
+- name: o365_bypass_admin_consent
+  path: /datasets/attack_techniques/T1098.003/o365_bypass_admin_consent/o365_bypass_admin_consent-fd53d6cd-5930-4f58-af7e-261a2f3ffa05.log
+  sourcetype: o365:management:activity
+  source: o365

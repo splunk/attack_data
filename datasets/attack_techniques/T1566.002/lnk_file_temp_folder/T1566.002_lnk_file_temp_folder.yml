@@ -1,0 +1,13 @@
+author: STRT
+id: ccc893ae-fa36-4fb0-9f57-ac7fc147b53a
+date: '2026-07-10'
+description: Curated attack data generated for detection Process Creating LNK file
+  in Suspicious Location
+environment: attack_range
+directory: lnk_file_temp_folder
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1566.002/lnk_file_temp_folder/windows-sysmon-ccc893ae-fa36-4fb0-9f57-ac7fc147b53a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

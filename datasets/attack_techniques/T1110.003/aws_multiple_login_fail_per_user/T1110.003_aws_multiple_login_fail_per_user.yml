@@ -1,0 +1,13 @@
+author: STRT
+id: ccfae4a2-6474-439c-822e-56eeb1d16e94
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS High Number Of Failed
+  Authentications For User
+environment: attack_range
+directory: aws_multiple_login_fail_per_user
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1110.003/aws_multiple_login_fail_per_user/cloudtrail-ccfae4a2-6474-439c-822e-56eeb1d16e94.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

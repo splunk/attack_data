@@ -1,0 +1,13 @@
+author: STRT
+id: fb349ff8-ac1a-4b23-8cf9-d3cd24b167ca
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Chrome Extension
+  Allowed Registry Modification
+environment: attack_range
+directory: chrome_allow_list
+mitre_technique: []
+datasets:
+- name: chrome_extension_allow_list
+  path: /datasets/attack_techniques/T1185/chrome_allow_list/chrome_extension_allow_list-fb349ff8-ac1a-4b23-8cf9-d3cd24b167ca.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

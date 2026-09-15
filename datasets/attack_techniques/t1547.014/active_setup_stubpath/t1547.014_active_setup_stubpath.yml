@@ -1,0 +1,12 @@
+author: STRT
+id: b006a157-243d-40d0-bf30-466fcf7c9843
+date: '2026-07-10'
+description: Curated attack data generated for detection Active Setup Registry Autostart
+environment: attack_range
+directory: active_setup_stubpath
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/t1547.014/active_setup_stubpath/sysmon-b006a157-243d-40d0-bf30-466fcf7c9843.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

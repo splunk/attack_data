@@ -1,0 +1,13 @@
+author: STRT
+id: f5bc2bc9-7914-417c-9c2a-b91958da6a4a
+date: '2026-07-13'
+description: Curated attack data generated for detection WordPress Bricks Builder
+  plugin RCE
+environment: attack_range
+directory: wordpress
+mitre_technique: []
+datasets:
+- name: bricks_cve_2024_25600
+  path: /datasets/attack_techniques/T1190/wordpress/bricks_cve_2024_25600-f5bc2bc9-7914-417c-9c2a-b91958da6a4a.log
+  sourcetype: nginx:plus:kv
+  source: nginx:plus:kv

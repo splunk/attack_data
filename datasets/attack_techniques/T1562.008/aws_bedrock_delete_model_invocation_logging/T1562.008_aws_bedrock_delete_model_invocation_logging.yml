@@ -1,0 +1,13 @@
+author: STRT
+id: b289488c-321b-4ed5-8fcf-f628be8566b3
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Bedrock Delete Model
+  Invocation Logging Configuration
+environment: attack_range
+directory: aws_bedrock_delete_model_invocation_logging
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1562.008/aws_bedrock_delete_model_invocation_logging/cloudtrail-b289488c-321b-4ed5-8fcf-f628be8566b3.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

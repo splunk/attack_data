@@ -1,0 +1,16 @@
+author: STRT
+id: 7150ac07-f65d-48ff-8885-fa8af09125b8
+date: '2026-07-11'
+description: Curated attack data generated for detection LLM Model File Creation
+environment: attack_range
+directory: local_llms
+mitre_technique: []
+datasets:
+- name: sysmon_local_llms
+  path: /datasets/suspicious_behaviour/local_llms/sysmon_local_llms-7150ac07-f65d-48ff-8885-fa8af09125b8.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: sysmon_dns
+  path: /datasets/suspicious_behaviour/local_llms/sysmon_dns-7150ac07-f65d-48ff-8885-fa8af09125b8.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

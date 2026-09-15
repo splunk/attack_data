@@ -1,0 +1,12 @@
+author: STRT
+id: e9d3e1d3-0985-4161-aadc-ad6bbdd2dff9
+date: '2026-07-11'
+description: Curated attack data generated for detection Attacker Tools On Endpoint
+environment: attack_range
+directory: cisco_nvm_flowdata
+mitre_technique: []
+datasets:
+- name: nvm_flowdata
+  path: /datasets/cisco_network_visibility_module/cisco_nvm_flowdata/nvm_flowdata-e9d3e1d3-0985-4161-aadc-ad6bbdd2dff9.log
+  sourcetype: cisco:nvm:flowdata
+  source: not_applicable

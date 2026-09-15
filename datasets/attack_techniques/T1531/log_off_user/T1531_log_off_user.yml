@@ -1,0 +1,13 @@
+author: STRT
+id: 8dadbca2-f555-40d7-89f9-5671b12b2dc0
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Powershell Logoff
+  User via Quser
+environment: attack_range
+directory: log_off_user
+mitre_technique: []
+datasets:
+- name: pwh_quser_logoff
+  path: /datasets/attack_techniques/T1531/log_off_user/pwh_quser_logoff-8dadbca2-f555-40d7-89f9-5671b12b2dc0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

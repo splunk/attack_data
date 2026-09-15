@@ -1,0 +1,13 @@
+author: STRT
+id: 06c07c23-1636-4a46-9000-a884f73249c0
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Multi-Source Failed
+  Authentications Spike
+environment: attack_range
+directory: o365_distributed_spray
+mitre_technique: []
+datasets:
+- name: o365_distributed_spray
+  path: /datasets/attack_techniques/T1110.003/o365_distributed_spray/o365_distributed_spray-06c07c23-1636-4a46-9000-a884f73249c0.log
+  sourcetype: o365:management:activity
+  source: o365

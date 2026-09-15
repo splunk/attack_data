@@ -1,0 +1,13 @@
+author: STRT
+id: 46538d1d-3fba-49d9-a5e8-0ca36c3c7ab9
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows RDP Server Registry
+  Deletion
+environment: attack_range
+directory: terminal_server_reg_deleted
+mitre_technique: []
+datasets:
+- name: terminal_server_client_reg_deleted
+  path: /datasets/attack_techniques/T1070.004/terminal_server_reg_deleted/terminal_server_client_reg_deleted-46538d1d-3fba-49d9-a5e8-0ca36c3c7ab9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

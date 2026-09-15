@@ -1,0 +1,13 @@
+author: STRT
+id: e77d672f-ef0c-4ddd-bc75-2de1b825782f
+date: '2026-07-11'
+description: Curated attack data generated for detection Single Letter Process On
+  Endpoint
+environment: attack_range
+directory: single_letter_exe
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1204.002/single_letter_exe/windows-sysmon-e77d672f-ef0c-4ddd-bc75-2de1b825782f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

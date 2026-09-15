@@ -1,0 +1,13 @@
+author: STRT
+id: e3d7eede-6b96-4925-886e-7b995369f8e4
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta Multiple Failed MFA
+  Requests For User
+environment: attack_range
+directory: okta_multiple_failed_mfa_requests
+mitre_technique: []
+datasets:
+- name: okta_multiple_failed_mfa_requests
+  path: /datasets/attack_techniques/T1621/okta_multiple_failed_mfa_requests/okta_multiple_failed_mfa_requests-e3d7eede-6b96-4925-886e-7b995369f8e4.log
+  sourcetype: OktaIM2:log
+  source: Okta

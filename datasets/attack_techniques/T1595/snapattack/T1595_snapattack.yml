@@ -1,0 +1,13 @@
+author: STRT
+id: 649453a4-6d26-4090-bd5a-284253ff055a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Netspy Network Scanner
+  Execution
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1595/snapattack/snapattack-649453a4-6d26-4090-bd5a-284253ff055a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,13 @@
+author: STRT
+id: b26d59e6-4388-43a8-a648-602ece604c9e
+date: '2026-07-10'
+description: Curated attack data generated for detection Impacket Lateral Movement
+  Commandline Parameters
+environment: attack_range
+directory: impacket
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1021.003/impacket/windows-sysmon-b26d59e6-4388-43a8-a648-602ece604c9e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 55a49ce9-ebe1-40e4-b5d0-ce88eea3db51
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Multiple OS Vendors
+  Authenticating From User
+environment: attack_range
+directory: azure_mfasweep_events
+mitre_technique: []
+datasets:
+- name: azure_mfasweep_events
+  path: /datasets/attack_techniques/T1110/azure_mfasweep_events/azure_mfasweep_events-55a49ce9-ebe1-40e4-b5d0-ce88eea3db51.log
+  sourcetype: o365:management:activity
+  source: o365

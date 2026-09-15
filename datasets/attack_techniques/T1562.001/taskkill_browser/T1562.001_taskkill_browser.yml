@@ -1,0 +1,13 @@
+author: STRT
+id: 74219047-c647-42ed-9b79-40ccb8601aae
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Disable or Stop Browser
+  Process
+environment: attack_range
+directory: taskkill_browser
+mitre_technique: []
+datasets:
+- name: braodo_taskkill
+  path: /datasets/attack_techniques/T1562.001/taskkill_browser/braodo_taskkill-74219047-c647-42ed-9b79-40ccb8601aae.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: 86db57bc-c106-4322-9b09-5e6debc4c7e7
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows MSTSC RDP Commandline
+environment: attack_range
+directory: mstsc_rdp_cmd
+mitre_technique: []
+datasets:
+- name: mstsc_sysmon
+  path: /datasets/attack_techniques/T1021.001/mstsc_rdp_cmd/mstsc_sysmon-86db57bc-c106-4322-9b09-5e6debc4c7e7.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

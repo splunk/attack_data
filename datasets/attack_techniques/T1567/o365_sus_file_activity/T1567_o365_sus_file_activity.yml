@@ -1,0 +1,13 @@
+author: STRT
+id: adc553e1-f4d3-4464-a712-2c047fb2be9e
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Exfiltration via File
+  Access
+environment: attack_range
+directory: o365_sus_file_activity
+mitre_technique: []
+datasets:
+- name: o365_sus_file_activity
+  path: /datasets/attack_techniques/T1567/o365_sus_file_activity/o365_sus_file_activity-adc553e1-f4d3-4464-a712-2c047fb2be9e.log
+  sourcetype: o365:management:activity
+  source: o365

@@ -1,0 +1,13 @@
+author: STRT
+id: b06704e4-b724-4639-8881-a326a2b7282e
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Azure Storage Utility
+  Execution Via CLI
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1567.002/snapattack/snapattack-b06704e4-b724-4639-8881-a326a2b7282e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: 77959833-d60f-47a3-b9f1-b11fddf4cbbb
+date: '2026-07-11'
+description: Curated attack data generated for detection Spoolsv Spawning Rundll32
+environment: attack_range
+directory: printnightmare
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1547.012/printnightmare/windows-sysmon-77959833-d60f-47a3-b9f1-b11fddf4cbbb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 0be93a68-594d-4ab7-b103-4df49acdd2ce
+date: '2026-07-10'
+description: Curated attack data generated for detection Crowdstrike Medium Severity
+  Alert
+environment: attack_range
+directory: medium_alert
+mitre_technique: []
+datasets:
+- name: crowdstrike_medium_clean
+  path: /datasets/suspicious_behaviour/crowdstrike_stream/medium_alert/crowdstrike_medium_clean-0be93a68-594d-4ab7-b103-4df49acdd2ce.log
+  sourcetype: CrowdStrike:Event:Streams:JSON
+  source: CrowdStrike:Event:Streams

@@ -1,0 +1,13 @@
+author: STRT
+id: f2df0e04-bf69-48d5-863a-2efc8796bcb3
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux File Created In Kernel
+  Driver Directory
+environment: attack_range
+directory: loading_linux_kernel_module
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1547.006/loading_linux_kernel_module/sysmon_linux-f2df0e04-bf69-48d5-863a-2efc8796bcb3.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

@@ -1,0 +1,21 @@
+author: STRT
+id: fe189822-0130-4b2f-8b01-554926c6f01e
+date: '2026-07-11'
+description: Curated attack data generated for detection Malicious PowerShell Process
+  - Execution Policy Bypass
+environment: attack_range
+directory: encoded_powershell
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/encoded_powershell/windows-sysmon-fe189822-0130-4b2f-8b01-554926c6f01e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: padded_windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/encoded_powershell/padded_windows-sysmon-fe189822-0130-4b2f-8b01-554926c6f01e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: explorer_spawns_windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/encoded_powershell/explorer_spawns_windows-sysmon-fe189822-0130-4b2f-8b01-554926c6f01e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

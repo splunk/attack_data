@@ -1,0 +1,13 @@
+author: STRT
+id: b8563f51-eeb2-49cd-99eb-2a3da71b5114
+date: '2026-07-11'
+description: Curated attack data generated for detection Wmiprvse LOLBAS Execution
+  Process Spawn
+environment: attack_range
+directory: lateral_movement_lolbas
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1047/lateral_movement_lolbas/windows-sysmon-b8563f51-eeb2-49cd-99eb-2a3da71b5114.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

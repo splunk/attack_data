@@ -1,0 +1,13 @@
+author: STRT
+id: 04014e8c-ef81-4b6d-b786-60bde4bf4ace
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Secure Firewall - React
+  Server Components RCE Attempt
+environment: attack_range
+directory: react2shell
+mitre_technique: []
+datasets:
+- name: react2shell
+  path: /datasets/cisco_secure_firewall_threat_defense/react2shell/react2shell-04014e8c-ef81-4b6d-b786-60bde4bf4ace.log
+  sourcetype: cisco:sfw:estreamer
+  source: not_applicable

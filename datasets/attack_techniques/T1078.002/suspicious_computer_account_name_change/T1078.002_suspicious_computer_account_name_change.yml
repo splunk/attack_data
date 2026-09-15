@@ -1,0 +1,13 @@
+author: STRT
+id: 092b2321-1217-43bb-85ca-c6aa8b4ff035
+date: '2026-07-11'
+description: Curated attack data generated for detection Suspicious Computer Account
+  Name Change
+environment: attack_range
+directory: suspicious_computer_account_name_change
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1078.002/suspicious_computer_account_name_change/windows-xml-092b2321-1217-43bb-85ca-c6aa8b4ff035.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

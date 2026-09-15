@@ -1,0 +1,13 @@
+author: STRT
+id: cf5c6b5f-4277-4e5a-ac18-2171eeb72cad
+date: '2026-07-11'
+description: Curated attack data generated for detection Allow Inbound Traffic By
+  Firewall Rule Registry
+environment: attack_range
+directory: datasets1
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/honeypots/casper/datasets1/windows-sysmon-cf5c6b5f-4277-4e5a-ac18-2171eeb72cad.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 3525ed41-9337-4a99-bd53-502aa366963d
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Multiple NTLM Null
+  Domain Authentications
+environment: attack_range
+directory: ntlm_bruteforce
+mitre_technique: []
+datasets:
+- name: ntlm_bruteforce
+  path: /datasets/attack_techniques/T1110.003/ntlm_bruteforce/ntlm_bruteforce-3525ed41-9337-4a99-bd53-502aa366963d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-NTLM/Operational

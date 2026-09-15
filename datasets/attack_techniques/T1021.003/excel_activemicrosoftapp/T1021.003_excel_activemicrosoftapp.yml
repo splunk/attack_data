@@ -1,0 +1,13 @@
+author: STRT
+id: a6f16660-2d0a-4cf5-9a7b-e72ee509b4ce
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Excel Spawning Microsoft
+  Project Application
+environment: attack_range
+directory: excel_activemicrosoftapp
+mitre_technique: []
+datasets:
+- name: sysmon_winprojexe
+  path: /datasets/attack_techniques/T1021.003/excel_activemicrosoftapp/sysmon_winprojexe-a6f16660-2d0a-4cf5-9a7b-e72ee509b4ce.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

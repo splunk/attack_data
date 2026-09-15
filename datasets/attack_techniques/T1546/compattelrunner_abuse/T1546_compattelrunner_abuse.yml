@@ -1,0 +1,13 @@
+author: STRT
+id: 240b51a3-36b1-4304-8a3a-4945e2151d01
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Compatibility Telemetry
+  Suspicious Child Process
+environment: attack_range
+directory: compattelrunner_abuse
+mitre_technique: []
+datasets:
+- name: compattelrunner_abuse
+  path: /datasets/attack_techniques/T1546/compattelrunner_abuse/compattelrunner_abuse-240b51a3-36b1-4304-8a3a-4945e2151d01.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

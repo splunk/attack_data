@@ -1,0 +1,12 @@
+author: STRT
+id: 0e08cf84-1f8e-4647-b886-2df4fcd04e37
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Magic SysRq Key Abuse
+environment: attack_range
+directory: auditd_path_sysrq
+mitre_technique: []
+datasets:
+- name: path_sysrq
+  path: /datasets/attack_techniques/T1529/auditd_path_sysrq/path_sysrq-0e08cf84-1f8e-4647-b886-2df4fcd04e37.log
+  sourcetype: auditd
+  source: auditd

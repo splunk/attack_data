@@ -1,0 +1,13 @@
+author: STRT
+id: 661d8554-9d33-46a4-915f-ca243702a013
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Time Based Evasion
+  via Choice Exec
+environment: attack_range
+directory: time_delay_using_choice_exe
+mitre_technique: []
+datasets:
+- name: snakekeylogger_choice
+  path: /datasets/attack_techniques/T1497.003/time_delay_using_choice_exe/snakekeylogger_choice-661d8554-9d33-46a4-915f-ca243702a013.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

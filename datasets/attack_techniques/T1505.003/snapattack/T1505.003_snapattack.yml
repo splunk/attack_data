@@ -1,0 +1,13 @@
+author: STRT
+id: 394a6084-2706-4f2b-b9f1-cdd76c60d01b
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Potential Web Shell
+  Creation For VMware Workspace ONE
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1505.003/snapattack/snapattack-394a6084-2706-4f2b-b9f1-cdd76c60d01b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

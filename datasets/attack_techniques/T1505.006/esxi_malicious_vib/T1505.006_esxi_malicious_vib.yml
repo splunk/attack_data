@@ -1,0 +1,13 @@
+author: STRT
+id: e144c5f6-dc20-4d32-92a3-844b7f162104
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Malicious VIB Forced
+  Install
+environment: attack_range
+directory: esxi_malicious_vib
+mitre_technique: []
+datasets:
+- name: esxi_malicious_vib_forced_install
+  path: /datasets/attack_techniques/T1505.006/esxi_malicious_vib/esxi_malicious_vib_forced_install-e144c5f6-dc20-4d32-92a3-844b7f162104.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

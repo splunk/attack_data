@@ -1,0 +1,13 @@
+author: STRT
+id: 48b238a2-a4dd-440f-921b-487f13db67f3
+date: '2026-07-10'
+description: Curated attack data generated for detection Detect Path Interception
+  By Creation Of program exe
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1574.009/atomic_red_team/windows-sysmon-48b238a2-a4dd-440f-921b-487f13db67f3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

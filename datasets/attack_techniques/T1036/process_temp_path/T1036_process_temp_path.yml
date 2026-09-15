@@ -1,0 +1,13 @@
+author: STRT
+id: 771bb51e-0a5a-42dd-9c8f-8bce14102797
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Process Execution
+  in Temp Dir
+environment: attack_range
+directory: process_temp_path
+mitre_technique: []
+datasets:
+- name: process_temp_path
+  path: /datasets/attack_techniques/T1036/process_temp_path/process_temp_path-771bb51e-0a5a-42dd-9c8f-8bce14102797.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

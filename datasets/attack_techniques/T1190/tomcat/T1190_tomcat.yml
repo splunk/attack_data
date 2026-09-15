@@ -1,0 +1,13 @@
+author: STRT
+id: 9ab95941-4336-4089-9786-c9daaf360186
+date: '2026-07-13'
+description: Curated attack data generated for detection Tomcat Session Deserialization
+  Attempt
+environment: attack_range
+directory: tomcat
+mitre_technique: []
+datasets:
+- name: tomcat_nginx_access
+  path: /datasets/attack_techniques/T1190/tomcat/tomcat_nginx_access-9ab95941-4336-4089-9786-c9daaf360186.log
+  sourcetype: nginx:plus:kv
+  source: nginx

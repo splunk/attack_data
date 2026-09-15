@@ -1,0 +1,12 @@
+author: STRT
+id: e98aab40-a842-4590-83c3-c18536574ebf
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Duo Bulk Policy Deletion
+environment: attack_range
+directory: cisco_duo_bulk_policy_deletion
+mitre_technique: []
+datasets:
+- name: cisco_duo_administrator
+  path: /datasets/attack_techniques/T1556/cisco_duo_bulk_policy_deletion/cisco_duo_administrator-e98aab40-a842-4590-83c3-c18536574ebf.log
+  sourcetype: cisco:duo:administrator
+  source: duo

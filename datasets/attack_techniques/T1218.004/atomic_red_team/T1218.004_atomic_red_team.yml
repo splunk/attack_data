@@ -1,0 +1,17 @@
+author: STRT
+id: 497c3439-21a6-4232-a9b8-b6ade9d56b99
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows DotNet Binary in
+  Non Standard Path
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon_installutil_path
+  path: /datasets/attack_techniques/T1218.004/atomic_red_team/windows-sysmon_installutil_path-497c3439-21a6-4232-a9b8-b6ade9d56b99.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1218.004/atomic_red_team/windows-sysmon-497c3439-21a6-4232-a9b8-b6ade9d56b99.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

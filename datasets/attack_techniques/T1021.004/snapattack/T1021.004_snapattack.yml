@@ -1,0 +1,13 @@
+author: STRT
+id: b6aeae12-18ac-487a-b45a-6b80c19ae82c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PuTTY Suite Utility
+  Execution
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1021.004/snapattack/snapattack-b6aeae12-18ac-487a-b45a-6b80c19ae82c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,13 @@
+author: STRT
+id: 943292be-1fb5-44bf-a706-5848771107ad
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Setuid Using Setcap
+  Utility
+environment: attack_range
+directory: linux_setcap
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.001/linux_setcap/sysmon_linux-943292be-1fb5-44bf-a706-5848771107ad.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

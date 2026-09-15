@@ -1,0 +1,13 @@
+author: STRT
+id: 267d2524-f0fa-46f0-b912-b6e15a01ee92
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Process With NetExec
+  Command Line Parameters
+environment: attack_range
+directory: netexec_toolkit_usage
+mitre_technique: []
+datasets:
+- name: netexec_toolkit_usage
+  path: /datasets/attack_techniques/T1550/netexec_toolkit_usage/netexec_toolkit_usage-267d2524-f0fa-46f0-b912-b6e15a01ee92.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

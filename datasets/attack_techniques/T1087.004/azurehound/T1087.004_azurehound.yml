@@ -1,0 +1,13 @@
+author: STRT
+id: 86d35eaf-fc12-4183-85fe-ea2dbb647a79
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD AzureHound UserAgent
+  Detected
+environment: attack_range
+directory: azurehound
+mitre_technique: []
+datasets:
+- name: azurehound
+  path: /datasets/attack_techniques/T1087.004/azurehound/azurehound-86d35eaf-fc12-4183-85fe-ea2dbb647a79.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

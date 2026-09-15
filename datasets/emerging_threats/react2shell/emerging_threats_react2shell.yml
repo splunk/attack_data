@@ -1,0 +1,13 @@
+author: STRT
+id: 3b559ad2-b232-4991-8c15-7b3c6aeea480
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Suspicious React or
+  Next.js Child Process
+environment: attack_range
+directory: react2shell
+mitre_technique: []
+datasets:
+- name: react2shell_linux
+  path: /datasets/emerging_threats/react2shell/react2shell_linux-3b559ad2-b232-4991-8c15-7b3c6aeea480.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

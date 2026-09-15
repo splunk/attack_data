@@ -1,0 +1,13 @@
+author: STRT
+id: f78c0b49-225c-424c-abe8-eb4a21a5a623
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Admin Permission
+  Discovery
+environment: attack_range
+directory: njrat_admin_check
+mitre_technique: []
+datasets:
+- name: win_dat
+  path: /datasets/attack_techniques/T1069.001/njrat_admin_check/win_dat-f78c0b49-225c-424c-abe8-eb4a21a5a623.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

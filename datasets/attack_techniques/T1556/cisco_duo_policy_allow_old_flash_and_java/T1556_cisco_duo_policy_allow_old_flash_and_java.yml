@@ -1,0 +1,13 @@
+author: STRT
+id: 2f96636b-deb7-4c0d-9f6a-3b5009f07c5e
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Duo Policy Allow Old
+  Flash
+environment: attack_range
+directory: cisco_duo_policy_allow_old_flash_and_java
+mitre_technique: []
+datasets:
+- name: cisco_duo_administrator
+  path: /datasets/attack_techniques/T1556/cisco_duo_policy_allow_old_flash_and_java/cisco_duo_administrator-2f96636b-deb7-4c0d-9f6a-3b5009f07c5e.log
+  sourcetype: cisco:duo:administrator
+  source: duo

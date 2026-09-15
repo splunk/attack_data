@@ -1,0 +1,13 @@
+author: STRT
+id: fea8b41d-2a3b-47e1-b6fb-de197eb25690
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Default Rdp File
+  Deletion
+environment: attack_range
+directory: rdp_deletion
+mitre_technique: []
+datasets:
+- name: rdp_file_deleted
+  path: /datasets/attack_techniques/T1070.004/rdp_deletion/rdp_file_deleted-fea8b41d-2a3b-47e1-b6fb-de197eb25690.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

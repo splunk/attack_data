@@ -1,0 +1,13 @@
+author: STRT
+id: 5e1d21a7-f5f9-4d5f-9b53-25bb961ac519
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 OAuth App Mailbox Access
+  via Graph API
+environment: attack_range
+directory: o365_oauth_app_graph_mailbox_access
+mitre_technique: []
+datasets:
+- name: o365_oauth_app_graph_mailbox_access
+  path: /datasets/attack_techniques/T1114.002/o365_oauth_app_graph_mailbox_access/o365_oauth_app_graph_mailbox_access-5e1d21a7-f5f9-4d5f-9b53-25bb961ac519.log
+  sourcetype: o365:management:activity
+  source: o365

@@ -1,0 +1,17 @@
+author: STRT
+id: 144154c2-c01c-405f-b9e0-02600c91f199
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS SAML Update identity
+  provider
+environment: attack_range
+directory: update_saml_provider
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1078/update_saml_provider/asl_ocsf_cloudtrail-144154c2-c01c-405f-b9e0-02600c91f199.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: update_saml_provider
+  path: /datasets/attack_techniques/T1078/update_saml_provider/update_saml_provider-144154c2-c01c-405f-b9e0-02600c91f199.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

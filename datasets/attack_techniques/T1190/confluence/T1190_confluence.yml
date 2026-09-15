@@ -1,0 +1,25 @@
+author: STRT
+id: 90e45f25-7776-4988-bda7-3d46d21ff586
+date: '2026-07-13'
+description: Curated attack data generated for detection Confluence CVE-2023-22515
+  Trigger Vulnerability
+environment: attack_range
+directory: confluence
+mitre_technique: []
+datasets:
+- name: confluence_vuln_trigger_cve-2023-22515
+  path: /datasets/attack_techniques/T1190/confluence/confluence_vuln_trigger_cve-2023-22515-90e45f25-7776-4988-bda7-3d46d21ff586.log
+  sourcetype: suricata
+  source: not_applicable
+- name: nginx_plus_kv_confluence
+  path: /datasets/attack_techniques/T1190/confluence/nginx_plus_kv_confluence-90e45f25-7776-4988-bda7-3d46d21ff586.log
+  sourcetype: nginx:plus:kv
+  source: nginx:plus:kv
+- name: suricata_confluence_cve-2023-22527
+  path: /datasets/attack_techniques/T1190/confluence/suricata_confluence_cve-2023-22527-90e45f25-7776-4988-bda7-3d46d21ff586.log
+  sourcetype: suricata
+  source: not_applicable
+- name: nginx_shellservlet
+  path: /datasets/attack_techniques/T1190/confluence/nginx_shellservlet-90e45f25-7776-4988-bda7-3d46d21ff586.log
+  sourcetype: nginx:plus:kv
+  source: /var/log/nginx/access.log

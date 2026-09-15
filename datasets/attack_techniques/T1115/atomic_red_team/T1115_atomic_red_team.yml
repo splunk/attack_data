@@ -1,0 +1,12 @@
+author: STRT
+id: c6f729ad-2aab-4f31-a814-d4b0cee1f009
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Clipboard Data Copy
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: linux-sysmon
+  path: /datasets/attack_techniques/T1115/atomic_red_team/linux-sysmon-c6f729ad-2aab-4f31-a814-d4b0cee1f009.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

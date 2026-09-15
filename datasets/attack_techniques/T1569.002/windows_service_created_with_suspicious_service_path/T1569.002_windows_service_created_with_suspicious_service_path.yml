@@ -1,0 +1,13 @@
+author: STRT
+id: 62e9a855-2de5-495a-8eb2-e007313bd487
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Service Created with
+  Suspicious Service Path
+environment: attack_range
+directory: windows_service_created_with_suspicious_service_path
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1569.002/windows_service_created_with_suspicious_service_path/windows-xml-62e9a855-2de5-495a-8eb2-e007313bd487.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:System

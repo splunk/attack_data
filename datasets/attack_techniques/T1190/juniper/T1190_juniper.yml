@@ -1,0 +1,13 @@
+author: STRT
+id: df49c62a-9589-45a6-b230-dd50828a7db3
+date: '2026-07-13'
+description: Curated attack data generated for detection Juniper Networks Remote Code
+  Execution Exploit Detection
+environment: attack_range
+directory: juniper
+mitre_technique: []
+datasets:
+- name: suricata_junos_cvemegazord
+  path: /datasets/attack_techniques/T1190/juniper/suricata_junos_cvemegazord-df49c62a-9589-45a6-b230-dd50828a7db3.log
+  sourcetype: suricata
+  source: not_applicable

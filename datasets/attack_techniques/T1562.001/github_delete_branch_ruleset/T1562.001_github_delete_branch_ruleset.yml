@@ -1,0 +1,13 @@
+author: STRT
+id: 4449693d-eabf-4eeb-aa57-7d372c5981d2
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Delete
+  Branch Ruleset
+environment: attack_range
+directory: github_delete_branch_ruleset
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1562.001/github_delete_branch_ruleset/github-4449693d-eabf-4eeb-aa57-7d372c5981d2.log
+  sourcetype: httpevent
+  source: http:github

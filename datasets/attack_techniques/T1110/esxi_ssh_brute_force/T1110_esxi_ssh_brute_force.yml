@@ -1,0 +1,12 @@
+author: STRT
+id: 14fa0ebe-8f70-4825-b9ee-5258b1fb78e1
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi SSH Brute Force
+environment: attack_range
+directory: esxi_ssh_brute_force
+mitre_technique: []
+datasets:
+- name: esxi_ssh_brute_force
+  path: /datasets/attack_techniques/T1110/esxi_ssh_brute_force/esxi_ssh_brute_force-14fa0ebe-8f70-4825-b9ee-5258b1fb78e1.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

@@ -1,0 +1,13 @@
+author: STRT
+id: bca77d7d-1017-4b5f-905d-3d3cf39ad9cb
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Rapid Authentication
+  On Multiple Hosts
+environment: attack_range
+directory: rapid_authentication_multiple_hosts
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1135/rapid_authentication_multiple_hosts/windows-security-bca77d7d-1017-4b5f-905d-3d3cf39ad9cb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

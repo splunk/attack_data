@@ -1,0 +1,13 @@
+author: STRT
+id: e3227daf-22ff-44af-bc8a-550dba88f45c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Process Executed
+  From Removable Media
+environment: attack_range
+directory: sysmon_usb_use_execution
+mitre_technique: []
+datasets:
+- name: sysmon_usb_use_execution
+  path: /datasets/attack_techniques/T1200/sysmon_usb_use_execution/sysmon_usb_use_execution-e3227daf-22ff-44af-bc8a-550dba88f45c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

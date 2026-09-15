@@ -1,0 +1,13 @@
+author: STRT
+id: 652884fc-18a5-47ea-875f-d7bc2966224f
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Change File Owner To
+  Root
+environment: attack_range
+directory: chmod_uid
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.001/chmod_uid/sysmon_linux-652884fc-18a5-47ea-875f-d7bc2966224f.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

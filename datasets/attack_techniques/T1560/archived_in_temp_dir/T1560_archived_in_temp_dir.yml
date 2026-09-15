@@ -1,0 +1,13 @@
+author: STRT
+id: 64476aae-dbe1-4d20-b56e-385a9a991bbd
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Archived Collected
+  Data In TEMP Folder
+environment: attack_range
+directory: archived_in_temp_dir
+mitre_technique: []
+datasets:
+- name: braodo_zip_temp
+  path: /datasets/attack_techniques/T1560/archived_in_temp_dir/braodo_zip_temp-64476aae-dbe1-4d20-b56e-385a9a991bbd.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

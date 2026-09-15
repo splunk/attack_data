@@ -1,0 +1,13 @@
+author: STRT
+id: 3bbfd469-febd-4f3c-991d-4648c36e0053
+date: '2026-07-10'
+description: Curated attack data generated for detection Excessive distinct processes
+  from Windows Temp
+environment: attack_range
+directory: excessive_distinct_processes_from_windows_temp
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1059/excessive_distinct_processes_from_windows_temp/windows-xml-3bbfd469-febd-4f3c-991d-4648c36e0053.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

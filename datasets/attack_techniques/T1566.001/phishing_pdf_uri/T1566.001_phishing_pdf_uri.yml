@@ -1,0 +1,13 @@
+author: STRT
+id: 581f14ae-4a0b-427f-ba97-95941004348c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Phishing PDF File
+  Executes URL Link
+environment: attack_range
+directory: phishing_pdf_uri
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1566.001/phishing_pdf_uri/sysmon-581f14ae-4a0b-427f-ba97-95941004348c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

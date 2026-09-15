@@ -1,0 +1,12 @@
+author: STRT
+id: 24add83e-8acc-446a-a828-0475798e8543
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 PST export alert
+environment: attack_range
+directory: o365_export_pst_file
+mitre_technique: []
+datasets:
+- name: o365_export_pst_file
+  path: /datasets/attack_techniques/T1114/o365_export_pst_file/o365_export_pst_file-24add83e-8acc-446a-a828-0475798e8543.log
+  sourcetype: o365:management:activity
+  source: o365

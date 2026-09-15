@@ -1,0 +1,12 @@
+author: STRT
+id: ddfdd18c-3e96-4927-b43f-694a78b26138
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Account Modified
+environment: attack_range
+directory: esxi_account_modification
+mitre_technique: []
+datasets:
+- name: esxi_account_modified
+  path: /datasets/attack_techniques/T1098/esxi_account_modification/esxi_account_modified-ddfdd18c-3e96-4927-b43f-694a78b26138.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

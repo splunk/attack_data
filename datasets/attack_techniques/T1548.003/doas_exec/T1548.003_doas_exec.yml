@@ -1,0 +1,12 @@
+author: STRT
+id: d016632a-77dd-4b75-9903-ac65c3351c89
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Doas Tool Execution
+environment: attack_range
+directory: doas_exec
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.003/doas_exec/sysmon_linux-d016632a-77dd-4b75-9903-ac65c3351c89.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

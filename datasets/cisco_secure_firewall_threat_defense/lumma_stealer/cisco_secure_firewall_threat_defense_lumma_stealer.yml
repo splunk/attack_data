@@ -1,0 +1,13 @@
+author: STRT
+id: be07a422-5fbf-4f03-9ea9-c643bb55e1e7
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Secure Firewall - Intrusion
+  Events by Threat Activity
+environment: attack_range
+directory: lumma_stealer
+mitre_technique: []
+datasets:
+- name: lumma_stealer_events
+  path: /datasets/cisco_secure_firewall_threat_defense/lumma_stealer/lumma_stealer_events-be07a422-5fbf-4f03-9ea9-c643bb55e1e7.log
+  sourcetype: cisco:sfw:estreamer
+  source: not_applicable

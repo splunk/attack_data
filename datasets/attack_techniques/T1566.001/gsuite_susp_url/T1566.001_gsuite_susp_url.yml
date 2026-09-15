@@ -1,0 +1,13 @@
+author: STRT
+id: 66307c94-a217-4209-8cdf-cf249a9e14a1
+date: '2026-07-10'
+description: Curated attack data generated for detection Gsuite Email With Known Abuse
+  Web Service Link
+environment: attack_range
+directory: gsuite_susp_url
+mitre_technique: []
+datasets:
+- name: gsuite_susp_url
+  path: /datasets/attack_techniques/T1566.001/gsuite_susp_url/gsuite_susp_url-66307c94-a217-4209-8cdf-cf249a9e14a1.log
+  sourcetype: gsuite:gmail:bigquery
+  source: http:gsuite

@@ -1,0 +1,17 @@
+author: STRT
+id: f0a470d6-3f31-4f13-b3da-b07573e0b654
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerShell Invoke-Sqlcmd
+  Execution
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: invokesqlcmd_powershell
+  path: /datasets/attack_techniques/T1059.003/atomic_red_team/invokesqlcmd_powershell-f0a470d6-3f31-4f13-b3da-b07573e0b654.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: sqlcmd_windows_sysmon
+  path: /datasets/attack_techniques/T1059.003/atomic_red_team/sqlcmd_windows_sysmon-f0a470d6-3f31-4f13-b3da-b07573e0b654.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

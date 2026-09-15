@@ -1,0 +1,13 @@
+author: STRT
+id: 207527b8-d3ad-45fe-82c6-fe218bb3292c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Certutil Root Certificate
+  Addition
+environment: attack_range
+directory: add_store_cert
+mitre_technique: []
+datasets:
+- name: addstore_cert
+  path: /datasets/attack_techniques/T1587.003/add_store_cert/addstore_cert-207527b8-d3ad-45fe-82c6-fe218bb3292c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

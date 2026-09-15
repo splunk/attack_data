@@ -1,0 +1,12 @@
+author: STRT
+id: 73ed3e82-095c-4502-b588-a8535568a3f8
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes DaemonSet Deployed
+environment: attack_range
+directory: kubernetes_audit_daemonset_created
+mitre_technique: []
+datasets:
+- name: kubernetes_audit_daemonset_created
+  path: /datasets/attack_techniques/T1204/kubernetes_audit_daemonset_created/kubernetes_audit_daemonset_created-73ed3e82-095c-4502-b588-a8535568a3f8.log
+  sourcetype: _json
+  source: kubernetes

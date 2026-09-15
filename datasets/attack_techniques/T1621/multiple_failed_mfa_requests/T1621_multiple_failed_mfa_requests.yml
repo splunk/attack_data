@@ -1,0 +1,13 @@
+author: STRT
+id: f25f6db9-337e-4d61-92f2-2ebef19df010
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Multiple Failed
+  MFA Requests For User
+environment: attack_range
+directory: multiple_failed_mfa_requests
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1621/multiple_failed_mfa_requests/azure-audit-f25f6db9-337e-4d61-92f2-2ebef19df010.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

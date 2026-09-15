@@ -1,0 +1,12 @@
+author: STRT
+id: 609a129e-d314-4315-abd0-0918ab07a1d6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD add Self to Group
+environment: attack_range
+directory: account_manipulation
+mitre_technique: []
+datasets:
+- name: xml-windows-security
+  path: /datasets/attack_techniques/T1098/account_manipulation/xml-windows-security-609a129e-d314-4315-abd0-0918ab07a1d6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

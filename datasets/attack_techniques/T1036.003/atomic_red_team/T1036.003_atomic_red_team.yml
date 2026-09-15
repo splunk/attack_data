@@ -1,0 +1,13 @@
+author: STRT
+id: 36f56a3d-a7bf-4206-b3f1-e699ff75d6ae
+date: '2026-07-11'
+description: Curated attack data generated for detection Execution of File with Multiple
+  Extensions
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1036.003/atomic_red_team/windows-sysmon-36f56a3d-a7bf-4206-b3f1-e699ff75d6ae.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
