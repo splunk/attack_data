@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: e8114076-32b2-49c0-8874-9ee2bbb8ff3f
+date: '2026-09-16'
+description: Dataset generated in attack range for the attack technique of communicating with a remote host using the finger protocol.
+environment: attack_range
+directory: finger_remote_host
+mitre_technique:
+- T1071
+datasets:
+- name: finger_remote_host
+  path: /datasets/attack_techniques/T1071/finger_remote_host/finger_remote_host.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
