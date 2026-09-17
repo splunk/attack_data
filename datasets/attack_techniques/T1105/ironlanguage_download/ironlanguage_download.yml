@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: ad1bad42-77f0-41e6-a3f5-7c9508638440
+date: '2026-09-16'
+description: Dataset generated in attack range for the attack technique of accessing IronLanguages repository.
+environment: attack_range
+directory: ironlanguage_download
+mitre_technique:
+- T1105
+datasets:
+- name: ironlanguage_download
+  path: /datasets/attack_techniques/T1105/ironlanguage_download/ironlanguage_download.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

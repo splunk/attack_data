@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 0d4fde14-e346-4159-b596-0a99e65c4daa
+date: '2026-09-16'
+description: Dataset generated in attack range for the attack technique of executing commands in a for loop using cmd.exe.
+environment: attack_range
+directory: cmd_for_loop
+mitre_technique:
+- T1059.003
+datasets:
+- name: cmd_for_loop
+  path: /datasets/attack_techniques/T1059.003/cmd_for_loop/cmd_for_loop.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: c7976c6a-dca8-4cb1-aab2-1b5ae9b23c4c
+date: '2026-09-16'
+description: Dataset generated in attack range for the attack technique of executing JavaScript scripts using Node.js.
+environment: attack_range
+directory: node_execute_js_script
+mitre_technique:
+- T1059.007
+datasets:
+- name: node_execute_js_script
+  path: /datasets/attack_techniques/T1059.007/node_execute_js_script/node_execute_js_script.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
