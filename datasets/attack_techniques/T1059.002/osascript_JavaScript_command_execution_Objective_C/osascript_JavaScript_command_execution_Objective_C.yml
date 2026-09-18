@@ -1,0 +1,14 @@
+author: Radka Viskova
+id: c3d39ccd-29c3-4a71-9e26-986f9218af2d
+date: '2026-09-17'
+description: Generated dataset for osascript execution of JavaScript code containing Objective-C references with osquery and endpoint security.
+environment: TalosOffensiveLab
+directory: osascript
+mitre_technique: 
+- T1059.002
+- T1059.007
+datasets:
+- name: osascript_JavaScript_command_execution_Objective_C
+  path: /datasets/attack_techniques/T1059.002/osascript_JavaScript_command_execution_Objective_C/osascript_JavaScript_command_execution_Objective_C.log
+  sourcetype: osquery:results
+  source: osquery
