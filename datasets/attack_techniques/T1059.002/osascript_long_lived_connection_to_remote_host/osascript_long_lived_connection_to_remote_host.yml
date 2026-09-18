@@ -1,0 +1,14 @@
+author: Radka Viskova
+id: 044b6a5e-e4a4-4d3d-a550-cc9c8c819e63
+date: '2026-09-18'
+description: Generated dataset for long lived connection to remote host initiated by the utility osascript, with Cisco Network Visibility Module Flow Data.
+environment: TalosOffensiveLab
+directory: osascript_long_lived_connection_to_remote_host
+mitre_technique:
+- T1059.002
+- T1059.004
+datasets:
+- name: osascript_long_lived_connection_to_remote_host
+  path: /datasets/attack_techniques/T1059.002/osascript_long_lived_connection_to_remote_host/osascript_long_lived_connection_to_remote_host.log
+  sourcetype: cisco:nvm:flowdata:v2
+  source: not_applicable
