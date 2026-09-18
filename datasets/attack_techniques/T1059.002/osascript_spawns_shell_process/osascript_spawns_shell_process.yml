@@ -1,0 +1,14 @@
+author: Radka Viskova
+id: 2e08f2f4-d82c-4638-a82c-796dc3748448
+date: '2026-09-17'
+description: Generated dataset for osascript execution of shell process with osquery and endpoint security.
+environment: TalosOffensiveLab
+directory: osascript
+mitre_technique: 
+- T1059.002
+- T1059.004
+datasets:
+- name: osascript_spawns_shell_process
+  path: /datasets/attack_techniques/T1059.002/osascript_spawns_shell_process/osascript_spawns_shell_process.log
+  sourcetype: osquery:results
+  source: osquery
