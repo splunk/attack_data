@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: bf88b359-6f72-4f6f-99da-14053ac7e39c
+date: '2025-09-23'
+description: Generated datasets for renamed command interpreter in attack range.
+environment: attack_range
+directory: renamed_command_interpreter
+mitre_technique:
+- T1036.003
+datasets:
+- name: renamed_command_interpreter
+  path: /datasets/attack_techniques/T1036.003/renamed_command_interpreter/renamed_command_interpreter.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
