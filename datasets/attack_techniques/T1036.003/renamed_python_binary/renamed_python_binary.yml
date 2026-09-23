@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 620c34ae-aff8-41d0-9831-9b21b4f90d34
+date: '2025-09-23'
+description: Generated datasets for renamed python binary in attack range.
+environment: attack_range
+directory: renamed_python_binary
+mitre_technique:
+- T1036.003
+datasets:
+- name: renamed_python_binary
+  path: /datasets/attack_techniques/T1036.003/renamed_python_binary/renamed_python_binary.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

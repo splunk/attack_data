@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 46057aa5-4909-43f6-8628-79cf2687c4ba
+date: '2025-09-23'
+description: Generated datasets for renamed 3rd party software in attack range.
+environment: attack_range
+directory: renamed_3rd_party_software
+mitre_technique:
+- T1036.003
+datasets:
+- name: renamed_3rd_party_software
+  path: /datasets/attack_techniques/T1036.003/renamed_3rd_party_software/renamed_3rd_party_software.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
