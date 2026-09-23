@@ -9,7 +9,11 @@ mitre_technique:
 datasets:
 - name: o365_messagetrace_suspect_events
   path: /datasets/attack_techniques/T1114/o365_suspect_email_actions/o365_messagetrace_suspect_events.log
-  sourcetype: o365:management:activity
+  sourcetype: o365:reporting:messagetrace
+  source: o365
+- name: o365_graph_messagetrace_suspect_events
+  path: /datasets/attack_techniques/T1114/o365_suspect_email_actions/o365_graph_messagetrace_suspect_events.log
+  sourcetype: o365:graph:messagetrace
   source: o365
 - name: o365_exchange_suspect_events
   path: /datasets/attack_techniques/T1114/o365_suspect_email_actions/o365_exchange_suspect_events.log
