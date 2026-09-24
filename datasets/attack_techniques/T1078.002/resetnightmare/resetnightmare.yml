@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: d65ac1ca-85be-4a33-82d0-944222f374b6
+date: '2026-09-23'
+description: Manual exploitation of CVE-2026-27912 using a public exploit.
+environment: attack_range
+directory: resetnightmare
+mitre_technique:
+- T1078.002
+datasets:
+-   name: windows-xml
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+    path: /datasets/attack_techniques/T1078.002/resetnightmare/windows-xml.log
