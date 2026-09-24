@@ -2,3 +2,4 @@
 datasets/**/*.json filter=lfs diff=lfs merge=lfs -text
 datasets/**/*.log filter=lfs diff=lfs merge=lfs -text
 datasets/**/*.ndjson filter=lfs diff=lfs merge=lfs -text
+datasets/**/*.csv filter=lfs diff=lfs merge=lfs -text
