@@ -8,7 +8,7 @@ directory: m365_copilot
 mitre_technique: []
 datasets:
 - name: m365_access_logs
-  path: /datasets/m365_copilot/copilot_prompts.log
+  path: /datasets/m365_copilot/copilot_prompt_logs.csv
   sourcetype: csv
   source: csv
 - name: m365_copilot_access
