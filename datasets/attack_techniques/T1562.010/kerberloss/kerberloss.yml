@@ -1,0 +1,13 @@
+author: Raven Tait
+id: 6665fa29-d77d-4752-9f95-38a45d6f96e0
+date: '2026-09-28'
+description: KerberLoss (CVE-2026-25177) attack data - user account modifying computer object SPNs and injecting invisible Unicode characters into SPN values via Windows Security Event 5136
+environment: attack_range
+directory: kerberloss
+mitre_technique:
+- T1562.010
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1562.010/kerberloss/windows-xml.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
