@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 8e8c43db-3671-4264-996b-5a35b58204f7
+date: '2025-09-30'
+description: Generated datasets for Windows Defender intermediary artifacts in attack range.
+environment: attack_range
+directory: shieldcrash_windefender_artifacts
+mitre_technique:
+- T1068
+datasets:
+- name: shieldcrash_windefender_artifacts
+  path: /datasets/attack_techniques/T1068/shieldcrash_windefender_artifacts/shieldcrash_windefender_artifacts.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
