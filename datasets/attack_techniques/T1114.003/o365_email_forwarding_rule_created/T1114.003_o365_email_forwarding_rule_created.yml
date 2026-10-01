@@ -1,0 +1,13 @@
+author: STRT
+id: 6f0102b7-e096-482c-a786-c68da75f669f
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 New Email Forwarding
+  Rule Created
+environment: attack_range
+directory: o365_email_forwarding_rule_created
+mitre_technique: []
+datasets:
+- name: o365_email_forwarding_rule_created
+  path: /datasets/attack_techniques/T1114.003/o365_email_forwarding_rule_created/o365_email_forwarding_rule_created-6f0102b7-e096-482c-a786-c68da75f669f.log
+  sourcetype: o365:management:activity
+  source: o365

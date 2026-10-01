@@ -1,0 +1,13 @@
+author: STRT
+id: dd0fc01a-30de-406c-b277-39969efa1a65
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Software Discovery
+  Via PowerShell
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1518/snapattack/snapattack-dd0fc01a-30de-406c-b277-39969efa1a65.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

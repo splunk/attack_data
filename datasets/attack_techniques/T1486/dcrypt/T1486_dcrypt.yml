@@ -1,0 +1,12 @@
+author: STRT
+id: c9369936-ded3-4977-a4ae-9d3a7c415e4e
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows DiskCryptor Usage
+environment: attack_range
+directory: dcrypt
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1486/dcrypt/windows-sysmon-c9369936-ded3-4977-a4ae-9d3a7c415e4e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

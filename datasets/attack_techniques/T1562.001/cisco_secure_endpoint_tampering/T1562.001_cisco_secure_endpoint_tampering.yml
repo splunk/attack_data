@@ -1,0 +1,17 @@
+author: STRT
+id: af9a16e7-db05-4d78-96f5-0bfeac784bf1
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Cisco Secure Endpoint
+  Related Service Stopped
+environment: attack_range
+directory: cisco_secure_endpoint_tampering
+mitre_technique: []
+datasets:
+- name: service_stop
+  path: /datasets/attack_techniques/T1562.001/cisco_secure_endpoint_tampering/service_stop-af9a16e7-db05-4d78-96f5-0bfeac784bf1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:System
+- name: sfc_tampering
+  path: /datasets/attack_techniques/T1562.001/cisco_secure_endpoint_tampering/sfc_tampering-af9a16e7-db05-4d78-96f5-0bfeac784bf1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: fc702dc7-8b37-4181-8922-8802d8d96ad9
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Remote Host Computer
+  Management Access
+environment: attack_range
+directory: compmgtm_access
+mitre_technique: []
+datasets:
+- name: compmgmt_load
+  path: /datasets/attack_techniques/T1021.006/compmgtm_access/compmgmt_load-fc702dc7-8b37-4181-8922-8802d8d96ad9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

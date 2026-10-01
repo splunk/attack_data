@@ -1,0 +1,13 @@
+author: STRT
+id: d671f755-7f77-46f7-9942-888cda42be30
+date: '2026-07-10'
+description: Curated attack data generated for detection GCP Authentication Failed
+  During MFA Challenge
+environment: attack_range
+directory: gcp_failed_mfa
+mitre_technique: []
+datasets:
+- name: gws_login
+  path: /datasets/attack_techniques/T1621/gcp_failed_mfa/gws_login-d671f755-7f77-46f7-9942-888cda42be30.log
+  sourcetype: gws:reports:login
+  source: gws:reports:login

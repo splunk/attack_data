@@ -1,0 +1,13 @@
+author: STRT
+id: d84f1588-a173-45ba-8f51-655c783c0d99
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows DNS Gather Network
+  Info
+environment: attack_range
+directory: enum_dns_record
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1590.002/enum_dns_record/sysmon-d84f1588-a173-45ba-8f51-655c783c0d99.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: f5d7e31d-3e8e-44b0-b4a9-1c2e9eca1fd4
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Firewall Rule Deletion
+environment: attack_range
+directory: delete_rule
+mitre_technique: []
+datasets:
+- name: MPSSVC_Rule-Level_Policy_Change-4948
+  path: /datasets/attack_techniques/T1562.004/firewall_win_event/delete_rule/MPSSVC_Rule-Level_Policy_Change-4948-f5d7e31d-3e8e-44b0-b4a9-1c2e9eca1fd4.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

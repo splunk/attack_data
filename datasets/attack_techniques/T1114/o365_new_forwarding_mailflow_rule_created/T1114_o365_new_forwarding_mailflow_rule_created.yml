@@ -1,0 +1,13 @@
+author: STRT
+id: 52643903-63dc-441b-b333-5f51a4219583
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 New Forwarding Mailflow
+  Rule Created
+environment: attack_range
+directory: o365_new_forwarding_mailflow_rule_created
+mitre_technique: []
+datasets:
+- name: o365_new_forwarding_mailflow_rule_created
+  path: /datasets/attack_techniques/T1114/o365_new_forwarding_mailflow_rule_created/o365_new_forwarding_mailflow_rule_created-52643903-63dc-441b-b333-5f51a4219583.log
+  sourcetype: o365:management:activity
+  source: o365

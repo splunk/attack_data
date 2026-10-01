@@ -1,0 +1,13 @@
+author: STRT
+id: 82cb21cb-b741-4a7b-866f-afbb041b6ffe
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Excessive SSO logon
+  errors
+environment: attack_range
+directory: o365_sso_logon_errors
+mitre_technique: []
+datasets:
+- name: o365_sso_logon_errors2
+  path: /datasets/attack_techniques/T1556/o365_sso_logon_errors/o365_sso_logon_errors2-82cb21cb-b741-4a7b-866f-afbb041b6ffe.log
+  sourcetype: o365:management:activity
+  source: o365

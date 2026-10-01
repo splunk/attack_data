@@ -1,0 +1,13 @@
+author: STRT
+id: f70012db-abd8-423d-a012-1d029fe23e14
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows KrbRelayUp Service
+  Creation
+environment: attack_range
+directory: windows_krbrelayup_service_creation
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1543.003/windows_krbrelayup_service_creation/windows-xml-f70012db-abd8-423d-a012-1d029fe23e14.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:System

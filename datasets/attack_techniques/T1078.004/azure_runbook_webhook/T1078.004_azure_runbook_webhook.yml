@@ -1,0 +1,12 @@
+author: STRT
+id: b3645715-ec71-46d4-a697-867a32f9e6b3
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure Runbook Webhook Created
+environment: attack_range
+directory: azure_runbook_webhook
+mitre_technique: []
+datasets:
+- name: azure-activity
+  path: /datasets/attack_techniques/T1078.004/azure_runbook_webhook/azure-activity-b3645715-ec71-46d4-a697-867a32f9e6b3.log
+  sourcetype: mscs:azure:audit
+  source: mscs:azure:audit

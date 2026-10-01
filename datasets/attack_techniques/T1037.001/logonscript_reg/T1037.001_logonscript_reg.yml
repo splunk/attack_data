@@ -1,0 +1,13 @@
+author: STRT
+id: 7ceb0cf0-ab5e-46db-a84a-d492a5ba40e6
+date: '2026-07-10'
+description: Curated attack data generated for detection Logon Script Event Trigger
+  Execution
+environment: attack_range
+directory: logonscript_reg
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1037.001/logonscript_reg/sysmon-7ceb0cf0-ab5e-46db-a84a-d492a5ba40e6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

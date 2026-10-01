@@ -1,0 +1,13 @@
+author: STRT
+id: ff7c5519-0b60-4d7a-99d7-2bee82d17e9b
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux SSH Remote Services
+  Script Execute
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: linux-sysmon
+  path: /datasets/attack_techniques/T1021.004/atomic_red_team/linux-sysmon-ff7c5519-0b60-4d7a-99d7-2bee82d17e9b.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

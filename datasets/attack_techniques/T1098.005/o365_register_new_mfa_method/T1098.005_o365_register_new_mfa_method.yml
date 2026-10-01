@@ -1,0 +1,12 @@
+author: STRT
+id: 4425b8a0-5d26-4126-b27e-37b0ac5b8816
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 New MFA Method Registered
+environment: attack_range
+directory: o365_register_new_mfa_method
+mitre_technique: []
+datasets:
+- name: o365_register_new_mfa_method
+  path: /datasets/attack_techniques/T1098.005/o365_register_new_mfa_method/o365_register_new_mfa_method-4425b8a0-5d26-4126-b27e-37b0ac5b8816.log
+  sourcetype: o365:management:activity
+  source: o365

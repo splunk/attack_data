@@ -1,0 +1,13 @@
+author: STRT
+id: 02879f53-ad9a-4196-be9b-622af377d15a
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Excessive Authentication
+  Failures Alert
+environment: attack_range
+directory: o365_brute_force_login
+mitre_technique: []
+datasets:
+- name: o365_brute_force_login
+  path: /datasets/attack_techniques/T1110/o365_brute_force_login/o365_brute_force_login-02879f53-ad9a-4196-be9b-622af377d15a.log
+  sourcetype: o365:management:activity
+  source: o365

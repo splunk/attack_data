@@ -1,0 +1,13 @@
+author: STRT
+id: 52ffa665-a99b-4469-861f-ab088e5378b0
+date: '2026-07-10'
+description: Curated attack data generated for detection Interactive Session on Remote
+  Endpoint with PowerShell
+environment: attack_range
+directory: lateral_movement_pssession
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1021.006/lateral_movement_pssession/windows-powershell-xml-52ffa665-a99b-4469-861f-ab088e5378b0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

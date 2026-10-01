@@ -1,0 +1,13 @@
+author: STRT
+id: 62caec40-b328-41ca-878f-fc799ada2c80
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows SqlWriter SQLDumper
+  DLL Sideload
+environment: attack_range
+directory: wineloader
+mitre_technique: []
+datasets:
+- name: sqlwriter_sqldumper_sideload_windows-sysmon
+  path: /datasets/attack_techniques/T1574.002/wineloader/sqlwriter_sqldumper_sideload_windows-sysmon-62caec40-b328-41ca-878f-fc799ada2c80.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

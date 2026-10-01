@@ -1,0 +1,21 @@
+author: STRT
+id: 760be82f-f921-4c51-be8b-aa917254efd4
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS Defense Evasion Delete
+  Cloudtrail
+environment: attack_range
+directory: stop_delete_cloudtrail
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/asl_ocsf_cloudtrail-760be82f-f921-4c51-be8b-aa917254efd4.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: asl_ocsf_cloudtrail_2
+  path: /datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/asl_ocsf_cloudtrail_2-760be82f-f921-4c51-be8b-aa917254efd4.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1562.008/stop_delete_cloudtrail/aws_cloudtrail_events-760be82f-f921-4c51-be8b-aa917254efd4.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

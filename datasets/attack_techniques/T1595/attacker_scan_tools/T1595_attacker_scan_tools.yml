@@ -1,0 +1,12 @@
+author: STRT
+id: 7e924875-619c-43d3-93a1-9ccc2724a53c
+date: '2026-07-10'
+description: Curated attack data generated for detection Attacker Tools On Endpoint
+environment: attack_range
+directory: attacker_scan_tools
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1595/attacker_scan_tools/windows-sysmon-7e924875-619c-43d3-93a1-9ccc2724a53c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

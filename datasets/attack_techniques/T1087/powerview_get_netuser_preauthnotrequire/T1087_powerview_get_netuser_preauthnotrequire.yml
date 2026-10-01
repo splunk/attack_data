@@ -1,0 +1,13 @@
+author: STRT
+id: 38b2d9f2-64f3-4ff5-b74f-50f0d0e5e8ef
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Account Discovery
+  for None Disable User Account
+environment: attack_range
+directory: powerview_get_netuser_preauthnotrequire
+mitre_technique: []
+datasets:
+- name: get-netuser-not-require-pwh
+  path: /datasets/attack_techniques/T1087/powerview_get_netuser_preauthnotrequire/get-netuser-not-require-pwh-38b2d9f2-64f3-4ff5-b74f-50f0d0e5e8ef.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: dbd8a538-7f62-44da-8e46-83895eb78e87
+date: '2026-07-10'
+description: Curated attack data generated for detection Ping Sleep Batch Command
+environment: attack_range
+directory: ping_sleep
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1497.003/ping_sleep/sysmon-dbd8a538-7f62-44da-8e46-83895eb78e87.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

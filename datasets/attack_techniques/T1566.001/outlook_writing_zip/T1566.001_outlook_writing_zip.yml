@@ -1,0 +1,13 @@
+author: STRT
+id: 19c250db-32ce-48b9-8265-872f7610b17a
+date: '2026-07-10'
+description: Curated attack data generated for detection Detect Outlook exe writing
+  a zip file
+environment: attack_range
+directory: outlook_writing_zip
+mitre_technique: []
+datasets:
+- name: outlook_writing_zip
+  path: /datasets/attack_techniques/T1566.001/outlook_writing_zip/outlook_writing_zip-19c250db-32ce-48b9-8265-872f7610b17a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

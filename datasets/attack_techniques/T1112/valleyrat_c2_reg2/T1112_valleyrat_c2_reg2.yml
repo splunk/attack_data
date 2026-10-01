@@ -1,0 +1,13 @@
+author: STRT
+id: 272b5e19-ea31-45b8-bae5-5ce5c89f6223
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry ValleyRAT
+  C2 Config
+environment: attack_range
+directory: valleyrat_c2_reg2
+mitre_technique: []
+datasets:
+- name: valleyrat_c2_reg2
+  path: /datasets/attack_techniques/T1112/valleyrat_c2_reg2/valleyrat_c2_reg2-272b5e19-ea31-45b8-bae5-5ce5c89f6223.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

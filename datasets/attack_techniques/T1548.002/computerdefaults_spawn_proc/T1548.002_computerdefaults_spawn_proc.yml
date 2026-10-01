@@ -1,0 +1,13 @@
+author: STRT
+id: 121516ee-49d5-4247-814e-a942fd7dcfa7
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows ComputerDefaults
+  Spawning a Process
+environment: attack_range
+directory: computerdefaults_spawn_proc
+mitre_technique: []
+datasets:
+- name: computerdefaults_process
+  path: /datasets/attack_techniques/T1548.002/computerdefaults_spawn_proc/computerdefaults_process-121516ee-49d5-4247-814e-a942fd7dcfa7.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

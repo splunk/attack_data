@@ -1,0 +1,13 @@
+author: STRT
+id: 528de72f-a4f2-489a-8bef-7717a7665ec6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry on
+  Smart Card Group Policy
+environment: attack_range
+directory: smart_card_group_policy
+mitre_technique: []
+datasets:
+- name: scforceoption-reg
+  path: /datasets/attack_techniques/T1112/smart_card_group_policy/scforceoption-reg-528de72f-a4f2-489a-8bef-7717a7665ec6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

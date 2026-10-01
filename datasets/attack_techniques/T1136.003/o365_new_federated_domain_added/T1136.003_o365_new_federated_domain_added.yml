@@ -1,0 +1,13 @@
+author: STRT
+id: d8911fa6-b2d6-4b15-835a-8ed19faa8e20
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 New Federated Domain
+  Added
+environment: attack_range
+directory: o365_new_federated_domain_added
+mitre_technique: []
+datasets:
+- name: o365_add_federated_domain
+  path: /datasets/attack_techniques/T1136.003/o365_new_federated_domain_added/o365_add_federated_domain-d8911fa6-b2d6-4b15-835a-8ed19faa8e20.log
+  sourcetype: o365:management:activity
+  source: o365

@@ -1,0 +1,8 @@
+{
+    "yaml.schemas": {
+        "file:///Users/pbareiss/.cursor/extensions/your-publisher-id.strt-bot-detection-yaml-0.1.1/schema/detection.schema.json": [
+            "**/detections/**/*.yml",
+            "**/detections/**/*.yaml"
+        ]
+    }
+}

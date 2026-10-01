@@ -1,0 +1,12 @@
+author: STRT
+id: 9791cb24-d3d5-46f7-9694-0d401e08af10
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes Access Scanning
+environment: attack_range
+directory: kubernetes_scanning
+mitre_technique: []
+datasets:
+- name: kubernetes_scanning
+  path: /datasets/attack_techniques/T1046/kubernetes_scanning/kubernetes_scanning-9791cb24-d3d5-46f7-9694-0d401e08af10.log
+  sourcetype: _json
+  source: kubernetes

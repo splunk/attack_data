@@ -1,0 +1,13 @@
+author: STRT
+id: c8a7bf1e-a9da-4010-8aaf-05ec82a5855d
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Concurrent Sessions
+  From Different Ips
+environment: attack_range
+directory: o365_concurrent_sessions_from_different_ips
+mitre_technique: []
+datasets:
+- name: o365_concurrent_sessions_from_different_ips
+  path: /datasets/attack_techniques/T1185/o365_concurrent_sessions_from_different_ips/o365_concurrent_sessions_from_different_ips-c8a7bf1e-a9da-4010-8aaf-05ec82a5855d.log
+  sourcetype: o365:management:activity
+  source: o365

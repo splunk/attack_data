@@ -1,0 +1,12 @@
+author: STRT
+id: 70059ef1-7a04-485e-81cb-c52a20b99ff3
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Duo Policy Deny Access
+environment: attack_range
+directory: cisco_duo_policy_deny_access
+mitre_technique: []
+datasets:
+- name: cisco_duo_administrator
+  path: /datasets/attack_techniques/T1556/cisco_duo_policy_deny_access/cisco_duo_administrator-70059ef1-7a04-485e-81cb-c52a20b99ff3.log
+  sourcetype: cisco:duo:administrator
+  source: duo

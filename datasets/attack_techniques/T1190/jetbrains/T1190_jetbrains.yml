@@ -1,0 +1,21 @@
+author: STRT
+id: 59743bbc-0a7e-48ce-8d7a-b417bc70b44a
+date: '2026-07-13'
+description: Curated attack data generated for detection JetBrains TeamCity Authentication
+  Bypass CVE-2024-27198
+environment: attack_range
+directory: jetbrains
+mitre_technique: []
+datasets:
+- name: teamcity_cve_2024_27198
+  path: /datasets/attack_techniques/T1190/jetbrains/teamcity_cve_2024_27198-59743bbc-0a7e-48ce-8d7a-b417bc70b44a.log
+  sourcetype: suricata
+  source: not_applicable
+- name: teamcity_cve_2024_27199
+  path: /datasets/attack_techniques/T1190/jetbrains/teamcity_cve_2024_27199-59743bbc-0a7e-48ce-8d7a-b417bc70b44a.log
+  sourcetype: suricata
+  source: not_applicable
+- name: teamcity
+  path: /datasets/attack_techniques/T1190/jetbrains/teamcity-59743bbc-0a7e-48ce-8d7a-b417bc70b44a.log
+  sourcetype: suricata
+  source: not_applicable

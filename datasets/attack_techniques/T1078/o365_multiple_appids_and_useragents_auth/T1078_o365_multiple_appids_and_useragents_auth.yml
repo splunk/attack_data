@@ -1,0 +1,13 @@
+author: STRT
+id: e0bb1fa4-ee85-4c53-ad83-de3b1fa2e35b
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Multiple AppIDs and
+  UserAgents Authentication Spike
+environment: attack_range
+directory: o365_multiple_appids_and_useragents_auth
+mitre_technique: []
+datasets:
+- name: o365_multiple_appids_and_useragents_auth
+  path: /datasets/attack_techniques/T1078/o365_multiple_appids_and_useragents_auth/o365_multiple_appids_and_useragents_auth-e0bb1fa4-ee85-4c53-ad83-de3b1fa2e35b.log
+  sourcetype: o365:management:activity
+  source: o365

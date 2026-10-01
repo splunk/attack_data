@@ -1,0 +1,12 @@
+author: STRT
+id: 1ab84fdd-cc34-441d-acdc-056f6c9a2e4b
+date: '2026-07-10'
+description: Curated attack data generated for detection Detect Rare Executables
+environment: attack_range
+directory: rare_executables
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1204/rare_executables/windows-sysmon-1ab84fdd-cc34-441d-acdc-056f6c9a2e4b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,17 @@
+author: STRT
+id: 2660c066-aaf9-439f-8e31-33a538aca6b2
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS Defense Evasion Delete
+  CloudWatch Log Group
+environment: attack_range
+directory: delete_cloudwatch_log_group
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1562.008/delete_cloudwatch_log_group/asl_ocsf_cloudtrail-2660c066-aaf9-439f-8e31-33a538aca6b2.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1562.008/delete_cloudwatch_log_group/aws_cloudtrail_events-2660c066-aaf9-439f-8e31-33a538aca6b2.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

@@ -1,0 +1,12 @@
+author: STRT
+id: f9352d74-358b-4e0f-9a75-457f28055361
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Busybox Privilege Escalation
+environment: attack_range
+directory: busybox
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/busybox/sysmon_linux-f9352d74-358b-4e0f-9a75-457f28055361.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

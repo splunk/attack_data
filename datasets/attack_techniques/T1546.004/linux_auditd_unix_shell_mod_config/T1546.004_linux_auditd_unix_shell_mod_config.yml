@@ -1,0 +1,13 @@
+author: STRT
+id: 146c1c54-ace9-459a-8642-6281ca5d237e
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Auditd Unix Shell Configuration
+  Modification
+environment: attack_range
+directory: linux_auditd_unix_shell_mod_config
+mitre_technique: []
+datasets:
+- name: linux_path_profile_d
+  path: /datasets/attack_techniques/T1546.004/linux_auditd_unix_shell_mod_config/linux_path_profile_d-146c1c54-ace9-459a-8642-6281ca5d237e.log
+  sourcetype: auditd
+  source: auditd

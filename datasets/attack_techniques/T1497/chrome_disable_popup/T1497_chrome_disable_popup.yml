@@ -1,0 +1,13 @@
+author: STRT
+id: bc1df335-0d83-4154-915a-7abead75b78f
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Chromium Browser
+  Launched with Small Window Size
+environment: attack_range
+directory: chrome_disable_popup
+mitre_technique: []
+datasets:
+- name: chrome_disable_popup
+  path: /datasets/attack_techniques/T1497/chrome_disable_popup/chrome_disable_popup-bc1df335-0d83-4154-915a-7abead75b78f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

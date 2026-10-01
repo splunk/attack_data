@@ -1,0 +1,13 @@
+author: STRT
+id: 414f579a-a488-45dd-950d-d3bb2568dd43
+date: '2026-07-10'
+description: Curated attack data generated for detection Print Processor Registry
+  Autostart
+environment: attack_range
+directory: print_reg
+mitre_technique: []
+datasets:
+- name: sysmon_print
+  path: /datasets/attack_techniques/T1547.012/print_reg/sysmon_print-414f579a-a488-45dd-950d-d3bb2568dd43.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

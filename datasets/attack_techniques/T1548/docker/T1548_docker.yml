@@ -1,0 +1,13 @@
+author: STRT
+id: 503ae583-2a0b-4157-aa9a-2c55cf124551
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Docker Root Directory
+  Mount
+environment: attack_range
+directory: docker
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/docker/sysmon_linux-503ae583-2a0b-4157-aa9a-2c55cf124551.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

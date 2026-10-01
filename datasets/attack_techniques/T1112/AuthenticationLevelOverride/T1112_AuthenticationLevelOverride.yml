@@ -1,0 +1,12 @@
+author: STRT
+id: d5d19664-5810-46d8-8767-405eceab8d49
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry AuthenticationLevelOverride
+environment: attack_range
+directory: AuthenticationLevelOverride
+mitre_technique: []
+datasets:
+- name: auth_sys
+  path: /datasets/attack_techniques/T1112/AuthenticationLevelOverride/auth_sys-d5d19664-5810-46d8-8767-405eceab8d49.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

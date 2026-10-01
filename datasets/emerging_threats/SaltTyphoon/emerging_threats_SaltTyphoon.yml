@@ -1,0 +1,13 @@
+author: STRT
+id: 4d0f4c3c-e938-435c-98a1-a790e00d1ac4
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco IOS XE Guestshell Activation
+  and Destroy
+environment: attack_range
+directory: SaltTyphoon
+mitre_technique: []
+datasets:
+- name: salttyphoon_cisco
+  path: /datasets/emerging_threats/SaltTyphoon/salttyphoon_cisco-4d0f4c3c-e938-435c-98a1-a790e00d1ac4.log
+  sourcetype: cisco:ios
+  source: ctb:catalyst:syslog

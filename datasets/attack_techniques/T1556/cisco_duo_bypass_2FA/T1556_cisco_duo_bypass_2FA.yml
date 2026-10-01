@@ -1,0 +1,13 @@
+author: STRT
+id: 3d4d8d03-31a2-432f-aef6-76d02061eb0a
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Duo Set User Status
+  to Bypass 2FA
+environment: attack_range
+directory: cisco_duo_bypass_2FA
+mitre_technique: []
+datasets:
+- name: cisco_duo_activity
+  path: /datasets/attack_techniques/T1556/cisco_duo_bypass_2FA/cisco_duo_activity-3d4d8d03-31a2-432f-aef6-76d02061eb0a.log
+  sourcetype: cisco:duo:activity
+  source: duo

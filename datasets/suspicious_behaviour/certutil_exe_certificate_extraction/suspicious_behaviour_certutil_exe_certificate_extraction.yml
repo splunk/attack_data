@@ -1,0 +1,13 @@
+author: STRT
+id: a647993e-ee68-4a7e-a8b9-906c3013c5dd
+date: '2026-07-10'
+description: Curated attack data generated for detection Certutil exe certificate
+  extraction
+environment: attack_range
+directory: certutil_exe_certificate_extraction
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/suspicious_behaviour/certutil_exe_certificate_extraction/windows-sysmon-a647993e-ee68-4a7e-a8b9-906c3013c5dd.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

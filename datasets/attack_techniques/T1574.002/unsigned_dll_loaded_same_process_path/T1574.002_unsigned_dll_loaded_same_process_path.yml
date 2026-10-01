@@ -1,0 +1,13 @@
+author: STRT
+id: d5b3c07d-c345-45bf-bccd-9025fc084de2
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Unsigned DLL Side-Loading
+  In Same Process Path
+environment: attack_range
+directory: unsigned_dll_loaded_same_process_path
+mitre_technique: []
+datasets:
+- name: unsigned_dll_process_path
+  path: /datasets/attack_techniques/T1574.002/unsigned_dll_loaded_same_process_path/unsigned_dll_process_path-d5b3c07d-c345-45bf-bccd-9025fc084de2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

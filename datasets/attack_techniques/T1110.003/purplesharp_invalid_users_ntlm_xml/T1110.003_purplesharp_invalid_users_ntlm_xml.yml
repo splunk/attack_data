@@ -1,0 +1,13 @@
+author: STRT
+id: 57619421-6bda-436b-a327-3e5e685c1eec
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Multiple Invalid
+  Users Failed To Authenticate Using NTLM
+environment: attack_range
+directory: purplesharp_invalid_users_ntlm_xml
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1110.003/purplesharp_invalid_users_ntlm_xml/windows-security-57619421-6bda-436b-a327-3e5e685c1eec.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,12 @@
+author: STRT
+id: 4cf6c363-8bf0-47df-941d-dc0a30c9460b
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Firewall Rule Modification
+environment: attack_range
+directory: modify_rule
+mitre_technique: []
+datasets:
+- name: MPSSVC_Rule-Level_Policy_Change-4947
+  path: /datasets/attack_techniques/T1562.004/firewall_win_event/modify_rule/MPSSVC_Rule-Level_Policy_Change-4947-4cf6c363-8bf0-47df-941d-dc0a30c9460b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

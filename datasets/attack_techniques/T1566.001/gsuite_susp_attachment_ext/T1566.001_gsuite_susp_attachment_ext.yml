@@ -1,0 +1,12 @@
+author: STRT
+id: 16a186f9-53d4-4d77-a510-ac15264c8750
+date: '2026-07-10'
+description: Curated attack data generated for detection GSuite Email Suspicious Attachment
+environment: attack_range
+directory: gsuite_susp_attachment_ext
+mitre_technique: []
+datasets:
+- name: gsuite_gmail_file_ext
+  path: /datasets/attack_techniques/T1566.001/gsuite_susp_attachment_ext/gsuite_gmail_file_ext-16a186f9-53d4-4d77-a510-ac15264c8750.log
+  sourcetype: gsuite:gmail:bigquery
+  source: http:gsuite

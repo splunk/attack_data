@@ -1,0 +1,13 @@
+author: STRT
+id: 373866e9-f23d-41fb-9202-cc712f6cf95a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Network Share Interaction
+  Via Net
+environment: attack_range
+directory: net_share
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1135/net_share/windows-sysmon-373866e9-f23d-41fb-9202-cc712f6cf95a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

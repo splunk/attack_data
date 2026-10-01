@@ -1,0 +1,13 @@
+author: STRT
+id: 3a127511-3020-4c8c-9109-4a414a5009a6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Default Group Policy
+  Object Modified
+environment: attack_range
+directory: default_domain_policy_modified
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1484.001/default_domain_policy_modified/windows-security-3a127511-3020-4c8c-9109-4a414a5009a6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

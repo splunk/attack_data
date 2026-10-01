@@ -1,0 +1,13 @@
+author: STRT
+id: b65344c0-8475-4fdb-aece-a969430df9d0
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi VIB Acceptance Level
+  Tampering
+environment: attack_range
+directory: esxi_vib_acceptance_level_tampering
+mitre_technique: []
+datasets:
+- name: esxi_vib_acceptance_level_tampering
+  path: /datasets/attack_techniques/T1562/esxi_vib_acceptance_level_tampering/esxi_vib_acceptance_level_tampering-b65344c0-8475-4fdb-aece-a969430df9d0.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

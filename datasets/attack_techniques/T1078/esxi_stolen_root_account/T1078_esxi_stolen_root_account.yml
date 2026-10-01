@@ -1,0 +1,13 @@
+author: STRT
+id: f4515f06-8484-4651-b106-1cac51de3c89
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Shared or Stolen Root
+  Account
+environment: attack_range
+directory: esxi_stolen_root_account
+mitre_technique: []
+datasets:
+- name: esxi_stolen_root_account
+  path: /datasets/attack_techniques/T1078/esxi_stolen_root_account/esxi_stolen_root_account-f4515f06-8484-4651-b106-1cac51de3c89.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

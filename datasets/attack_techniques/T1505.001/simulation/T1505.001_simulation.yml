@@ -1,0 +1,17 @@
+author: STRT
+id: 9a9f7d2c-3808-47f1-923b-ea23a1434335
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows SQL Server Critical
+  Procedures Enabled
+environment: attack_range
+directory: simulation
+mitre_technique: []
+datasets:
+- name: adhocdq_windows_application
+  path: /datasets/attack_techniques/T1505.001/simulation/adhocdq_windows_application-9a9f7d2c-3808-47f1-923b-ea23a1434335.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Application
+- name: sqlservr-windows_sysmon
+  path: /datasets/attack_techniques/T1505.001/simulation/sqlservr-windows_sysmon-9a9f7d2c-3808-47f1-923b-ea23a1434335.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

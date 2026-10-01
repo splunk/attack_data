@@ -1,0 +1,13 @@
+author: STRT
+id: 9179bc1f-c1e1-4ec9-979d-3a463c891c16
+date: '2026-07-10'
+description: Curated attack data generated for detection Disabling Windows Local Security
+  Authority Defences via Registry
+environment: attack_range
+directory: disable_lsa_protection_new
+mitre_technique: []
+datasets:
+- name: lsa_reg_deletion_modification
+  path: /datasets/attack_techniques/T1556/disable_lsa_protection_new/lsa_reg_deletion_modification-9179bc1f-c1e1-4ec9-979d-3a463c891c16.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

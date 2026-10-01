@@ -1,0 +1,13 @@
+author: STRT
+id: 0f6a0c6d-39ea-46f5-9344-4034e0006f6f
+date: '2026-07-13'
+description: Curated attack data generated for detection DNS Query Length With High
+  Standard Deviation
+environment: attack_range
+directory: long_dns_query
+mitre_technique: []
+datasets:
+- name: dns-sysmon
+  path: /datasets/attack_techniques/T1071.004/long_dns_query/dns-sysmon-0f6a0c6d-39ea-46f5-9344-4034e0006f6f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: fe2b11f1-4215-40b8-abf4-7289541b0ab4
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Bedrock Invoke Model
+  Access Denied
+environment: attack_range
+directory: aws_invoke_model_access_denied
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1087.004/aws_invoke_model_access_denied/cloudtrail-fe2b11f1-4215-40b8-abf4-7289541b0ab4.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

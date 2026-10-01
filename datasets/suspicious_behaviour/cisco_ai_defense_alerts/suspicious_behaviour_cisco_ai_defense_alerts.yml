@@ -1,0 +1,13 @@
+author: STRT
+id: 20426208-579e-47f3-a277-0587011d81c1
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco AI Defense Security
+  Alerts by Application Name
+environment: attack_range
+directory: cisco_ai_defense_alerts
+mitre_technique: []
+datasets:
+- name: cisco_ai_defense_alerts
+  path: /datasets/suspicious_behaviour/cisco_ai_defense_alerts/cisco_ai_defense_alerts-20426208-579e-47f3-a277-0587011d81c1.log
+  sourcetype: cisco:ai:defense
+  source: cisco_ai_defense

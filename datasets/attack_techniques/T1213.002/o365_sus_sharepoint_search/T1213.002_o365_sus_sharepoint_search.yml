@@ -1,0 +1,13 @@
+author: STRT
+id: a1a19e3a-a736-40b4-a7bc-ac54a4b91d34
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Email Suspicious Search
+  Behavior
+environment: attack_range
+directory: o365_sus_sharepoint_search
+mitre_technique: []
+datasets:
+- name: o365_sus_sharepoint_search
+  path: /datasets/attack_techniques/T1213.002/o365_sus_sharepoint_search/o365_sus_sharepoint_search-a1a19e3a-a736-40b4-a7bc-ac54a4b91d34.log
+  sourcetype: o365:management:activity
+  source: o365

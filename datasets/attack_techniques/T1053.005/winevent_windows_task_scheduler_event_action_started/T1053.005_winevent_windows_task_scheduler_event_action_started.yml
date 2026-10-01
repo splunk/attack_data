@@ -1,0 +1,13 @@
+author: STRT
+id: 35cf480f-b082-4f87-9a61-e2a70e292081
+date: '2026-07-11'
+description: Curated attack data generated for detection WinEvent Windows Task Scheduler
+  Event Action Started
+environment: attack_range
+directory: winevent_windows_task_scheduler_event_action_started
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1053.005/winevent_windows_task_scheduler_event_action_started/windows-xml-35cf480f-b082-4f87-9a61-e2a70e292081.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-TaskScheduler/Operational

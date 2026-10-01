@@ -1,0 +1,13 @@
+author: STRT
+id: 79937d22-341c-4741-bd2b-33a30408deeb
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Delete or Modify
+  System Firewall
+environment: attack_range
+directory: njrat_delete_firewall
+mitre_technique: []
+datasets:
+- name: njrat_delete_firewall
+  path: /datasets/attack_techniques/T1562.004/njrat_delete_firewall/njrat_delete_firewall-79937d22-341c-4741-bd2b-33a30408deeb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

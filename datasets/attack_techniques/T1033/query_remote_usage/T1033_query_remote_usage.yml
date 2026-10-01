@@ -1,0 +1,13 @@
+author: STRT
+id: b9e51285-c4a2-4033-9d36-e4c14ef225c5
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows System Remote Discovery
+  With Query
+environment: attack_range
+directory: query_remote_usage
+mitre_technique: []
+datasets:
+- name: query_remote_usage
+  path: /datasets/attack_techniques/T1033/query_remote_usage/query_remote_usage-b9e51285-c4a2-4033-9d36-e4c14ef225c5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

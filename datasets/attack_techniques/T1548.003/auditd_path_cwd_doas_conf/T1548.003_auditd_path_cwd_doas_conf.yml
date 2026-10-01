@@ -1,0 +1,13 @@
+author: STRT
+id: 5bd4f28b-b9e5-4127-b050-7f1694e51271
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Auditd Doas Conf File
+  Creation
+environment: attack_range
+directory: auditd_path_cwd_doas_conf
+mitre_technique: []
+datasets:
+- name: path_doas
+  path: /datasets/attack_techniques/T1548.003/auditd_path_cwd_doas_conf/path_doas-5bd4f28b-b9e5-4127-b050-7f1694e51271.log
+  sourcetype: auditd
+  source: auditd

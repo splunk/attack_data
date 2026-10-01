@@ -1,0 +1,13 @@
+author: STRT
+id: 90f8c501-cf42-4ff9-accd-53f758f5abfb
+date: '2026-07-10'
+description: Curated attack data generated for detection Powershell COM Hijacking
+  InprocServer32 Modification
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-powershell
+  path: /datasets/attack_techniques/T1546.015/atomic_red_team/windows-powershell-90f8c501-cf42-4ff9-accd-53f758f5abfb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

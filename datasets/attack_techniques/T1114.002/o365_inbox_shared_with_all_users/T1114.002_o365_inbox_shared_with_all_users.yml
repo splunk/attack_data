@@ -1,0 +1,13 @@
+author: STRT
+id: 13f8ea31-eeb7-4f84-a114-0752027c3599
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Mailbox Inbox Folder
+  Shared with All Users
+environment: attack_range
+directory: o365_inbox_shared_with_all_users
+mitre_technique: []
+datasets:
+- name: o365_inbox_shared_with_all_users
+  path: /datasets/attack_techniques/T1114.002/o365_inbox_shared_with_all_users/o365_inbox_shared_with_all_users-13f8ea31-eeb7-4f84-a114-0752027c3599.log
+  sourcetype: o365:management:activity
+  source: o365

@@ -1,0 +1,13 @@
+author: STRT
+id: 3075da36-195a-4671-ae81-b2344a8d082a
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco SA - Access to Anonymizer
+  Services
+environment: attack_range
+directory: dns
+mitre_technique: []
+datasets:
+- name: anonymizer_dns
+  path: /datasets/cisco_secure_access/dns/anonymizer_dns-3075da36-195a-4671-ae81-b2344a8d082a.log
+  sourcetype: cisco:cloud_security:dns
+  source: not_applicable

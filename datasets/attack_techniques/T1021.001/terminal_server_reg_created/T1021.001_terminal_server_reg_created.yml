@@ -1,0 +1,13 @@
+author: STRT
+id: e60d4672-3508-497c-8534-f262be7236b9
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows RDP Server Registry
+  Entry Created
+environment: attack_range
+directory: terminal_server_reg_created
+mitre_technique: []
+datasets:
+- name: terminal_sever_client_Reg_created
+  path: /datasets/attack_techniques/T1021.001/terminal_server_reg_created/terminal_sever_client_Reg_created-e60d4672-3508-497c-8534-f262be7236b9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

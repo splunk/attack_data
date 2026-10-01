@@ -1,0 +1,12 @@
+author: STRT
+id: 791e98f2-f0f7-406e-9019-684b8e9fcd3a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Firewall Rule Added
+environment: attack_range
+directory: added_rule
+mitre_technique: []
+datasets:
+- name: MPSSVC_Rule-Level_Policy_Change-4946
+  path: /datasets/attack_techniques/T1562.004/firewall_win_event/added_rule/MPSSVC_Rule-Level_Policy_Change-4946-791e98f2-f0f7-406e-9019-684b8e9fcd3a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

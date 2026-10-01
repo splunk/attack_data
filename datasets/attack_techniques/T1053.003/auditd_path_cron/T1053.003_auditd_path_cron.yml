@@ -1,0 +1,13 @@
+author: STRT
+id: d5a8bca7-b8c1-4e5f-adbe-e32ade8cad8b
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Auditd Possible Append
+  Cronjob Entry On Existing Cronjob File
+environment: attack_range
+directory: auditd_path_cron
+mitre_technique: []
+datasets:
+- name: path_cron
+  path: /datasets/attack_techniques/T1053.003/auditd_path_cron/path_cron-d5a8bca7-b8c1-4e5f-adbe-e32ade8cad8b.log
+  sourcetype: auditd
+  source: auditd

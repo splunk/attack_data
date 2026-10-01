@@ -1,0 +1,13 @@
+author: STRT
+id: d1c1cf32-7af8-4adb-b231-cc2c66d36c7c
+date: '2026-07-10'
+description: Curated attack data generated for detection GCP Successful Single-Factor
+  Authentication
+environment: attack_range
+directory: gcp_single_factor_auth
+mitre_technique: []
+datasets:
+- name: gws_login
+  path: /datasets/attack_techniques/T1078.004/gcp_single_factor_auth/gws_login-d1c1cf32-7af8-4adb-b231-cc2c66d36c7c.log
+  sourcetype: gws:reports:login
+  source: gws:reports:login

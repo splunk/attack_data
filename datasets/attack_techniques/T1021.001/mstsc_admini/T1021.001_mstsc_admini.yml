@@ -1,0 +1,13 @@
+author: STRT
+id: 9d8fa9aa-9852-422f-96e8-ac787530f513
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows RDP Client Launched
+  with Admin Session
+environment: attack_range
+directory: mstsc_admini
+mitre_technique: []
+datasets:
+- name: mstsc_admin
+  path: /datasets/attack_techniques/T1021.001/mstsc_admini/mstsc_admin-9d8fa9aa-9852-422f-96e8-ac787530f513.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: 28e0d313-cbc7-407b-9d69-7b5db84009a0
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux MySQL Privilege Escalation
+environment: attack_range
+directory: mysql
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/mysql/sysmon_linux-28e0d313-cbc7-407b-9d69-7b5db84009a0.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

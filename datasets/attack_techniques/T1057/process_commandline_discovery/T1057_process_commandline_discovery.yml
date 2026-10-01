@@ -1,0 +1,13 @@
+author: STRT
+id: e9de75cc-a8b0-4026-9607-73ae59cca576
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Process Commandline
+  Discovery
+environment: attack_range
+directory: process_commandline_discovery
+mitre_technique: []
+datasets:
+- name: wmic-cmdline-sysmon
+  path: /datasets/attack_techniques/T1057/process_commandline_discovery/wmic-cmdline-sysmon-e9de75cc-a8b0-4026-9607-73ae59cca576.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

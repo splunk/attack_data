@@ -1,0 +1,13 @@
+author: STRT
+id: 18c972b4-debc-4aad-9f69-d1e9df880edd
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows DLL Search Order
+  Hijacking Hunt with Sysmon
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1574.001/atomic_red_team/windows-sysmon-18c972b4-debc-4aad-9f69-d1e9df880edd.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

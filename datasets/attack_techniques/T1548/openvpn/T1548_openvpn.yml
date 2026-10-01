@@ -1,0 +1,12 @@
+author: STRT
+id: a734aebf-e6e2-4cea-b67b-04ff7b373545
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux OpenVPN Privilege Escalation
+environment: attack_range
+directory: openvpn
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/openvpn/sysmon_linux-a734aebf-e6e2-4cea-b67b-04ff7b373545.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

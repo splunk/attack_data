@@ -1,0 +1,13 @@
+author: Dean Luxton
+id: b8460129-8cfb-449a-9b69-ac1148698319
+date: '2022-07-20'
+description: Manual execution of the mimikatz DCSync attack.
+environment: attack_range
+directory: mimikatz
+mitre_technique:
+- T1003.006
+datasets:
+- name: xml-windows-security
+  path: /datasets/attack_techniques/T1003.006/mimikatz/xml-windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

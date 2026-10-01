@@ -1,0 +1,12 @@
+author: STRT
+id: f957e472-d3f8-47e8-9694-bb3db712d621
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi SSH Enabled
+environment: attack_range
+directory: esxi_ssh_enabled
+mitre_technique: []
+datasets:
+- name: esxi_ssh_enabled
+  path: /datasets/attack_techniques/T1021.004/esxi_ssh_enabled/esxi_ssh_enabled-f957e472-d3f8-47e8-9694-bb3db712d621.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

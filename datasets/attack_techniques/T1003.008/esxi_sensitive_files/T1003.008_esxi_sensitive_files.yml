@@ -1,0 +1,12 @@
+author: STRT
+id: 15efa630-4509-455c-8711-5edae8e2353e
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Sensitive Files Accessed
+environment: attack_range
+directory: esxi_sensitive_files
+mitre_technique: []
+datasets:
+- name: esxi_sensitive_files
+  path: /datasets/attack_techniques/T1003.008/esxi_sensitive_files/esxi_sensitive_files-15efa630-4509-455c-8711-5edae8e2353e.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

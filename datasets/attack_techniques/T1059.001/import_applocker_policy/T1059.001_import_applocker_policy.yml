@@ -1,0 +1,13 @@
+author: STRT
+id: 33d86e25-2ec5-42d8-833f-240b115293b2
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Powershell Import
+  Applocker Policy
+environment: attack_range
+directory: import_applocker_policy
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml2
+  path: /datasets/attack_techniques/T1059.001/import_applocker_policy/windows-powershell-xml2-33d86e25-2ec5-42d8-833f-240b115293b2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

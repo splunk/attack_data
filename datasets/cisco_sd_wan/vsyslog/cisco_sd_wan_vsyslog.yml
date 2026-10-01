@@ -1,0 +1,13 @@
+author: STRT
+id: ab04c549-7c82-4279-beda-34ce0d55cadc
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco SD-WAN - Low Frequency
+  Rogue Peer
+environment: attack_range
+directory: vsyslog
+mitre_technique: []
+datasets:
+- name: vsyslog
+  path: /datasets/cisco_sd_wan/vsyslog/vsyslog-ab04c549-7c82-4279-beda-34ce0d55cadc.log
+  sourcetype: cisco:sdwan:syslog
+  source: /var/log/vsyslog

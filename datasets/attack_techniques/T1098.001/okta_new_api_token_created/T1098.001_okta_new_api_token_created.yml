@@ -1,0 +1,12 @@
+author: STRT
+id: ebdd8ec0-25ae-4b09-8087-7be12caa5c8d
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta New API Token Created
+environment: attack_range
+directory: okta_new_api_token_created
+mitre_technique: []
+datasets:
+- name: okta_new_api_token_created
+  path: /datasets/attack_techniques/T1098.001/okta_new_api_token_created/okta_new_api_token_created-ebdd8ec0-25ae-4b09-8087-7be12caa5c8d.log
+  sourcetype: OktaIM2:log
+  source: Okta

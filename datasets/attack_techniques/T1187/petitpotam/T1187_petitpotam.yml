@@ -1,0 +1,13 @@
+author: STRT
+id: d67b3a22-508c-4b1f-baab-e4652b3fb18c
+date: '2026-07-10'
+description: Curated attack data generated for detection PetitPotam Suspicious Kerberos
+  TGT Request
+environment: attack_range
+directory: petitpotam
+mitre_technique: []
+datasets:
+- name: windows-xml-1
+  path: /datasets/attack_techniques/T1187/petitpotam/windows-xml-1-d67b3a22-508c-4b1f-baab-e4652b3fb18c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

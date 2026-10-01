@@ -1,0 +1,12 @@
+author: STRT
+id: 1302454d-7c60-4d5b-a2d1-fbc1af1da49e
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux GNU Awk Privilege Escalation
+environment: attack_range
+directory: gawk
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/gawk/sysmon_linux-1302454d-7c60-4d5b-a2d1-fbc1af1da49e.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

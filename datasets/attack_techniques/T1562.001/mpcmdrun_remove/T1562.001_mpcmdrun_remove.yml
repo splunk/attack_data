@@ -1,0 +1,13 @@
+author: STRT
+id: abac2ce0-2cf1-4d01-ba39-1aa0ed45b45d
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows MpCmdRun RemoveDefinitions
+  Execution
+environment: attack_range
+directory: mpcmdrun_remove
+mitre_technique: []
+datasets:
+- name: mpcmdrun_remove
+  path: /datasets/attack_techniques/T1562.001/mpcmdrun_remove/mpcmdrun_remove-abac2ce0-2cf1-4d01-ba39-1aa0ed45b45d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

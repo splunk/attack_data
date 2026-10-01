@@ -1,0 +1,13 @@
+author: STRT
+id: 59872c2a-6ff7-47c7-9ab3-6c07622c52f3
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Disable
+  Classic Branch Protection Rule
+environment: attack_range
+directory: github_disable_classic_branch_protection
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1562.001/github_disable_classic_branch_protection/github-59872c2a-6ff7-47c7-9ab3-6c07622c52f3.log
+  sourcetype: httpevent
+  source: http:github

@@ -1,0 +1,13 @@
+author: STRT
+id: bc460e5c-7f96-44e8-be45-80c2c54d7466
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Advanced Installer
+  MSIX with AI_STUBS Execution
+environment: attack_range
+directory: msix_ai_stubs
+mitre_technique: []
+datasets:
+- name: windows_sysmon
+  path: /datasets/attack_techniques/T1218/msix_ai_stubs/windows_sysmon-bc460e5c-7f96-44e8-be45-80c2c54d7466.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

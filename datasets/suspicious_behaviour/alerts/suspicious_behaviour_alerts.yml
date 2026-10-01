@@ -1,0 +1,16 @@
+author: STRT
+id: 5bac7375-c86c-4b5f-9631-9368e6d7ec2a
+date: '2026-07-10'
+description: Curated attack data generated for detection Microsoft Defender ATP Alerts
+environment: attack_range
+directory: alerts
+mitre_technique: []
+datasets:
+- name: defender_atp_alerts_single_event
+  path: /datasets/suspicious_behaviour/alerts/defender_atp_alerts_single_event-5bac7375-c86c-4b5f-9631-9368e6d7ec2a.log
+  sourcetype: ms:defender:atp:alerts
+  source: ms_defender_atp_alerts
+- name: defender_incident_alerts_single_event
+  path: /datasets/suspicious_behaviour/alerts/defender_incident_alerts_single_event-5bac7375-c86c-4b5f-9631-9368e6d7ec2a.log
+  sourcetype: ms365:defender:incident:alerts
+  source: m365_defender_incident_alerts

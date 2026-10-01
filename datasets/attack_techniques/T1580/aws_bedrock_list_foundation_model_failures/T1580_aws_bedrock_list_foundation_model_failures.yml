@@ -1,0 +1,13 @@
+author: STRT
+id: 645e3b27-ec24-4db3-90eb-886496dc132a
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Bedrock High Number List
+  Foundation Model Failures
+environment: attack_range
+directory: aws_bedrock_list_foundation_model_failures
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1580/aws_bedrock_list_foundation_model_failures/cloudtrail-645e3b27-ec24-4db3-90eb-886496dc132a.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

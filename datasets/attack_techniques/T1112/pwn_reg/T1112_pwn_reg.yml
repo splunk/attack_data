@@ -1,0 +1,13 @@
+author: STRT
+id: d784a5ba-10d1-41d7-9ce8-8cdcb1648c49
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry Utilize
+  ProgIDs
+environment: attack_range
+directory: pwn_reg
+mitre_technique: []
+datasets:
+- name: pwn_reg
+  path: /datasets/attack_techniques/T1112/pwn_reg/pwn_reg-d784a5ba-10d1-41d7-9ce8-8cdcb1648c49.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

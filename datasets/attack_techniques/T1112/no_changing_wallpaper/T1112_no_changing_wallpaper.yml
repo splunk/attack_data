@@ -1,0 +1,12 @@
+author: STRT
+id: 8bd93ea8-32cd-4a77-9911-e1debc3a1f8c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry NoChangingWallPaper
+environment: attack_range
+directory: no_changing_wallpaper
+mitre_technique: []
+datasets:
+- name: NoChangingWallPaper
+  path: /datasets/attack_techniques/T1112/no_changing_wallpaper/NoChangingWallPaper-8bd93ea8-32cd-4a77-9911-e1debc3a1f8c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

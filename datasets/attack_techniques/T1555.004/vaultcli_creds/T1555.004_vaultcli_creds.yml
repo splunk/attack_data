@@ -1,0 +1,13 @@
+author: STRT
+id: 196ea8b3-f7f1-4529-b201-0c402d185664
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Credentials Access
+  via VaultCli Module
+environment: attack_range
+directory: vaultcli_creds
+mitre_technique: []
+datasets:
+- name: vaultcli
+  path: /datasets/attack_techniques/T1555.004/vaultcli_creds/vaultcli-196ea8b3-f7f1-4529-b201-0c402d185664.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

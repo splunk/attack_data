@@ -1,0 +1,13 @@
+author: STRT
+id: cd198f4a-08c1-4510-83f4-b6dcbaedbc25
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Svchost.exe Parent
+  Process Anomaly
+environment: attack_range
+directory: suspicious_spawn_svchost
+mitre_technique: []
+datasets:
+- name: susp_svchost_proc
+  path: /datasets/attack_techniques/T1035.009/suspicious_spawn_svchost/susp_svchost_proc-cd198f4a-08c1-4510-83f4-b6dcbaedbc25.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

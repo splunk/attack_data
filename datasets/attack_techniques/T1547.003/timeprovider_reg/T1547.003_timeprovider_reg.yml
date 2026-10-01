@@ -1,0 +1,13 @@
+author: STRT
+id: cafc16ab-fdaf-4435-b5ab-2b261952b02f
+date: '2026-07-11'
+description: Curated attack data generated for detection Time Provider Persistence
+  Registry
+environment: attack_range
+directory: timeprovider_reg
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1547.003/timeprovider_reg/sysmon-cafc16ab-fdaf-4435-b5ab-2b261952b02f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

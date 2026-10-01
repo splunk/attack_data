@@ -1,0 +1,12 @@
+author: STRT
+id: 53940b7e-9094-44dc-b8a3-b89fa6a2325b
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Medusa Rootkit
+environment: attack_range
+directory: medusa_rootkit
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1014/medusa_rootkit/sysmon_linux-53940b7e-9094-44dc-b8a3-b89fa6a2325b.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

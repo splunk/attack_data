@@ -1,0 +1,84 @@
+author: STRT
+id: f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58
+date: '2026-07-11'
+description: Curated attack data generated for detection Delete ShadowCopy With PowerShell
+environment: attack_range
+directory: powershell_script_block_logging
+mitre_technique: []
+datasets:
+- name: single_event_delete_shadowcopy
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/single_event_delete_shadowcopy-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: empire
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/empire-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: credaccess-powershell
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/credaccess-powershell-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: getdomainuser
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/getdomainuser-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: sbl_xml
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/sbl_xml-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: domainpolicy
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/domainpolicy-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: domaintrust
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/domaintrust-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: getdc
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/getdc-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: domaingroup
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/domaingroup-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: nettcpconnection
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/nettcpconnection-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: enumeration
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/enumeration-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: frombase64string
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/frombase64string-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: getlocalgroup
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/getlocalgroup-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: reflection
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/reflection-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: streamreader
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/streamreader-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: reconusingwmi
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/reconusingwmi-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/windows-powershell-xml-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: pswa_powershell
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/pswa_powershell-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: win32process
+  path: /datasets/attack_techniques/T1059.001/powershell_script_block_logging/win32process-f31cd79e-6aee-4c2f-b3e5-98a1ee59bc58.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

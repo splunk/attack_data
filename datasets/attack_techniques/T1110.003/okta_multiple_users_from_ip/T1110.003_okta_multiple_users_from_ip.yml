@@ -1,0 +1,13 @@
+author: STRT
+id: cb86c6d7-ef96-4e8e-b4ee-3908015aa550
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta Multiple Users Failing
+  To Authenticate From Ip
+environment: attack_range
+directory: okta_multiple_users_from_ip
+mitre_technique: []
+datasets:
+- name: okta_multiple_users_from_ip
+  path: /datasets/attack_techniques/T1110.003/okta_multiple_users_from_ip/okta_multiple_users_from_ip-cb86c6d7-ef96-4e8e-b4ee-3908015aa550.log
+  sourcetype: OktaIM2:log
+  source: Okta

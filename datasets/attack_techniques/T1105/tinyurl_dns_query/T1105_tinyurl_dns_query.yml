@@ -1,0 +1,13 @@
+author: STRT
+id: 5488435a-a73f-47bd-a423-2e00ac7d3ef2
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows DNS Query Request
+  To TinyUrl
+environment: attack_range
+directory: tinyurl_dns_query
+mitre_technique: []
+datasets:
+- name: tinyurl
+  path: /datasets/attack_techniques/T1105/tinyurl_dns_query/tinyurl-5488435a-a73f-47bd-a423-2e00ac7d3ef2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: e1a1cdc6-b593-4fad-99a6-4fd1c3484673
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Reverse Shell Patterns
+environment: attack_range
+directory: esxi_reverse_shell
+mitre_technique: []
+datasets:
+- name: esxi_reverse_shell
+  path: /datasets/attack_techniques/T1059/esxi_reverse_shell/esxi_reverse_shell-e1a1cdc6-b593-4fad-99a6-4fd1c3484673.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

@@ -1,0 +1,12 @@
+author: STRT
+id: c165cfe6-858c-4812-9cf4-56aaabc8c2d9
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows TOR Client Execution
+environment: attack_range
+directory: windows_tor_client_execution
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1090.003/windows_tor_client_execution/windows-sysmon-c165cfe6-858c-4812-9cf4-56aaabc8c2d9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

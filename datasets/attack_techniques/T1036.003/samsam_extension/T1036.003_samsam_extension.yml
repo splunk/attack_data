@@ -1,0 +1,12 @@
+author: STRT
+id: fa591740-c309-46b8-9205-27c727f5f8ac
+date: '2026-07-10'
+description: Curated attack data generated for detection File with Samsam Extension
+environment: attack_range
+directory: samsam_extension
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1036.003/samsam_extension/windows-sysmon-fa591740-c309-46b8-9205-27c727f5f8ac.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 729db453-f7b4-4931-88fd-fac437edad97
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Modify
+  Audit Log Event Stream
+environment: attack_range
+directory: github_audit_log_stream_modified
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1562.008/github_audit_log_stream_modified/github-729db453-f7b4-4931-88fd-fac437edad97.log
+  sourcetype: httpevent
+  source: http:github

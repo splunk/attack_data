@@ -1,0 +1,12 @@
+author: STRT
+id: 608724ba-e1ed-4b22-b74a-e29ad3336a9e
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD New MFA Method Registered
+environment: attack_range
+directory: azure_ad_register_new_mfa_method
+mitre_technique: []
+datasets:
+- name: azure_ad_register_new_mfa_method
+  path: /datasets/attack_techniques/T1098.005/azure_ad_register_new_mfa_method/azure_ad_register_new_mfa_method-608724ba-e1ed-4b22-b74a-e29ad3336a9e.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

@@ -1,0 +1,13 @@
+author: STRT
+id: d1b1fb83-7817-4e84-8ac0-7c6c76565a38
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Adding Crontab Using
+  List Parameter
+environment: attack_range
+directory: crontab_list_parameter
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1053.003/crontab_list_parameter/sysmon_linux-d1b1fb83-7817-4e84-8ac0-7c6c76565a38.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

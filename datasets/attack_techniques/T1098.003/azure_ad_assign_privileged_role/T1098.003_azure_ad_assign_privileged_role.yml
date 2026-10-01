@@ -1,0 +1,13 @@
+author: STRT
+id: 234befca-3d78-4cf3-8829-73db27dd1f74
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Application Administrator
+  Role Assigned
+environment: attack_range
+directory: azure_ad_assign_privileged_role
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1098.003/azure_ad_assign_privileged_role/azure-audit-234befca-3d78-4cf3-8829-73db27dd1f74.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

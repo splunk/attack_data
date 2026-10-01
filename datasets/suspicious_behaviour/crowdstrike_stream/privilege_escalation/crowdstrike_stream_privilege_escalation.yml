@@ -1,0 +1,13 @@
+author: STRT
+id: 040a79c7-e39f-4226-979c-170a8f40285c
+date: '2026-07-10'
+description: Curated attack data generated for detection Crowdstrike Privilege Escalation
+  For Non-Admin User
+environment: attack_range
+directory: privilege_escalation
+mitre_technique: []
+datasets:
+- name: crowdstrike_priv_esc_cleaned
+  path: /datasets/suspicious_behaviour/crowdstrike_stream/privilege_escalation/crowdstrike_priv_esc_cleaned-040a79c7-e39f-4226-979c-170a8f40285c.log
+  sourcetype: CrowdStrike:Event:Streams:JSON
+  source: CrowdStrike:Event:Streams

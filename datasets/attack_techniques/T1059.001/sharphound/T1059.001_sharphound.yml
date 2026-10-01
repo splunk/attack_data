@@ -1,0 +1,13 @@
+author: STRT
+id: 58665617-bbd2-45f7-a7fe-f1911d32a446
+date: '2026-07-10'
+description: Curated attack data generated for detection Detect AzureHound Command-Line
+  Arguments
+environment: attack_range
+directory: sharphound
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1059.001/sharphound/windows-sysmon-58665617-bbd2-45f7-a7fe-f1911d32a446.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

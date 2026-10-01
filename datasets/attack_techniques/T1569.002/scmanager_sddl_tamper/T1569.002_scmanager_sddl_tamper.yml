@@ -1,0 +1,13 @@
+author: STRT
+id: d9d2a887-5672-43f5-a39b-f76f2ccbed7e
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows ScManager Security
+  Descriptor Tampering Via Sc.EXE
+environment: attack_range
+directory: scmanager_sddl_tamper
+mitre_technique: []
+datasets:
+- name: scmanager_sddl_tamper_sysmon
+  path: /datasets/attack_techniques/T1569.002/scmanager_sddl_tamper/scmanager_sddl_tamper_sysmon-d9d2a887-5672-43f5-a39b-f76f2ccbed7e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,16 @@
+author: STRT
+id: e76d6e60-4d5a-4b88-91f9-a86d84eac7b6
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS Create Access Key
+environment: attack_range
+directory: aws_createaccesskey
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1078/aws_createaccesskey/asl_ocsf_cloudtrail-e76d6e60-4d5a-4b88-91f9-a86d84eac7b6.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1078/aws_createaccesskey/aws_cloudtrail_events-e76d6e60-4d5a-4b88-91f9-a86d84eac7b6.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

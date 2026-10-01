@@ -1,0 +1,12 @@
+author: STRT
+id: 37ff3f93-4519-4ae3-9e85-a3440db3d68a
+date: '2026-07-10'
+description: Curated attack data generated for detection LOLBAS With Network Traffic
+environment: attack_range
+directory: lolbas_with_network_traffic
+mitre_technique: []
+datasets:
+- name: lolbas_with_network_traffic
+  path: /datasets/attack_techniques/T1218/lolbas_with_network_traffic/lolbas_with_network_traffic-37ff3f93-4519-4ae3-9e85-a3440db3d68a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

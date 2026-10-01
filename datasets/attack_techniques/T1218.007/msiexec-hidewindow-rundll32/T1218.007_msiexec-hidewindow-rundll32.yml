@@ -1,0 +1,13 @@
+author: STRT
+id: 636c2db2-ec31-4093-9ea0-0c3d1236cc5a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows MsiExec HideWindow
+  Rundll32 Execution
+environment: attack_range
+directory: msiexec-hidewindow-rundll32
+mitre_technique: []
+datasets:
+- name: hidewndw-rundll32
+  path: /datasets/attack_techniques/T1218.007/msiexec-hidewindow-rundll32/hidewndw-rundll32-636c2db2-ec31-4093-9ea0-0c3d1236cc5a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

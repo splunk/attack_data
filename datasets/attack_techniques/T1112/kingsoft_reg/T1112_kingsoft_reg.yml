@@ -1,0 +1,13 @@
+author: STRT
+id: d030930b-b8d1-478b-98c7-d5a3ae41d35d
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Impair Defenses Disable
+  AV AutoStart via Registry
+environment: attack_range
+directory: kingsoft_reg
+mitre_technique: []
+datasets:
+- name: kingsoft_reg
+  path: /datasets/attack_techniques/T1112/kingsoft_reg/kingsoft_reg-d030930b-b8d1-478b-98c7-d5a3ae41d35d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

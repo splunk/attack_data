@@ -1,0 +1,13 @@
+author: STRT
+id: 31abf1aa-280e-4f66-8162-fc6a98f66ab0
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Scheduled Task with
+  Highest Privileges
+environment: attack_range
+directory: asyncrat_highest_priv_schtasks
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1053.005/asyncrat_highest_priv_schtasks/sysmon-31abf1aa-280e-4f66-8162-fc6a98f66ab0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

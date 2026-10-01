@@ -1,0 +1,13 @@
+author: STRT
+id: dafb0e01-a765-461f-8231-8da3d7e4b370
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Multiple Failed MFA
+  Requests For User
+environment: attack_range
+directory: o365_multiple_failed_mfa_requests
+mitre_technique: []
+datasets:
+- name: o365_multiple_failed_mfa_requests
+  path: /datasets/attack_techniques/T1621/o365_multiple_failed_mfa_requests/o365_multiple_failed_mfa_requests-dafb0e01-a765-461f-8231-8da3d7e4b370.log
+  sourcetype: o365:management:activity
+  source: o365

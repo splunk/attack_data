@@ -1,0 +1,17 @@
+author: STRT
+id: 8b051d9d-1978-4917-93ae-5135024b5f78
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Linked Policies In
+  ADSI Discovery
+environment: attack_range
+directory: adsi_discovery
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml2
+  path: /datasets/attack_techniques/T1087.002/adsi_discovery/windows-powershell-xml2-8b051d9d-1978-4917-93ae-5135024b5f78.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-xml1
+  path: /datasets/attack_techniques/T1087.002/adsi_discovery/windows-powershell-xml1-8b051d9d-1978-4917-93ae-5135024b5f78.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

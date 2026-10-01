@@ -1,0 +1,13 @@
+author: STRT
+id: 8eee46f3-f865-4905-b381-1d53be0af686
+date: '2026-07-11'
+description: Curated attack data generated for detection Suspicious microsoft workflow
+  compiler rename
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1127/atomic_red_team/windows-sysmon-8eee46f3-f865-4905-b381-1d53be0af686.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

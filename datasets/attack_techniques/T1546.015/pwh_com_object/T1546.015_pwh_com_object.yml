@@ -1,0 +1,12 @@
+author: STRT
+id: ba61d3d7-0974-42ad-8122-cfc262c84807
+date: '2026-07-10'
+description: Curated attack data generated for detection Powershell Execute COM Object
+environment: attack_range
+directory: pwh_com_object
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1546.015/pwh_com_object/windows-powershell-xml-ba61d3d7-0974-42ad-8122-cfc262c84807.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

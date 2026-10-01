@@ -1,0 +1,13 @@
+author: STRT
+id: 347153ec-14bb-4846-a30f-4bb315239973
+date: '2026-07-10'
+description: Curated attack data generated for detection Possible Browser Pass View
+  Parameter
+environment: attack_range
+directory: web_browser_pass_view
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1555/web_browser_pass_view/sysmon-347153ec-14bb-4846-a30f-4bb315239973.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

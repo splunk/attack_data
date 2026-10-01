@@ -1,0 +1,12 @@
+author: STRT
+id: 43d5d37d-be31-4aef-ab06-b4e513daecf9
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco ASA - AAA Policy Tampering
+environment: attack_range
+directory: generic
+mitre_technique: []
+datasets:
+- name: cisco_asa_generic_logs
+  path: /datasets/cisco_asa/generic/cisco_asa_generic_logs-43d5d37d-be31-4aef-ab06-b4e513daecf9.log
+  sourcetype: cisco:asa
+  source: not_applicable

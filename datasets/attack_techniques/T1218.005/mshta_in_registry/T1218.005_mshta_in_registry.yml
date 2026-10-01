@@ -1,0 +1,13 @@
+author: STRT
+id: 9b38b1b0-9558-4940-bcef-18e8c0db5602
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Mshta Execution In
+  Registry
+environment: attack_range
+directory: mshta_in_registry
+mitre_technique: []
+datasets:
+- name: sysmon3
+  path: /datasets/attack_techniques/T1218.005/mshta_in_registry/sysmon3-9b38b1b0-9558-4940-bcef-18e8c0db5602.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

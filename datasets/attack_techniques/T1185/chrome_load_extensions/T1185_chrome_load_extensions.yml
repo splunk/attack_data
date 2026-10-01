@@ -1,0 +1,13 @@
+author: STRT
+id: 4375d1bc-d10b-4857-93c3-ac539ee575dc
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Chrome Enable Extension
+  Loading via Command-Line
+environment: attack_range
+directory: chrome_load_extensions
+mitre_technique: []
+datasets:
+- name: chrome_load_extension
+  path: /datasets/attack_techniques/T1185/chrome_load_extensions/chrome_load_extension-4375d1bc-d10b-4857-93c3-ac539ee575dc.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

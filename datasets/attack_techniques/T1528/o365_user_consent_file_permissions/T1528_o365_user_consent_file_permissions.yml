@@ -1,0 +1,13 @@
+author: STRT
+id: 257d30ad-63ba-4326-9928-e5b45f98c53d
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 File Permissioned Application
+  Consent Granted by User
+environment: attack_range
+directory: o365_user_consent_file_permissions
+mitre_technique: []
+datasets:
+- name: o365_user_consent_file_permissions
+  path: /datasets/attack_techniques/T1528/o365_user_consent_file_permissions/o365_user_consent_file_permissions-257d30ad-63ba-4326-9928-e5b45f98c53d.log
+  sourcetype: o365:management:activity
+  source: o365

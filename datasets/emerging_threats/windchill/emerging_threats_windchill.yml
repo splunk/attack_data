@@ -1,0 +1,13 @@
+author: STRT
+id: b9c01948-cd5f-48b1-9945-4b6d49413790
+date: '2026-07-13'
+description: Curated attack data generated for detection PTC Windchill Gateway Command
+  Execution
+environment: attack_range
+directory: windchill
+mitre_technique: []
+datasets:
+- name: windchill_exploitation
+  path: /datasets/emerging_threats/windchill/windchill_exploitation-b9c01948-cd5f-48b1-9945-4b6d49413790.log
+  sourcetype: log4j
+  source: not_applicable

@@ -1,0 +1,13 @@
+author: STRT
+id: 3075903e-49c0-41d7-aa2a-80f1c4ae0a45
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows UAC Bypass Suspicious
+  Child Process
+environment: attack_range
+directory: uac_behavior
+mitre_technique: []
+datasets:
+- name: uac_behavior_sysmon
+  path: /datasets/attack_techniques/T1548.002/uac_behavior/uac_behavior_sysmon-3075903e-49c0-41d7-aa2a-80f1c4ae0a45.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

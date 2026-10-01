@@ -1,0 +1,13 @@
+author: STRT
+id: 09568d9c-552f-4a0f-96e2-535507b5b04a
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Successful Single-Factor
+  Authentication
+environment: attack_range
+directory: azuread
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1078.004/azuread/azure-audit-09568d9c-552f-4a0f-96e2-535507b5b04a.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

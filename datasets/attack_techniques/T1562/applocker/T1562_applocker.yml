@@ -1,0 +1,12 @@
+author: STRT
+id: f983da85-0088-4242-9cd5-f699a6f1ef30
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AppLocker Block Events
+environment: attack_range
+directory: applocker
+mitre_technique: []
+datasets:
+- name: applocker
+  path: /datasets/attack_techniques/T1562/applocker/applocker-f983da85-0088-4242-9cd5-f699a6f1ef30.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-AppLocker/MSI and Script

@@ -1,0 +1,12 @@
+author: STRT
+id: 68f35f0b-38da-4ff1-9844-8628bf207891
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Doas Conf File Creation
+environment: attack_range
+directory: doas
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548.003/doas/sysmon_linux-68f35f0b-38da-4ff1-9844-8628bf207891.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

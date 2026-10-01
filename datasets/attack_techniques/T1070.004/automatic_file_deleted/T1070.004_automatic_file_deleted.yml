@@ -1,0 +1,13 @@
+author: STRT
+id: 1480f4a7-6d09-4f82-9b28-1bcf080feb29
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Rdp AutomaticDestinations
+  Deletion
+environment: attack_range
+directory: automatic_file_deleted
+mitre_technique: []
+datasets:
+- name: automatic_file_deleted
+  path: /datasets/attack_techniques/T1070.004/automatic_file_deleted/automatic_file_deleted-1480f4a7-6d09-4f82-9b28-1bcf080feb29.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

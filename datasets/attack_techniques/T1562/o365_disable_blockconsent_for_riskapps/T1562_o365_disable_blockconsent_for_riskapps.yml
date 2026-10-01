@@ -1,0 +1,13 @@
+author: STRT
+id: a9260036-01ca-4566-ab14-50b3b4a2cdcc
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Block User Consent For
+  Risky Apps Disabled
+environment: attack_range
+directory: o365_disable_blockconsent_for_riskapps
+mitre_technique: []
+datasets:
+- name: o365_disable_blockconsent_for_riskapps
+  path: /datasets/attack_techniques/T1562/o365_disable_blockconsent_for_riskapps/o365_disable_blockconsent_for_riskapps-a9260036-01ca-4566-ab14-50b3b4a2cdcc.log
+  sourcetype: o365:management:activity
+  source: O365

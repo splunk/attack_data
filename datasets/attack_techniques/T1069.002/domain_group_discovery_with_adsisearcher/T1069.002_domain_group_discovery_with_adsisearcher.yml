@@ -1,0 +1,13 @@
+author: STRT
+id: 498c639a-b375-4e17-98c6-3fc1d3bfa3b9
+date: '2026-07-10'
+description: Curated attack data generated for detection Domain Group Discovery with
+  Adsisearcher
+environment: attack_range
+directory: domain_group_discovery_with_adsisearcher
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1069.002/domain_group_discovery_with_adsisearcher/windows-powershell-xml-498c639a-b375-4e17-98c6-3fc1d3bfa3b9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

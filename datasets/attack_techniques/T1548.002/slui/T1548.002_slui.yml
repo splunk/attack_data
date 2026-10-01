@@ -1,0 +1,12 @@
+author: STRT
+id: c23b0539-87ac-4f26-873b-b20360567356
+date: '2026-07-11'
+description: Curated attack data generated for detection SLUI RunAs Elevated
+environment: attack_range
+directory: slui
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1548.002/slui/windows-sysmon-c23b0539-87ac-4f26-873b-b20360567356.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

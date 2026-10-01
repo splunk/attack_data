@@ -1,0 +1,13 @@
+author: STRT
+id: c8e57aa0-feda-471c-8e15-019f0f0565b8
+date: '2026-07-13'
+description: Curated attack data generated for detection SAP NetWeaver Visual Composer
+  Exploitation Attempt
+environment: attack_range
+directory: sap
+mitre_technique: []
+datasets:
+- name: suricata_sapnetweaver
+  path: /datasets/attack_techniques/T1190/sap/suricata_sapnetweaver-c8e57aa0-feda-471c-8e15-019f0f0565b8.log
+  sourcetype: suricata
+  source: not_applicable

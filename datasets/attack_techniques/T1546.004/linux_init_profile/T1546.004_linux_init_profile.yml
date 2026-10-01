@@ -1,0 +1,13 @@
+author: STRT
+id: 6b6b6f85-fb50-4692-a1c1-e640399a4d16
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux File Creation In Init
+  Boot Directory
+environment: attack_range
+directory: linux_init_profile
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1546.004/linux_init_profile/sysmon_linux-6b6b6f85-fb50-4692-a1c1-e640399a4d16.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

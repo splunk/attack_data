@@ -1,0 +1,13 @@
+author: STRT
+id: c793b87f-e6f8-4952-825a-aa402fdb6358
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Multi-Factor Authentication
+  Disabled
+environment: attack_range
+directory: azuread
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1556/azuread/azure-audit-c793b87f-e6f8-4952-825a-aa402fdb6358.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

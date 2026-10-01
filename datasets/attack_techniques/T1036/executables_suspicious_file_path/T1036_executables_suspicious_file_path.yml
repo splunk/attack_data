@@ -1,0 +1,13 @@
+author: STRT
+id: 8616253f-f3c5-4e36-bb24-014193f36eac
+date: '2026-07-10'
+description: Curated attack data generated for detection Executables Or Script Creation
+  In Suspicious Path
+environment: attack_range
+directory: executables_suspicious_file_path
+mitre_technique: []
+datasets:
+- name: exec_susp_path2
+  path: /datasets/attack_techniques/T1036/executables_suspicious_file_path/exec_susp_path2-8616253f-f3c5-4e36-bb24-014193f36eac.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 2e72b970-0566-442f-af48-ed2f03205c0b
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Event Logging Service
+  Has Shutdown
+environment: attack_range
+directory: suspicious_event_log_service_behavior
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1070.001/suspicious_event_log_service_behavior/windows-xml-2e72b970-0566-442f-af48-ed2f03205c0b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
