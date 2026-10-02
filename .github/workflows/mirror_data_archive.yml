@@ -11,7 +11,7 @@ jobs:
       group: attack-data-runners
     env:
       BUCKET: attack-range-attack-data
-      ATTACK_DATA_ARCHIVE_FILE: attack_data.tar.zstd
+      NEW_ATTACK_DATA_ARCHIVE_FILE: attack_data_archive/attack_data_archive.zip
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v6
@@ -19,28 +19,40 @@ jobs:
         with:
           lfs: true
 
+      - name: Setup Python 3.14
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Checkout security_content Repo
+        uses: actions/checkout@v6
+        with:
+          repository: splunk/security_content
+          path: security_content
+
+      - name: Install contentctl-ng
+        run: |
+          pip install -c security_content/requirements.txt contentctl-ng
+
       - name: Setup AWS CLI and Credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
-          aws-access-key-id: ${{ secrets.ACCESS_KEY}}
+          aws-access-key-id: ${{ secrets.ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
           aws-region: us-west-2
 
       - name: Create archive of ONLY the datasets folder
         run: |
-          # The structure of the tar + zstd archive should mirror that of checking out the repo directly
-          mkdir attack_data
-          mv datasets/ attack_data/.
+          # Use contentctl-ng to create the Attack Data Archive File
+          # There is no need to make any other changes to the repo
+          contentctl-ng build-attack-data-archive
 
-          #Build some metadata about the archive for documentation purposes
-          git rev-parse HEAD > attack_data/git_hash.txt
-          date -u > attack_data/cache_build_date.txt
-
-          # Compress with number of threads equal to number of CPU cores.
-          # Compression level 10 is a great compromise of speed and file size.
-          # File size reductions are diminishing returns after this - determined experimentally.
-          tar -c attack_data | zstd --compress -T0 -10 -o $ATTACK_DATA_ARCHIVE_FILE
+          #This command builds the files:
+          # - attack_data_archive/attack_data_archive.zip
+          # - attack_data_archive/metadata.yml
+          # We intentionally only upload the attack_data_archive.zip file to S3
+          ls -lh attack_data_archive
 
       - name: Upload Attack data archive file to S3 Bucket
         run: |
-          aws s3 cp $ATTACK_DATA_ARCHIVE_FILE  s3://$BUCKET/
+          aws s3 cp $NEW_ATTACK_DATA_ARCHIVE_FILE  s3://$BUCKET/
