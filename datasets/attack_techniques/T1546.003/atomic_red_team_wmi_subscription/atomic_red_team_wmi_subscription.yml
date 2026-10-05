@@ -1,0 +1,17 @@
+id: 708ccf2f-3c05-4bb9-a1ed-37baee473f45
+date: '2026-10-05'
+author: Nasreddine Bencherchali, Splunk
+description: Sysmon and WMI-Activity logs for WMI event subscription persistence.
+environment: attack_range
+directory: atomic_red_team_wmi_subscription
+mitre_technique:
+- T1546.003
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1546.003/atomic_red_team_wmi_subscription/sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: wmi_activity
+  path: /datasets/attack_techniques/T1546.003/atomic_red_team_wmi_subscription/wmi.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-WMI-Activity/Operational
