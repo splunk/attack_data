@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 68124592-c176-11f1-8c58-a916708a508b
+date: '2026-10-06'
+description: Generated datasets for powershell github in attack range.
+environment: attack_range
+directory: powershell_github
+mitre_technique:
+- T1059.001
+datasets:
+- name: powershell_githu_download.log
+  path: /datasets/attack_techniques/T1059.001/powershell_github/powershell_githu_download.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-PowerShell/Operational'
