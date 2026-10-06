@@ -1,0 +1,13 @@
+author: Teoderick Contreras, Splunk
+id: 659e8f92-c17a-11f1-8c58-a916708a508b
+date: '2026-10-06'
+description: Generated datasets for python fb in attack range.
+environment: attack_range
+directory: python_fb
+mitre_technique:
+- T1586.001
+datasets:
+- name: python_facebook.log
+  path: /datasets/attack_techniques/T1586.001/python_fb/python_facebook.log
+  sourcetype: 'XmlWinEventLog'
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
