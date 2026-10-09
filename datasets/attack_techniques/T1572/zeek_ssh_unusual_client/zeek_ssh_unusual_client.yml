@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: d1843345-5256-4242-bfab-2dfa60027573
+date: '2026-10-06'
+description: Zeek SSH logs containing unusual client banners not present in common SSH client allowlists.
+environment: custom
+directory: zeek_ssh_unusual_client
+mitre_technique:
+- T1572
+datasets:
+- name: ssh
+  path: /datasets/attack_techniques/T1572/zeek_ssh_unusual_client/ssh.log
+  sourcetype: zeek:ssh
+  source: ssh.log

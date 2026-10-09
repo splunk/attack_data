@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: c086ad2b-a747-4c61-9c90-d6ffdcaefbe8
+date: '2026-10-07'
+description: Zeek HTTP logs containing non-standard HTTP methods that do not appear in common allowlists.
+environment: custom
+directory: zeek_http_unusual_method
+mitre_technique:
+- T1071
+datasets:
+- name: http
+  path: /datasets/attack_techniques/T1071/zeek_http_unusual_method/http.log
+  sourcetype: zeek:http
+  source: http.log
