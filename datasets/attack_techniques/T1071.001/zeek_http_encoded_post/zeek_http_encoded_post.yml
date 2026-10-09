@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 5902ed5d-4532-42fe-8dc7-cf2d364e6e55
+date: '2026-10-08'
+description: Zeek HTTP logs containing POST requests with base64-encoded post bodies indicative of C2 beaconing activity.
+environment: custom
+directory: zeek_http_encoded_post
+mitre_technique:
+- T1071.001
+datasets:
+- name: http
+  path: /datasets/attack_techniques/T1071.001/zeek_http_encoded_post/http.log
+  sourcetype: zeek:http
+  source: http.log
