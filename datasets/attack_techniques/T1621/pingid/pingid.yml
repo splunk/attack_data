@@ -15,3 +15,11 @@ datasets:
   path: /datasets/attack_techniques/T1621/pingid/windows_pw_reset.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: pingid_upn_multi_reset
+  path: /datasets/attack_techniques/T1621/pingid/pingid_upn_multi_reset.log
+  sourcetype: _json
+  source: PINGID
+- name: windows_pw_reset_upn_multi_reset
+  path: /datasets/attack_techniques/T1621/pingid/windows_pw_reset_upn_multi_reset.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
