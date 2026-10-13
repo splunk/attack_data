@@ -9,7 +9,7 @@ mitre_technique:
 datasets:
 - name: asl_ocsf_cloudtrail-json
   path: /datasets/attack_techniques/T1204.003/aws_ecr_container_upload/asl_ocsf_cloudtrail.json
-  sourcetype: aws:cloudtrail:lake
+  sourcetype: aws:asl
   source: aws_asl
 - name: aws_ecr_container_upload-json
   path: /datasets/attack_techniques/T1204.003/aws_ecr_container_upload/aws_ecr_container_upload.json
