@@ -1,0 +1,13 @@
+author: STRT
+id: 87b1ac83-4466-4aca-8960-af2363afd04f
+date: '2026-07-11'
+description: Curated attack data generated for detection Svchost LOLBAS Execution
+  Process Spawn
+environment: attack_range
+directory: svchost_lolbas_execution_process_spawn
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1053.005/svchost_lolbas_execution_process_spawn/windows-xml-87b1ac83-4466-4aca-8960-af2363afd04f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

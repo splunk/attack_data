@@ -1,0 +1,12 @@
+author: STRT
+id: 0145edd1-c33b-46bb-84ca-67bbc6ba8277
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Mark Of The Web Bypass
+environment: attack_range
+directory: mark_of_the_web_bypass
+mitre_technique: []
+datasets:
+- name: possible-motw-deletion
+  path: /datasets/attack_techniques/T1553.005/mark_of_the_web_bypass/possible-motw-deletion-0145edd1-c33b-46bb-84ca-67bbc6ba8277.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

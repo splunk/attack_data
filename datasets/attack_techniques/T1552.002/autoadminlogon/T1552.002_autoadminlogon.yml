@@ -1,0 +1,13 @@
+author: STRT
+id: 5a2fb88f-fbda-4af3-9cb4-97bd61a0f977
+date: '2026-07-10'
+description: Curated attack data generated for detection Add DefaultUser And Password
+  In Registry
+environment: attack_range
+directory: autoadminlogon
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1552.002/autoadminlogon/windows-sysmon-5a2fb88f-fbda-4af3-9cb4-97bd61a0f977.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: c8f08900-acfb-493a-9655-a8312814c56b
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Bedrock Delete GuardRails
+environment: attack_range
+directory: aws_bedrock_delete_guardrails
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1562.008/aws_bedrock_delete_guardrails/cloudtrail-c8f08900-acfb-493a-9655-a8312814c56b.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

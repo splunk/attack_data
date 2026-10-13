@@ -1,0 +1,21 @@
+author: STRT
+id: e4b09032-22b5-4b37-a5ed-be0a64b84fb9
+date: '2026-07-10'
+description: Curated attack data generated for detection Cisco Isovalent - Cron Job
+  Creation
+environment: attack_range
+directory: cisco_isovalent
+mitre_technique: []
+datasets:
+- name: cisco_isovalent
+  path: /datasets/cisco_isovalent/cisco_isovalent-e4b09032-22b5-4b37-a5ed-be0a64b84fb9.log
+  sourcetype: cisco:isovalent:processExec
+  source: not_applicable
+- name: kprobe_spike
+  path: /datasets/cisco_isovalent/kprobe_spike-e4b09032-22b5-4b37-a5ed-be0a64b84fb9.log
+  sourcetype: cisco:isovalent
+  source: not_applicable
+- name: cisco_isovalent_process_exec_delayed_shell
+  path: /datasets/cisco_isovalent/cisco_isovalent_process_exec_delayed_shell-e4b09032-22b5-4b37-a5ed-be0a64b84fb9.log
+  sourcetype: cisco:isovalent:processExec
+  source: not_applicable

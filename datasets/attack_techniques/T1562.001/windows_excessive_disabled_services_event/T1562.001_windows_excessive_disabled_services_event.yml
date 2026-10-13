@@ -1,0 +1,13 @@
+author: STRT
+id: 897438c7-fb92-425f-9dd1-24df4d7e1889
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Event For Service
+  Disabled
+environment: attack_range
+directory: windows_excessive_disabled_services_event
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1562.001/windows_excessive_disabled_services_event/windows-xml-897438c7-fb92-425f-9dd1-24df4d7e1889.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:System

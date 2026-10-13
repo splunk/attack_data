@@ -1,0 +1,17 @@
+author: STRT
+id: b93f26dd-d580-4f4d-8ddb-f16faecaaa56
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS IAM Failure Group
+  Deletion
+environment: attack_range
+directory: aws_iam_failure_group_deletion
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1098/aws_iam_failure_group_deletion/asl_ocsf_cloudtrail-b93f26dd-d580-4f4d-8ddb-f16faecaaa56.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_iam_failure_group_deletion
+  path: /datasets/attack_techniques/T1098/aws_iam_failure_group_deletion/aws_iam_failure_group_deletion-b93f26dd-d580-4f4d-8ddb-f16faecaaa56.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

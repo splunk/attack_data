@@ -1,0 +1,13 @@
+author: STRT
+id: 840ebc7c-630f-47c8-8a70-b0b83d1dbc27
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Chrome Auto-Update
+  Disabled via Registry
+environment: attack_range
+directory: disable_chrome_update
+mitre_technique: []
+datasets:
+- name: disable_chrome_update
+  path: /datasets/attack_techniques/T1185/disable_chrome_update/disable_chrome_update-840ebc7c-630f-47c8-8a70-b0b83d1dbc27.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

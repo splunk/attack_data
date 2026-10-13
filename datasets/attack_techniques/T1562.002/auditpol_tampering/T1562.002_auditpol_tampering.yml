@@ -1,0 +1,17 @@
+author: STRT
+id: c56db810-02a5-4b53-aae2-cb46dcdeb5d0
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Audit Policy Auditing
+  Option Disabled via Auditpol
+environment: attack_range
+directory: auditpol_tampering
+mitre_technique: []
+datasets:
+- name: auditpol_tampering_sysmon
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/auditpol_tampering_sysmon-c56db810-02a5-4b53-aae2-cb46dcdeb5d0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: auditpol_tampering_security
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/auditpol_tampering_security-c56db810-02a5-4b53-aae2-cb46dcdeb5d0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

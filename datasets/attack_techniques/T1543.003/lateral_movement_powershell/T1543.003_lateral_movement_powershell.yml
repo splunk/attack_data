@@ -1,0 +1,13 @@
+author: STRT
+id: b610a763-c323-4992-9d73-ff586df96677
+date: '2026-07-10'
+description: Curated attack data generated for detection Possible Lateral Movement
+  PowerShell Spawn
+environment: attack_range
+directory: lateral_movement_powershell
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1543.003/lateral_movement_powershell/windows-sysmon-b610a763-c323-4992-9d73-ff586df96677.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: c904dc37-845d-49a8-aace-5b6efc4fbb35
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes Falco Shell Spawned
+environment: attack_range
+directory: kubernetes_falco_shell_spawned
+mitre_technique: []
+datasets:
+- name: kubernetes_falco_shell_spawned
+  path: /datasets/attack_techniques/T1204/kubernetes_falco_shell_spawned/kubernetes_falco_shell_spawned-c904dc37-845d-49a8-aace-5b6efc4fbb35.log
+  sourcetype: kube:container:falco
+  source: kubernetes

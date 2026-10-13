@@ -1,0 +1,13 @@
+author: STRT
+id: 9a389df6-ed34-4eb0-8bf4-3e07d4c7242f
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows RDP Login Session
+  Was Established
+environment: attack_range
+directory: rdp_session_established
+mitre_technique: []
+datasets:
+- name: 4624_10_logon
+  path: /datasets/attack_techniques/T1021.001/rdp_session_established/4624_10_logon-9a389df6-ed34-4eb0-8bf4-3e07d4c7242f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

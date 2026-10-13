@@ -1,0 +1,12 @@
+author: STRT
+id: 859387b5-b6a0-4921-963d-21a2320dfa11
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Unsigned MS DLL Side-Loading
+environment: attack_range
+directory: unsigned_dll_load
+mitre_technique: []
+datasets:
+- name: wineloader_dll_sideload
+  path: /datasets/attack_techniques/T1574.002/unsigned_dll_load/wineloader_dll_sideload-859387b5-b6a0-4921-963d-21a2320dfa11.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

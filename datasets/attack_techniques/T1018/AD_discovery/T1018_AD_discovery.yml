@@ -1,0 +1,13 @@
+author: STRT
+id: 1f3f5855-ab0f-45d1-af33-e17d9c224cfe
+date: '2026-07-10'
+description: Curated attack data generated for detection Domain Controller Discovery
+  with Nltest
+environment: attack_range
+directory: AD_discovery
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1018/AD_discovery/windows-sysmon-1f3f5855-ab0f-45d1-af33-e17d9c224cfe.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

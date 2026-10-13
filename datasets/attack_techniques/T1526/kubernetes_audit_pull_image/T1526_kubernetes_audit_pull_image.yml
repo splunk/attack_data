@@ -1,0 +1,13 @@
+author: STRT
+id: 4fa767d0-4a3c-44be-a07f-0d03991b3e65
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes Suspicious Image
+  Pulling
+environment: attack_range
+directory: kubernetes_audit_pull_image
+mitre_technique: []
+datasets:
+- name: kubernetes_audit_pull_image
+  path: /datasets/attack_techniques/T1526/kubernetes_audit_pull_image/kubernetes_audit_pull_image-4fa767d0-4a3c-44be-a07f-0d03991b3e65.log
+  sourcetype: _json
+  source: kubernetes

@@ -1,0 +1,13 @@
+author: STRT
+id: 691f02a2-fa30-4cb6-b9da-4eed59391588
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Mailbox Email Forwarding
+  Enabled
+environment: attack_range
+directory: o365_mailbox_forwarding_enabled
+mitre_technique: []
+datasets:
+- name: o365_mailbox_forwarding_enabled
+  path: /datasets/attack_techniques/T1114.003/o365_mailbox_forwarding_enabled/o365_mailbox_forwarding_enabled-691f02a2-fa30-4cb6-b9da-4eed59391588.log
+  sourcetype: o365:management:activity
+  source: o365

@@ -1,0 +1,13 @@
+author: STRT
+id: 3e58b5b1-62c2-4472-a59a-93c28810eb8c
+date: '2026-07-10'
+description: Curated attack data generated for detection Kerberos TGT Request Using
+  RC4 Encryption
+environment: attack_range
+directory: kerberos_tgt_request_using_rc4_encryption
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1550/kerberos_tgt_request_using_rc4_encryption/windows-xml-3e58b5b1-62c2-4472-a59a-93c28810eb8c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,13 @@
+author: STRT
+id: c84ddb3d-b40d-4bf2-8a3f-5533dec9b421
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Application Registration
+  Owner Added
+environment: attack_range
+directory: o365_add_app_registration_owner
+mitre_technique: []
+datasets:
+- name: o365_add_app_registration_owner
+  path: /datasets/attack_techniques/T1098/o365_add_app_registration_owner/o365_add_app_registration_owner-c84ddb3d-b40d-4bf2-8a3f-5533dec9b421.log
+  sourcetype: o365:management:activity
+  source: o365

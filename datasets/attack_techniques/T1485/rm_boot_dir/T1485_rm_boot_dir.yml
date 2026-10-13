@@ -1,0 +1,13 @@
+author: STRT
+id: 30907e17-1be8-42f8-bfa0-972c67f4baf2
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux High Frequency Of File
+  Deletion In Boot Folder
+environment: attack_range
+directory: rm_boot_dir
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1485/rm_boot_dir/sysmon_linux-30907e17-1be8-42f8-bfa0-972c67f4baf2.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

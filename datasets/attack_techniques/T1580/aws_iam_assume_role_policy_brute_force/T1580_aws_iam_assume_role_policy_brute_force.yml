@@ -1,0 +1,17 @@
+author: STRT
+id: 29fcace7-48ea-4efa-bd31-b0b6eba307a1
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS IAM Assume Role Policy
+  Brute Force
+environment: attack_range
+directory: aws_iam_assume_role_policy_brute_force
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1580/aws_iam_assume_role_policy_brute_force/asl_ocsf_cloudtrail-29fcace7-48ea-4efa-bd31-b0b6eba307a1.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_iam_assume_role_policy_brute_force
+  path: /datasets/attack_techniques/T1580/aws_iam_assume_role_policy_brute_force/aws_iam_assume_role_policy_brute_force-29fcace7-48ea-4efa-bd31-b0b6eba307a1.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

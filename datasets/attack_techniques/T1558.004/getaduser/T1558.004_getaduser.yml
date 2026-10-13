@@ -1,0 +1,13 @@
+author: STRT
+id: ed56e4b8-cc60-4867-9baa-8134f732e5bb
+date: '2026-07-10'
+description: Curated attack data generated for detection Disabled Kerberos Pre-Authentication
+  Discovery With Get-ADUser
+environment: attack_range
+directory: getaduser
+mitre_technique: []
+datasets:
+- name: get-aduser-powershell
+  path: /datasets/attack_techniques/T1558.004/getaduser/get-aduser-powershell-ed56e4b8-cc60-4867-9baa-8134f732e5bb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

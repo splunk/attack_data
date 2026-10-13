@@ -1,0 +1,13 @@
+author: STRT
+id: 4dc825fb-ed53-41fd-81ba-32f2eb5c787e
+date: '2026-07-10'
+description: Curated attack data generated for detection Advanced IP or Port Scanner
+  Execution
+environment: attack_range
+directory: advanced_ip_port_scanner
+mitre_technique: []
+datasets:
+- name: advanced_ip_port_scanner
+  path: /datasets/attack_techniques/T1046/advanced_ip_port_scanner/advanced_ip_port_scanner-4dc825fb-ed53-41fd-81ba-32f2eb5c787e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

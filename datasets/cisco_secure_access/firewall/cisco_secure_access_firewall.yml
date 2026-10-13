@@ -1,0 +1,20 @@
+author: STRT
+id: a4ae9694-3139-43da-a00b-34541866bffd
+date: '2026-07-13'
+description: Curated attack data generated for detection Detect Large ICMP Traffic
+environment: attack_range
+directory: firewall
+mitre_technique: []
+datasets:
+- name: large_icmp
+  path: /datasets/cisco_secure_access/firewall/large_icmp-a4ae9694-3139-43da-a00b-34541866bffd.log
+  sourcetype: cisco:cloud_security:firewall
+  source: cisco_cloud_security_addon
+- name: ldap
+  path: /datasets/cisco_secure_access/firewall/ldap-a4ae9694-3139-43da-a00b-34541866bffd.log
+  sourcetype: cisco:cloud_security:firewall
+  source: cisco_cloud_security_addon
+- name: smb
+  path: /datasets/cisco_secure_access/firewall/smb-a4ae9694-3139-43da-a00b-34541866bffd.log
+  sourcetype: cisco:cloud_security:firewall
+  source: cisco_cloud_security_addon

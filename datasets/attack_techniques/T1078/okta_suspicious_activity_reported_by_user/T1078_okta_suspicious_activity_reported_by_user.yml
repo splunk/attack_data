@@ -1,0 +1,13 @@
+author: STRT
+id: b8c858c0-bed4-42f4-988a-3248eccfe990
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta Suspicious Activity
+  Reported
+environment: attack_range
+directory: okta_suspicious_activity_reported_by_user
+mitre_technique: []
+datasets:
+- name: okta_suspicious_activity_reported_by_user
+  path: /datasets/attack_techniques/T1078/okta_suspicious_activity_reported_by_user/okta_suspicious_activity_reported_by_user-b8c858c0-bed4-42f4-988a-3248eccfe990.log
+  sourcetype: OktaIM2:log
+  source: Okta

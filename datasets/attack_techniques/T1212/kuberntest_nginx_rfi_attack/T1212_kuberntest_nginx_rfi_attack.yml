@@ -1,0 +1,13 @@
+author: STRT
+id: 2343f34b-66f9-48f6-aeb6-b5fbcaeb7b11
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes Nginx Ingress
+  RFI
+environment: attack_range
+directory: kuberntest_nginx_rfi_attack
+mitre_technique: []
+datasets:
+- name: kubernetes_nginx_rfi_attack
+  path: /datasets/attack_techniques/T1212/kuberntest_nginx_rfi_attack/kubernetes_nginx_rfi_attack-2343f34b-66f9-48f6-aeb6-b5fbcaeb7b11.log
+  sourcetype: kube:container:controller
+  source: kubernetes

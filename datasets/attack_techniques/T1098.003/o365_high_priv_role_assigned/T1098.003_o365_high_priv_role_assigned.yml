@@ -1,0 +1,13 @@
+author: STRT
+id: a31c5655-6e13-4aa9-80e3-320307302698
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 High Privilege Role
+  Granted
+environment: attack_range
+directory: o365_high_priv_role_assigned
+mitre_technique: []
+datasets:
+- name: o365_high_priv_role_assigned
+  path: /datasets/attack_techniques/T1098.003/o365_high_priv_role_assigned/o365_high_priv_role_assigned-a31c5655-6e13-4aa9-80e3-320307302698.log
+  sourcetype: o365:management:activity
+  source: o365

@@ -1,0 +1,13 @@
+author: STRT
+id: a9e2f12e-973c-4900-8d77-4f7ba8cef6c1
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Multiple Disabled
+  Users Failed To Authenticate Wth Kerberos
+environment: attack_range
+directory: purplesharp_disabled_users_kerberos_xml
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1110.003/purplesharp_disabled_users_kerberos_xml/windows-security-a9e2f12e-973c-4900-8d77-4f7ba8cef6c1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

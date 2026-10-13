@@ -1,0 +1,13 @@
+author: STRT
+id: 86815683-f08e-493d-a744-68aae1f12ade
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Elevated Mailbox Permission
+  Assigned
+environment: attack_range
+directory: suspicious_rights_delegation
+mitre_technique: []
+datasets:
+- name: suspicious_rights_delegation
+  path: /datasets/attack_techniques/T1114.002/suspicious_rights_delegation/suspicious_rights_delegation-86815683-f08e-493d-a744-68aae1f12ade.log
+  sourcetype: o365:management:activity
+  source: o365:management:activity

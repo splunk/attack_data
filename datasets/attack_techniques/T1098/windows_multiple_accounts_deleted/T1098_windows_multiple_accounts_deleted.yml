@@ -1,0 +1,13 @@
+author: STRT
+id: b7eb1db9-458e-4873-90e9-159b0a657965
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Multiple Accounts
+  Deleted
+environment: attack_range
+directory: windows_multiple_accounts_deleted
+mitre_technique: []
+datasets:
+- name: windows_multiple_accounts_deleted
+  path: /datasets/attack_techniques/T1098/windows_multiple_accounts_deleted/windows_multiple_accounts_deleted-b7eb1db9-458e-4873-90e9-159b0a657965.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

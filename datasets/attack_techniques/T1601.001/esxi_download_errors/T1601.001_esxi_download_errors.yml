@@ -1,0 +1,12 @@
+author: STRT
+id: 176b7c8b-666e-4100-9c28-90ffcd856e9c
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Download Errors
+environment: attack_range
+directory: esxi_download_errors
+mitre_technique: []
+datasets:
+- name: esxi_download_errors
+  path: /datasets/attack_techniques/T1601.001/esxi_download_errors/esxi_download_errors-176b7c8b-666e-4100-9c28-90ffcd856e9c.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

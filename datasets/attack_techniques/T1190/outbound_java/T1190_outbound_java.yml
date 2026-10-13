@@ -1,0 +1,13 @@
+author: STRT
+id: 3a052bf4-3ea0-40e1-9f22-1611547403ef
+date: '2026-07-10'
+description: Curated attack data generated for detection Outbound Network Connection
+  from Java Using Default Ports
+environment: attack_range
+directory: outbound_java
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1190/outbound_java/windows-sysmon-3a052bf4-3ea0-40e1-9f22-1611547403ef.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

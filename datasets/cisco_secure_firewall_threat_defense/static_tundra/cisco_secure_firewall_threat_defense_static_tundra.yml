@@ -1,0 +1,13 @@
+author: STRT
+id: 18697067-44d7-4257-8144-df75329a4122
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Secure Firewall - Static
+  Tundra Smart Install Abuse
+environment: attack_range
+directory: static_tundra
+mitre_technique: []
+datasets:
+- name: static_tundra
+  path: /datasets/cisco_secure_firewall_threat_defense/static_tundra/static_tundra-18697067-44d7-4257-8144-df75329a4122.log
+  sourcetype: cisco:sfw:estreamer
+  source: not_applicable

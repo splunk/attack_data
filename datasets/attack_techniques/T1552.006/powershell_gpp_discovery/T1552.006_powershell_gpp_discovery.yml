@@ -1,0 +1,13 @@
+author: STRT
+id: 8e8b946d-25a2-4589-896b-6731f92b43f2
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerShell Script
+  Block With Malicious String
+environment: attack_range
+directory: powershell_gpp_discovery
+mitre_technique: []
+datasets:
+- name: win-powershell
+  path: /datasets/attack_techniques/T1552.006/powershell_gpp_discovery/win-powershell-8e8b946d-25a2-4589-896b-6731f92b43f2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
