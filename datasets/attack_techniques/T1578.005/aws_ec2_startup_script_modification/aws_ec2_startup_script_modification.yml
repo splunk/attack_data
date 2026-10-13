@@ -1,0 +1,16 @@
+author: Maria Jose Erquiaga, Splunk
+id: 85062c20-6b3e-438a-a17c-1d953c2dedb4
+date: '2026-10-07'
+description: >-
+  CloudTrail events from a successful EC2 StopInstances request followed by a
+  successful ModifyInstanceAttribute request targeting userData on the same
+  instance, by the same IAM principal, within one hour. Modification of user
+  data does not by itself confirm that the script executed.
+environment: aws_ec2_test_instance
+mitre_technique:
+- T1578.005
+datasets:
+- name: aws_ec2_startup_script_modification-json
+  path: /datasets/attack_techniques/T1578.005/aws_ec2_startup_script_modification/aws_ec2_startup_script_modification.json
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

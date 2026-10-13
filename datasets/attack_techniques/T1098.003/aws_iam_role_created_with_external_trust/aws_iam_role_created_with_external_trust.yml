@@ -1,0 +1,16 @@
+author: Maria Jose Erquiaga, Splunk
+id: 4671474A-30E9-4E05-A33A-AEC49E0B5079
+date: '2026-10-12'
+description: >
+  Successful AWS IAM CreateRole events with trust policies allowing
+  sts:AssumeRole by an external AWS account or a wildcard AWS principal.
+  Contains two positive detection examples.
+environment: custom
+directory: aws_iam_role_created_with_external_trust
+mitre_technique:
+  - T1098.003
+datasets:
+  - name: aws_iam_role_created_with_external_trust
+    path: /datasets/attack_techniques/T1098.003/aws_iam_role_created_with_external_trust/aws_iam_role_created_with_external_trust.json
+    sourcetype: aws:cloudtrail
+    source: aws_cloudtrail
