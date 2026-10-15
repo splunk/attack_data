@@ -9,5 +9,3 @@ datasets:
       path: /datasets/suspicious_behaviour/cisco_ai_defense_alerts/cisco_ai_defense_alerts.json
       sourcetype: cisco:ai:defense
       source: not_applicable
-references:
-    - https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m01/cisco-unveils-ai-defense-to-secure-the-ai-transformation-of-enterprises.html
