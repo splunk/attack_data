@@ -1,0 +1,11 @@
+author: Bhavin Patel, Nasreddine Bencherchali, Splunk
+id: cf60356c-61a4-452f-96f6-c48a6d19b20a
+date: '2026-10-15'
+description: This dataset is from a demo environment for cisco:ai:defense
+environment: NA
+mitre_technique: []
+datasets:
+    - name: cisco_ai_defense_alerts
+      path: /datasets/suspicious_behaviour/cisco_ai_defense_alerts/cisco_ai_defense_alerts.json
+      sourcetype: cisco:ai:defense
+      source: not_applicable
