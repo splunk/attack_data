@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan
+id: d69b86e3-1c39-4446-918d-fbdd6f78de7d
+date: '2026-10-19'
+description: Attack Range dataset for user binary terminated via taskkill technique
+environment: attack_range
+directory: user_binary_terminated_taskkill
+mitre_technique:
+- T1685
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1685/user_binary_terminated_taskkill/user_binary_terminated_taskkill.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
