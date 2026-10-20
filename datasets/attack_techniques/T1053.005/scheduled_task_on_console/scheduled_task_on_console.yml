@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan
+id: 5d1452e4-1480-42cc-b4e2-56fa0c029c6b
+date: '2026-10-19'
+description: Attack Range dataset for scheduled task XML built via console echo technique
+environment: attack_range
+directory: scheduled_task_on_console
+mitre_technique:
+- T1053.005
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1053.005/scheduled_task_on_console/scheduled_task_on_console.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

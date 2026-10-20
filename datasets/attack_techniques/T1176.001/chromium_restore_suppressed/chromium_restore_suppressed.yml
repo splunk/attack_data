@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan
+id: 86426950-f723-4434-9fc0-05845d4a940c
+date: '2026-10-19'
+description: Attack Range dataset for Chromium session restored with crash bubble suppressed technique
+environment: attack_range
+directory: chromium_restore_suppressed
+mitre_technique:
+- T1176.001
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1176.001/chromium_restore_suppressed/chromium_restore_suppressed.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
