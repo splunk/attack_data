@@ -13,6 +13,6 @@ datasets:
     source: auditd
     path: /datasets/attack_techniques/T1068/vghost/audit.log
 -   name: sysmon
-    sourcetype: syslog
+    sourcetype: sysmon:linux
     source: Syslog:Linux-Sysmon/Operational
     path: /datasets/attack_techniques/T1068/vghost/sysmon.log
