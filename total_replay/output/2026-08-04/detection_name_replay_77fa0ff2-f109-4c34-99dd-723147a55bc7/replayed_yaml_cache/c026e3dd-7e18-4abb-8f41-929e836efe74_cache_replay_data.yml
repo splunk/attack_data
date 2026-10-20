@@ -1,0 +1,20 @@
+analytic_story:
+- Active Directory Password Spraying
+attack_data_link: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.002/account_lockout/windows-security.log
+attack_data_output_file_path: /Users/pbareiss/projects/attack_data/datasets/attack_techniques/T1078.002/account_lockout/windows-security.log
+attack_data_source: WinEventLog:Security
+attack_data_sourcetype: WinEventLog
+attack_data_uuid: cc9b25d7-efc9-11eb-926b-550bf0943fbb
+attack_data_yml_file_path: /Users/pbareiss/projects/attack_data/datasets/attack_techniques/T1078.002/account_lockout/account_lockout.yml
+description: The following analytic detects endpoints causing a high number of account
+  lockouts within a short period. It leverages the Windows security event logs ingested
+  into the `Change` datamodel, specifically under the `Account_Management` node, to
+  identify and count lockout events. This activity is significant as it may indicate
+  a brute-force attack or misconfigured system causing repeated authentication failures.
+  If confirmed malicious, this behavior could lead to account lockouts, disrupting
+  user access and potentially indicating an ongoing attack attempting to compromise
+  user credentials.
+id: c026e3dd-7e18-4abb-8f41-929e836efe74
+mitre_attack_id:
+- T1078.002
+name: Detect Excessive Account Lockouts From Endpoint

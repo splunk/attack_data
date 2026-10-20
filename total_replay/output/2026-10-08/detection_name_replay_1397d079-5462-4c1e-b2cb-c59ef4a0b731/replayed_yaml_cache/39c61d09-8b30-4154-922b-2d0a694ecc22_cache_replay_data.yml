@@ -1,0 +1,19 @@
+analytic_story:
+- Suspicious AWS S3 Activities
+attack_data_link: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1530/aws_s3_public_bucket/aws_cloudtrail_events.json
+attack_data_output_file_path: /Users/pbareiss/projects/attack_data/datasets/attack_techniques/T1530/aws_s3_public_bucket/aws_cloudtrail_events.json
+attack_data_source: aws_cloudtrail
+attack_data_sourcetype: aws:cloudtrail
+attack_data_uuid: cc9b25e3-efc9-11eb-926b-550bf0943fbb
+attack_data_yml_file_path: /Users/pbareiss/projects/attack_data/datasets/attack_techniques/T1530/aws_s3_public_bucket/aws_s3_public_bucket.yml
+description: The following analytic detects the creation of open/public S3 buckets
+  via the AWS CLI. It leverages AWS CloudTrail logs to identify events where a user
+  has set bucket permissions to allow access to "AuthenticatedUsers" or "AllUsers."
+  This activity is significant because open S3 buckets can expose sensitive data to
+  unauthorized users, leading to data breaches. If confirmed malicious, an attacker
+  could gain unauthorized access to potentially sensitive information stored in the
+  S3 bucket, posing a significant security risk.
+id: 39c61d09-8b30-4154-922b-2d0a694ecc22
+mitre_attack_id:
+- T1530
+name: Detect New Open S3 Buckets over AWS CLI

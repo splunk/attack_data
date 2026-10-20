@@ -1,0 +1,24 @@
+analytic_story:
+- VIP Keylogger
+attack_data_link: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1112/vip_big_env_variable/vip_INTERNAL_DB_CACHE.log
+attack_data_output_file_path: /Users/pbareiss/projects/attack_data/datasets/attack_techniques/T1112/vip_big_env_variable/vip_INTERNAL_DB_CACHE.log
+attack_data_source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+attack_data_sourcetype: XmlWinEventLog
+attack_data_uuid: 37c77a40-39a6-11f1-b68e-629be3538069
+attack_data_yml_file_path: /Users/pbareiss/projects/attack_data/datasets/attack_techniques/T1112/vip_big_env_variable/vip_big_env_variable.yml
+description: 'The following analytic detects creation or modification of registry
+  values under a user or system Environment key (paths matching *\Environment\*) where
+  the stored value exceeds 2,000 characters.
+
+  Legitimate environment variables are typically short strings (paths, tokens, or
+  flags); unusually long values can indicate adversaries or malware staging encoded
+  payloads, bloated malicious PATH entries, or other data in a location that is loaded
+  for every interactive session.
+
+  This behavior has been observed in contexts such as .NET infostealer activity. Analysts
+  should validate the writing process, value content, and whether the change aligns
+  with trusted software deployment or administrative tasks.'
+id: f5bde743-245a-4e1f-a152-3971cec6e9ef
+mitre_attack_id:
+- T1112
+name: Windows Anomalous Registry Value Length in Environment Key

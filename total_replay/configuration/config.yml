@@ -1,6 +1,6 @@
 settings:
-  security_content_detection_path: ~/path/to/your/security_content/detections
-  attack_data_dir_path: ~/path/to/your/attack_data
+  security_content_detection_path: /Users/pbareiss/projects/security_content/detections
+  attack_data_dir_path: /Users/pbareiss/projects/attack_data
   output_dir_name : output
   cache_replay_yaml_name : cache_replay_data.yml
   replayed_yaml_cache_dir_name: replayed_yaml_cache
