@@ -1,0 +1,18 @@
+author: Ryan Tait, Splunk
+id: 7d3f4821-b6c5-4e8a-9d2f-1a5e6c8b0f34
+date: '2026-10-19'
+description: Generated datasets for CVE-2026-74580 privilege escalation in attack range.
+environment: attack_range
+directory: vghost
+mitre_technique:
+- T1068
+- T1027.004
+datasets:
+-   name: audit
+    sourcetype: auditd
+    source: auditd
+    path: /datasets/attack_techniques/T1068/vghost/audit.log
+-   name: sysmon
+    sourcetype: syslog
+    source: Syslog:Linux-Sysmon/Operational
+    path: /datasets/attack_techniques/T1068/vghost/sysmon.log
