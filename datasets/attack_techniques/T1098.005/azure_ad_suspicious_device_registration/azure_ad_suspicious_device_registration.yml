@@ -1,0 +1,13 @@
+author: Jake Enea
+id: 9d833380-b164-4b1d-8d4f-49a6cf62df5f
+date: '2026-10-12'
+description: Successful Azure AD device registrations with suspicious device names and user agents. Tenant-specific details have been replaced in the dataset including tenant ID, usernames, IPs, etc.
+environment: attack_range
+directory: azure_ad_suspicious_device_registration
+mitre_technique:
+- T1098.005
+datasets:
+- name: azure_ad_suspicious_device_registration
+  path: /datasets/attack_techniques/T1098.005/azure_ad_suspicious_device_registration/azure_ad_suspicious_device_registration.log
+  sourcetype: azure:monitor:aad
+  source: azure
