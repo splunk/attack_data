@@ -1,0 +1,13 @@
+author: STRT
+id: 947b351d-8b28-49f3-bcfc-c70a4aa6a1b0
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Cobalt Strike PowerShell
+  Loader
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1608/snapattack/snapattack-947b351d-8b28-49f3-bcfc-c70a4aa6a1b0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

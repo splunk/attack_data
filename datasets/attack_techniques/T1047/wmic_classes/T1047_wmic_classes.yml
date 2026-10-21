@@ -1,0 +1,13 @@
+author: STRT
+id: 1ba0653a-fa00-4f7b-9c38-cc7cf07ad1cf
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows WMI Reconnaissance
+  Class Query
+environment: attack_range
+directory: wmic_classes
+mitre_technique: []
+datasets:
+- name: wmic_cmd
+  path: /datasets/attack_techniques/T1047/wmic_classes/wmic_cmd-1ba0653a-fa00-4f7b-9c38-cc7cf07ad1cf.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

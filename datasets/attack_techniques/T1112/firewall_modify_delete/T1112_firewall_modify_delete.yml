@@ -1,0 +1,13 @@
+author: STRT
+id: b3833587-8d45-4e38-930d-215ab48ac4ac
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry Delete
+  Firewall Rules
+environment: attack_range
+directory: firewall_modify_delete
+mitre_technique: []
+datasets:
+- name: firewall_mod_delete
+  path: /datasets/attack_techniques/T1112/firewall_modify_delete/firewall_mod_delete-b3833587-8d45-4e38-930d-215ab48ac4ac.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,17 @@
+author: STRT
+id: baa0e03d-4b5d-4e65-9310-4673b31d2aba
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Registry SIP Provider
+  Modification
+environment: attack_range
+directory: sip
+mitre_technique: []
+datasets:
+- name: sip_windows-sysmon
+  path: /datasets/attack_techniques/T1553.003/sip/sip_windows-sysmon-baa0e03d-4b5d-4e65-9310-4673b31d2aba.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: capi2-operational
+  path: /datasets/attack_techniques/T1553.003/sip/capi2-operational-baa0e03d-4b5d-4e65-9310-4673b31d2aba.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-CAPI2/Operational

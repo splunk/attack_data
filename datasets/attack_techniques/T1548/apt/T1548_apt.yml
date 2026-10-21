@@ -1,0 +1,12 @@
+author: STRT
+id: 301f77ea-13d2-4f3c-86a6-a0b691913857
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux APT Privilege Escalation
+environment: attack_range
+directory: apt
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/apt/sysmon_linux-301f77ea-13d2-4f3c-86a6-a0b691913857.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

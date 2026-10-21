@@ -1,0 +1,13 @@
+author: STRT
+id: 772ca220-d20a-4d93-be9d-e4a9ef5da568
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD ServicePrincipalName
+  Added To Domain Account
+environment: attack_range
+directory: service_principal_name_added
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1098/service_principal_name_added/windows-security-772ca220-d20a-4d93-be9d-e4a9ef5da568.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

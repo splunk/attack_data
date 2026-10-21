@@ -1,0 +1,12 @@
+author: STRT
+id: 2a0f85f0-c3fb-4a25-9adb-7e2f398cb2f4
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Disable Services
+environment: attack_range
+directory: linux_service_stop_disable
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1489/linux_service_stop_disable/sysmon_linux-2a0f85f0-c3fb-4a25-9adb-7e2f398cb2f4.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

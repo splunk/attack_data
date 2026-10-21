@@ -1,0 +1,12 @@
+author: STRT
+id: 9e6f3e50-e2dd-412d-8a3e-84e88c694cfe
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS SetDefaultPolicyVersion
+environment: attack_range
+directory: aws_setdefaultpolicyversion
+mitre_technique: []
+datasets:
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1078/aws_setdefaultpolicyversion/aws_cloudtrail_events-9e6f3e50-e2dd-412d-8a3e-84e88c694cfe.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

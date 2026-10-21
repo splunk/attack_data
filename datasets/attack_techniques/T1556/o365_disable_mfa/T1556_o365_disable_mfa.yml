@@ -1,0 +1,12 @@
+author: STRT
+id: ef29c24c-ccf7-4401-9cb3-f22b39abe95f
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Disable MFA
+environment: attack_range
+directory: o365_disable_mfa
+mitre_technique: []
+datasets:
+- name: o365_disable_mfa
+  path: /datasets/attack_techniques/T1556/o365_disable_mfa/o365_disable_mfa-ef29c24c-ccf7-4401-9cb3-f22b39abe95f.log
+  sourcetype: o365:management:activity
+  source: o365

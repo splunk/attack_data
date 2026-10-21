@@ -1,0 +1,13 @@
+author: STRT
+id: 5397e6cb-10c5-4db4-b466-16fbfa1f32ff
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Configuration Archive
+  Logging Analysis
+environment: attack_range
+directory: cisco_smart_install
+mitre_technique: []
+datasets:
+- name: cisco_ios
+  path: /datasets/attack_techniques/T1190/cisco/cisco_smart_install/cisco_ios-5397e6cb-10c5-4db4-b466-16fbfa1f32ff.log
+  sourcetype: cisco:ios
+  source: cisco:ios

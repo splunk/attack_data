@@ -1,0 +1,13 @@
+author: STRT
+id: 1bc909d8-53cb-46f5-86fe-c638b0a89508
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Email Transport Rule
+  Changed
+environment: attack_range
+directory: transport_rule_change
+mitre_technique: []
+datasets:
+- name: transport_rule_change
+  path: /datasets/attack_techniques/T1114.003/transport_rule_change/transport_rule_change-1bc909d8-53cb-46f5-86fe-c638b0a89508.log
+  sourcetype: o365:management:activity
+  source: o365

@@ -1,0 +1,17 @@
+author: STRT
+id: fbc98053-7803-4122-be14-1b76f1756504
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS ECR Container Upload
+  Outside Business Hours
+environment: attack_range
+directory: aws_ecr_container_upload
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1204.003/aws_ecr_container_upload/asl_ocsf_cloudtrail-fbc98053-7803-4122-be14-1b76f1756504.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_ecr_container_upload
+  path: /datasets/attack_techniques/T1204.003/aws_ecr_container_upload/aws_ecr_container_upload-fbc98053-7803-4122-be14-1b76f1756504.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

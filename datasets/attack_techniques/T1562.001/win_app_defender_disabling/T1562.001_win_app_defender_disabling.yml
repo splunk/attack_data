@@ -1,0 +1,16 @@
+author: STRT
+id: f1a3a6ee-1233-420f-a944-06a3c1f1ad45
+date: '2026-07-10'
+description: Curated attack data generated for detection Disable Registry Tool
+environment: attack_range
+directory: win_app_defender_disabling
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1562.001/win_app_defender_disabling/windows-sysmon-f1a3a6ee-1233-420f-a944-06a3c1f1ad45.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-xml
+  path: /datasets/attack_techniques/T1562.001/win_app_defender_disabling/windows-xml-f1a3a6ee-1233-420f-a944-06a3c1f1ad45.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

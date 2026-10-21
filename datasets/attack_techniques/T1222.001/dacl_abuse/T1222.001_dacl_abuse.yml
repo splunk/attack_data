@@ -1,0 +1,37 @@
+author: STRT
+id: 0693bac0-ac56-4b37-a71a-8db2410b906d
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD Dangerous Deny
+  ACL Modification
+environment: attack_range
+directory: dacl_abuse
+mitre_technique: []
+datasets:
+- name: hidden_object_windows-security-xml
+  path: /datasets/attack_techniques/T1222.001/dacl_abuse/hidden_object_windows-security-xml-0693bac0-ac56-4b37-a71a-8db2410b906d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: group_dacl_mod_windows-security-xml
+  path: /datasets/attack_techniques/T1222.001/dacl_abuse/group_dacl_mod_windows-security-xml-0693bac0-ac56-4b37-a71a-8db2410b906d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: user_dacl_mod_windows-security-xml
+  path: /datasets/attack_techniques/T1222.001/dacl_abuse/user_dacl_mod_windows-security-xml-0693bac0-ac56-4b37-a71a-8db2410b906d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: domain_root_acl_deletion_windows-security-xml
+  path: /datasets/attack_techniques/T1222.001/dacl_abuse/domain_root_acl_deletion_windows-security-xml-0693bac0-ac56-4b37-a71a-8db2410b906d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: domain_root_acl_mod_windows-security-xml
+  path: /datasets/attack_techniques/T1222.001/dacl_abuse/domain_root_acl_mod_windows-security-xml-0693bac0-ac56-4b37-a71a-8db2410b906d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: hidden_ou_windows-security-xml
+  path: /datasets/attack_techniques/T1222.001/dacl_abuse/hidden_ou_windows-security-xml-0693bac0-ac56-4b37-a71a-8db2410b906d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: owner_updated_windows-security-xml
+  path: /datasets/attack_techniques/T1222.001/dacl_abuse/owner_updated_windows-security-xml-0693bac0-ac56-4b37-a71a-8db2410b906d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

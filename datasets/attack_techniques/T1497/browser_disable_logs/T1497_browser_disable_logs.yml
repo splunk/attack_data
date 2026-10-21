@@ -1,0 +1,13 @@
+author: STRT
+id: 524b8f66-bd76-45f5-b210-454fb5f4ff9c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Chromium Process
+  Launched with Logging Disabled
+environment: attack_range
+directory: browser_disable_logs
+mitre_technique: []
+datasets:
+- name: chrome_disable_log
+  path: /datasets/attack_techniques/T1497/browser_disable_logs/chrome_disable_log-524b8f66-bd76-45f5-b210-454fb5f4ff9c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: b4f52017-b6ac-4a40-ad0c-c1ffaeb73384
+date: '2026-07-11'
+description: Curated attack data generated for detection Suspicious Ticket Granting
+  Ticket Request
+environment: attack_range
+directory: suspicious_ticket_granting_ticket_request
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1078.002/suspicious_ticket_granting_ticket_request/windows-xml-b4f52017-b6ac-4a40-ad0c-c1ffaeb73384.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,13 @@
+author: STRT
+id: dc72b9d3-940b-494b-9bd1-5b8d1c2daace
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows CrowdStrike Agent
+  Registry Key Removal
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1562/snapattack/snapattack-dc72b9d3-940b-494b-9bd1-5b8d1c2daace.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

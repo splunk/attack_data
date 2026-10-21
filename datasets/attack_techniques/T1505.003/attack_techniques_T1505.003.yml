@@ -1,0 +1,20 @@
+author: STRT
+id: 93feff3f-69a1-434c-8620-8a6536c8352a
+date: '2026-07-11'
+description: Curated attack data generated for detection Detect Exchange Web Shell
+environment: attack_range
+directory: T1505.003
+mitre_technique: []
+datasets:
+- name: windows-sysmon_proxylogon
+  path: /datasets/attack_techniques/T1505.003/windows-sysmon_proxylogon-93feff3f-69a1-434c-8620-8a6536c8352a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: moveit_windows-sysmon
+  path: /datasets/attack_techniques/T1505.003/moveit_windows-sysmon-93feff3f-69a1-434c-8620-8a6536c8352a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: wsus-windows-sysmon
+  path: /datasets/attack_techniques/T1505.003/wsus-windows-sysmon-93feff3f-69a1-434c-8620-8a6536c8352a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

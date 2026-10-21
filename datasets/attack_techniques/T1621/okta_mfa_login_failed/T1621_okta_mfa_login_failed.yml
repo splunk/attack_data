@@ -1,0 +1,13 @@
+author: STRT
+id: 32bcd345-75cb-4a55-8c95-e9e24358d4aa
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta Authentication Failed
+  During MFA Challenge
+environment: attack_range
+directory: okta_mfa_login_failed
+mitre_technique: []
+datasets:
+- name: okta_mfa_login_failed
+  path: /datasets/attack_techniques/T1621/okta_mfa_login_failed/okta_mfa_login_failed-32bcd345-75cb-4a55-8c95-e9e24358d4aa.log
+  sourcetype: OktaIM2:log
+  source: okta_log

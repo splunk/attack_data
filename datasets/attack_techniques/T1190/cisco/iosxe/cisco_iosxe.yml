@@ -1,0 +1,12 @@
+author: STRT
+id: 2815a23c-5ed5-4cc8-9e7b-9785079a8e64
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco IOS XE Implant Access
+environment: attack_range
+directory: iosxe
+mitre_technique: []
+datasets:
+- name: ciscocve202320198
+  path: /datasets/attack_techniques/T1190/cisco/iosxe/ciscocve202320198-2815a23c-5ed5-4cc8-9e7b-9785079a8e64.log
+  sourcetype: suricata
+  source: not_applicable

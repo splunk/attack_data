@@ -1,0 +1,12 @@
+author: STRT
+id: 6cee59c7-9c32-42b9-9303-82fb1f69f4a0
+date: '2026-07-11'
+description: Curated attack data generated for detection Script Execution via WMI
+environment: attack_range
+directory: execution_scrcons
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1047/execution_scrcons/windows-sysmon-6cee59c7-9c32-42b9-9303-82fb1f69f4a0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

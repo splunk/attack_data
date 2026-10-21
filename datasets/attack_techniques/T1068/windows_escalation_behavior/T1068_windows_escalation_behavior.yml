@@ -1,0 +1,13 @@
+author: STRT
+id: 06eea7de-47e7-4611-97a7-a35fd54082cc
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Privilege Escalation
+  Suspicious Process Elevation
+environment: attack_range
+directory: windows_escalation_behavior
+mitre_technique: []
+datasets:
+- name: windows_escalation_behavior_sysmon
+  path: /datasets/attack_techniques/T1068/windows_escalation_behavior/windows_escalation_behavior_sysmon-06eea7de-47e7-4611-97a7-a35fd54082cc.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
