@@ -1,0 +1,38 @@
+author: Nasreddine Bencherchali, Raven Tait, Onur Erdogan, Splunk
+id: 5e87fcdc-11e9-4a77-ab46-99ab4594482d
+date: '2026-10-22'
+description: Generated datasets for PHP inline code execution using php2shell.
+environment: NA
+directory: php2shell
+mitre_technique:
+- T1059.003
+- T1059.004
+datasets:
+- name: inline_php_exec_linux
+  path: /datasets/emerging_threats/php2shell/inline_php_exec_linux.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: inline_php_exec_windows
+  path: /datasets/emerging_threats/php2shell/inline_php_exec_windows.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: php_upload_progress
+  path: /datasets/emerging_threats/php2shell/php_upload_progress.log
+  sourcetype: zeek:http
+  source: http.log
+- name: memory_exhaustion_access
+  path: /datasets/emerging_threats/php2shell/memory_exhaustion_access.log
+  sourcetype: nginx:plus:kv
+  source: /var/log/nginx/
+- name: memory_exhaustion_error
+  path: /datasets/emerging_threats/php2shell/memory_exhaustion_error.log
+  sourcetype: nginx:plus:kv
+  source: /var/log/nginx/
+- name: php_tag_filename
+  path: /datasets/emerging_threats/php2shell/php_tag_filename.log
+  sourcetype: zeek:http
+  source: http.log
+- name: zeek_large_post_body
+  path: /datasets/emerging_threats/php2shell/zeek_large_post_body.log
+  sourcetype: zeek:http
+  source: http.log
