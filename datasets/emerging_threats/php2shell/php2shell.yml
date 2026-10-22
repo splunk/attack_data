@@ -23,11 +23,11 @@ datasets:
 - name: memory_exhaustion_access
   path: /datasets/emerging_threats/php2shell/memory_exhaustion_access.log
   sourcetype: nginx:plus:kv
-  source: /var/log/nginx/
+  source: /var/log/nginx/access.log
 - name: memory_exhaustion_error
   path: /datasets/emerging_threats/php2shell/memory_exhaustion_error.log
   sourcetype: nginx:plus:kv
-  source: /var/log/nginx/
+  source: /var/log/nginx/error.log
 - name: php_tag_filename
   path: /datasets/emerging_threats/php2shell/php_tag_filename.log
   sourcetype: zeek:http
