@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 8236cff3-dabf-4e3c-b07c-434897abd42b
+date: '2026-10-22'
+description: Generated datasets for php2shell exploitation based on Web Server logs.
+environment: NA
+directory: php2shell
+mitre_technique:
+- T1190
+datasets:
+- name: php2shell_webserver_oom.log
+  path: /datasets/emerging_threats/php2shell/php2shell_webserver_oom.log
+  sourcetype: not_applicable
+  source: not_applicable
