@@ -39,4 +39,4 @@ datasets:
 - name: suricata
   path: /datasets/emerging_threats/php2shell/suricata.log
   sourcetype: suricata
-  source: suricata
+  source: not_applicable
