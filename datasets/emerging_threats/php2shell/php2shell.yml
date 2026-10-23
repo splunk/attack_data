@@ -36,3 +36,7 @@ datasets:
   path: /datasets/emerging_threats/php2shell/zeek_large_post_body.log
   sourcetype: zeek:http
   source: http.log
+- name: suricata
+  path: /datasets/emerging_threats/php2shell/suricata.log
+  sourcetype: suricata
+  source: not_applicable
