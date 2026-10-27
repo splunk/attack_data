@@ -1,0 +1,20 @@
+author: Maria Jose Erquiaga, Splunk
+id: ad6524c3-1b06-417f-b9c2-0156ec870667
+date: '2026-10-27'
+description: >-
+  Process-creation telemetry from authorized Attack Range WinRM tests.
+  Includes winrshost.exe and wsmprovhost.exe spawning selected processes.
+  Security and Sysmon records may describe the same process launches.
+environment: attack_range
+directory: winrm_spawned_processes
+mitre_technique:
+  - T1021.006
+datasets:
+  - name: winrm_spawned_processes_security
+    path: /datasets/attack_techniques/T1021.006/winrm_spawned_processes/winrm_spawned_processes_security.log
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Security
+  - name: winrm_spawned_processes_sysmon
+    path: /datasets/attack_techniques/T1021.006/winrm_spawned_processes/winrm_spawned_processes_sysmon.log
+    sourcetype: XmlWinEventLog
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
