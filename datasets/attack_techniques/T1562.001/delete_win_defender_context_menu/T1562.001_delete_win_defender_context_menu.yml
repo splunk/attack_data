@@ -1,0 +1,13 @@
+author: STRT
+id: 60fa2df3-c73e-4eca-814b-11034f0fe584
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Impair Defense Delete
+  Win Defender Context Menu
+environment: attack_range
+directory: delete_win_defender_context_menu
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1562.001/delete_win_defender_context_menu/sysmon-60fa2df3-c73e-4eca-814b-11034f0fe584.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

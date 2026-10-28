@@ -1,0 +1,25 @@
+author: STRT
+id: a0bdbe58-b2d5-4f77-890c-668ad9174d36
+date: '2026-07-13'
+description: Curated attack data generated for detection Citrix ADC and Gateway CitrixBleed
+  2 Memory Disclosure
+environment: attack_range
+directory: citrix
+mitre_technique: []
+datasets:
+- name: suricata_citrixbleed2
+  path: /datasets/attack_techniques/T1190/citrix/suricata_citrixbleed2-a0bdbe58-b2d5-4f77-890c-668ad9174d36.log
+  sourcetype: suricata
+  source: not_applicable
+- name: cve-2023-4966-citrix
+  path: /datasets/attack_techniques/T1190/citrix/cve-2023-4966-citrix-a0bdbe58-b2d5-4f77-890c-668ad9174d36.log
+  sourcetype: suricata
+  source: not_applicable
+- name: citrix-cve20233519
+  path: /datasets/attack_techniques/T1190/citrix/citrix-cve20233519-a0bdbe58-b2d5-4f77-890c-668ad9174d36.log
+  sourcetype: pan:threat
+  source: not_applicable
+- name: citrix-cve_2023_24489
+  path: /datasets/attack_techniques/T1190/citrix/citrix-cve_2023_24489-a0bdbe58-b2d5-4f77-890c-668ad9174d36.log
+  sourcetype: suricata
+  source: not_applicable

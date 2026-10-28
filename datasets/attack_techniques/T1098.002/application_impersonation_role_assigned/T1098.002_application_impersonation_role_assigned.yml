@@ -1,0 +1,13 @@
+author: STRT
+id: d7923e03-acd6-4caf-a0be-592aa849c933
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 ApplicationImpersonation
+  Role Assigned
+environment: attack_range
+directory: application_impersonation_role_assigned
+mitre_technique: []
+datasets:
+- name: application_impersonation_role_assigned
+  path: /datasets/attack_techniques/T1098.002/application_impersonation_role_assigned/application_impersonation_role_assigned-d7923e03-acd6-4caf-a0be-592aa849c933.log
+  sourcetype: o365:management:activity
+  source: O365

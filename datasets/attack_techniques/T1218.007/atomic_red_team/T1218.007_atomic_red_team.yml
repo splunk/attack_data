@@ -1,0 +1,17 @@
+author: STRT
+id: 9bf57014-3e05-4790-a572-ec6b89665d3e
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows HTTP Network Communication
+  From MSIExec
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1218.007/atomic_red_team/windows-sysmon-9bf57014-3e05-4790-a572-ec6b89665d3e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windbg_msiexec
+  path: /datasets/attack_techniques/T1218.007/atomic_red_team/windbg_msiexec-9bf57014-3e05-4790-a572-ec6b89665d3e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

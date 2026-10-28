@@ -1,0 +1,13 @@
+author: STRT
+id: 203365c1-7b12-4b7c-a21f-aa940886bf98
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes Create or Update
+  Privileged Pod
+environment: attack_range
+directory: kubernetes_privileged_pod
+mitre_technique: []
+datasets:
+- name: kubernetes_privileged_pod
+  path: /datasets/attack_techniques/T1204/kubernetes_privileged_pod/kubernetes_privileged_pod-203365c1-7b12-4b7c-a21f-aa940886bf98.log
+  sourcetype: _json
+  source: kubernetes

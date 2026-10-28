@@ -1,0 +1,13 @@
+author: STRT
+id: 183f9b47-3ccd-47d0-b323-9a3544487bb8
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure Active Directory High
+  Risk Sign-in
+environment: attack_range
+directory: azuread_highrisk
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1110.003/azuread_highrisk/azure-audit-183f9b47-3ccd-47d0-b323-9a3544487bb8.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

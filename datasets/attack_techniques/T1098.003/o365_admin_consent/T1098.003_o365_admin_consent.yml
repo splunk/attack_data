@@ -1,0 +1,13 @@
+author: STRT
+id: 95ed0dbb-0127-4cb7-9a78-9966b2cba655
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Tenant Wide Admin Consent
+  Granted
+environment: attack_range
+directory: o365_admin_consent
+mitre_technique: []
+datasets:
+- name: o365_admin_consent
+  path: /datasets/attack_techniques/T1098.003/o365_admin_consent/o365_admin_consent-95ed0dbb-0127-4cb7-9a78-9966b2cba655.log
+  sourcetype: o365:management:activity
+  source: o365

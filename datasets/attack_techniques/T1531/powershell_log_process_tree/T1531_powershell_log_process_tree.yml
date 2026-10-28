@@ -1,0 +1,13 @@
+author: STRT
+id: b8c00d63-38d0-4341-b163-bb6053a0aff5
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Account Access Removal
+  via Logoff Exec
+environment: attack_range
+directory: powershell_log_process_tree
+mitre_technique: []
+datasets:
+- name: powershell_logoff
+  path: /datasets/attack_techniques/T1531/powershell_log_process_tree/powershell_logoff-b8c00d63-38d0-4341-b163-bb6053a0aff5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,17 @@
+author: STRT
+id: 8cf16519-b8f9-458a-9c43-1e0a4917acd4
+date: '2026-07-13'
+description: Curated attack data generated for detection VMWare Aria Operations Exploit
+  Attempt
+environment: attack_range
+directory: vmware
+mitre_technique: []
+datasets:
+- name: vmware_aria
+  path: /datasets/attack_techniques/T1190/vmware/vmware_aria-8cf16519-b8f9-458a-9c43-1e0a4917acd4.log
+  sourcetype: pan:threat
+  source: not_applicable
+- name: vmware_scanning_pan_threat
+  path: /datasets/attack_techniques/T1190/vmware/vmware_scanning_pan_threat-8cf16519-b8f9-458a-9c43-1e0a4917acd4.log
+  sourcetype: pan:threat
+  source: not_applicable

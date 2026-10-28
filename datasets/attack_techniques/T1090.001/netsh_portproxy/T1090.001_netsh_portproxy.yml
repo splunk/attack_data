@@ -1,0 +1,12 @@
+author: STRT
+id: 2f611dea-c247-4921-907f-bd990d6d3104
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Proxy Via Netsh
+environment: attack_range
+directory: netsh_portproxy
+mitre_technique: []
+datasets:
+- name: volt_sysmon
+  path: /datasets/attack_techniques/T1090.001/netsh_portproxy/volt_sysmon-2f611dea-c247-4921-907f-bd990d6d3104.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: cdd32e66-7de4-43b9-b18e-b5fc832ba12a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Debugger Tool Execution
+environment: attack_range
+directory: debugger_execution
+mitre_technique: []
+datasets:
+- name: debugger
+  path: /datasets/attack_techniques/T1036/debugger_execution/debugger-cdd32e66-7de4-43b9-b18e-b5fc832ba12a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

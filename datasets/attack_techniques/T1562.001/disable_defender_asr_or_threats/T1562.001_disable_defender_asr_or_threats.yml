@@ -1,0 +1,13 @@
+author: STRT
+id: a1e1fe04-e4a6-4c93-8e5f-17eacd54dd17
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Defender ASR or Threat
+  Configuration Tamper
+environment: attack_range
+directory: disable_defender_asr_or_threats
+mitre_technique: []
+datasets:
+- name: disable_defender_asr_or_threats
+  path: /datasets/attack_techniques/T1562.001/disable_defender_asr_or_threats/disable_defender_asr_or_threats-a1e1fe04-e4a6-4c93-8e5f-17eacd54dd17.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

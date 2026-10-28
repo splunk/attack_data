@@ -1,0 +1,13 @@
+author: STRT
+id: 9dbbf5f9-9319-4588-8554-145d92322cce
+date: '2026-07-10'
+description: Curated attack data generated for detection Overwriting Accessibility
+  Binaries
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1546.008/atomic_red_team/windows-sysmon-9dbbf5f9-9319-4588-8554-145d92322cce.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

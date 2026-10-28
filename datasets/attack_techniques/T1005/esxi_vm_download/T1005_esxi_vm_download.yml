@@ -1,0 +1,13 @@
+author: STRT
+id: 09c0196a-4a9f-4946-8cfd-28fa543af951
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi VM Exported via Remote
+  Tool
+environment: attack_range
+directory: esxi_vm_download
+mitre_technique: []
+datasets:
+- name: esxi_vm_download
+  path: /datasets/attack_techniques/T1005/esxi_vm_download/esxi_vm_download-09c0196a-4a9f-4946-8cfd-28fa543af951.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

@@ -1,0 +1,13 @@
+author: STRT
+id: 1c6354b2-2af5-4e83-aae5-99218e445a6d
+date: '2026-07-10'
+description: Curated attack data generated for detection Potential System Network
+  Configuration Discovery Activity
+environment: attack_range
+directory: discovery_commands
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1016/discovery_commands/windows-sysmon-1c6354b2-2af5-4e83-aae5-99218e445a6d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

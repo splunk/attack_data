@@ -1,0 +1,13 @@
+author: STRT
+id: 671c899e-ee7b-4957-9557-5c0386149ca8
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta Multi-Factor Authentication
+  Disabled
+environment: attack_range
+directory: okta_mfa_method_disabled
+mitre_technique: []
+datasets:
+- name: okta_mfa_method_disabled
+  path: /datasets/attack_techniques/T1556.006/okta_mfa_method_disabled/okta_mfa_method_disabled-671c899e-ee7b-4957-9557-5c0386149ca8.log
+  sourcetype: OktaIM2:log
+  source: Okta

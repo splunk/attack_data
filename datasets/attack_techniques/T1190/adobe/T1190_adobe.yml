@@ -1,0 +1,17 @@
+author: STRT
+id: d1300156-7dc9-4de7-85ac-90d863c6f181
+date: '2026-07-13'
+description: Curated attack data generated for detection Adobe ColdFusion Access Control
+  Bypass
+environment: attack_range
+directory: adobe
+mitre_technique: []
+datasets:
+- name: coldfusion_cve_2023_29298
+  path: /datasets/attack_techniques/T1190/adobe/coldfusion_cve_2023_29298-d1300156-7dc9-4de7-85ac-90d863c6f181.log
+  sourcetype: suricata
+  source: not_applicable
+- name: cve_2023_29360_coldfusion
+  path: /datasets/attack_techniques/T1190/adobe/cve_2023_29360_coldfusion-d1300156-7dc9-4de7-85ac-90d863c6f181.log
+  sourcetype: suricata
+  source: not_applicable

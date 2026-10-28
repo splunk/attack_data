@@ -1,0 +1,12 @@
+author: STRT
+id: 1ba386d9-93c6-46dd-ae0d-7502a1499dbb
+date: '2026-07-13'
+description: Curated attack data generated for detection TOR Traffic
+environment: attack_range
+directory: pan_tor_allowed
+mitre_technique: []
+datasets:
+- name: pan_tor_allowed
+  path: /datasets/attack_techniques/T1090.003/pan_tor_allowed/pan_tor_allowed-1ba386d9-93c6-46dd-ae0d-7502a1499dbb.log
+  sourcetype: pan:traffic
+  source: not_applicable

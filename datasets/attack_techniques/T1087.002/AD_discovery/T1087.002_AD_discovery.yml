@@ -1,0 +1,44 @@
+author: STRT
+id: 33e45264-792f-426c-92f8-52bab3529302
+date: '2026-07-11'
+description: Curated attack data generated for detection AdsiSearcher Account Discovery
+environment: attack_range
+directory: AD_discovery
+mitre_technique: []
+datasets:
+- name: adsisearcher_powershell
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/adsisearcher_powershell-33e45264-792f-426c-92f8-52bab3529302.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-sysmon-33e45264-792f-426c-92f8-52bab3529302.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: aduser_powershell
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/aduser_powershell-33e45264-792f-426c-92f8-52bab3529302.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-xml-33e45264-792f-426c-92f8-52bab3529302.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: adsisearcher-powershell
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/adsisearcher-powershell-33e45264-792f-426c-92f8-52bab3529302.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-DomainOU-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-DomainOU-xml-33e45264-792f-426c-92f8-52bab3529302.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-interestingACL-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-interestingACL-xml-33e45264-792f-426c-92f8-52bab3529302.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-ForestDomain-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-ForestDomain-xml-33e45264-792f-426c-92f8-52bab3529302.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: windows-powershell-LocalAdminAccess-xml
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-powershell-LocalAdminAccess-xml-33e45264-792f-426c-92f8-52bab3529302.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

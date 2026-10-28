@@ -1,0 +1,12 @@
+author: STRT
+id: ac1207ca-d389-4767-bda8-33a7d69f3f61
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux DD File Overwrite
+environment: attack_range
+directory: linux_dd_file_overwrite
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1485/linux_dd_file_overwrite/sysmon_linux-ac1207ca-d389-4767-bda8-33a7d69f3f61.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

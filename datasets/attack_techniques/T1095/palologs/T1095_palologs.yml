@@ -1,0 +1,12 @@
+author: STRT
+id: 149fa5c0-053c-4b8d-8c37-f2a92e435b4e
+date: '2026-07-13'
+description: Curated attack data generated for detection Detect Large ICMP Traffic
+environment: attack_range
+directory: palologs
+mitre_technique: []
+datasets:
+- name: large_icmp
+  path: /datasets/attack_techniques/T1095/palologs/large_icmp-149fa5c0-053c-4b8d-8c37-f2a92e435b4e.log
+  sourcetype: pan:traffic
+  source: not_applicable

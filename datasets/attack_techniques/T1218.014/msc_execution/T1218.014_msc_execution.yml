@@ -1,0 +1,13 @@
+author: STRT
+id: d423f0b0-0d73-4e9b-bf2e-72895200b14b
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Execution of Microsoft
+  MSC File In Suspicious Path
+environment: attack_range
+directory: msc_execution
+mitre_technique: []
+datasets:
+- name: loaded_msc_mmc
+  path: /datasets/attack_techniques/T1218.014/msc_execution/loaded_msc_mmc-d423f0b0-0d73-4e9b-bf2e-72895200b14b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

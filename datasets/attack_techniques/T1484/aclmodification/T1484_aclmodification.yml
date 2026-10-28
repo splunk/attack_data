@@ -1,0 +1,13 @@
+author: STRT
+id: 2325923c-8f29-48f7-aa38-76d49ea5516d
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD Domain Replication
+  ACL Addition
+environment: attack_range
+directory: aclmodification
+mitre_technique: []
+datasets:
+- name: windows-security-xml
+  path: /datasets/attack_techniques/T1484/aclmodification/windows-security-xml-2325923c-8f29-48f7-aa38-76d49ea5516d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

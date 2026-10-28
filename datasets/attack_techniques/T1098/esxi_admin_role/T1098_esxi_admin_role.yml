@@ -1,0 +1,12 @@
+author: STRT
+id: 34341e8d-fdfd-4032-a8b1-358173e8e143
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi User Granted Admin Role
+environment: attack_range
+directory: esxi_admin_role
+mitre_technique: []
+datasets:
+- name: esxi_admin_role
+  path: /datasets/attack_techniques/T1098/esxi_admin_role/esxi_admin_role-34341e8d-fdfd-4032-a8b1-358173e8e143.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

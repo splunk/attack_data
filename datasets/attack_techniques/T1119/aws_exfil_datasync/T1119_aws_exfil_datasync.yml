@@ -1,0 +1,13 @@
+author: STRT
+id: 3077d63e-9e50-4cdf-9a7a-2a0597f81a4c
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Exfiltration via Batch
+  Service
+environment: attack_range
+directory: aws_exfil_datasync
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1119/aws_exfil_datasync/cloudtrail-3077d63e-9e50-4cdf-9a7a-2a0597f81a4c.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

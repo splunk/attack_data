@@ -1,0 +1,13 @@
+author: STRT
+id: b8eb4e71-c741-468c-bdef-70642255334a
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Duo Policy Skip 2FA
+  for Other Countries
+environment: attack_range
+directory: cisco_duo_policy_bypass_2FA_other_countries
+mitre_technique: []
+datasets:
+- name: cisco_duo_administrator
+  path: /datasets/attack_techniques/T1556/cisco_duo_policy_bypass_2FA_other_countries/cisco_duo_administrator-b8eb4e71-c741-468c-bdef-70642255334a.log
+  sourcetype: cisco:duo:administrator
+  source: duo

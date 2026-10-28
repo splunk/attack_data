@@ -1,0 +1,13 @@
+author: STRT
+id: a639a9b3-1a23-4c79-ad2b-267352206aa7
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Rundll32 Execution
+  With Log.DLL
+environment: attack_range
+directory: lotus_blossom_chrysalis
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1574.002/lotus_blossom_chrysalis/windows-sysmon-a639a9b3-1a23-4c79-ad2b-267352206aa7.log
+  sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

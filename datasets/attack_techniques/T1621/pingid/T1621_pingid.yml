@@ -1,0 +1,13 @@
+author: STRT
+id: acac7157-cb96-4d11-85b3-16bfb90bec9e
+date: '2026-07-13'
+description: Curated attack data generated for detection PingID Mismatch Auth Source
+  and Verification Response
+environment: attack_range
+directory: pingid
+mitre_technique: []
+datasets:
+- name: pingid
+  path: /datasets/attack_techniques/T1621/pingid/pingid-acac7157-cb96-4d11-85b3-16bfb90bec9e.log
+  sourcetype: _json
+  source: PINGID
