@@ -44,3 +44,11 @@ datasets:
   path: /datasets/emerging_threats/php2shell/cisco_sfw_intrusion_events.log
   sourcetype: cisco:sfw:estreamer
   source: not_applicable
+- name: apache_segfault_access
+  path: /datasets/emerging_threats/php2shell/apache_segfault_access.log
+  sourcetype: apache:access:kv
+  source: /var/log/apache2/access.log
+- name: apache_segfault_error
+  path: /datasets/emerging_threats/php2shell/apache_segfault_error.log
+  sourcetype: apache:error
+  source: /var/log/apache2/error.log
