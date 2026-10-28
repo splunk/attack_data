@@ -40,3 +40,7 @@ datasets:
   path: /datasets/emerging_threats/php2shell/suricata.log
   sourcetype: suricata
   source: not_applicable
+- name: cisco_sfw_intrusion
+  path: /datasets/emerging_threats/php2shell/cisco_sfw_intrusion_events.log
+  sourcetype: cisco:sfw:estreamer
+  source: not_applicable

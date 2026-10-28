@@ -7,7 +7,7 @@ directory: oracle_e_business_suite
 mitre_technique:
 - T1190
 datasets:
-- name: nirsoft_file_bundle_created.log
-  path: /datasets/attack_techniques/T1027.010/oracle_e_business_suite/oracle_e_business_suite.log
+- name: oracle_e_business_suite.log
+  path: /datasets/cisco_secure_firewall_threat_defense/oracle_e_business_suite/oracle_e_business_suite.log
   sourcetype: cisco:sfw:estreamer
   source: not_applicable
