@@ -1,0 +1,18 @@
+author: Raven Tait, Splunk
+id: 93609358-b616-40f2-98dd-2b44bfe30f7c
+date: '2026-10-28'
+description: Generated datasets for node brotli code execution using node2shell.
+environment: NA
+directory: node2shell
+mitre_technique:
+- T1059.003
+- T1059.004
+datasets:
+- name: zeek_large_post_body
+  path: /datasets/emerging_threats/node2shell/zeek_large_post_body.log
+  sourcetype: zeek:http
+  source: http.log
+- name: audit
+  path: /datasets/emerging_threats/node2shell/audit.log
+  sourcetype: auditd
+  source: auditd
