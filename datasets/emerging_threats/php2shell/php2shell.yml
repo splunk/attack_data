@@ -52,3 +52,7 @@ datasets:
   path: /datasets/emerging_threats/php2shell/apache_segfault_error.log
   sourcetype: apache:error
   source: /var/log/apache2/error.log
+- name: audit
+  path: /datasets/emerging_threats/php2shell/audit.log
+  sourcetype: auditd
+  source: auditd
