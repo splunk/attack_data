@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 0cb7b652-3c16-482f-a9f8-994a92fb9ed0
+date: '2026-11-02'
+description: Windows Security 4663 records for a non-browser PowerShell process reading existing Firefox and Chrome cache files.
+environment: lab
+directory: cache_smuggling
+mitre_technique:
+- T1005
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1005/cache_smuggling/windows-security.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
