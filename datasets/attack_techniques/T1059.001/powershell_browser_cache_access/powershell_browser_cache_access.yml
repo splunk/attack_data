@@ -1,0 +1,13 @@
+author: Raven Tait, Splunk
+id: 9303f5b8-0c6c-40a5-9df2-414ec646b3f6
+date: '2026-11-02'
+description: Captured Windows lab telemetry for PowerShell Script Block Logging that enumerates and reads Firefox and Chrome cache entries.
+environment: attack_range
+directory: powershell_browser_cache_access
+mitre_technique:
+- T1059.001
+datasets:
+- name: windows-powershell
+  path: /datasets/attack_techniques/T1059.001/powershell_browser_cache_access/windows-powershell.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
