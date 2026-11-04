@@ -1,0 +1,12 @@
+author: STRT
+id: 6461eef3-b3ea-4135-85bf-71210e38185f
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta IDP Lifecycle Modifications
+environment: attack_range
+directory: okta_idp
+mitre_technique: []
+datasets:
+- name: okta
+  path: /datasets/attack_techniques/T1556/okta_idp/okta-6461eef3-b3ea-4135-85bf-71210e38185f.log
+  sourcetype: OktaIM2:log
+  source: Okta

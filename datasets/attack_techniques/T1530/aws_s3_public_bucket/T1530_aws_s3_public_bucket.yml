@@ -1,0 +1,12 @@
+author: STRT
+id: 374d8a66-cf0b-47c8-b7ee-74511ad3f8dd
+date: '2026-07-10'
+description: Curated attack data generated for detection Detect New Open S3 buckets
+environment: attack_range
+directory: aws_s3_public_bucket
+mitre_technique: []
+datasets:
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1530/aws_s3_public_bucket/aws_cloudtrail_events-374d8a66-cf0b-47c8-b7ee-74511ad3f8dd.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

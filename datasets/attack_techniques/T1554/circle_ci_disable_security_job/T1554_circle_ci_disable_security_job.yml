@@ -1,0 +1,13 @@
+author: STRT
+id: a5cad970-f272-41a4-911a-866dd8aa0813
+date: '2026-07-10'
+description: Curated attack data generated for detection Circle CI Disable Security
+  Job
+environment: attack_range
+directory: circle_ci_disable_security_job
+mitre_technique: []
+datasets:
+- name: circle_ci_disable_security_job
+  path: /datasets/attack_techniques/T1554/circle_ci_disable_security_job/circle_ci_disable_security_job-a5cad970-f272-41a4-911a-866dd8aa0813.log
+  sourcetype: circleci
+  source: circleci

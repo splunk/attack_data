@@ -1,0 +1,12 @@
+author: STRT
+id: 9adab23a-57c5-4ba5-8dcb-cd49f08ad1a3
+date: '2026-07-10'
+description: Curated attack data generated for detection Microsoft Intune Bulk Wipe
+environment: attack_range
+directory: microsoft_intune_bulk_wipe
+mitre_technique: []
+datasets:
+- name: microsoft_intune_bulk_wipe
+  path: /datasets/attack_techniques/T1561.001/microsoft_intune_bulk_wipe/microsoft_intune_bulk_wipe-9adab23a-57c5-4ba5-8dcb-cd49f08ad1a3.log
+  sourcetype: azure:monitor:activity
+  source: Azure AD

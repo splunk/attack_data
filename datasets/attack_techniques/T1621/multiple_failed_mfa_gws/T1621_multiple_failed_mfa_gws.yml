@@ -1,0 +1,13 @@
+author: STRT
+id: 8a76dce8-96d3-4503-bf63-71d5ec816819
+date: '2026-07-10'
+description: Curated attack data generated for detection GCP Multiple Failed MFA Requests
+  For User
+environment: attack_range
+directory: multiple_failed_mfa_gws
+mitre_technique: []
+datasets:
+- name: gws_login
+  path: /datasets/attack_techniques/T1621/multiple_failed_mfa_gws/gws_login-8a76dce8-96d3-4503-bf63-71d5ec816819.log
+  sourcetype: gws:reports:login
+  source: gws:reports:login

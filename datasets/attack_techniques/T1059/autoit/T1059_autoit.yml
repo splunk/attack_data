@@ -1,0 +1,20 @@
+author: STRT
+id: 418e2f13-3a01-4f0d-8c2a-25d7463b17e0
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AutoIt3 Execution
+environment: attack_range
+directory: autoit
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1059/autoit/sysmon-418e2f13-3a01-4f0d-8c2a-25d7463b17e0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cab_files
+  path: /datasets/attack_techniques/T1059/autoit/cab_files-418e2f13-3a01-4f0d-8c2a-25d7463b17e0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windbg_autoit
+  path: /datasets/attack_techniques/T1059/autoit/windbg_autoit-418e2f13-3a01-4f0d-8c2a-25d7463b17e0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

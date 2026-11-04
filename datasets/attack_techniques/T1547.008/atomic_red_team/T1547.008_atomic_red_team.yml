@@ -1,0 +1,13 @@
+author: STRT
+id: 31df7904-a2fd-4f3a-a8cc-e096700d0b08
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Autostart Execution
+  LSASS Driver Registry Modification
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1547.008/atomic_red_team/windows-sysmon-31df7904-a2fd-4f3a-a8cc-e096700d0b08.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

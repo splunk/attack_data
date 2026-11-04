@@ -1,0 +1,13 @@
+author: STRT
+id: 3980fdef-44f2-4071-b7b0-f404051625aa
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Application Available
+  To Other Tenants
+environment: attack_range
+directory: o365_azure_workload_events
+mitre_technique: []
+datasets:
+- name: o365_azure_workload_events
+  path: /datasets/attack_techniques/T1098/o365_azure_workload_events/o365_azure_workload_events-3980fdef-44f2-4071-b7b0-f404051625aa.log
+  sourcetype: o365:management:activity
+  source: o365

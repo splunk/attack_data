@@ -1,0 +1,13 @@
+author: STRT
+id: b4a02cf5-d7b4-43cc-8ad5-ade4258fe67c
+date: '2026-07-11'
+description: Curated attack data generated for detection Add or Set Windows Defender
+  Exclusion
+environment: attack_range
+directory: defender_exclusion_sysmon
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1562.001/defender_exclusion_sysmon/sysmon-b4a02cf5-d7b4-43cc-8ad5-ade4258fe67c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

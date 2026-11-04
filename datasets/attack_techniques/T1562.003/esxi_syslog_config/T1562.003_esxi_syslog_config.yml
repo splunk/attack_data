@@ -1,0 +1,12 @@
+author: STRT
+id: 2eebd8ce-6c9e-45f9-a944-6cb41f6bbc99
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Syslog Config Change
+environment: attack_range
+directory: esxi_syslog_config
+mitre_technique: []
+datasets:
+- name: esxi_syslog_config
+  path: /datasets/attack_techniques/T1562.003/esxi_syslog_config/esxi_syslog_config-2eebd8ce-6c9e-45f9-a944-6cb41f6bbc99.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

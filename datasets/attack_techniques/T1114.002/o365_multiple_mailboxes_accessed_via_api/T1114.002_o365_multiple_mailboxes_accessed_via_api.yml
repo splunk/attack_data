@@ -1,0 +1,13 @@
+author: STRT
+id: efa05143-2f8e-44ed-bddc-69581b967399
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Multiple Mailboxes Accessed
+  via API
+environment: attack_range
+directory: o365_multiple_mailboxes_accessed_via_api
+mitre_technique: []
+datasets:
+- name: o365_multiple_mailboxes_accessed_via_api
+  path: /datasets/attack_techniques/T1114.002/o365_multiple_mailboxes_accessed_via_api/o365_multiple_mailboxes_accessed_via_api-efa05143-2f8e-44ed-bddc-69581b967399.log
+  sourcetype: o365:management:activity
+  source: o365

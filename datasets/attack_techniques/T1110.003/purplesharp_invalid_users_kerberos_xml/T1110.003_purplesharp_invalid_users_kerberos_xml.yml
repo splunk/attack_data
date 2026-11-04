@@ -1,0 +1,13 @@
+author: STRT
+id: d05e81df-71ce-48cd-a27a-6c0a247b7b62
+date: '2026-07-13'
+description: Curated attack data generated for detection Windows Multiple Invalid
+  Users Fail To Authenticate Using Kerberos
+environment: attack_range
+directory: purplesharp_invalid_users_kerberos_xml
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1110.003/purplesharp_invalid_users_kerberos_xml/windows-security-d05e81df-71ce-48cd-a27a-6c0a247b7b62.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

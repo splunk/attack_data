@@ -1,0 +1,13 @@
+author: STRT
+id: f45fabf2-393c-46d0-8a56-c505e15d74ff
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Multiple Users Failed
+  To Authenticate Using Kerberos
+environment: attack_range
+directory: purplesharp_valid_users_kerberos_xml
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1110.003/purplesharp_valid_users_kerberos_xml/windows-security-f45fabf2-393c-46d0-8a56-c505e15d74ff.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

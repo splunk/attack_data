@@ -1,0 +1,13 @@
+author: STRT
+id: 2d454a0a-910d-411f-bf0c-b5a5562dcc97
+date: '2026-07-10'
+description: Curated attack data generated for detection Enumerate Users Local Group
+  Using Telegram
+environment: attack_range
+directory: enumerate_users_local_group_using_telegram
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1087/enumerate_users_local_group_using_telegram/windows-xml-2d454a0a-910d-411f-bf0c-b5a5562dcc97.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

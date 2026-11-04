@@ -1,0 +1,12 @@
+author: STRT
+id: d7b2f06a-28b1-43b6-857d-2d54db532fad
+date: '2026-07-11'
+description: Curated attack data generated for detection Rubeus Command Line Parameters
+environment: attack_range
+directory: rubeus
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1550.003/rubeus/windows-sysmon-d7b2f06a-28b1-43b6-857d-2d54db532fad.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

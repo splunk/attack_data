@@ -1,0 +1,13 @@
+author: STRT
+id: f96f4aef-7282-4291-bdca-00b7ef549252
+date: '2026-07-11'
+description: Curated attack data generated for detection System Info Gathering Using
+  Dxdiag Application
+environment: attack_range
+directory: host_info_dxdiag
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/t1592/host_info_dxdiag/sysmon-f96f4aef-7282-4291-bdca-00b7ef549252.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

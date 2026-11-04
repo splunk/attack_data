@@ -1,0 +1,13 @@
+author: STRT
+id: 63ce8c7b-f833-471b-9637-e6941d9eec04
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Command Obfuscation
+  with Environment Variable Substrings
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1027.010/snapattack/snapattack-63ce8c7b-f833-471b-9637-e6941d9eec04.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

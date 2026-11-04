@@ -1,0 +1,13 @@
+author: STRT
+id: e890de9c-4e7e-4f8c-89ae-93441c04b826
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Known GraphicalProton
+  Loaded Modules
+environment: attack_range
+directory: svr_loaded_modules
+mitre_technique: []
+datasets:
+- name: loaded_module_svr
+  path: /datasets/attack_techniques/T1574.002/svr_loaded_modules/loaded_module_svr-e890de9c-4e7e-4f8c-89ae-93441c04b826.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 5cd03965-f2e5-44d1-ab21-58832621664c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Scheduled Task DLL
+  Module Loaded
+environment: attack_range
+directory: taskschd_dll
+mitre_technique: []
+datasets:
+- name: taskschd_dll
+  path: /datasets/attack_techniques/T1053/taskschd_dll/taskschd_dll-5cd03965-f2e5-44d1-ab21-58832621664c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

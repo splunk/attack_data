@@ -1,0 +1,13 @@
+author: STRT
+id: 9aade158-6dd0-4b7c-ad1c-4c960384e195
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Auditd Possible Access
+  To Sudoers File
+environment: attack_range
+directory: auditd_path_sudoers
+mitre_technique: []
+datasets:
+- name: path_sudoers
+  path: /datasets/attack_techniques/T1548.003/auditd_path_sudoers/path_sudoers-9aade158-6dd0-4b7c-ad1c-4c960384e195.log
+  sourcetype: auditd
+  source: auditd

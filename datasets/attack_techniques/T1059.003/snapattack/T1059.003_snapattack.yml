@@ -1,0 +1,13 @@
+author: STRT
+id: d76fb538-f447-4cff-a304-91a384073101
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows File Association
+  Modification via Ftype
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1059.003/snapattack/snapattack-d76fb538-f447-4cff-a304-91a384073101.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,13 @@
+author: STRT
+id: 33f2155f-5a28-4f4b-8571-e8c40fed4fe6
+date: '2026-07-10'
+description: Curated attack data generated for detection Kerberos Pre-Authentication
+  Flag Disabled with PowerShell
+environment: attack_range
+directory: powershell
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1558.004/powershell/windows-powershell-xml-33f2155f-5a28-4f4b-8571-e8c40fed4fe6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

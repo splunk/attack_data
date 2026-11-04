@@ -1,0 +1,13 @@
+author: STRT
+id: 7d2224bd-2704-4850-87d2-3878ac243902
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Duo Policy Allow Network
+  Bypass 2FA
+environment: attack_range
+directory: cisco_duo_policy_allow_network_bypass_2fa
+mitre_technique: []
+datasets:
+- name: cisco_duo_administrator
+  path: /datasets/attack_techniques/T1556/cisco_duo_policy_allow_network_bypass_2fa/cisco_duo_administrator-7d2224bd-2704-4850-87d2-3878ac243902.log
+  sourcetype: cisco:duo:administrator
+  source: duo

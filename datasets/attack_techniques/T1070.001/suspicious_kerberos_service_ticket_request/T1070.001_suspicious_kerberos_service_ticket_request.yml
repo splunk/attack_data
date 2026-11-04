@@ -1,0 +1,13 @@
+author: STRT
+id: e87b099a-5215-4ce0-b129-a095051a3014
+date: '2026-07-11'
+description: Curated attack data generated for detection Suspicious Kerberos Service
+  Ticket Request
+environment: attack_range
+directory: suspicious_kerberos_service_ticket_request
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1070.001/suspicious_kerberos_service_ticket_request/windows-xml-e87b099a-5215-4ce0-b129-a095051a3014.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,13 @@
+author: STRT
+id: a060e501-4c73-4457-9a02-a35dcf1f4863
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta New Device Enrolled
+  on Account
+environment: attack_range
+directory: okta_new_device_enrolled
+mitre_technique: []
+datasets:
+- name: okta_new_device_enrolled
+  path: /datasets/attack_techniques/T1098.005/okta_new_device_enrolled/okta_new_device_enrolled-a060e501-4c73-4457-9a02-a35dcf1f4863.log
+  sourcetype: OktaIM2:log
+  source: Okta

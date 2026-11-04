@@ -1,0 +1,12 @@
+author: STRT
+id: 794a35f3-fda1-4268-8465-a7c4dc832093
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows RDP Cache File Deletion
+environment: attack_range
+directory: bmc_file_deleted
+mitre_technique: []
+datasets:
+- name: bmc_file_deleted
+  path: /datasets/attack_techniques/T1070.004/bmc_file_deleted/bmc_file_deleted-794a35f3-fda1-4268-8465-a7c4dc832093.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

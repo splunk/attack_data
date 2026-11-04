@@ -1,0 +1,12 @@
+author: STRT
+id: a8a56f19-2538-484f-80e7-a04b62e8ecdd
+date: '2026-07-11'
+description: Curated attack data generated for detection Sdelete Application Execution
+environment: attack_range
+directory: sdelete
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1485/sdelete/sysmon-a8a56f19-2538-484f-80e7-a04b62e8ecdd.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

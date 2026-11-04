@@ -1,0 +1,13 @@
+author: STRT
+id: 18d97431-2aab-4c9c-99d6-518c9884a35c
+date: '2026-07-10'
+description: Curated attack data generated for detection Detect Copy of ShadowCopy
+  with Script Block Logging
+environment: attack_range
+directory: detect_copy_of_shadowcopy_with_script_block_logging
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1003.002/detect_copy_of_shadowcopy_with_script_block_logging/windows-xml-18d97431-2aab-4c9c-99d6-518c9884a35c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

@@ -1,0 +1,17 @@
+author: STRT
+id: e90ae472-d677-4ac9-8730-598bbd943ea6
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AppX Deployment Full
+  Trust Package Installation
+environment: attack_range
+directory: appx
+mitre_technique: []
+datasets:
+- name: windows_appxdeploymentserver
+  path: /datasets/attack_techniques/T1204.002/appx/windows_appxdeploymentserver-e90ae472-d677-4ac9-8730-598bbd943ea6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-AppXDeploymentServer/Operational
+- name: windows-appxpackaging
+  path: /datasets/attack_techniques/T1204.002/appx/windows-appxpackaging-e90ae472-d677-4ac9-8730-598bbd943ea6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-AppxPackaging/Operational

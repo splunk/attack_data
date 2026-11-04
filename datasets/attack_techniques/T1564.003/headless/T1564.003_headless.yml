@@ -1,0 +1,13 @@
+author: STRT
+id: cd30482d-e93e-4cde-a8fb-276e3cbafe23
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows ConHost with Headless
+  Argument
+environment: attack_range
+directory: headless
+mitre_technique: []
+datasets:
+- name: 4688_conhost_headless
+  path: /datasets/attack_techniques/T1564.003/headless/4688_conhost_headless-cd30482d-e93e-4cde-a8fb-276e3cbafe23.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

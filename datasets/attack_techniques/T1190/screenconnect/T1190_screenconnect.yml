@@ -1,0 +1,21 @@
+author: STRT
+id: 0e2c9888-60bb-44fb-800c-40c4203c6392
+date: '2026-07-13'
+description: Curated attack data generated for detection ConnectWise ScreenConnect
+  Path Traversal
+environment: attack_range
+directory: screenconnect
+mitre_technique: []
+datasets:
+- name: sysmon_app_extensions
+  path: /datasets/attack_techniques/T1190/screenconnect/sysmon_app_extensions-0e2c9888-60bb-44fb-800c-40c4203c6392.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: connectwise_auth_suricata
+  path: /datasets/attack_techniques/T1190/screenconnect/connectwise_auth_suricata-0e2c9888-60bb-44fb-800c-40c4203c6392.log
+  sourcetype: suricata
+  source: not_applicable
+- name: nginx_screenconnect
+  path: /datasets/attack_techniques/T1190/screenconnect/nginx_screenconnect-0e2c9888-60bb-44fb-800c-40c4203c6392.log
+  sourcetype: nginx:plus:kv
+  source: nginx:plus:kv

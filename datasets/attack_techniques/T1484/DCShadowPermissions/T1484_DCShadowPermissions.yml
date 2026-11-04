@@ -1,0 +1,13 @@
+author: STRT
+id: af09705b-8f52-4921-9c77-78a90307ab54
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD DCShadow Privileges
+  ACL Addition
+environment: attack_range
+directory: DCShadowPermissions
+mitre_technique: []
+datasets:
+- name: windows-security-xml
+  path: /datasets/attack_techniques/T1484/DCShadowPermissions/windows-security-xml-af09705b-8f52-4921-9c77-78a90307ab54.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

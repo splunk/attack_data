@@ -1,0 +1,13 @@
+author: STRT
+id: b6e7d109-b895-48d9-ab57-0bca76819856
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Suspicious File in
+  EFI Volume
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1542.001/snapattack/snapattack-b6e7d109-b895-48d9-ab57-0bca76819856.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

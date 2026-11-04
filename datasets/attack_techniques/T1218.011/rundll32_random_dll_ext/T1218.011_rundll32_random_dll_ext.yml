@@ -1,0 +1,13 @@
+author: STRT
+id: e3814bb4-51a8-4a31-a2ff-e3f631b0430b
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Rundll32 with Non-Standard
+  File Extension
+environment: attack_range
+directory: rundll32_random_dll_ext
+mitre_technique: []
+datasets:
+- name: rundll32_random_ext
+  path: /datasets/attack_techniques/T1218.011/rundll32_random_dll_ext/rundll32_random_ext-e3814bb4-51a8-4a31-a2ff-e3f631b0430b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

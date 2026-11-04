@@ -1,0 +1,13 @@
+author: STRT
+id: c7a96bd7-6804-4b1b-873d-1f4e37afda98
+date: '2026-07-13'
+description: Curated attack data generated for detection High Volume of Bytes Out
+  to Url
+environment: attack_range
+directory: web_upload_nginx
+mitre_technique: []
+datasets:
+- name: web_upload_nginx
+  path: /datasets/attack_techniques/T1567/web_upload_nginx/web_upload_nginx-c7a96bd7-6804-4b1b-873d-1f4e37afda98.log
+  sourcetype: nginx:plus:kv
+  source: /var/log/nginx/access.log

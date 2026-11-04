@@ -1,0 +1,13 @@
+author: STRT
+id: 7499a778-410f-4b51-989a-f9dd704526fb
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerView Kerberos
+  Service Ticket Request
+environment: attack_range
+directory: powerview
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/attack_techniques/T1558.003/powerview/windows-powershell-xml-7499a778-410f-4b51-989a-f9dd704526fb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

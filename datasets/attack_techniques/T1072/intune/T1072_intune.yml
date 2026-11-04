@@ -1,0 +1,13 @@
+author: STRT
+id: 83aaed6f-ef21-4563-8804-26c95322dd31
+date: '2026-07-10'
+description: Curated attack data generated for detection Microsoft Intune Device Health
+  Scripts
+environment: attack_range
+directory: intune
+mitre_technique: []
+datasets:
+- name: intune
+  path: /datasets/attack_techniques/T1072/intune/intune-83aaed6f-ef21-4563-8804-26c95322dd31.log
+  sourcetype: azure:monitor:activity
+  source: Azure AD

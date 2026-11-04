@@ -1,0 +1,12 @@
+author: STRT
+id: b3d51437-3f9f-419f-a2f5-6809ae8c2462
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Gem Privilege Escalation
+environment: attack_range
+directory: gem
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/gem/sysmon_linux-b3d51437-3f9f-419f-a2f5-6809ae8c2462.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: c2286c3e-4de9-4b74-bf90-a605509a7af0
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Composer Privilege
+  Escalation
+environment: attack_range
+directory: composer
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/composer/sysmon_linux-c2286c3e-4de9-4b74-bf90-a605509a7af0.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

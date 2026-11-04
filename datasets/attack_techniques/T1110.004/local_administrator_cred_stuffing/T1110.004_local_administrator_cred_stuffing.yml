@@ -1,0 +1,13 @@
+author: STRT
+id: 4664d3cf-6268-48a1-96ec-0e0c32a95454
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Local Administrator
+  Credential Stuffing
+environment: attack_range
+directory: local_administrator_cred_stuffing
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1110.004/local_administrator_cred_stuffing/windows-security-4664d3cf-6268-48a1-96ec-0e0c32a95454.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

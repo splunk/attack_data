@@ -1,0 +1,13 @@
+author: STRT
+id: 35fa7419-f782-486f-89c1-426b417b0e31
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Wermgr Alternate
+  Data Stream in Temp Dir
+environment: attack_range
+directory: rogueplanet
+mitre_technique: []
+datasets:
+- name: rogue_15
+  path: /datasets/attack_techniques/T1564.004/rogueplanet/rogue_15-35fa7419-f782-486f-89c1-426b417b0e31.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

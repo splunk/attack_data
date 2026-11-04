@@ -1,0 +1,13 @@
+author: STRT
+id: aaefac50-7fb4-4a1d-91b1-a7c8c3c5660e
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta Successful Single Factor
+  Authentication
+environment: attack_range
+directory: okta_single_factor_auth
+mitre_technique: []
+datasets:
+- name: okta_single_factor_auth
+  path: /datasets/attack_techniques/T1078.004/okta_single_factor_auth/okta_single_factor_auth-aaefac50-7fb4-4a1d-91b1-a7c8c3c5660e.log
+  sourcetype: OktaIM2:log
+  source: okta_log

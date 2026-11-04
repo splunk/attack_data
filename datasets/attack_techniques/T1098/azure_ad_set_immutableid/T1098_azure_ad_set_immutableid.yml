@@ -1,0 +1,13 @@
+author: STRT
+id: 482bd97f-889d-4705-93fa-cf5a05506fcc
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD User ImmutableId
+  Attribute Updated
+environment: attack_range
+directory: azure_ad_set_immutableid
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1098/azure_ad_set_immutableid/azure-audit-482bd97f-889d-4705-93fa-cf5a05506fcc.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

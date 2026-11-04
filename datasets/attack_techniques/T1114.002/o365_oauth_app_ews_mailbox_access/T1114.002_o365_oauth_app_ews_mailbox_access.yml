@@ -1,0 +1,13 @@
+author: STRT
+id: 6cf2a8b2-36b7-4ae4-9804-b17439bff655
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 OAuth App Mailbox Access
+  via EWS
+environment: attack_range
+directory: o365_oauth_app_ews_mailbox_access
+mitre_technique: []
+datasets:
+- name: o365_oauth_app_ews_mailbox_access
+  path: /datasets/attack_techniques/T1114.002/o365_oauth_app_ews_mailbox_access/o365_oauth_app_ews_mailbox_access-6cf2a8b2-36b7-4ae4-9804-b17439bff655.log
+  sourcetype: o365:management:activity
+  source: o365

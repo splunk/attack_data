@@ -1,0 +1,33 @@
+author: STRT
+id: 0af246cf-cb04-400c-a2d1-040a95ea6f72
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Execute Arbitrary
+  Commands with MSDT
+environment: attack_range
+directory: macro
+mitre_technique: []
+datasets:
+- name: msdt
+  path: /datasets/attack_techniques/T1566.001/macro/msdt-0af246cf-cb04-400c-a2d1-040a95ea6f72.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon_cabinf
+  path: /datasets/attack_techniques/T1566.001/macro/windows-sysmon_cabinf-0af246cf-cb04-400c-a2d1-040a95ea6f72.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon_mshtml
+  path: /datasets/attack_techniques/T1566.001/macro/windows-sysmon_mshtml-0af246cf-cb04-400c-a2d1-040a95ea6f72.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon_control
+  path: /datasets/attack_techniques/T1566.001/macro/windows-sysmon_control-0af246cf-cb04-400c-a2d1-040a95ea6f72.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon_icedid
+  path: /datasets/attack_techniques/T1566.001/macro/windows-sysmon_icedid-0af246cf-cb04-400c-a2d1-040a95ea6f72.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon_macros
+  path: /datasets/attack_techniques/T1566.001/macro/windows-sysmon_macros-0af246cf-cb04-400c-a2d1-040a95ea6f72.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: 89090928-f0b9-4b17-a86b-a236816cb8f1
+date: '2026-07-11'
+description: Curated attack data generated for detection Rundll32 Shimcache Flush
+environment: attack_range
+directory: shimcache_flush
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1112/shimcache_flush/sysmon-89090928-f0b9-4b17-a86b-a236816cb8f1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

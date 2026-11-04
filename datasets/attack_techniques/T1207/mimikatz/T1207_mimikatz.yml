@@ -1,0 +1,13 @@
+author: STRT
+id: e23b73a5-6251-40de-94ef-c2bdd82f1543
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD Short Lived Domain
+  Controller SPN Attribute
+environment: attack_range
+directory: mimikatz
+mitre_technique: []
+datasets:
+- name: windows-security-xml
+  path: /datasets/attack_techniques/T1207/mimikatz/windows-security-xml-e23b73a5-6251-40de-94ef-c2bdd82f1543.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

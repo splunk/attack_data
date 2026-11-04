@@ -1,0 +1,13 @@
+author: STRT
+id: 6615aac9-2e14-4fd1-8091-2e097eb97847
+date: '2026-07-13'
+description: Curated attack data generated for detection Exploit Public Facing Application
+  via Apache Commons Text
+environment: attack_range
+directory: text4shell
+mitre_technique: []
+datasets:
+- name: text4shell_nginx
+  path: /datasets/attack_techniques/T1190/text4shell/text4shell_nginx-6615aac9-2e14-4fd1-8091-2e097eb97847.log
+  sourcetype: nginx:plus:kv
+  source: nginx:plus:kv

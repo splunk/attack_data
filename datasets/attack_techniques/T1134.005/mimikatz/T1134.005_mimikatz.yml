@@ -1,0 +1,13 @@
+author: STRT
+id: 5039d1a3-3dd5-4a01-a1fb-5b2b2ab7561c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD Cross Domain SID
+  History Addition
+environment: attack_range
+directory: mimikatz
+mitre_technique: []
+datasets:
+- name: windows-security-xml
+  path: /datasets/attack_techniques/T1134.005/mimikatz/windows-security-xml-5039d1a3-3dd5-4a01-a1fb-5b2b2ab7561c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

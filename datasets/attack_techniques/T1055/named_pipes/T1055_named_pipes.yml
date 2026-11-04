@@ -1,0 +1,12 @@
+author: STRT
+id: 74d6a0b5-9528-477d-bda9-41584ab64e72
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PUA Named Pipe
+environment: attack_range
+directory: named_pipes
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1055/named_pipes/windows-sysmon-74d6a0b5-9528-477d-bda9-41584ab64e72.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 36efca14-756b-498a-918a-9968e0140e14
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows File and Directory
+  Enable ReadOnly Permissions
+environment: attack_range
+directory: icacls_inheritance
+mitre_technique: []
+datasets:
+- name: icacls_process_1
+  path: /datasets/attack_techniques/T1222.001/icacls_inheritance/icacls_process_1-36efca14-756b-498a-918a-9968e0140e14.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

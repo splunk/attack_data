@@ -1,0 +1,13 @@
+author: STRT
+id: 8eacda30-4289-4049-bfea-a657f7062c5a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerShell MSIX Package
+  Installation
+environment: attack_range
+directory: msix_unsigned
+mitre_technique: []
+datasets:
+- name: windows-powershell
+  path: /datasets/attack_techniques/T1553.005/msix_unsigned/windows-powershell-8eacda30-4289-4049-bfea-a657f7062c5a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

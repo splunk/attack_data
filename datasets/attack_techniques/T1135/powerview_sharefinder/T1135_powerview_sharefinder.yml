@@ -1,0 +1,13 @@
+author: STRT
+id: 88b2f7ec-9124-4806-af5b-5471b95b16cb
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows File Share Discovery
+  With Powerview
+environment: attack_range
+directory: powerview_sharefinder
+mitre_technique: []
+datasets:
+- name: windows-powershell
+  path: /datasets/attack_techniques/T1135/powerview_sharefinder/windows-powershell-88b2f7ec-9124-4806-af5b-5471b95b16cb.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

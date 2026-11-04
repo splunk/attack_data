@@ -1,0 +1,16 @@
+author: STRT
+id: 882e63c3-7aa1-4817-9367-eec2a5d4eeb4
+date: '2026-07-11'
+description: Curated attack data generated for detection NET Profiler UAC bypass
+environment: attack_range
+directory: uac_bypass
+mitre_technique: []
+datasets:
+- name: windows-sysmon2
+  path: /datasets/attack_techniques/T1548/uac_bypass/windows-sysmon2-882e63c3-7aa1-4817-9367-eec2a5d4eeb4.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1548/uac_bypass/windows-sysmon-882e63c3-7aa1-4817-9367-eec2a5d4eeb4.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

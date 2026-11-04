@@ -1,0 +1,13 @@
+author: STRT
+id: 97a472f7-cb7d-415f-92cf-bd9d52d378b8
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Service Principal
+  Owner Added
+environment: attack_range
+directory: azure_ad_add_serviceprincipal_owner
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1098/azure_ad_add_serviceprincipal_owner/azure-audit-97a472f7-cb7d-415f-92cf-bd9d52d378b8.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

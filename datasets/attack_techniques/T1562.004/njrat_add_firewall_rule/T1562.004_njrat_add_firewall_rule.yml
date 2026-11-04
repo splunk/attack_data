@@ -1,0 +1,13 @@
+author: STRT
+id: edb042c9-1685-47d8-b820-d3e93dfdf83a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify System Firewall
+  with Notable Process Path
+environment: attack_range
+directory: njrat_add_firewall_rule
+mitre_technique: []
+datasets:
+- name: njrat_firewall_sysmon
+  path: /datasets/attack_techniques/T1562.004/njrat_add_firewall_rule/njrat_firewall_sysmon-edb042c9-1685-47d8-b820-d3e93dfdf83a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

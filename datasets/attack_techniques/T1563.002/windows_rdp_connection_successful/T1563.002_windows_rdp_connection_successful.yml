@@ -1,0 +1,12 @@
+author: STRT
+id: f73c637d-e3de-41f8-92ec-bc027836f3ba
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows RDP Connection Successful
+environment: attack_range
+directory: windows_rdp_connection_successful
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1563.002/windows_rdp_connection_successful/windows-xml-f73c637d-e3de-41f8-92ec-bc027836f3ba.log
+  sourcetype: XmlWinEventLog
+  source: WinEventLog:Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational

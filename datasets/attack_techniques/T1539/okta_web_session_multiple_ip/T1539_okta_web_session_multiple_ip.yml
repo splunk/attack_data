@@ -1,0 +1,13 @@
+author: STRT
+id: c1525c48-1a94-469e-abc2-4dcc9b8c95db
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta Suspicious Use of a
+  Session Cookie
+environment: attack_range
+directory: okta_web_session_multiple_ip
+mitre_technique: []
+datasets:
+- name: okta_web_session_multiple_ip
+  path: /datasets/attack_techniques/T1539/okta_web_session_multiple_ip/okta_web_session_multiple_ip-c1525c48-1a94-469e-abc2-4dcc9b8c95db.log
+  sourcetype: OktaIM2:log
+  source: Okta

@@ -1,0 +1,12 @@
+author: STRT
+id: 708a0e11-d9be-4afe-8042-114267e3234c
+date: '2026-07-13'
+description: Curated attack data generated for detection Detect Outbound LDAP Traffic
+environment: attack_range
+directory: log4shell_ldap_traffic
+mitre_technique: []
+datasets:
+- name: pantraffic
+  path: /datasets/attack_techniques/T1059/log4shell_ldap_traffic/pantraffic-708a0e11-d9be-4afe-8042-114267e3234c.log
+  sourcetype: pan:traffic
+  source: not_applicable

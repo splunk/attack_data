@@ -1,0 +1,13 @@
+author: STRT
+id: 8419b614-6978-45c0-8298-563e2b6d8f8f
+date: '2026-07-13'
+description: Curated attack data generated for detection MCP Filesystem Server Suspicious
+  Extension Write
+environment: attack_range
+directory: mcp
+mitre_technique: []
+datasets:
+- name: mcp
+  path: /datasets/mcp/mcp-8419b614-6978-45c0-8298-563e2b6d8f8f.log
+  sourcetype: mcp:jsonrpc
+  source: mcp.log

@@ -1,0 +1,17 @@
+author: STRT
+id: 836ca047-93f3-4546-b4c2-60ec0712bf93
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows ConsoleHost History
+  File Deletion
+environment: attack_range
+directory: ConsoleHost_History_deletion
+mitre_technique: []
+datasets:
+- name: delete_pwh_history_file
+  path: /datasets/attack_techniques/T1070.003/ConsoleHost_History_deletion/delete_pwh_history_file-836ca047-93f3-4546-b4c2-60ec0712bf93.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: HistorySavePath_powershell
+  path: /datasets/attack_techniques/T1070.003/ConsoleHost_History_deletion/HistorySavePath_powershell-836ca047-93f3-4546-b4c2-60ec0712bf93.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

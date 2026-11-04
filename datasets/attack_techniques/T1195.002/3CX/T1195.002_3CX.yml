@@ -1,0 +1,16 @@
+author: STRT
+id: 4a9d3b18-a4c5-4444-b71c-279e9e8d2ea5
+date: '2026-07-13'
+description: Curated attack data generated for detection Hunting 3CXDesktopApp Software
+environment: attack_range
+directory: 3CX
+mitre_technique: []
+datasets:
+- name: 3cx_windows-sysmon
+  path: /datasets/attack_techniques/T1195.002/3CX/3cx_windows-sysmon-4a9d3b18-a4c5-4444-b71c-279e9e8d2ea5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: 3cx_network-windows-sysmon
+  path: /datasets/attack_techniques/T1195.002/3CX/3cx_network-windows-sysmon-4a9d3b18-a4c5-4444-b71c-279e9e8d2ea5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

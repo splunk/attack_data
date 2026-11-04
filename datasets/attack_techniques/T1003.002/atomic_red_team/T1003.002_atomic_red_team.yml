@@ -1,0 +1,12 @@
+author: STRT
+id: a9d698d4-4bb3-4316-8502-470b22ab31c0
+date: '2026-07-11'
+description: Curated attack data generated for detection Esentutl SAM Copy
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1003.002/atomic_red_team/windows-sysmon-a9d698d4-4bb3-4316-8502-470b22ab31c0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

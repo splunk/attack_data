@@ -1,0 +1,17 @@
+author: STRT
+id: 3ddf2007-c59e-47ef-8f3d-438dff8ed0c0
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Possible Access Or
+  Modification Of sshd Config File
+environment: attack_range
+directory: ssh_authorized_keys
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1098.004/ssh_authorized_keys/sysmon_linux-3ddf2007-c59e-47ef-8f3d-438dff8ed0c0.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: authkey_linux-sysmon
+  path: /datasets/attack_techniques/T1098.004/ssh_authorized_keys/authkey_linux-sysmon-3ddf2007-c59e-47ef-8f3d-438dff8ed0c0.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

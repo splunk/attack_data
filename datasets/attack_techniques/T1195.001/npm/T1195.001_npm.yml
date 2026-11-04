@@ -1,0 +1,21 @@
+author: STRT
+id: 8018b186-8ec0-4827-8ba8-f9efd2a4bc86
+date: '2026-07-11'
+description: Curated attack data generated for detection GitHub Workflow File Creation
+  or Modification
+environment: attack_range
+directory: npm
+mitre_technique: []
+datasets:
+- name: workflow_yml_sysmon
+  path: /datasets/attack_techniques/T1195.001/npm/workflow_yml_sysmon-8018b186-8ec0-4827-8ba8-f9efd2a4bc86.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: windows_workflow_sysmon
+  path: /datasets/attack_techniques/T1195.001/npm/windows_workflow_sysmon-8018b186-8ec0-4827-8ba8-f9efd2a4bc86.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: shai_hulud_workflow_sysmon
+  path: /datasets/attack_techniques/T1195.001/npm/shai_hulud_workflow_sysmon-8018b186-8ec0-4827-8ba8-f9efd2a4bc86.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

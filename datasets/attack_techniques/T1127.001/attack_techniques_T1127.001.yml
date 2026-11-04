@@ -1,0 +1,12 @@
+author: STRT
+id: b4f57e21-7bea-48a0-900a-3a90813bb97c
+date: '2026-07-11'
+description: Curated attack data generated for detection Suspicious msbuild path
+environment: attack_range
+directory: T1127.001
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1127.001/windows-sysmon-b4f57e21-7bea-48a0-900a-3a90813bb97c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

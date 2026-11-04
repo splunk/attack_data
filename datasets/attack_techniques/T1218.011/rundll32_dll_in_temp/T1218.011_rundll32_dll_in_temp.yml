@@ -1,0 +1,13 @@
+author: STRT
+id: a95f1540-6172-4e30-af7a-6150432e217e
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Rundll32 Load DLL
+  in Temp Dir
+environment: attack_range
+directory: rundll32_dll_in_temp
+mitre_technique: []
+datasets:
+- name: rundll32_tmp
+  path: /datasets/attack_techniques/T1218.011/rundll32_dll_in_temp/rundll32_tmp-a95f1540-6172-4e30-af7a-6150432e217e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

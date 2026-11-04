@@ -1,0 +1,13 @@
+author: STRT
+id: 57eb18a7-faf5-4295-bd77-b0cfea0e5450
+date: '2026-07-10'
+description: Curated attack data generated for detection Crowdstrike Multiple LOW
+  Severity Alerts
+environment: attack_range
+directory: multiple_low_alert
+mitre_technique: []
+datasets:
+- name: crowdstrike_multiple_low_cleaned
+  path: /datasets/suspicious_behaviour/crowdstrike_stream/multiple_low_alert/crowdstrike_multiple_low_cleaned-57eb18a7-faf5-4295-bd77-b0cfea0e5450.log
+  sourcetype: CrowdStrike:Event:Streams:JSON
+  source: CrowdStrike:Event:Streams

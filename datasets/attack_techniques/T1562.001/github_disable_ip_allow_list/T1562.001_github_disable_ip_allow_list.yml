@@ -1,0 +1,13 @@
+author: STRT
+id: 5e1643b0-ab62-4b6f-9f02-a53470c5107f
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Disable
+  IP Allow List
+environment: attack_range
+directory: github_disable_ip_allow_list
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1562.001/github_disable_ip_allow_list/github-5e1643b0-ab62-4b6f-9f02-a53470c5107f.log
+  sourcetype: httpevent
+  source: http:github

@@ -1,0 +1,13 @@
+author: STRT
+id: 28d53958-528f-43ea-a8ad-e9d323fd01c2
+date: '2026-07-10'
+description: Curated attack data generated for detection Powershell Using memory As
+  Backing Store
+environment: attack_range
+directory: pwsh
+mitre_technique: []
+datasets:
+- name: windows-powershell-xml
+  path: /datasets/honeypots/pwsh/windows-powershell-xml-28d53958-528f-43ea-a8ad-e9d323fd01c2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

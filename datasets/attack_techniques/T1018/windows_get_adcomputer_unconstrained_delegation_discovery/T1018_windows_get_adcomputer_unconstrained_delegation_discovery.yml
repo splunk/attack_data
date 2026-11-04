@@ -1,0 +1,13 @@
+author: STRT
+id: f1ff11e3-18bb-42bf-998e-857e48728ee5
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Get-AdComputer Unconstrained
+  Delegation Discovery
+environment: attack_range
+directory: windows_get_adcomputer_unconstrained_delegation_discovery
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1018/windows_get_adcomputer_unconstrained_delegation_discovery/windows-xml-f1ff11e3-18bb-42bf-998e-857e48728ee5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

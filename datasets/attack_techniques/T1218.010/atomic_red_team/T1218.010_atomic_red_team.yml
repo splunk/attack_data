@@ -1,0 +1,13 @@
+author: STRT
+id: 44d47167-ae11-42dc-babd-236cd5f88cee
+date: '2026-07-11'
+description: Curated attack data generated for detection Detect Regsvr32 Application
+  Control Bypass
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1218.010/atomic_red_team/windows-sysmon-44d47167-ae11-42dc-babd-236cd5f88cee.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

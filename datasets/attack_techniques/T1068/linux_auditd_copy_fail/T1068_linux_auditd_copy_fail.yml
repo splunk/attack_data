@@ -1,0 +1,17 @@
+author: STRT
+id: fa1177e9-9934-4069-870f-d83f5260b0b9
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Auditd Copy Fail Privilege
+  Escalation
+environment: attack_range
+directory: linux_auditd_copy_fail
+mitre_technique: []
+datasets:
+- name: linux_auditd
+  path: /datasets/attack_techniques/T1068/linux_auditd_copy_fail/linux_auditd-fa1177e9-9934-4069-870f-d83f5260b0b9.log
+  sourcetype: auditd
+  source: auditd
+- name: auth
+  path: /datasets/attack_techniques/T1068/linux_auditd_copy_fail/auth-fa1177e9-9934-4069-870f-d83f5260b0b9.log
+  sourcetype: linux_secure
+  source: /var/log/secure

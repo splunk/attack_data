@@ -1,0 +1,12 @@
+author: STRT
+id: 23e2f276-e1aa-43e3-a8f8-917a0c40dede
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Advanced Audit Disabled
+environment: attack_range
+directory: o365_advanced_audit_disabled
+mitre_technique: []
+datasets:
+- name: o365_advanced_audit_disabled
+  path: /datasets/attack_techniques/T1562.008/o365_advanced_audit_disabled/o365_advanced_audit_disabled-23e2f276-e1aa-43e3-a8f8-917a0c40dede.log
+  sourcetype: o365:management:activity
+  source: o365

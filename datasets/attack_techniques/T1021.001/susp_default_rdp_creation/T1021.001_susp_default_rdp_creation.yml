@@ -1,0 +1,13 @@
+author: STRT
+id: 885f79c5-9dd9-4682-a51a-80336bb0cf41
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Default RDP File
+  Creation By Non MSTSC Process
+environment: attack_range
+directory: susp_default_rdp_creation
+mitre_technique: []
+datasets:
+- name: default_rdp_dropped
+  path: /datasets/attack_techniques/T1021.001/susp_default_rdp_creation/default_rdp_dropped-885f79c5-9dd9-4682-a51a-80336bb0cf41.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

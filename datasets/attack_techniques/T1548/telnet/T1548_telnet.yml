@@ -1,0 +1,13 @@
+author: STRT
+id: 4354392c-f5e3-4f05-bd99-e91f09959701
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Telnet Authentication
+  Bypass
+environment: attack_range
+directory: telnet
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/telnet/sysmon_linux-4354392c-f5e3-4f05-bd99-e91f09959701.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

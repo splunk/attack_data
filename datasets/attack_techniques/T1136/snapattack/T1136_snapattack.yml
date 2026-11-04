@@ -1,0 +1,13 @@
+author: STRT
+id: 7c9bb6d6-fc8f-4c81-a5ec-35c99b69c65e
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Entra User Management
+  Via Azure CLI
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1136/snapattack/snapattack-7c9bb6d6-fc8f-4c81-a5ec-35c99b69c65e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

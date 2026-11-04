@@ -1,0 +1,12 @@
+author: STRT
+id: 921afcc4-fc24-4105-9cd2-1efa592bc620
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Device Code Authentication
+environment: attack_range
+directory: device_code_authentication
+mitre_technique: []
+datasets:
+- name: azure-audit
+  path: /datasets/attack_techniques/T1528/device_code_authentication/azure-audit-921afcc4-fc24-4105-9cd2-1efa592bc620.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

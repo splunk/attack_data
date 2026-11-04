@@ -1,0 +1,13 @@
+author: STRT
+id: a9d55559-2b6f-4085-a922-bb340715807f
+date: '2026-07-13'
+description: Curated attack data generated for detection Windows Spearphishing Attachment
+  Connect To None MS Office Domain
+environment: attack_range
+directory: office_doc_abuses_rels
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1566.001/office_doc_abuses_rels/sysmon-a9d55559-2b6f-4085-a922-bb340715807f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

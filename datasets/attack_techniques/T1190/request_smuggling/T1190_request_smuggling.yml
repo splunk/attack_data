@@ -1,0 +1,24 @@
+author: STRT
+id: 972f2cee-57e7-45ee-b663-015c709503cc
+date: '2026-07-13'
+description: Curated attack data generated for detection HTTP Duplicated Header
+environment: attack_range
+directory: request_smuggling
+mitre_technique: []
+datasets:
+- name: suricata_request_smuggling
+  path: /datasets/attack_techniques/T1190/request_smuggling/suricata_request_smuggling-972f2cee-57e7-45ee-b663-015c709503cc.log
+  sourcetype: suricata
+  source: not_applicable
+- name: nginx_request_smuggling
+  path: /datasets/attack_techniques/T1190/request_smuggling/nginx_request_smuggling-972f2cee-57e7-45ee-b663-015c709503cc.log
+  sourcetype: nginx:plus:kv
+  source: nginx:plus:kv
+- name: suricata_reserved_names
+  path: /datasets/attack_techniques/T1190/request_smuggling/suricata_reserved_names-972f2cee-57e7-45ee-b663-015c709503cc.log
+  sourcetype: suricata
+  source: not_applicable
+- name: nginx_scripting_tools
+  path: /datasets/attack_techniques/T1190/request_smuggling/nginx_scripting_tools-972f2cee-57e7-45ee-b663-015c709503cc.log
+  sourcetype: nginx:plus:kv
+  source: nginx:plus:kv

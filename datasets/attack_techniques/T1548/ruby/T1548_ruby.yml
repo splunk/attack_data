@@ -1,0 +1,12 @@
+author: STRT
+id: 616ca358-c0a0-47e0-95ba-1bee0d2bacc4
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Ruby Privilege Escalation
+environment: attack_range
+directory: ruby
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/ruby/sysmon_linux-616ca358-c0a0-47e0-95ba-1bee0d2bacc4.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

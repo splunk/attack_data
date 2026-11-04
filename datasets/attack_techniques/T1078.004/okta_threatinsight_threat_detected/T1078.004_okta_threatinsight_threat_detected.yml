@@ -1,0 +1,13 @@
+author: STRT
+id: 033d40cd-0f4c-4e0b-84bf-472c4565e341
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta ThreatInsight Threat
+  Detected
+environment: attack_range
+directory: okta_threatinsight_threat_detected
+mitre_technique: []
+datasets:
+- name: okta_threatinsight_threat_detected
+  path: /datasets/attack_techniques/T1078.004/okta_threatinsight_threat_detected/okta_threatinsight_threat_detected-033d40cd-0f4c-4e0b-84bf-472c4565e341.log
+  sourcetype: OktaIM2:log
+  source: Okta

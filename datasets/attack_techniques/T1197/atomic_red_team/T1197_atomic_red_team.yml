@@ -1,0 +1,16 @@
+author: STRT
+id: 0ed31c61-007d-43c9-b26a-660edcfd71e0
+date: '2026-07-10'
+description: Curated attack data generated for detection BITS Job Persistence
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1197/atomic_red_team/windows-sysmon-0ed31c61-007d-43c9-b26a-660edcfd71e0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: crowdstrike_falcon
+  path: /datasets/attack_techniques/T1197/atomic_red_team/crowdstrike_falcon-0ed31c61-007d-43c9-b26a-660edcfd71e0.log
+  sourcetype: crowdstrike:events:sensor
+  source: crowdstrike

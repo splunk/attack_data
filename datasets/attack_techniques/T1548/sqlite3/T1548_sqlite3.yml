@@ -1,0 +1,12 @@
+author: STRT
+id: 26677266-c2f8-4864-9bbd-aead81256552
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Sqlite3 Privilege Escalation
+environment: attack_range
+directory: sqlite3
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/sqlite3/sysmon_linux-26677266-c2f8-4864-9bbd-aead81256552.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

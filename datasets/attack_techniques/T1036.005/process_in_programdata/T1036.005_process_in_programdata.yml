@@ -1,0 +1,13 @@
+author: STRT
+id: e60a00d0-70b9-4927-b9cd-3d3db33d27ea
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Process Execution
+  From ProgramData
+environment: attack_range
+directory: process_in_programdata
+mitre_technique: []
+datasets:
+- name: exec_programdata
+  path: /datasets/attack_techniques/T1036.005/process_in_programdata/exec_programdata-e60a00d0-70b9-4927-b9cd-3d3db33d27ea.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: e09fad2b-24a0-4d84-a1f2-ac11c2529138
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows New Deny Permission
+  Set On Service SD Via Sc.EXE
+environment: attack_range
+directory: sc_sdset_tampering
+mitre_technique: []
+datasets:
+- name: sc_sdset_tampering_sysmon
+  path: /datasets/attack_techniques/T1564/sc_sdset_tampering/sc_sdset_tampering_sysmon-e09fad2b-24a0-4d84-a1f2-ac11c2529138.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

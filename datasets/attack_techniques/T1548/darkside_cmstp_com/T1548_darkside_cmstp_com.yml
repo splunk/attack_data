@@ -1,0 +1,12 @@
+author: STRT
+id: c143dd1a-01a6-4b85-b40a-72bd95bc3e14
+date: '2026-07-10'
+description: Curated attack data generated for detection CMLUA Or CMSTPLUA UAC Bypass
+environment: attack_range
+directory: darkside_cmstp_com
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1548/darkside_cmstp_com/windows-sysmon-c143dd1a-01a6-4b85-b40a-72bd95bc3e14.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: d2463259-8e7a-41ad-8b16-0cb124762320
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Detect Users with KMS
+  keys performing encryption S3
+environment: attack_range
+directory: s3_file_encryption
+mitre_technique: []
+datasets:
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1486/s3_file_encryption/aws_cloudtrail_events-d2463259-8e7a-41ad-8b16-0cb124762320.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

@@ -1,0 +1,13 @@
+author: STRT
+id: aeb06c8a-a641-44f9-86e3-c6fd06c294d2
+date: '2026-07-10'
+description: Curated attack data generated for detection GCP Multiple Users Failing
+  To Authenticate From Ip
+environment: attack_range
+directory: gcp_gws_multiple_login_failure
+mitre_technique: []
+datasets:
+- name: gws_login
+  path: /datasets/attack_techniques/T1110.003/gcp_gws_multiple_login_failure/gws_login-aeb06c8a-a641-44f9-86e3-c6fd06c294d2.log
+  sourcetype: gws:reports:login
+  source: gws_login

@@ -1,0 +1,13 @@
+author: STRT
+id: bb6ff683-762b-4292-9019-21d2972f6372
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Bypass MFA via Trusted
+  IP
+environment: attack_range
+directory: o365_bypass_mfa_via_trusted_ip
+mitre_technique: []
+datasets:
+- name: o365_bypass_mfa_via_trusted_ip
+  path: /datasets/attack_techniques/T1562.007/o365_bypass_mfa_via_trusted_ip/o365_bypass_mfa_via_trusted_ip-bb6ff683-762b-4292-9019-21d2972f6372.log
+  sourcetype: o365:management:activity
+  source: o365

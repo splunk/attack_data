@@ -1,0 +1,12 @@
+author: STRT
+id: 68ab4cf1-32a9-43da-a396-772d2d970f9a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows AD GPO New CSE Addition
+environment: attack_range
+directory: group_policy_new_cse
+mitre_technique: []
+datasets:
+- name: windows-security
+  path: /datasets/attack_techniques/T1484.001/group_policy_new_cse/windows-security-68ab4cf1-32a9-43da-a396-772d2d970f9a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

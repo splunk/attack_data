@@ -1,0 +1,13 @@
+author: STRT
+id: db2612ae-8ff2-442e-b1b6-575e74b7802f
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows SnappyBee Create
+  Test Registry
+environment: attack_range
+directory: test_registry
+mitre_technique: []
+datasets:
+- name: test_reg
+  path: /datasets/attack_techniques/T1112/test_registry/test_reg-db2612ae-8ff2-442e-b1b6-575e74b7802f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

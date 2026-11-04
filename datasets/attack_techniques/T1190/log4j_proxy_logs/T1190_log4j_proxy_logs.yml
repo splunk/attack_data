@@ -1,0 +1,13 @@
+author: STRT
+id: ca29ba92-8773-4214-82f9-b445bf34aacc
+date: '2026-07-13'
+description: Curated attack data generated for detection Log4Shell JNDI Payload Injection
+  Attempt
+environment: attack_range
+directory: log4j_proxy_logs
+mitre_technique: []
+datasets:
+- name: log4j_proxy_logs
+  path: /datasets/attack_techniques/T1190/log4j_proxy_logs/log4j_proxy_logs-ca29ba92-8773-4214-82f9-b445bf34aacc.log
+  sourcetype: nginx:plus:kv
+  source: nginx

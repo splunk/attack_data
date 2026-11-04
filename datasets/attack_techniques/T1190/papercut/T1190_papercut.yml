@@ -1,0 +1,21 @@
+author: STRT
+id: 8cc17f11-d6c4-459f-b266-96579abc82b2
+date: '2026-07-13'
+description: Curated attack data generated for detection PaperCut NG Suspicious Behavior
+  Debug Log
+environment: attack_range
+directory: papercut
+mitre_technique: []
+datasets:
+- name: server
+  path: /datasets/attack_techniques/T1190/papercut/server-8cc17f11-d6c4-459f-b266-96579abc82b2.log
+  sourcetype: papercutng
+  source: papercutng
+- name: papercutng-app-spawn_windows-sysmon
+  path: /datasets/attack_techniques/T1190/papercut/papercutng-app-spawn_windows-sysmon-8cc17f11-d6c4-459f-b266-96579abc82b2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: papercutng-suricata
+  path: /datasets/attack_techniques/T1190/papercut/papercutng-suricata-8cc17f11-d6c4-459f-b266-96579abc82b2.log
+  sourcetype: suricata
+  source: not_applicable

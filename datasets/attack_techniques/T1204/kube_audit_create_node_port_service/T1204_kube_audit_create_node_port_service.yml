@@ -1,0 +1,12 @@
+author: STRT
+id: d789cc05-3302-4e1f-8a88-df83a04231c9
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes Node Port Creation
+environment: attack_range
+directory: kube_audit_create_node_port_service
+mitre_technique: []
+datasets:
+- name: kube_audit_create_node_port_service
+  path: /datasets/attack_techniques/T1204/kube_audit_create_node_port_service/kube_audit_create_node_port_service-d789cc05-3302-4e1f-8a88-df83a04231c9.log
+  sourcetype: _json
+  source: kubernetes

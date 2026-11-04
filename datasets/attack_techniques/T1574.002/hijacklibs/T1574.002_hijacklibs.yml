@@ -1,0 +1,13 @@
+author: STRT
+id: cf98199f-f4cd-4f9e-84e4-f1dbb3f023a5
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Known Abused DLL
+  Created
+environment: attack_range
+directory: hijacklibs
+mitre_technique: []
+datasets:
+- name: hijacklibs_sysmon
+  path: /datasets/attack_techniques/T1574.002/hijacklibs/hijacklibs_sysmon-cf98199f-f4cd-4f9e-84e4-f1dbb3f023a5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

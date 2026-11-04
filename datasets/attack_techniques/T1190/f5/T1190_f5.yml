@@ -1,0 +1,17 @@
+author: STRT
+id: 95b9000e-76a2-4392-b87c-ac7572744cfc
+date: '2026-07-13'
+description: Curated attack data generated for detection F5 BIG-IP iControl REST Vulnerability
+  CVE-2022-1388
+environment: attack_range
+directory: f5
+mitre_technique: []
+datasets:
+- name: f5
+  path: /datasets/attack_techniques/T1190/f5/f5-95b9000e-76a2-4392-b87c-ac7572744cfc.log
+  sourcetype: pan:threat
+  source: not_applicable
+- name: f5_tmui
+  path: /datasets/attack_techniques/T1190/f5/f5_tmui-95b9000e-76a2-4392-b87c-ac7572744cfc.log
+  sourcetype: suricata
+  source: not_applicable

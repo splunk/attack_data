@@ -1,0 +1,13 @@
+author: STRT
+id: 3599879c-cfe8-4202-82ad-a09d0d1de871
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Cloud Files Filter
+  Loaded by Uncommon Process
+environment: attack_range
+directory: redsun
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1068/redsun/windows-sysmon-3599879c-cfe8-4202-82ad-a09d0d1de871.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

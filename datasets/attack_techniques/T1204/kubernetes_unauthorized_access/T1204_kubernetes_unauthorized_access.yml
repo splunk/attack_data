@@ -1,0 +1,12 @@
+author: STRT
+id: c93377bc-1c83-4a13-a7be-ea5f13050ea7
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes Unauthorized Access
+environment: attack_range
+directory: kubernetes_unauthorized_access
+mitre_technique: []
+datasets:
+- name: kubernetes_unauthorized_access
+  path: /datasets/attack_techniques/T1204/kubernetes_unauthorized_access/kubernetes_unauthorized_access-c93377bc-1c83-4a13-a7be-ea5f13050ea7.log
+  sourcetype: _json
+  source: kubernetes

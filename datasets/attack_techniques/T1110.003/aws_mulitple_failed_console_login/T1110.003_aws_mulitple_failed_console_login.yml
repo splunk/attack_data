@@ -1,0 +1,13 @@
+author: STRT
+id: b79f6118-879c-4542-9d40-352f7b4f3f6a
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS High Number Of Failed
+  Authentications From Ip
+environment: attack_range
+directory: aws_mulitple_failed_console_login
+mitre_technique: []
+datasets:
+- name: aws_cloudtrail
+  path: /datasets/attack_techniques/T1110.003/aws_mulitple_failed_console_login/aws_cloudtrail-b79f6118-879c-4542-9d40-352f7b4f3f6a.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail
