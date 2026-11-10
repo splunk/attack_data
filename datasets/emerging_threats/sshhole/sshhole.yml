@@ -1,0 +1,17 @@
+author: Raven Tait, Splunk
+id: 3a478d9e-9c1f-4cde-a32f-c6a991b621e4
+date: '2026-11-09'
+description: Linux syslog and auditd datasets for sshhole SSH authentication bypass.
+environment: attack_range
+directory: sshhole
+mitre_technique:
+    - T1078.003
+datasets:
+    - name: syslog
+      path: /datasets/emerging_threats/sshhole/syslog.log
+      sourcetype: linux_messages_syslog
+      source: /var/log/messages
+    - name: audit
+      path: /datasets/emerging_threats/sshhole/audit.log
+      sourcetype: auditd
+      source: auditd
