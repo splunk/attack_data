@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 2fc43c6e-bb86-473c-b670-e3af0744a830
+date: '2026-11-12'
+description: Generated datasets covering the encoded char sequences using cmd.exe.
+environment: attack_range
+directory: windows_cmd_encoded_chars
+mitre_technique:
+- T1027.010
+datasets:
+- name: windows_cmd_encoded_chars.log
+  path: /datasets/attack_techniques/T1027.010/windows_cmd_encoded_chars/windows_cmd_encoded_chars.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

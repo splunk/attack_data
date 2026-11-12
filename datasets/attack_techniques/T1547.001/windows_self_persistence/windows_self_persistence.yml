@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: a8fe1960-d687-4436-b8ce-0eb778150570
+date: '2026-11-12'
+description: Generated datasets covering the self-persistence using Windows registry.
+environment: attack_range
+directory: windows_self_persistence
+mitre_technique:
+- T1547.001
+datasets:
+- name: windows_self_persistence.log
+  path: /datasets/attack_techniques/T1547.001/windows_self_persistence/windows_self_persistence.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'

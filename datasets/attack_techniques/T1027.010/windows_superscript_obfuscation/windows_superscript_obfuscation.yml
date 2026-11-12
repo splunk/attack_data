@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: d9ea883a-27cb-4db8-8e98-622f949763f4
+date: '2026-11-12'
+description: Generated datasets covering the superscript obfuscation using Windows.
+environment: attack_range
+directory: windows_superscript_obfuscation
+mitre_technique:
+- T1027.010
+datasets:
+- name: windows_superscript_obfuscation.log
+  path: /datasets/attack_techniques/T1027.010/windows_superscript_obfuscation/windows_superscript_obfuscation.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
