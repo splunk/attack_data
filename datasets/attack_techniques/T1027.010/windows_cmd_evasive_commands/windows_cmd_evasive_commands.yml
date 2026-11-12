@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: d6fbe80b-2b8b-4047-a93e-c841e7463d1c
+date: '2026-11-12'
+description: Generated datasets covering the evasive commands using cmd.exe.
+environment: attack_range
+directory: windows_cmd_evasive_commands
+mitre_technique:
+- T1027.010
+datasets:
+- name: windows_cmd_evasive_commands.log
+  path: /datasets/attack_techniques/T1027.010/windows_cmd_evasive_commands/windows_cmd_evasive_commands.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
