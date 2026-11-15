@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 07a1a115-3589-4562-9d39-563d5254e958
+date: '2026-11-16'
+description: Generated datasets covering native messaging registry modifications.
+environment: attack_range
+directory: windows_native_messaging_registry
+mitre_technique:
+- T1176.001
+datasets:
+- name: windows_native_messaging_registry.log
+  path: /datasets/attack_techniques/T1176.001/windows_native_messaging_registry/windows_native_messaging_registry.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
