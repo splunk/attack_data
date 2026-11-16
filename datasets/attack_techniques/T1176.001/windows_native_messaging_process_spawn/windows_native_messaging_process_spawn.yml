@@ -1,0 +1,13 @@
+author: Onur Mustafa Erdogan, Splunk
+id: 25c3682b-8251-4105-8c10-761f9787168d
+date: '2026-11-16'
+description: Generated datasets covering native messaging process spawning a process.
+environment: attack_range
+directory: windows_native_messaging_process_spawn
+mitre_technique:
+- T1176.001
+datasets:
+- name: windows_native_messaging_process_spawn.log
+  path: /datasets/attack_techniques/T1176.001/windows_native_messaging_process_spawn/windows_native_messaging_process_spawn.log
+  sourcetype: XmlWinEventLog
+  source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
