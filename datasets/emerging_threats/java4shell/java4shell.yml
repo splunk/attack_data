@@ -1,0 +1,29 @@
+author: Nasreddine Bencherchali, Onur Erdogan, Splunk
+id: 7e2bb3de-8abd-4574-9b37-b62623b4b141
+date: '2026-11-18'
+description: Generated datasets for Java4Shell vulnerability.
+environment: NA
+directory: java4shell
+mitre_technique:
+- T1190
+datasets:
+- name: java4shell_jit
+  path: /datasets/emerging_threats/java4shell/java4shell_jit.log
+  sourcetype: java:hotspot:jit
+  source: jit.log
+- name: java4shell_exception
+  path: /datasets/emerging_threats/java4shell/java4shell_exception.log
+  sourcetype: java:hotspot:exceptions
+  source: exceptions.log
+- name: java4shell_sysmon
+  path: /datasets/emerging_threats/java4shell/java4shell_sysmon.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: java4shell_bro_http
+  path: /datasets/emerging_threats/java4shell/java4shell_bro_http.log
+  sourcetype: bro:http:json
+  source: http.log
+- name: java4shell_zeek_body
+  path: /datasets/emerging_threats/java4shell/java4shell_zeek_body.log
+  sourcetype: zeek:http_post_body:json
+  source: http_post_body.log
