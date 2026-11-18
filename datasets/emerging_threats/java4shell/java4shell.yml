@@ -27,4 +27,3 @@ datasets:
   path: /datasets/emerging_threats/java4shell/java4shell_zeek_body.log
   sourcetype: zeek:http_post_body:json
   source: http_post_body.log
-  
