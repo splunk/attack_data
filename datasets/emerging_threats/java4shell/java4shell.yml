@@ -17,8 +17,8 @@ datasets:
   source: exceptions.log
 - name: java4shell_sysmon
   path: /datasets/emerging_threats/java4shell/java4shell_sysmon.log
-  sourcetype: XmlWinEventLog
-  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
 - name: java4shell_bro_http
   path: /datasets/emerging_threats/java4shell/java4shell_bro_http.log
   sourcetype: bro:http:json
