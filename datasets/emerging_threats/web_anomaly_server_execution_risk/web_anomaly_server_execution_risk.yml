@@ -1,0 +1,18 @@
+author: Nasreddine Bencherchali, Splunk
+id: 78e6e67d-971b-4b60-a535-30f8f33dab79
+date: '2026-11-23'
+description: Generated dataset of Redacted ES-generated Risk events from a web anomaly followed by server shell execution.
+environment: attack_range
+directory: web_anomaly_server_execution_risk
+mitre_technique:
+- T1190
+- T1059.004
+datasets:
+- name: web_risk
+  path: /datasets/emerging_threats/web_anomaly_server_execution_risk/web_risk.log
+  sourcetype: stash
+  source: not_applicable
+- name: endpoint_risk
+  path: /datasets/emerging_threats/web_anomaly_server_execution_risk/endpoint_risk.log
+  sourcetype: stash
+  source: not_applicable
