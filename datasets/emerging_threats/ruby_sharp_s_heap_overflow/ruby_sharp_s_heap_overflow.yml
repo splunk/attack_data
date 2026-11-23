@@ -1,0 +1,26 @@
+author: Nasreddine Bencherchali, Splunk
+id: 608d4e4b-59be-430e-b655-7137bfa46281
+date: '2026-11-20'
+description: Generated datasets for Zeek HTTP, request-header, and auditd events for web request and shell behavior.
+environment: attack_range
+directory: ruby_sharp_s_heap_overflow
+mitre_technique:
+- T1190
+- T1059.004
+datasets:
+- name: http
+  path: /datasets/emerging_threats/ruby_sharp_s_heap_overflow/http.log
+  sourcetype: bro:http:json
+  source: not_applicable
+- name: request_headers
+  path: /datasets/emerging_threats/ruby_sharp_s_heap_overflow/request_headers.log
+  sourcetype: zeek:http_request_header:json
+  source: not_applicable
+- name: http_post_body
+  path: /datasets/emerging_threats/ruby_sharp_s_heap_overflow/http_post_body.log
+  sourcetype: zeek:http_post_body:json
+  source: not_applicable
+- name: audit_shell_exec
+  path: /datasets/emerging_threats/ruby_sharp_s_heap_overflow/audit.log
+  sourcetype: linux:audit
+  source: /var/log/audit/audit.log

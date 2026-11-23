@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: 51e0e3f6-e78b-4cd9-9c2b-7d88c39a47d1
+date: '2026-11-20'
+description: Generated datasets for Zeek POST-body event with an empty SOAP array dimension.
+environment: attack_range
+directory: php_cve_2026_15353
+mitre_technique:
+- T1190
+datasets:
+- name: soap_array_attack
+  path: /datasets/emerging_threats/php_cve_2026_15353/soap_array_attack.log
+  sourcetype: zeek:http_post_body:json
+  source: not_applicable

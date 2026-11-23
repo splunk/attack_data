@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: d976858b-4d7b-4d88-8e5a-f14905c52172
+date: '2026-11-22'
+description: Generated datasets for Zeek files.log event for a harmless PostScript upload under an image filename.
+environment: attack_range
+directory: upload2shell_behavior
+mitre_technique:
+- T1190
+datasets:
+- name: file_upload
+  path: /datasets/emerging_threats/upload2shell_behavior/files.log
+  sourcetype: bro:files:json
+  source: not_applicable

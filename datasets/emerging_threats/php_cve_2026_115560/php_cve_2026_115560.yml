@@ -1,0 +1,15 @@
+author: Nasreddine Bencherchali, Splunk
+id: 111120ef-0864-4653-9fa5-897e9121289e
+date: '2026-11-20'
+description: Generated datasets for Zeek POST-body event retaining a serialized-object marker.
+environment: attack_range
+directory: php_cve_2026_115560
+mitre_technique:
+- T1190
+- T1059.003
+- T1059.004
+datasets:
+- name: upload_attack
+  path: /datasets/emerging_threats/php_cve_2026_115560/upload_attack.log
+  sourcetype: zeek:http_post_body:json
+  source: not_applicable

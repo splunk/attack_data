@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: 2cd12a32-57a7-431a-a14d-c78522050261
+date: '2026-11-20'
+description: Generated datasets for Zeek POST-body event with a DTD entity reference in an XML attribute.
+environment: attack_range
+directory: php_cve_2026_129506
+mitre_technique:
+- T1190
+datasets:
+- name: soap_dtd_attack
+  path: /datasets/emerging_threats/php_cve_2026_129506/soap_dtd_attack.log
+  sourcetype: zeek:http_post_body:json
+  source: not_applicable
