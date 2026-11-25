@@ -1,0 +1,21 @@
+author: Maria Jose Erquiaga
+id: 0a1906da-d8a7-4331-a9e3-eef07f8c465f
+date: '2026-11-25'
+description: >-
+  Dataset containing eight anonymised AWS CloudTrail events generated during
+  two lab executions of AWS IAM discovery. Each execution begins with a
+  successful STS GetCallerIdentity call followed by IAM enumeration from the
+  same assumed-role ARN within five minutes. The first execution includes
+  ListUsers and ListRoles. The second includes ListUsers, ListAccessKeys,
+  ListAttachedUserPolicies, and ListRoles. The dataset supports testing
+  identity verification followed by cloud account discovery and related
+  IAM enumeration.
+environment: attack_range
+directory: aws_iam_discovery_sequence
+mitre_technique:
+  - T1087.004
+datasets:
+  - name: aws_iam_discovery_sequence-json
+    path: /datasets/attack_techniques/T1087.004/aws_iam_discovery_sequence/aws_iam_discovery_sequence.json
+    sourcetype: aws:cloudtrail
+    source: aws_cloudtrail
