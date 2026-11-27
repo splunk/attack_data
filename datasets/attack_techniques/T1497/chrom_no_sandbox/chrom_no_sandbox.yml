@@ -17,3 +17,7 @@ datasets:
   path: /datasets/attack_techniques/T1497/chrom_no_sandbox/cisco_evm.log
   sourcetype: cisco:evm:process_activity
   source: not_applicable
+- name: cisco_evm_windows_chromium_browser_no_security_sandbox_process
+  path: /datasets/attack_techniques/T1497/chrom_no_sandbox/cisco_evm_windows_chromium_browser_no_security_sandbox_process.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

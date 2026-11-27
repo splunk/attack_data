@@ -15,3 +15,7 @@ datasets:
   path: /datasets/attack_techniques/T1563.002/rdphijack/4688_tscon_windows-security.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1563.002/rdphijack/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

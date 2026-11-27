@@ -27,3 +27,7 @@ datasets:
   path: /datasets/attack_techniques/T1197/atomic_red_team/cisco_evm_windows_bits_upload_activity.log
   sourcetype: cisco:evm:process_activity
   source: not_applicable
+- name: cisco_evm_bits_job_persistence
+  path: /datasets/attack_techniques/T1197/atomic_red_team/cisco_evm_bits_job_persistence.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

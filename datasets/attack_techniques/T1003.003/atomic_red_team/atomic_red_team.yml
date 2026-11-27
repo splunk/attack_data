@@ -33,3 +33,11 @@ datasets:
   path: /datasets/attack_techniques/T1003.003/atomic_red_team/cisco_evm_creation_of_shadow_copy_with_wmic_and_powershell.log
   sourcetype: cisco:evm:process_activity
   source: not_applicable
+- name: cisco_evm_credential_dumping_via_copy_command_from_shadow_copy
+  path: /datasets/attack_techniques/T1003.003/atomic_red_team/cisco_evm_credential_dumping_via_copy_command_from_shadow_copy.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_credential_dumping_via_symlink_to_shadow_copy
+  path: /datasets/attack_techniques/T1003.003/atomic_red_team/cisco_evm_credential_dumping_via_symlink_to_shadow_copy.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

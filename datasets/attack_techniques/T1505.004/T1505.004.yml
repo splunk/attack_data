@@ -52,3 +52,11 @@ datasets:
   path: /datasets/attack_techniques/T1505.004/appcmd_4688-windows-security.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: cisco_evm_windows_iis_components_add_new_module
+  path: /datasets/attack_techniques/T1505.004/cisco_evm_windows_iis_components_add_new_module.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_disable_windows_event_logging_disable_http_logging
+  path: /datasets/attack_techniques/T1505.004/cisco_evm_windows_disable_windows_event_logging_disable_http_logging.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -29,3 +29,19 @@ datasets:
   path: /datasets/attack_techniques/T1562.002/auditpol_tampering/cisco_evm_windows_audit_policy_disabled_via_auditpol.log
   sourcetype: cisco:evm:process_activity
   source: not_applicable
+- name: cisco_evm_windows_audit_policy_cleared_via_auditpol
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/cisco_evm_windows_audit_policy_cleared_via_auditpol.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_audit_policy_excluded_category_via_auditpol
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/cisco_evm_windows_audit_policy_excluded_category_via_auditpol.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_audit_policy_security_descriptor_tampering_via_auditpol
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/cisco_evm_windows_audit_policy_security_descriptor_tampering_via_auditpol.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_global_object_access_audit_list_cleared_via_auditpol
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/cisco_evm_windows_global_object_access_audit_list_cleared_via_auditpol.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

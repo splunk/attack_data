@@ -44,3 +44,7 @@ datasets:
   path: /datasets/attack_techniques/T1059.001/atomic_red_team/cisco_evm.log
   sourcetype: cisco:evm:process_activity
   source: not_applicable
+- name: cisco_evm_windows_enable_win32_scheduledjob_via_registry
+  path: /datasets/attack_techniques/T1059.001/atomic_red_team/cisco_evm_windows_enable_win32_scheduledjob_via_registry.log
+  sourcetype: cisco:evm:registry_value_activity
+  source: not_applicable

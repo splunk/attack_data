@@ -33,3 +33,11 @@ datasets:
   path: /datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm_dump_lsass_via_procdump
+  path: /datasets/attack_techniques/T1003.001/atomic_red_team/cisco_evm_dump_lsass_via_procdump.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_dump_lsass_via_comsvcs_dll
+  path: /datasets/attack_techniques/T1003.001/atomic_red_team/cisco_evm_dump_lsass_via_comsvcs_dll.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
