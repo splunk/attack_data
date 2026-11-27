@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: ec379160-bfee-43d7-8fe9-78964553339d
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint Behavioral Protection alerts for a PowerShell DownloadString followed by Nishang reverse-shell script activity in the same process. The script was fetched from a loopback HTTP listener, and a loopback TCP listener recorded a successful shell callback. Only the two alerts required by the correlation are included.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/downloaded_powershell_with_nishang_reverse_shell
+mitre_technique:
+    - T1059.001
+    - T1095
+datasets:
+    - name: downloaded_powershell_with_nishang_reverse_shell
+      path: /datasets/cisco_secure_endpoint/behavioral_protection/downloaded_powershell_with_nishang_reverse_shell/cisco_se.log
+      source: not_applicable
+      sourcetype: cisco:se
