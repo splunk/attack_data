@@ -1,0 +1,13 @@
+author: vahid malekmohammadi
+id: b48789c4-6557-4c1b-a8a2-0bd4f03b353e
+date: '2026-10-31'
+description: Generated dataset for Linux auditd eBPF program load. Captured from a host where pamspy loads an eBPF program and attaches a uprobe to pam_get_authtok in libpam to steal credentials during PAM authentication. Contains SYSCALL (syscall=bpf, a0=BPF_PROG_LOAD), PROCTITLE and native BPF (op=LOAD) records. Supports the Linux Auditd eBPF Program Load detection.
+environment: attack_range
+directory: linux_auditd_ebpf
+mitre_technique:
+- T1556.003
+datasets:
+- name: linux_auditd_ebpf
+  path: /datasets/attack_techniques/T1556.003/linux_auditd_ebpf/linux_auditd_ebpf.log
+  sourcetype: auditd
+  source: auditd
