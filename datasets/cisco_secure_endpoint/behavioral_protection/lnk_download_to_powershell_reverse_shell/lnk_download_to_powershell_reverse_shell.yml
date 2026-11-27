@@ -1,0 +1,15 @@
+author: Nasreddine Bencherchali, Splunk
+id: 4b850c33-45f3-4cce-97ed-88f1aad244ac
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint Behavioral Protection alerts from opening a real Windows shortcut that launched hidden PowerShell, downloaded a functional Nishang-style reverse-shell script from a loopback HTTP listener, and executed it. The HTTP listener recorded two GET requests; the loopback TCP listener sent a harmless host-name command and received EC2AMAZ-637FDSD in response. The dataset contains one PowerShell Download String, one LNK Launches PowerShell, and one Nishang Reverse Shell alert from the same endpoint and process GUID; duplicate LNK and wrapper alerts were excluded. No payload or remote endpoint outside the lab is included.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/lnk_download_to_powershell_reverse_shell
+mitre_technique:
+- T1204.002
+- T1059.001
+- T1095
+datasets:
+- name: lnk_download_to_powershell_reverse_shell
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/lnk_download_to_powershell_reverse_shell/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

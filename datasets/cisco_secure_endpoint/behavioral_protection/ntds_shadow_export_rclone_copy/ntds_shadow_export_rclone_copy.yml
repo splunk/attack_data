@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: d08a1c48-0356-4844-bf25-680c986d4546
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint BP alerts from a VSS shadow copy, a real NTDS install-from-media export of an isolated dummy AD forest, and an rclone SFTP copy of the exact exported ntds.dit file to another lab host. The 16,777,216-byte source and sink files had matching SHA256 hashes; the database itself is not part of this fixture.
+environment: Isolated Windows Server 2022 test domain controller with three synthetic AD users, Cisco Secure Endpoint 8.6.4, Cisco Security Cloud TA 4.2.0, and in-lab Linux SFTP sink
+directory: cisco_secure_endpoint/behavioral_protection/ntds_shadow_export_rclone_copy
+mitre_technique:
+- T1003.003
+- T1048
+datasets:
+- name: ntds_shadow_export_rclone_copy
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/ntds_shadow_export_rclone_copy/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

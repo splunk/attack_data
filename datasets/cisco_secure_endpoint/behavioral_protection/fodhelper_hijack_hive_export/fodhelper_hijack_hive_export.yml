@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: 64a30ce1-cfed-4f83-a55b-9b17230d6c2f
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint BP alerts from a medium-integrity lab administrator registering a Fodhelper UAC handler and the same account later exporting HKLM\SOFTWARE from a separately approved high-integrity task. Secure Endpoint Exploit Prevention blocked the Fodhelper launch in this run; the alerts do not prove the bypass succeeded. The 74,661,888-byte hive was verified locally by SHA256 and was not included in this fixture.
+environment: Windows Server 2022 disposable lab host with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/fodhelper_hijack_hive_export
+mitre_technique:
+- T1548.002
+- T1012
+datasets:
+- name: fodhelper_hijack_hive_export
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/fodhelper_hijack_hive_export/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

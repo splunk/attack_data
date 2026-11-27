@@ -1,0 +1,15 @@
+author: Nasreddine Bencherchali, Splunk
+id: 01d4d42e-eb51-4c24-9409-ad5daace31f1
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint Behavioral Protection alerts from a signed Microsoft Edge identity helper loading its signed msedge_elf.dll from a lab folder under Users\Public, followed by a genuine FRP v0.72.0 client renamed node.exe and launched from the same PowerShell parent. The FRP client forwarded a loopback TCP request to a local backend, which recorded CodexBPDeliveryProxy-probe and returned CodexBPDeliveryProxy-forwarded while the client remained running. The dataset contains only the DLL sideload and actual proxy-run alerts; an earlier config-verify alert was excluded. These benign lab files do not establish ChaosBot malware.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4, FRP v0.72.0, and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/public_dll_sideload_and_reverse_proxy
+mitre_technique:
+- T1574.001
+- T1090
+- T1036
+datasets:
+- name: public_dll_sideload_and_reverse_proxy
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/public_dll_sideload_and_reverse_proxy/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

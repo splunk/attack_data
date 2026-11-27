@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: 9351886d-74cb-4924-a782-3f04aa470996
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint Behavioral Protection alerts from exporting a Windows HKLM\SOFTWARE hive containing a harmless lab marker, then using rclone to copy the exact exported file to a separate lab-controlled SMB server. The 73,740,288-byte source and sink files had the same SHA256 hash. The dataset contains only the two alert events, not the hive itself; no SAM or SECURITY hive was copied.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4, rclone 1.76.0, and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/registry_hive_export_and_rclone_transfer
+mitre_technique:
+- T1012
+- T1048
+datasets:
+- name: registry_hive_export_and_rclone_transfer
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/registry_hive_export_and_rclone_transfer/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

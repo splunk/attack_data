@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: 67633ac4-6fb3-4c21-9b8e-d61956025379
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint Behavioral Protection alerts from creating and running a Windows scheduled task with an mshta.exe action for a benign HTA on a loopback HTTP listener. The listener recorded the HTA GET, a harmless marker file was created, and Task Scheduler reported Last Result 0. The task and marker were removed after the probe.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/scheduled_remote_hta_executed
+mitre_technique:
+- T1053.005
+- T1218.005
+datasets:
+- name: scheduled_remote_hta_executed
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/scheduled_remote_hta_executed/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se
