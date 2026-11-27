@@ -1,0 +1,13 @@
+author: vahid malekmohammadi
+id: 7d709b3d-ed24-4b8d-ac67-6233b2c3adfa
+date: '2026-10-26'
+description: Generated dataset for linux auditd cross-process ptrace (PTRACE_SEIZE) in attack range. A tracer (strace) attaches to a running process via ptrace, producing SYSCALL (syscall=ptrace), OBJ_PID and PROCTITLE records keyed as tracing.
+environment: attack_range
+directory: linux_auditd_ptrace
+mitre_technique:
+- T1055.008
+datasets:
+- name: linux_auditd_ptrace
+  path: /datasets/attack_techniques/T1055.008/linux_auditd_ptrace/linux_auditd_ptrace.log
+  sourcetype: auditd
+  source: auditd
