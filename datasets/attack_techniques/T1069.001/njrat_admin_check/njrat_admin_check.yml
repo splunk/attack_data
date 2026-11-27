@@ -1,0 +1,19 @@
+author: Teoderick Contreras, Splunk
+id: a631ab32-ab61-407f-9755-ac19bb180e11
+date: '2023-09-19'
+description: Generated datasets for njrat admin check in attack range.
+environment: attackrange
+# Legacy references
+# https://malpedia.caad.fkie.fraunhofer.de/details/win.njrat
+directory: njrat_admin_check
+mitre_technique:
+- T1069.001
+datasets:
+- name: win_dat
+  path: /datasets/attack_techniques/T1069.001/njrat_admin_check/win_dat.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1069.001/njrat_admin_check/cisco_evm.log
+  sourcetype: cisco:evm:file_activity
+  source: not_applicable

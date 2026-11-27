@@ -1,0 +1,27 @@
+author: Teoderick Contreras, Splunk
+id: 70aa5bf2-b95a-11ef-8789-acde48001122
+date: '2024-12-13'
+description: Generated datasets for icacls inheritance in attack range.
+environment: attack_range
+# Legacy references
+# https://www.splunk.com/en_us/blog/security/-applocker-rules-as-defense-evasion-complete-analysis.html
+directory: icacls_inheritance
+mitre_technique:
+- T1222.001
+datasets:
+- name: icacls_process_1
+  path: /datasets/attack_techniques/T1222.001/icacls_inheritance/icacls_process_1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm_windows_file_and_directory_permissions_remove_inheritance
+  path: /datasets/attack_techniques/T1222.001/icacls_inheritance/cisco_evm_windows_file_and_directory_permissions_remove_inheritance.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_file_and_directory_permissions_enable_inheritance
+  path: /datasets/attack_techniques/T1222.001/icacls_inheritance/cisco_evm_windows_file_and_directory_permissions_enable_inheritance.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_file_and_directory_enable_readonly_permissions
+  path: /datasets/attack_techniques/T1222.001/icacls_inheritance/cisco_evm_windows_file_and_directory_enable_readonly_permissions.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

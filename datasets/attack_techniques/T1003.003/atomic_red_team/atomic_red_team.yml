@@ -25,3 +25,11 @@ datasets:
   path: /datasets/attack_techniques/T1003.003/atomic_red_team/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm_creation_of_shadow_copy
+  path: /datasets/attack_techniques/T1003.003/atomic_red_team/cisco_evm_creation_of_shadow_copy.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_creation_of_shadow_copy_with_wmic_and_powershell
+  path: /datasets/attack_techniques/T1003.003/atomic_red_team/cisco_evm_creation_of_shadow_copy_with_wmic_and_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

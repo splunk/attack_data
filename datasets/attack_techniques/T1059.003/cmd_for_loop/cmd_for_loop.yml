@@ -11,3 +11,7 @@ datasets:
   path: /datasets/attack_techniques/T1059.003/cmd_for_loop/cmd_for_loop.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1059.003/cmd_for_loop/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

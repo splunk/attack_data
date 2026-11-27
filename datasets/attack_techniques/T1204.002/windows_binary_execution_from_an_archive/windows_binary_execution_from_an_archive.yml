@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: 85e750fa-79bb-465f-a90b-376e695f1d04
+date: '2026-11-26'
+description: Cisco EVM process telemetry from opening the Windows Notepad executable from a local ZIP
+  extraction via Explorer on the Windows Attack Range host.
+environment: attack_range
+directory: windows_binary_execution_from_an_archive
+mitre_technique:
+- T1204.002
+datasets:
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1204.002/windows_binary_execution_from_an_archive/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

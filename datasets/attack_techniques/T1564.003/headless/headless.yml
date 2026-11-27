@@ -1,0 +1,19 @@
+author: Michael Haag
+id: 98070d52-1c52-407b-8be1-1534d77cd245
+date: 2023-11-1
+description: Simulated attacks using conhost with --headless
+environment: attack_range
+# Legacy references
+# https://attack.mitre.org/techniques/T1564/003
+directory: headless
+mitre_technique:
+- T1564.003
+datasets:
+- name: 4688_conhost_headless
+  path: /datasets/attack_techniques/T1564.003/headless/4688_conhost_headless.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1564.003/headless/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

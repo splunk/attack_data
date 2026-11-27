@@ -16,3 +16,7 @@ datasets:
   path: /datasets/attack_techniques/T1216/atomic_red_team/windows-security.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1216/atomic_red_team/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

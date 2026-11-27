@@ -15,3 +15,19 @@ datasets:
   path: /datasets/attack_techniques/T1087.001/AD_discovery/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1087.001/AD_discovery/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_local_account_discovery_with_wmic
+  path: /datasets/attack_techniques/T1087.001/AD_discovery/cisco_evm_local_account_discovery_with_wmic.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_getlocaluser_with_powershell
+  path: /datasets/attack_techniques/T1087.001/AD_discovery/cisco_evm_getlocaluser_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_getwmiobject_user_account_with_powershell
+  path: /datasets/attack_techniques/T1087.001/AD_discovery/cisco_evm_getwmiobject_user_account_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

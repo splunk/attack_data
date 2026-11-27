@@ -11,3 +11,7 @@ datasets:
     sourcetype: XmlWinEventLog
     source: XmlWinEventLog:Security
     path: /datasets/attack_techniques/T1078.001/snapattack/snapattack.log
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1078.001/snapattack/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

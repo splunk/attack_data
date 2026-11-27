@@ -16,4 +16,7 @@ datasets:
     sourcetype: sysmon:linux
     source: Syslog:Linux-Sysmon/Operational
     path: /datasets/attack_techniques/T1190/snapattack/snapattack_linux.log
-
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1190/snapattack/cisco_evm.log
+  sourcetype: cisco:evm:file_activity
+  source: not_applicable

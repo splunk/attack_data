@@ -20,3 +20,7 @@ datasets:
   path: /datasets/attack_techniques/T1218.011/atomic_red_team/ordinal_windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1218.011/atomic_red_team/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -21,3 +21,11 @@ datasets:
   path: /datasets/attack_techniques/T1490/atomic_red_team/4688_xml_windows_security_delete_shadow.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: cisco_evm_bcdedit_failure_recovery_modification
+  path: /datasets/attack_techniques/T1490/atomic_red_team/cisco_evm_bcdedit_failure_recovery_modification.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_deleting_shadow_copies
+  path: /datasets/attack_techniques/T1490/atomic_red_team/cisco_evm_deleting_shadow_copies.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -11,3 +11,11 @@ datasets:
   path: /datasets/attack_techniques/T1059/autoit/sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1059/autoit/cisco_evm.log
+  sourcetype: cisco:evm:file_activity
+  source: not_applicable
+- name: cisco_evm_windows_autoit3_execution
+  path: /datasets/attack_techniques/T1059/autoit/cisco_evm_windows_autoit3_execution.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

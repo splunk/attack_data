@@ -16,3 +16,7 @@ datasets:
   path: /datasets/attack_techniques/T1053.005/lateral_movement/windows-security-task.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1053.005/lateral_movement/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

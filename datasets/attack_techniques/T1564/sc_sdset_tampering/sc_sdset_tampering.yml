@@ -12,3 +12,11 @@ datasets:
   path: /datasets/attack_techniques/T1564/sc_sdset_tampering/sc_sdset_tampering_sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1564/sc_sdset_tampering/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_new_deny_permission_set_on_service_sd_via_sc_exe
+  path: /datasets/attack_techniques/T1564/sc_sdset_tampering/cisco_evm_windows_new_deny_permission_set_on_service_sd_via_sc_exe.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

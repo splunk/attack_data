@@ -23,3 +23,11 @@ datasets:
   path: /datasets/attack_techniques/T1059.001/encoded_powershell/windows-security.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1059.001/encoded_powershell/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_malicious_powershell_process___execution_policy_bypass
+  path: /datasets/attack_techniques/T1059.001/encoded_powershell/cisco_evm_malicious_powershell_process___execution_policy_bypass.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

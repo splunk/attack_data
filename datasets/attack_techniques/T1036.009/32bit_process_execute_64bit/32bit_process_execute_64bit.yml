@@ -1,0 +1,19 @@
+author: Teoderick Contreras, Splunk
+id: b7a9e60c-e895-11ef-9080-acde48001122
+date: '2025-02-11'
+description: Generated datasets for 32bit process execute 64bit in attack range.
+environment: attack_range
+# Legacy references
+# https://www.trendmicro.com/en_nl/research/24/k/earth-estries.html
+directory: 32bit_process_execute_64bit
+mitre_technique:
+- T1036.009
+datasets:
+- name: 32bit_spawn_64bit
+  path: /datasets/attack_techniques/T1036.009/32bit_process_execute_64bit/32bit_spawn_64bit.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1036.009/32bit_process_execute_64bit/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

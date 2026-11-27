@@ -12,3 +12,19 @@ datasets:
   path: /datasets/attack_techniques/T1049/AD_discovery/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1049/AD_discovery/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_network_connection_discovery_with_arp
+  path: /datasets/attack_techniques/T1049/AD_discovery/cisco_evm_network_connection_discovery_with_arp.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_network_connection_discovery_via_net
+  path: /datasets/attack_techniques/T1049/AD_discovery/cisco_evm_windows_network_connection_discovery_via_net.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_getnettcpconnection_with_powershell
+  path: /datasets/attack_techniques/T1049/AD_discovery/cisco_evm_getnettcpconnection_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

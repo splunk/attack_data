@@ -24,3 +24,19 @@ datasets:
   path: /datasets/attack_techniques/T1047/atomic_red_team/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm_windows_wmi_process_call_create
+  path: /datasets/attack_techniques/T1047/atomic_red_team/cisco_evm_windows_wmi_process_call_create.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_process_execution_via_wmi
+  path: /datasets/attack_techniques/T1047/atomic_red_team/cisco_evm_process_execution_via_wmi.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1047/atomic_red_team/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_remote_process_instantiation_via_wmi
+  path: /datasets/attack_techniques/T1047/atomic_red_team/cisco_evm_remote_process_instantiation_via_wmi.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

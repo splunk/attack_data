@@ -13,3 +13,19 @@ datasets:
   path: /datasets/attack_techniques/T1562.002/auditpol_tampering/auditpol_tampering_sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_audit_policy_auditing_option_modified___registry
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/cisco_evm_windows_audit_policy_auditing_option_modified___registry.log
+  sourcetype: cisco:evm:registry_value_activity
+  source: not_applicable
+- name: cisco_evm_windows_audit_policy_auditing_option_disabled_via_auditpol
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/cisco_evm_windows_audit_policy_auditing_option_disabled_via_auditpol.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_audit_policy_disabled_via_auditpol
+  path: /datasets/attack_techniques/T1562.002/auditpol_tampering/cisco_evm_windows_audit_policy_disabled_via_auditpol.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

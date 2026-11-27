@@ -15,3 +15,11 @@ datasets:
   path: /datasets/attack_techniques/T1048.003/nslookup_exfil/sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1048.003/nslookup_exfil/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_excessive_usage_of_nslookup_app
+  path: /datasets/attack_techniques/T1048.003/nslookup_exfil/cisco_evm_excessive_usage_of_nslookup_app.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

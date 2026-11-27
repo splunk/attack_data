@@ -11,3 +11,7 @@ datasets:
   path: /datasets/attack_techniques/T1036.003/renamed_command_interpreter/renamed_command_interpreter.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1036.003/renamed_command_interpreter/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

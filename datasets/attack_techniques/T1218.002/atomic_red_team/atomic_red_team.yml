@@ -11,3 +11,11 @@ datasets:
   path: /datasets/attack_techniques/T1218.002/atomic_red_team/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1218.002/atomic_red_team/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_rundll32_control_rundll_world_writable_directory
+  path: /datasets/attack_techniques/T1218.002/atomic_red_team/cisco_evm_rundll32_control_rundll_world_writable_directory.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

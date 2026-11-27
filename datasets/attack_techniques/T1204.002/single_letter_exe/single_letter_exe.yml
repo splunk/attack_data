@@ -11,3 +11,7 @@ datasets:
   path: /datasets/attack_techniques/T1204.002/single_letter_exe/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1204.002/single_letter_exe/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

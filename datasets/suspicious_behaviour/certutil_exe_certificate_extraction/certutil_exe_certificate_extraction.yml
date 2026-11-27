@@ -1,0 +1,18 @@
+author: Bhavin Patel
+id: cc9b2676-efc9-11eb-926b-550bf0943fbb
+date: '2020-12-09'
+description: This dataset has arguments to certutil.exe indicating the manipulation
+  or extraction of Certificate
+environment: attack_range
+# Legacy references
+# https://www.sygnia.co/golden-saml-advisory
+directory: certutil_exe_certificate_extraction
+datasets:
+- name: windows-sysmon
+  path: /datasets/suspicious_behaviour/certutil_exe_certificate_extraction/windows-sysmon.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/suspicious_behaviour/certutil_exe_certificate_extraction/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

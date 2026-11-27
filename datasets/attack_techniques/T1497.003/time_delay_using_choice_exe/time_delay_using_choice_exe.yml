@@ -1,0 +1,19 @@
+author: Teoderick Contreras, Splunk
+id: 8ebfee56-cbfb-11ee-a62b-acde48001122
+date: '2024-02-15'
+description: Generated datasets for time delay using choice exe in attack range.
+environment: attack_range
+# Legacy references
+# https://malpedia.caad.fkie.fraunhofer.de/details/win.404keylogger
+directory: time_delay_using_choice_exe
+mitre_technique:
+- T1497.003
+datasets:
+- name: snakekeylogger_choice
+  path: /datasets/attack_techniques/T1497.003/time_delay_using_choice_exe/snakekeylogger_choice.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1497.003/time_delay_using_choice_exe/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

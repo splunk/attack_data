@@ -56,3 +56,7 @@ datasets:
   path: /datasets/emerging_threats/php2shell/audit.log
   sourcetype: auditd
   source: auditd
+- name: cisco_evm
+  path: /datasets/emerging_threats/php2shell/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -1,0 +1,19 @@
+author: Teoderick Contreras, Splunk
+id: 842a3076-3a15-11f0-9e8a-629be3538068
+date: '2025-05-26'
+description: Generated datasets for chrom no sandbox in attack range.
+environment: attack_range
+# Legacy references
+# https://unix.stackexchange.com/questions/68832/what-does-the-chromium-option-no-sandbox-mean
+directory: chrom_no_sandbox
+mitre_technique:
+- T1497
+datasets:
+- name: chrome-no_sandbox
+  path: /datasets/attack_techniques/T1497/chrom_no_sandbox/chrome-no_sandbox.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1497/chrom_no_sandbox/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

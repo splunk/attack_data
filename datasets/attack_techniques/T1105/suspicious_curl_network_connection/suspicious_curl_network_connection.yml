@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: f6f15ba8-60f6-4f8d-a3f4-daf07c6d5aa8
+date: '2026-11-26'
+description: Cisco EVM process telemetry from a verified HTTP HEAD request to a public Amazon S3 endpoint
+  on the Windows Attack Range host.
+environment: attack_range
+directory: suspicious_curl_network_connection
+mitre_technique:
+- T1105
+datasets:
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1105/suspicious_curl_network_connection/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
