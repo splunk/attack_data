@@ -1,0 +1,13 @@
+author: Ahmed Hassan
+id: 68062594-f5df-4ac6-a928-c224a6c92c74
+date: '2026-08-18'
+description: Synthetically generated IntrusionEvent samples with GeneratorID=411 (SnortML, ML-only detection with no corroborating classic signature) for dual-signal triage tests. ML probability must not be equated to a classic Snort signature true positive.
+environment: manual simulations in a controlled lab environment
+directory: intrusion_event_snortml
+mitre_technique:
+- T1190
+datasets:
+- name: intrusion_events_snortml
+  path: /datasets/cisco_secure_firewall_threat_defense/intrusion_event_snortml/intrusion_events_snortml.log
+  sourcetype: cisco:sfw:estreamer
+  source: cisco:sfw:estreamer

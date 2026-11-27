@@ -1,0 +1,13 @@
+author: Ahmed Hassan
+id: 98845775-b43a-4e2d-84b0-f8ba387a7e37
+date: '2026-08-18'
+description: Synthetically generated dataset pairing a classic Snort signature IntrusionEvent (GeneratorID=1) with its corroborating ConnectionEvent (Encrypted Visibility Engine telemetry) sharing the same ConnectionID, for dual-signal corroboration analytic unit tests.
+environment: manual simulations in a controlled lab environment
+directory: dual_signal_corroboration
+mitre_technique:
+- T1190
+datasets:
+- name: dual_signal_events
+  path: /datasets/cisco_secure_firewall_threat_defense/dual_signal_corroboration/dual_signal_events.log
+  sourcetype: cisco:sfw:estreamer
+  source: cisco:sfw:estreamer
