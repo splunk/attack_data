@@ -9,5 +9,9 @@ mitre_technique:
 datasets:
 -   name: snapattack
     sourcetype: XmlWinEventLog
-    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational 
+    source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
     path: /datasets/attack_techniques/T1040/windows_network_sniffing_tools/snapattack_windows.log
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1040/windows_network_sniffing_tools/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

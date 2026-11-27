@@ -1,0 +1,21 @@
+author: Steven Dick
+id: 8c54662e-a3c8-456c-a8bb-928e6c13b641
+date: 2024-5-3
+description: Some simple T1036.003 and T1036.005 tests using moved/renamed cmd.exe
+environment: attack_range
+# Legacy references
+# https://attack.mitre.org/techniques/T1036/
+# https://attack.mitre.org/techniques/T1036/003/
+# https://attack.mitre.org/techniques/T1036/005/
+directory: cmd_lolbas_usage
+mitre_technique:
+- T1036
+datasets:
+- name: cmd_lolbas_usage
+  path: /datasets/attack_techniques/T1036/cmd_lolbas_usage/cmd_lolbas_usage.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1036/cmd_lolbas_usage/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

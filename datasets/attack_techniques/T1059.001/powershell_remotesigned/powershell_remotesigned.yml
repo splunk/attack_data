@@ -19,3 +19,7 @@ datasets:
   path: /datasets/attack_techniques/T1059.001/powershell_remotesigned/windows-powershell-remote-xml.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1059.001/powershell_remotesigned/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

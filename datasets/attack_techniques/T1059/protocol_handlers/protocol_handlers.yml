@@ -1,0 +1,19 @@
+author: Michael Haag
+id: c9e67ebc-003e-5deb-972b-4de3923a125a
+date: '2022-05-30'
+description: Generated datasets for protocol handlers in attack range.
+environment: attack_range
+# Legacy references
+# https://attack.mitre.org/techniques/T1059
+directory: protocol_handlers
+mitre_technique:
+- T1059
+datasets:
+- name: protocolhandlers
+  path: /datasets/attack_techniques/T1059/protocol_handlers/protocolhandlers.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1059/protocol_handlers/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

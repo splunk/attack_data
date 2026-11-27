@@ -34,3 +34,11 @@ datasets:
   path: /datasets/attack_techniques/T1136.001/atomic_red_team/windows-security-esxadmins.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: cisco_evm_windows_create_local_administrator_account_via_net
+  path: /datasets/attack_techniques/T1136.001/atomic_red_team/cisco_evm_windows_create_local_administrator_account_via_net.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_esx_admins_group_creation_via_net
+  path: /datasets/attack_techniques/T1136.001/atomic_red_team/cisco_evm_windows_esx_admins_group_creation_via_net.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

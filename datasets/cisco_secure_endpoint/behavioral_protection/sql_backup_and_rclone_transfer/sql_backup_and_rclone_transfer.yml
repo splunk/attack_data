@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: b0841139-029d-4c4b-96fb-35d59b201ff3
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint Behavioral Protection alerts from backing up a seeded SQL Server 2022 Express database with sqlcmd, then copying the exact .bak file by rclone to a separate lab-controlled SMB server. The test database contained one harmless row, SQL RESTORE VERIFYONLY with checksum succeeded, and the 3,067,904-byte source and sink backups had the same SHA256 hash. The dataset contains only the two alert events, not the backup file.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4, SQL Server 2022 Express, rclone 1.76.0, and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/sql_backup_and_rclone_transfer
+mitre_technique:
+- T1005
+- T1048
+datasets:
+- name: sql_backup_and_rclone_transfer
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/sql_backup_and_rclone_transfer/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

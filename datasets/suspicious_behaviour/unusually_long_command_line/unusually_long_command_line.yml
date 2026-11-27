@@ -1,0 +1,13 @@
+author: Nasreddine Bencherchali, Splunk
+id: 6861271b-d9f0-4b48-9514-116751bbe5c6
+date: '2026-11-26'
+description: Cisco EVM process telemetry for a long PowerShell calculation and ten short native hostname
+  checks from the Windows Attack Range host.
+environment: attack_range
+directory: unusually_long_command_line
+mitre_technique: []
+datasets:
+- name: cisco_evm
+  path: /datasets/suspicious_behaviour/unusually_long_command_line/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

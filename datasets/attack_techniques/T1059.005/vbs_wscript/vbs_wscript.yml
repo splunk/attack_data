@@ -12,3 +12,11 @@ datasets:
   path: /datasets/attack_techniques/T1059.005/vbs_wscript/sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1059.005/vbs_wscript/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_vbscript_execution_using_wscript_app
+  path: /datasets/attack_techniques/T1059.005/vbs_wscript/cisco_evm_vbscript_execution_using_wscript_app.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

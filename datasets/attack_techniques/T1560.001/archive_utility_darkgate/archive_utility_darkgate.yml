@@ -1,0 +1,19 @@
+author: Teoderick Contreras, Splunk
+id: 4d1a31eb-6242-4ac8-8ce2-ebdc47733449
+date: '2023-11-23'
+description: Generated datasets for archive utility darkgate in attack range.
+environment: attackrange
+# Legacy references
+# https://malpedia.caad.fkie.fraunhofer.de/details/win.darkgate
+directory: archive_utility_darkgate
+mitre_technique:
+- T1560.001
+datasets:
+- name: rar_sys
+  path: /datasets/attack_techniques/T1560.001/archive_utility_darkgate/rar_sys.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1560.001/archive_utility_darkgate/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

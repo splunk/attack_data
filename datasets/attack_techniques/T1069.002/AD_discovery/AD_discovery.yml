@@ -32,3 +32,39 @@ datasets:
   path: /datasets/attack_techniques/T1069.002/AD_discovery/windows-powershell-xml-powerview.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1069.002/AD_discovery/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_domain_group_discovery_with_dsquery
+  path: /datasets/attack_techniques/T1069.002/AD_discovery/cisco_evm_domain_group_discovery_with_dsquery.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_getadgroup_with_powershell
+  path: /datasets/attack_techniques/T1069.002/AD_discovery/cisco_evm_getadgroup_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_domain_group_discovery_with_wmic
+  path: /datasets/attack_techniques/T1069.002/AD_discovery/cisco_evm_domain_group_discovery_with_wmic.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_elevated_group_discovery_with_wmic
+  path: /datasets/attack_techniques/T1069.002/AD_discovery/cisco_evm_elevated_group_discovery_with_wmic.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_getwmiobject_ds_group_with_powershell
+  path: /datasets/attack_techniques/T1069.002/AD_discovery/cisco_evm_getwmiobject_ds_group_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_ldifde_directory_object_behavior
+  path: /datasets/attack_techniques/T1069.002/AD_discovery/cisco_evm_windows_ldifde_directory_object_behavior.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_sensitive_group_discovery_with_net
+  path: /datasets/attack_techniques/T1069.002/AD_discovery/cisco_evm_windows_sensitive_group_discovery_with_net.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_getdomaingroup_with_powershell
+  path: /datasets/attack_techniques/T1069.002/AD_discovery/cisco_evm_getdomaingroup_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

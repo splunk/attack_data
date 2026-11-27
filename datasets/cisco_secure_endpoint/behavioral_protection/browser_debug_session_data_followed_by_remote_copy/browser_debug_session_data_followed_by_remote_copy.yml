@@ -1,0 +1,18 @@
+author: Nasreddine Bencherchali, Splunk
+id: d521d0ea-e95d-45f0-ad80-93078ca52e2e
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint BP alerts from an ordered Edge remote-debugging launch and forced
+  shutdown, followed 33 seconds later by rclone copying session_cookie.json to a controlled SMB sink.
+  An actual loopback HTTP response seeded a synthetic cookie, CDP Storage.getCookies exported it as the
+  133-byte JSON file, and independent sink SHA256 matched the source. Edge 158 required interactive edge://inspect
+  approval for default-profile CDP access.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/browser_debug_session_data_followed_by_remote_copy
+mitre_technique:
+- T1539
+- T1048
+datasets:
+- name: browser_debug_session_data_followed_by_remote_copy
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/browser_debug_session_data_followed_by_remote_copy/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

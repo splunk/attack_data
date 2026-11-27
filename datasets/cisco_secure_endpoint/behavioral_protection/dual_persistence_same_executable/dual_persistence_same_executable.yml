@@ -1,0 +1,17 @@
+author: Nasreddine Bencherchali, Splunk
+id: 7fb7ef74-296b-4825-ab00-631c05b10a4c
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint behavioral protection alerts for a benign executable referenced
+  by a long Windows Run value and a scheduled task. The two raw Threat Detection events were exported
+  from Splunk cisco_se after the real registry and task changes on a Windows Server 2022 lab member host.
+  The long arguments are benign test data, not obfuscation.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/dual_persistence_same_executable
+mitre_technique:
+- T1547.001
+- T1053.005
+datasets:
+- name: dual_persistence_same_executable
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/dual_persistence_same_executable/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

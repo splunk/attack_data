@@ -11,3 +11,7 @@ datasets:
   path: /datasets/attack_techniques/T1046/advanced_ip_port_scanner/advanced_ip_port_scanner.log
   sourcetype: XmlWinEventLog
   source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1046/advanced_ip_port_scanner/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

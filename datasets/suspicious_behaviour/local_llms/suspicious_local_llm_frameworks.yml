@@ -18,3 +18,7 @@ datasets:
   path: /datasets/suspicious_behaviour/local_llms/sysmon_dns.log
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
   sourcetype: XmlWinEventLog
+- name: cisco_evm
+  path: /datasets/suspicious_behaviour/local_llms/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

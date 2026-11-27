@@ -1,0 +1,19 @@
+author: Teoderick Contreras, Splunk
+id: c14ca9f1-6b61-46b6-a39c-fbd9c2ab3745
+date: '2023-11-23'
+description: Generated datasets for rmdir delete files and dir in attack range.
+environment: attackrange
+# Legacy references
+# https://malpedia.caad.fkie.fraunhofer.de/details/win.darkgate
+directory: rmdir_delete_files_and_dir
+mitre_technique:
+- T1070
+datasets:
+- name: rmdir
+  path: /datasets/attack_techniques/T1070/rmdir_delete_files_and_dir/rmdir.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1070/rmdir_delete_files_and_dir/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -11,3 +11,11 @@ datasets:
   path: /datasets/attack_techniques/T1497/chrome_disable_popup/chrome_disable_popup.log
   sourcetype: 'XmlWinEventLog'
   source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1497/chrome_disable_popup/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_chromium_process_launched_with_disable_popup_blocking
+  path: /datasets/attack_techniques/T1497/chrome_disable_popup/cisco_evm_windows_chromium_process_launched_with_disable_popup_blocking.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -15,3 +15,7 @@ datasets:
   path: /datasets/attack_techniques/T1105/download_to_pipe_exec/download_to_pipe_exec_linux.log
   sourcetype: sysmon:linux
   source: Syslog:Linux-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1105/download_to_pipe_exec/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -16,3 +16,11 @@ datasets:
   path: /datasets/attack_techniques/T1485/ransomware_notes/ransom-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1485/ransomware_notes/cisco_evm.log
+  sourcetype: cisco:evm:file_activity
+  source: not_applicable
+- name: cisco_evm_common_ransomware_extensions
+  path: /datasets/attack_techniques/T1485/ransomware_notes/cisco_evm_common_ransomware_extensions.log
+  sourcetype: cisco:evm:file_activity
+  source: not_applicable

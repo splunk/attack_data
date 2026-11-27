@@ -15,3 +15,15 @@ datasets:
   path: /datasets/attack_techniques/T1218.007/atomic_red_team/4688_msiexec-windows-security.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1218.007/atomic_red_team/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_msiexec_unregister_dllregisterserver
+  path: /datasets/attack_techniques/T1218.007/atomic_red_team/cisco_evm_windows_msiexec_unregister_dllregisterserver.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_msiexec_remote_download
+  path: /datasets/attack_techniques/T1218.007/atomic_red_team/cisco_evm_windows_msiexec_remote_download.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

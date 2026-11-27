@@ -6,8 +6,13 @@ environment: attack_range
 directory: sysinternals_pstools
 mitre_technique:
 - T1046
+- T1082
 datasets:
 - name: sysinternals_pstools.log
   path: /datasets/attack_techniques/T1082/sysinternals_pstools/sysinternals_pstools.log
   sourcetype: XmlWinEventLog
   source: 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1082/sysinternals_pstools/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

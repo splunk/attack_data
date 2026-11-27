@@ -15,3 +15,7 @@ datasets:
   path: /datasets/attack_techniques/T1027/url_encoded_curl/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1027/url_encoded_curl/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

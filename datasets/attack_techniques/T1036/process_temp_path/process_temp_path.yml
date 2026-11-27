@@ -1,0 +1,19 @@
+author: Teoderick Contreras, Splunk
+id: 3d850fac-dc9a-11ef-8b8c-acde48001122
+date: '2025-01-27'
+description: Generated datasets for process temp path in attack range.
+environment: attack_range
+# Legacy references
+# https://www.splunk.com/en_us/form/detecting-trickbot-payloads.html
+directory: process_temp_path
+mitre_technique:
+- T1036
+datasets:
+- name: process_temp_path
+  path: /datasets/attack_techniques/T1036/process_temp_path/process_temp_path.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1036/process_temp_path/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

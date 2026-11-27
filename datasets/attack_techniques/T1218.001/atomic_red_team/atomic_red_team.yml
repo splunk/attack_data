@@ -19,3 +19,15 @@ datasets:
   path: /datasets/attack_techniques/T1218.001/atomic_red_team/hh_decom_windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1218.001/atomic_red_team/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_detect_html_help_using_infotech_storage_handlers
+  path: /datasets/attack_techniques/T1218.001/atomic_red_team/cisco_evm_detect_html_help_using_infotech_storage_handlers.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_detect_html_help_url_in_command_line
+  path: /datasets/attack_techniques/T1218.001/atomic_red_team/cisco_evm_detect_html_help_url_in_command_line.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

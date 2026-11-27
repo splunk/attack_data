@@ -11,3 +11,11 @@ datasets:
   path: /datasets/attack_techniques/T1552.002/autoadminlogon/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1552.002/autoadminlogon/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_change_to_safe_mode_with_network_config
+  path: /datasets/attack_techniques/T1552.002/autoadminlogon/cisco_evm_change_to_safe_mode_with_network_config.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -1,0 +1,16 @@
+author: Nasreddine Bencherchali, Splunk
+id: 054fec8c-89af-4b3d-949b-92fb60935dd3
+date: '2026-11-27'
+description: Live BP Threat Detection alerts for creation of a temporary local account with a trailing
+  dollar sign followed by a Windows logon-list registry value that hides the same account. The raw events
+  were exported from Splunk after the real Windows account and registry actions, both of which were reverted.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/hidden_local_account_creation_and_concealment
+mitre_technique:
+- T1136.001
+- T1564.002
+datasets:
+- name: hidden_local_account_creation_and_concealment
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/hidden_local_account_creation_and_concealment/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

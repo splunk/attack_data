@@ -16,4 +16,11 @@ datasets:
     sourcetype: sysmon:linux
     source: Syslog:Linux-Sysmon/Operational
     path: /datasets/attack_techniques/T1190/snapattack/snapattack_linux.log
-
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1190/snapattack/cisco_evm.log
+  sourcetype: cisco:evm:file_activity
+  source: not_applicable
+- name: cisco_evm_windows_shell_or_script_execution_from_iis_directory
+  path: /datasets/attack_techniques/T1190/snapattack/cisco_evm_windows_shell_or_script_execution_from_iis_directory.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

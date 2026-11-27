@@ -1,0 +1,16 @@
+author: Nasreddine Bencherchali, Splunk
+id: c62d79f1-fae5-4ca0-990b-85dcd3e13f27
+date: '2026-11-27'
+description: 'Live Cisco Secure Endpoint BP alerts from an actual reduction of shadow storage on a disposable
+  R: VHD and XOR transformation and .chaos rename of one decoy document. Before/after file hashes differ;
+  only scratch data was touched.'
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/recovery_storage_reduced_before_encrypted_file_activity
+mitre_technique:
+- T1490
+- T1486
+datasets:
+- name: recovery_storage_reduced_before_encrypted_file_activity
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/recovery_storage_reduced_before_encrypted_file_activity/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

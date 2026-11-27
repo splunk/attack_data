@@ -1,0 +1,19 @@
+author: Teoderick Contreras, Splunk
+id: 1fe4eb74-528e-47ad-b1eb-30be9c908fc3
+date: '2023-09-14'
+description: Generated datasets for taskkill in attack range.
+environment: attackrange
+# Legacy references
+# https://malpedia.caad.fkie.fraunhofer.de/details/win.njrat
+directory: taskkill
+mitre_technique:
+- T1562.001
+datasets:
+- name: taskkill_im
+  path: /datasets/attack_techniques/T1562.001/taskkill/taskkill_im.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1562.001/taskkill/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

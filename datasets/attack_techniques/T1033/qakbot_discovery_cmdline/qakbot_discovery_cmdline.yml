@@ -11,3 +11,11 @@ datasets:
   path: /datasets/attack_techniques/T1033/qakbot_discovery_cmdline/sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1033/qakbot_discovery_cmdline/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_system_discovery_using_ldap_nslookup
+  path: /datasets/attack_techniques/T1033/qakbot_discovery_cmdline/cisco_evm_windows_system_discovery_using_ldap_nslookup.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

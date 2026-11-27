@@ -15,3 +15,19 @@ datasets:
   path: /datasets/attack_techniques/T1201/pwd_policy_discovery/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1201/pwd_policy_discovery/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_get_addefaultdomainpasswordpolicy_with_powershell
+  path: /datasets/attack_techniques/T1201/pwd_policy_discovery/cisco_evm_get_addefaultdomainpasswordpolicy_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_get_aduserresultantpasswordpolicy_with_powershell
+  path: /datasets/attack_techniques/T1201/pwd_policy_discovery/cisco_evm_get_aduserresultantpasswordpolicy_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_get_domainpolicy_with_powershell
+  path: /datasets/attack_techniques/T1201/pwd_policy_discovery/cisco_evm_get_domainpolicy_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

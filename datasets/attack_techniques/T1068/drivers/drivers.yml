@@ -7,6 +7,10 @@ directory: drivers
 mitre_technique:
 - T1068
 datasets:
+- name: sc_kernel
+  path: /datasets/attack_techniques/T1068/drivers/sc_kernel.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 - name: sysmon_sys_filemod
   path: /datasets/attack_techniques/T1068/drivers/sysmon_sys_filemod.log
   sourcetype: XmlWinEventLog
@@ -15,3 +19,11 @@ datasets:
   path: /datasets/attack_techniques/T1068/drivers/xml7045_windows-system.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:System
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1068/drivers/cisco_evm.log
+  sourcetype: cisco:evm:file_activity
+  source: not_applicable
+- name: cisco_evm_windows_service_create_kernel_mode_driver
+  path: /datasets/attack_techniques/T1068/drivers/cisco_evm_windows_service_create_kernel_mode_driver.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

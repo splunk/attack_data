@@ -27,3 +27,23 @@ datasets:
   path: /datasets/attack_techniques/T1218.005/atomic_red_team/mshta_tasks_windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1218.005/atomic_red_team/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_detect_mshta_inline_hta_execution
+  path: /datasets/attack_techniques/T1218.005/atomic_red_team/cisco_evm_detect_mshta_inline_hta_execution.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_suspicious_mshta_child_process
+  path: /datasets/attack_techniques/T1218.005/atomic_red_team/cisco_evm_suspicious_mshta_child_process.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_suspicious_mshta_spawn
+  path: /datasets/attack_techniques/T1218.005/atomic_red_team/cisco_evm_suspicious_mshta_spawn.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_detect_rundll32_inline_hta_execution
+  path: /datasets/attack_techniques/T1218.005/atomic_red_team/cisco_evm_detect_rundll32_inline_hta_execution.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

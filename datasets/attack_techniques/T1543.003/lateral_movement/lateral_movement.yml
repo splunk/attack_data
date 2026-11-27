@@ -12,3 +12,11 @@ datasets:
   path: /datasets/attack_techniques/T1543.003/lateral_movement/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm_windows_service_creation_on_remote_endpoint
+  path: /datasets/attack_techniques/T1543.003/lateral_movement/cisco_evm_windows_service_creation_on_remote_endpoint.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_service_initiation_on_remote_endpoint
+  path: /datasets/attack_techniques/T1543.003/lateral_movement/cisco_evm_windows_service_initiation_on_remote_endpoint.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

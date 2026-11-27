@@ -3,9 +3,17 @@ id: 5a054002-2e30-11ef-8f53-acde48001122
 date: '2024-06-19'
 description: Generated datasets for windows pwh log cleared in attack range.
 environment: attack_range
-dataset:
-- https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1070.001/windows_pwh_log_cleared//wevtutil_clear_log.log
-sourcetypes:
-- 'XmlWinEventLog:Microsoft-Windows-Sysmon/Operational'
+directory: windows_pwh_log_cleared
+mitre_technique:
+- T1070.001
 references:
 - https://www.bleepingcomputer.com/news/security/new-shrinklocker-ransomware-uses-bitlocker-to-encrypt-your-files/
+datasets:
+- name: wevtutil_clear_log
+  path: /datasets/attack_techniques/T1070.001/windows_pwh_log_cleared/wevtutil_clear_log.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1070.001/windows_pwh_log_cleared/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

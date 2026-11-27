@@ -44,3 +44,11 @@ datasets:
   path: /datasets/attack_techniques/T1649/atomic_red_team/4688_certutil_backupdb-windows-security.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Security
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1649/atomic_red_team/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_steal_authentication_certificates_export_pfxcertificate
+  path: /datasets/attack_techniques/T1649/atomic_red_team/cisco_evm_windows_steal_authentication_certificates_export_pfxcertificate.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

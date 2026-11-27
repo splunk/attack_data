@@ -1,0 +1,15 @@
+author: Nasreddine Bencherchali, Splunk
+id: 4b850c33-45f3-4cce-97ed-88f1aad244ac
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint Behavioral Protection alerts from a lab PowerShell process that downloaded and ran a reverse-shell script and read a .lnk file. The file-read alert was triggered by PowerShell reading the shortcut path; by itself it does not prove that the shortcut launched the process. The HTTP and TCP loopback listeners recorded a script request and shell callback.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/lnk_download_to_powershell_reverse_shell
+mitre_technique:
+- T1204.002
+- T1059.001
+- T1095
+datasets:
+- name: lnk_download_to_powershell_reverse_shell
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/lnk_download_to_powershell_reverse_shell/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

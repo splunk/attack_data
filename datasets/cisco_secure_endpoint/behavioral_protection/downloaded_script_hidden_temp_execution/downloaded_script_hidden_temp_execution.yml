@@ -1,0 +1,16 @@
+author: Nasreddine Bencherchali, Splunk
+id: 73f99415-4d2d-4261-8823-e8a756d79e11
+date: '2026-11-27'
+description: Live BP Threat Detection alerts for a harmless script downloaded from a temporary local HTTP
+  listener, saved in the user Temp directory, and then executed by a hidden PowerShell process. The two
+  raw events were exported from Splunk after the real actions completed.
+environment: Windows Server 2022 lab with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/downloaded_script_hidden_temp_execution
+mitre_technique:
+- T1105
+- T1059.001
+datasets:
+- name: downloaded_script_hidden_temp_execution
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/downloaded_script_hidden_temp_execution/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

@@ -19,3 +19,15 @@ datasets:
   path: /datasets/attack_techniques/T1218.008/atomic_red_team/windows-sysmon-odbc-regsvr.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1218.008/atomic_red_team/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_odbcconf_load_response_file
+  path: /datasets/attack_techniques/T1218.008/atomic_red_team/cisco_evm_windows_odbcconf_load_response_file.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_odbcconf_load_dll
+  path: /datasets/attack_techniques/T1218.008/atomic_red_team/cisco_evm_windows_odbcconf_load_dll.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -31,3 +31,27 @@ datasets:
   path: /datasets/attack_techniques/T1087.002/AD_discovery/windows-sysmon.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm_domain_account_discovery_with_dsquery
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/cisco_evm_domain_account_discovery_with_dsquery.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_get_aduser_with_powershell
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/cisco_evm_get_aduser_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_domain_account_discovery_with_wmic
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/cisco_evm_domain_account_discovery_with_wmic.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_getwmiobject_ds_user_with_powershell
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/cisco_evm_getwmiobject_ds_user_with_powershell.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_windows_powershell_process_with_malicious_string
+  path: /datasets/attack_techniques/T1087.002/AD_discovery/cisco_evm_windows_powershell_process_with_malicious_string.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable

@@ -1,0 +1,14 @@
+author: Nasreddine Bencherchali, Splunk
+id: 4f250ada-77b9-4c13-843d-bbe28bb79d99
+date: '2026-11-27'
+description: Live Cisco Secure Endpoint BP alerts from a source Windows member that connected to a disposable target's ADMIN$ share, followed by an authenticated remote service creation on that target. The service binary ran and wrote a local start marker.
+environment: Two Windows Server 2022 lab endpoints with Cisco Secure Endpoint 8.6.4 and Cisco Security Cloud TA 4.2.0
+directory: cisco_secure_endpoint/behavioral_protection/admin_share_remote_service
+mitre_technique:
+- T1021.002
+- T1569.002
+datasets:
+- name: admin_share_remote_service
+  path: /datasets/cisco_secure_endpoint/behavioral_protection/admin_share_remote_service/cisco_se.log
+  source: not_applicable
+  sourcetype: cisco:se

@@ -20,3 +20,15 @@ datasets:
   path: /datasets/attack_techniques/T1055/cobalt_strike/windows-sysmon_dllhost.log
   sourcetype: XmlWinEventLog
   source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: cisco_evm
+  path: /datasets/attack_techniques/T1055/cobalt_strike/cisco_evm.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_suspicious_gpupdate_no_command_line_arguments
+  path: /datasets/attack_techniques/T1055/cobalt_strike/cisco_evm_suspicious_gpupdate_no_command_line_arguments.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
+- name: cisco_evm_suspicious_searchprotocolhost_no_command_line_arguments
+  path: /datasets/attack_techniques/T1055/cobalt_strike/cisco_evm_suspicious_searchprotocolhost_no_command_line_arguments.log
+  sourcetype: cisco:evm:process_activity
+  source: not_applicable
