@@ -1,0 +1,13 @@
+author: STRT
+id: 5c8bff39-8027-4e7e-91b5-16cc60ccd5d7
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Duo Policy Allow Tampered
+  Devices
+environment: attack_range
+directory: cisco_duo_policy_allow_tampered_devices
+mitre_technique: []
+datasets:
+- name: cisco_duo_administrator
+  path: /datasets/attack_techniques/T1556/cisco_duo_policy_allow_tampered_devices/cisco_duo_administrator-5c8bff39-8027-4e7e-91b5-16cc60ccd5d7.log
+  sourcetype: cisco:duo:administrator
+  source: duo

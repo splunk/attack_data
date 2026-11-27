@@ -1,0 +1,12 @@
+author: STRT
+id: bb196df1-af3b-41d7-a2c3-1839bc8b38a9
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry EnableLinkedConnections
+environment: attack_range
+directory: enablelinkedconnections
+mitre_technique: []
+datasets:
+- name: blackbyte_sysmon
+  path: /datasets/attack_techniques/T1112/blackbyte/enablelinkedconnections/blackbyte_sysmon-bb196df1-af3b-41d7-a2c3-1839bc8b38a9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

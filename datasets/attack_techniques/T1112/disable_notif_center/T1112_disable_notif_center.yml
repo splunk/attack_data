@@ -1,0 +1,13 @@
+author: STRT
+id: c510dca4-6647-4a78-a17f-f67610e2ec52
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Disable Notification
+  Center
+environment: attack_range
+directory: disable_notif_center
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1112/disable_notif_center/sysmon-c510dca4-6647-4a78-a17f-f67610e2ec52.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

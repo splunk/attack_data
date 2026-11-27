@@ -1,0 +1,13 @@
+author: STRT
+id: bbcf0351-5ee2-45bc-b084-e6687fa73300
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Potential AppDomainManager
+  Hijack Artifacts Creation
+environment: attack_range
+directory: appdomain_hijack_artifacts
+mitre_technique: []
+datasets:
+- name: appdomain_hijack
+  path: /datasets/attack_techniques/T1574.014/appdomain_hijack_artifacts/appdomain_hijack-bbcf0351-5ee2-45bc-b084-e6687fa73300.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,261 @@
+# Attack Data → Splunk Detection Pipeline
+
+A detection-first pipeline that validates [Splunk security_content](https://github.com/splunk/security_content)
+detections against [attack_data](https://github.com/splunk/attack_data) datasets and
+curates only the events that produced detection hits.
+
+For each detection (processed alphabetically):
+
+1. **resolve** – Read `tests[].attack_data[].data` URLs and locate source attack
+   data YAML files in the repository.
+2. **upload** – Replay every dataset from those YAMLs to Splunk HEC with a per-line
+   UUID as `host`. Mappings are kept in memory for the duration of the run.
+3. **detect** – Run only that detection (SPL rewritten so `host` is an output field).
+4. **curate** – Export matched events and merge them into `{technique}_{folder}.yml`
+   (e.g. `T1001_snapattack.yml`) without modifying the original source YAML.
+5. **cleanup** – Delete uploaded events from the Splunk index before the next detection.
+
+## Why per-event UUIDs?
+
+Every uploaded event gets a unique `host` UUID. When a detection fires, the `host`
+values in its results tell us precisely which source events matched — enabling a
+targeted export of just the "interesting" data instead of the entire dataset.
+
+## Files
+
+| File | Purpose |
+| --- | --- |
+| `migrate.py` | CLI entry point with `upload` and `run` subcommands |
+| `detection_utils.py` | Discover/parse detection YAML + rewrite SPL to output `host` |
+| `splunk_search.py` | Run detections over the Splunk REST API + export raw events |
+| `memory_store.py` | In-memory store for upload UUID maps and detection attribution |
+| `requirements.txt` | Python dependencies |
+
+## Installation
+
+```bash
+pip install -r scripts/requirements.txt
+```
+
+Dependencies: `requests`, `urllib3`, `pyyaml`, `splunk-sdk`, `python-dotenv`.
+
+You also need a local clone of security_content for the detections:
+
+```bash
+git clone https://github.com/splunk/security_content.git
+```
+
+> **Note:** The detections reference security_content macros and lookups (e.g.
+> `` `sysmon` ``, `` `security_content_summariesonly` ``, `` `<name>_filter` ``). The
+> corresponding app (e.g. ESCU / a `contentctl` build of security_content) must be
+> installed on the Splunk instance, otherwise the searches will error. Detections whose
+> searches fail are logged and skipped; the run continues.
+
+## Configuration
+
+CLI flags override environment variables.
+
+| Variable | Flag | Default | Used by |
+| --- | --- | --- | --- |
+| `SPLUNK_HOST` | `--host` | – (required) | all |
+| `SPLUNK_HEC_TOKEN` | `--hec-token` | – (required) | upload |
+| `SPLUNK_HEC_PORT` | `--hec-port` | `8088` | upload |
+| `SPLUNK_USERNAME` | `--username` | – (required) | run |
+| `SPLUNK_PASSWORD` | `--password` | – (required) | run |
+| `SPLUNK_PORT` | `--mgmt-port` | `8089` | run |
+
+```bash
+export SPLUNK_HOST="192.168.1.100"
+export SPLUNK_HEC_TOKEN="00000000-0000-0000-0000-000000000000"
+export SPLUNK_USERNAME="admin"
+export SPLUNK_PASSWORD="changeme"
+```
+
+## Usage
+
+### Detection-first pipeline (`run`)
+
+The `run` command processes detections **one at a time**, in alphabetical order
+by detection name. For each detection:
+
+1. **Resolve** — read `tests[].attack_data[].data` URLs and locate the
+   corresponding source attack data YAML files in the repository (original YAMLs
+   such as `snapattack.yml` are never modified).
+2. **Upload** — replay every dataset from those YAMLs to Splunk (per-line UUID
+   as `host`; mappings kept in memory during the run).
+3. **Detect** — run only that detection (with `host` preserved in SPL output).
+4. **Export & curate** — export matched events per dataset and merge them into a
+   curated YAML named `{technique}_{folder}.yml` (e.g. `T1001_snapattack.yml` in
+   `datasets/attack_techniques/T1001/snapattack/`). If the curated YAML already
+   exists, new datasets are appended.
+5. **Cleanup** — delete uploaded events from the Splunk index before the next
+   detection.
+
+```bash
+python scripts/migrate.py run \
+  --detection scripts/detection_tests
+```
+
+Resolve attack data from a custom root folder (default is `datasets`):
+
+```bash
+python scripts/migrate.py run \
+  --detection scripts/detection_tests \
+  --attack-data-root scripts/attack_technique_tests
+```
+
+`--attack-data-root` (alias `--attack-data`) is used when mapping detection
+`tests[].attack_data[].data` URLs to local log files and source YAMLs. The
+resolver tries the full repo path first, then paths relative to the root
+(including stripping the `datasets/attack_techniques/` prefix when needed).
+
+Resume after a failure at a specific detection UUID (inclusive):
+
+```bash
+python scripts/migrate.py run \
+  --detection scripts/detection_tests \
+  --start-from-detection-id fb4c31b0-13e8-4155-8aa5-24de4b8d6717
+```
+
+Optional flags:
+
+```bash
+python scripts/migrate.py run \
+  --detection scripts/detection_tests \
+  --update-detection-tests \
+  --export-dir exported \
+  --no-delete
+```
+
+`--attack-data-root` defaults to `datasets` and controls where detection test
+URLs are resolved. `--update-attack-data` is legacy: it additionally mutates the
+**original** source YAML in place (curated YAML creation is always on for `run`).
+
+Splunk index cleanup after each detection requires the `can_delete` capability.
+Disable with `--no-delete`.
+
+At the end of the run, a **DETECTIONS NOT UPDATED** summary lists detections that
+did not produce curated output (or detection test updates when
+`--update-detection-tests` is set).
+
+### Upload only
+
+```bash
+python scripts/migrate.py upload --attack-data datasets/malware/qakbot
+```
+
+### Exported files
+
+Export is **per dataset**. An attack data file that defines multiple datasets
+has all of its datasets uploaded, and each dataset is exported into its own
+file. The filename combines the dataset name and the attack data file UUID:
+
+```
+<export-dir>/<dataset_name>_<attack_data_uuid>.log
+```
+
+For example, `datasets/attack_techniques/T1003.002/atomic_red_team/atomic_red_team.yml`
+(UUID `cc9b25e7-...`) with datasets `crowdstrike_falcon` and `windows-sysmon`
+produces:
+
+```
+exported/crowdstrike_falcon_cc9b25e7-efc9-11eb-926b-550bf0943fbb.log
+exported/windows-sysmon_cc9b25e7-efc9-11eb-926b-550bf0943fbb.log
+```
+
+Only events that produced detection results are written.
+
+### Curated attack data YAML (`T1001_snapattack.yml`)
+
+For a source folder such as `datasets/attack_techniques/T1001/snapattack/`, the
+pipeline writes curated output to `T1001_snapattack.yml` in the same folder.
+Only datasets with detection hits are included. The original `snapattack.yml` is
+left unchanged. When multiple detections reference datasets from the same folder,
+later runs append new dataset entries to the existing curated YAML.
+
+### Legacy: updating source attack data in place (`--update-attack-data`)
+
+With `--update-attack-data` on `run` (legacy behavior), curated per-dataset logs
+per-dataset logs are written into the **original** attack data YAML's folder and
+that YAML is updated in place. The default `run` workflow uses separate curated
+YAML files instead.
+
+- `date` is set to today.
+- the `datasets` section is rewritten to point at the curated files
+  (`<dataset_name>_<attack_data_uuid>.log` in the same folder). Datasets that
+  produced no detection matches are dropped.
+
+```bash
+python scripts/migrate.py run \
+  --attack-data datasets/malware/qakbot \
+  --detection ~/security_content/detections/endpoint \
+  --update-attack-data
+```
+
+This effectively minimizes a dataset down to only the events that trigger
+detections and updates the YAML to describe the curated data. It can be combined
+with `--export-dir`, or used on its own. The original log files are left on disk
+(the YAML simply stops referencing them), so review/commit the changes with git.
+
+### Updating detection tests (`--update-detection-tests`)
+
+With `--update-detection-tests` on `run`, each detection YAML's `tests` section
+YAML's `tests` section is rewritten to reference the attack data that matched
+**that specific detection**. For every matched dataset, an `attack_data` entry is
+added using the standard GitHub URL format:
+
+```yaml
+tests:
+    - name: True Positive Test
+      attack_data:
+        - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/...
+          source: ...
+          sourcetype: ...
+```
+
+The detection's `date` field is also set to today. Detections with no matches are
+left unchanged and a warning is printed. Run this after `--update-attack-data` if
+you want the tests to point at the curated log files.
+
+At the end of each `run`, a **DETECTIONS NOT UPDATED** summary lists every
+detection whose tests were not updated, with the reason (`no matches`,
+`search failed`, etc.). When `--update-detection-tests` is enabled, any detection
+not successfully written is included.
+
+```bash
+python scripts/migrate.py run \
+  --attack-data datasets/attack_techniques/T1003.001/atomic_red_team \
+  --detection scripts/detection_tests \
+  --update-attack-data \
+  --update-detection-tests
+```
+
+## How detections are rewritten to output `host`
+
+`add_host_output_field()` in `detection_utils.py` rewrites the SPL so the `host` field
+survives to the output:
+
+- `stats` / `tstats` / `eventstats` / `streamstats` / `sistats`: `host` is appended to
+  the `by` clause (or `by host` is added when there is none).
+- `table` / `fields`: `host` is appended to the projected field list.
+- Raw (non-aggregating) searches already carry `host` through.
+
+Pipe-splitting is quote- and bracket-aware, so subsearches, quoted strings, and `eval`
+expressions are not broken.
+
+Example:
+
+```
+| tstats count from datamodel=Endpoint.Processes by Processes.dest
+   ⇒ | tstats count from datamodel=Endpoint.Processes by Processes.dest, host
+```
+
+## Notes & assumptions
+
+- **Search time window** defaults to all-time (`earliest=0`) because attack data
+  timestamps can be years old. Override with `--earliest` / `--latest`.
+- **TLS verification** is disabled by default (`--verify-tls` for HEC uploads,
+  `--verify-ssl` for searches enable it).
+- Matched hosts are intersected with the UUIDs actually uploaded in the run, so
+  pre-existing data in the target index is ignored during attribution.
+- The target index defaults to `test` (`--index` to change).

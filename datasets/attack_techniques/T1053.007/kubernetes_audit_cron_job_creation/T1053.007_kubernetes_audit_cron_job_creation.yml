@@ -1,0 +1,12 @@
+author: STRT
+id: 139d8a0b-b86e-4aab-b015-cc06576d2d78
+date: '2026-07-10'
+description: Curated attack data generated for detection Kubernetes Cron Job Creation
+environment: attack_range
+directory: kubernetes_audit_cron_job_creation
+mitre_technique: []
+datasets:
+- name: kubernetes_audit_cron_job_creation
+  path: /datasets/attack_techniques/T1053.007/kubernetes_audit_cron_job_creation/kubernetes_audit_cron_job_creation-139d8a0b-b86e-4aab-b015-cc06576d2d78.log
+  sourcetype: _json
+  source: kubernetes

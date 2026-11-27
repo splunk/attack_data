@@ -1,0 +1,13 @@
+author: STRT
+id: 89c0ae81-1f5d-405b-8985-fd63b6e58a78
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Mailbox Read Access
+  Granted to Application
+environment: attack_range
+directory: o365_grant_mail_read
+mitre_technique: []
+datasets:
+- name: o365_grant_mail_read
+  path: /datasets/attack_techniques/T1098.003/o365_grant_mail_read/o365_grant_mail_read-89c0ae81-1f5d-405b-8985-fd63b6e58a78.log
+  sourcetype: o365:management:activity
+  source: o365

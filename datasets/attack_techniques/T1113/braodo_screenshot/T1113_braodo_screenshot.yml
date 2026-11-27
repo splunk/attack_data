@@ -1,0 +1,13 @@
+author: STRT
+id: 08a72745-1cbc-4594-9892-af8f93158968
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Screen Capture in
+  TEMP folder
+environment: attack_range
+directory: braodo_screenshot
+mitre_technique: []
+datasets:
+- name: braodo_screenshot
+  path: /datasets/attack_techniques/T1113/braodo_screenshot/braodo_screenshot-08a72745-1cbc-4594-9892-af8f93158968.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

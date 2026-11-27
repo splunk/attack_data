@@ -1,0 +1,12 @@
+author: STRT
+id: ba205617-48fa-4954-92fb-37b921e2dd6d
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows SubInAcl Execution
+environment: attack_range
+directory: subinacl
+mitre_technique: []
+datasets:
+- name: subinacl_sysmon
+  path: /datasets/attack_techniques/T1222.001/subinacl/subinacl_sysmon-ba205617-48fa-4954-92fb-37b921e2dd6d.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

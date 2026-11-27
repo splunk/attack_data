@@ -1,0 +1,13 @@
+author: STRT
+id: da0a0186-45a3-4176-90ff-091e937e803f
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Symlink Evaluation
+  Change via Fsutil
+environment: attack_range
+directory: fsutil_symlink_eval
+mitre_technique: []
+datasets:
+- name: fsutil_symlink_eval
+  path: /datasets/attack_techniques/T1222.001/fsutil_symlink_eval/fsutil_symlink_eval-da0a0186-45a3-4176-90ff-091e937e803f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

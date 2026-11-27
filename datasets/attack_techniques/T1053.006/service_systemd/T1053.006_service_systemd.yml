@@ -1,0 +1,13 @@
+author: STRT
+id: fb2a7ffa-4e00-42fa-b0e5-cb13f2e77129
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Service File Created
+  In Systemd Directory
+environment: attack_range
+directory: service_systemd
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1053.006/service_systemd/sysmon_linux-fb2a7ffa-4e00-42fa-b0e5-cb13f2e77129.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

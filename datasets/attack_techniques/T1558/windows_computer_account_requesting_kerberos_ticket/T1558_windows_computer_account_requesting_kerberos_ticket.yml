@@ -1,0 +1,13 @@
+author: STRT
+id: 9d8bba31-21d6-40b5-8367-35a946bc2d7e
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Computer Account
+  Requesting Kerberos Ticket
+environment: attack_range
+directory: windows_computer_account_requesting_kerberos_ticket
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1558/windows_computer_account_requesting_kerberos_ticket/windows-xml-9d8bba31-21d6-40b5-8367-35a946bc2d7e.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

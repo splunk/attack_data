@@ -1,0 +1,13 @@
+author: STRT
+id: b5d42382-83a2-4d46-bd6b-ced45628f4a8
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows System Discovery
+  Using ldap Nslookup
+environment: attack_range
+directory: qakbot_discovery_cmdline
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1033/qakbot_discovery_cmdline/sysmon-b5d42382-83a2-4d46-bd6b-ced45628f4a8.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: b2b1f32b-4569-4a76-8cb0-0cbf5f1bd7cd
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Successful Authentication
+  From Different Ips
+environment: attack_range
+directory: azure_ad_successful_authentication_from_different_ips
+mitre_technique: []
+datasets:
+- name: azuread
+  path: /datasets/attack_techniques/T1110.001/azure_ad_successful_authentication_from_different_ips/azuread-b2b1f32b-4569-4a76-8cb0-0cbf5f1bd7cd.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

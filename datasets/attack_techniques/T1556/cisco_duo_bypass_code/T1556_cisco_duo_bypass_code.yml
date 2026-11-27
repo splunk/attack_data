@@ -1,0 +1,12 @@
+author: STRT
+id: 8a7b72ca-2ebf-4bea-94ec-20bee833caa3
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Duo Bypass Code Generation
+environment: attack_range
+directory: cisco_duo_bypass_code
+mitre_technique: []
+datasets:
+- name: cisco_duo_activity
+  path: /datasets/attack_techniques/T1556/cisco_duo_bypass_code/cisco_duo_activity-8a7b72ca-2ebf-4bea-94ec-20bee833caa3.log
+  sourcetype: cisco:duo:administrator
+  source: duo

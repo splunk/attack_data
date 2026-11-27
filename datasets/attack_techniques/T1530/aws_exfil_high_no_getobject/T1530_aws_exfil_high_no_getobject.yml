@@ -1,0 +1,13 @@
+author: STRT
+id: ea2cbcba-b3c8-4da4-9617-03b4c4693785
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Exfiltration via Anomalous
+  GetObject API Activity
+environment: attack_range
+directory: aws_exfil_high_no_getobject
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1530/aws_exfil_high_no_getobject/cloudtrail-ea2cbcba-b3c8-4da4-9617-03b4c4693785.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

@@ -1,0 +1,13 @@
+author: STRT
+id: 710720d0-8b04-4244-b924-e4c436849111
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Repository
+  Archived
+environment: attack_range
+directory: github_archived_repository
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1485/github_archived_repository/github-710720d0-8b04-4244-b924-e4c436849111.log
+  sourcetype: httpevent
+  source: http:github

@@ -1,0 +1,13 @@
+author: STRT
+id: 75f5d8bf-b6dd-4c17-aab0-acf384583688
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Repository
+  Deleted
+environment: attack_range
+directory: github_delete_repository
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1485/github_delete_repository/github-75f5d8bf-b6dd-4c17-aab0-acf384583688.log
+  sourcetype: httpevent
+  source: http:github

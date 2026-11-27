@@ -1,0 +1,13 @@
+author: STRT
+id: cebe8af9-3552-4802-847e-e5e58e6a7059
+date: '2026-07-10'
+description: Curated attack data generated for detection Powershell Defender Threat
+  Actions Set to Allow
+environment: attack_range
+directory: threat_allow_switch
+mitre_technique: []
+datasets:
+- name: threat_allow_salat
+  path: /datasets/attack_techniques/T1059.001/threat_allow_switch/threat_allow_salat-cebe8af9-3552-4802-847e-e5e58e6a7059.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

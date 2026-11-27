@@ -1,0 +1,13 @@
+author: STRT
+id: 4ad7449b-9740-4678-aec1-c387301195db
+date: '2026-07-13'
+description: Curated attack data generated for detection Jenkins Arbitrary File Read
+  CVE-2024-23897
+environment: attack_range
+directory: jenkins
+mitre_technique: []
+datasets:
+- name: nginx_jenkins_cve_2023_23897
+  path: /datasets/attack_techniques/T1190/jenkins/nginx_jenkins_cve_2023_23897-4ad7449b-9740-4678-aec1-c387301195db.log
+  sourcetype: nginx:plus:kv
+  source: nginx:plus:kv

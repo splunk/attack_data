@@ -1,0 +1,13 @@
+author: STRT
+id: 72ac1deb-9f6e-454a-9fd0-b5eb450bdaf0
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Console Login Failed
+  During MFA Challenge
+environment: attack_range
+directory: aws_failed_mfa
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1621/aws_failed_mfa/cloudtrail-72ac1deb-9f6e-454a-9fd0-b5eb450bdaf0.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

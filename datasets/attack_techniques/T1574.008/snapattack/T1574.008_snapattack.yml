@@ -1,0 +1,13 @@
+author: STRT
+id: b153954a-3a89-451b-8304-213719808dfa
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Get-Variable.EXE
+  Execution from WindowsApps Folder
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1574.008/snapattack/snapattack-b153954a-3a89-451b-8304-213719808dfa.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

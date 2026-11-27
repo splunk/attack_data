@@ -1,0 +1,13 @@
+author: STRT
+id: e1a48e85-47bd-4103-9b3f-cb0556bc7e02
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Impair Defense Change
+  Win Defender Health Check Intervals
+environment: attack_range
+directory: disable-windows-security-defender-features
+mitre_technique: []
+datasets:
+- name: windefender-bypas-2-sysmon
+  path: /datasets/attack_techniques/T1562.001/disable-windows-security-defender-features/windefender-bypas-2-sysmon-e1a48e85-47bd-4103-9b3f-cb0556bc7e02.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

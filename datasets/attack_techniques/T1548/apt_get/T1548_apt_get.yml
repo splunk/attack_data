@@ -1,0 +1,12 @@
+author: STRT
+id: 361a54dd-b8e0-4ded-8e24-2fa92cf434f1
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux APT Privilege Escalation
+environment: attack_range
+directory: apt_get
+mitre_technique: []
+datasets:
+- name: cisco_isovalent
+  path: /datasets/attack_techniques/T1548/apt_get/cisco_isovalent-361a54dd-b8e0-4ded-8e24-2fa92cf434f1.log
+  sourcetype: cisco:isovalent:processExec
+  source: not_applicable

@@ -1,0 +1,13 @@
+author: STRT
+id: fe8b51e7-2f83-45c7-aef3-46757f5d4228
+date: '2026-07-11'
+description: Curated attack data generated for detection SchCache Change By App Connect
+  And Create ADSI Object
+environment: attack_range
+directory: blackmatter_schcache
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1087.002/blackmatter_schcache/windows-sysmon-fe8b51e7-2f83-45c7-aef3-46757f5d4228.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

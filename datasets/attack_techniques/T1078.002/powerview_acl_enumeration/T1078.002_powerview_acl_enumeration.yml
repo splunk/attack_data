@@ -1,0 +1,13 @@
+author: STRT
+id: 36079f45-e3e4-4df5-80d6-d40042549d82
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows PowerView AD Access
+  Control List Enumeration
+environment: attack_range
+directory: powerview_acl_enumeration
+mitre_technique: []
+datasets:
+- name: windows-powershell
+  path: /datasets/attack_techniques/T1078.002/powerview_acl_enumeration/windows-powershell-36079f45-e3e4-4df5-80d6-d40042549d82.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

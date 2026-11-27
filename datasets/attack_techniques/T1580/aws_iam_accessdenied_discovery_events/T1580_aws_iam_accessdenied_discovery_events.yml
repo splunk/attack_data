@@ -1,0 +1,17 @@
+author: STRT
+id: c9b94a7f-9604-42b4-8159-3adb2af30515
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS IAM AccessDenied
+  Discovery Events
+environment: attack_range
+directory: aws_iam_accessdenied_discovery_events
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1580/aws_iam_accessdenied_discovery_events/asl_ocsf_cloudtrail-c9b94a7f-9604-42b4-8159-3adb2af30515.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_iam_accessdenied_discovery_events
+  path: /datasets/attack_techniques/T1580/aws_iam_accessdenied_discovery_events/aws_iam_accessdenied_discovery_events-c9b94a7f-9604-42b4-8159-3adb2af30515.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

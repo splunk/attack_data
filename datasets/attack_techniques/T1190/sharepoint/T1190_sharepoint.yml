@@ -1,0 +1,21 @@
+author: STRT
+id: 4c77fbaa-79dc-46d3-ae54-c11f0984c954
+date: '2026-07-13'
+description: Curated attack data generated for detection Microsoft SharePoint Server
+  Elevation of Privilege
+environment: attack_range
+directory: sharepoint
+mitre_technique: []
+datasets:
+- name: sharepointeop
+  path: /datasets/attack_techniques/T1190/sharepoint/sharepointeop-4c77fbaa-79dc-46d3-ae54-c11f0984c954.log
+  sourcetype: suricata
+  source: not_applicable
+- name: spinstall0
+  path: /datasets/attack_techniques/T1190/sharepoint/spinstall0-4c77fbaa-79dc-46d3-ae54-c11f0984c954.log
+  sourcetype: suricata
+  source: not_applicable
+- name: toolpane
+  path: /datasets/attack_techniques/T1190/sharepoint/toolpane-4c77fbaa-79dc-46d3-ae54-c11f0984c954.log
+  sourcetype: suricata
+  source: not_applicable

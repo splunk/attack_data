@@ -1,0 +1,13 @@
+author: STRT
+id: 394b8577-b7a2-4804-b4d6-565d16f3c1e1
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Spearphishing Attachment
+  Onenote Spawn Mshta
+environment: attack_range
+directory: onenote_spear_phishing
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1566.001/onenote_spear_phishing/sysmon-394b8577-b7a2-4804-b4d6-565d16f3c1e1.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

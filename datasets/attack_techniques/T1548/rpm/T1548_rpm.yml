@@ -1,0 +1,12 @@
+author: STRT
+id: 8f56dfc5-78bd-49a4-810e-0c4f993819c5
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux RPM Privilege Escalation
+environment: attack_range
+directory: rpm
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/rpm/sysmon_linux-8f56dfc5-78bd-49a4-810e-0c4f993819c5.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

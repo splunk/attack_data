@@ -1,0 +1,13 @@
+author: STRT
+id: fe74e80a-effa-4c93-a8fd-57ca42223374
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD User Consent Blocked
+  for Risky Application
+environment: attack_range
+directory: azure_ad_user_consent_blocked
+mitre_technique: []
+datasets:
+- name: azure_ad_user_consent_blocked
+  path: /datasets/attack_techniques/T1528/azure_ad_user_consent_blocked/azure_ad_user_consent_blocked-fe74e80a-effa-4c93-a8fd-57ca42223374.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

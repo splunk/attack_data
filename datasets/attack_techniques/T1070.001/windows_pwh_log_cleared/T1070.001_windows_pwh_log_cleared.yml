@@ -1,0 +1,12 @@
+author: STRT
+id: 1dcf8cf9-7195-4bd1-8d02-ffec2c1c3d85
+date: '2026-07-11'
+description: Curated attack data generated for detection Suspicious wevtutil Usage
+environment: attack_range
+directory: windows_pwh_log_cleared
+mitre_technique: []
+datasets:
+- name: wevtutil_clear_log
+  path: /datasets/attack_techniques/T1070.001/windows_pwh_log_cleared/wevtutil_clear_log-1dcf8cf9-7195-4bd1-8d02-ffec2c1c3d85.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

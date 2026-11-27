@@ -1,0 +1,12 @@
+author: STRT
+id: bf07d567-09d2-4f7f-8bba-ec67fc4f932e
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS CreateLoginProfile
+environment: attack_range
+directory: aws_createloginprofile
+mitre_technique: []
+datasets:
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1078/aws_createloginprofile/aws_cloudtrail_events-bf07d567-09d2-4f7f-8bba-ec67fc4f932e.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

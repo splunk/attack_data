@@ -1,0 +1,13 @@
+author: STRT
+id: d8cfd883-1bca-43e2-9bab-e271f2953152
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Shell or Script Execution
+  From IIS Directory
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1190/snapattack/snapattack-d8cfd883-1bca-43e2-9bab-e271f2953152.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

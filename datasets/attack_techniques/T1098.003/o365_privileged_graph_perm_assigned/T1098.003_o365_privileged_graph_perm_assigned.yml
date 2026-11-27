@@ -1,0 +1,13 @@
+author: STRT
+id: f2c6d6ec-38c3-4e3e-b614-4f2a4b303173
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Privileged Graph API
+  Permission Assigned
+environment: attack_range
+directory: o365_privileged_graph_perm_assigned
+mitre_technique: []
+datasets:
+- name: o365_privileged_graph_perm_assigned
+  path: /datasets/attack_techniques/T1098.003/o365_privileged_graph_perm_assigned/o365_privileged_graph_perm_assigned-f2c6d6ec-38c3-4e3e-b614-4f2a4b303173.log
+  sourcetype: o365:management:activity
+  source: o365

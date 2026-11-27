@@ -1,0 +1,12 @@
+author: STRT
+id: 1af3c057-1b4a-4882-9e2c-2c9423fc3d79
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi System Information Discovery
+environment: attack_range
+directory: esxi_system_information
+mitre_technique: []
+datasets:
+- name: esxi_system_information
+  path: /datasets/attack_techniques/T1082/esxi_system_information/esxi_system_information-1af3c057-1b4a-4882-9e2c-2c9423fc3d79.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

@@ -1,0 +1,17 @@
+author: STRT
+id: 530041e0-7a2c-4afe-a613-190f2dc9d042
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS Concurrent Sessions
+  From Different Ips
+environment: attack_range
+directory: aws_concurrent_sessions_from_different_ips
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1185/aws_concurrent_sessions_from_different_ips/asl_ocsf_cloudtrail-530041e0-7a2c-4afe-a613-190f2dc9d042.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1185/aws_concurrent_sessions_from_different_ips/cloudtrail-530041e0-7a2c-4afe-a613-190f2dc9d042.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

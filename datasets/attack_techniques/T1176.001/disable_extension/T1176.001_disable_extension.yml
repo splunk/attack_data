@@ -1,0 +1,13 @@
+author: STRT
+id: 52691931-41de-404b-9798-f7fe02f8ea61
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Disable Internet
+  Explorer Addons
+environment: attack_range
+directory: disable_extension
+mitre_technique: []
+datasets:
+- name: iexplore-extoff
+  path: /datasets/attack_techniques/T1176.001/disable_extension/iexplore-extoff-52691931-41de-404b-9798-f7fe02f8ea61.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

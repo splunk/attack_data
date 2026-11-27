@@ -1,0 +1,13 @@
+author: STRT
+id: 9bcb0fc5-fd0b-4834-bfd3-13b187415a9a
+date: '2026-07-10'
+description: Curated attack data generated for detection Kerberos Service Ticket Request
+  Using RC4 Encryption
+environment: attack_range
+directory: kerberos_service_ticket_request_using_rc4_encryption
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1558.001/kerberos_service_ticket_request_using_rc4_encryption/windows-xml-9bcb0fc5-fd0b-4834-bfd3-13b187415a9a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

@@ -1,0 +1,13 @@
+author: STRT
+id: 482b71de-3bef-4cdf-9652-a657bb8e7f13
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Credential Access Failed
+  Login
+environment: attack_range
+directory: aws_login_failure
+mitre_technique: []
+datasets:
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1110.001/aws_login_failure/aws_cloudtrail_events-482b71de-3bef-4cdf-9652-a657bb8e7f13.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

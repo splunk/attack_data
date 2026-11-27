@@ -1,0 +1,13 @@
+author: STRT
+id: fe6e5289-3d4f-4519-bdf6-fc5b14327a7f
+date: '2026-07-10'
+description: Curated attack data generated for detection Detect Computer Changed with
+  Anonymous Account
+environment: attack_range
+directory: zerologon
+mitre_technique: []
+datasets:
+- name: zerologon
+  path: /datasets/attack_techniques/T1212/zerologon/zerologon-fe6e5289-3d4f-4519-bdf6-fc5b14327a7f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

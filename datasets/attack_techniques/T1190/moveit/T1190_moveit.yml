@@ -1,0 +1,13 @@
+author: STRT
+id: 9eb33b1c-d8eb-468e-9b16-be81b426b2e4
+date: '2026-07-10'
+description: Curated attack data generated for detection MOVEit Certificate Store
+  Access Failure
+environment: attack_range
+directory: moveit
+mitre_technique: []
+datasets:
+- name: SftpServer
+  path: /datasets/attack_techniques/T1190/moveit/SftpServer-9eb33b1c-d8eb-468e-9b16-be81b426b2e4.log
+  sourcetype: sftp_server_logs
+  source: sftp_server_logs

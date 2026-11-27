@@ -1,0 +1,13 @@
+author: STRT
+id: fba176b9-7bf9-44fc-a89f-948090226ee0
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows LOLBAS Executed As
+  Renamed File
+environment: attack_range
+directory: cmd_lolbas_usage
+mitre_technique: []
+datasets:
+- name: cmd_lolbas_usage
+  path: /datasets/attack_techniques/T1036/cmd_lolbas_usage/cmd_lolbas_usage-fba176b9-7bf9-44fc-a89f-948090226ee0.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

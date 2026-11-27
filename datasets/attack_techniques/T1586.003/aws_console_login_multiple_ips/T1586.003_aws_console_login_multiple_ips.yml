@@ -1,0 +1,13 @@
+author: STRT
+id: de1a95e8-9d5d-44e0-a8f1-792b787797eb
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Successful Console Authentication
+  From Multiple IPs
+environment: attack_range
+directory: aws_console_login_multiple_ips
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1586.003/aws_console_login_multiple_ips/cloudtrail-de1a95e8-9d5d-44e0-a8f1-792b787797eb.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

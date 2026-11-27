@@ -1,0 +1,13 @@
+author: STRT
+id: 7ba4613c-4662-4b3b-8967-ecb663d954cb
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Compliance Content Search
+  Started
+environment: attack_range
+directory: o365_compliance_content_search_started
+mitre_technique: []
+datasets:
+- name: o365_compliance_content_search_started
+  path: /datasets/attack_techniques/T1114.002/o365_compliance_content_search_started/o365_compliance_content_search_started-7ba4613c-4662-4b3b-8967-ecb663d954cb.log
+  sourcetype: o365:management:activity
+  source: o365

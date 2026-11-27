@@ -1,0 +1,13 @@
+author: STRT
+id: 8d4ad769-aadb-4a84-96ec-9ef32a52d272
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 User Consent Blocked
+  for Risky Application
+environment: attack_range
+directory: o365_user_consent_blocked
+mitre_technique: []
+datasets:
+- name: o365_user_consent_blocked
+  path: /datasets/attack_techniques/T1528/o365_user_consent_blocked/o365_user_consent_blocked-8d4ad769-aadb-4a84-96ec-9ef32a52d272.log
+  sourcetype: o365:management:activity
+  source: o365

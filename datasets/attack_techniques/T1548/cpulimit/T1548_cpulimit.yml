@@ -1,0 +1,13 @@
+author: STRT
+id: 7f3ae12b-b7b2-4014-b9ef-3aa0fe232cb4
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Cpulimit Privilege
+  Escalation
+environment: attack_range
+directory: cpulimit
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/cpulimit/sysmon_linux-7f3ae12b-b7b2-4014-b9ef-3aa0fe232cb4.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

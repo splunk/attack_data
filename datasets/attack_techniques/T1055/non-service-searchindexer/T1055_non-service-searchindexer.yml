@@ -1,0 +1,13 @@
+author: STRT
+id: 1e8eb74c-91a1-461e-ba6d-36b09795fdea
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Process Injection
+  In Non-Service SearchIndexer
+environment: attack_range
+directory: non-service-searchindexer
+mitre_technique: []
+datasets:
+- name: seaarch-indexer-non-service
+  path: /datasets/attack_techniques/T1055/non-service-searchindexer/seaarch-indexer-non-service-1e8eb74c-91a1-461e-ba6d-36b09795fdea.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

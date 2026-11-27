@@ -1,0 +1,16 @@
+author: STRT
+id: c7571450-5839-406e-927f-522fe9887fb6
+date: '2026-07-10'
+description: Curated attack data generated for detection Common Ransomware Extensions
+environment: attack_range
+directory: ransomware_notes
+mitre_technique: []
+datasets:
+- name: ransom-sysmon
+  path: /datasets/attack_techniques/T1485/ransomware_notes/ransom-sysmon-c7571450-5839-406e-927f-522fe9887fb6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1485/ransomware_notes/windows-sysmon-c7571450-5839-406e-927f-522fe9887fb6.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

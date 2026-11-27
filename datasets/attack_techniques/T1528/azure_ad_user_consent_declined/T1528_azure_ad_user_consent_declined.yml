@@ -1,0 +1,13 @@
+author: STRT
+id: c2dc433f-2f83-4977-b644-5cbd1576856c
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD User Consent Denied
+  for OAuth Application
+environment: attack_range
+directory: azure_ad_user_consent_declined
+mitre_technique: []
+datasets:
+- name: azure_ad_user_consent_declined
+  path: /datasets/attack_techniques/T1528/azure_ad_user_consent_declined/azure_ad_user_consent_declined-c2dc433f-2f83-4977-b644-5cbd1576856c.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

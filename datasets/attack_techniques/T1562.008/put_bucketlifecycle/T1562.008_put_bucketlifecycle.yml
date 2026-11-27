@@ -1,0 +1,16 @@
+author: STRT
+id: 3d4e5eb4-7780-41ee-8401-32434cb7ed55
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS Defense Evasion PutBucketLifecycle
+environment: attack_range
+directory: put_bucketlifecycle
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1562.008/put_bucketlifecycle/asl_ocsf_cloudtrail-3d4e5eb4-7780-41ee-8401-32434cb7ed55.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_cloudtrail_events
+  path: /datasets/attack_techniques/T1562.008/put_bucketlifecycle/aws_cloudtrail_events-3d4e5eb4-7780-41ee-8401-32434cb7ed55.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

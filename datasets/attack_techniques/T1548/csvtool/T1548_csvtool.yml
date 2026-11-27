@@ -1,0 +1,12 @@
+author: STRT
+id: 71cf17d8-124b-4218-894e-38ed98b8709f
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Csvtool Privilege Escalation
+environment: attack_range
+directory: csvtool
+mitre_technique: []
+datasets:
+- name: sysmon_linux
+  path: /datasets/attack_techniques/T1548/csvtool/sysmon_linux-71cf17d8-124b-4218-894e-38ed98b8709f.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational

@@ -1,0 +1,12 @@
+author: STRT
+id: d03ea29b-bce5-4d41-9941-6b1e3a2339ba
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry DisableSecuritySettings
+environment: attack_range
+directory: T1112
+mitre_technique: []
+datasets:
+- name: disablesecuritysetting
+  path: /datasets/attack_techniques/T1112/disablesecuritysetting-d03ea29b-bce5-4d41-9941-6b1e3a2339ba.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

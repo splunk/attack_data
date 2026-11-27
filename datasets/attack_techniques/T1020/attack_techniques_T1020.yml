@@ -1,0 +1,13 @@
+author: STRT
+id: 6fabdda1-f8d1-4c08-b7a1-601f999c4435
+date: '2026-07-10'
+description: Curated attack data generated for detection Detect RClone Command-Line
+  Usage
+environment: attack_range
+directory: T1020
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1020/windows-sysmon-6fabdda1-f8d1-4c08-b7a1-601f999c4435.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

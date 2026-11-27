@@ -1,0 +1,25 @@
+author: STRT
+id: 912a9de7-59cb-4606-8cf9-9201dc5cbda3
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows DisableAntiSpyware
+  Registry
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon-912a9de7-59cb-4606-8cf9-9201dc5cbda3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon_dism
+  path: /datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_dism-912a9de7-59cb-4606-8cf9-9201dc5cbda3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: hvci_windows-sysmon
+  path: /datasets/attack_techniques/T1562.001/atomic_red_team/hvci_windows-sysmon-912a9de7-59cb-4606-8cf9-9201dc5cbda3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+- name: windows-sysmon_raccine
+  path: /datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon_raccine-912a9de7-59cb-4606-8cf9-9201dc5cbda3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

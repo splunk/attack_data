@@ -1,0 +1,13 @@
+author: STRT
+id: d3ea9883-21d2-4a5d-921e-28c34d52c7be
+date: '2026-07-10'
+description: Curated attack data generated for detection Mimikatz PassTheTicket CommandLine
+  Parameters
+environment: attack_range
+directory: mimikatz
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1550.003/mimikatz/windows-sysmon-d3ea9883-21d2-4a5d-921e-28c34d52c7be.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

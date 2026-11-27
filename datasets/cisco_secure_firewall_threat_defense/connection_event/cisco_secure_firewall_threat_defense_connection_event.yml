@@ -1,0 +1,13 @@
+author: STRT
+id: 58b9e64a-0024-44be-acae-cc0101eb671e
+date: '2026-07-13'
+description: Curated attack data generated for detection Cisco Secure Firewall - Bits
+  Network Activity
+environment: attack_range
+directory: connection_event
+mitre_technique: []
+datasets:
+- name: connection_events
+  path: /datasets/cisco_secure_firewall_threat_defense/connection_event/connection_events-58b9e64a-0024-44be-acae-cc0101eb671e.log
+  sourcetype: cisco:sfw:estreamer
+  source: not_applicable

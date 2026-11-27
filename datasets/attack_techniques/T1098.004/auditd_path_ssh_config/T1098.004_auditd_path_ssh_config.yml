@@ -1,0 +1,13 @@
+author: STRT
+id: fe222094-12ed-49fe-b6a8-97b9aafcab3d
+date: '2026-07-10'
+description: Curated attack data generated for detection Linux Auditd Possible Access
+  Or Modification Of Sshd Config File
+environment: attack_range
+directory: auditd_path_ssh_config
+mitre_technique: []
+datasets:
+- name: path_ssh_config
+  path: /datasets/attack_techniques/T1098.004/auditd_path_ssh_config/path_ssh_config-fe222094-12ed-49fe-b6a8-97b9aafcab3d.log
+  sourcetype: auditd
+  source: auditd

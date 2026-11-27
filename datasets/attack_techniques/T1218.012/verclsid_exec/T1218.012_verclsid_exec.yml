@@ -1,0 +1,12 @@
+author: STRT
+id: e21b4638-e1f9-4335-ad48-2eeca15bd27a
+date: '2026-07-11'
+description: Curated attack data generated for detection Verclsid CLSID Execution
+environment: attack_range
+directory: verclsid_exec
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1218.012/verclsid_exec/sysmon-e21b4638-e1f9-4335-ad48-2eeca15bd27a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

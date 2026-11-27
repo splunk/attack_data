@@ -1,0 +1,13 @@
+author: STRT
+id: 4a82fbdc-1452-406d-a4c2-450c1fffbaab
+date: '2026-07-10'
+description: Curated attack data generated for detection Hiding Files And Directories
+  With Attrib exe
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1222.001/atomic_red_team/windows-sysmon-4a82fbdc-1452-406d-a4c2-450c1fffbaab.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

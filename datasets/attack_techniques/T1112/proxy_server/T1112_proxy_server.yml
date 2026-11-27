@@ -1,0 +1,12 @@
+author: STRT
+id: e1574225-37dd-4345-bcff-338bce91a92c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Modify Registry ProxyServer
+environment: attack_range
+directory: proxy_server
+mitre_technique: []
+datasets:
+- name: ProxyServer_sys
+  path: /datasets/attack_techniques/T1112/proxy_server/ProxyServer_sys-e1574225-37dd-4345-bcff-338bce91a92c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

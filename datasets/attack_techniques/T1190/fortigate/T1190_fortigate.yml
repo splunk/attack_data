@@ -1,0 +1,17 @@
+author: STRT
+id: 34b6576c-208f-4f94-8dd7-7fd9c1625b4a
+date: '2026-07-13'
+description: Curated attack data generated for detection Exploit Public-Facing Fortinet
+  FortiNAC CVE-2022-39952
+environment: attack_range
+directory: fortigate
+mitre_technique: []
+datasets:
+- name: web_fortinetnac
+  path: /datasets/attack_techniques/T1190/fortigate/web_fortinetnac-34b6576c-208f-4f94-8dd7-7fd9c1625b4a.log
+  sourcetype: pan:threat
+  source: not_applicable
+- name: fortinetcve202240684
+  path: /datasets/attack_techniques/T1190/fortigate/fortinetcve202240684-34b6576c-208f-4f94-8dd7-7fd9c1625b4a.log
+  sourcetype: pan:threat
+  source: not_applicable

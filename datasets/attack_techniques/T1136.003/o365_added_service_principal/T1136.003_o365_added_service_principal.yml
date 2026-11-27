@@ -1,0 +1,12 @@
+author: STRT
+id: 35593cbb-996a-43fa-baa7-a6d4f3d93df7
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Added Service Principal
+environment: attack_range
+directory: o365_added_service_principal
+mitre_technique: []
+datasets:
+- name: o365_add_service_principal
+  path: /datasets/attack_techniques/T1136.003/o365_added_service_principal/o365_add_service_principal-35593cbb-996a-43fa-baa7-a6d4f3d93df7.log
+  sourcetype: o365:management:activity
+  source: o365

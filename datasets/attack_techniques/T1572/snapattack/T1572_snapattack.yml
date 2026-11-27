@@ -1,0 +1,13 @@
+author: STRT
+id: 3ad40c9b-03e1-4a6e-bbb4-c914118260b8
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Potential Cloudflared
+  Network Connection
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1572/snapattack/snapattack-3ad40c9b-03e1-4a6e-bbb4-c914118260b8.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

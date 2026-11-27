@@ -1,0 +1,13 @@
+author: STRT
+id: 06d7bcc2-e983-481b-84ad-b3ac9f7dbabf
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Multiple Service
+  Principals Created by SP
+environment: attack_range
+directory: azure_ad_multiple_service_principals_created
+mitre_technique: []
+datasets:
+- name: azure_ad_multiple_service_principals_created
+  path: /datasets/attack_techniques/T1136.003/azure_ad_multiple_service_principals_created/azure_ad_multiple_service_principals_created-06d7bcc2-e983-481b-84ad-b3ac9f7dbabf.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

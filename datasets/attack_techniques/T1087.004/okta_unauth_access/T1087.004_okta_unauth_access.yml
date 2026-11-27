@@ -1,0 +1,13 @@
+author: STRT
+id: b8f6b0c8-f5ae-44e1-a4c3-018b59a7ea9c
+date: '2026-07-13'
+description: Curated attack data generated for detection Okta Unauthorized Access
+  to Application
+environment: attack_range
+directory: okta_unauth_access
+mitre_technique: []
+datasets:
+- name: okta_unauth_access
+  path: /datasets/attack_techniques/T1087.004/okta_unauth_access/okta_unauth_access-b8f6b0c8-f5ae-44e1-a4c3-018b59a7ea9c.log
+  sourcetype: OktaIM2:log
+  source: Okta

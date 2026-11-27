@@ -1,0 +1,13 @@
+author: STRT
+id: 8114ba41-67d0-4223-b352-4b48010d31a2
+date: '2026-07-11'
+description: Curated attack data generated for detection Screensaver Event Trigger
+  Execution
+environment: attack_range
+directory: scrnsave_reg
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1546.002/scrnsave_reg/sysmon-8114ba41-67d0-4223-b352-4b48010d31a2.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

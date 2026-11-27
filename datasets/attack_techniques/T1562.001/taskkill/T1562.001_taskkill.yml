@@ -1,0 +1,13 @@
+author: STRT
+id: 22493ad5-bc1c-466f-93d7-da6b126a6441
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Disable or Modify
+  Tools Via Taskkill
+environment: attack_range
+directory: taskkill
+mitre_technique: []
+datasets:
+- name: taskkill_im
+  path: /datasets/attack_techniques/T1562.001/taskkill/taskkill_im-22493ad5-bc1c-466f-93d7-da6b126a6441.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

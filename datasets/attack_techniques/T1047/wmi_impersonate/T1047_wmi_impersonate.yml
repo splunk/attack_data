@@ -1,0 +1,12 @@
+author: STRT
+id: c26fbfe8-1f6e-48cf-891c-016b2af2d0e9
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows WMI Impersonate Token
+environment: attack_range
+directory: wmi_impersonate
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1047/wmi_impersonate/sysmon-c26fbfe8-1f6e-48cf-891c-016b2af2d0e9.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

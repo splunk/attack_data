@@ -1,0 +1,13 @@
+author: STRT
+id: 1494e011-8034-4f19-bac0-c1545de3ee38
+date: '2026-07-10'
+description: Curated attack data generated for detection Remote Process Instantiation
+  via DCOM and PowerShell
+environment: attack_range
+directory: lateral_movement
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1021.003/lateral_movement/windows-sysmon-1494e011-8034-4f19-bac0-c1545de3ee38.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

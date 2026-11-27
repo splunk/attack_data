@@ -1,0 +1,13 @@
+author: STRT
+id: d76d27f3-f9a6-4d6b-be49-6fe411ae2462
+date: '2026-07-10'
+description: Curated attack data generated for detection Create or delete windows
+  shares using net exe
+environment: attack_range
+directory: atomic_red_team
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1070.005/atomic_red_team/windows-sysmon-d76d27f3-f9a6-4d6b-be49-6fe411ae2462.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

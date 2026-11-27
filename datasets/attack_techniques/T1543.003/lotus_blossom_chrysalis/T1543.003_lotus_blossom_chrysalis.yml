@@ -1,0 +1,13 @@
+author: STRT
+id: 8f66efe6-7be9-44cb-abee-99cb53772741
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Bluetooth Service
+  Installed From Uncommon Location
+environment: attack_range
+directory: lotus_blossom_chrysalis
+mitre_technique: []
+datasets:
+- name: windows-system
+  path: /datasets/attack_techniques/T1543.003/lotus_blossom_chrysalis/windows-system-8f66efe6-7be9-44cb-abee-99cb53772741.log
+  sourcetype: XmlWinEventLog:System
+  source: XmlWinEventLog:System

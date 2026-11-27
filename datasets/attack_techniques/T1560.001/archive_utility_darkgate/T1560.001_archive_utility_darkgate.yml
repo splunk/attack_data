@@ -1,0 +1,13 @@
+author: STRT
+id: 777cdf2b-b87f-4a29-8189-522194ced19a
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Archive Collected
+  Data via Rar
+environment: attack_range
+directory: archive_utility_darkgate
+mitre_technique: []
+datasets:
+- name: rar_sys
+  path: /datasets/attack_techniques/T1560.001/archive_utility_darkgate/rar_sys-777cdf2b-b87f-4a29-8189-522194ced19a.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: caa916a9-031e-4e4f-b3f4-2a41f95418a4
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Potato Privilege
+  Escalation Tool Execution
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1068/snapattack/snapattack-caa916a9-031e-4e4f-b3f4-2a41f95418a4.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

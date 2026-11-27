@@ -1,0 +1,13 @@
+author: STRT
+id: 9aa6415d-8f7e-4300-afad-505d9401dcda
+date: '2026-07-10'
+description: Curated attack data generated for detection Powershell Windows Defender
+  Exclusion Commands
+environment: attack_range
+directory: powershell_windows_defender_exclusion_commands
+mitre_technique: []
+datasets:
+- name: windows-xml
+  path: /datasets/attack_techniques/T1562.001/powershell_windows_defender_exclusion_commands/windows-xml-9aa6415d-8f7e-4300-afad-505d9401dcda.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

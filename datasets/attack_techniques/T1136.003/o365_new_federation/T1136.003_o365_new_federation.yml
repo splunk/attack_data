@@ -1,0 +1,13 @@
+author: STRT
+id: 51ab6c65-a1ae-47d8-b9c4-53bf35a534f5
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 Add App Role Assignment
+  Grant User
+environment: attack_range
+directory: o365_new_federation
+mitre_technique: []
+datasets:
+- name: o365_new_federation
+  path: /datasets/attack_techniques/T1136.003/o365_new_federation/o365_new_federation-51ab6c65-a1ae-47d8-b9c4-53bf35a534f5.log
+  sourcetype: o365:management:activity
+  source: o365

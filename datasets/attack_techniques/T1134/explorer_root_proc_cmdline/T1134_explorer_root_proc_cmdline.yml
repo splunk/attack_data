@@ -1,0 +1,13 @@
+author: STRT
+id: 90947669-3e32-4c74-8622-263ef025d1fa
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Parent PID Spoofing
+  with Explorer
+environment: attack_range
+directory: explorer_root_proc_cmdline
+mitre_technique: []
+datasets:
+- name: explorer_root
+  path: /datasets/attack_techniques/T1134/explorer_root_proc_cmdline/explorer_root-90947669-3e32-4c74-8622-263ef025d1fa.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

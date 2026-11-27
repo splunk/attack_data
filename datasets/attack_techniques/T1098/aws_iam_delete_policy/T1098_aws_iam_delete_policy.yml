@@ -1,0 +1,16 @@
+author: STRT
+id: 627da3f9-3e89-4f81-b7c7-2db09cdc83bb
+date: '2026-07-10'
+description: Curated attack data generated for detection ASL AWS IAM Delete Policy
+environment: attack_range
+directory: aws_iam_delete_policy
+mitre_technique: []
+datasets:
+- name: asl_ocsf_cloudtrail
+  path: /datasets/attack_techniques/T1098/aws_iam_delete_policy/asl_ocsf_cloudtrail-627da3f9-3e89-4f81-b7c7-2db09cdc83bb.log
+  sourcetype: aws:asl
+  source: aws_asl
+- name: aws_iam_delete_policy
+  path: /datasets/attack_techniques/T1098/aws_iam_delete_policy/aws_iam_delete_policy-627da3f9-3e89-4f81-b7c7-2db09cdc83bb.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

@@ -1,0 +1,12 @@
+author: STRT
+id: e5bdbbb5-c01f-4253-aebc-78fe79678f71
+date: '2026-07-13'
+description: Curated attack data generated for detection ESXi Audit Tampering
+environment: attack_range
+directory: esxi_audit_tampering
+mitre_technique: []
+datasets:
+- name: esxi_audit_tampering
+  path: /datasets/attack_techniques/T1562.003/esxi_audit_tampering/esxi_audit_tampering-e5bdbbb5-c01f-4253-aebc-78fe79678f71.log
+  sourcetype: vmw-syslog
+  source: vmware:esxlog

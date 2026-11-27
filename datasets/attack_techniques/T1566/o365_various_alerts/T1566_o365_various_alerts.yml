@@ -1,0 +1,12 @@
+author: STRT
+id: f49dc088-d4fb-47ec-8b83-32a1488b3db6
+date: '2026-07-10'
+description: Curated attack data generated for detection O365 DLP Rule Triggered
+environment: attack_range
+directory: o365_various_alerts
+mitre_technique: []
+datasets:
+- name: o365_various_alerts
+  path: /datasets/attack_techniques/T1566/o365_various_alerts/o365_various_alerts-f49dc088-d4fb-47ec-8b83-32a1488b3db6.log
+  sourcetype: o365:management:activity
+  source: o365

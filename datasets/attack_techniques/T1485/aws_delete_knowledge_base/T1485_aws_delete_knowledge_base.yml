@@ -1,0 +1,13 @@
+author: STRT
+id: a8a40049-ec6a-4b29-888f-006d3a385f5f
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS Bedrock Delete Knowledge
+  Base
+environment: attack_range
+directory: aws_delete_knowledge_base
+mitre_technique: []
+datasets:
+- name: cloudtrail
+  path: /datasets/attack_techniques/T1485/aws_delete_knowledge_base/cloudtrail-a8a40049-ec6a-4b29-888f-006d3a385f5f.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

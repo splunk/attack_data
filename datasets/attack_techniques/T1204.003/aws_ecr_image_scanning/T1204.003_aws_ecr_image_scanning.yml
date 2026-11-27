@@ -1,0 +1,13 @@
+author: STRT
+id: c8c74567-5909-42f7-812b-ae75977115f7
+date: '2026-07-10'
+description: Curated attack data generated for detection AWS ECR Container Scanning
+  Findings High
+environment: attack_range
+directory: aws_ecr_image_scanning
+mitre_technique: []
+datasets:
+- name: aws_ecr_scanning_findings_events
+  path: /datasets/attack_techniques/T1204.003/aws_ecr_image_scanning/aws_ecr_scanning_findings_events-c8c74567-5909-42f7-812b-ae75977115f7.log
+  sourcetype: aws:cloudtrail
+  source: aws_cloudtrail

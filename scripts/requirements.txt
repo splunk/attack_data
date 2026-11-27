@@ -1,0 +1,5 @@
+requests
+urllib3
+pyyaml
+splunk-sdk
+python-dotenv

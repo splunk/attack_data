@@ -1,0 +1,13 @@
+author: STRT
+id: eeb41fb0-075f-4fb2-a15e-9b87d9dd33be
+date: '2026-07-10'
+description: Curated attack data generated for detection GitHub Enterprise Disable
+  2FA Requirement
+environment: attack_range
+directory: github_disable_two_factor_requirement
+mitre_technique: []
+datasets:
+- name: github
+  path: /datasets/attack_techniques/T1562.001/github_disable_two_factor_requirement/github-eeb41fb0-075f-4fb2-a15e-9b87d9dd33be.log
+  sourcetype: httpevent
+  source: http:github

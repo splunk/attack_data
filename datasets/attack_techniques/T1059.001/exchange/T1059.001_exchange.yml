@@ -1,0 +1,13 @@
+author: STRT
+id: 5e5b3171-df9e-4abe-8c5d-ae586631e467
+date: '2026-07-10'
+description: Curated attack data generated for detection Exchange PowerShell Module
+  Usage
+environment: attack_range
+directory: exchange
+mitre_technique: []
+datasets:
+- name: windows-powershell
+  path: /datasets/attack_techniques/T1059.001/exchange/windows-powershell-5e5b3171-df9e-4abe-8c5d-ae586631e467.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational

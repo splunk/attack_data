@@ -1,0 +1,16 @@
+author: STRT
+id: 1a21ba26-31a4-442e-b1e1-3e7e3a4e90bc
+date: '2026-07-11'
+description: Curated attack data generated for detection Linux Gdrive Binary Activity
+environment: attack_range
+directory: gdrive
+mitre_technique: []
+datasets:
+- name: gdrive_linux
+  path: /datasets/attack_techniques/T1567/gdrive/gdrive_linux-1a21ba26-31a4-442e-b1e1-3e7e3a4e90bc.log
+  sourcetype: sysmon:linux
+  source: Syslog:Linux-Sysmon/Operational
+- name: gdrive_windows
+  path: /datasets/attack_techniques/T1567/gdrive/gdrive_windows-1a21ba26-31a4-442e-b1e1-3e7e3a4e90bc.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

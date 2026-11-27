@@ -1,0 +1,13 @@
+author: STRT
+id: 4f59bf84-09d9-495a-bdad-e97701f1e595
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows DLL Module Loaded
+  in Temp Dir
+environment: attack_range
+directory: dll_loaded_in_temp
+mitre_technique: []
+datasets:
+- name: module_loaded_in_temp
+  path: /datasets/attack_techniques/T1105/dll_loaded_in_temp/module_loaded_in_temp-4f59bf84-09d9-495a-bdad-e97701f1e595.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

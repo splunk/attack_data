@@ -1,0 +1,12 @@
+author: STRT
+id: 8a351a3b-5219-4cdc-81ee-63b564e963c5
+date: '2026-07-10'
+description: Curated attack data generated for detection Disable UAC Remote Restriction
+environment: attack_range
+directory: LocalAccountTokenFilterPolicy
+mitre_technique: []
+datasets:
+- name: sysmon
+  path: /datasets/attack_techniques/T1548.002/LocalAccountTokenFilterPolicy/sysmon-8a351a3b-5219-4cdc-81ee-63b564e963c5.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

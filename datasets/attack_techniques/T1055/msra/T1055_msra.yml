@@ -1,0 +1,13 @@
+author: STRT
+id: 9c66c928-5cee-4230-b64d-6ca701fffd69
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Remote Assistance
+  Spawning Process
+environment: attack_range
+directory: msra
+mitre_technique: []
+datasets:
+- name: msra-windows-sysmon
+  path: /datasets/attack_techniques/T1055/msra/msra-windows-sysmon-9c66c928-5cee-4230-b64d-6ca701fffd69.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

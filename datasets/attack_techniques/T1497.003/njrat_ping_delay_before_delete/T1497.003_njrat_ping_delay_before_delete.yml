@@ -1,0 +1,12 @@
+author: STRT
+id: 21f1cdd5-faa1-427c-ae5f-3423679ff83c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Time Based Evasion
+environment: attack_range
+directory: njrat_ping_delay_before_delete
+mitre_technique: []
+datasets:
+- name: ping_0
+  path: /datasets/attack_techniques/T1497.003/njrat_ping_delay_before_delete/ping_0-21f1cdd5-faa1-427c-ae5f-3423679ff83c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

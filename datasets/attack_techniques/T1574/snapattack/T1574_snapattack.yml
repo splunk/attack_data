@@ -1,0 +1,13 @@
+author: STRT
+id: af15d4ac-c0fd-40f7-b3c3-d35be5219380
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows Set Custom DNS ServerLevelPlugin
+  Via Dnscmd
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1574/snapattack/snapattack-af15d4ac-c0fd-40f7-b3c3-d35be5219380.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Security

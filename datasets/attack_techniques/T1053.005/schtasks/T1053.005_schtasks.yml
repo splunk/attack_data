@@ -1,0 +1,13 @@
+author: STRT
+id: c058f867-0401-459d-bce3-8a878cf5957b
+date: '2026-07-11'
+description: Curated attack data generated for detection Suspicious Scheduled Task
+  from Public Directory
+environment: attack_range
+directory: schtasks
+mitre_technique: []
+datasets:
+- name: windows-sysmon
+  path: /datasets/attack_techniques/T1053.005/schtasks/windows-sysmon-c058f867-0401-459d-bce3-8a878cf5957b.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

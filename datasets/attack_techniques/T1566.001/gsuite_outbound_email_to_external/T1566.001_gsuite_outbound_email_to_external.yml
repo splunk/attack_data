@@ -1,0 +1,13 @@
+author: STRT
+id: ead290e1-349d-47b2-a6d9-1dc71b35906b
+date: '2026-07-10'
+description: Curated attack data generated for detection Gsuite Outbound Email With
+  Attachment To External Domain
+environment: attack_range
+directory: gsuite_outbound_email_to_external
+mitre_technique: []
+datasets:
+- name: gsuite_external_domain
+  path: /datasets/attack_techniques/T1566.001/gsuite_outbound_email_to_external/gsuite_external_domain-ead290e1-349d-47b2-a6d9-1dc71b35906b.log
+  sourcetype: gsuite:gmail:bigquery
+  source: http:gsuite

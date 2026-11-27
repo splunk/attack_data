@@ -1,0 +1,13 @@
+author: STRT
+id: dc8c652d-6fac-40f4-ab68-5ce289eece6c
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows SharePoint Spinstall0
+  Webshell File Creation
+environment: attack_range
+directory: sharepoint_webshell
+mitre_technique: []
+datasets:
+- name: sysmon_spinstall0
+  path: /datasets/attack_techniques/T1505.003/sharepoint_webshell/sysmon_spinstall0-dc8c652d-6fac-40f4-ab68-5ce289eece6c.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

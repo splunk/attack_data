@@ -1,0 +1,13 @@
+author: STRT
+id: 29a6946a-cdac-4d9e-9ec4-31da6c942a06
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows MSI Rollback Script
+  Deleted By Non-Msiexec Process
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1218.007/snapattack/snapattack-29a6946a-cdac-4d9e-9ec4-31da6c942a06.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

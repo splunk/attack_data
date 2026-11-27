@@ -1,0 +1,13 @@
+author: STRT
+id: 1d044e69-c922-4b97-ba83-fcb398c8430a
+date: '2026-07-10'
+description: Curated attack data generated for detection Azure AD Multiple AppIDs
+  and UserAgents Authentication Spike
+environment: attack_range
+directory: azure_ad_multiple_appids_and_useragents_auth
+mitre_technique: []
+datasets:
+- name: azure_ad_multiple_appids_and_useragents_auth
+  path: /datasets/attack_techniques/T1078/azure_ad_multiple_appids_and_useragents_auth/azure_ad_multiple_appids_and_useragents_auth-1d044e69-c922-4b97-ba83-fcb398c8430a.log
+  sourcetype: azure:monitor:aad
+  source: Azure AD

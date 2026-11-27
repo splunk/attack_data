@@ -1,0 +1,12 @@
+author: STRT
+id: 9fed944c-fdd7-4090-acfc-4b72c50dd77f
+date: '2026-07-13'
+description: Curated attack data generated for detection Windows Abused Web Services
+environment: attack_range
+directory: upload_files_dns
+mitre_technique: []
+datasets:
+- name: upload_files
+  path: /datasets/attack_techniques/T1071.004/upload_files_dns/upload_files-9fed944c-fdd7-4090-acfc-4b72c50dd77f.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational

@@ -1,0 +1,13 @@
+author: STRT
+id: 87af2a8d-b45e-4305-85e7-07541ca71cf3
+date: '2026-07-11'
+description: Curated attack data generated for detection Windows LAPS Password Gathering
+  Via PowerShell Script
+environment: attack_range
+directory: snapattack
+mitre_technique: []
+datasets:
+- name: snapattack
+  path: /datasets/attack_techniques/T1552/snapattack/snapattack-87af2a8d-b45e-4305-85e7-07541ca71cf3.log
+  sourcetype: XmlWinEventLog
+  source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
